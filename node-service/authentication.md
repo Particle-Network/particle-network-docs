@@ -1,10 +1,24 @@
+---
+description: Authenticate yourself to the Particle Node Service API.
+---
+
 # Authentication
 
 ## Endpoint
 
+{% hint style="success" %}
 `https://api.particle.network`
+{% endhint %}
 
-All APIs have a common URI prefix: `/{chainName}/rpc/`
+All Web3 APIs have a common URI prefix: `/{chainName}/rpc/`
+
+For example, the solana rpc url is&#x20;
+
+{% hint style="info" %}
+```
+https://api.particle.network/solana/rpc/
+```
+{% endhint %}
 
 ## Authentication
 

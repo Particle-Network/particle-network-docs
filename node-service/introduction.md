@@ -1,7 +1,7 @@
 ---
 description: >-
-  Node Service is your high-performance access to 12+ blockchains, but with
-  supercharged reliability, data correctness, and scalability.
+  Particle Node Service is your high-performance access to 12+ blockchains, but
+  with supercharged reliability, data correctness, and scalability.
 ---
 
 # Introduction
@@ -13,13 +13,16 @@ description: >-
 * 100% Data Correctness
 * Dynamic Scalability
 
-### 👿 Reliability
+### 🚀 Extended Capabilities
 
-### No need to run your own node
+* Enhanced API
+* Data Analysis
+* Rich dataset for FT & NFT Marketplaces
 
-### &#x20;2. :zap: ExteData correctnes
+### 🧑‍💻 Easy To Use
 
-### Fast & reliable
+* One-line infrastructure API
+* 1,000+ engineering hours saved per year
 
 
 
