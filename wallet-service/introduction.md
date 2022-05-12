@@ -10,6 +10,8 @@ description: Welcome to Particle Wallet!
 
 With Particle Wallet, you can integrate a wallet tailored to your app's needs, with features including transaction functions, NFT displays, and more.
 
+![Wallet](<../.gitbook/assets/qiabao .jpg>)
+
 ## Using Particle Wallet to Build Your Wallet <a href="#using-web3auth-to-build-your-wallet" id="using-web3auth-to-build-your-wallet"></a>
 
 Using Particle Wallet, you have the flexibility to choose between building an app with an in-app wallet, or a standalone wallet itself. This has its advantages:
@@ -23,6 +25,8 @@ Using Particle Wallet, you have the flexibility to choose between building an ap
 * **Rapid development**: we provide a complete wallet SDK with functions including transaction abilities, NFT displays and trading, signature, etc. This reduces development time for you and ensures security.
 * **A complete UI interface**: Particle Wallet provides a variety of highly adaptable UI interfaces for different app styles and scenarios.
 * **Supports the use of independent functions**: to ensure the continuity of user experience, we support the utilization of a single function in a specific scenario. For example: to transfer funds, the user can call on a "transfer" page rather than having to enter the wallet.
+
+![](<../.gitbook/assets/qiabao2 .jpg>)
 
 ## How can I use Particle Wallet? <a href="#how-can-i-use-web3auth" id="how-can-i-use-web3auth"></a>
 
