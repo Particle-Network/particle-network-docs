@@ -1,28 +1,35 @@
 ---
 description: >-
-  Node Service make it simple to power your blockchain applications and scale up
-  as you grow
+  Node Service is your high-performance access to 12+ blockchains, but with
+  supercharged reliability, data correctness, and scalability.
 ---
 
 # Introduction
 
-### Fast And Stable
+### :zap:Fast & Reliable
 
-Node Service is your high-performance access to the blockchains, including Ethereum, Solana, Polygon, Bitcoin, Binance and other major networks
+* Lower latency and faster response
+* Peak reliability node services
+* 100% Data Correctness
+* Dynamic Scalability
 
-You can get the **lowest** latency and the **fastest** response by using Particle Node Service
+### 👿 Reliability
+
+### No need to run your own node
+
+### &#x20;2. :zap: ExteData correctnes
+
+### Fast & reliable
 
 
 
-### Easy To Use
 
 
 
-## Fast And Stable
 
 
 
-## Easy And PowerFul
+
 
 
 
