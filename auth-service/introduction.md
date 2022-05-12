@@ -13,7 +13,7 @@ Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applicat
 By integrating Particle Auth into your project, your users can experience the following services:
 
 * **Email/Mobile number logins and passwordless flows**: **** users can register with a mobile phone number or email address, then log in using a verification code. This shortens the login process while maintaining a secure login. In the future, mainstream social media logins will also be made available.
-* **Holistic Web3.0 wallet/key management support**: empowers users to use their wallet or key of choice. Using the Particle Auth suite, users can use their existing wallet or key and hook it up to your app directly.
+* **Provide MPC (Multi-Party Computation) based Threshold Signatures:** With Threshold Signatures, each of the parties creates a key independently. Then they forge the vault’s lock together, in a modular way, in which each party shapes a part of the lock that corresponds to its key.
 
 ## What Are Particle Auth's features?
 

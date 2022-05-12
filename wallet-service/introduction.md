@@ -6,7 +6,7 @@ description: Welcome to Particle Wallet!
 
 ## What is Particle Wallet？
 
-**Particle Wallet** **is not a wallet, it is a wallet infrastructure plugged into apps or wallets.**
+**Particle Wallet** **is not an Independent wallet, it is a wallet infrastructure plugged into apps or wallets.**
 
 With Particle Wallet, you can integrate a wallet tailored to your app's needs, with features including transaction functions, NFT displays, and more.
 
