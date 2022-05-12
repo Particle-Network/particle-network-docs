@@ -43,7 +43,7 @@ Not only do we have JSON-RPC support, but also enhanced API. This allows you to 
 
 **Analytic Service**: Web3.0 BI system, deriving insights from real-time on- and off-chain data
 
-👉 [Join our Discord community and tell us what you need🛠. Let's **BUILD** together!](https://discord.gg/qwysge6cgF)
+👉 [Join our Discord community and tell us what you need🛠. Let's **BUIDL** together!](https://discord.gg/qwysge6cgF)
 
 ## SDKs
 
