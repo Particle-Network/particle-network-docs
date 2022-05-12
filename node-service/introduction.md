@@ -8,7 +8,11 @@ description: >-
 
 ### Fast And Stable
 
-**Particle Node Service**&#x20;
+Node Service is your high-performance access to the blockchains, including Ethereum, Solana, Polygon, Bitcoin, Binance and other major networks
+
+You can get the **lowest** latency and the **fastest** response by using Particle Node Service
+
+
 
 ### Easy To Use
 
