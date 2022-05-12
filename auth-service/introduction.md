@@ -8,6 +8,8 @@ description: Welcome to Particle Auth!
 
 Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applications. Particle Auth supports mobile number and email login, providing users with a simple operating experience. Their login account is then associated with a private key, which is secured with a "Threshold Signatures vault".
 
+![Particle Auth](../.gitbook/assets/未标题-1副本.jpg)
+
 ## What does Particle Auth do? <a href="#what-does-web3auth-do" id="what-does-web3auth-do"></a>
 
 By integrating Particle Auth into your project, your users can experience the following services:
@@ -21,6 +23,8 @@ By integrating Particle Auth into your project, your users can experience the fo
 * **Non-custodial public key infrastructure**: the user is always in control of ownership and access to their cryptographic key pair. Login services only ever have access to one share, and it is therefore impossible for the provider to retrieve the user's private key on their own.
 * **Whitelabel:** customize Particle Auth's UI so that it blends directly into your application.
 * **Signature**: a full signature service.
+
+![](../.gitbook/assets/sign.jpg)
 
 ## How Do I Integrate Particle Auth? <a href="#how-can-i-use-web3auth" id="how-can-i-use-web3auth"></a>
 
