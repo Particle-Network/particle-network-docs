@@ -1,5 +1,5 @@
 ---
-description: 欢迎使用Particle Network的Dashboard！
+description: Welcome to Particle Network's dashboard!
 ---
 
 # Introduction
