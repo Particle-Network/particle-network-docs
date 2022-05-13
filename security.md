@@ -1,5 +1,7 @@
 ---
 description: Secure, Easy-to-Use, and Trusted Web3 Product Solutions
+cover: .gitbook/assets/cover1 – 1 (1).png
+coverY: 0
 ---
 
 # Security
