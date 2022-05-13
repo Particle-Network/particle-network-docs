@@ -2,13 +2,15 @@
 
 ### The Relationship Between Projects and Apps
 
-
+![](../.gitbook/assets/图表.jpg)
 
 ### Create Project
 
 If you are new, Particle Network will automatically create a new project for you. You can click into **"First Project"** from the homepage to access the project overview.
 
 If you want to create a new project, click on the **"Create"** button on the project creation page. Alternatively, you can select **"Add New Project"** when you view your **"All Projects"** list.
+
+![](<../.gitbook/assets/画板 1.jpg>)
 
 There is no need to specify your project's blockchain when you create a new project. This will all be specified once you use the SDK.
 
