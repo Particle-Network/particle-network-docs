@@ -82,6 +82,10 @@ At Particle Network, we adopt the industry-best standard to implement our infras
 
 **Hardware Security Module**
 
+****
+
+:tada:****[**Now, start building your great dApp confidently on Particle Network.** ](auth-service/introduction.md):tada:****
+
 ## Further Reading
 
 * [Fast Secure Two-Party ECDSA Signing](https://eprint.iacr.org/2017/552)

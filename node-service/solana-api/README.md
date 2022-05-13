@@ -33,8 +33,8 @@ You can use our API just like you use [The Official API](https://docs.solana.com
 The difference is that we use the **chainId** field to specify the network, and The Official uses different URL.
 {% endhint %}
 
-{% content-ref url="../solana/rpc.md" %}
-[rpc.md](../solana/rpc.md)
+{% content-ref url="standard-rpc.md" %}
+[standard-rpc.md](standard-rpc.md)
 {% endcontent-ref %}
 
 ### Enhanced RPC
