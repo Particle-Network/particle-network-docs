@@ -30,7 +30,7 @@
 * [Introduction](node-service/introduction.md)
 * [Authentication](node-service/authentication.md)
 * [Solana API](node-service/solana-api/README.md)
-  * [Standard RPC](node-service/solana-api/standard-rpc.md)
+  * [Standard RPC](node-service/solana/rpc.md)
   * [Enhanced RPC](node-service/solana-api/enhanced-rpc.md)
 
 ## Resources

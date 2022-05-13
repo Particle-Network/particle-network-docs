@@ -48,4 +48,11 @@ const axios = require('axios');
 })();
 ```
 {% endtab %}
+
+{% tab title="Curl" %}
+```powershell
+curl 'https://api.particle.network' \
+--header 'Authorization: Basic { Auth String }'
+```
+{% endtab %}
 {% endtabs %}
