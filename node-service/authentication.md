@@ -8,7 +8,7 @@ description: Authenticate yourself to the Particle Node Service API.
 
 **https://api.particle.network**
 
-All Web3.0 APIs have a common **URI prefix**: `/{chainName}/rpc`
+All Web3 APIs have a common **URI prefix**: `/{chainName}/rpc`
 
 {% hint style="info" %}
 For example, the Solana RPC URL is:
@@ -19,10 +19,10 @@ https://api.particle.network/solana/rpc
 ## Authentication
 
 {% hint style="info" %}
-We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Dashboard](https://particle.network/#/login) where you can create projects and apps.
+We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Dashboard](https://particle.network/#/login), where you can create projects and apps.
 {% endhint %}
 
-The Web3.0 APIs require **HTTP Basic Authentication**
+The Web3 APIs require **HTTP Basic Authentication**
 
 | Basic Auth Key | Basic Auth Value        |   |
 | -------------- | ----------------------- | - |

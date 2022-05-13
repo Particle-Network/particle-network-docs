@@ -6,7 +6,7 @@ description: >-
 
 # Error Reference
 
-For JSON-RPC specific errors, Our API returns a `200` with the JSON-RPC error in the JSON response.
+For JSON-RPC-specific errors, our API returns a `200` with the JSON-RPC error in the JSON response.
 
 ### Example Error Response
 
@@ -23,13 +23,13 @@ For JSON-RPC specific errors, Our API returns a `200` with the JSON-RPC error in
 
 ### JSON-RPC Error Codes
 
-| Code             | Possible Return message | Description                                                                                           |
+| Code             | Possible Return Message | Description                                                                                           |
 | ---------------- | ----------------------- | ----------------------------------------------------------------------------------------------------- |
-| 10006            | Authentication failed   | Invalid project id or invalid project key                                                             |
+| 10006            | Authentication failed   | Invalid project ID or invalid project key.                                                            |
 | -32700           | Parse error             | Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text. |
-| -32600           | Invalid Request         | The JSON sent is not a valid Request object.                                                          |
-| -32601           | Method not found        | The method does not exist / is not available.                                                         |
-| -32602           | Invalid params          | Invalid method parameter(s).                                                                          |
+| -32600           | Invalid request         | The JSON sent is not a valid Request object.                                                          |
+| -32601           | Method not found        | The method does not exist/is not available.                                                           |
+| -32602           | Invalid parameters      | Invalid method parameter(s).                                                                          |
 | -32603           | Internal error          | Internal JSON-RPC error.                                                                              |
 | -32000           | Server error            |                                                                                                       |
 | -32001 to -32099 | Parity errors           |                                                                                                       |

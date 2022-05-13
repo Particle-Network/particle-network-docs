@@ -1,12 +1,12 @@
 # Android
 
-## Build Demo
+## Building Demos
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-* Android development environment.
-* Java 11.
-* Particle SDK project and app config, Created by Dashboard.
+* An Android development environment
+* Java 11
+* A Particle SDK project and app configuration, created by Particle Dashboard
 
 ### Repository
 
@@ -14,12 +14,12 @@
 
 ## Overview
 
-1. Auth login with email.
-2. Auth login with phone.
-3. Logout.
-4. Open wallet.
-5. Change chain id.
+1. Auth login with email
+2. Auth login with phone
+3. Logout
+4. Open wallet
+5. Change chain ID
 
 {% hint style="info" %}
-You should modify project and app config before build.
+You should modify your project and app configuration before building.
 {% endhint %}

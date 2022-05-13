@@ -6,7 +6,7 @@ description: Simple And Powerful
 
 ### 🔥 enhancedGetPrice
 
-> Get real time exchange rate of solana token
+> Get the real-time exchange rate of the Solana token ($SOL)
 
 **Parameters:**
 
@@ -16,7 +16,7 @@ description: Simple And Powerful
 The native token has no mint address, so it's value is **`native`**
 {% endhint %}
 
-* `<[string]>` - Array of supported currencies, the value of currency is as below:
+* `<[string]>` - Array of supported currencies, the values of currencies is as follows:
   * `usd`
   * `cny`
 
@@ -26,7 +26,7 @@ The native token has no mint address, so it's value is **`native`**
   * `address: <string>`, token mint address
   * `currencies: <[object]>`, currency info object
 
-Request Example
+Request example:
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -69,7 +69,7 @@ curl 'https://api.particle.network/solana/rpc' \
 {% endtab %}
 {% endtabs %}
 
-Response Example
+Response example:
 
 ```typescript
 {
@@ -125,7 +125,7 @@ Response Example
 
 ### 🔥 enhancedGetTokensAndNfts
 
-> Get Token list and NFT list by giving an address
+> Get token list and NFT list by giving an address
 
 **Parameters:**
 
@@ -135,7 +135,7 @@ Response Example
 
 * `<object>` - a JSON object containing:
   * `lamports: <u64>`, lamports balance of the address
-  * `nfts: <[object]>`, nft list of the address
+  * `nfts: <[object]>`, NFT list of the address
   * `tokens: <[object]>`, token list of the address
 
 Request Example
@@ -233,7 +233,7 @@ Response Example
 **Parameters:**
 
 * `<string>` - account address as base-58 encoded string
-* `<object>` - (optional) Configuration object containing the following fields:
+* `<object>` - (optional) configuration object containing the following fields:
   * `limit: <number>` - (optional) maximum transactions to return (between 1 and 1,000, default: 1,000).
   * `before: <string>` - (optional) start searching backwards from this transaction signature. If not provided the search starts from the top of the highest max confirmed block.
   * `until: <string>` - (optional) search until this transaction signature, if found before limit reached.
@@ -248,10 +248,10 @@ Response Example
   * `lamportsFee: <int64>`, the transaction lamports fee
   * `signature: <string>`, the transaction signature
   * `blockTime: <int64>`, the transaction block time
-  * `status: <"success" | "failed">`，the status of the transaction
-  * data: \<object>, extended data, when the type value is not `unknown`, data is object containing transaction detail
+  * `status: <"success" | "failed">`, the status of the transaction
+  * `data: <object>`, extended data, when the type value is not `unknown`, the data is an object containing transaction detail
 
-Request Example
+Request example:
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -288,7 +288,7 @@ curl 'https://api.particle.network/solana/rpc' \
 {% endtab %}
 {% endtabs %}
 
-Response Example
+Response example:
 
 ```typescript
 {

@@ -4,13 +4,13 @@ The Solana API allows applications to connect to a Solana node that is part of t
 
 The Solana API follows a JSON-RPC 2.0 standard. We extend a field named **chainId** to specify which Solana network we use.&#x20;
 
-| chainId Value（int） | Solana Network |   |
-| ------------------ | -------------- | - |
-| 101                | Mainnet Beta   |   |
-| 102                | Testnet        |   |
-| 103                | Devnet         |   |
+| chainId Value (int) | Solana Network |   |
+| ------------------- | -------------- | - |
+| 101                 | Mainnet Beta   |   |
+| 102                 | Testnet        |   |
+| 103                 | Devnet         |   |
 
-So the entire JSON RPC request body would look like below：
+So the entire JSON RPC request body will look as follows：
 
 ```json5
 // Solana get-balance request body
@@ -25,12 +25,12 @@ So the entire JSON RPC request body would look like below：
 
 ### Standard RPC
 
-The Solana API support **all methods** of The Solana Official.
+The Solana API supports **all methods** of Solana.
 
-You can use our API just like you use [The Official API](https://docs.solana.com/developing/clients/jsonrpc-api), but our API is faster 🚀
+You can use our API just like you use [their official API](https://docs.solana.com/developing/clients/jsonrpc-api), but ours is faster 🚀
 
 {% hint style="info" %}
-The difference is that we use the **chainId** field to specify the network, and The Official uses different URL.
+The difference is that we use the **chainId** field to specify the network, and Solana's official API uses different URLs.
 {% endhint %}
 
 {% content-ref url="../solana/rpc.md" %}
@@ -39,9 +39,9 @@ The difference is that we use the **chainId** field to specify the network, and 
 
 ### Enhanced RPC
 
-The Solana API offers several enhanced API methods on top of the existing official calls.&#x20;
+The Solana API offers several enhanced API methods on top of existing official calls.&#x20;
 
-The Enhanced API is easy and powerful which can speed up your application building and save your time.
+The Enhanced API is easy and powerful, which makes app-building faster and saves your time.
 
 {% content-ref url="enhanced-rpc.md" %}
 [enhanced-rpc.md](enhanced-rpc.md)
