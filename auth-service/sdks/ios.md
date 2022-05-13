@@ -46,74 +46,39 @@ pod install --repo-update
 open your-project.xcworkspace
 ```
 
-{% tabs %}
-{% tab title="Swift" %}
-```kts
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```groovy
-repositories {
-    google()
-    mavenCentral()
-    //...
-}
-dependencies {
-    // Particle Auth Service
-    implementation 'particle.network:auth-service${latest_version}'
-    //...
-}
-```
-{% endtab %}
-
-{% tab title="Untitled" %}
-
-{% endtab %}
-{% endtabs %}
-
 {% hint style="info" %}
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
-### Add Configuration File
+### Initialize Auth Service in your app <a href="#initialize-firebase" id="initialize-firebase"></a>
 
-Declare them in you app AndroidManifest.xml (usually app/src/main/AndroidManifest.xml).
+The final step is to add initialization code to your application. You may have already done this as part of adding Auth Service to your app. If you're using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
 
-```xml
-<application>
-        <!--   Particle Network config start     -->
-        <activity
-                android:name="com.particle.network.controller.WebActivity"
-                android:exported="true"
-                android:launchMode="singleTop"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-                >
-            <intent-filter>
-                <data android:scheme="pn${pn_app_id}" />
-        
-                <action android:name="android.intent.action.VIEW" />
-        
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-            </intent-filter>
-        </activity>
-        
-        <meta-data
-                android:name="particle.network.project_id"
-                android:value="${pn_project_id}"
-                />
-        <meta-data
-                android:name="particle.network.project_client_key"
-                android:value="${pn_project_client_key}"
-                />
-        <meta-data
-                android:name="particle.network.app_id"
-                android:value="${pn_app_id}"
-                />
-        <!--   Particle Network config end     -->
-</application>
+1. Import the `ParticleNetwork` module in your `UIApplicationDelegate.`
+
 ```
+import ParticleNetwork     
+```
+
+2\. Initialize ParticleNetwork service, typically in your app's `application:didFinishLaunchingWithOptions:` method:
+
+{% code title="swift" %}
+```swift
+        let projectUuid: String = "your project uuid"
+        let projectClientKey: String = "your project client key"
+        let projectAppUuid: String = "your project app uuid"
+        let chainName = ChainName.solana
+        let chainEnv = ChainEnvironment.devnet
+        let devEnv = DevEnvironment.debug
+        
+        ParticleNetwork.initialize(projectUuid: projectUuid,
+                                   projectClientKey: projectClientKey,
+                                   projectAppUuid: projectAppUuid,
+                                   chainName: chainName,
+                                   chainEnv: chainEnv,
+                                   devEnv: devEnv)
+```
+{% endcode %}
 
 {% hint style="info" %}
 Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in your Dashboard**.**
