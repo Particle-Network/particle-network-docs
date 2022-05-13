@@ -6,7 +6,7 @@
 
 ## How do I integrate my own user ID system?
 
-After the user successfully logs in, **Particle Auth** SDK will return the user **UUID** and **token**. You can then retrieve and verify the user info by calling [a server API](../auth-service/sdks/server-api.md).
+After the user successfully logs in, **Particle Auth** SDK will return the user **uuid** and **token**. You can then retrieve and verify the user info by calling [a server API](../auth-service/sdks/server-api.md).
 
 ## What types of NFTs are supported?
 

@@ -10,7 +10,7 @@ All APIs have a common URI prefix: `/server/`
 
 The Server APIs require `HTTP Basic Authentication`
 
-A valid Particle Network `Project Id` and `Project Server Key` is required in the `Authorization` header of every request. Use `Project Id` as the username and `Project Server Key` as the password.
+A valid Particle Network `Project Id` and `Project Server Key` are required in the `Authorization` header of every request. Use `Project Id` as the username and `Project Server Key` as the password.
 
 ```typescript
 const axios = require('axios');
@@ -89,7 +89,7 @@ Basic Auth using Project Id and Project Server Key
 {% endswagger-response %}
 {% endswagger %}
 
-Use this api to integrate Particle Auth into your user id system :tada:
+Use this API to integrate Particle Auth into your user ID system :tada:
 
 **error\_code**
 
