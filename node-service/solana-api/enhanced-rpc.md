@@ -6,6 +6,126 @@ description: >-
 
 # Enhanced RPC
 
+### 🔥 enhancedGetPrice
+
+> get real time exchange rate of solana token
+
+**Parameters:**
+
+* `<[string]>` - token mint address array
+
+{% hint style="info" %}
+The native token has no mint address, so it's value is **`native`**
+{% endhint %}
+
+* `<[string]>` - Array of supported currencies, the value of currency is as below:
+  * `usd`
+  * `cny`
+
+**Results:**
+
+* `<object>` - a JSON object containing:
+  * `lamports: <u64>`, lamports balance of the address
+  * `nfts: <[object]>`, nft list of the address
+  * `tokens: <[object]>`, token list of the address
+
+Request Example
+
+{% tabs %}
+{% tab title="Javascript" %}
+```typescript
+const axios = require('axios');
+
+(async () => {
+    const response = await axios.post('https://api.particle.network/solana/rpc', {
+        chainId: 103,
+        jsonrpc: '2.0',
+        id: 0,
+        method: 'enhancedGetPrice',
+        params: [
+            [
+                'native', 
+                '2Dzzc14S1D7cEFGJyMZMACuoQRHVUYFhVE74C5o8Fwau',
+            ],
+            [['usd', 'cny']],
+        ],
+    }, {
+        auth: {
+            username: 'Your Project Id',
+            password: 'Your Project Server Key',
+        }
+    });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+
+{% tab title="Curl" %}
+```powershell
+curl 'https://api.particle.network/solana/rpc' \
+--header 'Authorization: Basic YmEwNTA5ZTctZThiYi00MzY2LTg5YjctYjM5ZjAyYmNkMDg0OmNnZjE4YXNMbG9zSkJzZlZXbWxvNHNuZ2lFRVZzc1gzNHFlTUxmZzQ=' \
+-X POST -H "Content-Type: application/json" -d '
+    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetPrice","params":[["native","2Dzzc14S1D7cEFGJyMZMACuoQRHVUYFhVE74C5o8Fwau"],[["usd","cny"]]]}
+'
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "chainId": 103,
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": [
+        {
+            "address": "native",
+            "currencies": [
+                {
+                    "type": "usd",
+                    "price": 52.09,
+                    "marketCap": 17527528410.265934,
+                    "24hChange": 17.807880245620492,
+                    "24hVol": 2822619824.236063,
+                    "lastUpdatedAt": 1652433876
+                },
+                {
+                    "type": "cny",
+                    "price": 353.66,
+                    "marketCap": 118957582567.63393,
+                    "24hChange": 17.750642277273172,
+                    "24hVol": 19162201462.773823,
+                    "lastUpdatedAt": 1652433876
+                }
+            ]
+        },
+        {
+            "address": "2Dzzc14S1D7cEFGJyMZMACuoQRHVUYFhVE74C5o8Fwau",
+            "currencies": [
+                {
+                    "type": "usd",
+                    "price": 0.00000559,
+                    "marketCap": 0,
+                    "24hChange": 5.572351955926479,
+                    "24hVol": 1.0696550251883796,
+                    "lastUpdatedAt": 1652415761
+                },
+                {
+                    "type": "cny",
+                    "price": 0.00003795,
+                    "marketCap": 0,
+                    "24hChange": 5.659460423725415,
+                    "24hVol": 7.265738724094583,
+                    "lastUpdatedAt": 1652415761
+                }
+            ]
+        }
+    ]
+}
+```
+
 ### 🔥 enhancedGetTokensAndNfts
 
 > Get Token list and NFT list by giving an address
@@ -52,7 +172,7 @@ const axios = require('axios');
 curl 'https://api.particle.network/solana/rpc' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
-  {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetTokensAndNfts","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}
+    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetTokensAndNfts","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}
 '
 ```
 {% endtab %}
@@ -124,7 +244,7 @@ Response Example
 **Results:**
 
 * `<[object]>` - a JSON object array containing:
-  * `type: <string>`, parsed type for a single transaction, the type value is below
+  * `type: <string>`, parsed type for a single transaction, the type value is as below
     * `unknown`, can not parse this transaction in server
     * `transfer-token`, the transaction contains transfer token action
   * `lamportsChange: <int64>`, the account by given address lamports change in this transaction
@@ -165,7 +285,7 @@ const axios = require('axios');
 curl 'https://api.particle.network/solana/rpc' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
-  {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhanceGetTransactionsByAddress","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}
+    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhanceGetTransactionsByAddress","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}
 '
 ```
 {% endtab %}
