@@ -17,7 +17,6 @@
   * [Server API](auth-service/sdks/server-api.md)
   * [Android](auth-service/sdks/android.md)
   * [iOS](auth-service/sdks/ios.md)
-  * [Unity](auth-service/sdks/unity.md)
 
 ## WALLET SERVICE
 
@@ -25,7 +24,6 @@
 * [SDKs](wallet-service/sdks/README.md)
   * [Android](wallet-service/sdks/android.md)
   * [iOS](wallet-service/sdks/ios.md)
-  * [Unity](wallet-service/sdks/unity.md)
 
 ## NODE SERVICE
 
