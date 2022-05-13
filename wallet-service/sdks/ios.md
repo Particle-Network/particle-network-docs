@@ -4,11 +4,13 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-Make sure that your project meets the following requirements:
 
-* Targets API Level 23 (Marshmallow) or higher
-* Uses Android 6.0 or higher
-* Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
+
+* Install the following:
+  * Xcode 13.3.1 or later
+* Make sure that your project meets the following requirements:
+  * Your project must target these platform versions or later:
+    * iOS 12
 
 ### Create a Particle Project and App
 
