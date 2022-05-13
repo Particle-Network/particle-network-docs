@@ -1,22 +1,22 @@
 # Android
 
-## Add Wallet Service to your Android project
+## Add Wallet Service to Your Android Project
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-Make sure that your project meets these requirements:
+Make sure that your project meets the following requirements:
 
-* Targets API level 23 (Marshmallow) or higher
+* Targets API Level 23 (Marshmallow) or higher
 * Uses Android 6.0 or higher
 * Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
 
-### Create Particle project and app
+### Create a Particle Project and App
 
-Before you can add Wallet Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and app.
+Before you can add Wallet Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#login)
 
-### Add Wallet Service SDK to your app <a href="#add-sdks" id="add-sdks"></a>
+### Add the Wallet Service SDK to your app <a href="#add-sdks" id="add-sdks"></a>
 
 Declare them in your module (app-level) Gradle file (usually app/build.gradle).
 
@@ -58,7 +58,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-The Wallet Service can only be used after successfully logging in with the Auth Service.
+The Wallet Service can only be used after a successful log-in with Auth Service.
 
 {% hint style="info" %}
 Wallet Service depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).&#x20;
@@ -86,7 +86,7 @@ PNRouter.build(RouterPath.Wallet).navigation();
 {% endtab %}
 {% endtabs %}
 
-`navigation()`can add param `callback` to listen result.
+`navigation()`can add parameters, `callback` to listen to results.
 
 ### Open Send Token
 
@@ -114,11 +114,11 @@ PNRouter.build(RouterPath.TokenSend).navigation();
 {% endtab %}
 {% endtabs %}
 
-`WalletSendParam` has three params:
+`WalletSendParam` has three parameters:
 
-1. `tokenAddress`: token mint address.
-2. `toAddress`: (optional) receiver address.
-3. `toAmount`: (optional) send token amount, token minimum unit.
+1. `tokenAddress`: token mint address
+2. `toAddress`: receiver address (optional)
+3. `toAmount`: send token amount, token minimum unit (optional)&#x20;
 
 ### Open Receive Token
 
