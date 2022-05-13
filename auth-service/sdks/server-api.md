@@ -8,7 +8,7 @@ All APIs have a common URI prefix: `/server/`
 
 ## Authentication
 
-The Server APIs require `HTTP Basic Authentication`
+The server APIs require `HTTP Basic Authentication`
 
 A valid Particle Network `Project Id` and `Project Server Key` are required in the `Authorization` header of every request. Use `Project Id` as the username and `Project Server Key` as the password.
 

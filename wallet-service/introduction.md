@@ -1,12 +1,12 @@
 ---
-description: One-stop wallet solution
+description: Your one-stop wallet solution
 ---
 
 # Introduction
 
 ## What is Particle Wallet？
 
-**The Particle Wallet** **is not an independent wallet, it is a wallet infrastructure plugged into apps or wallets.**
+**The Particle Wallet** **is not an independent wallet—it is a wallet infrastructure plugged into apps or wallets.**
 
 With Particle Wallet, you can integrate a wallet tailored to your app's needs, with features including transaction functions, NFT displays, and more.
 
@@ -22,7 +22,7 @@ Using Particle Wallet, you have the flexibility to choose between building an ap
 
 ## What Are Particle **Wallet**'s features?
 
-* **Rapid development**: we provide a complete wallet SDK with functions including transaction abilities, NFT displays and trading, signature, etc. This reduces development time for you and ensures security.
+* **Rapid development**: we provide a complete wallet SDK with functions including transaction abilities, NFT displays and trading, signatures, etc. This reduces development time for you and ensures security for users.
 * **A complete UI interface**: Particle Wallet provides a variety of highly adaptable UI interfaces for different app styles and scenarios.
 * **Supports the use of independent functions**: to ensure the continuity of user experience, we support the utilization of a single function in a specific scenario. For example: to transfer funds, the user can call on a "transfer" page rather than having to enter the wallet.
 

@@ -1,5 +1,5 @@
 ---
-description: Secure, Easy-to-Use, and Trusted Web3 Product Solutions
+description: Secure, easy-to-use, and trusted Web3 product solutions
 cover: .gitbook/assets/飞书20220513-184433.png
 coverY: 0
 ---
@@ -63,9 +63,9 @@ Particle Network has two parties jointly computing the public key, each holding 
 
 TSS is using cryptography off-chain, while multisig occurs on-chain. **** The main point of difference is that multisig is blockchain-specific and needs to be reimplemented for every blockchain, and in some cases, is not supported at all. Conversely, TSS relies on pure cryptography, so support is always possible.
 
-**TSS vs. Shamir secret sharing scheme**
+**TSS vs. Shamir Secret Sharing Scheme**
 
-The Shamir secret sharing scheme (SSSS) provides a way to store the private key in a distributed manner such that while the private key is at rest, it is stored in multiple locations. There are two differences between SSSS and TSS:
+The Shamir Secret Sharing Scheme (SSSS) provides a way to store the private key in a distributed manner such that while the private key is at rest, it is stored in multiple locations. There are two differences between SSSS and TSS:
 
 * Key Generation: in SSSS, there is a single party called “the dealer” that is in charge of generating the private key secret shares. It means that at the time of Key Generation, the private key is generated at a single location and then distributed by the dealer to different locations. In TSS, there is no dealer, as its role is distributed such that the full private key is never at a single location.
 * Signing: in SSSS, the parties must reconstruct the full private key in order to sign, which results in a single point of failure each time a signature is needed. In TSS, the signing is done in a distributed way without ever reconstructing the secret shares.
@@ -74,17 +74,13 @@ As we can see, in TSS, the private key (which represents the security of the sys
 
 ## Our Infrastructure Security Architecture
 
-At Particle Network, we adopt the industry-best standard to implement our infrastructure. From public/private network segregation to intrusion detection monitoring, we ensure we spend time to construct and bootstrap the foundation of our infrastructure so that it is secure for our engineers to build on. We have:
+At Particle Network, we adopt the industry-best standard to implement our infrastructure. From public/private network segregation to intrusion detection monitoring, we ensure we spend time constructing and bootstrapping the foundation of our infrastructure so that it is secure for our engineers to build on. As a result, we have:
 
-**An End-to-end Encryption with TLS**
+* **An End-to-end Encryption with TLS**
+* **A Trustee Particle Network TSS Party-2 Server**
+* **A Hardware Security Module**
 
-**A Trustee Particle Network TSS Party-2 Server**
-
-**A Hardware Security Module**
-
-****
-
-:tada:****[**Now, start building your great dApp confidently on Particle Network!** ](auth-service/introduction.md):tada:****
+:tada:****[**Now, start building your dApp confidently on Particle Network!** ](auth-service/introduction.md):tada:****
 
 ## Further Reading
 

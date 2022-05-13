@@ -69,4 +69,4 @@ Response Example：
 }
 ```
 
-[👉 ](https://particle.network/#login) [More API](https://docs.solana.com/developing/clients/jsonrpc-api)
+[👉 ](https://particle.network/#login) [More APIs](https://docs.solana.com/developing/clients/jsonrpc-api)

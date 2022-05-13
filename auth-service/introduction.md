@@ -1,12 +1,14 @@
 ---
-description: Provides MPC (Multi-Party Computation)-based threshold signatures.
+description: >-
+  Particle Network also provides MPC (Multi-Party Computation)-based threshold
+  signatures.
 ---
 
 # Introduction
 
 ## What is Particle Auth？
 
-Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applications. Particle Auth supports mobile number and email login, providing users with a simple operating experience. Their login account is then associated with a blockchain wallet, which is secured with a "Threshold Signatures vault".
+Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applications. We support mobile number and email login, providing users with a simple operating experience. Their login account is then associated with a blockchain wallet, which is secured with a "Threshold Signatures vault".
 
 ![](../.gitbook/assets/飞书20220513-175911.gif)
 
@@ -15,7 +17,7 @@ Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applicat
 By integrating Particle Auth into your project, your users can experience the following services:
 
 * **Email/Mobile number logins and passwordless flows**: **** users can register with a mobile phone number or email address, then log in using a verification code. This shortens the login process while maintaining a secure login. In the future, mainstream social media logins will also be made available.
-* **Provide MPC (Multi-Party Computation) based Threshold Signatures:** With Threshold Signatures, each of the parties creates a key independently. Then they forge the vault’s lock together, in a modular way, in which each party shapes a part of the lock that corresponds to its key.
+* **Provide MPC (Multi-Party Computation)-based threshold signatures:** With threshold signatures, each of the parties creates a key independently. Then, they forge the vault’s lock together, in a modular way, in which each party shapes a part of the lock that corresponds to its key.
 
 ![](../.gitbook/assets/952qs-wk47v.gif)
 
@@ -26,7 +28,7 @@ By integrating Particle Auth into your project, your users can experience the fo
 * **Whitelabel:** customize Particle Auth's UI so that it blends directly into your application.
 * **Signature**: a full signature service.
 
-![Approve & Signature](../.gitbook/assets/sign.jpg)
+![Approve & Sign](../.gitbook/assets/sign.jpg)
 
 ## How Do I Integrate Particle Auth? <a href="#how-can-i-use-web3auth" id="how-can-i-use-web3auth"></a>
 

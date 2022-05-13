@@ -37,7 +37,7 @@
 ## Resources
 
 * [FAQ](resouces/faq.md)
-* [Demo Applications](resouces/demo-applications.md)
+* [Demo Applications](resources/demo-applications/README.md)
   * [Android](resources/demo-applications/android.md)
   * [iOS](resources/demo-applications/ios.md)
 * [Discord Community](https://discord.gg/qwysge6cgF)

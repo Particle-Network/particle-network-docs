@@ -10,7 +10,7 @@ Here, we'll provide you with a step-by-step guide on the Particle Dashboard.
 
 ## Getting Started
 
-Log in to the dashboard with your **email**. After you enter the verification code, you'll have access to the homepage.&#x20;
+Log in to the dashboard with your **email**. After you enter the **verification code**, you'll have access to the homepage.&#x20;
 
 ![](<../.gitbook/assets/denglu .jpg>)
 

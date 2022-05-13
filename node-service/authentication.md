@@ -1,5 +1,5 @@
 ---
-description: Authenticate yourself to the Particle Node Service API.
+description: Authenticate yourself to the Particle Node Service API
 ---
 
 # Authentication
@@ -22,7 +22,7 @@ https://api.particle.network/solana/rpc
 We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Dashboard](https://particle.network/#/login), where you can create projects and apps.
 {% endhint %}
 
-The Web3 APIs require **HTTP Basic Authentication**
+The Web3 APIs require **HTTP Basic Authentication**:
 
 | Basic Auth Key | Basic Auth Value        |   |
 | -------------- | ----------------------- | - |

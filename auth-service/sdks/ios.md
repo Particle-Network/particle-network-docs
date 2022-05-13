@@ -148,7 +148,7 @@ public class App extends Application {
 {% endtab %}
 {% endtabs %}
 
-You can dynamically switch the chain ID by calling the `ParticleNetwork.setChainId()`method. `, env` needs to be modified to be Env.`PRODUCTION` for release.
+You can dynamically switch the chain ID by calling the `ParticleNetwork.setChainId()`method. `, env` needs to be modified to be `Env.PRODUCTION` for release.
 
 ### Login
 
@@ -228,7 +228,7 @@ ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
 
 ### Signatures
 
-Use Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
+Use the Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
 
 1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature.
 2. `signTransaction`: sign transaction, return signed message.

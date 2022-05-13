@@ -2,7 +2,7 @@
 
 The Solana API allows applications to connect to a Solana node that is part of the Solana blockchain. Developers can interact with on-chain data and send different types of transactions to the network by utilizing the endpoints provided by the API.&#x20;
 
-The Solana API follows a JSON-RPC 2.0 standard. We extend a field named **chainId** to specify which Solana network we use.&#x20;
+The Solana API follows a JSON-RPC 2.0 standard. We extended a field named **chainId** to specify which Solana network we use.&#x20;
 
 | chainId Value (int) | Solana Network |   |
 | ------------------- | -------------- | - |

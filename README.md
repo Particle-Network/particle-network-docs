@@ -1,12 +1,12 @@
 ---
-description: A mobile app data and development platform for Web3.0
+description: A mobile app data and development platform for Web3
 cover: .gitbook/assets/cover1 (1).png
 coverY: 0
 ---
 
 # Introduction
 
-**Particle Network** is a **** mobile-first, data-driven and composable Web3.0 data and development platform. Our vision is to accelerate the world's transition to the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
+**Particle Network** is a **** mobile-first, data-driven, and composable Web3 data and development platform. Our vision is to accelerate the world's transition into the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
 
 ## Products
 
@@ -16,7 +16,9 @@ coverY: 0
 
 With threshold signatures, each party creates an independent key. They then forge the vault’s lock together in a modular way, in which each party shapes a part of the lock that corresponds to its key.
 
-Our security is unlike any other auth/wallet service: it's better. Complex passwords and long seed phrases, browser extensions, and special hardware are no longer required for log-in. Instead, accounts are secured by industry-leading TSS implementation and KMS encryption. [👉 Learn more about how we implement this 🔐](security.md)
+Our security is unlike any other auth/wallet service: it's better. Complex passwords and long seed phrases, browser extensions, and special hardware are no longer required for log-in. Instead, accounts are secured by industry-leading TSS implementation and KMS encryption.
+
+&#x20;[👉 Learn more about how we implement this 🔐](security.md)
 
 With Particle Auth integrated into your dApp, users can log in within seconds. By removing seed phrases, we can increase conversion rates by up to 64% for both new and Web3.0 users.
 
@@ -34,7 +36,7 @@ We've included detailed designs in our wallet service to create the ultimate use
 
 **Particle Node** provides a robust, secure, and highly available blockchain API.
 
-Not only do we have JSON-RPC support, but also enhanced API. This allows you to receive transaction information and NFTs through addresses, obtain token prices, smartly encode/decode transactions and more. Compared to other node services, you develop your dApp faster while also ensuring that it performs better.
+Not only do we have JSON-RPC support, but also enhanced API. This allows you to receive transaction information and NFTs through addresses, obtain token prices, smartly encode/decode transactions, and more. Compared to other node services, you develop your dApp faster while also ensuring that it performs better.
 
 [👉 Learn more about Particle Node](node-service/introduction.md)
 
@@ -42,7 +44,7 @@ Not only do we have JSON-RPC support, but also enhanced API. This allows you to 
 
 **NFT Service**: the one-stop NFT marketplace solution
 
-**Analytic Service**: Web3.0 BI system, deriving insights from real-time on- and off-chain data
+**Analytic Service**: Web3 BI system, deriving insights from real-time on- and off-chain data
 
 👉 [Join our Discord community and tell us what you need🛠. Let's **BUIDL** together!](https://discord.gg/qwysge6cgF)
 
