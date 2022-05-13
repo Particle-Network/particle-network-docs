@@ -24,5 +24,3 @@ Currently, editable items include:
 
 * Project name
 * Delete project (once the project has been deleted, it cannot be retrieved—please proceed with caution)
-
-###

@@ -1,5 +1,5 @@
 ---
-description: Authenticate yourself to the Particle Node Service API.
+description: The authentication process for the Particle Node Service API.
 ---
 
 # Authentication
@@ -10,9 +10,9 @@ description: Authenticate yourself to the Particle Node Service API.
 https://api.particle.network
 {% endhint %}
 
-All Web3 APIs have a common URI prefix: `/{chainName}/rpc`
+All Web3.0 APIs have a common **URI prefix**: `/{chainName}/rpc`
 
-For example, the solana rpc url is
+For example, the Solana RPC URL is:
 
 {% hint style="success" %}
 https://api.particle.network/solana/rpc
@@ -20,19 +20,19 @@ https://api.particle.network/solana/rpc
 
 ## Authentication
 
-The Server APIs require **HTTP Basic Authentication**
+Server APIs require **HTTP Basic Authentication**.
 
-Before you access the apis, You need to get a account from&#x20;
+Before you access the API, you need an account from
 
 {% hint style="info" %}
-**Username：sss**
+**Username: sss**
 
-**Password：bbb**
+**Password: bbb**
 
 **If you do not ha**
 {% endhint %}
 
-A valid Particle Network `Project Id` and `Project Server Key` is required in the `Authorization` header of every request. Use `Project Id` as the username and `Project Server Key` as the password.
+A valid Particle Network `Project Id` and `Project Server Key` are required in the `Authorization` header of every request. Use `Project Id` as your username and `Project Server Key` as your password.
 
 ```typescript
 const axios = require('axios');
