@@ -4,8 +4,6 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-
-
 Install the following:
 
 * Xcode 13.3.1 or later
@@ -23,7 +21,7 @@ Install the following:
 2. Auth login with phone.
 3. Logout.
 4. Open wallet.
-5. Change chain id.
+5. Change chain env.
 
 {% hint style="info" %}
 You should modify project and app config before build.
