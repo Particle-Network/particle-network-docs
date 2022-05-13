@@ -38,7 +38,7 @@ const axios = require('axios');
     }, {
         auth: {
             username: 'Your Project Id',
-            password: 'Your Project Client Key Or Serve',
+            password: 'Your Project Serve Key',
         }
     });
 
@@ -108,3 +108,5 @@ Response Example
     }
 }
 ```
+
+### 🔥 enhanceGetTransactionsByAddress

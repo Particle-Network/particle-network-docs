@@ -4,7 +4,7 @@ description: All of The Solana Official JSON-RPC API methods that are supported.
 
 # Standard RPC
 
-### getBalance
+### Example：getBalance
 
 > Returns the balance of the account of provided Pubkey
 
