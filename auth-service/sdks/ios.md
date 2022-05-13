@@ -36,8 +36,6 @@ pod 'ParticleNetwork'
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
-
-
 ```
 pod install --repo-update
 ```
@@ -81,77 +79,33 @@ import ParticleNetwork
 {% endcode %}
 
 {% hint style="info" %}
-Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in your Dashboard**.**
+Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:orange;">**your project app uuid**</mark> with the new values created in your Dashboard**.**
+
+You can dynamically switch the chainEnv by calling the `ParticleNetwork.setChainEnv()` method. ``&#x20;
+
+devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% endhint %}
 
 ## API Reference
 
-### Initialize the SDK
 
-Initialize the SDK by calling the `ParticleNetwork.init()`method, passing the method a context. Do this as soon as your app starts, like in the `onCreate()`method of your `Application`.
-
-{% tabs %}
-{% tab title="Kotlin" %}
-```kotlin
-import com.particle.network.ChainId
-import com.particle.network.ChainName
-import com.particle.network.Env
-import com.particle.network.ParticleNetwork
-
-class App : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        //init Particle SDK
-        ParticleNetwork.init(this, 
-            env = Env.DEV, 
-            chainName = ChainName.Solana, 
-            chainId = ChainId.SolanaDevnet,
-            )
-    }
-}
-
-```
-{% endtab %}
-
-{% tab title="Java" %}
-```java
-import com.particle.network.ChainId;
-import com.particle.network.ChainName;
-import com.particle.network.Env;
-import com.particle.network.ParticleNetwork;
-
-public class App extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        //init Particle SDK
-        ParticleNetwork.init(this, Env.DEV, ChainName.Solana, 
-                ChainId.SolanaDevnet);
-    }
-}
-```
-{% endtab %}
-{% endtabs %}
-
-You can dynamically switch the chain ID by calling the `ParticleNetwork.setChainId()`method. `, env` needs to be modified to be `Env.PRODUCTION` for release.
 
 ### Login
 
-To auth login with Particle, call `ParticleNetwork.login(...)`with `activity` and `callback`. You can log in with your email or phone number by changing the `loginType` parameter. Your wallet is created when you log in successfully for the first time.
+To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. You can log in with your email or phone number by changing the `LoginType` parameter. Your wallet is created when you log in successfully for the first time.
 
 {% tabs %}
-{% tab title="Kotlin" %}
+{% tab title="Swift" %}
 ```kotlin
-ParticleNetwork.login(activity, LoginType.EMAIL, object : WebServiceCallback<LoginOutput> {
-    override fun success(output: LoginOutput) {
-        //login success, return user info in output
+ParticleNetwork.login(type: .email).subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let userinfo):
+        // login success, handle userinfo
     }
-
-    override fun failure(errMsg: WebServiceError) {
-        //handle error
-    }
-})
+}.disposed(by: bag)
 ```
 {% endtab %}
 
@@ -181,21 +135,21 @@ After log-in success, you can obtain user info by calling `ParticleNetwork.getUs
 The SDK will delete users' account information in cache.
 
 {% tabs %}
-{% tab title="Kotlin" %}
+{% tab title="Swift" %}
 ```kotlin
-ParticleNetwork.logout(activity, object : WebServiceCallback<WebOutput> {
-    override fun success(output: WebOutput) {
-        //logout success
+ParticleNetwork.logout().subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let success):
+        // logout success
     }
-
-    override fun failure(errMsg: WebServiceError) {
-        //handle error
-    }
-})
+}.disposed(by: bag)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Objective-C" %}
 ```java
 ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
     @Override
