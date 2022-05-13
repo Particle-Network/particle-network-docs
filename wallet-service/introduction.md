@@ -1,5 +1,5 @@
 ---
-description: Welcome to Particle Wallet!
+description: One-stop wallet solution
 ---
 
 # Introduction
@@ -38,4 +38,3 @@ Particle Wallet comes with simple SDKs that can be integrated in multiple ways t
 * 👉 [ iOS](sdks/ios.md)
 * 👉  Unity: coming soon
 * 👉  Web: coming soon
-

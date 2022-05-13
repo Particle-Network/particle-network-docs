@@ -1,10 +1,10 @@
 ---
-description: Welcome to Particle Auth!
+description: Provides MPC (Multi-Party Computation)-based threshold signatures.
 ---
 
 # Introduction
 
-## What is Particle Auth？
+## PWhat is Particle Auth？
 
 Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applications. Particle Auth supports mobile number and email login, providing users with a simple operating experience. Their login account is then associated with a private key, which is secured with a "Threshold Signatures vault".
 
@@ -20,7 +20,7 @@ By integrating Particle Auth into your project, your users can experience the fo
 ## What Are Particle Auth's features?
 
 * **Speedy logins**: the log-in process is no different from that of a Web2.0 login, which greatly lowers the barriers to entry and improves user experience.
-* **Non-custodial public key infrastructure**: the user is always in control of ownership and access to their cryptographic key pair. Login services only ever have access to one share, and it is therefore impossible for the provider to retrieve the user's private key on their own.
+* **Non-custodial private key infrastructure**: the user is always in control of ownership and access to their cryptographic key pair. Login services only ever have access to one share, and it is therefore impossible for the provider to retrieve the user's private key on their own.
 * **Whitelabel:** customize Particle Auth's UI so that it blends directly into your application.
 * **Signature**: a full signature service.
 
@@ -37,6 +37,3 @@ Particle Auth comes with simple SDKs that can be integrated in multiple ways to 
 * 👉  [iOS](sdks/ios.md)
 * 👉  Unity: coming soon
 * 👉  Web: coming soon
-
-
-
