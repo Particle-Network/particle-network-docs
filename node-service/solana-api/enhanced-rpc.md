@@ -24,10 +24,9 @@ The native token has no mint address, so it's value is **`native`**
 
 **Results:**
 
-* `<object>` - a JSON object containing:
-  * `lamports: <u64>`, lamports balance of the address
-  * `nfts: <[object]>`, nft list of the address
-  * `tokens: <[object]>`, token list of the address
+* `<[object]>` - a JSON object array containing:
+  * `address: <string>`, token mint address
+  * `currencies: <[object]>`, currency info object
 
 Request Example
 
