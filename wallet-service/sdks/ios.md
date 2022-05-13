@@ -4,8 +4,6 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-
-
 * Install the following:
   * Xcode 13.3.1 or later
 * Make sure that your project meets the following requirements:
@@ -14,51 +12,39 @@
 
 ### Create a Particle Project and App
 
-Before you can add Wallet Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
+Before you can add Wallet Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#login)
 
 ### Add the Wallet Service SDK to your app <a href="#add-sdks" id="add-sdks"></a>
 
-Declare them in your module (app-level) Gradle file (usually app/build.gradle).
 
-{% tabs %}
-{% tab title="Kotlin" %}
-```kts
-repositories {
-    google()
-    mavenCentral()
-    //...
-}
 
-dependencies {
-    // Particle Auth Service
-    implementation("particle.network:auth-service${latest_version}")
-    // Particle Wallet Service
-    implementation("particle.network:wallet-service${latest_version}")
-    //...
-}
+Wallet Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) .
+
+Wallet Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0 or higher.Here's how to install Wallet Service using CocoaPods:
+
+1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
+
 ```
-{% endtab %}
-
-{% tab title="Groovy" %}
-```groovy
-repositories {
-    google()
-    mavenCentral()
-    //...
-}
-
-dependencies {
-    // Particle Auth Service
-    implementation 'particle.network:auth-service${latest_version}'
-    // Particle Wallet Service
-    implementation 'particle.network:wallet-service${latest_version}'
-    //...
-}
+pod init
 ```
-{% endtab %}
-{% endtabs %}
+
+2\. To your Podfile, add the Auth Service pods that you want to use in your app.
+
+```
+pod 'ParticleNetworkGUI'
+```
+
+3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
+
+```
+pod install --repo-update
+```
+
+```
+open your-project.xcworkspace
+```
 
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
@@ -75,32 +61,32 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 ### Open Wallet
 
 {% tabs %}
-{% tab title="Kotlin" %}
+{% tab title="Swift" %}
 ```kotlin
-PNRouter.build(RouterPath.Wallet).navigation()
+PNRouter.navigator(routhPath: .wallet)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Objective-C" %}
 ```java
 PNRouter.build(RouterPath.Wallet).navigation();
 ```
 {% endtab %}
 {% endtabs %}
 
-`navigation()` adds parameters, `callback` listens to results.
+
 
 ### Open Send Token
 
 {% tabs %}
-{% tab title="Kotiln" %}
+{% tab title="Swift" %}
 ```kotlin
 //open send spl token
-val params = WalletSendParams(tokenAddress, toAddress?, toAmount?)
-PNRouter.build(RouterPath.TokenSend, params).navigation()
+let tokenSendConfig = TokenSendConfig(tokenAddress: nil, toAddress: nil, amount: nil)
+PNRouter.navigatorTokenSend(tokenSendConfig: tokenSendConfig)
 
 //open send default token by chain name
-PNRouter.build(RouterPath.TokenSend).navigation()
+PNRouter.navigator(routhPath: .tokenSend)
 ```
 {% endtab %}
 
