@@ -72,7 +72,7 @@ As we can see, in TSS the private key (which represents the security of the syst
 
 ## Our Infrastructure Security Architecture
 
-At Particle Network, we adopt the industry-best standard to implement our infrastructure. From public/private network segregation to intrusion detection monitoring, we made sure we spent time to carefully architect and bootstrap the foundation of our infrastructure that is secure for our engineers to build on.
+At Particle Network, we adopt the industry-best standard to implement our infrastructure. From public/private network segregation to intrusion detection monitoring, we made sure we spent time to carefully architect and bootstrap the foundation of our infrastructure that is secure for our engineers to build on. We have:
 
 **End-to-end Encryption with TLS**
 
