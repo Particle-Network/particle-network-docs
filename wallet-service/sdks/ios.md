@@ -90,7 +90,7 @@ PNRouter.navigator(routhPath: .tokenSend)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Objective-C" %}
 ```java
 //open send spl token
 WalletSendParams params = new WalletSendParams(tokenAddress, toAddress, toAmount);
@@ -102,24 +102,24 @@ PNRouter.build(RouterPath.TokenSend).navigation();
 {% endtab %}
 {% endtabs %}
 
-`WalletSendParam` has three parameters:
+`TokenSendConfig` has three parameters:
 
-1. `tokenAddress`: token mint address
+1. `tokenAddress`: token mint address(optional)
 2. `toAddress`: receiver address (optional)
-3. `toAmount`: send token amount, token minimum unit (optional)&#x20;
+3. `amount`: send token amount, token minimum unit (optional)&#x20;
 
 ### Open Receive Token
 
 Display your address QRCode.
 
 {% tabs %}
-{% tab title="Kotlin" %}
+{% tab title="Swift" %}
 ```kotlin
-PNRouter.build(RouterPath.TokenReceive).navigation()
+PNRouter.navigator(routhPath: .tokenReceive)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Objective-C" %}
 ```java
 PNRouter.build(RouterPath.TokenReceive).navigation();
 ```
@@ -129,18 +129,18 @@ PNRouter.build(RouterPath.TokenReceive).navigation();
 ### Open Transaction Records
 
 {% tabs %}
-{% tab title="Kotlin" %}
+{% tab title="Swift" %}
 ```kotlin
 //open spl token transaction records
-val params = TokenTransactionRecordsParams(tokenAddress)
-PNRouter.build(RouterPath.TokenTransactionRecords, params).navigation()
+let tokenTransactionRecordsConfig = TokenTransactionRecordsConfig(tokenAddress: tokenAddress)
+PNRouter.navigatorTokenTransactionRecords(tokenTransactionRecordsConfig: tokenTransactionRecordsConfig)
 
 //open default token transaction records by chain name
-PNRouter.build(RouterPath.TokenTransactionRecords).navigation()
+PNRouter.navigator(routhPath: .tokenTransactionRecords)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Objective-C" %}
 ```java
 //open spl token transaction records
 TokenTransactionRecordsParams params = new TokenTransactionRecordsParams(tokenAddress);
