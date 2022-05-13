@@ -34,7 +34,7 @@ const axios = require('axios');
     }, {
         auth: {
             username: 'Your Project Id',
-            password: 'Your Project Server Key',
+            password: 'Your Project Client Key Or Serve',
         }
     });
 
@@ -48,7 +48,7 @@ const axios = require('axios');
 curl 'https://api.particle.network/solana/rpc' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
-    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"getBalance","params":["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]}
+  {"chainId":103,"jsonrpc":"2.0","id":0,"method":"getBalance","params":["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]}
 '
 ```
 {% endtab %}
