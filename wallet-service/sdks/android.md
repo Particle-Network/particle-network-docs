@@ -26,6 +26,7 @@ Declare them in your module (app-level) Gradle file (usually app/build.gradle).
 repositories {
     google()
     mavenCentral()
+    maven { setUrl("https://jitpack.io") }
     //...
 }
 
@@ -44,6 +45,7 @@ dependencies {
 repositories {
     google()
     mavenCentral()
+    maven { url "https://jitpack.io" }
     //...
 }
 
