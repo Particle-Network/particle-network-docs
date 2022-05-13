@@ -175,94 +175,81 @@ Use the Particle SDK to sign a transaction or message. The SDK provides three me
 3. `signMessage`: sign message, return signed message.
 
 {% tabs %}
-{% tab title="Kotlin" %}
+{% tab title="Swift" %}
 ```kotlin
 //transaction: base58 string
-ParticleNetwork.signAndSendTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
-    override fun success(output: SignOutput) {
-        //sign and send transaction success
-    }
-
-    override fun failure(errMsg: WebServiceError) {
+ParticleNetwork.signAndSendTransaction(transaction).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
         // handle error
+    case .success(let signature):
+        // handle signature 
     }
-})
-
-
+}.disposed(by: bag)
+        
 //transaction: base58 string
-ParticleNetwork.signTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
-    override fun success(output: SignOutput) {
-        //sign transaction success
-    }
-
-    override fun failure(errMsg: WebServiceError) {
+ParticleNetwork.signtransaction(transaction).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
         // handle error
+    case .success(let signedMessage):
+        // handle signed message
     }
-})
-
+}.disposed(by: bag)
 
 //sign any string
-ParticleNetwork.signMessage(activity, message, object : WebServiceCallback<SignOutput>{
-    override fun success(output: SignOutput) {
-        //sign success
-    }
-
-    override fun failure(errMsg: WebServiceError) {
+ParticleNetwork.signMessage(message).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
         // handle error
+    case .success(let signedMessage):
+        // handle signed message
     }
-})
+}.disposed(by: bag)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Objective-C" %}
 ```java
 //transaction: base58 string
-ParticleNetwork.signAndSendTransaction(activity, transaction, new WebServiceCallback<SignOutput>() {
-    
-    @Override
-    public void success(@NonNull SignOutput output) {
-        //sign and send transaction success
+ParticleNetwork.signAndSendTransaction(transaction).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let signature):
+        // handle signature 
     }
-    
-    @Override
-    public void failure(@NonNull WebServiceError errMsg) {
-        //handle error
-    }
-});
-
-
+}.disposed(by: bag)
+        
 //transaction: base58 string
-ParticleNetwork.signTransaction(activity, transaction, new WebServiceCallback<SignOutput>() {
-    
-    @Override
-    public void success(@NonNull SignOutput output) {
-        //sign transaction success
+ParticleNetwork.signtransaction(transaction).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let signedMessage):
+        // handle signed message
     }
-    
-    @Override
-    public void failure(@NonNull WebServiceError errMsg) {
-        //handle error
-    }
-});
-
+}.disposed(by: bag)
 
 //sign any string
-ParticleNetwork.signMessage(activity, message, new WebServiceCallback<SignOutput>() {
-    
-    @Override
-    public void success(@NonNull SignOutput output) {
-        //sign success
+ParticleNetwork.signMessage(message).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let signedMessage):
+        // handle signed message
     }
-    
-    @Override
-    public void failure(@NonNull WebServiceError errMsg) {
-        //handle error
-    }
-});
+}.disposed(by: bag)
 ```
 {% endtab %}
 {% endtabs %}
 
 ### Error
 
-`WebServiceError` contains error details. You can check the information by printing the  `message` attribute.
+`ParticleNetwork.Error` contains error details, error will be logged in `debug` `DevEnvironment`
