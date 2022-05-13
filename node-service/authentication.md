@@ -1,20 +1,16 @@
 ---
-description: The authentication process for the Particle Node Service API.
+description: Authenticate yourself to the Particle Node Service API.
 ---
 
 # Authentication
 
 ## Endpoint
 
-{% hint style="success" %}
-https://api.particle.network
-{% endhint %}
+**https://api.particle.network**
 
-All Web3.0 APIs have a common **URI prefix**: `/{chainName}/rpc`
-
+{% hint style="info" %}
 For example, the Solana RPC URL is:
 
-{% hint style="success" %}
 https://api.particle.network/solana/rpc
 {% endhint %}
 
@@ -22,7 +18,18 @@ https://api.particle.network/solana/rpc
 
 Server APIs require **HTTP Basic Authentication**.
 
-Before you access the API, you need an account from
+{% hint style="info" %}
+We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Console](https://particle.network/#/login).
+{% endhint %}
+
+The Node APIs require **HTTP Basic Authentication**
+
+Before you access the apis, You need to get a account from&#x20;
+
+| Basic Auth Key | Basic Auth Value                      |   |
+| -------------- | ------------------------------------- | - |
+| Username       | Your Project Id                       |   |
+| Password       | Your Project Client Key Or Server Key |   |
 
 {% hint style="info" %}
 **Username: sss**
