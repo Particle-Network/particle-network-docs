@@ -8,6 +8,8 @@ description: Authenticate yourself to the Particle Node Service API.
 
 **https://api.particle.network**
 
+All Web3.0 APIs have a common **URI prefix**: `/{chainName}/rpc`
+
 {% hint style="info" %}
 For example, the Solana RPC URL is:
 
@@ -16,42 +18,34 @@ https://api.particle.network/solana/rpc
 
 ## Authentication
 
-Server APIs require **HTTP Basic Authentication**.
-
 {% hint style="info" %}
-We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Console](https://particle.network/#/login).
+We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Console](https://particle.network/#/login) where you can create projects and apps.
 {% endhint %}
 
-The Node APIs require **HTTP Basic Authentication**
-
-Before you access the apis, You need to get a account from&#x20;
+The Web3.0 APIs require **HTTP Basic Authentication**
 
 | Basic Auth Key | Basic Auth Value                      |   |
 | -------------- | ------------------------------------- | - |
 | Username       | Your Project Id                       |   |
 | Password       | Your Project Client Key Or Server Key |   |
 
-{% hint style="info" %}
-**Username: sss**
+### Code Example
 
-**Password: bbb**
-
-**If you do not ha**
-{% endhint %}
-
-A valid Particle Network `Project Id` and `Project Server Key` are required in the `Authorization` header of every request. Use `Project Id` as your username and `Project Server Key` as your password.
-
+{% tabs %}
+{% tab title="Javascript" %}
 ```typescript
 const axios = require('axios');
 
-await axios.get('/server/getUserInfo', {
-    auth: {
-        username: 'Your Project Id',
-        password: 'Your Project Server Key',
-    },
-    params: {
-        useruuid: 'Particle Auth User Uuid',
-        usertoken: 'Particle Auth User Token',
-    },
-});
+(async () => {
+    const response = await axios.get('https://api.particle.network', {
+        auth: {
+            username: 'Your Project Id',
+            password: 'Your Project Client Key Or Serve',
+        },
+    });
+
+    console.log(response.data);
+})();
 ```
+{% endtab %}
+{% endtabs %}
