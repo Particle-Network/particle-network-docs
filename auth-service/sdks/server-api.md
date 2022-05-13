@@ -89,6 +89,8 @@ Basic Auth using Project Id and Project Server Key
 {% endswagger-response %}
 {% endswagger %}
 
+Use this api to integrate Particle Auth into your user id system :tada:
+
 **error\_code**
 
 `10002`: Param error, see doc for more info
