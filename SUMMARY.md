@@ -29,19 +29,19 @@
 
 * [Introduction](node-service/introduction.md)
 * [Authentication](node-service/authentication.md)
-* [Solana](node-service/solana/README.md)
-  * [Enhanced RPC](node-service/solana/enhanced-rpc.md)
-  * [RPC](node-service/solana/rpc.md)
+* [Solana API](node-service/solana-api/README.md)
+  * [Standard RPC](node-service/solana-api/standard-rpc.md)
+  * [Enhanced RPC](node-service/solana-api/enhanced-rpc.md)
 
 ## Resources
 
-* [FAQ](resources/faq.md)
-* [Demo Applications](resources/demo-applications.md)
+* [FAQ](resouces/faq.md)
+* [Demo Applications](resouces/demo-applications.md)
 * [Discord Community](https://discord.gg/qwysge6cgF)
 * [Github](https://github.com/Particle-Network)
 * [Twitter](https://twitter.com/ParticleNtwrk)
 * [System Status](https://status.particle.network)
-* [Terms & Conditions](resources/terms-and-conditions/README.md)
-  * [Privacy Policy](resources/terms-and-conditions/privacy-policy.md)
-  * [Terms of Use](resources/terms-and-conditions/terms-of-use.md)
-  * [API & SDK License Agreement](resources/terms-and-conditions/api-and-sdk-license-agreement.md)
+* [Terms & Conditions](resouces/terms-and-conditions/README.md)
+  * [Privacy Policy](resouces/terms-and-conditions/privacy-policy.md)
+  * [Terms of Use](resouces/terms-and-conditions/terms-of-use.md)
+  * [API & SDK License Agreement](resouces/terms-and-conditions/api-and-sdk-license-agreement.md)
