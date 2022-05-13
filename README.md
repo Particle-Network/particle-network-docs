@@ -1,6 +1,6 @@
 ---
 description: A mobile app data and development platform for Web3
-cover: .gitbook/assets/cover1 (1).png
+cover: .gitbook/assets/cover1 (1) (1).png
 coverY: 0
 ---
 
