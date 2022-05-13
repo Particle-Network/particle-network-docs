@@ -29,7 +29,7 @@ repositories {
 }
 dependencies {
     // Particle Auth Service
-    implementation("particle.network:auth-service${latest_version}")
+    implementation("network.particle:auth-service${latest_version}")
     //...
 }
 ```
@@ -44,7 +44,7 @@ repositories {
 }
 dependencies {
     // Particle Auth Service
-    implementation 'particle.network:auth-service${latest_version}'
+    implementation 'network.particle:auth-service${latest_version}'
     //...
 }
 ```

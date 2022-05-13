@@ -31,9 +31,9 @@ repositories {
 
 dependencies {
     // Particle Auth Service
-    implementation("particle.network:auth-service${latest_version}")
+    implementation("network.particle:auth-service${latest_version}")
     // Particle Wallet Service
-    implementation("particle.network:wallet-service${latest_version}")
+    implementation("network.particle:wallet-service${latest_version}")
     //...
 }
 ```
@@ -49,9 +49,9 @@ repositories {
 
 dependencies {
     // Particle Auth Service
-    implementation 'particle.network:auth-service${latest_version}'
+    implementation 'network.particle:auth-service${latest_version}'
     // Particle Wallet Service
-    implementation 'particle.network:wallet-service${latest_version}'
+    implementation 'network.particle:wallet-service${latest_version}'
     //...
 }
 ```
@@ -163,4 +163,3 @@ PNRouter.build(RouterPath.TokenTransactionRecords).navigation();
 ```
 {% endtab %}
 {% endtabs %}
-
