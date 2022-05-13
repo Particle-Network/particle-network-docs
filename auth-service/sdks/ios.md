@@ -4,14 +4,14 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
+* Install the following:
+  * Xcode 13.3.1 or later
 * Make sure that your project meets the following requirements:
-  * Targets API Level 23 (Marshmallow) or higher
-  * Uses Android 6.0 or higher
-  * Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
+  * iOS 10
 
 ### Create a Particle Project and App
 
-Before you can add Auth Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
+Before you can add Auth Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#login)
 
