@@ -53,6 +53,8 @@ As a result, Particle Network provides a **secure, easy-to-use and trusted** key
 
 ## Threshold Signatures Explained
 
+![Particle Network TSS](.gitbook/assets/ezgif.com-gif-maker.gif)
+
 Threshold Signature Scheme (TSS) is a cryptographic primitive for distributed key generation and signing. The use of TSS in Particle Network is a new paradigm that can provide numerous benefits, especially in terms of security.
 
 Particle Network has two parties jointly computing the public key, each holding a secret share of the private key. The advantage is that the private key is not a single point of failure anymore because each party holds just one part of it. When signing transactions, we run a distributed signature generation between two parties. Only Party-1 (the user side) can start the signing process. Again we moved from local computation (single point of failure) to an interactive one.
