@@ -40,7 +40,7 @@ const axios = require('axios');
     const response = await axios.get('https://api.particle.network', {
         auth: {
             username: 'Your Project Id',
-            password: 'Your Project Client Key Or Serve',
+            password: 'Your Project Server Key',
         },
     });
 
