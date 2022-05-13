@@ -236,7 +236,7 @@ Use Particle SDK to sign a transaction or message. The SDK provides three method
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-//transaction base58 string
+//transaction: base58 string
 ParticleNetwork.signAndSendTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign and send transaction success
@@ -248,7 +248,7 @@ ParticleNetwork.signAndSendTransaction(activity, transaction, object : WebServic
 })
 
 
-//transaction base58 string
+//transaction: base58 string
 ParticleNetwork.signTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign transaction success
@@ -275,7 +275,7 @@ ParticleNetwork.signMessage(activity, message, object : WebServiceCallback<SignO
 
 {% tab title="Java" %}
 ```java
-//transaction base58 string
+//transaction: base58 string
 ParticleNetwork.signAndSendTransaction(activity, transaction, new WebServiceCallback<SignOutput>() {
     
     @Override
@@ -290,7 +290,7 @@ ParticleNetwork.signAndSendTransaction(activity, transaction, new WebServiceCall
 });
 
 
-//transaction base58 string
+//transaction: base58 string
 ParticleNetwork.signTransaction(activity, transaction, new WebServiceCallback<SignOutput>() {
     
     @Override
