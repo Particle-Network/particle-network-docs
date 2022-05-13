@@ -53,9 +53,22 @@ As a result, Particle Network provides a **secure, easy-to-use and trusted** key
 
 ## Threshold Signatures Explained
 
-## Our Infrastructure Architecture
+Threshold Signature Scheme (TSS) is a cryptographic primitive for distributed key generation and signing. The use of TSS in Particle Network is a new paradigm that can provide numerous benefits, especially in terms of security.
 
+Particle Network has two parties jointly computing the public key, each holding a secret share of the private key. The advantage is that the private key is not a single point of failure anymore because each party holds just one part of it. When signing transactions, we run a distributed signature generation between two parties. Only Party-1 (the user side) can start the signing process. Again we moved from local computation (single point of failure) to an interactive one.
 
+**TSS vs. Multgisig**
+
+TSS is using cryptography off-chain, while multisig happens on-chain. **** The main point of difference is that multisig is blockchain-specific and needs to be reimplemented for every blockchain, and in some cases, it is not supported at all. Conversely, TSS is relying on pure cryptography, so support is always possible.
+
+**TSS vs. Shamir secret sharing scheme**
+
+The Shamir secret sharing scheme (SSSS) provides a way to store the private key in a distributed manner such that while the private key is at rest, it is stored in multiple locations. There are two differences between SSSS and TSS:
+
+* Key Generation: in SSSS, there is a single party called “the dealer” that is in charge of generating the private key secret shares. It means that at time of Key Generation, the private key is generated at a single location and then distributed by the dealer to the different locations. In TSS, there is no dealer as its role is distributed such that the full private key is never at a single location.
+* Signing: in SSSS, the parties must reconstruct the full private key in order to sign, which again results in a single point of failure each time a signature is needed. In TSS, the signing is done in a distributed way without ever reconstructing the secret shares.
+
+As we can see, in TSS the private key (which represents the security of the system) is never at a single location throughout its entire lifetime.
 
 ## Further Reading
 
