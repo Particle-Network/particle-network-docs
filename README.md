@@ -1,5 +1,6 @@
 ---
 description: A mobile app data and development platform for Web3.0
+cover: .gitbook/assets/cover1 – 1.png
 coverY: 0
 ---
 
@@ -47,7 +48,7 @@ Not only do we have JSON-RPC support, but also enhanced API. This allows you to 
 
 ## SDKs
 
-We support [Android, iOS, and Unity](https://github.com/Particle-Network) now. The Web SDK is in development and will launch soon.
+We support [Android and iOS](https://github.com/Particle-Network) now. The Unity and Web SDK are in development and will launch soon.
 
 ## Available Networks
 
