@@ -32,6 +32,7 @@
 * [Solana API](node-service/solana-api/README.md)
   * [Standard RPC](node-service/solana/rpc.md)
   * [Enhanced RPC](node-service/solana-api/enhanced-rpc.md)
+* [Error Reference](node-service/error-reference.md)
 
 ## Resources
 
