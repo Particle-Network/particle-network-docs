@@ -4,9 +4,14 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-* Android development environment.
-* Java 11.
-* Particle SDK project and app config, Created by Dashboard.
+
+
+Install the following:
+
+* Xcode 13.3.1 or later
+* Make sure that your project meets the following requirements:
+  * Your project must target these platform versions or later:
+    * iOS 12
 
 ### Repository
 
