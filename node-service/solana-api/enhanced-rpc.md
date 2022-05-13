@@ -1,7 +1,5 @@
 ---
-description: >-
-  Enhanced APIs complement the standard APIs to give its users superpowers in
-  order to create the Web 3's killer apps.
+description: Simple And Powerful
 ---
 
 # Enhanced RPC
