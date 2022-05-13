@@ -4,9 +4,9 @@ description: Provides MPC (Multi-Party Computation)-based threshold signatures.
 
 # Introduction
 
-## PWhat is Particle Auth？
+## What is Particle Auth？
 
-Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applications. Particle Auth supports mobile number and email login, providing users with a simple operating experience. Their login account is then associated with a private key, which is secured with a "Threshold Signatures vault".
+Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applications. Particle Auth supports mobile number and email login, providing users with a simple operating experience. Their login account is then associated with a blockchain wallet, which is secured with a "Threshold Signatures vault".
 
 ![Particle Auth](../.gitbook/assets/未标题-1副本.jpg)
 
