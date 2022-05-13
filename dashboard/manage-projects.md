@@ -2,7 +2,7 @@
 
 ### The Relationship Between Projects and Apps
 
-![](../.gitbook/assets/图表.jpg)
+![](../.gitbook/assets/图1.jpg)
 
 ### Create Project
 
