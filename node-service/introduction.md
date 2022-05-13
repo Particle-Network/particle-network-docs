@@ -4,7 +4,7 @@ description: Simplify scaling and powering your blockchain apps
 
 # Introduction
 
-Particle's Node Service is your high-performance access to all major blockchains, but with supercharged reliability, data correctness, and scalability.
+Particle's Node Service is your high-performance access to all major blockchains, with supercharged reliability, data correctness, and scalability.
 
 ### 🚀 Fast & Reliable
 
