@@ -49,7 +49,7 @@ The key shares are continually modified without modifying the key itself. It is 
 1. 2-Party ECDSA - Solana
 2. 2-Party EdDSA - Ethereum, Binance Smart Chain, Polygon, Avalanche and more
 
-As a result, Particle Network provides a **secure, easy-to-use and trusted** key management system which is **chain agnostic and robust**.
+As a result, Particle Network provides a **secure, easy-to-use and trusted** key management system which is **chain agnostic, robust and non-custodial**.
 
 ## Threshold Signatures Explained
 
@@ -69,6 +69,16 @@ The Shamir secret sharing scheme (SSSS) provides a way to store the private key 
 * Signing: in SSSS, the parties must reconstruct the full private key in order to sign, which again results in a single point of failure each time a signature is needed. In TSS, the signing is done in a distributed way without ever reconstructing the secret shares.
 
 As we can see, in TSS the private key (which represents the security of the system) is never at a single location throughout its entire lifetime.
+
+## Our Infrastructure Security Architecture
+
+At Particle Network, we adopt the industry-best standard to implement our infrastructure. From public/private network segregation to intrusion detection monitoring, we made sure we spent time to carefully architect and bootstrap the foundation of our infrastructure that is secure for our engineers to build on.
+
+**End-to-end Encryption with TLS**
+
+**Trustee Particle Network TSS Party-2 Server**
+
+**Hardware Security Module**
 
 ## Further Reading
 
