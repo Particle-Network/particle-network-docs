@@ -19,15 +19,15 @@ https://api.particle.network/solana/rpc
 ## Authentication
 
 {% hint style="info" %}
-We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Console](https://particle.network/#/login) where you can create projects and apps.
+We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Dashboard](https://particle.network/#/login) where you can create projects and apps.
 {% endhint %}
 
 The Web3.0 APIs require **HTTP Basic Authentication**
 
-| Basic Auth Key | Basic Auth Value                      |   |
-| -------------- | ------------------------------------- | - |
-| Username       | Your Project Id                       |   |
-| Password       | Your Project Client Key Or Server Key |   |
+| Basic Auth Key | Basic Auth Value        |   |
+| -------------- | ----------------------- | - |
+| Username       | Your Project Id         |   |
+| Password       | Your Project Server Key |   |
 
 ### Code Example
 
@@ -40,7 +40,7 @@ const axios = require('axios');
     const response = await axios.get('https://api.particle.network', {
         auth: {
             username: 'Your Project Id',
-            password: 'Your Project Client Key Or Serve',
+            password: 'Your Project Server Key',
         },
     });
 
