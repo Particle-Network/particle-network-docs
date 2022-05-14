@@ -33,7 +33,7 @@ pod init
 2\. To your Podfile, add the Auth Service pods that you want to use in your app.
 
 ```
-pod 'ParticleNetworkGUI'
+pod 'ParticleWalletService'
 ```
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
