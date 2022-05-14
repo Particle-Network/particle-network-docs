@@ -31,7 +31,7 @@ pod init
 2\. To your Podfile, add the Auth Service pods that you want to use in your app.
 
 ```
-pod 'ParticleNetwork'
+pod 'ParticleAuthService'
 ```
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
@@ -79,7 +79,7 @@ import ParticleNetwork
 {% endcode %}
 
 {% hint style="info" %}
-Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:orange;">**your project app uuid**</mark> with the new values created in your Dashboard**.**
+Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:red;">**your project app uuid**</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> with the new values created in your Dashboard**.**
 
 You can dynamically switch the chainEnv by calling the `ParticleNetwork.setChainEnv()` method. ``&#x20;
 
