@@ -46,8 +46,8 @@ Key shares are continuously modified without modifying the key itself. It is com
 
 **Particle Network** includes a secure MPC implementation of the following algorithms:
 
-1. 2-Party ECDSA - Solana
-2. 2-Party EdDSA - Ethereum, Binance Smart Chain, Polygon, Avalanche, and more
+1. 2-Party EdDSA - Solana
+2. 2-Party ECDSA - Ethereum, Binance Smart Chain, Polygon, Avalanche, and more
 
 As a result, Particle Network provides a **secure, easy-to-use, and trusted** key management system which is **chain agnostic, robust and non-custodial**.
 
