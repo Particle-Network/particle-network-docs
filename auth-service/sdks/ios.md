@@ -78,6 +78,14 @@ import ParticleNetwork
 ```
 {% endcode %}
 
+3\. Add scheme url handle in your app's `application(_:open:options:)` method
+
+```
+return ParticleNetwork.handleUrl(url)
+```
+
+4\. Config your app scheme url, select your app target, in the info section, click add URL Type, past your scheme in URL Schemes.&#x20;
+
 {% hint style="info" %}
 Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:red;">**your project app uuid**</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> with the new values created in your Dashboard**.**
 

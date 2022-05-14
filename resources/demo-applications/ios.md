@@ -22,7 +22,7 @@ Install the following:
 2. Auth login with phone.
 3. Logout.
 4. Open wallet.
-5. Change chain ID.
+5. Change chain env.
 
 {% hint style="info" %}
 You should modify project and app config before build.
