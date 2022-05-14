@@ -25,6 +25,8 @@ For JSON-RPC-specific errors, our API returns a `200` with the JSON-RPC error in
 
 | Code             | Possible Return Message | Description                                                                                           |
 | ---------------- | ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| 10001            | System error            |                                                                                                       |
+| 10002            | Invalid parameters      | Invalid method parameter(s).                                                                          |
 | 40101            | User not exists         |                                                                                                       |
 | 40102            | Authentication failed   | Invalid project ID or invalid project key.                                                            |
 | -32700           | Parse error             | Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text. |
