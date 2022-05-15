@@ -90,6 +90,8 @@ your scheme url should be "pn" + your project app id.&#x20;
 
 for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
+![Config scheme url](../../.gitbook/assets/image.png)
+
 {% hint style="info" %}
 Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:red;">**your project app uuid**</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> with the new values created in your Dashboard**.**
 
