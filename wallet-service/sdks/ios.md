@@ -5,7 +5,7 @@
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 13.3.1 or later
+  * Xcode 13.2&#x20;
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 12
@@ -45,6 +45,10 @@ pod install --repo-update
 ```
 open your-project.xcworkspace
 ```
+
+4\. Add Privacy - Camera Usage Description in your info.plist file, we needs to take photos for QRCode.
+
+
 
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
