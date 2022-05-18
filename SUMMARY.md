@@ -40,7 +40,7 @@
 * [Demo Applications](resources/demo-applications/README.md)
   * [Android](resources/demo-applications/android.md)
   * [iOS](resources/demo-applications/ios.md)
-* [Discord Community](https://discord.gg/qwysge6cgF)
+* [Discord Community](https://discord.gg/2y44qr6CR2)
 * [Github](https://github.com/Particle-Network)
 * [Twitter](https://twitter.com/ParticleNtwrk)
 * [System Status](https://status.particle.network)
