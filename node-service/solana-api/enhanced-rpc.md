@@ -44,13 +44,16 @@ const axios = require('axios');
                 'native', 
                 '2Dzzc14S1D7cEFGJyMZMACuoQRHVUYFhVE74C5o8Fwau',
             ],
-            [['usd', 'cny']],
+            [
+                'usd', 
+                'cny',
+            ],
         ],
     }, {
         auth: {
             username: 'Your Project Id',
             password: 'Your Project Server Key',
-        }
+        },
     });
 
     console.log(response.data);
@@ -63,7 +66,7 @@ const axios = require('axios');
 curl 'https://api.particle.network/solana/rpc' \
 --header 'Authorization: Basic YmEwNTA5ZTctZThiYi00MzY2LTg5YjctYjM5ZjAyYmNkMDg0OmNnZjE4YXNMbG9zSkJzZlZXbWxvNHNuZ2lFRVZzc1gzNHFlTUxmZzQ=' \
 -X POST -H "Content-Type: application/json" -d '
-    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetPrice","params":[["native","2Dzzc14S1D7cEFGJyMZMACuoQRHVUYFhVE74C5o8Fwau"],[["usd","cny"]]]}
+    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetPrice","params":[["native","2Dzzc14S1D7cEFGJyMZMACuoQRHVUYFhVE74C5o8Fwau"],["usd","cny"]]}
 '
 ```
 {% endtab %}
