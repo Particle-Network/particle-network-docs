@@ -314,6 +314,7 @@ Response example:
                 "decimals": 9,
                 "amountTransfered": 100, // transfer amount in this transaction
                 "sender": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+                "receiver": "5vYsVaJufzUg1ZaW498VZCGbhNTTGDezHbydyJ6invAD",
                 "senderAssociatedTokenAddress": "DdEq5UPCrg7WMqXqSXk2bUh16GMwLf5eXE1Ywj5CDTQN",
                 "receiverAssociatedTokenAddress": "J4g3on2T2zPFCcjMJhPtGBXyLYFFYoFoxR69gVsTaqAi"
             }
