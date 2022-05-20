@@ -53,16 +53,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-#### Proguard
 
-Add proguard config to `proguard-rules.pro`.
-
-```
--keep class com.particle.network.**{*;}
--dontwarn com.particle.network.**
--keep class com.particle.gui.**{*;}
--dontwarn com.particle.gui.**
-```
 
 {% hint style="info" %}
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
