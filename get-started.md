@@ -36,7 +36,7 @@ You must configure your Android/iOS app to access Particle Network's auth and wa
 
 ## **Enjoy BUIDL!**
 
-[Join our developer community now!](https://discord.gg/qwysge6cgF) We are dedicated to helping you with your project from start to finish.
+[Join our developer community now!](https://discord.gg/2y44qr6CR2) We are dedicated to helping you with your project from start to finish.
 
 And don't forget to follow our [Github](https://github.com/Particle-Network), where we will release more demos for you to develop faster.
 
