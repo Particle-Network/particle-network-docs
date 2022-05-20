@@ -31,17 +31,7 @@ await axios.get('/server/getUserInfo', {
 
 ## Errors
 
-```json
-{
-  "path": "/server/getUserInfo?useruuid=435615f8-1452-4a6a-a825-f146d0cd7843&usertoken=123",
-  "error_code": 10002,
-  "message": "Param error, see doc for more info",
-  "extra": [
-    "usertoken must be longer than or equal to 36 characters",
-    "usertoken must be a UUID"
-  ]
-}
-```
+[ Check RPC errors](../../node-service/error-reference.md)
 
 ## APIs
 
@@ -73,28 +63,6 @@ Basic Auth using Project Id and Project Server Key
 }
 ```
 {% endswagger-response %}
-
-{% swagger-response status="200: OK" description="" %}
-```javascript
-{
-  "path": "/server/getUserInfo?useruuid=435615f8-1452-4a6a-a825-f146d0cd7843&usertoken=123",
-  "error_code": 10002,
-  "message": "Param error, see doc for more info",
-  "extra": [
-    "usertoken must be longer than or equal to 36 characters",
-    "usertoken must be a UUID"
-  ]
-}
-```
-{% endswagger-response %}
 {% endswagger %}
 
 Use this API to integrate Particle Auth into your user ID system :tada:
-
-**error\_code**
-
-`10002`: Param error, see doc for more info
-
-`10006`: Invalid project
-
-`40101`: User does not exist
