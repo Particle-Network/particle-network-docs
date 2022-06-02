@@ -27,7 +27,7 @@ await axios.get('/server/getUserInfo', {
 });
 ```
 
-[👉 Sign up/log in and create your project now](https://particle.network/#login)
+[👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
 ## Errors
 

@@ -14,7 +14,7 @@
 
 Before you can add Wallet Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
 
-[👉 Sign up/log in and create your project now](https://particle.network/#login)
+[👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
 ### Add the Wallet Service SDK to your app <a href="#add-sdks" id="add-sdks"></a>
 

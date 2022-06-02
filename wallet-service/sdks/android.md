@@ -14,7 +14,7 @@ Make sure that your project meets the following requirements:
 
 Before you can add Wallet Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
 
-[👉 Sign up/log in and create your project now](https://particle.network/#login)
+[👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
 ### Add the Wallet Service SDK to your app <a href="#add-sdks" id="add-sdks"></a>
 
