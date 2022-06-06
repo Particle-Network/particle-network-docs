@@ -39,3 +39,13 @@ TO THE GREATEST EXTENT PERMITTED UNDER APPLICABLE LAW, IN NO EVENT WILL PARTICLE
 ### 8. General Information
 
 These Terms are governed by the laws of the State of California, without regard to the conflicts of laws provisions thereof.In the event of any dispute arising in connection with these Terms, you hereby consent to exclusive jurisdiction and venue in the state and federal courts of San Francisco County, California. The failure of Particle Network to exercise or enforce any right or provision of these Terms does not constitute a waiver of such right or provision.If any provision of these Terms is found by a court of competent jurisdiction to be invalid, that provision will be limited or eliminated, to the minimum extent necessary, so that these Terms shall otherwise remain in full force and effect and enforceable.You may not assign these Terms or transfer any of your rights or obligations hereunder without Particle Network’s express written consent. These Terms inure to the benefit of Particle Network’s successors, assigns and licensees. These Terms are the entire agreement between you and Particle Network with respect to the subject matter herein.
+
+### 9. Further Information You Give Us In Relation to the Particle Network Site and Particle Network Services.
+
+Further information we collect from you in relation to [https://particle.network/](https://particle.network/) (the “Particle Network Site”) and Particle Network Services may include:
+
+1. Further identity information, such as your country of birth, nationality, social security number, place of birth, employer and occupation;
+2. Passport and/or photo ID for identity verification purposes;
+3. Information required to comply with anti-money laundering (AML) laws and know-your-customer (KYC) requirements (such as nationality and place of birth);
+4. Source of funds for participating in token launches;
+5. and Information that you give us in relation to your purchased token holdings, such as earnings received from staking, and the number of tokens in your wallet.
