@@ -12,13 +12,11 @@
 
 ### Create a Particle Project and App
 
-Before you can add Wallet Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
+Before you can add Wallet Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
 ### Add the Wallet Service SDK to your app <a href="#add-sdks" id="add-sdks"></a>
-
-
 
 Wallet Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) .
 
@@ -48,12 +46,10 @@ open your-project.xcworkspace
 
 4\. Add Privacy - Camera Usage Description in your info.plist file, we needs to take photos for QRCode.
 
-
-
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
 {% hint style="info" %}
-Wallet Service depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).&#x20;
+Wallet Service depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).
 {% endhint %}
 
 {% hint style="info" %}
@@ -77,8 +73,6 @@ PNRouter.build(RouterPath.Wallet).navigation();
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### Open Send Token
 
@@ -110,7 +104,7 @@ PNRouter.build(RouterPath.TokenSend).navigation();
 
 1. `tokenAddress`: token mint address(optional)
 2. `toAddress`: receiver address (optional)
-3. `amount`: send token amount, token minimum unit (optional)&#x20;
+3. `amount`: send token amount, token minimum unit (optional)
 
 ### Open Receive Token
 
@@ -155,4 +149,3 @@ PNRouter.build(RouterPath.TokenTransactionRecords).navigation();
 ```
 {% endtab %}
 {% endtabs %}
-

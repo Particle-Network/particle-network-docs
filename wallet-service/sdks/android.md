@@ -12,7 +12,7 @@ Make sure that your project meets the following requirements:
 
 ### Create a Particle Project and App
 
-Before you can add Wallet Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
+Before you can add Wallet Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
@@ -63,7 +63,7 @@ dependencies {
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
 {% hint style="info" %}
-Wallet Service depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).&#x20;
+Wallet Service depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).
 {% endhint %}
 
 {% hint style="info" %}
@@ -120,7 +120,7 @@ PNRouter.build(RouterPath.TokenSend).navigation();
 
 1. `tokenAddress`: token mint address
 2. `toAddress`: receiver address (optional)
-3. `toAmount`: send token amount, token minimum unit (optional)&#x20;
+3. `toAmount`: send token amount, token minimum unit (optional)
 
 ### Open Receive Token
 
