@@ -4,7 +4,7 @@ description: All Solana and EVM-compatible chains are supported now; more are co
 
 # Available Networks
 
-Both the `mainnet` and `testnet` are available for all chains.
+The `mainnet` and `testnet` are available for the following chains:
 
 | Chains/Products     | Auth Service                            | Wallet Service                            | Node Service                            |   |
 | ------------------- | --------------------------------------- | ----------------------------------------- | --------------------------------------- | - |
