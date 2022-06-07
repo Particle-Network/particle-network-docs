@@ -6,7 +6,7 @@ coverY: 0
 
 # Introduction
 
-**Particle Network** is a **** mobile-first, data-driven, and composable Web3 data and development platform. Our vision is to accelerate the world's transition into the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
+**Particle Network** is a mobile-first, data-driven, and composable Web3 data and development platform. Our vision is to accelerate the world's transition into the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
 
 ## Products
 
@@ -18,7 +18,7 @@ With threshold signatures, each party creates an independent key. They then forg
 
 Our security is unlike any other auth/wallet service: it's better. Complex passwords and long seed phrases, browser extensions, and special hardware are no longer required for log-in. Instead, accounts are secured by industry-leading TSS implementation and KMS encryption.
 
-&#x20;[👉 Learn more about how we implement this 🔐](security.md)
+[👉 Learn more about how we implement this 🔐](security.md)
 
 With Particle Auth integrated into your dApp, users can log in within seconds. By removing seed phrases, we can increase conversion rates by up to 64% for both new and Web3.0 users.
 

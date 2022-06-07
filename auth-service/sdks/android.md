@@ -11,7 +11,7 @@
 
 ### Create a Particle Project and App
 
-Before you can add Auth Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
+Before you can add Auth Service to your Android app, you need to create a Particle project to connect to your Android app. Visit [broken-reference](broken-reference/ "mention") to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
@@ -52,8 +52,6 @@ dependencies {
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 {% hint style="info" %}
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
@@ -99,7 +97,7 @@ Declare them in you app AndroidManifest.xml (usually app/src/main/AndroidManifes
 ```
 
 {% hint style="info" %}
-Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in your Dashboard**.**
+Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in your Dashboard.
 {% endhint %}
 
 ## API Reference
@@ -127,7 +125,6 @@ class App : Application() {
             )
     }
 }
-
 ```
 {% endtab %}
 
@@ -329,4 +326,4 @@ ParticleNetwork.signMessage(activity, message, new WebServiceCallback<SignOutput
 
 ### Error
 
-`WebServiceError` contains error details. You can check the information by printing the  `message` attribute.
+`WebServiceError` contains error details. You can check the information by printing the `message` attribute.

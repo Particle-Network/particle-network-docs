@@ -4,7 +4,7 @@ description: Simple And Powerful
 
 # Enhanced RPC
 
-### &#x20;🔥 particle\_getPrice
+### 🔥 particle\_getPrice
 
 > Get the real-time exchange rate of the token
 
@@ -132,7 +132,7 @@ Response example:
 
 **Parameters:**
 
-* no parameters ****&#x20;
+* no parameters
 
 **Results:**
 
@@ -222,8 +222,8 @@ Response Example:
 
 * `<[object]>` - a JSON object array containing:
   * `native: <string>`, native balance
-  * `tokens: <[object]>`,  an object array containing token detail
-  * `nfts: <[object]>`,  an object array containing NFT detail
+  * `tokens: <[object]>`, an object array containing token detail
+  * `nfts: <[object]>`, an object array containing NFT detail
 
 Request example:
 
@@ -389,13 +389,13 @@ Response example:
 
 * `<[object]>` - a JSON object containing:
   * `hash: <string>`, transaction hash
-  * `from: <string>`, transaction send from address&#x20;
+  * `from: <string>`, transaction send from address
   * `to: <string>`, transaction send to address
   * `value: <string>`, transaction send value
   * `data: <string>`, transaction send data
   * `gasLimit: <int64>`, transaction gas limit
   * `timestamp: <int64>`, transaction time
-  * `status: <int64>`, transaction status:, the value is as below:&#x20;
+  * `status: <int64>`, transaction status:, the value is as below:
     * `0`, pending transaction in `TX-QUEUE`, can cancel
     * `1`, pending transaction in `TX-POOL`, can speed up or cancel
     * `3`, confirmed transaction which status is `Success`
@@ -403,10 +403,10 @@ Response example:
 
 when status is `0|1`, the object containing:
 
-* `type: <int64>`, transaction type, the value is as below:&#x20;
+* `type: <int64>`, transaction type, the value is as below:
   * `0:` legacy transaction
   * `1:` EIP-2930 access list transaction
-  * `2:` EIP-1559 gas fee market transaction&#x20;
+  * `2:` EIP-1559 gas fee market transaction
 * `nonce: <int64>`, trancsaction nonce
 * `accessList: <[]>`, EIP-2930 access list
 * `maxPriorityFeePerGas: <string>`, EIP-1559 max priority fee per gas

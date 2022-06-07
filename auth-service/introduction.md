@@ -16,7 +16,7 @@ Particle Auth is a pluggable auth infrastructure for Web3.0 wallets and applicat
 
 By integrating Particle Auth into your project, your users can experience the following services:
 
-* **Email/Mobile number logins and passwordless flows**: **** users can register with a mobile phone number or email address, then log in using a verification code. This shortens the login process while maintaining a secure login. In the future, mainstream social media logins will also be made available.
+* **Email/Mobile number logins and passwordless flows**: users can register with a mobile phone number or email address, then log in using a verification code. This shortens the login process while maintaining a secure login. In the future, mainstream social media logins will also be made available.
 * **Provide MPC (Multi-Party Computation)-based threshold signatures:** With threshold signatures, each of the parties creates a key independently. Then, they forge the vault’s lock together, in a modular way, in which each party shapes a part of the lock that corresponds to its key.
 
 ![](../.gitbook/assets/952qs-wk47v.gif)
@@ -34,10 +34,10 @@ By integrating Particle Auth into your project, your users can experience the fo
 
 Particle Auth comes with simple SDKs that can be integrated in multiple ways to provide the best experience for your users. We support all the available chains out there, with special providers available for EVM and Solana.
 
-### 👉  [Auth SDKs](sdks/)
+### 👉 [Auth SDKs](sdks/)
 
-* 👉  [Server API](sdks/server-api.md)
-* 👉  [Android](sdks/android.md)
-* 👉  [iOS](sdks/ios.md)
-* 👉  Unity: coming soon
-* 👉  Web: coming soon
+* 👉 [Server API](sdks/server-api.md)
+* 👉 [Android](sdks/android.md)
+* 👉 [iOS](sdks/ios.md)
+* 👉 Unity: coming soon
+* 👉 Web: coming soon

@@ -10,11 +10,11 @@ coverY: 0
 
 Private keys are the most valuable possessions in the blockchain space. If the user loses their private keys or they are compromised, they will never recover their currencies. The most important part of designing and implementing Particle Network is the secure management of private keys.
 
-To provide our extremely secure services, there are three fundamental points we insist on**:**
+To provide our extremely secure services, there are three fundamental points we insist on:
 
 **No one, except the user themself, has full control**
 
-Only the user can initiate the **** signing process. Other parties, including Particle Network and developers, can never access users' funds.
+Only the user can initiate the signing process. Other parties, including Particle Network and developers, can never access users' funds.
 
 **Accounts need to be restored safely**
 
@@ -61,7 +61,7 @@ Particle Network has two parties jointly computing the public key, each holding 
 
 **TSS vs. Multgisig**
 
-TSS is using cryptography off-chain, while multisig occurs on-chain. **** The main point of difference is that multisig is blockchain-specific and needs to be reimplemented for every blockchain, and in some cases, is not supported at all. Conversely, TSS relies on pure cryptography, so support is always possible.
+TSS is using cryptography off-chain, while multisig occurs on-chain. The main point of difference is that multisig is blockchain-specific and needs to be reimplemented for every blockchain, and in some cases, is not supported at all. Conversely, TSS relies on pure cryptography, so support is always possible.
 
 **TSS vs. Shamir Secret Sharing Scheme**
 
@@ -80,7 +80,7 @@ At Particle Network, we adopt the industry-best standard to implement our infras
 * **A Trustee Particle Network TSS Party-2 Server**
 * **A Hardware Security Module**
 
-:tada:****[**Now, start building your dApp confidently on Particle Network!** ](auth-service/introduction.md):tada:****
+:tada:[**Now, start building your dApp confidently on Particle Network!** ](auth-service/introduction.md):tada:
 
 ## Further Reading
 
@@ -89,5 +89,3 @@ At Particle Network, we adopt the industry-best standard to implement our infras
 * [Two-Party ECDSA from Hash Proof Systems and Efficient Instantiations](https://eprint.iacr.org/2019/503.pdf)
 * [Fast Multiparty Threshold ECDSA with Fast Trustless Setup](https://eprint.iacr.org/2019/114.pdf)
 * [Secure Two-party Threshold ECDSA from ECDSA Assumptions](https://eprint.iacr.org/2018/499.pdf)
-
-\

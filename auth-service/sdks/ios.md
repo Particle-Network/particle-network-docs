@@ -12,7 +12,7 @@
 
 ### Create a Particle Project and App
 
-Before you can add Auth Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Broken link](broken-reference "mention") to learn more about Particle projects and apps.
+Before you can add Auth Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [broken-reference](broken-reference/ "mention") to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
@@ -84,25 +84,23 @@ import ParticleNetwork
 return ParticleNetwork.handleUrl(url)
 ```
 
-4\. Config your app scheme url, select your app target, in the info section, click add URL Type, past your scheme in URL Schemes.&#x20;
+4\. Config your app scheme url, select your app target, in the info section, click add URL Type, past your scheme in URL Schemes.
 
-your scheme url should be "pn" + your project app id.&#x20;
+your scheme url should be "pn" + your project app id.
 
 for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
 ![Config scheme url](../../.gitbook/assets/image.png)
 
 {% hint style="info" %}
-Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:red;">**your project app uuid**</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> with the new values created in your Dashboard**.**
+Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:red;">**your project app uuid**</mark> with the new values created in your Dashboard.
 
-You can dynamically switch the chainEnv by calling the `ParticleNetwork.setChainEnv()` method. ``&#x20;
+You can dynamically switch the chainEnv by calling the `ParticleNetwork.setChainEnv()` method.&#x20;
 
 devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% endhint %}
 
 ## API Reference
-
-
 
 ### Login
 
