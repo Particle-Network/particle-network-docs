@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Get Started](get-started.md)
 * [Security](security.md)
+* [Available Networks](available-networks.md)
 
 ## Dashboard
 

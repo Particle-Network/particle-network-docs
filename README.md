@@ -54,10 +54,4 @@ We support [Android and iOS](https://github.com/Particle-Network) now. The Unity
 
 ## Available Networks
 
-| Chains/Products     | Auth Service                            | Wallet Service                            | Node Service                        |
-| ------------------- | --------------------------------------- | ----------------------------------------- | ----------------------------------- |
-| Solana              | ✅  [Docs](auth-service/introduction.md) | ✅  [Docs](wallet-service/introduction.md) | ✅  [Docs](node-service/solana-api/) |
-| Ethereum            | Coming Soon                             | Coming Soon                               | Coming Soon                         |
-| Binance Smart Chain | Coming Soon                             | Coming Soon                               | Coming Soon                         |
-| Polygon(Matic)      | Coming Soon                             | Coming Soon                               | Coming Soon                         |
-| Avalanche           | Coming Soon                             | Coming Soon                               | Coming Soon                         |
+Currently, we support almost **all EVM compatible chains** and **the Solana chain**. [For details check this 👉](available-networks.md)
