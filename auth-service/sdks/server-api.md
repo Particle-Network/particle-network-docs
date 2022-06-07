@@ -46,7 +46,6 @@ const axios = require("axios");
 
   console.log(response.data);
 })();
-
 ```
 {% endtab %}
 
@@ -79,6 +78,6 @@ Response example:
 }
 ```
 
-## Errors
+### Errors
 
 [👉](https://particle.network/#/login) [Check RPC errors](../../node-service/error-reference.md)
