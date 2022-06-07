@@ -23,3 +23,7 @@ Particle's Node Service is your high-performance access to all major blockchains
 
 * One-line API infrastructure
 * 1,000+ engineering hours saved per year
+
+### Available Networks
+
+Currently, we support almost **all EVM compatible chains** and **the Solana chain**. [For details check this 👉](../available-networks.md)

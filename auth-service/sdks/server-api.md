@@ -1,68 +1,84 @@
 # Server API
 
-## Endpoint
+The Server API provides useful APIs to support application use. It follows a JSON-RPC 2.0 standard.
 
-`https://api.particle.network`
+### getUserInfo
 
-All APIs have a common URI prefix: `/server/`
+> Obtain user info by uuid and token
 
-## Authentication
+Use this API to integrate Particle Auth into your user ID system :tada:
 
-The server APIs require `HTTP Basic Authentication`
+**Parameters:**
 
-A valid Particle Network `Project Id` and `Project Server Key` are required in the `Authorization` header of every request. Use `Project Id` as the username and `Project Server Key` as the password.
+* `<[string]>` - user uuid
+* `<[string]>` - user token
 
+**Results:**
+
+* `<[object]>` - a JSON object array containing:
+  * `uuid: <string>`, user uuid
+  * `phone: <string>`, user phone number
+  * `email: <string>`, user email
+
+#### Request example:
+
+{% tabs %}
+{% tab title="Javascript" %}
 ```typescript
-const axios = require('axios');
+const axios = require("axios");
 
-await axios.get('/server/getUserInfo', {
-    auth: {
-        username: 'Your Project Id',
-        password: 'Your Project Server Key',
+(async () => {
+  const response = await axios.post(
+    "https://api.particle.network/server/rpc",
+    {
+      jsonrpc: "2.0",
+      id: 0,
+      method: "getUserInfo",
+      params: ["Particle Auth User Uuid", "Particle Auth User Token"],
     },
-    params: {
-        useruuid: 'Particle Auth User Uuid',
-        usertoken: 'Particle Auth User Token',
-    },
-});
+    {
+      auth: {
+        username: "Your Project Id",
+        password: "Your Project Server Key",
+      },
+    }
+  );
+
+  console.log(response.data);
+})();
+
 ```
+{% endtab %}
+
+{% tab title="Curl" %}
+```powershell
+curl 'https://api.particle.network/server/rpc' \
+--header 'Authorization: Basic YmEwNTA5ZTctZThiYi00MzY2LTg5YjctYjM5ZjAyYmNkMDg0OmNnZjE4YXNMbG9zSkJzZlZXbWxvNHNuZ2lFRVZzc1gzNHFlTUxmZzQ=' \
+-X POST -H "Content-Type: application/json" -d '
+    {"jsonrpc":"2.0","id":0,"method":"getUserInfo","params":["Particle Auth User Uuid", "Particle Auth User Token"]}
+'
+```
+{% endtab %}
+{% endtabs %}
 
 [👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
-## Errors
+Response example:
 
-[ Check RPC errors](../../node-service/error-reference.md)
-
-## APIs
-
-{% swagger method="get" path="getUserInfo" baseUrl="https://api.particle.network/server/" summary="" %}
-{% swagger-description %}
-Get User Info
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="useruuid" required="true" %}
-Particle Auth User Uuid
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="usertoken" required="true" %}
-Particle Auth User Token
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Basic Auth using Project Id and Project Server Key
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```javascript
+```typescript
 {
-  "uuid": "7e3b4c8d-7c90-4111-917c-ebd08a959972",
-  "phone": null,
-  "email": "BN0yBF7sVq@particle.network",
-  "created_at": "2022-05-11T12:28:26.000Z",
-  "updated_at": "2022-05-11T12:28:29.000Z"
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "uuid": "7e3b4c8d-7c90-4111-917c-ebd08a959972",
+    "phone": null,
+    "email": "BN0yBF7sVq@particle.network",
+    "created_at": "2022-05-11T12:28:26.000Z",
+    "updated_at": "2022-05-11T12:28:29.000Z"
+  }
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
 
-Use this API to integrate Particle Auth into your user ID system :tada:
+## Errors
+
+[👉](https://particle.network/#/login) [Check RPC errors](../../node-service/error-reference.md)

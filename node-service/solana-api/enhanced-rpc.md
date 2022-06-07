@@ -126,7 +126,7 @@ Response example:
 }
 ```
 
-### 🔥 enhancedGetTokensAndNfts
+### 🔥 enhancedGetTokensAndNFTs
 
 > Get token list and NFT list by giving an address
 
@@ -153,7 +153,7 @@ const axios = require('axios');
         chainId: 103,
         jsonrpc: '2.0',
         id: 0,
-        method: 'enhancedGetTokensAndNfts',
+        method: 'enhancedGetTokensAndNFTs',
         params: ['6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe'],
     }, {
         auth: {
@@ -172,7 +172,7 @@ const axios = require('axios');
 curl 'https://api.particle.network/solana/rpc' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
-    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetTokensAndNfts","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}
+    {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetTokensAndNFTs","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}
 '
 ```
 {% endtab %}

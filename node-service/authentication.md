@@ -8,12 +8,16 @@ description: Authenticate yourself to the Particle Node Service API
 
 **https://api.particle.network**
 
-All Web3 APIs have a common **URI prefix**: `/{chainName}/rpc`
+The Solana chain's RPC URL is:
 
 {% hint style="info" %}
-For example, the Solana RPC URL is:
+**https://api.particle.network/solana/rpc**
+{% endhint %}
 
-https://api.particle.network/solana/rpc
+All EVM-compatible chains' RPC URL is:
+
+{% hint style="info" %}
+**https://api.particle.network/evm-chain/rpc**
 {% endhint %}
 
 ## Authentication
