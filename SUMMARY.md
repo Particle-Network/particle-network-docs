@@ -18,7 +18,7 @@
   * [Server API](auth-service/sdks/server-api.md)
   * [Android](auth-service/sdks/android.md)
   * [iOS](auth-service/sdks/ios.md)
-  * [iOS](auth-service/sdks/ios-1.md)
+  * [iOS](wallet-api/sdks/ios.md)
 
 ## WALLET SERVICE
 
