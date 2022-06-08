@@ -19,6 +19,7 @@ Use this API to integrate Particle Auth into your user ID system :tada:
   * `uuid: <string>`, user uuid
   * `phone: <string>`, user phone number
   * `email: <string>`, user email
+  * `wallets: <[object]>`, user wallets with public address
 
 #### Request example:
 
@@ -66,15 +67,25 @@ Response example:
 
 ```typescript
 {
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": {
-    "uuid": "7e3b4c8d-7c90-4111-917c-ebd08a959972",
-    "phone": null,
-    "email": "BN0yBF7sVq@particle.network",
-    "created_at": "2022-05-11T12:28:26.000Z",
-    "updated_at": "2022-05-11T12:28:29.000Z"
-  }
+    "jsonrpc": "2.0", 
+    "id": 1, 
+    "result": {
+        "uuid": "2d7b1ff2-0791-4fd2-a26e-16fbcaefdf8a", 
+        "phone": null, 
+        "email": "U1gphy1mnU@particle.network", 
+        "createdAt": "2022-06-08T07:47:54.000Z", 
+        "updatedAt": "2022-06-08T07:47:55.000Z", 
+        "wallets": [
+            {
+                "chain": "evm_chain", 
+                "publicAddress": "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF"
+            }, 
+            {
+                "chain": "solana", 
+                "publicAddress": "3k61BRDo253SF1XuknbBSUh8FvFqJkcMYzmZuvMMhCC1"
+            }
+        ]
+    }
 }
 ```
 
