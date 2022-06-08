@@ -12,15 +12,15 @@
 
 ### Create a Particle Project and App
 
-Before you can add Auth Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
+Before you can add our Auth Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
 ### Add the Auth Service SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
 
-Auth Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) .
+Auth Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-Auth Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0 or higher.Here's how to install Auth Service using CocoaPods:
+Auth Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0 or higher. Here's how to install the Auth Service using CocoaPods:
 
 1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
@@ -28,7 +28,7 @@ Auth Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0
 pod init
 ```
 
-2\. To your Podfile, add the Auth Service pods that you want to use in your app.
+2\. To your Podfile, add the Auth Service pods that you want to use in your app:
 
 ```
 pod 'ParticleAuthService'
@@ -50,52 +50,62 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 
 ### Initialize Auth Service in your app <a href="#initialize-firebase" id="initialize-firebase"></a>
 
-The final step is to add initialization code to your application. You may have already done this as part of adding Auth Service to your app. If you're using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
+The final step is to add an initialization code to your application. You may have already done this as part of adding the Auth Service to your app. If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
 
-1. Import the `ParticleNetwork` module in your `UIApplicationDelegate.`
+1. Create a  **ParticleNetwork-Info.plist** into the root of your Xcode project
+2. Copy the following text into this file:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PROJECT_UUID</key>
+	<string>YOUR_PROJECT_UUID</string>
+	<key>PROJECT_CLIENT_KEY</key>
+	<string>YOUR_PROJECT_CLIENT_KEY</string>
+	<key>PROJECT_APP_UUID</key>
+	<string>YOUR_PROJECT_APP_UUID</string>
+</dict>
+</plist>
+
+```
+
+3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
+
+4\. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
 
 ```
 import ParticleNetwork     
 ```
 
-2\. Initialize ParticleNetwork service, typically in your app's `application:didFinishLaunchingWithOptions:` method:
+5\. Initialize ParticleNetwork service, typically in your app's `application:didFinishLaunchingWithOptions:` method:
 
 {% code title="swift" %}
 ```swift
-        let projectUuid: String = "your project uuid"
-        let projectClientKey: String = "your project client key"
-        let projectAppUuid: String = "your project app uuid"
-        let chainName = ChainName.solana
-        let chainEnv = ChainEnvironment.devnet
-        let devEnv = DevEnvironment.debug
-        
-        ParticleNetwork.initialize(projectUuid: projectUuid,
-                                   projectClientKey: projectClientKey,
-                                   projectAppUuid: projectAppUuid,
-                                   chainName: chainName,
-                                   chainEnv: chainEnv,
-                                   devEnv: devEnv)
+let chainName = ParticleNetwork.ChainName.ethereum(.mainnet)
+let devEnv = ParticleNetwork.DevEnvironment.debug
+let config = ParticleNetworkConfiguration(chainName: chainName, devEnv: devEnv)
+ParticleNetwork.initialize(config: config)
 ```
 {% endcode %}
 
-3\. Add scheme url handle in your app's `application(_:open:options:)` method
+6\. Add the scheme URL handle in your app's `application(_:open:options:)` method
 
 ```
 return ParticleNetwork.handleUrl(url)
 ```
 
-4\. Config your app scheme url, select your app target, in the info section, click add URL Type, past your scheme in URL Schemes.
+7\. Config your app scheme URL, select your app target in the info section, click to add the URL Type, pass your scheme in URL Schemes
 
-your scheme url should be "pn" + your project app id.
+Your scheme url should be "pn" + your project app uuid.
 
 for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
 ![Config scheme url](../../.gitbook/assets/image.png)
 
 {% hint style="info" %}
-Replace <mark style="color:red;">**your project uuid**</mark>, <mark style="color:red;">**your project client key**</mark>, <mark style="color:red;">**your project app uuid**</mark> with the new values created in your Dashboard.
-
-You can dynamically switch the chainEnv by calling the `ParticleNetwork.setChainEnv()` method.&#x20;
+You can dynamically switch the chainEnv by calling the `ParticleNetwork.`setChainName`()` method.&#x20;
 
 devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% endhint %}
@@ -109,7 +119,7 @@ To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. Y
 {% tabs %}
 {% tab title="Swift" %}
 ```kotlin
-ParticleNetwork.login(type: .email).subscribe { [weak self] result in
+ParticleAuthService.login(type: .email).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -149,7 +159,7 @@ The SDK will delete users' account information in cache.
 {% tabs %}
 {% tab title="Swift" %}
 ```kotlin
-ParticleNetwork.logout().subscribe { [weak self] result in
+ParticleAuthService.logout().subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -190,7 +200,7 @@ Use the Particle SDK to sign a transaction or message. The SDK provides three me
 {% tab title="Swift" %}
 ```kotlin
 //transaction: base58 string
-ParticleNetwork.signAndSendTransaction(transaction).subscribe {  [weak self] result in
+ParticleAuthService.signAndSendTransaction(transaction).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -201,7 +211,7 @@ ParticleNetwork.signAndSendTransaction(transaction).subscribe {  [weak self] res
 }.disposed(by: bag)
         
 //transaction: base58 string
-ParticleNetwork.signtransaction(transaction).subscribe {  [weak self] result in
+ParticleAuthService.signtransaction(transaction).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -212,7 +222,7 @@ ParticleNetwork.signtransaction(transaction).subscribe {  [weak self] result in
 }.disposed(by: bag)
 
 //sign any string
-ParticleNetwork.signMessage(message).subscribe {  [weak self] result in
+ParticleAuthService.signMessage(message).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -264,4 +274,4 @@ ParticleNetwork.signMessage(message).subscribe {  [weak self] result in
 
 ### Error
 
-`ParticleNetwork.Error` contains error details, error will be logged in `debug` `DevEnvironment`
+`ParticleNetwork.Error` contains error details, the error will be logged in `debug` `DevEnvironment`
