@@ -33,7 +33,7 @@ The Web3 APIs require **HTTP Basic Authentication**:
 | Username       | Your Project Id         |
 | Password       | Your Project Server Key |
 
-## Code Example
+### Code Example
 
 {% tabs %}
 {% tab title="Javascript" %}

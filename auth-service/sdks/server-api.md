@@ -2,6 +2,12 @@
 
 The Server API provides useful APIs to support application use. It follows a JSON-RPC 2.0 standard.
 
+## Authentication
+
+[👉 Check Authentication](../../node-service/authentication.md)
+
+## Methods
+
 ### getUserInfo
 
 > Obtain user info by uuid and token
@@ -89,6 +95,6 @@ Response example:
 }
 ```
 
-### Errors
+## Errors
 
 [👉](https://particle.network/#/login) [Check RPC errors](../../node-service/error-reference.md)

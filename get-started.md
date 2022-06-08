@@ -8,7 +8,7 @@ description: Integrate Particle products to your dApp within minutes
 
 1. :globe\_with\_meridians: **Visit our website** -> [https://particle.network](https://particle.network)
 2. :key: **Sign up** -> \*\*\*\* [https://particle.network/#/login](https://particle.network/#/login)
-3. :bulb: **Create a project & configure your Android/iOS app**
+3. &#x20;**Create a project & configure your Android/iOS app**
 4. :tada: **Integrate our native SDKs**
    1. [**Auth Service SDKs**](auth-service/sdks/)
    2. [**Wallet Service SDKs**](wallet-service/sdks/)
