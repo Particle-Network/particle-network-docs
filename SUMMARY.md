@@ -19,12 +19,6 @@
   * [Android](auth-service/sdks/android.md)
   * [iOS](auth-service/sdks/ios.md)
 
-## Wallet API
-
-* [Introduction](wallet-api/introduction.md)
-* [SDKs](wallet-api/sdks/README.md)
-  * [iOS](wallet-api/sdks/ios.md)
-
 ## WALLET SERVICE
 
 * [Introduction](wallet-service/introduction.md)

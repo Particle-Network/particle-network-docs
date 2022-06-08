@@ -33,7 +33,9 @@ repositories {
 dependencies {
     // Particle Auth Service
     implementation("network.particle:auth-service${latest_version}")
-    // Particle Wallet Service
+    // Particle Wallet Api
+    implementation("network.particle:wallet-service-api${latest_version}")
+    // Particle Wallet GUI, you can remove it if custom GUI.
     implementation("network.particle:wallet-service${latest_version}")
     //...
 }
@@ -70,7 +72,180 @@ Wallet Service depends on Auth Service, you must import [Auth Service](../../aut
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
-## API Reference
+## Wallet API Reference
+
+### Solana Service
+
+#### Get the real-time exchange rate of the Solana token
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call enhanced method: enhancedGetPrice
+ParticleNetwork.solana.getPrice(addresses, currencies)
+```
+{% endtab %}
+
+{% tab title="Java" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get token list and NFT list by giving an address
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call enhanced method: enhancedGetTokensAndNFTs
+ParticleNetwork.solana.getTokensAndNFTs(address)
+```
+{% endtab %}
+
+{% tab title="Java" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get parsed transaction history by giving an address
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call enhanced method: enhancedGetTransactionsByAddress
+ParticleNetwork.solana.getTransactionsByAddress(address, optBody)
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Serialize unsigned transaction
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call enhanced method: enhancedSerializeTransaction
+ParticleNetwork.solana.serializeTransaction(txBody)
+```
+{% endtab %}
+
+{% tab title="Java" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get Token info list&#x20;
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// get solana chain all SPL token info
+ParticleNetwork.solana.getTokenList()
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Access any standard RPC
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// such as getBalance
+ParticleNetwork.solana.rpc("getBalance", 
+    listOf("8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"))
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+### EVM Service
+
+#### Get the real-time exchange rate of the EVM token
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call enhanced method: particle_getPrice
+ParticleNetwork.evm.getPrice(addresses, currencies)
+```
+{% endtab %}
+
+{% tab title="Java" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get token list and NFT list by giving an address
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call enhanced method: particle_getTokensAndNFTs
+ParticleNetwork.evm.getTokensAndNFTs(address)
+```
+{% endtab %}
+
+{% tab title="Java" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get parsed transaction history by giving an address
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call enhanced method: particle_getTransactionsByAddress
+ParticleNetwork.evm.getTransactionsByAddress(address)
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get Token info list&#x20;
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// get any EVM chain all token info
+ParticleNetwork.evm.getTokenList()
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Access any standard RPC
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// such as eth_estimateGas
+ParticleNetwork.evm.rpc("eth_estimateGas", 
+    listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+## Wallet Service Reference
 
 ### Open Wallet
 
