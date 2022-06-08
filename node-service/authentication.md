@@ -28,10 +28,10 @@ We assume you already have a [Particle Account](https://particle.network/#/login
 
 The Web3 APIs require **HTTP Basic Authentication**:
 
-| Basic Auth Key | Basic Auth Value        |   |
-| -------------- | ----------------------- | - |
-| Username       | Your Project Id         |   |
-| Password       | Your Project Server Key |   |
+| Basic Auth Key | Basic Auth Value        |
+| -------------- | ----------------------- |
+| Username       | Your Project Id         |
+| Password       | Your Project Server Key |
 
 ### Code Example
 
