@@ -54,7 +54,9 @@ repositories {
 dependencies {
     // Particle Auth Service
     implementation 'network.particle:auth-service${latest_version}'
-    // Particle Wallet Service
+    // Particle Wallet Api
+    implementation 'network.particle:wallet-service-api${latest_version}'
+    // Particle Wallet GUI, you can remove it if custom GUI.
     implementation 'network.particle:wallet-service${latest_version}'
     //...
 }
@@ -85,10 +87,6 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 ParticleNetwork.solana.getPrice(addresses, currencies)
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get token list and NFT list by giving an address
@@ -99,10 +97,6 @@ ParticleNetwork.solana.getPrice(addresses, currencies)
 // call enhanced method: enhancedGetTokensAndNFTs
 ParticleNetwork.solana.getTokensAndNFTs(address)
 ```
-{% endtab %}
-
-{% tab title="Java" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -115,10 +109,6 @@ ParticleNetwork.solana.getTokensAndNFTs(address)
 ParticleNetwork.solana.getTransactionsByAddress(address, optBody)
 ```
 {% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Serialize unsigned transaction
@@ -129,10 +119,6 @@ ParticleNetwork.solana.getTransactionsByAddress(address, optBody)
 // call enhanced method: enhancedSerializeTransaction
 ParticleNetwork.solana.serializeTransaction(txBody)
 ```
-{% endtab %}
-
-{% tab title="Java" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -145,10 +131,6 @@ ParticleNetwork.solana.serializeTransaction(txBody)
 ParticleNetwork.solana.getTokenList()
 ```
 {% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Access any standard RPC
@@ -160,10 +142,6 @@ ParticleNetwork.solana.getTokenList()
 ParticleNetwork.solana.rpc("getBalance", 
     listOf("8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"))
 ```
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -178,10 +156,6 @@ ParticleNetwork.solana.rpc("getBalance",
 ParticleNetwork.evm.getTokensAndNFTs(address)
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get the real-time exchange rate of the EVM token
@@ -194,10 +168,6 @@ val parmas2 = arrayListOf("usd")
 ParticleNetwork.evm.particleGetPrice(parmas1, parmas2)
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get parsed transaction history by giving an address
@@ -209,10 +179,6 @@ ParticleNetwork.evm.particleGetPrice(parmas1, parmas2)
 ParticleNetwork.evm.getTransactionsByAddress(address)
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get suggested GasFees
@@ -222,10 +188,6 @@ ParticleNetwork.evm.getTransactionsByAddress(address)
 ```
 ParticleNetwork.evm.particleSuggestedGasFees()
 ```
-{% endtab %}
-
-{% tab title="Java" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -237,10 +199,6 @@ ParticleNetwork.evm.particleSuggestedGasFees()
 // get any EVM chain all token info
 ParticleNetwork.evm.getTokenList()
 ```
-{% endtab %}
-
-{% tab title="Java" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -254,10 +212,6 @@ ParticleNetwork.evm.rpc("eth_estimateGas",
  
        listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
 ```
-{% endtab %}
-
-{% tab title="Java" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -274,10 +228,6 @@ ParticleNetwork.evm.particleAbiEncodeFunctionCallErc721(token,from,to,tokenId)
 ParticleNetwork.evm.particleAbiEncodeFunctionCallErc1155(token,from,to,tokenId)
 
 ```
-{% endtab %}
-
-{% tab title="Java" %}
-
 {% endtab %}
 {% endtabs %}
 
