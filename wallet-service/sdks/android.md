@@ -169,9 +169,16 @@ ParticleNetwork.solana.rpc("getBalance",
 
 ### EVM Service
 
-#### Get the real-time exchange rate of the EVM token
+#### Get token list and NFT list by giving an address
 
 {% tabs %}
+{% tab title="Untitled" %}
+```
+// call enhanced method: particle_getTokensAndNFTs
+ParticleNetwork.evm.getTokensAndNFTs(address)
+```
+{% endtab %}
+
 {% tab title="Kotlin" %}
 ```kotlin
 // call enhanced method: particle_getPrice
@@ -184,13 +191,20 @@ ParticleNetwork.evm.getPrice(addresses, currencies)
 {% endtab %}
 {% endtabs %}
 
-#### Get token list and NFT list by giving an address
+#### Get the real-time exchange rate of the EVM token
 
 {% tabs %}
+{% tab title="Untitled" %}
+```
+val parmas1 = arrayListOf<String>("address1","address2")
+val parmas2 = arrayListOf("usd")
+ParticleNetwork.evm.particleGetPrice(parmas1, parmas2)
+```
+{% endtab %}
+
 {% tab title="Kotlin" %}
 ```kotlin
-// call enhanced method: particle_getTokensAndNFTs
-ParticleNetwork.evm.getTokensAndNFTs(address)
+/
 ```
 {% endtab %}
 
@@ -209,7 +223,21 @@ ParticleNetwork.evm.getTransactionsByAddress(address)
 ```
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Java" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get suggested GasFees
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```
+ParticleNetwork.evm.particleSuggestedGasFees()
+```
+{% endtab %}
+
+{% tab title="Java" %}
 
 {% endtab %}
 {% endtabs %}
@@ -224,7 +252,7 @@ ParticleNetwork.evm.getTokenList()
 ```
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Java" %}
 
 {% endtab %}
 {% endtabs %}
@@ -236,11 +264,32 @@ ParticleNetwork.evm.getTokenList()
 ```kotlin
 // such as eth_estimateGas
 ParticleNetwork.evm.rpc("eth_estimateGas", 
-    listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
+ 
+       listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
 ```
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Java" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Serialization the data of contract
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```
+//erc20
+ParticleNetwork.evm.particleAbiEncodeFunctionCallErc20(token,toAddress,amount)
+//erc721
+ParticleNetwork.evm.particleAbiEncodeFunctionCallErc721(token,from,to,tokenId)
+//erc1155
+ParticleNetwork.evm.particleAbiEncodeFunctionCallErc1155(token,from,to,tokenId)
+
+```
+{% endtab %}
+
+{% tab title="Java" %}
 
 {% endtab %}
 {% endtabs %}
