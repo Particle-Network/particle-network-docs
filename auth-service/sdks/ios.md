@@ -96,11 +96,11 @@ ParticleNetwork.initialize(config: config)
 return ParticleNetwork.handleUrl(url)
 ```
 
-7\. Config your app scheme URL, select your app target in the info section, click to add the URL Type, pass your scheme in URL Schemes
+7\. Config your app scheme URL, select your app target in the info section, click to add the URL type, and pass your scheme in URL Schemes
 
-Your scheme url should be "pn" + your project app uuid.
+Your scheme URL should be "pn" + your project app uuid.
 
-for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
+For example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
 ![Config scheme url](../../.gitbook/assets/image.png)
 
@@ -192,9 +192,9 @@ ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
 
 Use the Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
 
-1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature.
-2. `signTransaction`: sign transaction, return signed message.
-3. `signMessage`: sign message, return signed message.
+1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature
+2. `signTransaction`: sign transaction, return signed message
+3. `signMessage`: sign message, return signed message
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -274,4 +274,4 @@ ParticleNetwork.signMessage(message).subscribe {  [weak self] result in
 
 ### Error
 
-`ParticleNetwork.Error` contains error details, the error will be logged in `debug` `DevEnvironment`
+`ParticleNetwork.Error` contains error details. The error will be logged in `debug` `DevEnvironment`.
