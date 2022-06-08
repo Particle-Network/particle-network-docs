@@ -1,6 +1,6 @@
 ---
 description: Secure, easy-to-use, and trusted Web3 product solutions
-cover: .gitbook/assets/飞书20220513-184433 (1).png
+cover: .gitbook/assets/飞书20220608-195224.png
 coverY: 0
 ---
 
