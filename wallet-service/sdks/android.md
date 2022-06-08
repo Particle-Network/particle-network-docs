@@ -172,17 +172,10 @@ ParticleNetwork.solana.rpc("getBalance",
 #### Get token list and NFT list by giving an address
 
 {% tabs %}
-{% tab title="Untitled" %}
-```
-// call enhanced method: particle_getTokensAndNFTs
-ParticleNetwork.evm.getTokensAndNFTs(address)
-```
-{% endtab %}
-
 {% tab title="Kotlin" %}
 ```kotlin
-// call enhanced method: particle_getPrice
-ParticleNetwork.evm.getPrice(addresses, currencies)
+// call enhanced method: particle_getTokensAndNFTs
+ParticleNetwork.evm.getTokensAndNFTs(address)
 ```
 {% endtab %}
 
@@ -194,17 +187,11 @@ ParticleNetwork.evm.getPrice(addresses, currencies)
 #### Get the real-time exchange rate of the EVM token
 
 {% tabs %}
-{% tab title="Untitled" %}
-```
+{% tab title="Kotlin" %}
+```kotlin
 val parmas1 = arrayListOf<String>("address1","address2")
 val parmas2 = arrayListOf("usd")
 ParticleNetwork.evm.particleGetPrice(parmas1, parmas2)
-```
-{% endtab %}
-
-{% tab title="Kotlin" %}
-```kotlin
-/
 ```
 {% endtab %}
 
