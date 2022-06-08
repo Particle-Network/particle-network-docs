@@ -12,15 +12,15 @@
 
 ### Create a Particle Project and App
 
-Before you can add Wallet Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
+Before you can add the Wallet Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://particle.network/#/login)
 
 ### Add the Wallet Service SDK to your app <a href="#add-sdks" id="add-sdks"></a>
 
-Wallet Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) .
+Wallet Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-Wallet Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0 or higher.Here's how to install Wallet Service using CocoaPods:
+Wallet Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0 or higher. Here's how to install the Wallet Service using CocoaPods:
 
 1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
@@ -47,7 +47,7 @@ pod install --repo-update
 open your-project.xcworkspace
 ```
 
-4\. Add Privacy - Camera Usage Description in your info.plist file, we needs to take photos for QRCode.
+4\. Add Privacy - Camera Usage Description in your info.plist file, we need to take photos for the QR code.
 
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
@@ -83,7 +83,7 @@ ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies:
 {% endtab %}
 {% endtabs %}
 
-#### Get token list and NFT list by giving an address
+#### Get the token list and NFT list by giving an address
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -103,7 +103,7 @@ ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subsc
 {% endtab %}
 {% endtabs %}
 
-#### Get parsed transaction history by giving an address
+#### Get the parsed transaction history by giving an address
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -147,7 +147,7 @@ ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transact
 {% endtab %}
 {% endtabs %}
 
-#### Get Token info list&#x20;
+#### Get the token info list&#x20;
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -207,7 +207,7 @@ guard let self = self else { return }
 {% endtab %}
 {% endtabs %}
 
-#### Get token list and NFT list by giving an address
+#### Get the token list and NFT list by giving an address
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -227,7 +227,7 @@ guard let self = self else { return }
 {% endtab %}
 {% endtabs %}
 
-#### Get parsed transaction history by giving an address
+#### Get the parsed transaction history by giving an address
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -247,7 +247,7 @@ guard let self = self else { return }
 {% endtab %}
 {% endtabs %}
 
-#### Get Token info list&#x20;
+#### Get the token info list&#x20;
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -339,7 +339,7 @@ PNRouter.build(RouterPath.TokenSend).navigation();
 
 ### Open Receive Token
 
-Display your address QRCode.
+Display your address QR code.
 
 {% tabs %}
 {% tab title="Swift" %}
