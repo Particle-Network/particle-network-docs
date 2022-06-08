@@ -52,7 +52,7 @@ open your-project.xcworkspace
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
 {% hint style="info" %}
-Wallet GUI depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).
+Wallet GUI depends on Auth Service, you must import [Auth Service](broken-reference).
 {% endhint %}
 
 {% hint style="info" %}
@@ -73,7 +73,7 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 let addresses: [String] = ["native"]
 ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] result in
     guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -93,7 +93,7 @@ ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies:
 let address: String = ""
 ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subscribe { [weak self] result in
     guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -113,7 +113,7 @@ ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subsc
 let address: String = ""
 ParticleWalletAPI.getSolanaService().enhancedGetTransactions(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] result in
     guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -137,7 +137,7 @@ let mintAddress: String? = nil
 let payer: String? = nil
 ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transactionType, sender: sender, receiver: receiver, lamports: lamports, mintAddress: mintAddress, payer: payer).subscribe { [weak self] result in
     guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -155,7 +155,7 @@ ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transact
 // get solana chain all SPL token info
 ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] result in
     guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -175,7 +175,7 @@ let method: String = "getBalance"
 let params: [Encodable?] = ["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]
 ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscribe { [weak self] result in
     guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -197,7 +197,7 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
 let addresses = ["native"]
 ParticleWalletAPI.getEvmService().particleGetPrice(by: addresses, vsCurrencies: ["usd"]).subscribe { [weak self] _ in
 guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -217,7 +217,7 @@ guard let self = self else { return }
 let address = ""
 ParticleWalletAPI.getEvmService().particleGetTokensAndNFTs(by: address).subscribe { [weak self] _ in
 guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -237,7 +237,7 @@ guard let self = self else { return }
 let address = ""
 ParticleWalletAPI.getEvmService().particleGetTransactions(by: address).subscribe { [weak self] _ in
 guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -255,7 +255,7 @@ guard let self = self else { return }
 // get any EVM chain all token info
 ParticleWalletAPI.getEvmService().getTokenList().subscribe { [weak self] _ in
 guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -275,7 +275,7 @@ let method = "eth_getBalance"
 let params: [Encodable?] = ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73", "latest"]
 ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe { [weak self] _ in
     guard let self = self else { return }
-    // handler result
+    // handle result
 }.disposed(by: bag)
 ```
 {% endtab %}

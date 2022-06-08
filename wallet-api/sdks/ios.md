@@ -103,7 +103,7 @@ devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% tabs %}
 {% tab title="Swift" %}
 ```kotlin
-let service = ParticleWalletAPI.getSolanaService()
+ParticleWalletAPI.getSolanaService()
 ```
 {% endtab %}
 
@@ -116,5 +116,8 @@ let service = ParticleWalletAPI.getSolanaService()
 ### GetEvmService
 
 ```
-let service = ParticleWalletAPI.getEvmService()
 ```
+
+{% hint style="info" %}
+After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
+{% endhint %}
