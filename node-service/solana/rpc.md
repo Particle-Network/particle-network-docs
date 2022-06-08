@@ -4,7 +4,7 @@ description: All of The Solana Official JSON-RPC API methods that are supported.
 
 # Standard RPC
 
-### Example：getBalance
+## Example：getBalance
 
 > Returns the balance of the account of provided Pubkey
 
@@ -69,4 +69,4 @@ Response Example：
 }
 ```
 
-[👉 ](https://particle.network/#login) [More APIs](https://docs.solana.com/developing/clients/jsonrpc-api)
+## [👉 ](https://particle.network/#login)[More APIs](https://docs.solana.com/developing/clients/jsonrpc-api)

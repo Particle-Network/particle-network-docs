@@ -47,7 +47,7 @@ The Web3 APIs require **HTTP Basic Authentication**:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.get('https://api.particle.network', {
+    const response = await axios.get('https://api.particle.network/server/rpc', {
         auth: {
             username: 'Your Project Id',
             password: 'Your Project Server Key',
@@ -61,7 +61,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network' \
+curl 'https://api.particle.network/server/rpc' \
 --header 'Authorization: Basic { Auth String }'
 ```
 {% endtab %}
