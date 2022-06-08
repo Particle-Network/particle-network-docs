@@ -6,7 +6,13 @@ description: Authenticate yourself to the Particle Node Service API
 
 ## Endpoint
 
-**https://api.particle.network**
+**Base URL: https://api.particle.network**
+
+The Server RPC URL is:
+
+{% hint style="info" %}
+**https://api.particle.network/server/rpc**
+{% endhint %}
 
 The Solana chain's RPC URL is:
 
@@ -33,7 +39,7 @@ The Web3 APIs require **HTTP Basic Authentication**:
 | Username       | Your Project Id         |
 | Password       | Your Project Server Key |
 
-### Code Example
+## Code Example
 
 {% tabs %}
 {% tab title="Javascript" %}

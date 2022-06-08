@@ -2,14 +2,6 @@
 
 The Server API provides useful APIs to support application use. It follows a JSON-RPC 2.0 standard.
 
-## Endpoint
-
-The Server RPC URL is:
-
-{% hint style="info" %}
-**https://api.particle.network/server/rpc**
-{% endhint %}
-
 ## Authentication
 
 [👉 Check Authentication](../../node-service/authentication.md)
