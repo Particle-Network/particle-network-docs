@@ -31,7 +31,10 @@ pod init
 2\. To your Podfile, add the Auth Service pods that you want to use in your app.
 
 ```
-pod 'ParticleWalletService'
+ // Particle Wallet API
+pod 'ParticleWalletAPI'
+//  Particle Wallet GUI, you can remove it if custom GUI.
+pod 'ParticleWalletGUI'
 ```
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
@@ -49,14 +52,241 @@ open your-project.xcworkspace
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
 {% hint style="info" %}
-Wallet Service depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).
+Wallet GUI depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).
 {% endhint %}
 
 {% hint style="info" %}
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
-## API Reference
+## Wallet API Reference
+
+### Solana Service
+
+#### Get the real-time exchange rate of the Solana token
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call enhanced method: enhancedGetPrice
+// native token address is "native"
+let addresses: [String] = ["native"]
+ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] result in
+    guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get token list and NFT list by giving an address
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call enhanced method: enhancedGetTokensAndNFTs
+// address is user public address
+let address: String = ""
+ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subscribe { [weak self] result in
+    guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get parsed transaction history by giving an address
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call enhanced method: enhancedGetTransactionsByAddress
+// address is user public address
+let address: String = ""
+ParticleWalletAPI.getSolanaService().enhancedGetTransactions(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] result in
+    guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Serialize unsigned transaction
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call enhanced method: enhancedSerializeTransaction
+let transactionType: SolanaTransactionType = .transferSol
+let sender: String = ""
+let receiver: String = ""
+let lamports: BInt = BInt(0)
+let mintAddress: String? = nil
+let payer: String? = nil
+ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transactionType, sender: sender, receiver: receiver, lamports: lamports, mintAddress: mintAddress, payer: payer).subscribe { [weak self] result in
+    guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get Token info list&#x20;
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// get solana chain all SPL token info
+ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] result in
+    guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Access any standard RPC
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// such as getBalance
+let method: String = "getBalance"
+let params: [Encodable?] = ["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]
+ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscribe { [weak self] result in
+    guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+### EVM Service
+
+#### Get the real-time exchange rate of the EVM token
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call enhanced method: particle_getPrice
+let addresses = ["native"]
+ParticleWalletAPI.getEvmService().particleGetPrice(by: addresses, vsCurrencies: ["usd"]).subscribe { [weak self] _ in
+guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get token list and NFT list by giving an address
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call enhanced method: particle_getTokensAndNFTs
+let address = ""
+ParticleWalletAPI.getEvmService().particleGetTokensAndNFTs(by: address).subscribe { [weak self] _ in
+guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get parsed transaction history by giving an address
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call enhanced method: particle_getTransactionsByAddress
+let address = ""
+ParticleWalletAPI.getEvmService().particleGetTransactions(by: address).subscribe { [weak self] _ in
+guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Get Token info list&#x20;
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// get any EVM chain all token info
+ParticleWalletAPI.getEvmService().getTokenList().subscribe { [weak self] _ in
+guard let self = self else { return }
+    // handler result
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+#### Access any standard RPC
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// such as eth_estimateGas
+ParticleNetwork.evm.rpc("eth_estimateGas", 
+    listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
+    let method = "eth_chainId"
+        let params: [Encodable?] = [""]
+        ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // handler result
+        }.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
+
+##
+
+## Wallet GUI Reference
 
 ### Open Wallet
 
