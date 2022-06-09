@@ -322,3 +322,22 @@ PNRouter.build(RouterPath.TokenTransactionRecords).navigation();
 ```
 {% endtab %}
 {% endtabs %}
+
+### Open NFT Details
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```
+var params = NftDetailParams("nftMint")
+PNRouter.build(RouterPath.NftDetails, params).navigation()
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```
+ NftDetailParams params = new NftDetailParams("nftMint")
+ PNRouter.build(RouterPath.NftDetails, params).navigation()
+```
+{% endtab %}
+{% endtabs %}
+
