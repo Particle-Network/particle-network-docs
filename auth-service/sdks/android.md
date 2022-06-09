@@ -230,14 +230,16 @@ ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
 ### Is User Logged In
 
 {% tabs %}
-{% tab title="First Tab" %}
+{% tab title="Kotlin" %}
 ```
 ParticleNetwork.isLogin()
 ```
 {% endtab %}
 
-{% tab title="Second Tab" %}
-
+{% tab title="Java" %}
+```
+ParticleNetwork.isLogin()
+```
 {% endtab %}
 {% endtabs %}
 
