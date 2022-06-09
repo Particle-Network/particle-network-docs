@@ -70,41 +70,7 @@ const pn = new ParticleNetwork({
 //...
 ```
 
-Particle Network support EVM blockchain.
-
-* ethereum
-  * 1
-  * 42
-* bsc
-  * 56
-  * 97
-* avalanche
-  * 43114
-  * 43113
-* ploygon
-  * 137
-  * 80001
-* fantom
-  * 250
-  * 4002
-* arbitrum
-  * 42161
-  * 421611
-* moonbeam
-  * 1284
-  * 1287
-* moonriver
-  * 1285
-  * 1287
-* heco
-  * 128
-  * 256
-* aurora
-  * 1313161554
-  * 1313161555
-* harmony
-  * 1666600000
-  * 1666700000
+Particle support more [EVM Chains](../../node-service/evm-chains-api/#structure).
 
 ### Get User Account
 
