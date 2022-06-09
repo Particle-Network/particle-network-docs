@@ -185,7 +185,7 @@ ParticleNetwork.evm.getTransactionsByAddress(address)
 
 {% tabs %}
 {% tab title="Kotlin" %}
-```
+```kotlin
 ParticleNetwork.evm.particleSuggestedGasFees()
 ```
 {% endtab %}
@@ -217,7 +217,7 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 
 {% tabs %}
 {% tab title="Kotlin" %}
-```
+```kotlin
 ParticleNetwork.evm.particleAbiEncodeFunctionCall(params: List<Any>)
 
 //1.The first parameter is contract address
@@ -327,14 +327,14 @@ PNRouter.build(RouterPath.TokenTransactionRecords).navigation();
 
 {% tabs %}
 {% tab title="Kotlin" %}
-```
+```kotlin
 var params = NftDetailParams("nftMint")
 PNRouter.build(RouterPath.NftDetails, params).navigation()
 ```
 {% endtab %}
 
 {% tab title="Java" %}
-```
+```java
  NftDetailParams params = new NftDetailParams("nftMint")
  PNRouter.build(RouterPath.NftDetails, params).navigation()
 ```
