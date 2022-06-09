@@ -24,14 +24,14 @@ Wallet Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10
 
 1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
-```
+```ruby
 pod init
 ```
 
 2\. To your Podfile, add the Auth Service pods that you want to use in your app.
 
-```
- // Particle Wallet API
+```ruby
+// Particle Wallet API
 pod 'ParticleWalletAPI'
 //  Particle Wallet GUI, you can remove it if custom GUI.
 pod 'ParticleWalletGUI'
@@ -39,12 +39,12 @@ pod 'ParticleWalletGUI'
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
-```
+```ruby
 pod install --repo-update
 ```
 
-```
-open your-project.xcworkspace
+```ruby
+open our-project.xcworkspace
 ```
 
 4\. Add Privacy - Camera Usage Description in your info.plist file, we need to take photos for the QR code.
@@ -67,7 +67,7 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call enhanced method: enhancedGetPrice
 // native token address is "native"
 let addresses: [String] = ["native"]
@@ -83,7 +83,7 @@ ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies:
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call enhanced method: enhancedGetTokensAndNFTs
 // address is user public address
 let address: String = ""
@@ -99,7 +99,7 @@ ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subsc
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call enhanced method: enhancedGetTransactionsByAddress
 // address is user public address
 let address: String = ""
@@ -115,7 +115,7 @@ ParticleWalletAPI.getSolanaService().enhancedGetTransactions(by: address, before
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call enhanced method: enhancedSerializeTransaction
 let transactionType: SolanaTransactionType = .transferSol
 let sender: String = ""
@@ -135,7 +135,7 @@ ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transact
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // get solana chain all SPL token info
 ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] result in
     guard let self = self else { return }
@@ -149,7 +149,7 @@ ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] resu
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // such as getBalance
 let method: String = "getBalance"
 let params: [Encodable?] = ["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]
@@ -167,7 +167,7 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call enhanced method: particle_getPrice
 // address is user public address
 let addresses = ["native"]
@@ -183,7 +183,7 @@ guard let self = self else { return }
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call enhanced method: particle_getTokensAndNFTs
 // address is user public address
 let address = ""
@@ -199,7 +199,7 @@ guard let self = self else { return }
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call enhanced method: particle_getTransactionsByAddress
 // address is user public address
 let address = ""
@@ -215,7 +215,7 @@ guard let self = self else { return }
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // get any EVM chain all token info
 ParticleWalletAPI.getEvmService().getTokenList().subscribe { [weak self] _ in
 guard let self = self else { return }
@@ -229,7 +229,7 @@ guard let self = self else { return }
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // such as eth_getBalance
 let method = "eth_getBalance"
 let params: [Encodable?] = ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73", "latest"]
@@ -249,7 +249,7 @@ ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe 
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 PNRouter.navigator(routhPath: .wallet)
 ```
 {% endtab %}
@@ -259,7 +259,7 @@ PNRouter.navigator(routhPath: .wallet)
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 //open send spl token
 let tokenSendConfig = TokenSendConfig(tokenAddress: nil, toAddress: nil, amount: nil)
 PNRouter.navigatorTokenSend(tokenSendConfig: tokenSendConfig)
@@ -282,7 +282,7 @@ Display your address QR code.
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 PNRouter.navigator(routhPath: .tokenReceive)
 ```
 {% endtab %}
@@ -292,13 +292,26 @@ PNRouter.navigator(routhPath: .tokenReceive)
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 //open spl token transaction records
 let tokenTransactionRecordsConfig = TokenTransactionRecordsConfig(tokenAddress: tokenAddress)
 PNRouter.navigatorTokenTransactionRecords(tokenTransactionRecordsConfig: tokenTransactionRecordsConfig)
 
 //open default token transaction records by chain name
 PNRouter.navigator(routhPath: .tokenTransactionRecords)
+```
+{% endtab %}
+{% endtabs %}
+
+### Open NFT Details
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+let address = ""
+lett tokenId = ""
+let config = NFTDetailsConfig(address: address, tokenId: tokenId)
+PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
 ```
 {% endtab %}
 {% endtabs %}
