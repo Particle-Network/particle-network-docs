@@ -180,14 +180,15 @@ ParticleAuthService.getAddress()
 
 Use the Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
 
-1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature
-2. `signTransaction`: sign transaction, return signed message
-3. `signMessage`: sign message, return signed message
+1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature. support both solana and evm.
+2. `signTransaction`: sign transaction, return signed message, only support solana.
+3. `signMessage`: sign message, return signed message, support both solana and evm.
+4. `signTypedData`: sign typed data, support v1, v3, v4 typed data, return signed message, only support evm.
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-//transaction: base58 string in solana, or hex string in evm
+//transaction: request base58 string in solana, or hex string in evm
 ParticleAuthService.signAndSendTransaction(transaction).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -198,7 +199,7 @@ ParticleAuthService.signAndSendTransaction(transaction).subscribe {  [weak self]
     }
 }.disposed(by: bag)
         
-//transaction: base58 string in solana, not support evm
+//transaction: request base58 string in solana, not support evm
 ParticleAuthService.signtransaction(transaction).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -209,13 +210,26 @@ ParticleAuthService.signtransaction(transaction).subscribe {  [weak self] result
     }
 }.disposed(by: bag)
 
-//sign any string, not support evm
+//sign string, any string in solana, request hex string in evm
 ParticleAuthService.signMessage(message).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
         // handle error
     case .success(let signedMessage):
+        // handle signed message
+    }
+}.disposed(by: bag)
+
+ 
+// sign typed data, request hex string in evm, not support solana.
+// support v1, v3, v4 typed data
+var message = ""
+ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self] result in
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let signed):
         // handle signed message
     }
 }.disposed(by: bag)
