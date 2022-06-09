@@ -12,31 +12,31 @@ The EVM Chains API allows applications to connect to a EVM chain node that is pa
 
 The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **chainId** to specify which Solana network we use.
 
-| chainId Value (int) | EVM Chains                  |
-| ------------------- | --------------------------- |
-| 1                   | Ethereum Mainnet            |
-| 42                  | Ethereum Testnet(Kovan)     |
-| 56                  | Binance Smart Chain Mainnet |
-| 97                  | Binance Smart Chain Testnet |
-| 137                 | Polygon Mainnet             |
-| 80001               | Polygon Testnet(Mumbai)     |
-| 43114               | Avalanche Mainnet(C-Chain)  |
-| 43113               | Avalanche Testnet(Fuji)     |
-| 250                 | Fantom Mainnet(Opera)       |
-| 4002                | Fantom Testnet              |
-| 42161               | Arbitrum Mainnet(One)       |
-| 421611              | Arbitrum Testnet(Rinkeby)   |
-| 1284                | Moonbeam                    |
-| 1285                | Moonriver                   |
-| 1287                | Moonbase Alpha              |
-| 1666600000          | Harmony Mainnet             |
-| 1666700000          | Harmony Testnet             |
-| 10                  | Optimism Mainnet            |
-| 69                  | Optimism Testnet(Kovan)     |
-| 128                 | Huobi ECO Chain Mainnet     |
-| 256                 | Huobi ECO Chain Testnet     |
-| 1313161554          | Aurora Mainnet              |
-| 1313161555          | Aurora Testnet              |
+| chainId Value (int) | chainName Value(string) | EVM Chains                  |
+| ------------------- | ----------------------- | --------------------------- |
+| 1                   | ethereum                | Ethereum Mainnet            |
+| 42                  | ethereum                | Ethereum Testnet(Kovan)     |
+| 56                  | bsc                     | Binance Smart Chain Mainnet |
+| 97                  | bsc                     | Binance Smart Chain Testnet |
+| 137                 | polygon                 | Polygon Mainnet             |
+| 80001               | polygon                 | Polygon Testnet(Mumbai)     |
+| 43114               | avalanche               | Avalanche Mainnet(C-Chain)  |
+| 43113               | avalanche               | Avalanche Testnet(Fuji)     |
+| 250                 | fantom                  | Fantom Mainnet(Opera)       |
+| 4002                | fantom                  | Fantom Testnet              |
+| 42161               | arbitrum                | Arbitrum Mainnet(One)       |
+| 421611              | arbitrum                | Arbitrum Testnet(Rinkeby)   |
+| 1284                | moonbeam                | Moonbeam                    |
+| 1285                | moonriver               | Moonriver                   |
+| 1287                | moonbase                | Moonbase Alpha              |
+| 1666600000          | harmony                 | Harmony Mainnet             |
+| 1666700000          | harmony                 | Harmony Testnet             |
+| 10                  | optimism                | Optimism Mainnet            |
+| 69                  | optimism                | Optimism Testnet(Kovan)     |
+| 128                 | heco                    | Huobi ECO Chain Mainnet     |
+| 256                 | heco                    | Huobi ECO Chain Testnet     |
+| 1313161554          | aurora                  | Aurora Mainnet              |
+| 1313161555          | aurora                  | Aurora Testnet              |
 
 ### Standard RPC
 
