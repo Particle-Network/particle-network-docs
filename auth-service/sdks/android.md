@@ -238,7 +238,7 @@ ParticleNetwork.isLogin()
 
 {% tab title="Java" %}
 ```
-ParticleNetwork.isLogin()
+ParticleNetworkAuth.isLogin(ParticleNetwork.INSTANCE)
 ```
 {% endtab %}
 {% endtabs %}
