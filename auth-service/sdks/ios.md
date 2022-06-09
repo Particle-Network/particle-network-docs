@@ -136,7 +136,7 @@ ParticleAuthService.login(type: .email).subscribe { [weak self] result in
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
-### isUserLoggedIn
+### Is User Logged In
 
 Check that the user is logged in.
 
