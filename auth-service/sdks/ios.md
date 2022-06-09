@@ -105,7 +105,7 @@ For example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", yo
 ![Config scheme url](../../.gitbook/assets/image.png)
 
 {% hint style="info" %}
-You can dynamically switch the chainEnv by calling the `ParticleNetwork.setChainName()` method.&#x20;
+You can dynamically switch the chainEnv by calling the `ParticleNetwork.`setChainName`()` method.&#x20;
 
 devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% endhint %}
@@ -130,19 +130,27 @@ ParticleAuthService.login(type: .email).subscribe { [weak self] result in
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Java" %}
+```java
+ParticleNetwork.login(activity, LoginType.EMAIL, new WebServiceCallback<LoginOutput>() {
+    @Override
+    public void success(@NonNull LoginOutput output) {
+        //login success, return user info in output
+    }
+    
+    @Override
+    public void failure(@NonNull WebServiceError errMsg) {
+        //handle err
+    }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
-
-### IsLogin
-
-Check that the user is logged on.
-
-```
-ParticleAuthService.isLogin()
-```
 
 ### Logout
 
@@ -162,15 +170,23 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```java
+ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
+    @Override
+    public void success(@NonNull WebOutput output) {
+        //logout success
+    }
+    
+    @Override
+    public void failure(@NonNull WebServiceError errMsg) {
+        //handle error
+    }
+});
+```
+{% endtab %}
 {% endtabs %}
-
-### Get userinfo, publicKey, address after login.
-
-```
-ParticleAuthService.getUserInfo()
-ParticleAuthService.getPublicKey()
-ParticleAuthService.getAddress()
-```
 
 ### Signatures
 
@@ -183,7 +199,7 @@ Use the Particle SDK to sign a transaction or message. The SDK provides three me
 {% tabs %}
 {% tab title="Swift" %}
 ```kotlin
-//transaction: base58 string in solana, or hex string in evm
+//transaction: base58 string
 ParticleAuthService.signAndSendTransaction(transaction).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -194,7 +210,7 @@ ParticleAuthService.signAndSendTransaction(transaction).subscribe {  [weak self]
     }
 }.disposed(by: bag)
         
-//transaction: base58 string in solana, not support evm
+//transaction: base58 string
 ParticleAuthService.signtransaction(transaction).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -205,8 +221,45 @@ ParticleAuthService.signtransaction(transaction).subscribe {  [weak self] result
     }
 }.disposed(by: bag)
 
-//sign any string, not support evm
+//sign any string
 ParticleAuthService.signMessage(message).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let signedMessage):
+        // handle signed message
+    }
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```java
+//transaction: base58 string
+ParticleNetwork.signAndSendTransaction(transaction).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let signature):
+        // handle signature 
+    }
+}.disposed(by: bag)
+        
+//transaction: base58 string
+ParticleNetwork.signtransaction(transaction).subscribe {  [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let signedMessage):
+        // handle signed message
+    }
+}.disposed(by: bag)
+
+//sign any string
+ParticleNetwork.signMessage(message).subscribe {  [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):

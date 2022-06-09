@@ -50,7 +50,7 @@ Not only do we have JSON-RPC support, but also enhanced API. This allows you to 
 
 ## SDKs
 
-We support [Android and iOS](https://github.com/Particle-Network) now. The Unity and Web SDK are in development and will launch soon.
+We support [Android, iOS, and Web](https://github.com/particle-network) now. The Unity SDK, Flutter SDK, and other platforms' SDK are in development and will launch soon.
 
 ## Available Networks
 
