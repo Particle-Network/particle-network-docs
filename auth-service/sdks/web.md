@@ -72,6 +72,8 @@ const pn = new ParticleNetwork({
 
 Particle support more [EVM Chains](../../node-service/evm-chains-api/#structure).
 
+## [👉 ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
+
 ### Get User Account
 
 In order for web3 to work and grab the end-users' Ethereum wallet addresses, the users have to login first (similar to unlocking account in MetaMask). You can simply trigger the login for users with the web3 function call below.
