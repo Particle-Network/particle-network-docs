@@ -28,7 +28,7 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 421611              | arbitrum                | Arbitrum Testnet(Rinkeby)   |
 | 1284                | moonbeam                | Moonbeam                    |
 | 1285                | moonriver               | Moonriver                   |
-| 1287                | moonbase                | Moonbase Alpha              |
+| 1287                | moonbeam/moonriver      | Moonbase Alpha              |
 | 1666600000          | harmony                 | Harmony Mainnet             |
 | 1666700000          | harmony                 | Harmony Testnet             |
 | 10                  | optimism                | Optimism Mainnet            |
