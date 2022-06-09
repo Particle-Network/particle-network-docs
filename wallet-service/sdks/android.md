@@ -218,13 +218,11 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 {% tabs %}
 {% tab title="Kotlin" %}
 ```
-//erc20
-ParticleNetwork.evm.particleAbiEncodeFunctionCallErc20(token,toAddress,amount)
-//erc721
-ParticleNetwork.evm.particleAbiEncodeFunctionCallErc721(token,from,to,tokenId)
-//erc1155
-ParticleNetwork.evm.particleAbiEncodeFunctionCallErc1155(token,from,to,tokenId)
+ParticleNetwork.evm.particleAbiEncodeFunctionCall(params: List<Any>)
 
+//1.The first parameter is contract address
+//2.The second parameter is the name of the method to be called. Currently, only the following are supported:erc20_transfer erc721_safeTransferFrom erc1155_safeTransferFrom
+//3.The third parameter is the parameter value array of the method to be called, which should correspond to the above method.
 ```
 {% endtab %}
 {% endtabs %}

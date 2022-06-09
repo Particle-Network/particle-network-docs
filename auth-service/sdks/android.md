@@ -227,6 +227,20 @@ ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
 {% endtab %}
 {% endtabs %}
 
+### Is User Logged In
+
+{% tabs %}
+{% tab title="First Tab" %}
+```
+ParticleNetwork.isLogin()
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### Signatures
 
 Use Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
@@ -339,6 +353,8 @@ ParticleNetwork.signMessage(activity, message, new WebServiceCallback<SignOutput
 ```
 {% endtab %}
 {% endtabs %}
+
+####
 
 ### Error
 
