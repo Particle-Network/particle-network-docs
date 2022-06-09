@@ -77,10 +77,6 @@ ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies:
 }.disposed(by: bag)
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get the token list and NFT list by giving an address
@@ -97,10 +93,6 @@ ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subsc
 }.disposed(by: bag)
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get the parsed transaction history by giving an address
@@ -116,10 +108,6 @@ ParticleWalletAPI.getSolanaService().enhancedGetTransactions(by: address, before
     // handle result
 }.disposed(by: bag)
 ```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -141,10 +129,6 @@ ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transact
 }.disposed(by: bag)
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get the token info list&#x20;
@@ -158,10 +142,6 @@ ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] resu
     // handle result
 }.disposed(by: bag)
 ```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -178,10 +158,6 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
     // handle result
 }.disposed(by: bag)
 ```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -201,10 +177,6 @@ guard let self = self else { return }
 }.disposed(by: bag)
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get the token list and NFT list by giving an address
@@ -220,10 +192,6 @@ guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
 ```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -241,10 +209,6 @@ guard let self = self else { return }
 }.disposed(by: bag)
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-
-{% endtab %}
 {% endtabs %}
 
 #### Get the token info list&#x20;
@@ -258,10 +222,6 @@ guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
 ```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -279,10 +239,6 @@ ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe 
 }.disposed(by: bag)
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-
-{% endtab %}
 {% endtabs %}
 
 ##
@@ -295,12 +251,6 @@ ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe 
 {% tab title="Swift" %}
 ```kotlin
 PNRouter.navigator(routhPath: .wallet)
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```java
-PNRouter.build(RouterPath.Wallet).navigation();
 ```
 {% endtab %}
 {% endtabs %}
@@ -316,17 +266,6 @@ PNRouter.navigatorTokenSend(tokenSendConfig: tokenSendConfig)
 
 //open send default token by chain name
 PNRouter.navigator(routhPath: .tokenSend)
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```java
-//open send spl token
-WalletSendParams params = new WalletSendParams(tokenAddress, toAddress, toAmount);
-PNRouter.build(RouterPath.TokenSend, params).navigation();
-
-//open send default token by chain name
-PNRouter.build(RouterPath.TokenSend).navigation();
 ```
 {% endtab %}
 {% endtabs %}
@@ -347,12 +286,6 @@ Display your address QR code.
 PNRouter.navigator(routhPath: .tokenReceive)
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-```java
-PNRouter.build(RouterPath.TokenReceive).navigation();
-```
-{% endtab %}
 {% endtabs %}
 
 ### Open Transaction Records
@@ -366,17 +299,6 @@ PNRouter.navigatorTokenTransactionRecords(tokenTransactionRecordsConfig: tokenTr
 
 //open default token transaction records by chain name
 PNRouter.navigator(routhPath: .tokenTransactionRecords)
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```java
-//open spl token transaction records
-TokenTransactionRecordsParams params = new TokenTransactionRecordsParams(tokenAddress);
-PNRouter.build(RouterPath.TokenTransactionRecords, params).navigation();
-
-//open default token transaction records by chain name
-PNRouter.build(RouterPath.TokenTransactionRecords).navigation();
 ```
 {% endtab %}
 {% endtabs %}
