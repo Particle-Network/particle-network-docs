@@ -24,23 +24,23 @@ Auth Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0
 
 1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
-```
+```ruby
 pod init
 ```
 
 2\. To your Podfile, add the Auth Service pods that you want to use in your app:
 
-```
+```ruby
 pod 'ParticleAuthService'
 ```
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
-```
+```ruby
 pod install --repo-update
 ```
 
-```
+```ruby
 open your-project.xcworkspace
 ```
 
@@ -55,7 +55,7 @@ The final step is to add an initialization code to your application. You may hav
 1. Create a  **ParticleNetwork-Info.plist** into the root of your Xcode project
 2. Copy the following text into this file:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -75,7 +75,7 @@ The final step is to add an initialization code to your application. You may hav
 
 4\. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
 
-```
+```swift
 import ParticleNetwork     
 ```
 
@@ -92,7 +92,7 @@ ParticleNetwork.initialize(config: config)
 
 6\. Add the scheme URL handle in your app's `application(_:open:options:)` method
 
-```
+```swift
 return ParticleNetwork.handleUrl(url)
 ```
 
@@ -118,7 +118,7 @@ To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. Y
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 ParticleAuthService.login(type: .email).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -140,7 +140,7 @@ After log-in success, you can obtain user info by calling `ParticleNetwork.getUs
 
 Check that the user is logged on.
 
-```
+```swift
 ParticleAuthService.isLogin()
 ```
 
@@ -150,7 +150,7 @@ The SDK will delete users' account information in cache.
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 ParticleAuthService.logout().subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -166,11 +166,15 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 
 ### Get userinfo, publicKey, address after login.
 
-```
+{% tabs %}
+{% tab title="Swift" %}
+```swift
 ParticleAuthService.getUserInfo()
 ParticleAuthService.getPublicKey()
 ParticleAuthService.getAddress()
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Signatures
 
@@ -182,7 +186,7 @@ Use the Particle SDK to sign a transaction or message. The SDK provides three me
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 //transaction: base58 string in solana, or hex string in evm
 ParticleAuthService.signAndSendTransaction(transaction).subscribe {  [weak self] result in
     guard let self = self else { return }
