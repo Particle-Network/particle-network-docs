@@ -291,7 +291,7 @@ PNRouter.navigator(routhPath: .tokenReceive)
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-//open spl token transaction records
+// open spl token transaction records
 let tokenTransactionRecordsConfig = TokenTransactionRecordsConfig(tokenAddress: tokenAddress)
 PNRouter.navigatorTokenTransactionRecords(tokenTransactionRecordsConfig: tokenTransactionRecordsConfig)
 
@@ -306,8 +306,11 @@ PNRouter.navigator(routhPath: .tokenTransactionRecords)
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
+// open nft details page
+// in solana, tokenId should be an empty string, address is the nft mint address.
+// in evm, address is the nft contract address.
 let address = ""
-lett tokenId = ""
+let tokenId = ""
 let config = NFTDetailsConfig(address: address, tokenId: tokenId)
 PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
 ```
