@@ -208,9 +208,7 @@ ParticleNetwork.evm.getTokenList()
 {% tab title="Kotlin" %}
 ```kotlin
 // such as eth_estimateGas
-ParticleNetwork.evm.rpc("eth_estimateGas", 
- 
-       listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
+ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
 ```
 {% endtab %}
 {% endtabs %}
