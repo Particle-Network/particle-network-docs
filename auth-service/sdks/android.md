@@ -232,13 +232,15 @@ ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
 Use Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
 
 1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature.
-2. `signTransaction`: sign transaction, return signed message.
+2. `signTransaction`: sign transaction, return signed message, only Solana blockchain support it.
 3. `signMessage`: sign message, return signed message.
+4. `signTypedData` : sign typed data，only EVM blockchain support it.
 
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-//transaction: base58 string
+//solana transaction: base58 string. 
+//evm transcation:'0x' prefixed hex string.
 ParticleNetwork.signAndSendTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign and send transaction success
@@ -250,7 +252,7 @@ ParticleNetwork.signAndSendTransaction(activity, transaction, object : WebServic
 })
 
 
-//transaction: base58 string
+//solana transaction: base58 string. evm not support this method.
 ParticleNetwork.signTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign transaction success
@@ -262,7 +264,8 @@ ParticleNetwork.signTransaction(activity, transaction, object : WebServiceCallba
 })
 
 
-//sign any string
+//solana message: any string.
+//evm message: '0x' prefixed hex string, use 'personal_sign' to sign.
 ParticleNetwork.signMessage(activity, message, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign success
@@ -272,6 +275,19 @@ ParticleNetwork.signMessage(activity, message, object : WebServiceCallback<SignO
         // handle error
     }
 })
+
+//sign typed data, only evm support this method.
+//message: '0x' prefixed hex string.
+ParticleNetwork.signTypedData(activity, message, version, object : WebServiceCallback<SignOutput>{
+    override fun success(output: SignOutput) {
+        //sign success
+    }
+
+    override fun failure(errMsg: WebServiceError) {
+        // handle error
+    }
+})
+
 ```
 {% endtab %}
 
