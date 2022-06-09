@@ -151,11 +151,23 @@ public class App extends Application {
 {% endtab %}
 {% endtabs %}
 
-You can dynamically switch the chain&#x20;
+### Switch  ChainInfo
 
-```
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
 ParticleNetwork.setChainInfo(chainInfo: ChainInfo)
 ```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+ParticleNetwork.setChainInfo(chainInfo: ChainInfo)
+```
+{% endtab %}
+{% endtabs %}
+
+
 
 ### Login
 
@@ -237,13 +249,13 @@ ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
 
 {% tabs %}
 {% tab title="Kotlin" %}
-```
+```kotlin
 ParticleNetwork.isLogin()
 ```
 {% endtab %}
 
 {% tab title="Java" %}
-```
+```java
 ParticleNetworkAuth.isLogin(ParticleNetwork.INSTANCE)
 ```
 {% endtab %}
