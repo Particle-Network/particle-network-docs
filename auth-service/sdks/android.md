@@ -117,12 +117,14 @@ import com.particle.network.ParticleNetwork
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-        //init Particle SDK
-        ParticleNetwork.init(this, 
-            env = Env.DEV, 
-            chainName = ChainName.Solana, 
-            chainId = ChainId.SolanaDevnet,
-            )
+        //init Particle SDK for solana chain 
+        ParticleNetwork.init(this, Env.DEV, SolanaChain(SolanaChainId.Mainnet))
+        
+        //init Particle SDK for evm chain
+        ParticleNetwork.init(this, Env.DEV, EthereumChain(EthereumChainId.Mainnet))
+        
+        //init wallet service
+        ParticleWallet.init(this)
     }
 }
 ```
@@ -149,7 +151,11 @@ public class App extends Application {
 {% endtab %}
 {% endtabs %}
 
-You can dynamically switch the chain ID by calling the `ParticleNetwork.setChainId()`method. `, env` needs to be modified to be Env.`PRODUCTION` for release.
+You can dynamically switch the chain&#x20;
+
+```
+ParticleNetwork.setChainInfo(chainInfo: ChainInfo)
+```
 
 ### Login
 
