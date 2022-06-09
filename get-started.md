@@ -7,8 +7,8 @@ description: Integrate Particle products to your dApp within minutes
 ## Getting Started With Particle Network
 
 1. :globe\_with\_meridians: **Visit our website** -> [https://particle.network](https://particle.network)
-2. :key: **Sign up** -> \*\*\*\* [https://particle.network/#/login](https://particle.network/#/login)
-3. &#x20;**Create a project & configure your Android/iOS app**
+2. :key: **Sign up** -> [https://particle.network/#/login](https://particle.network/#/login)
+3. :bulb: **Create a project & configure your Android/iOS/Web app**
 4. :tada: **Integrate our native SDKs**
    1. [**Auth Service SDKs**](auth-service/sdks/)
    2. [**Wallet Service SDKs**](wallet-service/sdks/)
@@ -22,9 +22,9 @@ If you only need our node services, skip the next step and use your Project ID a
 
 👉 [Click to see how to create a project in the Particle Dashboard](dashboard/manage-projects.md)
 
-## **Configure Android/iOS App**
+## **Configure Android/iOS/Web App**
 
-You must configure your Android/iOS app to access Particle Network's auth and wallet services.
+You must configure your Android/iOS/Web app to access Particle Network's auth and wallet services.
 
 👉 [Click to see how to configure your apps](dashboard/manage-apps.md)
 
