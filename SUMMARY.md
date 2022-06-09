@@ -4,7 +4,6 @@
 * [Get Started](get-started.md)
 * [Security](security.md)
 * [Available Networks](available-networks.md)
-* [Changelog](changelog.md)
 
 ## Dashboard
 
