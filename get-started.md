@@ -6,10 +6,9 @@ description: Integrate Particle products to your dApp within minutes
 
 ## Getting Started With Particle Network
 
-1. :globe\_with\_meridians: **Visit our website** -> [https://particle.network](https://particle.network)
-2. :key: **Sign up** -> [https://particle.network/#/login](https://particle.network/#/login)
-3. :bulb: **Create a project & configure your Android/iOS/Web app**
-4. :tada: **Integrate our native SDKs**
+1. :key: **Sign up** -> [https://dashboard.particle.network/#/login](https://dashboard.particle.network/#/login)
+2. :bulb: **Create a project & configure your Android/iOS/Web app**
+3. :tada: **Integrate our native SDKs**
    1. [**Auth Service SDKs**](auth-service/sdks/)
    2. [**Wallet Service SDKs**](wallet-service/sdks/)
    3. [**Node Service RPCs**](broken-reference/)
@@ -30,9 +29,9 @@ You must configure your Android/iOS/Web app to access Particle Network's auth an
 
 ## Integrate SDKs
 
-1. Use our [auth services](broken-reference/) to authenticate your dApp users in seconds
-2. Use our [wallet services](broken-reference/) to install a fully functional, powerful wallet into your dApp with a one-line-code
-3. Use our [node services](broken-reference/) to interact with on-chain data and send different transactions to the network by utilizing API-provided endpoints
+1. Use our [auth services](broken-reference) to authenticate your dApp users in seconds
+2. Use our [wallet services](broken-reference) to install a fully functional, powerful wallet into your dApp with a one-line-code
+3. Use our [node services](broken-reference) to interact with on-chain data and send different transactions to the network by utilizing API-provided endpoints
 
 ## **Enjoy BUIDL!**
 

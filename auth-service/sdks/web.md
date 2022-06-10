@@ -28,7 +28,7 @@ npm i --save @particle-network/provider
 
 Before you can add Auth Service to your app, you need to create a Particle project to connect to your app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
 
-[👉 Sign up/log in and create your project now](https://particle.network/#/login)
+[👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
 ```typescript
 import { ParticleNetwork } from "@particle-network/provider";

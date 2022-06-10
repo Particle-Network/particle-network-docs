@@ -14,7 +14,7 @@
 
 Before you can add our Auth Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
 
-[👉 Sign up/log in and create your project now](https://particle.network/#/login)
+[👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
 ### Add the Auth Service SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
 

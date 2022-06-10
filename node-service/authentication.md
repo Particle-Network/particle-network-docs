@@ -29,7 +29,7 @@ All EVM-compatible chains' RPC URL is:
 ## Authentication
 
 {% hint style="info" %}
-We assume you already have a [Particle Account](https://particle.network/#/login) and access to our [Dashboard](https://particle.network/#/login), where you can create projects and apps.
+We assume you already have a [Particle Account](https://dashboard.particle.network/#/login) and access to our [Dashboard](https://dashboard.particle.network/#/login), where you can create projects and apps.
 {% endhint %}
 
 The Web3 APIs require **HTTP Basic Authentication**:

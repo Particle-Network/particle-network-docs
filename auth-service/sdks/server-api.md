@@ -75,7 +75,7 @@ curl 'https://api.particle.network/server/rpc' \
 {% endtab %}
 {% endtabs %}
 
-[👉 Sign up/log in and create your project now](https://particle.network/#/login)
+[👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
 Response example:
 
