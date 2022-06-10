@@ -36,6 +36,7 @@ For JSON-RPC-specific errors, our API returns a `200` with the JSON-RPC error in
 | 40106  | Nonce error                    |                                                                                                       |
 | 40107  | Cancel the biggest nonce first | Cancel local status transaction must from the biggest to the smallest.                                |
 | 40108  | Transaction confirmed          | Can not speed up or cancel a confirmed transaction.                                                   |
+| 40109  | GasLimit too low               |                                                                                                       |
 | 40201  | Transaction Error              |                                                                                                       |
 | -32700 | Parse error                    | Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text. |
 | -32600 | Invalid request                | The JSON sent is not a valid Request object.                                                          |
