@@ -241,6 +241,70 @@ ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe 
 {% endtab %}
 {% endtabs %}
 
+#### Serialization the data of contract
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+// call 'transfer(to, amount)' function in erc20
+func erc20Transfer() {
+    let contractAddress = ""
+    let to = ""
+    let amount = BInt(1)
+    ParticleWalletAPI.getEvmService().erc20Transfer(contractAddress: contractAddress, to: to, amount: amount).subscribe { [weak self] _ in
+        guard let self = self else { return }
+        // handle result
+    }.disposed(by: bag)
+}
+// call 'approve(spender, amount)' function in erc20 
+func erc20Approve() {
+    let contractAddress = ""
+    let spender = ""
+    let amount = BInt(1)
+    ParticleWalletAPI.getEvmService().erc20Approve(contractAddress: contractAddress, spender: spender, amount: amount).subscribe { [weak self] _ in
+        guard let self = self else { return }
+        // handle result
+    }.disposed(by: bag)
+}
+// call 'transferFrom(from, to, amount)' function in erc20
+func erc20TransferFrom() {
+    let contractAddress = ""
+    let from = ""
+    let to = ""
+    let amount = BInt(1)
+    ParticleWalletAPI.getEvmService().erc20TransferFrom(contractAddress: contractAddress, from: from, to: to, amount: amount).subscribe { [weak self] _ in
+        guard let self = self else { return }
+        // handle result
+    }.disposed(by: bag)
+}
+// call 'safeTransferFrom(from, to, tokenId)' function in erc721
+func erc721SafeTransferFrom() {
+    let contractAddress = ""
+    let from = ""
+    let to = ""
+    let tokenId = ""
+    ParticleWalletAPI.getEvmService().erc721SafeTransferFrom(contractAddress: contractAddress, from: from, to: to, tokenId: tokenId).subscribe { [weak self] result in
+        guard let self = self else { return }
+        // handle result
+    }.disposed(by: bag)
+}
+// call 'safeTransferFrom(from, to, id, amount, data)' function in erc1155
+func erc1155SafeTransferFrom() {
+    let contractAddress = ""
+    let from = ""
+    let to = ""
+    let id = ""
+    let amount = BInt(0)
+    let data: [UInt8] = []
+    ParticleWalletAPI.getEvmService().erc1155SafeTransferFrom(contractAddress: contractAddress, from: from, to: to, id: id, amount: amount, data: data).subscribe { [weak self] result in
+        guard let self = self else { return }
+        // handle result
+    }.disposed(by: bag)
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## Wallet GUI Reference
 
 ### Open Wallet
