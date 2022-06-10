@@ -224,6 +224,60 @@ ParticleNetwork.evm.particleAbiEncodeFunctionCall(params: List<Any>)
 //2.The second parameter is the name of the method to be called. Currently, only the following are supported:erc20_transfer erc721_safeTransferFrom erc1155_safeTransferFrom
 //3.The third parameter is the parameter value array of the method to be called, which should correspond to the above method.
 ```
+
+
+{% endtab %}
+{% endtabs %}
+
+#### Serialization the data of contract
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// call 'transfer(to, amount)' function in erc20
+suspend fun  erc20Transfer(){
+    val contractAddress =""
+    val to=""
+    val amount:BigInteger = BigInteger.valueOf(1111)
+    ParticleNetwork.evm.erc20Transfer(contractAddress,to,amount)
+}
+// call 'approve(spender, amount)' function in erc20 
+suspend fun erc20Approve() {
+    val contractAddress = ""
+    val spender = ""
+    val amount = BigInteger.valueOf(1111)
+    val result: ResponseBody =
+        ParticleNetwork.evm.erc20Approve(contractAddress, spender, amount)
+}
+// call 'transferFrom(from, to, amount)' function in erc20
+suspend fun erc20TransferFrom() {
+    val contractAddress = ""
+    val from = ""
+    val to = ""
+    val amount = BigInteger.valueOf(1111)
+    val result: ResponseBody =
+        ParticleNetwork.evm.erc20TransferFrom(contractAddress, from, to, amount)
+}
+// call 'safeTransferFrom(from, to, tokenId)' function in erc721
+suspend fun erc721SafeTransferFrom() {
+    val contractAddress = ""
+    val from = ""
+    val to = ""
+    val tokenId = ""
+    val result: ResponseBody =
+        ParticleNetwork.evm.erc721SafeTransferFrom(contractAddress, from, to, tokenId)
+}
+// call 'safeTransferFrom(from, to, id, amount, data)' function in erc1155
+suspend fun  erc1155SafeTransferFrom() {
+    val contractAddress = ""
+    val from = ""
+    val to = ""
+    val id = ""
+    val amount = BigInteger.valueOf(1111)
+    val data: String;
+    ParticleNetwork.evm.erc1155SafeTransferFrom(contractAddress, from, to, id, amount, data)
+}
+```
 {% endtab %}
 {% endtabs %}
 
