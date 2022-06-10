@@ -34,7 +34,7 @@ dependencies {
     // Particle Auth Service
     implementation("network.particle:auth-service${latest_version}")
     // Particle Wallet Api
-    implementation("network.particle:wallet-service-api${latest_version}")
+    implementation("network.particle:api-service-api${latest_version}")
     // Particle Wallet GUI, you can remove it if custom GUI.
     implementation("network.particle:wallet-service${latest_version}")
     //...
