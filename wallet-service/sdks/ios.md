@@ -71,7 +71,7 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 // call enhanced method: enhancedGetPrice
 // native token address is "native"
 let addresses: [String] = ["native"]
-ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] result in
+ParticleWalletAPI.getSolanaService().etPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] result in
     guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
@@ -84,12 +84,17 @@ ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies:
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// call enhanced method: enhancedGetTokensAndNFTs
 // address is user public address
 let address: String = ""
-ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subscribe { [weak self] result in
+ParticleWalletAPI.getSolanaService().getTokensAndNFTs(by: address).subscribe { [weak self] result in
     guard let self = self else { return }
     // handle result
+}.disposed(by: bag)
+
+// also get from database
+ParticleWalletAPI.getEvmService().getTokensAndNFTsFromDB(by: address).subscribe { [weak self] _ in
+    guard let self = self else { return }
+    // hande result
 }.disposed(by: bag)
 ```
 {% endtab %}
@@ -100,10 +105,15 @@ ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subsc
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// call enhanced method: enhancedGetTransactionsByAddress
 // address is user public address
 let address: String = ""
-ParticleWalletAPI.getSolanaService().enhancedGetTransactions(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] result in
+ParticleWalletAPI.getSolanaService().getTransactions(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] result in
+    guard let self = self else { return }
+    // handle result
+}.disposed(by: bag)
+
+// also get from database
+ParticleWalletAPI.getSolanaService().getTransactionsFromDB(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] result in
     guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
@@ -123,7 +133,7 @@ let receiver: String = ""
 let lamports: BInt = BInt(0)
 let mintAddress: String? = nil
 let payer: String? = nil
-ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transactionType, sender: sender, receiver: receiver, lamports: lamports, mintAddress: mintAddress, payer: payer).subscribe { [weak self] result in
+ParticleWalletAPI.getSolanaService().serializeTransaction(type: transactionType, sender: sender, receiver: receiver, lamports: lamports, mintAddress: mintAddress, payer: payer).subscribe { [weak self] result in
     guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
@@ -168,10 +178,9 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// call enhanced method: particle_getPrice
 // address is user public address
 let addresses = ["native"]
-ParticleWalletAPI.getEvmService().particleGetPrice(by: addresses, vsCurrencies: ["usd"]).subscribe { [weak self] _ in
+ParticleWalletAPI.getEvmService().getPrice(by: addresses, vsCurrencies: ["usd"]).subscribe { [weak self] _ in
 guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
@@ -184,10 +193,15 @@ guard let self = self else { return }
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// call enhanced method: particle_getTokensAndNFTs
 // address is user public address
 let address = ""
-ParticleWalletAPI.getEvmService().particleGetTokensAndNFTs(by: address).subscribe { [weak self] _ in
+ParticleWalletAPI.getEvmService().getTokensAndNFTs(by: address).subscribe { [weak self] _ in
+guard let self = self else { return }
+    // handle result
+}.disposed(by: bag)
+
+// also get from database
+ParticleWalletAPI.getEvmService().getTokensAndNFTsFromDB(by: address).subscribe { [weak self] _ in
 guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
@@ -200,10 +214,15 @@ guard let self = self else { return }
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// call enhanced method: particle_getTransactionsByAddress
 // address is user public address
 let address = ""
-ParticleWalletAPI.getEvmService().particleGetTransactions(by: address).subscribe { [weak self] _ in
+ParticleWalletAPI.getEvmService().getTransactions(by: address).subscribe { [weak self] _ in
+guard let self = self else { return }
+    // handle result
+}.disposed(by: bag)
+
+// also get from database
+ParticleWalletAPI.getEvmService().getTransactionsFromDB(by: address).subscribe { [weak self] _ in
 guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
@@ -246,6 +265,17 @@ ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe 
 {% tabs %}
 {% tab title="Swift" %}
 ```kotlin
+// call custom abi function
+func customMethodAbiEncode() {
+    let contractAddress = ""
+    let methodName = ""
+    let params: [String] = []
+    let abiJsonString = ""
+    ParticleWalletAPI.getEvmService().abiEncodeFunctionCall(contractAddress: contractAddress, methodName: methodName, params: params, abiJsonString: abiJsonString).subscribe { [weak self] _ in
+        guard let self = self else { return }
+        // handle result
+    }.disposed(by: bag)
+}
 // call 'transfer(to, amount)' function in erc20
 func erc20Transfer() {
     let contractAddress = ""
