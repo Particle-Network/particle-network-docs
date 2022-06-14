@@ -230,10 +230,15 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 ```kotlin
 ParticleNetwork.evm.abiEncodeFunctionCall(params: List<Any>)
 
-//1.The first parameter is contract address
-//2.The second parameter is the name of the method to be called. Currently, Support is as follows:'erc20_ transfer'、'erc20_ approve'、'erc20_ transferFrom'、'erc721_ safeTransferFrom'、'erc1155_ safeTransferrom' or arbitrary 'custom_{methodName}'
-//3.The third parameter is the parameter value array of the method to be called, which should correspond to the above method.
-//4.The fourth parameter is optional，an abi json string
+// 1. The first parameter is contract address
+// 2. The second parameter is the name of the method to be called.
+//    Currently, we support:'erc20_transfer'、'erc20_approve'、'erc20_transferFrom'、'erc721_safeTransferFrom'、'erc1155_safeTransferrom'
+//    or arbitrary method call: 'custom_{methodName}'
+//    for example if you need to call mint method, then pass custom_mint as parameter
+// 3. The third parameter is the parameter value array of the method to be called, which should correspond to the above method.
+// 4. The fourth parameter is optional，an ABI JOSN string
+//    For erc20/721/1155 methods we support, this parameter is not needed
+//    And if your contract is verified at the chain's scan website, this parameter is not nneeded
 ```
 
 
