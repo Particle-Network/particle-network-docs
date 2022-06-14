@@ -231,8 +231,9 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 ParticleNetwork.evm.abiEncodeFunctionCall(params: List<Any>)
 
 //1.The first parameter is contract address
-//2.The second parameter is the name of the method to be called. Currently, only the following are supported:erc20_transfer erc721_safeTransferFrom erc1155_safeTransferFrom
+//2.The second parameter is the name of the method to be called. Currently, Support is as follows:'erc20_ transfer'、'erc20_ approve'、'erc20_ transferFrom'、'erc721_ safeTransferFrom'、'erc1155_ safeTransferrom' or arbitrary 'custom_{methodName}'
 //3.The third parameter is the parameter value array of the method to be called, which should correspond to the above method.
+//4.The fourth parameter is optional，an abi json string
 ```
 
 
