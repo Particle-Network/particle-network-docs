@@ -95,7 +95,10 @@ ParticleNetwork.solana.getPrice(addresses, currencies)
 {% tab title="Kotlin" %}
 ```kotlin
 // call enhanced method: enhancedGetTokensAndNFTs
+//fetch from server、save to db and return 
 ParticleNetwork.solana.getTokensAndNFTs(address)
+//get data from db only
+ParticleNetwork.solana.getTokensAndNFTsFromDB(address)
 ```
 {% endtab %}
 {% endtabs %}
@@ -107,6 +110,8 @@ ParticleNetwork.solana.getTokensAndNFTs(address)
 ```kotlin
 // call enhanced method: enhancedGetTransactionsByAddress
 ParticleNetwork.solana.getTransactionsByAddress(address, optBody)
+//get trans from db
+ParticleNetwork.solana.getTransactionsByAddressFromDB(address, optBody)
 ```
 {% endtab %}
 {% endtabs %}
@@ -147,25 +152,28 @@ ParticleNetwork.solana.rpc("getBalance",
 
 ### EVM Service
 
+#### Get the real-time exchange rate of the EVM token
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+val parmas1 = arrayListOf("native") 
+val parmas2 = arrayListOf("usd") 
+val rateResultList = ParticleNetwork.evm.getPrice(parmas1, parmas2)
+```
+{% endtab %}
+{% endtabs %}
+
 #### Get token list and NFT list by giving an address
 
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
 // call enhanced method: particle_getTokensAndNFTs
+//fetch from server、save to db  return result 
 ParticleNetwork.evm.getTokensAndNFTs(address)
-```
-{% endtab %}
-{% endtabs %}
-
-#### Get the real-time exchange rate of the EVM token
-
-{% tabs %}
-{% tab title="Kotlin" %}
-```kotlin
-val parmas1 = arrayListOf<String>("address1","address2")
-val parmas2 = arrayListOf("usd")
-ParticleNetwork.evm.particleGetPrice(parmas1, parmas2)
+//get data from db only
+ParticleNetwork.evm.getTokensAndNFTsFromDB(address)
 ```
 {% endtab %}
 {% endtabs %}
@@ -177,6 +185,8 @@ ParticleNetwork.evm.particleGetPrice(parmas1, parmas2)
 ```kotlin
 // call enhanced method: particle_getTransactionsByAddress
 ParticleNetwork.evm.getTransactionsByAddress(address)
+//get data from db only
+ParticleNetwork.evm.getTransactionsByAddressFromDB(address)
 ```
 {% endtab %}
 {% endtabs %}
