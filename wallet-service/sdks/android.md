@@ -228,7 +228,7 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-ParticleNetwork.evm.particleAbiEncodeFunctionCall(params: List<Any>)
+ParticleNetwork.evm.abiEncodeFunctionCall(params: List<Any>)
 
 //1.The first parameter is contract address
 //2.The second parameter is the name of the method to be called. Currently, only the following are supported:erc20_transfer erc721_safeTransferFrom erc1155_safeTransferFrom
@@ -245,7 +245,7 @@ ParticleNetwork.evm.particleAbiEncodeFunctionCall(params: List<Any>)
 {% tab title="Kotlin" %}
 ```kotlin
 // call 'transfer(to, amount)' function in erc20
-suspend fun  erc20Transfer(){
+suspend fun erc20Transfer(){
     val contractAddress =""
     val to=""
     val amount:BigInteger = BigInteger.valueOf(1111)
@@ -278,7 +278,7 @@ suspend fun erc721SafeTransferFrom() {
         ParticleNetwork.evm.erc721SafeTransferFrom(contractAddress, from, to, tokenId)
 }
 // call 'safeTransferFrom(from, to, id, amount, data)' function in erc1155
-suspend fun  erc1155SafeTransferFrom() {
+suspend fun erc1155SafeTransferFrom() {
     val contractAddress = ""
     val from = ""
     val to = ""
