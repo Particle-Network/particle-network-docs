@@ -238,7 +238,7 @@ ParticleNetwork.evm.abiEncodeFunctionCall(params: List<Any>)
 // 3. The third parameter is the parameter value array of the method to be called, which should correspond to the above method.
 // 4. The fourth parameter is optional，an ABI JOSN string
 //    For erc20/721/1155 methods we support, this parameter is not needed
-//    And if your contract is verified at the chain's scan website, this parameter is not nneeded
+//    And if your contract is verified at the chain's scan website, this parameter is not needed
 ```
 
 
