@@ -48,6 +48,24 @@ open your-project.xcworkspace
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
+{% hint style="info" %}
+### ARM64 Simulator support
+
+For everyone with an M1 (Silicon) device who want run their projects on a simulator, There are two solutions.
+
+1. Set arm64 as excluding architecture for Any iOS Simulator SDK. add the following to Podfile
+
+```ruby
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
+```
+
+2\. Run Xcode with Rosetta.
+{% endhint %}
+
 ### Initialize Auth Service in your app <a href="#initialize-firebase" id="initialize-firebase"></a>
 
 The final step is to add an initialization code to your application. You may have already done this as part of adding the Auth Service to your app. If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.

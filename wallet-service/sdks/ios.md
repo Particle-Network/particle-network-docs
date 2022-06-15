@@ -59,6 +59,24 @@ Wallet GUI depends on Auth Service, you must import [Auth Service](broken-refere
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
+{% hint style="info" %}
+### ARM64 Simulator support
+
+For everyone with an M1 (Silicon) device who want run their projects on a simulator, There are two solutions.
+
+1. Set arm64 as excluding architecture for Any iOS Simulator SDK. add the following to Podfile
+
+```ruby
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
+```
+
+2\. Run Xcode with Rosetta.
+{% endhint %}
+
 ## Wallet API Reference
 
 ### Solana Service
