@@ -67,7 +67,7 @@ Declare them in you app AndroidManifest.xml (usually app/src/main/AndroidManifes
         <activity
                 android:name="com.particle.network.controller.WebActivity"
                 android:exported="true"
-                android:launchMode="singleTop"
+                android:launchMode="singleTask"
                 android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
                 >
             <intent-filter>
