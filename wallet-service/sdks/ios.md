@@ -278,7 +278,7 @@ ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe 
 {% endtab %}
 {% endtabs %}
 
-#### Serialization the data of contract
+#### Serialize the data of any contract
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -353,7 +353,7 @@ func erc1155SafeTransferFrom() {
 {% endtab %}
 {% endtabs %}
 
-## Wallet GUI Reference
+## Wallet UI Reference
 
 ### Open Wallet
 

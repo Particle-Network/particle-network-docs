@@ -196,7 +196,7 @@ ParticleNetwork.evm.getTransactionsByAddressFromDB(address)
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-ParticleNetwork.evm.particleSuggestedGasFees()
+ParticleNetwork.evm.suggestedGasFees()
 ```
 {% endtab %}
 {% endtabs %}
@@ -223,7 +223,7 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 {% endtab %}
 {% endtabs %}
 
-#### Serialization the data of contract
+#### Serialize the data of any contract
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -245,7 +245,7 @@ ParticleNetwork.evm.abiEncodeFunctionCall(params: List<Any>)
 {% endtab %}
 {% endtabs %}
 
-#### Serialization the data of contract
+#### Serialize the data of stardard contracts
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -297,7 +297,7 @@ suspend fun erc1155SafeTransferFrom() {
 {% endtab %}
 {% endtabs %}
 
-## Wallet Service Reference
+## Wallet UI Reference
 
 ### Open Wallet
 
