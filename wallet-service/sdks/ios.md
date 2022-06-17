@@ -357,7 +357,7 @@ func erc1155SafeTransferFrom() {
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 /// Create a transaciton
 /// - Parameters:
 ///   - from: From address
@@ -435,6 +435,35 @@ You can create contractParams object by these `ContractParams`static methods&#x2
 * `ContractParams.erc721SafeTransferFrom()`
 * `ContractParams.erc1155SafeTransferFrom()`
 * `ContractParams.customAbiEncodeFunctionCall()`
+
+#### Read Contract
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// Reference cases in github demo.
+func readContract() {
+    let from = ParticleAuthService.getAddress()
+    let to = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
+    let data = "0x"
+    let txData = ReadContractData(from: from, to: to, data: data)
+    
+    // Integer block number, or the string 'latest', 'earliest' or 'pending'
+    let quantity = "latest"
+    
+    ParticleWalletAPI.getEvmService().rpc(method: "eth_call", params: [txData, quantity]).subscribe { response in
+        print(response)
+    }.disposed(by: self.bag)
+}
+
+struct ReadContractData: Codable {
+    let from: String
+    let to: String
+    let data: String
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ## Wallet UI Reference
 
