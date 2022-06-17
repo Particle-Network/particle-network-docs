@@ -255,6 +255,8 @@ ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self]
 {% endtab %}
 {% endtabs %}
 
+You can create `transaction` with `TxData`.There's an easy way to do this with [Wallet Service](broken-reference)
+
 ### Error
 
 `ParticleNetwork.Error` contains error details. The error will be logged in `debug` `DevEnvironment`.
