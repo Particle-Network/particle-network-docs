@@ -120,10 +120,7 @@ class App : Application() {
         //init Particle SDK for solana chain 
         ParticleNetwork.init(this, Env.DEV, SolanaChain(SolanaChainId.Mainnet))
         
-        //init Particle SDK for evm chain
-        ParticleNetwork.init(this, Env.DEV, EthereumChain(EthereumChainId.Mainnet))
-        
-        //init wallet service
+        //init wallet service if you use wallet-service
         ParticleWallet.init(this)
     }
 }
@@ -142,14 +139,30 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //init Particle SDK
-        ParticleNetwork.init(this, Env.DEV, ChainName.Solana, 
-                ChainId.SolanaDevnet);
+        //init Particle SDK with solana chain info
+        ParticleNetwork.init(this, Env.DEV, new SolanaChain(SolanaChainId.Mainnet));
+        
+        //init wallet service if you use wallet-service
+        ParticleWallet.init(this);
     }
 }
 ```
 {% endtab %}
 {% endtabs %}
+
+Particle Network support Solana and EVM chains, you can init with below chain info:
+
+* `EthereumChain`
+* `BscChain`
+* `PolygonChain`
+* `AvalancheChain`
+* `MoonbeamChain`
+* `MoonriverChain`
+* `HecoChain`
+* `FantomChain`
+* `ArbitrumChain`
+* `HarmonyChain`
+* `AuroraChain`
 
 ### Switch  ChainInfo
 
@@ -374,7 +387,7 @@ ParticleNetwork.signMessage(activity, message, new WebServiceCallback<SignOutput
 {% endtab %}
 {% endtabs %}
 
-####
+You can create `transaction` with `TxData`.There's an easy way to do this with [Wallet Service](broken-reference)
 
 ### Error
 

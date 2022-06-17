@@ -77,7 +77,7 @@ end
 2\. Run Xcode with Rosetta.
 {% endhint %}
 
-## Wallet API Reference
+## Wallet Core Reference
 
 ### Solana Service
 

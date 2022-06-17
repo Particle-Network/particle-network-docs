@@ -74,7 +74,7 @@ Wallet Service depends on Auth Service, you must import [Auth Service](../../aut
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
-## Wallet API Reference
+## Wallet Core Reference
 
 ### Solana Service
 
@@ -122,7 +122,11 @@ ParticleNetwork.solana.getTransactionsByAddressFromDB(address, optBody)
 {% tab title="Kotlin" %}
 ```kotlin
 // call enhanced method: enhancedSerializeTransaction
-ParticleNetwork.solana.serializeTransaction(txBody)
+val output = ParticleNetwork.solana.serializeTransaction(txBody)
+
+//send transaction with Particle Auth
+ParticleNetwork.signAndSendTransaction(activity,
+        output.result.transaction.serialized, callback);
 ```
 {% endtab %}
 {% endtabs %}
@@ -293,6 +297,54 @@ suspend fun erc1155SafeTransferFrom() {
     val data: String;
     ParticleNetwork.evm.erc1155SafeTransferFrom(contractAddress, from, to, id, amount, data)
 }
+```
+{% endtab %}
+{% endtabs %}
+
+#### Create Transaction
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+/**
+ *
+ * from: sender address.
+ * to: receiver address or contract address.
+ * value: (optional) hex of the value sent with this transaction.
+ * contractParams: (optional) call contract function params.
+ * type: default value "0x2"(EIP1559), "0x1"(EIP2930), "0x0"(Legacy)
+ * nonce: default value "0x0", particle auth manage nonce without cancel or speed transaction.
+ * gasFeeLevel: default value TransGasFeeMode.medium, transaction gas fee level.
+ * action: detault TxAction.normal. if you cancel/speed tracsaction, set the vaule.
+ */
+val tx = ParticleNetwork.evm.createTransaction(from, to, value, contractParams,
+     type, nonce, gasFeeLevel, action)
+
+//send transaction with particle auth
+ParticleNetwork.signAndSendTransaction(activity, tx.serialize(), callback)
+```
+{% endtab %}
+{% endtabs %}
+
+you can call contract function by set `contractParams:`
+
+* `ContractParams.erc20Transform()`
+* `ContractParams.erc20Approve()`
+* `ContractParams.erc20TransferFrom()`
+* `ContractParams.erc721SafeTransferFrom()`
+* `ContractParams.erc1155SafeTransferFrom()`
+* `ContractParams.customAbiEncodeFunctionCall()`
+
+#### Read Contract
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// create tx data
+val tx = TxData(null, "0x0", null, from, to ,null, data, ParticleNetwork.chainId.toHexString())
+
+//send transaction with particle auth
+ParticleNetwork.signAndSendTransaction(activity, tx.serialize(), callback)
 ```
 {% endtab %}
 {% endtabs %}
