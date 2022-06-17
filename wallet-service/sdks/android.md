@@ -233,7 +233,9 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 {% tab title="Kotlin" %}
 ```kotlin
 ParticleNetwork.evm.abiEncodeFunctionCall(params: List<Any>)
+ParticleNetwork.evm.abiEncodeFunctionCall(contractAddress: String,method: String,params: List<Any>,json: String = "")
 
+//The above two methods work the same.
 // 1. The first parameter is contract address
 // 2. The second parameter is the name of the method to be called.
 //    Currently, we support:'erc20_transfer'、'erc20_approve'、'erc20_transferFrom'、'erc721_safeTransferFrom'、'erc1155_safeTransferrom'
