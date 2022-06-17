@@ -343,8 +343,10 @@ you can call contract function by set `contractParams:`
 // create tx data
 val tx = TxData(null, "0x0", null, from, to ,null, data, ParticleNetwork.chainId.toHexString())
 
-//send transaction with particle auth
-ParticleNetwork.signAndSendTransaction(activity, tx.serialize(), callback)
+//Integer block number, or the string 'latest', 'earliest' or 'pending'
+val quantity = "latest"
+//call eth_call rpc
+val output = ParticleNetwork.evm.rpc("eth_call", listOf(tx, quantity))
 ```
 {% endtab %}
 {% endtabs %}
