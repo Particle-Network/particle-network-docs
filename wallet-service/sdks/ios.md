@@ -353,6 +353,89 @@ func erc1155SafeTransferFrom() {
 {% endtab %}
 {% endtabs %}
 
+#### Create Transaction
+
+{% tabs %}
+{% tab title="Swift" %}
+```kotlin
+/// Create a transaciton
+/// - Parameters:
+///   - from: From address
+///   - to:If you send a erc20, erc721, erc1155 or interact with a contract, this is the contract address, if you send native, this is receiver address.
+///   - contractParams: Acontract parameters
+///   - value: Native value, default is nil
+///   - type: TxData type, 0x2 is EIP1155, 0x1 is EIP2930, 0x0 is legacy.
+///   - nonce: Default value "0x0", particle auth manage nonce without cancel or speed transaction.
+///   - gasFeeLevel: Default is medium, transaction gas fee level.
+///   - action: Default is normal, means send, if you cancel/speed tracsaction, set the vaule
+/// - Returns: A transacion
+public func createTransaction(from: String, to: String, value: String? = nil, contractParams: ContractParams? = nil, type: String = "0x2", nonce: String = "0x0", gasFeeLevel: GasFeeLevel = .medium, action: Action = .normal) -> Single<String>
+
+
+// Reference cases in github demo.
+func sendNativeEVM() {
+    showLoading()
+    // firstly, make sure current user has some native token for test there methods
+    // send 0.0001 native from self to receiver
+    let sender = ParticleAuthService.getAddress()
+    let receiver = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
+    let amount = BDouble(0.0001 * pow(10, 18)).rounded()
+    
+    ParticleWalletAPI.getEvmService().createTransaction(from: sender, to: receiver, value: amount.toHexString()).flatMap { transaction -> Single<String> in
+        print(transaction)
+        return ParticleAuthService.signAndSendTransaction(transaction)
+    }.subscribe { [weak self] result in
+        guard let self = self else { return }
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let signature):
+            print(signature)
+        }
+        self.hideLoading()
+    }.disposed(by: self.bag)
+}
+
+func sendErc20Token() {
+    showLoading()
+    // firstly, make sure current user has some native token and erc20 token for test there methods
+    // send 0.0001 erc20 token from self to receiver
+    let from = ParticleAuthService.getAddress()
+    let to = "0xa36085F69e2889c224210F603D836748e7dC0088"
+    let amount = BDouble(0.0001 * pow(10, 18)).rounded()
+    let contractAddress = "0xa36085F69e2889c224210F603D836748e7dC0088"
+    let receiver = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
+    let contractParams = ContractParams.erc20Transform(contractAddress: contractAddress, to: receiver, amount: amount)
+    
+    // because you want to send erc20 token, interact with contact, 'to' should be the contract address.
+    // and value could be nil.
+    ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
+        print(transaction)
+        return ParticleAuthService.signAndSendTransaction(transaction)
+    }.subscribe { [weak self] result in
+        guard let self = self else { return }
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let signature):
+            print(signature)
+        }
+        self.hideLoading()
+    }.disposed(by: self.bag)
+}
+```
+{% endtab %}
+{% endtabs %}
+
+You can create contractParams object by these `ContractParams`static methods&#x20;
+
+* `ContractParams.erc20Transfer()`
+* `ContractParams.erc20Approve()`
+* `ContractParams.erc20TransferFrom()`
+* `ContractParams.erc721SafeTransferFrom()`
+* `ContractParams.erc1155SafeTransferFrom()`
+* `ContractParams.customAbiEncodeFunctionCall()`
+
 ## Wallet UI Reference
 
 ### Open Wallet
