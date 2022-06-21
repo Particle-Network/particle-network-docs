@@ -329,7 +329,6 @@ const auth = {
     password: 'Your Project Server Key',
 };
 
-// Get NFT Info
 (async () => {
     const response = await axios.post(SOLANA_RPC_URL, {
         chainId: 103,
@@ -357,6 +356,173 @@ Response Example
             "signers": []
         }
     },
+    "chainId": 103
+}
+```
+
+### 🔥 NFT\_checkStoreHasInitialized
+
+> Check the market has initialized
+
+**Parameters:**
+
+* `<string>` - the public key of the market manager account
+
+**Results:**
+
+* `<boolean>` - whether the market has initialized
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_checkStoreHasInitialized',
+        params: ['8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ'],
+    }, { auth });
+
+    console.log(JSON.stringify(response.data));
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": true,
+    "chainId": 103
+}
+```
+
+### 🔥 NFT\_setWhitelistedCreator
+
+> Whitelist a creator in the market
+
+{% hint style="info" %}
+Only whitelisted creators can **sell** NFT in the market
+{% endhint %}
+
+**Parameters:**
+
+* `<string>` - the public key of the market manager account
+* `<object>` - config
+  * `creator: <string>` - the public key of the creator account&#x20;
+  * `activated: <boolean>` - whether the creator is activated
+
+**Results:**
+
+* `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the market manager
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_setWhitelistedCreator',
+        params: ['8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ', {
+            creator: '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
+            activated: true,
+        }],
+    }, { auth });
+
+    console.log(JSON.stringify(response.data));
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+        "transaction": {
+            "hasPartialSign": true,
+            "serialized": "9TRcmPvqAeBVC1n1CAe64Dae6c1McF228Dhw3QQkMABYs3WMMYASYpAtJ1287QMYPsvW1ti5wGy4qJSxGkN5y6aRgT5hECfcDJ7CbfW6eqbc9AT6ckStVU5EpLLXRDi4kVfwwTHyzWaHGbQQoyJDvFfVF2jBYegE53UuRKjZGzyHBuj5wnVQ5y4jY1CUe2cjBfUZMWB7axomaAu5ASXiJLnAGnSYYbKBgoFWfXBLqjwgGqHoqQL3GQkBwoJeYmz7Cx2Gh5y3t8VSeXNiRn83Bb1VzuW89VqKe4ZW4NyHDrCRVaYWFKU6i3w48hL5bwhSNPV6jhxDZ7C7b5r15TmcANzCkKtBzPd9EkQmQUh4TEHNtp4tGMMB7CSSq5hkCGXXBXFZupM5pvEkFRLxA2jjEGf25Z1JoCXep",
+            "signers": []
+        }
+    },
+    "chainId": 103
+}
+```
+
+### 🔥 NFT\_checkStoreCreatorIsActivated
+
+> Check the creator in the market is activated
+
+**Parameters:**
+
+* `<string>` - the public key of the market manager account
+* `<string>` - the public key of the creator account
+
+**Results:**
+
+* `<boolean>` - whether the creator is activated
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_checkStoreCreatorIsActivated',
+        params: ['8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ', '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ'],
+    }, { auth });
+
+    console.log(JSON.stringify(response.data));
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": true,
     "chainId": 103
 }
 ```
