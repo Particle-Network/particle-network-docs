@@ -27,7 +27,7 @@ The NFT Market-related API is based on [the metaplex protocol](https://docs.meta
 * `<object>` - a JSON object containing:
   * `mint: <string>` - the mint address of NFT
   * `mintAssociatedTokenAccount: <string>` - The address of the account where you place the NFT
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md)
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) (to be signed)
 
 Request Example
 
