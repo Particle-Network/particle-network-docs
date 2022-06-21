@@ -27,7 +27,7 @@ The NFT Market-related API is based on [the metaplex protocol](https://docs.meta
 * `<object>` - a JSON object containing:
   * `mint: <string>` - the mint address of NFT
   * `mintAssociatedTokenAccount: <string>` - The address of the account where you place the NFT
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) to be signed
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the NFT owner
 
 Request Example
 
@@ -131,18 +131,18 @@ Response Example
 
 * `<string>` - the mint address of NFT you owned
 * `<object>` - fields from [the data of NFT metadata](https://docs.metaplex.com/programs/token-metadata/accounts#metadata)
-  * `name: string`
-  * `symbol: string`
-  * `uri: string`
-  * `sellerFeeBasisPoints: int`
-  * `newUpdateAuthority: string`
-  * `primarySaleHappened: boolean`
-  * `isMutable: string`
+  * `name: <string>`
+  * `symbol: <string>`
+  * `uri: <string>`
+  * `sellerFeeBasisPoints: <int>`
+  * `newUpdateAuthority: <string>`
+  * `primarySaleHappened: <boolean>`
+  * `isMutable: <string>`
 
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) to be signed
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the NFT owner
 
 Request Example
 
@@ -150,8 +150,6 @@ Request Example
 {% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
-const bs58 = require('bs58');
-const { Keypair, Transaction } = require('@solana/web3.js');
 
 const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
 const mint = '77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj';
@@ -204,7 +202,7 @@ Response Example
 
 * `<string>` - the mint address of NFT you owned
 * `<object>` - config
-  * `parseMetadataUri: boolean` If true, the API will parse the metadata's uri that can get the image url and other info.
+  * `parseMetadataUri: <boolean>` If true, the API will parse the metadata's uri that can get the image url and other info.
 
 **Results:**
 
@@ -216,8 +214,6 @@ Request Example
 {% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
-const bs58 = require('bs58');
-const { Keypair, Transaction } = require('@solana/web3.js');
 
 const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
 const mint = '77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj';
@@ -312,13 +308,13 @@ Response Example
 
 **Parameters:**
 
-* `<string>` - the mint address of NFT you owned
-* `<object>` - config
-  * `parseMetadataUri: boolean` If true, the API will parse the metadata's uri that can get the image url and other info.
+* `<string>` - the public key of the account to become the market manager
 
 **Results:**
 
-* `<object>` - a JSON object about metadata
+* `<object>` - a JSON object containing:
+  * `store: <string>` - the address of the market
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the market manager
 
 Request Example
 
@@ -326,11 +322,8 @@ Request Example
 {% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
-const bs58 = require('bs58');
-const { Keypair, Transaction } = require('@solana/web3.js');
 
 const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
-const mint = '77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -340,13 +333,11 @@ const auth = {
 (async () => {
     const response = await axios.post(SOLANA_RPC_URL, {
         chainId: 103,
-        method: 'NFT_info',
-        params: [mint, {
-            parseMetadataUri: true,
-        }],
+        method: 'NFT_initializeStore',
+        params: ['8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ'],
     }, { auth });
 
-    console.log(response.data);
+    console.log(JSON.stringify(response.data));
 })();
 ```
 {% endtab %}
@@ -359,58 +350,12 @@ Response Example
     "jsonrpc": "2.0",
     "id": 0,
     "result": {
-        "key": 4,
-        "updateAuthority": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
-        "mint": "77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj",
-        "data": {
-            "name": "Test NFTFFFF",
-            "symbol": "TEST",
-            "uri": "https://gateway.pinata.cloud/ipfs/QmSbQerqyuAVJzD5zX26wAiEihmyWcU9htDchwuVhejghZ",
-            "sellerFeeBasisPoints": 100,
-            "creators": [
-                {
-                    "address": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
-                    "verified": true,
-                    "share": 50
-                },
-                {
-                    "address": "7quN8ZdQYkXyWzSpytv9xK5ngzq32UapNbFSz91tpmvA",
-                    "verified": false,
-                    "share": 50
-                }
-            ],
-            "uriData": { // not exist if parseMetadataUri is false
-                "name": "Test: LBFUF",
-                "symbol": "TEST",
-                "description": "Test description",
-                "seller_fee_basis_points": 100,
-                "image": "https://gateway.pinata.cloud/ipfs/QmY21xP5qjz866TBovLH2Px5fLEyfU1uBg69BfDpdQu4KJ",
-                "animation_url": "",
-                "external_url": "",
-                "attributes": [
-                    {
-                        "trait_type": "Type",
-                        "value": "Skeleton"
-                    }
-                ],
-                "properties": {
-                    "creators": [
-                        {
-                            "address": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
-                            "share": 50
-                        },
-                        {
-                            "address": "7quN8ZdQYkXyWzSpytv9xK5ngzq32UapNbFSz91tpmvA",
-                            "share": 50
-                        }
-                    ]
-                }
-            }
-        },
-        "primarySaleHappened": false,
-        "isMutable": true,
-        "editionNonce": 254,
-        "tokenStandard": 0
+        "store": "DvrXAsPw8X8vqFpgfVhWypDeM3sboiBs5iVn3FKNmLWy",
+        "transaction": {
+            "hasPartialSign": true,
+            "serialized": "RzU9o8Jk1KtrgR1uh7e4jFRhfYjvK2tyKVyWFFhvCceresDzC8kutbsxGMizCpaB7KUQLKW4nftg7cV3cWbksGmDsvJfuixghdkrfymSmjqHUVsfdqMbX9ri5GBGTGdtGeBJFCtTVQ5dTx1qevinXz2U2yndyqDHpZtRNGMj37h1xNPMbjwEoBMYciFPa7gfvJs3bogEDrJekUGExY6ksefrG71aPhWvaye1wv4K7vL5NrqnYt97RJLyVyb4fR3VAeiRjVLpJYzB3bn5G4rXJgaZQwo4L48cJLCtuYUmMRGFWKf3sWXajvsdPGG4nsVFPpAG6Q45Ujufc9JZuAWdFw4y9BEJeoustWkt1wSsrAbdjrtKWheZMLtyjq3TDycXijgPo1ZM61coxUCvMraFKH5HpA8UnrejJG2e3MCee96TV54uJbKjZY34Fn6X1uPpp9KQqg6bzScpmpKwKwBkbFXTVGybNWBQ1Htf9dCrfTSfn1JRUB1hfLUFaUNKHtjnU8DidyowmiV15Rp2C5SgSPbpgSw48uvCxZp6FMojt7YoWCeVppVruLDt5YEfGjQJBjLjFgxBpTg54DoyZ4C39",
+            "signers": []
+        }
     },
     "chainId": 103
 }
