@@ -38,6 +38,8 @@
 * [Solana API](node-service/solana-api/README.md)
   * [Standard RPC](node-service/solana/rpc.md)
   * [Enhanced RPC](node-service/solana-api/enhanced-rpc.md)
+  * [💥 NFT RPC](node-service/solana-api/nft-rpc.md)
+  * [Transaction Struct](node-service/solana-api/transaction-struct.md)
 * [EVM Chains API](node-service/evm-chains-api/README.md)
   * [Standard RPC](node-service/evm-chains-api/standard-rpc.md)
   * [Enhanced RPC](node-service/evm-chains-api/enhanced-rpc.md)
