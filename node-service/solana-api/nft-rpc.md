@@ -27,7 +27,7 @@ The NFT Market-related API is based on [the metaplex protocol](https://docs.meta
 * `<object>` - a JSON object containing:
   * `mint: <string>` - the mint address of NFT
   * `mintAssociatedTokenAccount: <string>` - The address of the account where you place the NFT
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) (to be signed)
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) to be signed
 
 Request Example
 
@@ -118,6 +118,189 @@ Response Example
                 "5p64ZhpEQYGmzspkV6Lc1AMhdvemmPuHKZMnEc4knhxbUyUPqWvQvwfqcsuB2zNQbBFAvqCzbANuwtNnhKN8CC5J"
             ]
         }
+    },
+    "chainId": 103
+}
+```
+
+### 🔥 NFT\_update
+
+> update [the data of NFT metadata](https://docs.metaplex.com/programs/token-metadata/accounts#metadata)
+
+**Parameters:**
+
+* `<string>` - the mint address of NFT you owned
+* `<object>` - fields from [the data of NFT metadata](https://docs.metaplex.com/programs/token-metadata/accounts#metadata)
+  * `name: string`
+  * `symbol: string`
+  * `uri: string`
+  * `sellerFeeBasisPoints: int`
+  * `newUpdateAuthority: string`
+  * `primarySaleHappened: boolean`
+  * `isMutable: string`
+
+**Results:**
+
+* `<object>` - a JSON object containing:
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) to be signed
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+const bs58 = require('bs58');
+const { Keypair, Transaction } = require('@solana/web3.js');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+const mint = '77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj';
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+// update nft's name and symbol
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_update',
+        params: [mint, {
+            name: 'New Name',
+            symbol: 'New Symbol'
+        }],
+    }, { auth });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+        "transaction": {
+            "hasPartialSign": true,
+            "serialized": "PFPXCr7kuoiiw3y55ACWKYeYdCUsXw5fnQ384LuX4c8djRtgVKmT3hdNtEhMuw5YQooVLSDA33ri1exvX2mQ7GEQ2LUkHkaY7QeYL9UAcFXyAYqPL88xeFrADWzZ4H4XuAemCYwoTRNwogRNfonuZSeq8CVSzymYHZ36qVtuT28oiohoEFSQGDt9q8NzoT9QebFWojJ3Zfp4Twef1h5QeK3Y9ffamZLzqWoGHmZsJHDRhikA7HkMZXNiW5qG87xpg9mCwLQZFWBLXwhGDbiyi2YC8DvoGniieem9ftPS9m7e4ufZfZktn5wdTUnGSXrRU7jpbmRqR8Eutszig8Y1yewGYESjCWKjWFCk3fD1uzbGTEJyZjQkoUNqizREEBBUq11FeoSFreKWX3xUiEvUe7BNYBAUJKP9CvLJe7ZiD4f3voWMEjorkB4qKWXXFct7o7Tm3fJH5LAucvwpimnFkbkKA6Nou9WBUV6upUsM67u1hgKiwZj2wMxhd9t9nu3by2rHhhScjrGg3EnhyH8vpq6mf645bqubjfEDodknvy1zaswVuJQFUh8ZaCLyB3gmRB8c9xwwZHwcgfV4bs5qVMKxK4PQxR3ArYVrLLq2yXRvVexF1YuF8GQSuZ6LyNggwVBK2t8trxjtepAWNpug8B3zmwxquGPfunKtwRtNvJXkrp23TkDrCHtZSnQBGo6d5zXD7bG4sDq85H7Y1FwtEeDVQTxhcvLG46ZVBkkYKxegGBTcjLmLjk1LyqqoF6QSVmZcGHD56FPTjHZaLnzXzzNozqx9ApytuZkQcwDWV9UWsWAwWbvGtGoUWkDcDfVEKCv1BDGYcqGuSp27Fmz1Y1pVdQ4BV3sxdy3Bp4yzNRaXbJpSnASxLmn3ixSs4g1Q6c6SHoYqWnXgEmgM8VL4JpCehqmdGDCvwzi7bE9dHYZ8DLL5aCA2nJmC4L89PMBVRxxLAc3Acvn9jRhBieRoCfxMrDPjjbmx47tUN8s93e9xvkR3ssX4Pb1SyN6aKqfGH1vZz2azqdSUTGaVT5ZC7Zh7jnXSzWXQpjkZbGeKarxB6HjCJR4DmfZD7q74K7ZmbsNS9TKqMmjiffExvCRJKzmG2afjSTTnET5c2NWezZby4WbnCo",
+            "signers": [
+                "5p64ZhpEQYGmzspkV6Lc1AMhdvemmPuHKZMnEc4knhxbUyUPqWvQvwfqcsuB2zNQbBFAvqCzbANuwtNnhKN8CC5J"
+            ]
+        }
+    },
+    "chainId": 103
+}
+```
+
+### 🔥 NFT\_info
+
+> get NFT info
+
+**Parameters:**
+
+* `<string>` - the mint address of NFT you owned
+* `<object>` - config
+  * `parseMetadataUri: boolean` If true, the API will parse the metadata's uri that can get the image url and other info.
+
+**Results:**
+
+* `<object>` - a JSON object about metadata
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+const bs58 = require('bs58');
+const { Keypair, Transaction } = require('@solana/web3.js');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+const mint = '77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj';
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+// Get NFT Info
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_info',
+        params: [mint, {
+            parseMetadataUri: true,
+        }],
+    }, { auth });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+        "key": 4,
+        "updateAuthority": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+        "mint": "77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj",
+        "data": {
+            "name": "Test NFTFFFF",
+            "symbol": "TEST",
+            "uri": "https://gateway.pinata.cloud/ipfs/QmSbQerqyuAVJzD5zX26wAiEihmyWcU9htDchwuVhejghZ",
+            "sellerFeeBasisPoints": 100,
+            "creators": [
+                {
+                    "address": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+                    "verified": true,
+                    "share": 50
+                },
+                {
+                    "address": "7quN8ZdQYkXyWzSpytv9xK5ngzq32UapNbFSz91tpmvA",
+                    "verified": false,
+                    "share": 50
+                }
+            ],
+            "uriData": { // not exist if parseMetadataUri is false
+                "name": "Test: LBFUF",
+                "symbol": "TEST",
+                "description": "Test description",
+                "seller_fee_basis_points": 100,
+                "image": "https://gateway.pinata.cloud/ipfs/QmY21xP5qjz866TBovLH2Px5fLEyfU1uBg69BfDpdQu4KJ",
+                "animation_url": "",
+                "external_url": "",
+                "attributes": [
+                    {
+                        "trait_type": "Type",
+                        "value": "Skeleton"
+                    }
+                ],
+                "properties": {
+                    "creators": [
+                        {
+                            "address": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+                            "share": 50
+                        },
+                        {
+                            "address": "7quN8ZdQYkXyWzSpytv9xK5ngzq32UapNbFSz91tpmvA",
+                            "share": 50
+                        }
+                    ]
+                }
+            }
+        },
+        "primarySaleHappened": false,
+        "isMutable": true,
+        "editionNonce": 254,
+        "tokenStandard": 0
     },
     "chainId": 103
 }
