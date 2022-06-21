@@ -198,7 +198,117 @@ Response Example
 
 ### 🔥 NFT\_info
 
-> get NFT info
+> Get NFT Info
+
+**Parameters:**
+
+* `<string>` - the mint address of NFT you owned
+* `<object>` - config
+  * `parseMetadataUri: boolean` If true, the API will parse the metadata's uri that can get the image url and other info.
+
+**Results:**
+
+* `<object>` - a JSON object about metadata
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+const bs58 = require('bs58');
+const { Keypair, Transaction } = require('@solana/web3.js');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+const mint = '77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj';
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+// Get NFT Info
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_info',
+        params: [mint, {
+            parseMetadataUri: true,
+        }],
+    }, { auth });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+        "key": 4,
+        "updateAuthority": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+        "mint": "77jsJBjKMi5MsKYoSBS2a2HVQ9nd7ULTZUVqKZyhRFzj",
+        "data": {
+            "name": "Test NFTFFFF",
+            "symbol": "TEST",
+            "uri": "https://gateway.pinata.cloud/ipfs/QmSbQerqyuAVJzD5zX26wAiEihmyWcU9htDchwuVhejghZ",
+            "sellerFeeBasisPoints": 100,
+            "creators": [
+                {
+                    "address": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+                    "verified": true,
+                    "share": 50
+                },
+                {
+                    "address": "7quN8ZdQYkXyWzSpytv9xK5ngzq32UapNbFSz91tpmvA",
+                    "verified": false,
+                    "share": 50
+                }
+            ],
+            "uriData": { // not exist if parseMetadataUri is false
+                "name": "Test: LBFUF",
+                "symbol": "TEST",
+                "description": "Test description",
+                "seller_fee_basis_points": 100,
+                "image": "https://gateway.pinata.cloud/ipfs/QmY21xP5qjz866TBovLH2Px5fLEyfU1uBg69BfDpdQu4KJ",
+                "animation_url": "",
+                "external_url": "",
+                "attributes": [
+                    {
+                        "trait_type": "Type",
+                        "value": "Skeleton"
+                    }
+                ],
+                "properties": {
+                    "creators": [
+                        {
+                            "address": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+                            "share": 50
+                        },
+                        {
+                            "address": "7quN8ZdQYkXyWzSpytv9xK5ngzq32UapNbFSz91tpmvA",
+                            "share": 50
+                        }
+                    ]
+                }
+            }
+        },
+        "primarySaleHappened": false,
+        "isMutable": true,
+        "editionNonce": 254,
+        "tokenStandard": 0
+    },
+    "chainId": 103
+}
+```
+
+### 🔥 NFT\_initializeStore
+
+> Initialize a market that can bought and sold NFT from
 
 **Parameters:**
 
