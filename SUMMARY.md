@@ -30,6 +30,8 @@
 ## NFT SERVICE
 
 * [Introduction](nft-service/introduction.md)
+* [Solana NFT Service](nft-service/solana-nft-service/README.md)
+  * [NFT RPC API](nft-service/solana-nft-service/nft-rpc-api.md)
 
 ## NODE SERVICE
 
@@ -38,7 +40,6 @@
 * [Solana API](node-service/solana-api/README.md)
   * [Standard RPC](node-service/solana/rpc.md)
   * [Enhanced RPC](node-service/solana-api/enhanced-rpc.md)
-  * [💥 NFT RPC](node-service/solana-api/nft-rpc.md)
   * [Transaction Struct](node-service/solana-api/transaction-struct.md)
 * [EVM Chains API](node-service/evm-chains-api/README.md)
   * [Standard RPC](node-service/evm-chains-api/standard-rpc.md)

@@ -4,7 +4,7 @@ description: >-
   Market!!!
 ---
 
-# 💥 NFT RPC
+# NFT RPC API
 
 We implemented a series of APIs, from mint NFT to building the NFT market. You can find all the features you want here.
 
@@ -27,7 +27,7 @@ The NFT Market-related API is based on [the metaplex protocol](https://docs.meta
 * `<object>` - a JSON object containing:
   * `mint: <string>` - the mint address of NFT
   * `mintAssociatedTokenAccount: <string>` - The address of the account where you place the NFT
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the NFT owner
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the NFT owner
 
 Request Example
 
@@ -142,7 +142,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the NFT owner
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the NFT owner
 
 Request Example
 
@@ -322,7 +322,7 @@ Without certification, creators can't share royalties.
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the creator
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the creator
 
 Request Example
 
@@ -383,7 +383,7 @@ Response Example
 
 * `<object>` - a JSON object containing:
   * `store: <string>` - the address of the market
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the market manager
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager
 
 Request Example
 
@@ -496,7 +496,7 @@ Only whitelisted creators can **sell** NFT in the market
 
 **Results:**
 
-* `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the market manager
+* `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager
 
 Request Example
 
@@ -612,7 +612,7 @@ Only fixed-price sales are supported so far
 
 * `<string>` - the public key of the seller account
 * `<object>`&#x20;
-  * `store: <string>` - the address of the market, see [NFT\_initializeStore](nft-rpc.md#nft\_initializestore)
+  * `store: <string>` - the address of the market, see [NFT\_initializeStore](nft-rpc-api.md#nft\_initializestore)
   * `mint: <string>` - the mint address of the NFT
   * `instantSalePrice: <number>` - the price you want to sell (**lamports**)
 
@@ -620,7 +620,7 @@ Only fixed-price sales are supported so far
 
 * `<object>` - a JSON object containing:
   * `auctionManager: string>` - the address of the auction manager to manager this sale
-  * `transactions: <[object]>` - [the transaction struct](transaction-struct.md) array is to be signed with the seller
+  * `transactions: <[object]>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) array is to be signed with the seller
 
 {% hint style="danger" %}
 It is important to make sure that all transactions are executed in array order.
@@ -736,7 +736,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the seller
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the seller
 
 Request Example
 
@@ -795,7 +795,7 @@ Response Example
 {% hint style="info" %}
 When the buyer buys the NFT, the seller needs to settle first to get the money.
 
-See [NFT\_settle](nft-rpc.md#nft\_unlist-1)
+See [NFT\_settle](nft-rpc-api.md#nft\_unlist-1)
 {% endhint %}
 
 **Parameters:**
@@ -809,7 +809,7 @@ See [NFT\_settle](nft-rpc.md#nft\_unlist-1)
 
 * `<object>` - a JSON object containing:
   * `mintAssociatedTokenAccount: <string>` - The address of the account where the buyer places the NFT
-  * `transactions: <[object]>` - [the transaction struct](transaction-struct.md) array is to be signed with the buyer
+  * `transactions: <[object]>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) array is to be signed with the buyer
 
 {% hint style="danger" %}
 It is important to make sure that all transactions are executed in array order.
@@ -891,7 +891,7 @@ Sol token account is not your native account.
 
 It is a specially generated account for the auction, and all the sol obtained from the auction will be transferred to this account first.
 
-If you want to withdraw from sol token account to your native account, see [NFT\_withdraw](nft-rpc.md#nft\_settle-1).
+If you want to withdraw from sol token account to your native account, see [NFT\_withdraw](nft-rpc-api.md#nft\_settle-1).
 {% endhint %}
 
 **Parameters:**
@@ -905,7 +905,7 @@ If you want to withdraw from sol token account to your native account, see [NFT\
 
 * `<object>` - a JSON object containing:
   * `nativeMintAssociatedTokenAccount: <string>` - the address of your sol token account
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the stakeholder
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the stakeholder
 
 Request Example
 
@@ -970,7 +970,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the withdrawn account
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the withdrawn account
 
 Request Example
 
