@@ -56,7 +56,7 @@ const { Keypair, Transaction } = require('@solana/web3.js');
 const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
 
 // generate or set a keypair
-const keypair = Keypair.fromSecretKey(Buffer.from([]),);
+const keypair = Keypair.fromSecretKey(Buffer.from([]));
 
 const auth = {
     username: 'Your Project Id',
