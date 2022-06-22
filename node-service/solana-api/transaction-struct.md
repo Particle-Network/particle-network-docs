@@ -18,6 +18,7 @@ export interface ISolanaTransaction {
     serialized: string; 
     // signers generated in the API
     // if an error occurs during the execution of the transaction, it can be used when retrying
+    // base58.encode(Keypair.secretkey)
     signers: string[]; 
 }
 ```
