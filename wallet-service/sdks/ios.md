@@ -766,6 +766,12 @@ struct ReadContractData: Codable {
 PNRouter.navigator(routhPath: .wallet)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+[PNRouter navigatorWalletWithDisplay:DisplayToken];
+```
+{% endtab %}
 {% endtabs %}
 
 ### Open Send Token
@@ -773,12 +779,20 @@ PNRouter.navigator(routhPath: .wallet)
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-//open send spl token
+//open send token
 let tokenSendConfig = TokenSendConfig(tokenAddress: nil, toAddress: nil, amount: nil)
 PNRouter.navigatorTokenSend(tokenSendConfig: tokenSendConfig)
 
 //open send default token by chain name
 PNRouter.navigator(routhPath: .tokenSend)
+```
+{% endtab %}
+
+{% tab title="Objctive-C" %}
+```objectivec
+//open send token
+TokenSendConfig *config = [[TokenSendConfig alloc] initWithTokenAddress:nil toAddress:nil amountString:nil];
+[PNRouter navigatorTokenSendWithTokenSendConfig:config];
 ```
 {% endtab %}
 {% endtabs %}
@@ -799,6 +813,13 @@ Display your address QR code.
 PNRouter.navigator(routhPath: .tokenReceive)
 ```
 {% endtab %}
+
+{% tab title="Objctive-C" %}
+```objectivec
+TokenReceiveConfig *config = [[TokenReceiveConfig alloc] initWithTokenAddress:nil];
+[PNRouter navigatorTokenReceiveWithTokenReceiveConfig:config];
+```
+{% endtab %}
 {% endtabs %}
 
 ### Open Transaction Records
@@ -806,12 +827,21 @@ PNRouter.navigator(routhPath: .tokenReceive)
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// open spl token transaction records
+// open token transaction records
 let tokenTransactionRecordsConfig = TokenTransactionRecordsConfig(tokenAddress: tokenAddress)
 PNRouter.navigatorTokenTransactionRecords(tokenTransactionRecordsConfig: tokenTransactionRecordsConfig)
 
 //open default token transaction records by chain name
 PNRouter.navigator(routhPath: .tokenTransactionRecords)
+```
+{% endtab %}
+
+{% tab title="Objctive-C" %}
+```objectivec
+// open token transaction records
+NSString *tokenAddress = @"";
+TokenTransactionRecordsConfig *config = [[TokenTransactionRecordsConfig alloc] initWithTokenAddress:tokenAddress];
+[PNRouter navigatorTokenTransactionRecordsWithTokenTransactionRecordsConfig:config];
 ```
 {% endtab %}
 {% endtabs %}
@@ -828,6 +858,18 @@ let address = ""
 let tokenId = ""
 let config = NFTDetailsConfig(address: address, tokenId: tokenId)
 PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
+```
+{% endtab %}
+
+{% tab title="Objctive-C" %}
+```objectivec
+// open nft details page
+// in solana, tokenId should be an empty string, address is the nft mint address.
+// in evm, address is the nft contract address.
+NSString *mintAddress = @"";
+NSString *tokenId = @"";
+NFTDetailsConfig *config = [[NFTDetailsConfig alloc] initWithAddress:mintAddress tokenId:tokenId];
+[PNRouter navigatorNFTDetailsWithNftDetailsConfig:config];
 ```
 {% endtab %}
 {% endtabs %}
