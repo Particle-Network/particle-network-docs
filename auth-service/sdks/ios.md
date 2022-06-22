@@ -93,26 +93,59 @@ The final step is to add an initialization code to your application. You may hav
 
 4\. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
 
+{% tabs %}
+{% tab title="Swift" %}
 ```swift
-import ParticleNetwork     
+import ParticleNetworkBase 
+import ParticleAuthService
 ```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+@import ParticleNetworkBase;
+@import ParticleAuthService;
+```
+{% endtab %}
+{% endtabs %}
 
 5\. Initialize ParticleNetwork service, typically in your app's `application:didFinishLaunchingWithOptions:` method:
 
-{% code title="swift" %}
-```swift
+{% tabs %}
+{% tab title="Swift" %}
+```
 let chainName = ParticleNetwork.ChainName.ethereum(.mainnet)
 let devEnv = ParticleNetwork.DevEnvironment.debug
 let config = ParticleNetworkConfiguration(chainName: chainName, devEnv: devEnv)
 ParticleNetwork.initialize(config: config)
 ```
-{% endcode %}
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+ChainName *chainName = [ChainName ethereum:EthereumNetworkMainnet];
+DevEnvironment devEnv = DevEnvironmentDebug;
+ParticleNetworkConfiguration *config = [[ParticleNetworkConfiguration alloc] initWithChainName:chainName devEnv:devEnv];
+[ParticleNetwork initializeWithConfig:config];
+```
+{% endtab %}
+{% endtabs %}
 
 6\. Add the scheme URL handle in your app's `application(_:open:options:)` method
 
+{% tabs %}
+{% tab title="Swift" %}
 ```swift
-return ParticleNetwork.handleUrl(url)
+return ParticleAuthService.handleUrl(url)
 ```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+return [ParticleAuthService handleUrl:url];
+```
+{% endtab %}
+{% endtabs %}
 
 7\. Config your app scheme URL, select your app target in the info section, click to add the URL type, and pass your scheme in URL Schemes
 
@@ -148,6 +181,17 @@ ParticleAuthService.login(type: .email).subscribe { [weak self] result in
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+[ParticleAuthService loginWithType:LoginTypeEmail successHandler:^(UserInfo * userInfo) {
+        NSLog(@"%@", userInfo);
+        [self showLogin:NO];
+    } failureHandler:^(NSError * error) {
+        NSLog(@"%@", error);
+    }];
+```
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -158,9 +202,19 @@ After log-in success, you can obtain user info by calling `ParticleNetwork.getUs
 
 Check that the user is logged in.
 
+{% tabs %}
+{% tab title="Swift" %}
 ```swift
 ParticleAuthService.isUserLoggedIn()
 ```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+[ParticleAuthService isUserLoggedIn]
+```
+{% endtab %}
+{% endtabs %}
 
 ### Logout
 
@@ -180,6 +234,17 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+[ParticleAuthService logoutWithSuccessHandler:^(NSString * result) {
+    NSLog(@"%@", result);
+    [self showLogin:YES];
+} failureHandler:^(NSError * error) {
+    NSLog(@"%@", error);
+}];
+```
+{% endtab %}
 {% endtabs %}
 
 ### Get userinfo, publicKey, address after login.
@@ -190,6 +255,14 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 ParticleAuthService.getUserInfo()
 ParticleAuthService.getPublicKey()
 ParticleAuthService.getAddress()
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+[ParticleAuthService getUserInfo];
+[ParticleAuthService getAddress];
+[ParticleAuthService getPublicKey];
 ```
 {% endtab %}
 {% endtabs %}
@@ -242,7 +315,6 @@ ParticleAuthService.signMessage(message).subscribe {  [weak self] result in
  
 // sign typed data, request hex string in evm, not support solana.
 // support v1, v3, v4 typed data
-var message = ""
 ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self] result in
     switch result {
     case .failure(let error):
@@ -251,6 +323,39 @@ ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self]
         // handle signed message
     }
 }.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+//transaction: request base58 string in solana, or hex string in evm
+[ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
+    NSLog(@"%@", signature);
+} failureHandler:^(NSError * error) {
+    NSLog(@"%@", error);
+}];
+
+ //transaction: request base58 string in solana, not support evm     
+[ParticleAuthService signTransaction:transaction successHandler:^(NSString * signedTransaction) {
+    NSLog(@"%@", signedTransaction);
+} failureHandler:^(NSError * error) {
+    NSLog(@"%@", error);
+}];
+
+//sign string, any string in solana, request hex string in evm
+[ParticleAuthService signMessage:message successHandler:^(NSString * signedMessage) {
+    NSLog(@"%@", signedMessage);
+} failureHandler:^(NSError * error) {
+    NSLog(@"%@", error);
+}];
+
+// sign typed data, request hex string in evm, not support solana.
+// support v1, v3, v4 typed data
+[ParticleAuthService signMessage:message successHandler:^(NSString * signedMessage) {
+    NSLog(@"%@", signedMessage);
+} failureHandler:^(NSError * error) {
+    NSLog(@"%@", error);
+}];
 ```
 {% endtab %}
 {% endtabs %}
