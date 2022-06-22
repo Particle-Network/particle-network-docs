@@ -86,13 +86,25 @@ end
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// call enhanced method: enhancedGetPrice
-// native token address is "native"
+// native token address is "native", you can add other token mint address.
 let addresses: [String] = ["native"]
-ParticleWalletAPI.getSolanaService().etPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] result in
+ParticleWalletAPI.getSolanaService().getPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] result in
     guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// native token address is "native", you can add other token mint address.
+NSArray *addresses = @[@"native"];
+NSArray *currencies = @[@"usd"];
+[[ParticleWalletAPI getSolanaService] getPriceBy:addresses currencies:currencies successHandler:^(NSArray<TokenPrice *> * tokenPrice) {
+    // handle token price
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
 ```
 {% endtab %}
 {% endtabs %}
@@ -112,8 +124,27 @@ ParticleWalletAPI.getSolanaService().getTokensAndNFTs(by: address).subscribe { [
 // also get from database
 ParticleWalletAPI.getEvmService().getTokensAndNFTsFromDB(by: address).subscribe { [weak self] _ in
     guard let self = self else { return }
-    // hande result
+    // handle result
 }.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// address is user public address
+NSString *address = @"";
+[[ParticleWalletAPI getSolanaService] getTokensAndNFTsBy:address successHandler:^(TokenResult * tokenResult) {
+    // handle tokenResult
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+
+// also get from database
+[[ParticleWalletAPI getSolanaService] getTokensAndNFTsFromDBBy:address successHandler:^(TokenResult * tokenResult) {
+    // handle tokenResult
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
 ```
 {% endtab %}
 {% endtabs %}
@@ -137,6 +168,25 @@ ParticleWalletAPI.getSolanaService().getTransactionsFromDB(by: address, beforeSi
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// address is user public address
+NSString *address = @"";
+[[ParticleWalletAPI getSolanaService] getTransactionsBy:address beforeSignature:nil untilSignature:nil limit:1000 successHandler:^(NSArray<SolanaTransactionModel *> * transactions) {
+    // handle transactions
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+
+// also get from database
+[[ParticleWalletAPI getSolanaService] getTransactionsFromDBBy:address beforeSignature:nil untilSignature:nil limit:1000 successHandler:^(NSArray<SolanaTransactionModel *> * transactions) {
+    // handle transactions
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+```
+{% endtab %}
 {% endtabs %}
 
 #### Serialize unsigned transaction
@@ -157,6 +207,23 @@ ParticleWalletAPI.getSolanaService().serializeTransaction(type: transactionType,
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+SolanaTransactionType transactionType = SolanaTransactionTypeTransferSol;
+NSString *sender = @"";
+NSString *receiver = @"";
+NSString *lamports = @"";
+NSString *mintAddress = nil;
+NSString *payer = nil;
+
+[[ParticleWalletAPI getSolanaService] serializeTransactionWithType:transactionType sender:sender receiver:receiver lamports:lamports mintAddress:mintAddress payer:payer successHandler:^(NSString * result) {
+    // handle result
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+```
+{% endtab %}
 {% endtabs %}
 
 #### Get the token info list&#x20;
@@ -169,6 +236,17 @@ ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] resu
     guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// get solana chain all SPL token info
+[[ParticleWalletAPI getSolanaService] getTokenListWithSuccessHandler:^(NSArray<TokenInfo *> * tokenList) {
+    // handle tokenList
+} failureHandler:^(NSError * error) {
+    // handle error
+}]
 ```
 {% endtab %}
 {% endtabs %}
@@ -196,12 +274,25 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// address is user public address
+// native token address is "native", you can add other token contract address.
 let addresses = ["native"]
 ParticleWalletAPI.getEvmService().getPrice(by: addresses, vsCurrencies: ["usd"]).subscribe { [weak self] _ in
 guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// native token address is "native", you can add other token contract address.
+NSArray *addresses = @[@"native"];
+NSArray *currencies = @[@"usd"];
+[[ParticleWalletAPI getSolanaService] getPriceBy:addresses currencies:currencies successHandler:^(NSArray<TokenPrice *> * tokenPrice) {
+    // handle token price
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
 ```
 {% endtab %}
 {% endtabs %}
@@ -225,6 +316,25 @@ guard let self = self else { return }
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// address is user public address
+NSString *address = @"";
+[[ParticleWalletAPI getEvmService] getTokensAndNFTsBy:address successHandler:^(TokenResult * tokenResult) {
+    // handle tokenResult
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+
+// also get from database
+[[ParticleWalletAPI getEvmService] getTokensAndNFTsFromDBBy:address successHandler:^(TokenResult * tokenResult) {
+    // handle tokenResult
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+```
+{% endtab %}
 {% endtabs %}
 
 #### Get the parsed transaction history by giving an address
@@ -246,6 +356,25 @@ guard let self = self else { return }
 }.disposed(by: bag)
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```
+// address is user public address
+NSString *address = @"";
+[[ParticleWalletAPI getEvmService] getTransactionsBy:address beforeSignature:nil untilSignature:nil limit:1000 successHandler:^(NSArray<SolanaTransactionModel *> * transactions) {
+    // handle transactions
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+
+// also get from database
+[[ParticleWalletAPI getEvmService] getTransactionsFromDBBy:address beforeSignature:nil untilSignature:nil limit:1000 successHandler:^(NSArray<SolanaTransactionModel *> * transactions) {
+    // handle transactions
+} failureHandler:^(NSError * error) {
+    // handle error
+}];
+```
+{% endtab %}
 {% endtabs %}
 
 #### Get the token info list&#x20;
@@ -258,6 +387,17 @@ ParticleWalletAPI.getEvmService().getTokenList().subscribe { [weak self] _ in
 guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```
+// get any EVM chain all token info
+[[ParticleWalletAPI getEvmService] getTokenListWithSuccessHandler:^(NSArray<TokenInfo *> * tokenList) {
+    // handle tokenList
+} failureHandler:^(NSError * error) {
+    // handle error
+}]
 ```
 {% endtab %}
 {% endtabs %}
@@ -351,6 +491,78 @@ func erc1155SafeTransferFrom() {
 }
 ```
 {% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// call 'transfer(to, amount)' function in erc20
+- (void)erc20Transfer {
+    NSString *contractAddress = @"";
+    NSString *to = @"";
+    NSString *amount = @"";
+    [[ParticleWalletAPI getEvmService] erc20TransferWithContractAddress:contractAddress to:to amount:amount successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+// call 'approve(spender, amount)' function in erc20 
+- (void)erc20Approve {
+    NSString *contractAddress = @"";
+    NSString *spender = @"";
+    NSString *amount = @"";
+    [[ParticleWalletAPI getEvmService] erc20ApproveWithContractAddress:contractAddress spender:spender amount:amount successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+// call 'transferFrom(from, to, amount)' function in erc20
+- (void)erc20TransferFrom {
+    NSString *contractAddress = @"";
+    NSString *from = @"";
+    NSString *to = @"";
+    NSString *amount = @"";
+    
+    [[ParticleWalletAPI getEvmService] erc20TransferFromContractAddress:contractAddress from:from to:to amount:amount successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+// call 'safeTransferFrom(from, to, tokenId)' function in erc721
+- (void)erc721SafeTransferFrom {
+    NSString *contractAddress = @"";
+    NSString *from = @"";
+    NSString *to = @"";
+    NSString *tokenId = @"";
+    
+    [[ParticleWalletAPI getEvmService] erc721SafeTransferFromContractAddress:contractAddress from:from to:to tokenId:tokenId successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+// call 'safeTransferFrom(from, to, id, amount, data)' function in erc1155
+- (void)erc1155SafeTransferFrom {
+    NSString *contractAddress = @"";
+    NSString *from = @"";
+    NSString *to = @"";
+    NSString *tokenId = @"";
+    NSString *amount = @"";
+    NSArray *data = [[NSArray alloc] init];
+    
+    [[ParticleWalletAPI getEvmService] erc1155SafeTransferFromContractAddress:contractAddress from:from to:to id:tokenId amount:amount data:data successHandler:^(NSString * result) {
+        // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+```
+{% endtab %}
 {% endtabs %}
 
 #### Create Transaction
@@ -372,7 +584,6 @@ func erc1155SafeTransferFrom() {
 public func createTransaction(from: String, to: String, value: String? = nil, contractParams: ContractParams? = nil, type: String = "0x2", nonce: String = "0x0", gasFeeLevel: GasFeeLevel = .medium, action: Action = .normal) -> Single<String>
 
 
-// Reference cases in github demo.
 func sendNativeEVM() {
     showLoading()
     // firstly, make sure current user has some native token for test there methods
@@ -422,6 +633,86 @@ func sendErc20Token() {
         }
         self.hideLoading()
     }.disposed(by: self.bag)
+}
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+/// Create a transaciton
+/// - Parameters:
+///   - from: From address
+///   - to:If you send a erc20, erc721, erc1155 or interact with a contract, this is the contract address, if you send native, this is receiver address.
+///   - contractParams: Acontract parameters
+///   - value: native value, default is nil, expressed as a hex string.
+///     for example:
+///     100000000000000 is “0x5AF3107A4000”
+///     3000 is “0xBB8”
+///   - type: TxData type, 0x2 is EIP1155, 0x1 is EIP2930, 0x0 is legacy.
+///   - nonce: Default value "0x0", particle auth manage nonce without cancel or speed transaction.
+///   - gasFeeLevel: Default is medium, transaction gas fee level.
+///   - action: Default is normal, means send, if you cancel/speed tracsaction, set the vaule
+/// - Returns: A transacion
+- (void)createTransactionFrom:(NSString * _Nonnull)from to:(NSString * _Nonnull)to value:(NSString * _Nullable)value contractParams:(ContractParams * _Nullable)contractParams type:(NSString * _Nonnull)type nonce:(NSString * _Nonnull)nonce gasFeeLevel:(enum GasFeeLevel)gasFeeLevel action:(enum Action)action successHandler:(void (^ _Nonnull)(NSString * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
+
+// Reference cases in github demo.
+- (void)sendNativeEVM {
+    [self showobjLoading];
+    
+    // firstly, make sure current user has some native token for test there methods
+    // send 0.0001 native from self to receiver
+    // 0.0001 native expressed as a hex string is "0x5AF3107A4000"
+    NSString *sender = [ParticleAuthService getAddress];
+    NSString *receiver = @"0xAC6d81182998EA5c196a4424EA6AB250C7eb175b";
+    NSString *amount = @"0x5AF3107A4000";
+    __weak APIReferenceViewController *weakSelf = self;
+    [[ParticleWalletAPI getEvmService] createTransactionFrom:sender to:receiver value:amount contractParams: nil type:@"0x2" nonce:@"0x0" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
+        NSLog(@"%@", transaction);
+        
+        [ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
+            NSLog(@"%@", signature);
+            [weakSelf hideLoading];
+            } failureHandler:^(NSError * error) {
+                NSLog(@"%@", error);
+                [weakSelf hideLoading];
+            }];
+        
+    } failureHandler:^(NSError * error) {
+        NSLog(@"%@", error);
+        [weakSelf hideLoading];
+    }];
+}
+
+
+- (void)sendErc20Token {
+    [self showLoading];
+    
+    // firstly, make sure current user has some native token and erc20 token for test there methods
+    // send 0.0001 erc20 token from self to receiver
+    // 0.0001 erc20 token expressed as a hex string is "0x5AF3107A4000", because the token decimals is 18.
+    NSString *from = [ParticleAuthService getAddress];
+    NSString *to = @"0xa36085F69e2889c224210F603D836748e7dC0088";
+    NSString *amount = @"0x5AF3107A4000";
+    NSString *contractAddress = @"0xa36085F69e2889c224210F603D836748e7dC0088";
+    NSString *receiver = @"0xAC6d81182998EA5c196a4424EA6AB250C7eb175b";
+    ContractParams *contractParams = [ContractParams erc20TransferWithContractAddress:contractAddress to:receiver amount:amount];
+    
+    // because you want to send erc20 token, interact with contact, 'to' should be the contract address.
+    // and value could be nil.
+    __weak APIReferenceViewController *weakSelf = self;
+    [[ParticleWalletAPI getEvmService] createTransactionFrom:from to:to value:nil contractParams:contractParams type:@"0x2" nonce:@"0x0" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
+            NSLog(@"%@", transaction);
+            [ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
+                NSLog(@"%@", signature);
+                [weakSelf hideLoading];
+                } failureHandler:^(NSError * error) {
+                    NSLog(@"%@", error);
+                    [weakSelf hideLoading];
+                }];
+        } failureHandler:^(NSError * error) {
+            NSLog(@"%@", error);
+            [weakSelf hideLoading];
+        }];
 }
 ```
 {% endtab %}
