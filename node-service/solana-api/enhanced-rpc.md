@@ -29,7 +29,7 @@ The native token has no mint address, so it's value is **`native`**
 Request example:
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
 
@@ -133,6 +133,8 @@ Response example:
 **Parameters:**
 
 * `<string>` - Pubkey of account to query, as base-58 encoded string
+* `<object>: optional`&#x20;
+  * `parseMetadataUri: <boolean, default: false>` If true, the API will parse the metadata's uri that can get the image url and other info.
 
 **Results:**
 
@@ -144,7 +146,7 @@ Response example:
 Request Example
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
 
@@ -154,7 +156,9 @@ const axios = require('axios');
         jsonrpc: '2.0',
         id: 0,
         method: 'enhancedGetTokensAndNFTs',
-        params: ['6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe'],
+        params: ['6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe', {
+            parseMetadataUri: true,
+        }],
     }, {
         auth: {
             username: 'Your Project Id',
@@ -182,47 +186,75 @@ Response Example
 
 ```typescript
 {
-    "chainId": 103,
     "jsonrpc": "2.0",
-    "id": 1,
+    "id": 0,
     "result": {
-        "lamports": 7395293870,
+        "lamports": 18394293870,
         "nfts": [
             {
-                "name": "MPD #2855",
+                "mint": "583HuvyUfULu7uULrmQrTJ1v9PQh28esyFYNXLwfqC5P",
+                "address": "583HuvyUfULu7uULrmQrTJ1v9PQh28esyFYNXLwfqC5P",
+                "isSemiFungible": false,
+                "name": "MPD #4834",
                 "symbol": "MPD",
-                "image": "https://www.arweave.net/dfF-HHAE_G2qQN4N7gN2gLvXah_7xOQzUysI68rLqPA?ext=jpg",
-                "mint": "5bxPBSWibpkYifCzaKhPuix63pqhehZCf5DU4LWwh5ot",
+                "image": "",
                 "sellerFeeBasisPoints": 0,
-                "data": {
-                    "name": "MPD #2855",
-                    "symbol": "MPD",
-                    "image": "https://www.arweave.net/dfF-HHAE_G2qQN4N7gN2gLvXah_7xOQzUysI68rLqPA?ext=jpg",
-                    "properties": {
-                        "files": [
-                            {
-                                "uri": "https://www.arweave.net/dfF-HHAE_G2qQN4N7gN2gLvXah_7xOQzUysI68rLqPA?ext=jpg",
-                                "type": "image/jpg"
-                            }
-                        ],
+                "metadata": {
+                    "key": 4,
+                    "updateAuthority": "MPaXksCWktUySTTQ91h5Bq6CAeTWb7Myc9jhEiQQwKb",
+                    "mint": "583HuvyUfULu7uULrmQrTJ1v9PQh28esyFYNXLwfqC5P",
+                    "data": {
+                        "name": "MPD #4834",
+                        "symbol": "MPD",
+                        "uri": "https://arweave.net/QDGUTZvyQmsvIzE8pYgW9ZTPCs0ELXyg2vcJd2g-3A8",
+                        "sellerFeeBasisPoints": 0,
                         "creators": [
                             {
+                                "address": "FbWan7RPJEqAgErbp1szUBjW3tQHSX5frDZXko4B5yEg",
+                                "verified": true,
+                                "share": 0
+                            },
+                            {
                                 "address": "MPaXksCWktUySTTQ91h5Bq6CAeTWb7Myc9jhEiQQwKb",
+                                "verified": false,
                                 "share": 100
                             }
-                        ]
-                    }
+                        ],
+                        "uriData": { // not exists if parseMetadataUri is false
+                            "name": "MPD #4834",
+                            "symbol": "MPD",
+                            "image": "https://www.arweave.net/9D5eu2Hc5yVLwmrN4DGXLXkOhg9AE2SqLwZlkzN7drs?ext=jpg",
+                            "properties": {
+                                "files": [
+                                    {
+                                        "uri": "https://www.arweave.net/9D5eu2Hc5yVLwmrN4DGXLXkOhg9AE2SqLwZlkzN7drs?ext=jpg",
+                                        "type": "image/jpg"
+                                    }
+                                ],
+                                "creators": [
+                                    {
+                                        "address": "MPaXksCWktUySTTQ91h5Bq6CAeTWb7Myc9jhEiQQwKb",
+                                        "share": 100
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "primarySaleHappened": true,
+                    "isMutable": true,
+                    "editionNonce": 255
                 }
             }
         ],
         "tokens": [
             {
-                "name": "XYZ Test",
-                "symbol": "XYZ",
-                "image": "https://static.particle.network/token-list/solana/DEhAasscXF4kEGxFgJ3bq4PpVGp5wyUxMRvn6TzGVHaw.png",
-                "mint": "5yAymuqKorGrXka7SnEQaHdeXxzKrDMXzDkQUGgT9gGy",
                 "decimals": 6,
-                "amount": 51000000
+                "amount": 500000,
+                "address": "AEaYYeBrU5bWpf9CyaeJN8DV6cQLP9Rx6xhUvnuUTfwQ",
+                "mint": "AEaYYeBrU5bWpf9CyaeJN8DV6cQLP9Rx6xhUvnuUTfwQ",
+                "name": "",
+                "symbol": "",
+                "image": ""
             }
         ]
     }
@@ -257,7 +289,7 @@ Response Example
 Request example:
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
 
@@ -331,3 +363,9 @@ Response example:
     ]
 }
 ```
+
+
+
+### 🔥 enhancedSendAndConfirmRawTransaction
+
+> Same as \`sendAndConfirmRawTransaction\` in @solana/web3.js

@@ -189,8 +189,8 @@ Response Example
 **Parameters:**
 
 * `<string>` - the mint address of NFT you owned
-* `<object>` - config
-  * `parseMetadataUri: <boolean>` If true, the API will parse the metadata's uri that can get the image url and other info.
+* `<object>: optional`&#x20;
+  * `parseMetadataUri: <boolean, default: false>` If true, the API will parse the metadata's uri that can get the image url and other info.
 
 **Results:**
 
