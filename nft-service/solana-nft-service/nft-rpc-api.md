@@ -292,7 +292,7 @@ Response Example
 
 ### 🔥 NFT\_setCreatorVerified
 
-> Check the creator is verified for the NFT
+> Set the creator is verified for the NFT
 
 {% hint style="info" %}
 It is important to check this field to ensure the authenticity of the creator.&#x20;
