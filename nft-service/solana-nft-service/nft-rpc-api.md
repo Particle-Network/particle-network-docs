@@ -6,12 +6,6 @@ description: >-
 
 # NFT RPC API
 
-We implemented a series of APIs, from mint NFT to building the NFT market. You can find all the features you want here.
-
-{% hint style="info" %}
-The NFT Market-related API is based on [the metaplex protocol](https://docs.metaplex.com/). Metaplex protocol is one of the more popular standards in the Solana Network.
-{% endhint %}
-
 ### 🔥 NFT\_mint
 
 > mint NFT by metadata or offering a metadata uri
