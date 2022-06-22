@@ -792,6 +792,12 @@ Response Example
 
 > Buy NFT which is listed in the market
 
+{% hint style="info" %}
+When the buyer buys the NFT, the seller needs to settle first to get the money.
+
+See [NFT\_settle](nft-rpc.md#nft\_unlist-1)
+{% endhint %}
+
 **Parameters:**
 
 * `<string>` - the public key of the buyer (can be anyone)
@@ -876,4 +882,136 @@ Response Example
 }
 ```
 
-###
+### 🔥 NFT\_settle
+
+> Settle your NFT auction and transfer sol to your **sol token** **account**
+
+{% hint style="info" %}
+Sol token account is not your native account.
+
+It is a specially generated account for the auction, and all the sol obtained from the auction will be transferred to this account first.
+
+If you want to withdraw from sol token account to your native account, see [NFT\_withdraw](nft-rpc.md#nft\_settle-1).
+{% endhint %}
+
+**Parameters:**
+
+* `<string>` - Stakeholders in NFTs can be creators or sellers
+* `<object>`&#x20;
+  * `mint: <string>` - the mint address of the NFT
+  * `auctionManager: <string>` - the address of the auction manager
+
+**Results:**
+
+* `<object>` - a JSON object containing:
+  * `nativeMintAssociatedTokenAccount: <string>` - the address of your sol token account
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the stakeholder
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+const auctionManager = '6YKFom9PerD8pcWY7KMd1uX5MkYDFTcQ9H4vjN5jLW51';
+const mint = '2J48iL7bW1d7WR7meBsRkhwmhP5jHHVuwo8A3nEcxrAR';
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_settle',
+        params: [
+            '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
+            {
+                auctionManager,
+                mint,
+            }
+        ],
+    }, { auth });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+        "nativeMintAssociatedTokenAccount": "BLXQ15eimFb7mqRmZ7t2PpDmfN8uAK5PZFX3aPnMEp7t",
+        "transaction": {
+            "hasPartialSigned": false,
+            "serialized": "3FE6hRzWgvbA7dAs3tz9shFgUAaVPnnoXym55eLahDUdFw1rg3NfxRqg3wZw4pmy4oqboX6vZHMJKoy5yqJuoffohxEuuzFxjFdKg4pUgVG8hjkkBS4FayFkohJhmNf1KM2TGXcegshGTXsLc9Npe5WsoW7ZpuRzDJ7NMFqJuq2AfwojXbDYb1Es8iS99tVW51HVV2EipkuHHDVrwhZrWWPZRAGYTYKHey9gP7M1fAvF25fP6EvRqLynVFwVSF77dB5rXq1An1yU637Qmepda8T4xApTPX6tSWZAxNV8DmF5H9HNbNvrkommUXmv8jXxxC97ijcQykEzpQNDF9DTvc67paDjgoXTu1939fJt6YuLexvoXe3f7fyBd4Xf6WyQuUN8u3uwq3iGcTpwwdL4iQTBur2XVPcJ3mUQ89Pn5awuRzVewHxQzKAkJ9s3KHrdzZNxtTE4X4UYy21Y7f3dyd2qKgReDMg85NULCE5ge1AnUMXNqnTUfv1tMYM8VQKKyVtBVuUg4tWNybta4M4QXS66vJ9TiSX9nLNdhBd3fWk3DYmKdQg8xNfJqbdJRPYbQUCRjSKKHE9byxjuFRLUiAekdDPVAxGUqy9kwdRjc5tTxzUrp6e9yh4B18ktMMmPaVrK5rZZ8GDxkUk15gvm3hSUDFfjCXstPbdxwJ3L5YQ2oYMZzU6eH91rEm1bWirr1bYdAkfcGA2mTTQaD7CxFdxmjG7g4DigmykTBtGGPJxpBiRmSyQVQcRKVe1dyRAdZHJnWTzvzMhejyQ6ne1wHY6T9NRpQeF5zckRvKSVh1guXvkrvXmSnnqrkgUZxVp1ooNdqPkaDBds4UHyQ9Q3U2UDFY96BAvCJXz1sJVLi6tq6kYSSnfDkSZny6n1yUJ7Jy63fGBdPjnXUCv9ni4kffJuircyzfAFDrknKzLa7rWNpia8V1GFu6Bt1tgDwzn2okJVNSS4UERCjpsKQZGTQzyFETkeFaBkFcb",
+            "signers": []
+        }
+    },
+    "chainId": 103
+}
+```
+
+### 🔥 NFT\_withdraw
+
+> Withdraw from sol token account to native account
+
+**Parameters:**
+
+* `<string>` - the public key of the account to withdraw
+
+**Results:**
+
+* `<object>` - a JSON object containing:
+  * `transaction: <object>` - [the transaction struct](transaction-struct.md) is to be signed with the withdrawn account
+
+Request Example
+
+{% tabs %}
+{% tab title="Node.js" %}
+```typescript
+const axios = require('axios');
+
+const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+const auth = {
+    username: 'Your Project Id',
+    password: 'Your Project Server Key',
+};
+
+(async () => {
+    const response = await axios.post(SOLANA_RPC_URL, {
+        chainId: 103,
+        method: 'NFT_withdraw',
+        params: ['8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ'],
+    }, { auth });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example
+
+```typescript
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+        "transaction": {
+            "hasPartialSigned": false,
+            "serialized": "3FE6hRzWgvbA7dAs3tz9shFgUAaVPnnoXym55eLahDUdFw1rg3NfxRqg3wZw4pmy4oqboX6vZHMJKoy5yqJuoffohxEuuzFxjFdKg4pUgVG8hjkkBS4FayFkohJhmNf1KM2TGXcegshGTXsLc9Npe5WsoW7ZpuRzDJ7NMFqJuq2AfwojXbDYb1Es8iS99tVW51HVV2EipkuHHDVrwhZrWWPZRAGYTYKHey9gP7M1fAvF25fP6EvRqLynVFwVSF77dB5rXq1An1yU637Qmepda8T4xApTPX6tSWZAxNV8DmF5H9HNbNvrkommUXmv8jXxxC97ijcQykEzpQNDF9DTvc67paDjgoXTu1939fJt6YuLexvoXe3f7fyBd4Xf6WyQuUN8u3uwq3iGcTpwwdL4iQTBur2XVPcJ3mUQ89Pn5awuRzVewHxQzKAkJ9s3KHrdzZNxtTE4X4UYy21Y7f3dyd2qKgReDMg85NULCE5ge1AnUMXNqnTUfv1tMYM8VQKKyVtBVuUg4tWNybta4M4QXS66vJ9TiSX9nLNdhBd3fWk3DYmKdQg8xNfJqbdJRPYbQUCRjSKKHE9byxjuFRLUiAekdDPVAxGUqy9kwdRjc5tTxzUrp6e9yh4B18ktMMmPaVrK5rZZ8GDxkUk15gvm3hSUDFfjCXstPbdxwJ3L5YQ2oYMZzU6eH91rEm1bWirr1bYdAkfcGA2mTTQaD7CxFdxmjG7g4DigmykTBtGGPJxpBiRmSyQVQcRKVe1dyRAdZHJnWTzvzMhejyQ6ne1wHY6T9NRpQeF5zckRvKSVh1guXvkrvXmSnnqrkgUZxVp1ooNdqPkaDBds4UHyQ9Q3U2UDFY96BAvCJXz1sJVLi6tq6kYSSnfDkSZny6n1yUJ7Jy63fGBdPjnXUCv9ni4kffJuircyzfAFDrknKzLa7rWNpia8V1GFu6Bt1tgDwzn2okJVNSS4UERCjpsKQZGTQzyFETkeFaBkFcb",
+            "signers": []
+        }
+    },
+    "chainId": 103
+}
+```
+
