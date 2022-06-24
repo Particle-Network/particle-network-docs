@@ -495,3 +495,236 @@ Response Example:
     ]
 }
 ```
+
+### 🔥 particle\_abi\_encodeFunctionCall
+
+> Call ABI function
+
+**Parameters:**
+
+* `<string>` - contract address
+* `<string>` - function name, the value is as below:
+  * `erc20_transfer`
+  * `erc20_approve`
+  * `erc20_transferFrom`
+  * `erc721_safeTransferFrom`
+  * `erc1155_safeTransferFrom`
+  * `custom_{methodName}` - any other functions which not mentioned above
+* `<string>` - function params string
+* `<string>: optional` - function abi json string
+
+**Results:**
+
+* `<string>` - function call result string
+
+Request Example:
+
+{% tabs %}
+{% tab title="Javascript" %}
+```typescript
+const axios = require('axios');
+
+(async () => {
+    const response = await axios.post('https://api.particle.network/evm-chain/rpc', {
+        chainId: 1,
+        jsonrpc: '2.0',
+        id: 1,
+        method: "particle_abi_encodeFunctionCall",
+        params: [
+            "0xB8c77482e45F1F44dE1745F52C74426C631bDD52", 
+            "erc20_transfer", 
+            [
+                "0x329a7f8b91Ce7479035cb1B5D62AB41845830Ce8", 
+                "1000000000000000000"
+            ]
+        ]
+    }, {
+        auth: {
+            username: 'Your Project Id',
+            password: 'Your Project Server Key',
+        }
+    });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+
+{% tab title="Curl" %}
+```powershell
+curl 'https://api.particle.network/evm-chain/rpc' \
+--header 'Authorization: Basic { Auth String }' \
+-X POST -H "Content-Type: application/json" -d '
+    {"chainId":1,"jsonrpc":"2.0","id":1,"method":"particle_abi_encodeFunctionCall","params":["0xB8c77482e45F1F44dE1745F52C74426C631bDD52","erc20_transfer",["0x329a7f8b91Ce7479035cb1B5D62AB41845830Ce8","1000000000000000000"]]}
+'
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example:
+
+```typescript
+{
+    "chainId": 1,
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xa9059cbb000000000000000000000000329a7f8b91ce7479035cb1b5d62ab41845830ce80000000000000000000000000000000000000000000000000de0b6b3a7640000"
+}
+```
+
+### 🔥 **particle\_deserializeTransaction**
+
+> Get transaction deserialized data with balance change
+
+**Parameters:**
+
+* `<string>` - account address
+* `<string>` - serialized transaction string
+
+**Results:**
+
+* `<[object]>` - a JSON object containing:&#x20;
+  * `estimatedChanges: <object>`&#x20;
+    * `natives: <[object]>` - estimated native token changes
+      * `address: <string>` - transaction from address
+      * `nativeChange: <string>` amount changes
+    * `nfts: <[object]>` - estimated NFT changes
+      * `address: <string>` - contract address
+      * `name: <string>`
+      * `symbol: <string>`
+      * `image: <string>`
+      * `fromAddress: <string>` - transaction from address
+      * `tokenId: <string>` - NFT token id
+      * `amountChange: <string>`
+    * `tokens: <[object]>` - estimated token changes
+      * `address: <string>` - contraction address
+      * `name: <string>` - token name
+      * `symbol: <string>` - token symbol
+      * `image: <string>` - token image
+      * `fromAddress: <string>` - transaction from address
+      * `decimals: <int64>` token decimals
+      * `amountChange: <string>`
+  * `data: <object>` - deserialized transaction data
+    * `from: <string>`
+    * `chainId: <string>`
+    * `nonce: <string>`
+    * `maxPriorityFeePerGas: <string>`
+    * `maxFeePerGas: <string>`
+    * `gasLimit: <string>`
+    * `to: <string>`
+    * `value: <string>`
+    * `data: <string>`
+    * `accessList: <[object]>`
+    * `v: <string>`
+    * `r: <string>`
+    * `s: <string>`
+    * `type: <string>` - transaction type, the value is as below:&#x20;
+      * `0x0:` legacy transaction
+      * `0x1:` EIP-2930 access list transaction
+      * `0x2:` EIP-1559 gas fee market transaction
+    * `function: <object>`
+      * `name: <string>`
+      * `params: <[object]>`
+        * `name: <string>`
+        * `value: <string>`
+        * `type: <string>`
+
+Request Example:
+
+{% tabs %}
+{% tab title="Javascript" %}
+```typescript
+const axios = require('axios');
+
+(async () => {
+    const response = await axios.post('https://api.particle.network/evm-chain/rpc', {
+        chainId: 1,
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'particle_deserializeTransaction',
+        params: [
+            '0x03afc65278e6d37f23bc0b8bf4c9d61bd35edfc8',
+            '0x02f8d30182030a843b9aca00850608379d4b8301122e9499ecdf17ded4fcb6c5f0fe280d21f832af464f6780b86442842e0e00000000000000000000000003afc65278e6d37f23bc0b8bf4c9d61bd35edfc8000000000000000000000000a058fb195d274afbae4dc317be362d4e96ffa1b400000000000000000000000000000000000000000000000000000000000006c1c001a0f7e0c908e4b549d24dad47f28205d3437e00b123e9b57bec95dcd61e1fd8065ca053495aaeec3740c0520e7717060a208aac0970dbc30ef3380e3ae9f81f4f6f66',
+        ]
+    }, {
+        auth: {
+            username: 'Your Project Id',
+            password: 'Your Project Server Key',
+        }
+    });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+
+{% tab title="Curl" %}
+```powershell
+curl 'https://api.particle.network/evm-chain/rpc' \
+--header 'Authorization: Basic { Auth String }' \
+-X POST -H "Content-Type: application/json" -d '
+    {"chainId":1,"jsonrpc":"2.0","id":1,"method":"particle_deserializeTransaction","params":["0x03afc65278e6d37f23bc0b8bf4c9d61bd35edfc8","0x02f8d30182030a843b9aca00850608379d4b8301122e9499ecdf17ded4fcb6c5f0fe280d21f832af464f6780b86442842e0e00000000000000000000000003afc65278e6d37f23bc0b8bf4c9d61bd35edfc8000000000000000000000000a058fb195d274afbae4dc317be362d4e96ffa1b400000000000000000000000000000000000000000000000000000000000006c1c001a0f7e0c908e4b549d24dad47f28205d3437e00b123e9b57bec95dcd61e1fd8065ca053495aaeec3740c0520e7717060a208aac0970dbc30ef3380e3ae9f81f4f6f66"]}
+'
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example:
+
+```typescript
+{
+    "chainId": 1,
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "estimatedChanges": {
+            "natives": [{
+                "address": "0x03afC65278E6D37f23bC0B8Bf4C9d61Bd35edFC8",
+                "nativeChange": "0"
+            }],
+            "nfts": [{
+                "address": "0x99EcdF17DED4fCb6C5f0fE280d21f832af464f67",
+                "name": "",
+                "symbol": "",
+                "image": "",
+                "fromAddress": "0x03afC65278E6D37f23bC0B8Bf4C9d61Bd35edFC8",
+                "tokenId": "1729",
+                "amountChange": "-1"
+            }],
+            "tokens": []
+        },
+        "data": {
+            "from": "0x03afC65278E6D37f23bC0B8Bf4C9d61Bd35edFC8",
+            "chainId": "0x1",
+            "nonce": "0x30a",
+            "maxPriorityFeePerGas": "0x3b9aca00",
+            "maxFeePerGas": "0x608379d4b",
+            "gasLimit": "0x1122e",
+            "to": "0x99EcdF17DED4fCb6C5f0fE280d21f832af464f67",
+            "value": "0x0",
+            "data": "0x42842e0e00000000000000000000000003afc65278e6d37f23bc0b8bf4c9d61bd35edfc8000000000000000000000000a058fb195d274afbae4dc317be362d4e96ffa1b400000000000000000000000000000000000000000000000000000000000006c1",
+            "accessList": [],
+            "v": "0x1",
+            "r": "0xf7e0c908e4b549d24dad47f28205d3437e00b123e9b57bec95dcd61e1fd8065c",
+            "s": "0x53495aaeec3740c0520e7717060a208aac0970dbc30ef3380e3ae9f81f4f6f66",
+            "type": "0x2",
+            "function": {
+                "name": "safeTransferFrom",
+                "params": [{
+                    "name": "from_",
+                    "value": "0x03afc65278e6d37f23bc0b8bf4c9d61bd35edfc8",
+                    "type": "address"
+                }, {
+                    "name": "to_",
+                    "value": "0xa058fb195d274afbae4dc317be362d4e96ffa1b4",
+                    "type": "address"
+                }, {
+                    "name": "tokenId_",
+                    "value": "1729",
+                    "type": "uint256"
+                }]
+            }
+        }
+    }
+}
+```
