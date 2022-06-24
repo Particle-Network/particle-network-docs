@@ -10,7 +10,7 @@
 
 The EVM Chains API allows applications to connect to a EVM chain node that is part of the EVM blockchain. Developers can interact with on-chain data and send different types of transactions to the network by utilizing the endpoints provided by the API.
 
-The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **chainId** to specify which Solana network we use.
+The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **chainId** to specify which network we use.
 
 | chainId Value (int) | chainName Value(string) | EVM Chains                  |
 | ------------------- | ----------------------- | --------------------------- |
