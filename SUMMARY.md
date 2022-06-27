@@ -27,6 +27,10 @@
   * [Android](wallet-service/sdks/android.md)
   * [iOS](wallet-service/sdks/ios.md)
 
+***
+
+* [IPFS SERVICE](ipfs-service.md)
+
 ## NFT SERVICE
 
 * [Introduction](nft-service/introduction.md)
