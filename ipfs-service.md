@@ -2,7 +2,7 @@
 description: Native Support for IPFS!
 ---
 
-# IPFS SERVICE
+# IPFS API
 
 ### Upload Files
 

@@ -22,5 +22,9 @@ The `mainnet` and `testnet` are available for the following chains:
 | Heco                | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](auth-service/introduction.md)   | [✅ Docs](node-service/evm-chains-api/) |
 | Aurora              | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](auth-service/introduction.md)   | [✅ Docs](node-service/evm-chains-api/) |
 
+## Decentralized Storage
+
+[👉 IPFS](ipfs-service.md)
+
 ## [👉 ChainId Configs](node-service/evm-chains-api/#structure)
 

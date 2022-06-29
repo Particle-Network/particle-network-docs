@@ -44,7 +44,7 @@
 * [EVM Chains API](node-service/evm-chains-api/README.md)
   * [Standard RPC](node-service/evm-chains-api/standard-rpc.md)
   * [Enhanced RPC](node-service/evm-chains-api/enhanced-rpc.md)
-* [IPFS API](node-service/ipfs-api.md)
+* [IPFS API](ipfs-service.md)
 * [Error Reference](node-service/error-reference.md)
 
 ## Resources
