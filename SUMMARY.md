@@ -27,10 +27,6 @@
   * [Android](wallet-service/sdks/android.md)
   * [iOS](wallet-service/sdks/ios.md)
 
-***
-
-* [IPFS SERVICE](ipfs-service.md)
-
 ## NFT SERVICE
 
 * [Introduction](nft-service/introduction.md)
@@ -48,6 +44,7 @@
 * [EVM Chains API](node-service/evm-chains-api/README.md)
   * [Standard RPC](node-service/evm-chains-api/standard-rpc.md)
   * [Enhanced RPC](node-service/evm-chains-api/enhanced-rpc.md)
+* [IPFS API](node-service/ipfs-api.md)
 * [Error Reference](node-service/error-reference.md)
 
 ## Resources
