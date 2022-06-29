@@ -331,6 +331,19 @@ ParticleNetwork.signTransaction(activity, transaction, object : WebServiceCallba
     }
 })
 
+//transaction: request base58 string list in solana, not support evm
+val allTrans = listOf(trans1, trans2)
+ParticleNetwork.signAllTransactions(
+    activity,
+    allTrans,
+    object : WebServiceCallback<SignOutput> {
+        override fun success(output: SignOutput) {
+            //sign success
+        }
+        override fun failure(errMsg: WebServiceError) {
+            // handle error
+        }
+    })
 
 //solana message: any string.
 //evm message: '0x' prefixed hex string, use 'personal_sign' to sign.

@@ -6,7 +6,7 @@ description: >-
 
 # Web
 
-Particle Network SDK allows you to easily integrate your app with the EVM blockchain, whether you already have a dApp integrated with web3 or are starting from scratch. Particle Network provides a smooth and delightful experience for both you and your app's users.
+Particle Network SDK allows you to easily integrate your app with the EVM and Solana blockchain, whether you already have a dApp integrated with web3 or are starting from scratch. Particle Network provides a smooth and delightful experience for both you and your app's users.
 
 ## Demo
 
@@ -18,10 +18,16 @@ Github: [https://github.com/Particle-Network/particle-web-demo](https://github.c
 
 ### Step 1: Include Particle Network SDK Script
 
-Download Particle Network SDK to your project via NPM
+Download Particle Network SDK to your project via Yarn
 
 ```bash
-npm i --save @particle-network/provider
+yarn add @particle-network/auth
+
+//if you nedd support evm-chains
+yarn add @particle-network/provider
+
+//if you nedd support solana chain
+yarn add @particle-network/solana-wallet
 ```
 
 ### Step 2: Setup Developer API Key
@@ -31,7 +37,7 @@ Before you can add Auth Service to your app, you need to create a Particle proje
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({
@@ -42,7 +48,11 @@ const pn = new ParticleNetwork({
   chainId: 42,
 });
 
-window.web3 = new Web3(pn.getProvider());
+const evmProvider = new ParticleProvider(pn.auth);
+//if you need support solana chain
+const solanaWallet = new SolanaWallet(pn.auth);
+
+window.web3 = new Web3(evmProvider);
 window.web3.currentProvider.isParticleNetwork // => true
 ```
 
@@ -53,7 +63,7 @@ Your first Particle Network dApp! 🎉 You can implement web3 functionalities ju
 ### Network Configuration
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 
 //ethereum Kovan test net
 const pn = new ParticleNetwork({
@@ -85,33 +95,24 @@ Particle support more [EVM Chains](../../node-service/evm-chains-api/#structure)
 In order for web3 to work and grab the end-users' Ethereum wallet addresses, the users have to login first (similar to unlocking account in MetaMask). You can simply trigger the login for users with the web3 function call below.
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({...});
-window.web3 = new Web3(pn.getProvider());
 
-// Request user login if needed, returns current user account address
-web3.currentProvider.enable();
+// Request user login if needed, returns current user info
+pn.auth.login()
 ```
 
-User login modal can also be triggered through web3 accounts and coinbase functions.
+User login modal can also be triggered through web3 accounts.
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
 import Web3 from "web3";
-
-const pn = new ParticleNetwork({...});
-window.web3 = new Web3(pn.getProvider());
 
 // Async functions that triggers login modal, if user not already logged in
 web3.eth.getAccounts((error, accounts) => {
   if (error) throw error;
   console.log(accounts); // ['0x...']
-});
-web3.eth.getCoinbase((error, coinbase) => {
-  if (error) throw error;
-  console.log(coinbase); // '0x...'
 });
 ```
 
@@ -124,12 +125,6 @@ If you have replaced your web3 provider with Particle Network provider, nothing 
 The Particle Network X modal will pop open and ask users to confirm their transaction once this web3 function is called on the client-side.
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
-import Web3 from "web3";
-
-const pn = new ParticleNetwork({...});
-window.web3 = new Web3(pn.getProvider());
-
 const txnParams = {
     from: "0xXX",
     to: toAddress,
@@ -139,6 +134,10 @@ window.web3.eth.sendTransaction(txnParams, (error, txnHash) => {
     if (error) throw error;
     console.log(txnHash);
 });
+
+//for solana chain
+solanWallet.signAndSendTransaction(transaction)
+
 ```
 
 ### User Signing
@@ -148,7 +147,7 @@ This is a relatively advanced use case. If you use the signed typed data JSONRPC
 {% tabs %}
 {% tab title="Personal Sign" %}
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 import { Buffer } from "buffer";
 import { bufferToHex, toChecksumAddress } from "ethereumjs-util";
@@ -180,7 +179,7 @@ window.web3.currentProvider
 
 {% tab title="Sign Typed Data v1" %}
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({...});
@@ -221,7 +220,7 @@ window.web3.currentProvider
 
 {% tab title="Sign Typed Data v3" %}
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({...});
@@ -284,7 +283,7 @@ window.web3.currentProvider
 
 {% tab title="Sign Typed Data v4" %}
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({...});
@@ -364,25 +363,23 @@ window.web3.currentProvider
 #### Login
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({...});
-window.web3 = new Web3(pn.getProvider());
 
-pn.auth.login().then(accounts => {
-    console.log("login", accounts[0]);
+pn.auth.login().then(info => {
+    //...
 })
 ```
 
 #### Logout
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
+import { ParticleNetwork } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({...});
-window.web3 = new Web3(pn.getProvider());
 
 pn.auth.logout().then(() => {
     console.log("logout");
@@ -392,11 +389,9 @@ pn.auth.logout().then(() => {
 #### Is User Logged In
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
-import Web3 from "web3";
+import { ParticleNetwork } from "@particle-network/auth";
 
 const pn = new ParticleNetwork({...});
-window.web3 = new Web3(pn.getProvider());
 
 //check user logged
 pn.auth.isLogin()
@@ -405,13 +400,11 @@ pn.auth.isLogin()
 #### Get User Info
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/provider";
-import Web3 from "web3";
+import { ParticleNetwork } from "@particle-network/auth";
 
 const pn = new ParticleNetwork({...});
-window.web3 = new Web3(pn.getProvider());
 
-//get user info(token/address/uuid)
+//get user info(token/wallet/uuid)
 const info = pn.auth.userInfo();
 ```
 
