@@ -289,13 +289,12 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 {% endtab %}
 {% endtabs %}
 
-### Get userinfo, publicKey, and address after login.
+### Get userinfo and address after login.
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
 ParticleAuthService.getUserInfo()
-ParticleAuthService.getPublicKey()
 ParticleAuthService.getAddress()
 ```
 {% endtab %}
@@ -304,8 +303,23 @@ ParticleAuthService.getAddress()
 ```objectivec
 [ParticleAuthService getUserInfo];
 [ParticleAuthService getAddress];
-[ParticleAuthService getPublicKey];
 ```
+{% endtab %}
+{% endtabs %}
+
+### Custom web browser modal present style
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// support fullScreen and formSheet
+// default web broswer modal present style is formSheet
+ParticleAuthService.setModalPresentStyle(.fullScreen)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
 {% endtab %}
 {% endtabs %}
 
