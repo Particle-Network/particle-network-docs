@@ -154,6 +154,24 @@ ParticleNetwork.solana.rpc("getBalance",
 {% endtab %}
 {% endtabs %}
 
+#### Add Custom Tokens
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// publicKey is your user public publicKey
+val publicKey = ParticleNetwork.getPublicKey()
+// tokenAddresses is token contract address
+val tokenList = listOf("Fm9rHUTF5v3hwMLbStjZXqNBBoZyGriQaFM6sTFz3K8A")
+// if tokens are existed in blockchain, will return them.
+// if no tokens existed in blockchain, will return empty list.
+ParticleNetwork.solana.addCustomTokens(publicKey, tokenList)
+```
+{% endtab %}
+{% endtabs %}
+
+###
+
 ### EVM Service
 
 #### Get the real-time exchange rate of the EVM token
@@ -223,6 +241,24 @@ ParticleNetwork.evm.getTokenList()
 ```kotlin
 // such as eth_estimateGas
 ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to" to "0xXXX...")))
+```
+{% endtab %}
+{% endtabs %}
+
+
+
+#### Add Custom Tokens
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// address is your user public address
+val address = ParticleNetwork.getAddress()
+// tokenAddresses is token contract address
+val tokenList = listOf("Fm9rHUTF5v3hwMLbStjZXqNBBoZyGriQaFM6sTFz3K8A")
+// if tokens are existed in blockchain, will return them.
+// if no tokens existed in blockchain, will return empty list.
+ParticleNetwork.evm.addCustomTokens(address, tokenList)
 ```
 {% endtab %}
 {% endtabs %}
