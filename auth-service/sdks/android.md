@@ -169,7 +169,28 @@ Particle Network support Solana and EVM chains, you can init with below chain in
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-ParticleNetwork.setChainInfo(chainInfo: ChainInfo)
+// Async switch chain name, it will check if user has logged in this chain name.
+// For example, if a user logged in with ethereum, then switch to  bsc,
+// it will switch to bsc directly, beacuse both bsc and ethereum are evm,
+// but if switch to solana, beacuse user didn't log in solana before, it will 
+// present a web browser for additional information automatically.
+val chainInfo = EthereumChain(EthereumChainId.Mainnet)
+ParticleNetwork.setChainInfo(
+    activity,
+    chainInfo,
+    object : ChainChangeCallBack {
+        override fun success() {
+            ToastUtils.showLong("currChain:${ParticleNetwork.chainInfo.chainName}")
+        }
+
+        override fun failure() {
+            ToastUtils.showLong("success failure:${ParticleNetwork.chainInfo.chainName}")
+        }
+    })
+    
+// Sync switch chain name. it will wont check if user has logged in.
+val chainInfo = EthereumChain(EthereumChainId.Mainnet)
+ParticleNetwork.setChainInfo(chainInfo)
 ```
 {% endtab %}
 
