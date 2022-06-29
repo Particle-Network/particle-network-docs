@@ -267,6 +267,42 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
 {% endtab %}
 {% endtabs %}
 
+#### Add custom tokens
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// address is your user public address
+let address = ParticleAuthService.getAddress()
+// tokenAddresses is token contract address
+let tokenAddresses: [String] = ["Fm9rHUTF5v3hwMLbStjZXqNBBoZyGriQaFM6sTFz3K8A"]
+// if tokens are existed in blockchain, will return them.
+// if no tokens existed in blockchain, will return empty array.
+ParticleWalletAPI.getEvmService().addCustomTokens(address: address, tokenAddresses: tokenAddresses).subscribe { [weak self]  result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let tokenModels):
+        print(tokenModels)
+    }
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```swift
+ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.getAddress(), tokenAddresses: ["0xFab46E002BbF0b4509813474841E0716E6730136", "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa"]).subscribe { [weak self]  result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let tokenModels):
+        print(tokenModels)
+    }
+}.disposed(by: bag)
+```
+{% endtab %}
+{% endtabs %}
+
 ### EVM Service
 
 #### Get the real-time exchange rate of the EVM token
@@ -755,6 +791,44 @@ struct ReadContractData: Codable {
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Add custom tokens
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// address is your user public address
+let address = ParticleAuthService.getAddress()
+// tokenAddresses is token contract address
+let tokenAddresses: [String] = ["0xFab46E002BbF0b4509813474841E0716E6730136", "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa"]
+// if tokens are existed in blockchain, will return them.
+// if no tokens existed in blockchain, will return empty array.
+ParticleWalletAPI.getEvmService().addCustomTokens(address: address, tokenAddresses: tokenAddresses).subscribe { [weak self]  result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let tokenModels):
+        print(tokenModels)
+    }
+}.disposed(by: bag)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```swift
+ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.getAddress(), tokenAddresses: ["0xFab46E002BbF0b4509813474841E0716E6730136", "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa"]).subscribe { [weak self]  result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let tokenModels):
+        print(tokenModels)
+    }
+}.disposed(by: bag)
+```
+{% endtab %}
+{% endtabs %}
+
+###
 
 ## Wallet UI Reference
 

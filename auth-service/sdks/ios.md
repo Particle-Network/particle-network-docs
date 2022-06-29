@@ -45,15 +45,15 @@ open your-project.xcworkspace
 ```
 
 {% hint style="info" %}
-If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
+If you would like to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
 {% hint style="info" %}
 ### ARM64 Simulator support
 
-For everyone with an M1 (Silicon) device who want run their projects on a simulator, There are two solutions.
+For everyone with an M1 (Silicon) device who wishes to run their projects on a simulator, There are two solutions.
 
-1. Set arm64 as excluding architecture for Any iOS Simulator SDK. add the following to Podfile
+1. Set arm64 to exclude the architecture for any iOS Simulator SDK, then add the following to the Podfile:
 
 ```ruby
 post_install do |installer|
@@ -70,7 +70,7 @@ end
 
 The final step is to add an initialization code to your application. You may have already done this as part of adding the Auth Service to your app. If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
 
-1. Create a  **ParticleNetwork-Info.plist** into the root of your Xcode project
+1. Create a **ParticleNetwork-Info.plist** into the root of your Xcode project
 2. Copy the following text into this file:
 
 ```xml
@@ -89,7 +89,7 @@ The final step is to add an initialization code to your application. You may hav
 
 ```
 
-3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
+3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
 
 4\. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
 
@@ -109,7 +109,7 @@ import ParticleAuthService
 {% endtab %}
 {% endtabs %}
 
-5\. Initialize ParticleNetwork service, typically in your app's `application:didFinishLaunchingWithOptions:` method:
+5\. Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -155,19 +155,49 @@ return [ParticleAuthService handleUrl:url];
 {% endtab %}
 {% endtabs %}
 
-7\. Config your app scheme URL, select your app target in the info section, click to add the URL type, and pass your scheme in URL Schemes
+7\. Configure your app scheme URL, select your app target in the info section, click to add the URL type, and pass your scheme in URL Schemes
 
 Your scheme URL should be "pn" + your project app uuid.
 
-For example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
+For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
 ![Config scheme url](../../.gitbook/assets/image.png)
 
 {% hint style="info" %}
-You can dynamically switch the chainEnv by calling the `ParticleNetwork.setChainName()` method.&#x20;
-
 devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% endhint %}
+
+#### Dynamically switch the chain name:
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// Async switch chain name, it will check if user has logged in this chain name.
+// For example, if a user logged in with ethereum, then switch to  bsc,
+// it will switch to bsc directly, beacuse both bsc and ethereum are evm,
+// but if switch to solana, beacuse user didn't log in solana before, it will 
+// present a web browser for additional information automatically.
+let chainName = ParticleNetwork.ChainName.ethereum(.kovan)
+ParticleAuthService.setChainName(chainName).subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let userInfo):
+        print(userInfo)
+    }
+}.disposed(by: bag)
+
+// Sync switch chain name. it will wont check if user has logged in.
+let chainName = ParticleNetwork.ChainName.ethereum(.kovan)
+ParticleNetwork.setChainName(chainName)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+{% endtab %}
+{% endtabs %}
 
 ## API Reference
 
@@ -178,6 +208,12 @@ To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. Y
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
+/// Login
+/// - Parameters:
+///   - type: Login type, support email, phone, google, apple and facebook
+///   - account: When login type is email or phone, you could pass email address or phone number.
+///   - supportAuthType: Controls whether third-party login buttons are displayed. default will show all third-party login buttons.
+/// - Returns: User infomation single
 ParticleAuthService.login(type: .email).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -206,9 +242,7 @@ ParticleAuthService.login(type: .email).subscribe { [weak self] result in
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
-### Is User Logged In
-
-Check that the user is logged in.
+### Check That the User Logged In
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -255,7 +289,7 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 {% endtab %}
 {% endtabs %}
 
-### Get userinfo, publicKey, address after login.
+### Get userinfo, publicKey, and address after login.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -279,10 +313,10 @@ ParticleAuthService.getAddress()
 
 Use the Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
 
-1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature. support both solana and evm.
-2. `signTransaction`: sign transaction, return signed message, only support solana.
-3. `signMessage`: sign message, return signed message, support both solana and evm.
-4. `signTypedData`: sign typed data, support v1, v3, v4 typed data, return signed message, only support evm.
+1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature. This supports both Solana and EVM.
+2. `signTransaction`: sign transaction, return signed message. This only supports Solana.
+3. `signMessage`: sign message, return signed message. This supports both Solana and EVM.
+4. `signTypedData`: sign typed data; this supports v1, v3, and v4 typed data. Return signed message; this only supports EVM.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -308,6 +342,17 @@ ParticleAuthService.signtransaction(transaction).subscribe {  [weak self] result
         // handle signed message
     }
 }.disposed(by: bag)
+
+//transaction: request base58 string array in solana, not support evm
+let transactions: [String] = []
+ParticleAuthService.signAllTransactions(transactions).subscribe { [weak self] result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let signature):
+        print(signature)
+    }
+}.disposed(by: self.bag)
 
 //sign string, any string in solana, request hex string in evm
 ParticleAuthService.signMessage(message).subscribe {  [weak self] result in
@@ -368,7 +413,7 @@ ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self]
 {% endtab %}
 {% endtabs %}
 
-You can create `transaction` with `TxData`.There's an easy way to do this with [Wallet Service](broken-reference)
+You can create a `transaction` with `TxData`. There's an easy way to do this with [Wallet Service](broken-reference).
 
 ### Error
 
