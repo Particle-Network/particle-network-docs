@@ -33,7 +33,7 @@ repositories {
 dependencies {
     // Particle Auth Service
     implementation("network.particle:auth-service${latest_version}")
-    // Particle Wallet Api
+    // Particle Wallet Core Api
     implementation("network.particle:api-service-api${latest_version}")
     // Particle Wallet GUI, you can remove it if custom GUI.
     implementation("network.particle:wallet-service${latest_version}")
@@ -170,8 +170,6 @@ ParticleNetwork.solana.addCustomTokens(publicKey, tokenList)
 {% endtab %}
 {% endtabs %}
 
-###
-
 ### EVM Service
 
 #### Get the real-time exchange rate of the EVM token
@@ -244,8 +242,6 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 #### Add Custom Tokens
 
@@ -366,7 +362,7 @@ ParticleNetwork.signAndSendTransaction(activity, tx.serialize(), callback)
 
 you can call contract function by set `contractParams:`
 
-* `ContractParams.erc20Transform()`
+* `ContractParams.erc20Transfer()`
 * `ContractParams.erc20Approve()`
 * `ContractParams.erc20TransferFrom()`
 * `ContractParams.erc721SafeTransferFrom()`

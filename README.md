@@ -40,11 +40,21 @@ Not only do we have JSON-RPC support, but also enhanced API. This allows you to 
 
 [👉 Learn more about Particle Node](node-service/introduction.md)
 
+### **NFT Service**
+
+**Particle NFT** provides a one-stop NFT Create, Manage, Distribute, and Marketplace solution.
+
+[👉 Learn more about Particle NFT](broken-reference)
+
+### Decentralized Storage
+
+We support IPFS now, and more decentralized storage services are coming.
+
+[👉 Learn more about IPFS](ipfs-service.md)
+
 ### More Incoming Services
 
-**NFT Service**: the one-stop NFT marketplace solution
-
-**Analytic Service**: Web3 BI system, deriving insights from real-time on- and off-chain data
+**Data Service**: Web3 BI system, deriving insights from real-time on- and off-chain data
 
 👉 [Join our Discord community and tell us what you need🛠. Let's **BUIDL** together!](https://discord.gg/2y44qr6CR2)
 
@@ -54,4 +64,4 @@ We support [Android, iOS, and Web](https://github.com/particle-network) now. The
 
 ## Available Networks
 
-Currently, we support almost **all EVM compatible chains** and **the Solana chain**. [For details check this 👉](available-networks.md)
+Currently, we support almost **all EVM-compatible chains** and **the Solana chain**. [For details check this 👉](available-networks.md)

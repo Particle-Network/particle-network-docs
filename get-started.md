@@ -12,12 +12,16 @@ description: Integrate Particle products to your dApp within minutes
    1. [**Auth Service SDKs**](auth-service/sdks/)
    2. [**Wallet Service SDKs**](wallet-service/sdks/)
    3. [**Node Service RPCs**](broken-reference/)
+   4. [**NFT Service RPCs**](broken-reference)****
+   5. ****[**IPFS API**](ipfs-service.md)****
 
 ## **Create a Project**
 
 You must create a project to be able to access Particle Network's products.
 
 If you only need our node services, skip the next step and use your Project ID and Server Key to call on our [Node RPCs.](node-service/authentication.md)
+
+If you only need our NFT services, skip the next step and use your Project ID and Server Key to call on our [NFT RPCs](broken-reference) and [IPFS API](ipfs-service.md).
 
 👉 [Click to see how to create a project in the Particle Dashboard](dashboard/manage-projects.md)
 

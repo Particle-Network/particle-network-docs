@@ -23,10 +23,10 @@ Download Particle Network SDK to your project via Yarn
 ```bash
 yarn add @particle-network/auth
 
-//if you nedd support evm-chains
+//if you need support evm-chains
 yarn add @particle-network/provider
 
-//if you nedd support solana chain
+//if you need support solana chain
 yarn add @particle-network/solana-wallet
 ```
 
@@ -142,7 +142,7 @@ solanWallet.signAndSendTransaction(transaction)
 
 ### User Signing
 
-This is a relatively advanced use case. If you use the signed typed data JSONRPC endpoint, Particle Network will support this as well.
+This is a relatively advanced use case. If you use the signed typed data JSON RPC endpoint, Particle Network will support this as well.
 
 {% tabs %}
 {% tab title="Personal Sign" %}

@@ -14,7 +14,7 @@ The Particle NFT service supports the NFT minting from a variety of file types; 
 
 You can also build your own tools with our APIs. We're happy to feature what you've built here.
 
-## What are the advantages of using Particle MarketPlace API?
+## Advantages of using Particle MarketPlace API?
 
 * Accessible in minutes: call on the Particle NFT service API to easily integrate marketplace functionalities into your dApp
 * Seamless experience: users can easily buy and sell NFTs without leaving your dApp

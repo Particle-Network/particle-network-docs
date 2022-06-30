@@ -828,8 +828,6 @@ ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.g
 {% endtab %}
 {% endtabs %}
 
-###
-
 ## Wallet UI Reference
 
 ### Open Wallet

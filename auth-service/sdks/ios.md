@@ -242,7 +242,7 @@ ParticleAuthService.login(type: .email).subscribe { [weak self] result in
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
-### Check That the User Logged In
+### Is User Logged In
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -289,7 +289,7 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 {% endtab %}
 {% endtabs %}
 
-### Get userinfo and address after login.
+### Get user info and address after login
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -307,7 +307,7 @@ ParticleAuthService.getAddress()
 {% endtab %}
 {% endtabs %}
 
-### Custom web browser modal present style
+### Custom modal present style
 
 {% tabs %}
 {% tab title="Swift" %}

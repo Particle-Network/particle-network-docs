@@ -16,4 +16,6 @@ The NFT Market-related API is based on [the metaplex protocol](https://docs.meta
 
 We strongly recommend that you run our demo, which contains a complete use of the NFT API.
 
-See the demo: [https://github.com/Particle-Network/particle-solana-nft-web-demo](https://github.com/Particle-Network/particle-solana-nft-web-demo)
+See the demo repo: [https://github.com/Particle-Network/particle-solana-nft-web-demo](https://github.com/Particle-Network/particle-solana-nft-web-demo)
+
+Live demo: [https://web-nft-demo.particle.network/](https://web-nft-demo.particle.network/)
