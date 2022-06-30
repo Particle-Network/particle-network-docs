@@ -210,31 +210,64 @@ To auth login with Particle, call `ParticleNetwork.login(...)`with `activity` an
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-ParticleNetwork.login(activity, LoginType.EMAIL, object : WebServiceCallback<LoginOutput> {
-    override fun success(output: LoginOutput) {
-        //login success, return user info in output
-    }
+//   - Parameters:
+//   - loginType: Login type, support email, phone, google, apple and facebook
+//   - account: When login type is email or phone, you could pass email address or phone number,Optional.
+//   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
+ParticleNetwork.login(
+        activity = this,
+        loginType = LoginType.PHONE,
+        account = "",
+        supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
+        loginCallback = object : WebServiceCallback<LoginOutput> {
+            override fun success(output: LoginOutput) {
+            }
+            override fun failure(errMsg: WebServiceError) {
+            }
+        })
 
-    override fun failure(errMsg: WebServiceError) {
-        //handle error
-    }
-})
+// - without account parameter you can use this method overwrite
+ParticleNetwork.login(
+        activity = this,
+        loginType = LoginType.PHONE,
+        supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
+        loginCallback = object : WebServiceCallback<LoginOutput> {
+            override fun success(output: LoginOutput) {
+            }
+            override fun failure(errMsg: WebServiceError) {
+            }
+        })
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-ParticleNetwork.login(activity, LoginType.EMAIL, new WebServiceCallback<LoginOutput>() {
-    @Override
-    public void success(@NonNull LoginOutput output) {
-        //login success, return user info in output
-    }
-    
-    @Override
-    public void failure(@NonNull WebServiceError errMsg) {
-        //handle err
-    }
-});
+//   - Parameters:
+//   - loginType: Login type, support email, phone, google, apple and facebook
+//   - account: When login type is email or phone, you could pass email address or phone number,Optional.
+//   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
+ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,activity,LoginType.PHONE,"",
+        SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
+        new WebServiceCallback<LoginOutput>() {
+            @Override
+            public void failure(@NonNull WebServiceError errMsg) {
+            }
+            @Override
+            public void success(@NonNull LoginOutput output) {
+            }
+        });
+
+// - without account parameter you can use this method overwrite
+ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,activity,LoginType.PHONE,
+        SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
+        new WebServiceCallback<LoginOutput>() {
+            @Override
+            public void failure(@NonNull WebServiceError errMsg) {
+            }
+            @Override
+            public void success(@NonNull LoginOutput output) {
+            }
+        });
 ```
 {% endtab %}
 {% endtabs %}
