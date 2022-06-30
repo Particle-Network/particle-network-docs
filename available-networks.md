@@ -4,7 +4,7 @@ description: Solana and all EVM-compatible chains are supported now; more are co
 
 # Available Networks
 
-The `mainnet` and `testnet` are available for the following chains:
+The `mainnet` and `testnet` are both available for all the following chains.
 
 ## Products
 
