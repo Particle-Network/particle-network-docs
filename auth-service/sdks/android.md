@@ -297,12 +297,12 @@ ParticleNetwork.logout(activity, object : WebServiceCallback<WebOutput> {
 
 {% tab title="Java" %}
 ```java
-ParticleNetwork.logout(this, new WebServiceCallback<WebOutput>() {
+ParticleNetworkAuth.logout(ParticleNetwork.INSTANCE,this, new WebServiceCallback<WebOutput>() {
     @Override
     public void success(@NonNull WebOutput output) {
         //logout success
     }
-    
+
     @Override
     public void failure(@NonNull WebServiceError errMsg) {
         //handle error
@@ -408,13 +408,13 @@ ParticleNetwork.signTypedData(activity, message, version, object : WebServiceCal
 {% tab title="Java" %}
 ```java
 //transaction: base58 string
-ParticleNetwork.signAndSendTransaction(activity, transaction, new WebServiceCallback<SignOutput>() {
-    
+ ParticleNetworkAuth.signAndSendTransaction(ParticleNetwork.INSTANCE,activity, transaction, new WebServiceCallback<SignOutput>() {
+
     @Override
     public void success(@NonNull SignOutput output) {
         //sign and send transaction success
     }
-    
+
     @Override
     public void failure(@NonNull WebServiceError errMsg) {
         //handle error
@@ -423,13 +423,13 @@ ParticleNetwork.signAndSendTransaction(activity, transaction, new WebServiceCall
 
 
 //transaction: base58 string
-ParticleNetwork.signTransaction(activity, transaction, new WebServiceCallback<SignOutput>() {
-    
+ParticleNetworkAuth.signTransaction(ParticleNetwork.INSTANCE,activity, transaction, new WebServiceCallback<SignOutput>() {
+
     @Override
     public void success(@NonNull SignOutput output) {
         //sign transaction success
     }
-    
+
     @Override
     public void failure(@NonNull WebServiceError errMsg) {
         //handle error
@@ -438,13 +438,13 @@ ParticleNetwork.signTransaction(activity, transaction, new WebServiceCallback<Si
 
 
 //sign any string
-ParticleNetwork.signMessage(activity, message, new WebServiceCallback<SignOutput>() {
-    
+ParticleNetworkAuth.signMessage(ParticleNetwork.INSTANCE,activity, message, new WebServiceCallback<SignOutput>() {
+
     @Override
     public void success(@NonNull SignOutput output) {
         //sign success
     }
-    
+
     @Override
     public void failure(@NonNull WebServiceError errMsg) {
         //handle error
