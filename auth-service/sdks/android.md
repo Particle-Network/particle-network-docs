@@ -196,7 +196,27 @@ ParticleNetwork.setChainInfo(chainInfo)
 
 {% tab title="Java" %}
 ```java
-ParticleNetwork.setChainInfo(chainInfo: ChainInfo)
+
+// Async switch chain name, it will check if user has logged in this chain name.
+// For example, if a user logged in with ethereum, then switch to  bsc,
+// it will switch to bsc directly, beacuse both bsc and ethereum are evm,
+// but if switch to solana, beacuse user didn't log in solana before, it will 
+// present a web browser for additional information automatically.
+ChainInfo chainInfo = new SolanaChain(SolanaChainId.Mainnet);
+ParticleNetworkAuth.setChainInfo(ParticleNetwork.INSTANCE, activity, chainInfo,
+        new ChainChangeCallBack() {
+            @Override
+            public void success() {
+                
+            }
+
+            @Override
+            public void failure() {
+
+            }
+        });
+// Sync switch chain name. it will wont check if user has logged in.
+ParticleNetwork.setChainInfo(chainInfo);
 ```
 {% endtab %}
 {% endtabs %}
