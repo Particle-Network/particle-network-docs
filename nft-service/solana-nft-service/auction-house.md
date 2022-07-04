@@ -12,6 +12,10 @@ Based on [the auction house protocol](https://docs.metaplex.com/auction-house/de
 
 ![Architecture](../../.gitbook/assets/API\_Flow.png)
 
+{% hint style="info" %}
+If you want to build your own market, you need to implement some centralized functions yourself, such as the list of NFTs being sold, the history activities of NFTs, etc.
+{% endhint %}
+
 ### 🔥 NFT\_AH\_initializeMarket
 
 > Initialize a market that can bought and sold NFT from
