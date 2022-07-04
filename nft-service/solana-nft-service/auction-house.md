@@ -8,6 +8,10 @@ description: API for marketplace which is escrowless.
 Based on [the auction house protocol](https://docs.metaplex.com/auction-house/definition). It is simple, fast and very cheap.
 {% endhint %}
 
+### Overview
+
+![Architecture](../../.gitbook/assets/API\_Flow.png)
+
 ### 🔥 NFT\_AH\_initializeMarket
 
 > Initialize a market that can bought and sold NFT from
