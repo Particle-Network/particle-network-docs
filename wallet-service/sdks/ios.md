@@ -830,6 +830,17 @@ ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.g
 
 ## Wallet UI Reference
 
+### Set pay feature, default support pay feature.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// You can disable pay feature in UI, default is true.
+ParticleWalletGUI.enablePay(false)
+```
+{% endtab %}
+{% endtabs %}
+
 ### Open Wallet
 
 {% tabs %}
