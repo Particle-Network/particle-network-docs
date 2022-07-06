@@ -10,15 +10,12 @@ description: Power up your Unity games with Particle Network SDKs.
 * _(iOS only)_ Install the following:
   * Xcode 13.3.1 or higher
   * CocoaPods 1.10.0 or higher
-* Make sure that your Unity project meets these requirements:
-  * **For iOS** — targets iOS 12 or higher
-  *   **For Android** — Minimum API Level 23 or higher,Targets API level 31 or higher
+*   Make sure that your Unity project meets these requirements:
 
-      **Note:** If you encounter an "Error while dexing" error when performing Android builds using Unity 2017 or 2018, see the [FAQ](https://firebase.google.com/docs/unity/troubleshooting-faq#desugaring) for possible workarounds.
-* Set up a physical device or use an emulator to run your app.
-  * **For iOS** — Set up a physical iOS device or use the iOS simulator.
-  * **For Android** — [Emulators](https://developer.android.com/studio/run/managing-avds) must use an emulator image with Google Play.
-* ###
+    * **For iOS** — targets iOS 12 or higher
+    * **For Android** — Minimum API Level 23 or higher,Targets API level 31 or higher，pack apk must export project  with android studio,change java sdk version to 11
+
+
 
 ### Create a Particle Project and App
 
@@ -32,30 +29,80 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 
 [https://github.com/Particle-Network/particle-unity/releases](https://github.com/Particle-Network/particle-unity/releases)
 
-### Replace Particle Network configuration  <a href="#add-config-file" id="add-config-file"></a>
+### **iOS**
 
-* **For iOS** — Click **Download GoogleService-Info.plist**.
-*   **For Android** —  Configuration file path is  Assets/Plugins/Android/gradleTemplate.properties
+* **Configure scheme url**
 
+1. Open the [iOS Player Settings](https://docs.unity3d.com/Manual/class-PlayerSettingsiOS.html) window (menu: **Edit** > **Project Settings** > **Player Settings**, then select **iOS**).
+2. Select **Other**, then scroll down to **Configuration**.
+3. Expand the **Supported URL schemes** section and, in the **Element 0** field, enter the URL scheme to associate with your application. For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f"
 
+* **Conlistfigure Xcode project after iOS build.**
 
+1.  Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
+
+    ```ruby
+    pod init
     ```
-    particle.network.project_client_key=Your Project Client Key
-    particle.network.project_id=Your Project Client ID
-    particle.network.app_id=Your App ID
+2.  To your Podfile, add the Auth Service pods that you want to use in your app:
 
-    //like this
-    particle.network.project_client_key=cKtHdeHis0ghNom64w7mdNkGYX5rmRr0jLlIKatY
-    particle.network.project_id=fa0fe0e8-f1bb-47ff-88bb-4fa31711e7b3
-    particle.network.app_id=859fada8-48ad-441b-b8e6-cde15ae1b48f
-
+    ```ruby
+    pod 'ParticleAuthService'
     ```
+3.  &#x20;Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
+
+    ```ruby
+    pod install --repo-update
+    ```
+
+    ```ruby
+    open your-project.xcworkspace
+    ```
+
+* **Configure Project information.**
+
+1. Create a **ParticleNetwork-Info.plist** into the root of your Xcode project
+2. Copy the following text into this file:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PROJECT_UUID</key>
+	<string>YOUR_PROJECT_UUID</string>
+	<key>PROJECT_CLIENT_KEY</key>
+	<string>YOUR_PROJECT_CLIENT_KEY</string>
+	<key>PROJECT_APP_UUID</key>
+	<string>YOUR_PROJECT_APP_UUID</string>
+</dict>
+</plist>
+
+```
+
+3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
+
+### **Android**&#x20;
+
+#### Configuration file path is  Assets/Plugins/Android/gradleTemplate.properties
+
+```
+particle.network.project_client_key=Your Project Client Key
+particle.network.project_id=Your Project Client ID
+particle.network.app_id=Your App ID
+
+//like this
+particle.network.project_client_key=cKtHdeHis0ghNom64w7mdNkGYX5rmRr0jLlIKatY
+particle.network.project_id=fa0fe0e8-f1bb-47ff-88bb-4fa31711e7b3
+particle.network.app_id=859fada8-48ad-441b-b8e6-cde15ae1b48f
+
+```
 
 
 
 ### Android、iOS Native Service Config <a href="#add-sdks" id="add-sdks"></a>
 
-**For Android** — Configuration file path is  Assets/Plugins/Android/launcherTemplate.gradle
+**Android** — Configuration file path is  Assets/Plugins/Android/launcherTemplate.gradle
 
 ```
 dependencies {
@@ -74,11 +121,23 @@ dependencies {
 
 
 
-**For iOS** — [Emulators](https://developer.android.com/studio/run/managing-avds) must use an emulator image with Google Play.
+**iOS**&#x20;
 
+1. Download UnityManger.swift, Unity-iPhone-Bridging-Header.h and AppDelegate.swift from github,Copy files into the root of your Xcode project. Xcode will ask you if auto create Bridging file, click yes.
 
+![](<../../.gitbook/assets/image (2).png>)
 
+2\. Remove main.mm under MainApp folder.
 
+3\. Under Libraries/Plugins/iOS is NativeCallProxy files, they are requested by Unity to interact with  iOS code. Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
+
+4\. In UnityManger.swift,  Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
+
+5\. Select NativeCallProxy.h, in the file inspector, check public in Target Membership.
+
+![](../../.gitbook/assets/image.png)
+
+6\. If you are skilled in iOS, you can modify these files as you like. for example add other services.
 
 ### &#x20;Initialize the SDK
 
