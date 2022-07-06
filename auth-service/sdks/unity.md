@@ -13,7 +13,7 @@ description: Power up your Unity games with Particle Network SDKs.
 *   Make sure that your Unity project meets these requirements:
 
     * **For iOS** — targets iOS 12 or higher
-    * **For Android** — Minimum API Level 23 or higher,Targets API level 31 or higher，pack apk must export project  with android studio,change java sdk version to 11
+    * **For Android** — Minimum API Level 23 or higher,Targets API level 31 or higher，Pack apk must be with exporting project to Android Studio, change Java SDK version to 11
 
 
 
