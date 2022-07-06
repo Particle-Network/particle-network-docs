@@ -123,7 +123,7 @@ dependencies {
 
 **iOS**&#x20;
 
-1. Download UnityManger.swift, Unity-iPhone-Bridging-Header.h and AppDelegate.swift from github,Copy files into the root of your Xcode project. Xcode will ask you if auto create Bridging file, click yes.
+1. Download UnityManger.swift, Unity-iPhone-Bridging-Header.h and AppDelegate.swift from [`github`](https://github.com/Particle-Network/particle-unity/tree/main/iOS),Copy files into the root of your Xcode project. Xcode will ask you if auto create Bridging file, click yes.
 
 ![](<../../.gitbook/assets/image (2).png>)
 
