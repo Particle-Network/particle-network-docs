@@ -19,6 +19,7 @@
   * [Android](auth-service/sdks/android.md)
   * [iOS](auth-service/sdks/ios.md)
   * [Web](auth-service/sdks/web.md)
+  * [Unity](auth-service/sdks/unity.md)
 
 ## WALLET SERVICE
 
