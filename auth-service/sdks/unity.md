@@ -51,10 +51,6 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 
     ```
 
-###
-
-###
-
 
 
 ### Android、iOS Native Service Config <a href="#add-sdks" id="add-sdks"></a>
@@ -80,9 +76,23 @@ dependencies {
 
 **For iOS** — [Emulators](https://developer.android.com/studio/run/managing-avds) must use an emulator image with Google Play.
 
+
+
+
+
 ### &#x20;Initialize the SDK
 
+1**.Before using the sdk you have to call init(Required)**&#x20;
 
+```
+ParticleNetworkBase.Init(new BscChain(BscChainId.Mainnet));
+```
+
+**2.Drag prefab to your scene**
+
+Drag the ParticleAuthService.prefab to your first scene(Required)&#x20;
+
+If you  want to use the API service，You must drag the ParticleWalletAPI.prefab to your first scene
 
 
 
