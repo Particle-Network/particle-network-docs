@@ -120,7 +120,7 @@ We seek to protect your Personal Data from unauthorized access, use and disclosu
 
 ## Personal Data of Children
 
-As noted in the Terms of Use, we do not knowingly collect or solicit Personal Data about children under 16 years of age; if you are a child under the age of 16, please do not attempt to register for or otherwise use the Services or send us any Personal Data. If we learn we have collected Personal Data from a child under 16 years of age, we will delete that information as quickly as possible. If you believe that a child under 16 years of age may have provided Personal Data to us.
+As noted in the Terms of Use, we do not knowingly collect or solicit Personal Data about children under 18 years of age; if you are a child under the age of 18, please do not attempt to register for or otherwise use the Services or send us any Personal Data. If we learn we have collected Personal Data from a child under 18 years of age, we will delete that information as quickly as possible. If you believe that a child under 18 years of age may have provided Personal Data to us.
 
 ## California Resident Rights
 
@@ -152,7 +152,7 @@ You may also authorize an agent (an “Authorized Agent”) to exercise your rig
 
 #### Personal Data Sales Opt-Out and Opt-In
 
-We will not sell your Personal Data, and have not done so over the last 12 months. To our knowledge, we do not sell the Personal Data of minors under 16 years of age.We Will Not Discriminate Against You for Exercising Your Rights Under the CCPAWe will not discriminate against you for exercising your rights under the CCPA. We will not deny you our goods or services, charge you different prices or rates, or provide you a lower quality of goods and services if you exercise your rights under the CCPA. However, we may offer different tiers of our Services as allowed by applicable data privacy laws (including the CCPA) with varying prices, rates or levels of quality of the goods or services you receive related to the value of Personal Data that we receive from you.
+We will not sell your Personal Data, and have not done so over the last 12 months. To our knowledge, we do not sell the Personal Data of minors under 18 years of age.We Will Not Discriminate Against You for Exercising Your Rights Under the CCPAWe will not discriminate against you for exercising your rights under the CCPA. We will not deny you our goods or services, charge you different prices or rates, or provide you a lower quality of goods and services if you exercise your rights under the CCPA. However, we may offer different tiers of our Services as allowed by applicable data privacy laws (including the CCPA) with varying prices, rates or levels of quality of the goods or services you receive related to the value of Personal Data that we receive from you.
 
 ## Other State Law Privacy Rights
 
