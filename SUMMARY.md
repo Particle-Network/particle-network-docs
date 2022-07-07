@@ -10,6 +10,7 @@
 * [Introduction](dashboard/introduction.md)
 * [Manage Projects](dashboard/manage-projects.md)
 * [Manage Apps](dashboard/manage-apps.md)
+* [Manage Assets](dashboard/manage-assets.md)
 
 ## AUTH SERVICE
 
