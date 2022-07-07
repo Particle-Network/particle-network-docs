@@ -31,13 +31,19 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 
 ### **iOS**
 
-* **Configure scheme url**
+* **Configure scheme url in Unity Editor**
+
+****
 
 1. Open the [iOS Player Settings](https://docs.unity3d.com/Manual/class-PlayerSettingsiOS.html) window (menu: **Edit** > **Project Settings** > **Player Settings**, then select **iOS**).
 2. Select **Other**, then scroll down to **Configuration**.
 3. Expand the **Supported URL schemes** section and, in the **Element 0** field, enter the URL scheme to associate with your application. For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f"
 
-* **Conlistfigure Xcode project after iOS build.**
+* **Remove other service code if you don't need them.**
+
+1. In ParticleNetworkIOSBridge.cs, there are 4 part ParticleNetworkBase, ParticleAuthService, ParticleWalletAPI, ParticleWalletGUI, works for interact with iOS native. ParticleNetworkBase is required, ParticleAuthService if required for Auth Service, you can remove other codes if you don't need them.
+
+* **Configure Xcode project after iOS build.**
 
 1.  Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
