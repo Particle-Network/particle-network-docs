@@ -286,6 +286,7 @@ Request Example
 {% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
+const { LAMPORTS_PER_SOL } = require('@solana/web3.js');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
 const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
@@ -304,7 +305,7 @@ const auth = {
                     market: 'DvrXAsPw8X8vqFpgfVhWypDeM3sboiBs5iVn3FKNmLWy',
                     seller: '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
                     mint: '29nPkoZPcSCnGhfKKvcPB29joUa7iRfcUSyWk3qoZB37',
-                    instantSalePrice: 100000000,
+                    instantSalePrice: 0.1 * LAMPORTS_PER_SOL,
                 },
             ],
         },
