@@ -1,12 +1,10 @@
 ---
-description: >-
-  Mint, Update, Sell, Buy, Settle, Withdraw..., Easily build a fully functional
-  Market!!!
+description: Standard NFT RPC API
 ---
 
-# NFT RPC API
+# Standard NFT
 
-### 🔥 NFT_mint
+### 🔥 NFT\_mint
 
 > mint NFT by metadata
 
@@ -85,7 +83,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -111,7 +108,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_mintByUrl
+### 🔥 NFT\_mintByUrl
 
 > mint NFT by metadata uri
 
@@ -160,7 +157,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -186,7 +182,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_info
+### 🔥 NFT\_info
 
 > get NFT info
 
@@ -231,7 +227,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -300,7 +295,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_update
+### 🔥 NFT\_update
 
 > update [the data of NFT metadata](https://docs.metaplex.com/programs/token-metadata/accounts#metadata)
 
@@ -355,7 +350,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -377,7 +371,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_setCreatorVerified
+### 🔥 NFT\_setCreatorVerified
 
 > Set the creator is verified for the NFT
 
@@ -431,7 +425,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -453,7 +446,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_isCreatorVerified
+### 🔥 NFT\_isCreatorVerified
 
 > check the creator is verified or not for the NFT
 
@@ -498,7 +491,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
