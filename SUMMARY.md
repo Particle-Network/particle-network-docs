@@ -34,7 +34,7 @@
 * [Introduction](nft-service/introduction.md)
 * [Solana NFT Service](nft-service/solana-nft-service/README.md)
   * [Auction House](nft-service/solana-nft-service/auction-house.md)
-  * [NFT RPC API](nft-service/solana-nft-service/nft-rpc-api.md)
+  * [Standard NFT](nft-service/solana-nft-service/nft-rpc-api.md)
 
 ## NODE SERVICE
 

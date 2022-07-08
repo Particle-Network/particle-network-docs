@@ -161,7 +161,7 @@ Your scheme URL should be "pn" + your project app uuid.
 
 For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
-![Config scheme url](../../.gitbook/assets/image.png)
+![Config scheme url](<../../.gitbook/assets/image (1).png>)
 
 {% hint style="info" %}
 devEnv needs to be modified to be `DevEnvironment.production` for release.
