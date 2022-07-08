@@ -25,6 +25,8 @@ If you want to build your market, you need to implement some centralized functio
 * `<object>` - a JSON object containing:
   * `marketManager: <string>` - the account to create and manager the market.
   * `sellerFeeBasisPoints: <int>` - cut of each transaction in the market. The value range is 0 to 10000 (10000 = 100%).
+  * `treasuryWithdrawalDestination: <string>` - (optional, default **marketManager**) the account treasury withdrawal to.
+  * `feeWithdrawalDestination: <string>` - (optional, default **marketManager**) the account fee account withdrawal to.
 
 **Results:**
 
@@ -55,8 +57,10 @@ const auth = {
             method: 'NFT_AH_initializeMarket',
             params: [
                 {
-                    marketManager: '9GMBeLoutnFtZzmofR8LiNSX2iR3n1XEwafrjkg2qizW',
+                    marketManager: '8kM5iZdcYTQAtTRKvGe5oPLxNkowTrLtprbkdoJrcWqx',
                     sellerFeeBasisPoints: 1000,
+                    treasuryWithdrawalDestination: '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
+                    feeWithdrawalDestination: '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
                 },
             ],
         },
@@ -77,12 +81,12 @@ Response Example
     "jsonrpc": "2.0",
     "id": 0,
     "result": {
-        "market": "7WsDPaHHCduC5ctYCSK6mkzjhXJurS1jMphGDsAjrmd5",
-        "marketFeeAccount": "HAaXTk27n3JsuVNuXaSmGLr4zvVCGKWEMkVDQXagneVK",
-        "makretTreasury": "HY8om3sWThbykNAdehZPprsz9jXuCAdfx6i1X6d8EkMT",
+        "market": "FscuZGfM7m3Bobee1dtkgXJRUxkKC9PmkdKuNPmkuqw2",
+        "marketFeeAccount": "J1eqsRsHfaHDx8o2tqLos26qtS2jrRKJ36XrenmTBay8",
+        "makretTreasury": "9Bn3yFtnziBwambR1TZwnqgmaiqHERQWF5SgrSA3dXZo",
         "transaction": {
             "isPartialSigned": false,
-            "serialized": "45zDbqFbkcGewf1pGYqG4qjecPk8GQ24ip8Lqqs4oSHcK68KAAjhrSpdV2EKp6nrBn3DzDPKV4K42Nq9hcWSL7FK4XSRJUespsDxEnmn8WapR84hiMnA2U3sp4ZSbpR4ocWWQGQRUPin42Yi34EAgbN5ya8WX6o9hy3pJSa1KJZBXUTMVA4yfByjDDBryBEWcdvSLXPJ88Ts2My5XJMErLStVXcKCQMrVDNjUCVb6CMukfufd9bwDztLbHz7ZPH8Pr7cvwGg2mbGdmrZrkPRgj2Ld5CqSdRKEd2XFtpt72JuqiGtXCPec3FuUbL6jwCnxkKHWhuYRGKbJNGJJAo3xqGPzP6m1R8ZYPbggj1gmTgJwyWYW18dQBnNkCFTm4yVFtzATjH5LojkjSK2eMZejZZDaiV4FvRSRRVHs2Hegh25Ka2Zsc4KdbsjnBjUxjERK4oxd2sHAqDSApTDG8RnWXxGMV4ZiysJxJJ19pVqSVpn6dPvP9mcqXyMPVSUE4fXRCH3ubBg9hffNisYyrkwmR91V8pnNvdzsm3hFJsWksFqTKkmUtEX8RarPwVotYcdMCXAWTpW4zRxgPwCY8Uuch7DrfqYv7p3eaLLomgbBV",
+            "serialized": "vAsD8RH4xV8cK7RW5XYmE6pjszVd1PMGsUMCNqCsUSBdf5AzZuBU5Uvh86RejoWAPmaAtD5L5abbaxUJ4EUBXsvbVQBAWKHbwj6ekAHzQzJ66XeH8nMc9DSV6eT7QXPHNx1UB5N7rsXLCfK7zgxczM8N54ADQSjUbRwP4HHtdGhBY89uBWycSWRLnCtqY2H6zooAVuBJ5zA9vw19aQQENReYnVMci8WvdFLnz1bmMNP196h7kZRDEazhhnMDxr3VuycbFX6YP4cMfYqVZCeWK5pM5bB5U35xRCAenQVHL6TqoH1SMdese6RCX5gPPgLM4Tn3kvBJGXVVu1wriirK6U1J5HMZaUHnT2GVvVuhBTY5GbtY6YksoQXz6GXQdYYyeVrGqnDyvdigyygjwfjJPk211QTARGtN9yarGGiWLHN8UuwQiJcSmPAXUvoBTKB2v4kWZsAFHSpqDTewgUZPwgBiQnRYGyf55ghqUQKx7wxtzbV5g3scfictyTU1rHu6uUa9V6aceBqAAF1eN7u5R7x5xJSnWg7jAHxg1M1nFChrjEXk882tMcLhpvYhBdJFiAnsYbwVvcJAa3A31WK8mAia7iiCghq38rBAv7ZxMC8MS9YNH5y1pCpDputN79SgVHA9UMxswHD2CLgT6DLf9",
             "signers": []
         }
     },
@@ -98,7 +102,9 @@ Response Example
 
 * `<object>` - a JSON object containing:
   * `market: <string>` - the address of the market.
-  * `sellerFeeBasisPoints: <int>` - cut of each transaction in the market. The value range is 0 to 10000 (10000 = 100%).
+  * `sellerFeeBasisPoints: <int>` - (optional) cut of each transaction in the market. The value range is 0 to 10000 (10000 = 100%).
+  * `treasuryWithdrawalDestination: <string>` - (optional) the account treasury withdrawal to.
+  * `feeWithdrawalDestination: <string>` - (optional) the account fee account withdrawal to.
 
 **Results:**
 
@@ -126,7 +132,7 @@ const auth = {
             method: 'NFT_AH_updateMarket',
             params: [
                 {
-                    market: '7WsDPaHHCduC5ctYCSK6mkzjhXJurS1jMphGDsAjrmd5',
+                    market: 'FscuZGfM7m3Bobee1dtkgXJRUxkKC9PmkdKuNPmkuqw2',
                     sellerFeeBasisPoints: 2000,
                 },
             ],
@@ -150,7 +156,7 @@ Response Example
     "result": {
         "transaction": {
             "isPartialSigned": false,
-            "serialized": "8vXkGmVeH53U7wA5ESgCkk4Tn88fNm2nUU3Gd6sqDWUqa8Pr7WbpXcMNSTJ499FMrTizaht79z39Yzb8JvVAroPVR7y6vXmGSn6vbiYQkVq1T5iJdXQuQjHccnC3SQpStkm8zRDr6Eq2UMq2TW8nWRD3ZCAw9LowZtdYBHESKodVaTsHt8gLPqqg5GWkfB47hqcqH5Z3b6TjppMmvxjRz1t86VGMrT7LYN5Wvf57gb4DjZpDY8arardiw3Ra3278eXqAMLgtVsrvcxTUqnjfbW2tCsCpXD3FKTbqANYgZFQXtAm6cJ5Q7YTr3mgUNfXw7iq3rLkZzxXUnWdafEhJFXswXjT9APX1wUSjUWZwrRXFT2HQVYMCjyFvZbeNue8Dh4Tuw11Xc5sLmbsC6KdspceuJw2MYmYJn9p8ffYfCCZBYswaY6vaDxoSeLQ3xJGcxN7Bnjauu59hLWwpB751MrXWTUDaWj7RmRpum6U74QX1CNM5FcxTiC2xhVN9JNNWr7QgU2mrHhx4PcdVZ",
+            "serialized": "3MWX8BEG3iNbFjBkLBnRtKVn77aCRpKf7pVWoHdsnvitymyU7FhMMof1Xtee2PzY46YDEUCSnRoD2xt47LTcEca915K8N9BN4qyH2qiWBSLUuxFaa4qH5XwMmDeL1U4T7QVaRZ1LGr2XPD8W3BD4o358ihUNG1jHYQxDGc5xCADGx34sAxyU2aJHQPxP8aifBP88hGVTM2w6nTWxFUf7DbZiKAzzYdtn947UP5DE5cn5eDCoUGfbs6RVbXiA1WSkQJh9nunDgedo7dJVHrfi6bktUVqDznJt1HyosAXmqpepDkU82rz76QWACbCXjktRjZHBoEA9DbBXh7siEWGUS5UmjXzw72qQzpziheaeJCR3r9VZV9Patpt48UP3XHigXjJB5iKrUJGtfNiHLJuvBmZFi2dawZEdjDTcZ2zeja2F2exciRbrMmVSfX9FqsxvzTCFeBNHaDGQSJdzL1Wf3vPQVisrKfJpZt368xQmWtzhciQXUXUEVUV3L6UjP2buYphLRJH1fHteZ4cvftGCShHF2KJuWYcMGsrRxHsGbPDXqTzUSTuJRKAHqqaGw",
             "signers": []
         }
     },
@@ -254,7 +260,7 @@ const auth = {
         RPC_URL,
         {
             method: 'NFT_AH_marketInfo',
-            params: ['AoMBLTWSJKiKFG4n7EaWxGqSV3km1a3cCBHtBhycHGwQ'],
+            params: ['FscuZGfM7m3Bobee1dtkgXJRUxkKC9PmkdKuNPmkuqw2'],
         },
         { auth },
     );
@@ -273,14 +279,14 @@ Response Example
     "jsonrpc": "2.0",
     "id": 0,
     "result": {
-        "marketFeeAccount": "4sXE2rLR5dzAPc8KNCU1axLVvQXFu2zaLmcsPV6ekRyP",
-        "marketTreasury": "CJ33nN7sZcS5FRpsqGuupPo9rSqnft4Tq3yj9LXcqMkb",
-        "treasuryWithdrawalDestination": "7gVKKitnF4zE4uawDXZh46u9B7tMLMhrqZWHYKEXKLmw",
-        "feeWithdrawalDestination": "7gVKKitnF4zE4uawDXZh46u9B7tMLMhrqZWHYKEXKLmw",
+        "marketFeeAccount": "J1eqsRsHfaHDx8o2tqLos26qtS2jrRKJ36XrenmTBay8",
+        "marketTreasury": "9Bn3yFtnziBwambR1TZwnqgmaiqHERQWF5SgrSA3dXZo",
+        "treasuryWithdrawalDestination": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
+        "feeWithdrawalDestination": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
         "treasuryMint": "So11111111111111111111111111111111111111112",
-        "authority": "7gVKKitnF4zE4uawDXZh46u9B7tMLMhrqZWHYKEXKLmw",
-        "creator": "7gVKKitnF4zE4uawDXZh46u9B7tMLMhrqZWHYKEXKLmw",
-        "sellerFeeBasisPoints": 2395
+        "authority": "8kM5iZdcYTQAtTRKvGe5oPLxNkowTrLtprbkdoJrcWqx",
+        "creator": "8kM5iZdcYTQAtTRKvGe5oPLxNkowTrLtprbkdoJrcWqx",
+        "sellerFeeBasisPoints": 2000
     },
     "chainId": 103
 }
@@ -313,6 +319,7 @@ Request Example
 {% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
+const { LAMPORTS_PER_SOL } = require('@solana/web3.js');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
 const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
@@ -331,7 +338,7 @@ const auth = {
                     market: 'AoMBLTWSJKiKFG4n7EaWxGqSV3km1a3cCBHtBhycHGwQ',
                     seller: '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
                     mint: 'DeoxVDYFRGfWaps4k91izyK3TM1RxHnHSr28Z6zjS3XU',
-                    price: 100000000,
+                    price: 0.1 * LAMPORTS_PER_SOL,
                     auctionHouse: 'AoMBLTWSJKiKFG4n7EaWxGqSV3km1a3cCBHtBhycHGwQ',
                 },
             ],
@@ -455,6 +462,7 @@ Request Example
 {% tab title="Node.js" %}
 ```typescript
 const axios = require('axios');
+const { LAMPORTS_PER_SOL } = require('@solana/web3.js');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
 const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
@@ -474,7 +482,7 @@ const auth = {
                     seller: '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
                     buyer: 'Bx5GU8y6oYtTE3ESL469YTjuto8zxPn2xTTvo6BBdt1V',
                     mint: '9N3rM5CfUwZZypqx4hVr19r9zANr1wjzKUCRKXB61rou',
-                    price: 100000000,
+                    price: 0.1 * LAMPORTS_PER_SOL,
                 },
             ],
         },
