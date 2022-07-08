@@ -10,7 +10,7 @@ Based on [the auction house protocol](https://docs.metaplex.com/auction-house/de
 
 ### Overview
 
-![Architecture](../../../.gitbook/assets/API\_Flow.png)
+![Architecture](../../.gitbook/assets/API\_Flow.png)
 
 {% hint style="info" %}
 If you want to build your own market, you need to implement some centralized functions yourself, such as the list of NFTs being sold, the history activities of NFTs, etc.
@@ -32,7 +32,7 @@ If you want to build your own market, you need to implement some centralized fun
   * `market: <string>` - the address of the market.
   * `makretTreasury: <string>` - the cut from each transaction will be transferred to this account.
   * `marketFeeAccount: <string>` - the fee account of the market. Usually, the network fees for transactions need to be paid by the user himself, and if the market wants to help the user pay these fees, you can make the market manager to sign the relevant transaction, and the fee will be deducted from the fee account. Developers need to recharge this account manually.
-  * `transaction: <object>` - [the transaction struct](../../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
 
 Request Example
 
@@ -102,7 +102,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
 
 Request Example
 
@@ -301,7 +301,7 @@ Listing is just to approve your NFT to the market, after your NFT is listed, thi
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
 
 Request Example
 
@@ -371,7 +371,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
 
 Request Example
 
@@ -441,7 +441,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
 
 Request Example
 
@@ -576,7 +576,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
 
 Request Example
 
