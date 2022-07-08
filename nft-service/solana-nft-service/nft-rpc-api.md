@@ -1,7 +1,6 @@
 ---
 description: >-
-  Mint, Update, Sell, Buy, Settle, Withdraw..., Easily build a fully functional.
-  Market!!!
+  Standard NFT API.
 ---
 
 # NFT RPC API
