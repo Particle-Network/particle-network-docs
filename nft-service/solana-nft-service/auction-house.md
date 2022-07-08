@@ -1,8 +1,8 @@
 ---
-description: API for marketplace which is escrowless.
+description: API for the marketplace, which is escrowless.
 ---
 
-# Auction House (recommend)
+# Auction House
 
 {% hint style="info" %}
 Based on [the auction house protocol](https://docs.metaplex.com/auction-house/definition). It is simple, fast and very cheap.
@@ -13,12 +13,12 @@ Based on [the auction house protocol](https://docs.metaplex.com/auction-house/de
 ![Architecture](../../.gitbook/assets/API\_Flow.png)
 
 {% hint style="info" %}
-If you want to build your own market, you need to implement some centralized functions yourself, such as the list of NFTs being sold, the history activities of NFTs, etc.
+If you want to build your market, you need to implement some centralized functions yourself, such as the list of NFTs being sold, the history activities of NFTs, etc.
 {% endhint %}
 
-### 🔥 NFT\_AH\_initializeMarket
+### 🔥 NFT_AH_initializeMarket
 
-> Initialize a market that can bought and sold NFT from
+> Initialize a market that can buy and sell NFT from
 
 **Parameters:**
 
@@ -31,7 +31,7 @@ If you want to build your own market, you need to implement some centralized fun
 * `<object>` - a JSON object containing:
   * `market: <string>` - the address of the market.
   * `makretTreasury: <string>` - the cut from each transaction will be transferred to this account.
-  * `marketFeeAccount: <string>` - the fee account of the market. Usually, the network fees for transactions need to be paid by the user himself, and if the market wants to help the user pay these fees, you can make the market manager to sign the relevant transaction, and the fee will be deducted from the fee account. Developers need to recharge this account manually.
+  * `marketFeeAccount: <string>` - the fee account of the market. Usually, the network fees for transactions need to be paid by the user himself, and if the market wants to help the user pay these fees, you can make the market manager sign the relevant transaction, and the fee will be deducted from the fee account. Developers need to recharge this account manually.
   * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
 
 Request Example
@@ -65,6 +65,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -89,9 +90,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_updateMarket
+### 🔥 NFT_AH_updateMarket
 
-> update a market config
+> Update a market config
 
 **Parameters:**
 
@@ -135,6 +136,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -156,9 +158,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_isMarketInitialized
+### 🔥 NFT_AH_isMarketInitialized
 
-> check market is initialized
+> Check market is initialized
 
 **Parameters:**
 
@@ -194,6 +196,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -212,9 +215,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_marketInfo
+### 🔥 NFT_AH_marketInfo
 
-> get market info
+> Get market info
 
 **Parameters:**
 
@@ -258,6 +261,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -282,12 +286,12 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_list
+### 🔥 NFT_AH_list
 
-> list an NFT to the market
+> List an NFT to the market
 
 {% hint style="info" %}
-Listing is just to approve your NFT to the market, after your NFT is listed, this NFT is still in your account, you can handle this NFT normally.
+Listing is to approve your NFT to the market, after your NFT is listed, this NFT is still in your account. You can handle this NFT usually.
 {% endhint %}
 
 **Parameters:**
@@ -301,7 +305,7 @@ Listing is just to approve your NFT to the market, after your NFT is listed, thi
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the seller.
 
 Request Example
 
@@ -337,6 +341,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -358,9 +363,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_unlist
+### 🔥 NFT_AH_unlist
 
-> unlist an NFT from the market
+> Unlist an NFT from the market
 
 **Parameters:**
 
@@ -371,7 +376,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the seller.
 
 Request Example
 
@@ -404,6 +409,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -425,9 +431,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_buy
+### 🔥 NFT_AH_buy
 
-> buy an NFT from the market
+> Buy an NFT from the market
 
 **Parameters:**
 
@@ -441,7 +447,7 @@ Response Example
 **Results:**
 
 * `<object>` - a JSON object containing:
-  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the market manager.
+  * `transaction: <object>` - [the transaction struct](../../node-service/solana-api/transaction-struct.md) is to be signed with the buyer.
 
 Request Example
 
@@ -477,6 +483,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -498,9 +505,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_isSaleValid
+### 🔥 NFT_AH_isSaleValid
 
-> check the sale in the market is valid
+> Check the sale in the market is valid
 
 **Parameters:**
 
@@ -548,6 +555,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -563,7 +571,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_AH\_marketWithdraw
+### 🔥 NFT_AH_marketWithdraw
 
 > Withdraw money from the market treasury account to the market manager account
 
@@ -609,6 +617,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -629,3 +638,5 @@ Response Example
     "chainId": 103
 }
 ```
+
+

@@ -1,10 +1,12 @@
 ---
-description: Standard NFT RPC API
+description: >-
+  Mint, Update, Sell, Buy, Settle, Withdraw..., Easily build a fully functional.
+  Market!!!
 ---
 
-# Standard NFT
+# NFT RPC API
 
-### 🔥 NFT\_mint
+### 🔥 NFT_mint
 
 > mint NFT by metadata
 
@@ -45,7 +47,7 @@ const auth = {
                 {
                     owner: '8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ',
                     metadata: {
-                        name: 'Test: 6VF5h',
+                        name: 'Test: e17Ij',
                         symbol: 'TEST',
                         description: 'Test description',
                         seller_fee_basis_points: 100,
@@ -83,6 +85,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -94,13 +97,13 @@ Response Example
     "jsonrpc": "2.0",
     "id": 0,
     "result": {
-        "mint": "6Gttjpk1LxMKwdiLt5q9TSW9hfMuJmdeuVXDrcPyB7YY",
-        "mintAssociatedTokenAccount": "E88EfbbPMKoJny8ABdoeti4A1S91TupwP44dwLy7grnT",
+        "mint": "29nPkoZPcSCnGhfKKvcPB29joUa7iRfcUSyWk3qoZB37",
+        "mintAssociatedTokenAccount": "87sjCifEip3hNPhLJQ3rNayWvP5zgjL6bjGnsgPpN2iR",
         "transaction": {
             "isPartialSigned": true,
-            "serialized": "3upXthSvHwVVCdrM9euWVNhZRZUekYgt1BxoHaEGWRwyZkVk5Ro3BbVNEJjDMMCthVYZc2YCFeScwL3cAHtftWw7pJQV2HXzBBZtTEdsFZ1FD9HnSnDfQWjDavSMPpbe4XXe251LP2TBvqTZFYejpVXCipey3dPER27Q6fEYrdNyCFhPpxREvxL64pwiNry4QHxD74LLeoceGmTsfRjK3Bm6u32yd1uf22do1hW6QRMdHQgWAJPnWRj4BAgn76U4gTv55GwqnXiyfQ26ESSrAXkibEsLwBoEt1LQuU8EtjxUD8oyt2WXHhfRjzMaCUHJnCEcgSPr6zzwQLwW6KVQb2V84Sis7ZiyFFgFtwLqcJ1jui1cxtDdq6b3grSgBHZhv3yEMbe3jnJZUcz9iJ3gcQqtqJSBDibVBURf9NSn48BGLyLaRN8bF4sn4nfCTjwboK7mRYKmsUK2Evgj14a8b22rpckuRHRtqyFdrRyHmaGwePTpZGrZ5Ad3hnCRzksqJNsD87czjy3himvtv86jforU4WHkXzFfnBpKwxFs57oXzR2mViXog1r2hCWcschV8AMGdwPsFbfUYWaD5Aqp8nXapFfakF1aBYfH69BPBAuodhxgTQHa1nv2MaBqArDnDQT7eg1bx3ybsHVZpv5jaHPvpFSDryZ7N7pemjSvPhhn4QpQzgC648L1eYKvec3yuyxYhDFNre5XFCk14F3HhTrfkW6CnALFkenXtQMejMDVuzKUNxvXD6SV89AUtXabscSoWjUiggrhPQuD61BfWY9fgME7T13ibd4bWasAL9scPR2DTQMjv2gpzBg6pvtVVzfZ6QZWkWRGBzXB874wKPxn6tdP3QbbTj91ozHySSFfCmi9K9pR58Rpaztfdz8N85r3eHTp8NxKwTc2AvwzUtDGoTc68iqENj6MQ5hmFpALBWdXAMApofjtF6b6J9hwGWEiSTJn8XsZEiaSd4sgwk7KTLirWoPz8kmrCMgvTV7BvRLueG5JxM3YvhBkD9JXDKnhRT7yiVGcwWdgZiw3zAq24BM3Rs1gyu41f2DZCizjDFNWeR4DaR89Q6KiW3WGdqB7qPgXE8tRn2E8xF77LoRXcb4UszLnx3dYj44Rz357DGPWcxrk8uhGPX94txCqorocCFAt7MWVdpozYRi4gqVHadXf9SbsayEy7xAJrYWds238kxX11cKdrxr6g8vXCm8Tdq3sBgjfXV",
+            "serialized": "3upXthSvHwVVCdrM9euWVNhZRZUekYgt1BxoHaEGWRwyZkVk5Ro3BbVNEJjDMMCthVYZc2YCFeScwL3cAHtftWw7Z9SCRue6xrU7xLMTYvY6h9Ed6w99Yujxtt7xH6mMyc1RHVfj19PMhTM9vgHgjYv8xV3tXCexsvuB2pTP6cVnF79mTLmgk8puRHYD2fzR8JaYr4EgpxyJEddUYFeVUiiq8aLob3oLBZAsGD9V9CY8pgeBvqyFhvWz8qXa3rbueRvUFid8rguaG7mjcmSYSQTgX9C8R3fN9q3Hp3CpF4rD1BE41S5QGuPvmJ5oCFiziciNvHRGfYMM6ogdtG47xZ7BKPBxbZieo1u3Moam2VFLNJJauphev48D92tr77uC9rmCzpZ4YZzVLAnkbJXMbr5TY3A4p3USp9BJDnkanESY2jvW9WMu7wHzyLC8MvTfqmiNzppoQwWm7vrSDNkFtJoauEtC7ZXugZhM2hsBLFBaEiPH221h2hyuEBnXSSjULdakJVGbDU2NkeCcKsv234mSr15NtUHDX43ZPKSfjR1meoyoZD15ArkNd7TKPq2qxBmd62oPEqMTxaafsWZUyhYjHyUJG2h4x3KfxQdVYhBD5cnNNcVavgqHiebJ8BLwTcagW6QF7yJbAYdb4en6Pp83cnpQA4o8uwYW3pe7fJM9RP4Ue7WP6aY9BotX5amKUreSGRzQrbrngiJ8kZmi5BTHu4b3C5GU5x1F7GUgJ2TdUWSWGL7HTYg1T2R7F4rfkcJNwKcwprzqaY6GDYqwiSzvEPU5GSguw44tRDSQrcmqsVFweU1MBU6YXTVgdUWT5cytjhmECrBoyR5WGHJjYgQ5gWb85iVrh6w5upiKpmaxaqfGBaJ6eXxkPj2qZSLwBbmtW5GdL8RdbeYn1cor7opNNRyV13UfVwXb42RteVMAMaHVXybRJSb8tNAnHP4H9wFrKamSuE7SRS5gLxQvMKzuvrXT9ZrzSyAWHCubk1LMPe1BG1vJSauhzehrKB6c2UEzLuEC8GCH753ubnKXWzTa9KyGvw7h1QvfNzdkeDhSMg7wW83LRgHFi4MZqaczEwNMkomBx9mh1uThQopqb8HEraayxpf8WVJG5H4Eg2vzFLzKL8BomNoUVbYFHG8ELXK1mJbC3WEeafxYUb8Qc8b9wic3AjkwPCHbL7hqgm3qsKs8Ej8DPkqi3U426bM5jJVGXZyTD2Gksy",
             "signers": [
-                "4EA9y2qbvCn9oGDB6GVmGbU8LGDkoy47643Q3dGbS2jmZWxMGCbVF3BX65oBwi5ReBcurcSVczWGPDWacf6zKfhe"
+                "7NtyMZAYfmJzFVAXRrHptm7AXJwBmFErQGRphQWtU3vsKU9eipyyWfAiLfK6gbhMBcbDTsNYTgd4moUf2hoCYGh"
             ]
         }
     },
@@ -108,7 +111,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_mintByUrl
+### 🔥 NFT_mintByUrl
 
 > mint NFT by metadata uri
 
@@ -157,6 +160,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -168,13 +172,13 @@ Response Example
     "jsonrpc": "2.0",
     "id": 0,
     "result": {
-        "mint": "HMN4C1gGfvgLn2Yb564yRKrUJVwprZbyq5CZLBUQL7ud",
-        "mintAssociatedTokenAccount": "91m3dtmB9ij1tc4chkvE6GCqLK2wcUZdUqaD9NwbdT3r",
+        "mint": "9nqTYkboxC8X6LT5pxKDApZXFSHiHsJVfHLeBdbasqF9",
+        "mintAssociatedTokenAccount": "F1TpWa88c3G9goyCPeiPQkUjCKa7pBtRqYwJYWwqx3GP",
         "transaction": {
             "isPartialSigned": true,
-            "serialized": "3upXthSvHwVVCdrM9euWVNhZRZUekYgt1BxoHaEGWRwyZkVk5Ro3BbVNEJjDMMCthVYZc2YCFeScwL3cAHtftWw7ZgRMCM4nHakFXjNN7ziTB8BLx67xBrzXtrfSPou46rDpfbjLdKr3Zo9Udv3HpsTcTU3AkcB6u1XFaTXze3AMAW2jSy5CffeDhxr6cEmvPZvP4tWwznBzsVvsHmpP8NNTdLBr9Eu1LzjpmpLxH5tki5msc6PsX3oJiz8kAGrwhFv7WMheDtjok5oRwdVnmtqbMvBzTJg3mrh8LjpJSS5XoTRPwsArf6xc6xn9nkyCUuDTTjzPigz93iDstWur5H99oW9QjYfSaCPLhhLPaJq8GJCVxDPUZBEZe3g1Ako5wStKWrP2smfzriatNjaaxZyf7QYVviVayuSh5fRVn4gZ7NTTBijWosXnC3AygKXPSqgttgqXHmTfM441C5Bsg53uwpXtcddVdSxUkhpCv5ynphcKhyx6Rx1rnNuUF5ekDFwZpAAp14JJetHD4eMCKrJmgTEQgVJhxSGzxj9TizSsn9pi3x7U8D7gyW21YCTg3M1Ef5VPr3m4UX9g5YC5m7xfkt2fb22qasHdHxWQL13QsRA4Uaz58jMXjvgJJucgiaST5gwSUzgczLpKJfLhcYKJXXCuyPiJQhqR6nfrNpCP3Ebn2GeB4J4PdgM8n7XSD86ec91ecGTheLqYJu5h5JEvdkVqfPKbk2UWUPGmcY8rZJNqoNZ6K2QY9rZcnNE4fW6vSoQ92UaYgs7kCiaLS53xMnmr7v921zAqjitaRKLrh5u5Lnx5FKyk54cCbPac4BX1h41UCCvJgbY2vvRQnseC65bp7eYUn3zMVksG7CgvGPxcvACWwVmB2BzzFv5atcfynQUrEpBteRk97deNMsxFN1yTb3hg9oFqxq76pYQjX1fPTU4mTf14h9s5MYEzwXPQNtSMQ1Sq9m3orgt2i6QGxt4cjMEWFaDYnCrZcvFpHYfpcxv2PgGSxwG3ctgJEsX18fYJnsurE7x5TJRB1mhSKKzxn5pg2VQqB8hFjbgMH2kJ7R2rk73g1m437haHXWpZgnKzZwAdpLyA24Rm8UVTcuXRxb2GaxGizNKU7PbTY1f5TAaAFaoy8kTFZ5RGesTB8P7K8kG9WrgonM6kabhsUFxqvGFYVehvQcy5a7vCWT7QMoyMhyPzYxgc6x3uZTtFSHJ1ox3Tdq",
+            "serialized": "3upXthSvHwVVCdrM9euWVNhZRZUekYgt1BxoHaEGWRwyZkVk5Ro3BbVNEJjDMMCthVYZc2YCFeScwL3cAHtftWw7iiiAAuHyeRxYuRJonRxq3ZE66CpdmiCsQSzGdz8JhPxV4bbeD31JiuSoEUv1umNjGFog7VLcN2o9hfgvCs4SCNFixPCEzLdUPPxY2SPM3iBd1F7kVXW9ERU8E2UX5LkY8qzddBz1ZddTLvjGmTw2bGvLB1LbxUkkVFbZehJVYEqQ1xehJQDAXkvWcf1zG5zPHzYVKhpGuagWPrxp8hipwdooYuiwE6ovnbJGdJGNXsUjFGKPzaimnkFtHhJ37Ydcit1NCERT1nWQ6nKERAY9AABAb8X14CKC5vquEdyGC72kggPQdCBdUwCDEowzpL2QshV4UtfhfXGzkiNUag26ydvS51kNFYQPDyqR8c17qqqr2C5SA1Tkog5xM5zcuTxjm6kcu1cYLe8QAzGfgpQeSQzLsvYcjBZ95XbBekZUAecaWU3pfZY9whVD6hwgVnGiTWtVakSPZETZEkX9bCXfqMTfpsiHz1U6EyrKGK2KxpHxNE3WTNKBYGrBk6S44bYyg7cP68MxGh5wvJh6YfEbNwo2zPkWTTTMsjUaKAEcv6J6jVSzQ2rGmLas5Ju49dvL2NDZAziTsny4xuB2Vrmb4geAh7fsLr2BjHJsgZkWcu3ypvfvVFyWb4VdMeuQVSq79jxdQHv4LUYGEDERvdjJ941cjnjSojGEHxa288EubqUevNmmUE8oeNizTgHvCVDAE3ZG5pqNxq8Bfpr7PyH9xYxfTsvEwBgysRDw91Y2oCyTCjmuSUWvypoeNFRgoRi1s6DW7utdYnXqaRo5hAGywT3DM24pNpDSCLBS8yDf22Ft5xoiRcLBJD9as1fRENUGaWuPWKC1agnXKeYGZtLgKrn55X3S1R2u637zdpzhdwREdenJN7rDSGdhvXQQmTBbZjdec4npqgKTe7aEWL1EfxcyCxU1mYYiGeYRvmecJG8M29XJELu4B6YBp3AkqPBfNQMJbHjCSnK6u1ZZLiQCURss5tgrA63JuaXW6VUZxrGMte7MDZTH1j4Sj98vhEAovLktGknHsUuyH7HctNWLw1zM4KmjWXz6jrcUV2DwffApEaZJTCiaKCwwnaPUQydRbqqBsAR6XX9Hfn8uUUbq6zhCr22nrizr1ip7FLqB6o5EvqtR1N38kf",
             "signers": [
-                "34rBHbbqJcf2kX9eVFK4jfVqN7qau2uV4tW6a5wH6rcMmQjyyfJt3uLjCwandDtaLpyJMQVtmRE3xprqSByRzDum"
+                "2eH4ZEBTaNwU3NVZEiv1rQTTurUf6fwFF7t4mCndVTBzRVopyK44PD3tgX57ucD3sUFKRpqLBnd8QUNXjsbyQnbu"
             ]
         }
     },
@@ -182,7 +186,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_info
+### 🔥 NFT_info
 
 > get NFT info
 
@@ -227,6 +231,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -258,33 +263,7 @@ Response Example
                     "share": 50
                 }
             ],
-            "uriData": {
-                "name": "Test: ZlNae",
-                "symbol": "TEST",
-                "description": "Test description",
-                "seller_fee_basis_points": 100,
-                "image": "https://gateway.pinata.cloud/ipfs/QmY21xP5qjz866TBovLH2Px5fLEyfU1uBg69BfDpdQu4KJ",
-                "animation_url": "",
-                "external_url": "",
-                "attributes": [
-                    {
-                        "trait_type": "Type",
-                        "value": "Skeleton"
-                    }
-                ],
-                "properties": {
-                    "creators": [
-                        {
-                            "address": "8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ",
-                            "share": 50
-                        },
-                        {
-                            "address": "Bx5GU8y6oYtTE3ESL469YTjuto8zxPn2xTTvo6BBdt1V",
-                            "share": 50
-                        }
-                    ]
-                }
-            }
+            "uriData": null
         },
         "primarySaleHappened": true,
         "isMutable": true,
@@ -295,7 +274,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_update
+### 🔥 NFT_update
 
 > update [the data of NFT metadata](https://docs.metaplex.com/programs/token-metadata/accounts#metadata)
 
@@ -338,7 +317,7 @@ const auth = {
             method: 'NFT_update',
             params: [
                 {
-                    mint: 'GftsSpwsLG8VRLX35YfV7EtQS5ZEh6veEZuSMJfS4Txc',
+                    mint: 'EkGWiw9zrqbGj8iFueGBnDE7g3yQZCKuDneHSvLmR6wY',
                     metadata: {
                         name: 'Test NFT name',
                     },
@@ -350,6 +329,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -363,7 +343,7 @@ Response Example
     "result": {
         "transaction": {
             "isPartialSigned": false,
-            "serialized": "6fPvCMgpMTwLsAX7W2WEz9hwXV32Cnk3LbfBFZLEsDA2jZgC9QxiSHWfoXXMfUYXqZHBGhtu4YvPuhfXVtZoBwKdT37C7f6D9dv4wEmSdRjHiHAt8Cr2sZZAoiGvqJkVzEqSjnNh5qCMEY3qrVT5AypK1My8sN7m8ThMVkE1mK3sGmYzxcDaQLRydsUdKcspEmpUfEYdXHDL2Vd2RqmPLDEnm6zGCbCkvZEZyFwPxCB1z9KL1eS5Xtn1e65zdhiDLnVSYdfxmUordJdzEjnEb32pmfJRuqhQjVGUzk7eDF9Nxoq1KwEv9jxWWpBjyJUbTkyrW6GrtNN2pV93a9pm3HXa2YbE6oy6EpGSospLDtKcynSpBoL28oVr2Q1TArBoSGYYDa76t97gophhRA2j6CtHKxJzmQ7rxG7GRkA6mbKLdSvmJaKYMRhn6LCrkPPEWzEZhNHhHFkne88hoFTWvNHbXFqDVS8CNwyooidcsTWTSsksKgQWGF4rEdAexfp4xjyDyp38hUgm55B3PMpnD7ABepYYF7EQMLJtpc9UazBvPdXzbBUpFq21HhiTSmbRB4J3BZ8BTgK9RYGDnqiF",
+            "serialized": "6fPvCMgpMTwLsAX7W2WEz9hwXV32Cnk3LbfBFZLEsDA2jZgC9QxiSHWfoXXMfUYXqZHBGhtu4YvPuhfXVtZoBwKdT37C7f6D9dv4wEmSdRjHiHAt8Cr2sZZAoiGvqJkVzEqSjnNh5rTXQG7Z43oDPtskheZo2hVWiqirgJpogbQ36Sko5J53dNtagR4fUJTnNDgq3m6yRqCT5Vq9wN8r131Yz9C9GtKKkpk2EBBPDEuqdxFcwcN1QRs8gNhmkm4McKaXkmVp6s9oS9Gphu2j441Dv2rcnt9VbZrjv9GBgEkMSZLKueMCxH1FvpBKLBGLfwPyJHxsC3YzdWxjiyTe9uykRuE3Y8ku59j95VSXVDbsUm23J4jsmak6LnN8x7o4WBL2S3NYdEuxKaSSfU6y48NgAYrCCTCvYXYrPT832Yyg7pcub48L4TL9Dj4DVp9Sh9r85zvqKGmuV7NtQ68VAzHhKuxzvHktKRC8AESYjapgYv1JPd8jFEQn5J29XAb3zaPqddBE8Ere5aKC8MAWo8KwVygGgieSvnQpXQRbWLGeqNKDXJiCAmfW1GXgyGEYGr8WieRPNdCX2GieMoAo",
             "signers": []
         }
     },
@@ -371,9 +351,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_setCreatorVerified
+### 🔥 NFT_setCreatorVerified
 
-> Set the creator is verified for the NFT
+> Set a creator is verified for the NFT
 
 {% hint style="info" %}
 It is important to check this field to ensure the authenticity of the creator.
@@ -415,7 +395,7 @@ const auth = {
             params: [
                 {
                     creator: 'Bx5GU8y6oYtTE3ESL469YTjuto8zxPn2xTTvo6BBdt1V',
-                    mint: '6Gttjpk1LxMKwdiLt5q9TSW9hfMuJmdeuVXDrcPyB7YY',
+                    mint: '7LvE3zUYSmowFGEW6pxCUjwtnMgaGqGpxB1XXvVfn7wq',
                     verified: false,
                 },
             ],
@@ -425,6 +405,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -438,7 +419,7 @@ Response Example
     "result": {
         "transaction": {
             "isPartialSigned": false,
-            "serialized": "3XkfoeU1FeyQ6spTnBHnipD3eiPgcqvBecXPST439B43gtvxJA6UuTp4YEWtDhSNcgt1b5CkjuWkKn47F5rNcuKT7uZ3cfxmMBtg2P5XfTqftSYub94K5AJQmzLnoNSn2bPYvrgxFFRp9LiJYLDv7qN5ADA19FG1k3PbL1bS1kNoBdZ8nUEE6pU1D5e6gVqcW7mrnc1z86rKjTMXx41SaLsmCVPkjpBLxWTxJiUTadzmzeU6Rh2ZYzHAZy1zuG3XntX9g1iJhLXxDaLYmwjD8f",
+            "serialized": "3XkfoeU1FeyQ6spTnBHnipD3eiPgcqvBecXPST439B43gtvxJA6UuTp4YEWtDhSNcgt1b5CkjuWkKn47F5rNcuKT7uZ3cfxmMBtg2P5XfTqftSYub94K5AJQmzLnoNSn2bPYvrgxFLiDZRaKLQHDm4d7PD3bQCK1JqQ1745vJxP6M3sPKfimXm98ZJzaNn61fPQ5SopNQjG6CwkVthnn1EYNqezJBtv2ADpBZdcK9rLjN27p1ufpjsrbrGesqggEYmU6qHLavHe9WFNtH3gjSK",
             "signers": []
         }
     },
@@ -446,9 +427,9 @@ Response Example
 }
 ```
 
-### 🔥 NFT\_isCreatorVerified
+### 🔥 NFT_isCreatorVerified
 
-> check the creator is verified or not for the NFT
+> check whether the creator is verified or not for the NFT
 
 **Parameters:**
 
@@ -482,7 +463,7 @@ const auth = {
             params: [
                 {
                     creator: 'Bx5GU8y6oYtTE3ESL469YTjuto8zxPn2xTTvo6BBdt1V',
-                    mint: '6Gttjpk1LxMKwdiLt5q9TSW9hfMuJmdeuVXDrcPyB7YY',
+                    mint: '7LvE3zUYSmowFGEW6pxCUjwtnMgaGqGpxB1XXvVfn7wq',
                 },
             ],
         },
@@ -491,6 +472,7 @@ const auth = {
 
     console.log(response.data);
 })();
+
 ```
 {% endtab %}
 {% endtabs %}
