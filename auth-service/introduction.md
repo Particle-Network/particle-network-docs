@@ -34,7 +34,7 @@ By integrating Particle Auth into your project, your users can experience the fo
 
 Particle Auth comes with simple SDKs that can be integrated in multiple ways to provide the best experience for your users. We support all the available chains out there, with special providers available for EVM and Solana.
 
-### 👉 [Auth SDKs](../wallet-service/sdks/)
+### 👉 [Auth SDKs](sdks/)
 
 * 👉 [Server API](sdks/server-api.md)
 * 👉 [Android](sdks/android.md)

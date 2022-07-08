@@ -32,7 +32,7 @@ Using Particle Wallet, you have the flexibility to choose between building an ap
 
 Particle Wallet comes with simple SDKs that can be integrated in multiple ways to provide the best user experience. At present, it supports the display and trading of tokens/NFTs in the Solana and EVM ecosystems.
 
-### 👉 [Wallet SDK](../auth-service/sdks/)
+### 👉 [Wallet SDK](sdks/)
 
 * 👉 [Android](sdks/android.md)
 * 👉 [iOS](sdks/ios.md)

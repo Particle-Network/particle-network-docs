@@ -9,8 +9,8 @@ description: Integrate Particle products to your dApp within minutes
 1. :key: **Sign up** -> [https://dashboard.particle.network/#/login](https://dashboard.particle.network/#/login)
 2. :bulb: **Create a project & configure your Android/iOS/Web app**
 3. :tada: **Integrate our native SDKs**
-   1. [**Auth Service SDKs**](wallet-service/sdks/)
-   2. [**Wallet Service SDKs**](auth-service/sdks/)
+   1. [**Auth Service SDKs**](auth-service/sdks/)
+   2. [**Wallet Service SDKs**](wallet-service/sdks/)
    3. [**Node Service RPCs**](broken-reference/)
    4. [**NFT Service RPCs**](broken-reference)****
    5. ****[**IPFS API**](ipfs-service.md)****
