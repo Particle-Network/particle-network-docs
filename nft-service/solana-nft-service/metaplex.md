@@ -454,7 +454,7 @@ Response Example
 {% hint style="info" %}
 When the buyer buys the NFT, the seller needs to settle first to get the money.
 
-See [NFT_MP_settle](metaplex.md#nft_mp_unlist)
+See [NFT_MP_settle](metaplex.md#nft_mp_settle)
 {% endhint %}
 
 **Parameters:**
