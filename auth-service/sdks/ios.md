@@ -242,18 +242,18 @@ ParticleAuthService.login(type: .email).subscribe { [weak self] result in
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
-### Is User Logged In
+### Is User Login
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-ParticleAuthService.isUserLoggedIn()
+ParticleAuthService.isLogin()
 ```
 {% endtab %}
 
 {% tab title="Objective-C" %}
 ```objectivec
-[ParticleAuthService isUserLoggedIn]
+[ParticleAuthService isLogin]
 ```
 {% endtab %}
 {% endtabs %}
