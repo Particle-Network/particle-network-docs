@@ -41,7 +41,7 @@ const IPFS_URL = 'https://api.particle.network/ipfs/upload';
 {% endtab %}
 {% endtabs %}
 
-Response Example
+**Response Example**
 
 ```typescript
 {
