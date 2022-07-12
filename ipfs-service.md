@@ -45,10 +45,23 @@ Response Example
 
 ```typescript
 {
-    // ipfs cid
-    "cid": "QmY21xP5qjz866TBovLH2Px5fLEyfU1uBg69BfDpdQu4KJ",
-    // your file url
-    "url": "https://gateway.pinata.cloud/ipfs/QmY21xP5qjz866TBovLH2Px5fLEyfU1uBg69BfDpdQu4KJ"
+    // v1 cid: @see https://docs.ipfs.io/concepts/content-addressing/#identifier-formats
+    "cid": "bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi",
+    // Preferred url
+    "url": "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.nftstorage.link",
+    // Other working urls: @see https://ipfs.github.io/public-gateway-checker/
+    "urls": [
+        "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.nftstorage.link",
+        "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.dweb.link",
+        "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.infura-ipfs.io",
+        "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.4everland.io",
+        "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.cf-ipfs.com",
+        "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.ipfs-gateway.cloud",
+        "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.storry.tv",
+        "https://ipfs.io/ipfs/bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi",
+        "https://gateway.ipfs.io/ipfs/bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi",
+        "https://cloudflare-ipfs.com/ipfs/bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi"
+    ]
 }
 ```
 
