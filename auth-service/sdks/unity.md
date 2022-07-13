@@ -145,12 +145,13 @@ dependencies {
 
 6\. If you are skilled in iOS, you can modify these files as you like. for example add other services.
 
-### &#x20;Initialize the SDK
+\
+Initialize the SDK
 
 1**.Before using the sdk you have to call init(Required)**&#x20;
 
 ```
-ParticleNetworkBase.Init(new BscChain(BscChainId.Mainnet));
+ParticleNetwork.Init(new BscChain(BscChainId.Mainnet));
 ```
 
 **2.Drag prefab to your scene**
