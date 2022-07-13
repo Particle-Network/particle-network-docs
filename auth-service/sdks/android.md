@@ -30,7 +30,7 @@ repositories {
 }
 dependencies {
     // Particle Auth Service
-    implementation("network.particle:auth-service${latest_version}")
+    implementation("network.particle:auth-service:${latest_version}")
     //...
 }
 ```
@@ -176,7 +176,6 @@ Particle Network support Solana and EVM chains, you can init with below chain in
 // present a web browser for additional information automatically.
 val chainInfo = EthereumChain(EthereumChainId.Mainnet)
 ParticleNetwork.setChainInfo(
-    activity,
     chainInfo,
     object : ChainChangeCallBack {
         override fun success() {
@@ -203,7 +202,7 @@ ParticleNetwork.setChainInfo(chainInfo)
 // but if switch to solana, beacuse user didn't log in solana before, it will 
 // present a web browser for additional information automatically.
 ChainInfo chainInfo = new SolanaChain(SolanaChainId.Mainnet);
-ParticleNetworkAuth.setChainInfo(ParticleNetwork.INSTANCE, activity, chainInfo,
+ParticleNetworkAuth.setChainInfo(ParticleNetwork.INSTANCE, chainInfo,
         new ChainChangeCallBack() {
             @Override
             public void success() {
@@ -235,7 +234,6 @@ To auth login with Particle, call `ParticleNetwork.login(...)`with `activity` an
 //   - account: When login type is email or phone, you could pass email address or phone number,Optional.
 //   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
 ParticleNetwork.login(
-        activity = this,
         loginType = LoginType.PHONE,
         account = "",
         supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
@@ -248,7 +246,6 @@ ParticleNetwork.login(
 
 // - without account parameter you can use this method overwrite
 ParticleNetwork.login(
-        activity = this,
         loginType = LoginType.PHONE,
         supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
         loginCallback = object : WebServiceCallback<LoginOutput> {
@@ -266,7 +263,7 @@ ParticleNetwork.login(
 //   - loginType: Login type, support email, phone, google, apple and facebook
 //   - account: When login type is email or phone, you could pass email address or phone number,Optional.
 //   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
-ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,activity,LoginType.PHONE,"",
+ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,"",
         SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
         new WebServiceCallback<LoginOutput>() {
             @Override
@@ -278,7 +275,7 @@ ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,activity,LoginType.PHONE,"",
         });
 
 // - without account parameter you can use this method overwrite
-ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,activity,LoginType.PHONE,
+ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,
         SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
         new WebServiceCallback<LoginOutput>() {
             @Override
@@ -303,7 +300,7 @@ The SDK will delete users' account information in cache.
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-ParticleNetwork.logout(activity, object : WebServiceCallback<WebOutput> {
+ParticleNetwork.logout(object : WebServiceCallback<WebOutput> {
     override fun success(output: WebOutput) {
         //logout success
     }
@@ -317,7 +314,7 @@ ParticleNetwork.logout(activity, object : WebServiceCallback<WebOutput> {
 
 {% tab title="Java" %}
 ```java
-ParticleNetworkAuth.logout(ParticleNetwork.INSTANCE,this, new WebServiceCallback<WebOutput>() {
+ParticleNetworkAuth.logout(ParticleNetwork.INSTANCE,new WebServiceCallback<WebOutput>() {
     @Override
     public void success(@NonNull WebOutput output) {
         //logout success
@@ -362,7 +359,7 @@ Use Particle SDK to sign a transaction or message. The SDK provides three method
 ```kotlin
 //solana transaction: base58 string. 
 //evm transcation:'0x' prefixed hex string.
-ParticleNetwork.signAndSendTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
+ParticleNetwork.signAndSendTransaction(transaction, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign and send transaction success
     }
@@ -374,7 +371,7 @@ ParticleNetwork.signAndSendTransaction(activity, transaction, object : WebServic
 
 
 //solana transaction: base58 string. evm not support this method.
-ParticleNetwork.signTransaction(activity, transaction, object : WebServiceCallback<SignOutput>{
+ParticleNetwork.signTransaction(transaction, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign transaction success
     }
@@ -400,7 +397,7 @@ ParticleNetwork.signAllTransactions(
 
 //solana message: any string.
 //evm message: '0x' prefixed hex string, use 'personal_sign' to sign.
-ParticleNetwork.signMessage(activity, message, object : WebServiceCallback<SignOutput>{
+ParticleNetwork.signMessage(message, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign success
     }
@@ -412,7 +409,7 @@ ParticleNetwork.signMessage(activity, message, object : WebServiceCallback<SignO
 
 //sign typed data, only evm support this method.
 //message: '0x' prefixed hex string.
-ParticleNetwork.signTypedData(activity, message, version, object : WebServiceCallback<SignOutput>{
+ParticleNetwork.signTypedData(message, version, object : WebServiceCallback<SignOutput>{
     override fun success(output: SignOutput) {
         //sign success
     }
@@ -428,7 +425,7 @@ ParticleNetwork.signTypedData(activity, message, version, object : WebServiceCal
 {% tab title="Java" %}
 ```java
 //transaction: base58 string
- ParticleNetworkAuth.signAndSendTransaction(ParticleNetwork.INSTANCE,activity, transaction, new WebServiceCallback<SignOutput>() {
+ ParticleNetworkAuth.signAndSendTransaction(ParticleNetwork.INSTANCE,transaction, new WebServiceCallback<SignOutput>() {
 
     @Override
     public void success(@NonNull SignOutput output) {
@@ -443,7 +440,7 @@ ParticleNetwork.signTypedData(activity, message, version, object : WebServiceCal
 
 
 //transaction: base58 string
-ParticleNetworkAuth.signTransaction(ParticleNetwork.INSTANCE,activity, transaction, new WebServiceCallback<SignOutput>() {
+ParticleNetworkAuth.signTransaction(ParticleNetwork.INSTANCE,transaction, new WebServiceCallback<SignOutput>() {
 
     @Override
     public void success(@NonNull SignOutput output) {
@@ -458,7 +455,7 @@ ParticleNetworkAuth.signTransaction(ParticleNetwork.INSTANCE,activity, transacti
 
 
 //sign any string
-ParticleNetworkAuth.signMessage(ParticleNetwork.INSTANCE,activity, message, new WebServiceCallback<SignOutput>() {
+ParticleNetworkAuth.signMessage(ParticleNetwork.INSTANCE,message, new WebServiceCallback<SignOutput>() {
 
     @Override
     public void success(@NonNull SignOutput output) {
