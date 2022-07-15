@@ -67,8 +67,6 @@ const IPFS_URL = 'https://api.particle.network/ipfs/upload';
 
 ### Upload JSON
 
-****
-
 **Request Example**
 
 {% tabs %}
