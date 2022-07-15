@@ -6,7 +6,7 @@ description: Native Support for IPFS!
 
 [IPFS ](https://ipfs.io)is supported out of the box when using Particle Network.
 
-You can upload files with the API _ **/ipfs/upload**_ to upload file(max file size 100 MB), and use **/ipfs/upload\_json** to upload json
+You can upload files with the API _ **/ipfs/upload**_ to upload file (max file size 100 MB), and use _**/ipfs/upload\_json**_ to upload json.
 
 ### Upload File
 
