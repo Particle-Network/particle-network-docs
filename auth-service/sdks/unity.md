@@ -10,12 +10,9 @@ description: Power up your Unity games with Particle Network SDKs.
 * _(iOS only)_ Install the following:
   * Xcode 13.3.1 or higher
   * CocoaPods 1.10.0 or higher
-*   Make sure that your Unity project meets these requirements:
-
-    * **For iOS** — targets iOS 12 or higher
-    * **For Android** — Minimum API Level 23 or higher,Targets API level 31 or higher，Pack apk must be with exporting project to Android Studio, [change Java SDK version to 11](https://stackoverflow.com/questions/66449161/how-to-upgrade-an-android-project-to-java-11)
-
-
+* Make sure that your Unity project meets these requirements:
+  * **For iOS** — targets iOS 12 or higher
+  * **For Android** — Minimum API Level 23 or higher,Targets API level 31 or higher，Pack apk must be with exporting project to Android Studio, [change Java SDK version to 11](https://stackoverflow.com/questions/66449161/how-to-upgrade-an-android-project-to-java-11)
 
 ### Create a Particle Project and App
 
@@ -106,7 +103,7 @@ particle.network.app_id=859fada8-48ad-441b-b8e6-cde15ae1b48f
 
 
 
-### Android、iOS Native Service Config <a href="#add-sdks" id="add-sdks"></a>
+### Android, iOS Native Service Config <a href="#add-sdks" id="add-sdks"></a>
 
 **Android** — Configuration file path is  Assets/Plugins/Android/launcherTemplate.gradle
 

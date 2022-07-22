@@ -15,7 +15,10 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | chainId Value (int) | chainName Value(string) | EVM Chains                  |
 | ------------------- | ----------------------- | --------------------------- |
 | 1                   | ethereum                | Ethereum Mainnet            |
-| 42                  | ethereum                | Ethereum Testnet(Kovan)     |
+| 3                   | ethereum                | Ethereum Ropsten            |
+| 4                   | ethereum                | Ethereum Rinkeby            |
+| 5                   | ethereum                | Ethereum Goerli             |
+| 42                  | ethereum                | Ethereum Kovan              |
 | 56                  | bsc                     | Binance Smart Chain Mainnet |
 | 97                  | bsc                     | Binance Smart Chain Testnet |
 | 137                 | polygon                 | Polygon Mainnet             |
@@ -37,6 +40,10 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 256                 | heco                    | Huobi ECO Chain Testnet     |
 | 1313161554          | aurora                  | Aurora Mainnet              |
 | 1313161555          | aurora                  | Aurora Testnet              |
+| 10                  | optimism                | Optimism One Mainnet        |
+| 69                  | optimism                | Optimism Testnet Kovan      |
+| 321                 | kcc                     | KCC Mainnet                 |
+| 322                 | kcc                     | KCC Testnet                 |
 
 ### Standard RPC
 
