@@ -157,7 +157,7 @@ const axios = require("axios");
     {
       jsonrpc: "2.0",
       id: 0,
-      method: "getUserInfo",
+      method: "lockUserWallet",
       params: ["Particle Auth User Uuid", "Particle Auth User Token", {
         "chain": "evm_chain",
         "chainId": 42,
@@ -237,7 +237,7 @@ const axios = require("axios");
     {
       jsonrpc: "2.0",
       id: 0,
-      method: "getUserInfo",
+      method: "unlockUserWallet",
       params: ["Particle Auth User Uuid", "Particle Auth User Token", {
         "chain": "evm_chain",
         "chainId": 42,
