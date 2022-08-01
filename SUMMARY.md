@@ -12,6 +12,10 @@
 * [Manage Apps](dashboard/manage-apps.md)
 * [Manage Assets](dashboard/manage-assets.md)
 
+## Connect Service
+
+* [Introduction](connect-service/introduction.md)
+
 ## AUTH SERVICE
 
 * [Introduction](auth-service/introduction.md)
