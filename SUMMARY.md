@@ -15,6 +15,9 @@
 ## Connect Service
 
 * [Introduction](connect-service/introduction.md)
+* [SDKs](connect-service/sdks/README.md)
+  * [Android](connect-service/sdks/android.md)
+  * [iOS](connect-service/sdks/ios.md)
 
 ## AUTH SERVICE
 
