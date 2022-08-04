@@ -8,7 +8,7 @@
   * Xcode 13.3.1
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
-    * iOS 12
+    * iOS 13
 
 ### Create a Particle Project and App
 
