@@ -8,6 +8,8 @@
 * Java 11
 * A Particle SDK project and app configuration, created by Particle Dashboard
 
+## Wallet Demo
+
 ### Repository
 
 [Github Repo](https://github.com/Particle-Network/particle-android)
@@ -23,3 +25,9 @@
 {% hint style="info" %}
 You should modify your project and app configuration before building.
 {% endhint %}
+
+## Connect SDK Demo
+
+[https://github.com/Particle-Network/particle-connect-android](https://github.com/Particle-Network/particle-connect-android)
+
+###

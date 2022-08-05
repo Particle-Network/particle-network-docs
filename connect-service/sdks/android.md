@@ -1,12 +1,20 @@
+---
+description: SSO for Web3
+---
+
 # Android
 
-### Summary
+## Github Demo
+
+[https://github.com/Particle-Network/particle-connect-android](https://github.com/Particle-Network/particle-connect-android)
+
+## Summary
 
 Modular Kotlin wallet adapters and components for EVM & Solana chains. Manage wallet and custom RPC request.
 
 ![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
 
-### Quick Start
+## Quick Start
 
 ```groovy
 dependencies {
@@ -30,7 +38,7 @@ dependencies {
 
 Add below config to AndroidManifest.xml
 
-```
+```xml
 <application>
         <!--   Particle Network config start     -->
         <activity
@@ -80,9 +88,9 @@ Add below config to AndroidManifest.xml
 </application>
 ```
 
-Init Particle Connect in `Application#Create()`
+### Init Particle Connect in `Application#Create()`
 
-```
+```kotlin
 ParticleConnect.init(
         this,
         Env.DEV,    //debug mode
@@ -108,47 +116,51 @@ ParticleConnect.init(
     }
 ```
 
-Switch chain.
+### Switch chain.
 
-```
+```kotlin
 ParticleConnect.setChain(chain)
 ```
 
-Get all wallet adapters.
+### Get all wallet adapters.
 
-```
+```kotlin
 var adapters = ParticleConnect.getAdapters(chainTypes)
 //or
 var adapters = ParticleConnect.getAdapterByAddress(address)
 ```
 
-Get all connected accounts.
+### Get all connected accounts.
 
-```
+```kotlin
 val accounts = ParticleConnect.getAccounts(chainTypes)
 ```
 
-Connect wallet. (For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet)
+### Connect wallet.&#x20;
 
-```
+(For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet)
+
+```kotlin
 connectAdapter.connect(callback)
 ```
 
-Disconnect wallet.
+### Disconnect wallet.
 
-```
+```kotlin
 connectAdapter.disconnect(address, callback)
 ```
 
-Check whether the account is connected.
+### Check whether the account is connected.
 
-```
+```kotlin
 val result = connectAdapter.connected(address)
 ```
 
-Import wallet. (Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+### Import wallet.
 
-```
+(Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+
+```kotlin
 // import wallet with private key
 val account = connectAdapter.importWalletFromPrivateKey(privateKey)
 
@@ -156,43 +168,53 @@ val account = connectAdapter.importWalletFromPrivateKey(privateKey)
 val account = connectAdapter.importWalletFromMnemonic(mnemonic)
 ```
 
-Export wallet. (Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+### Export wallet.&#x20;
 
-```
+(Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+
+```kotlin
 val privateKey = connectAdapter.exportWalletPrivateKey(address)
 ```
 
-Sign and send transaction.
+### Sign and send transaction.
 
-```
+```kotlin
 // todo: check connected before sign
 connectAdapter.signAndSendTransaction(address, transaction, callback)
 ```
 
-Sign transaction. (Only Solana chain support this method)
+### Sign transaction.
 
-```
+(Only Solana chain support this method)
+
+```kotlin
 connectAdapter.signTransaction(address, transaction, callback)
 ```
 
-Sign all transactions. (Only Solana chain support this method)
+### Sign all transactions.
 
-```
+(Only Solana chain support this method)
+
+```kotlin
 connectAdapter.signAllTransactions(address, transactions, callback)
 ```
 
-Sign message. (EVM call `personal_sign`)
+### Sign message.
 
-```
+(EVM call `personal_sign`)
+
+```kotlin
 connectAdapter.signMessage(address, message, callback)
 ```
 
-Sign typed data. (Only EVM chains support this method)
+### Sign typed data.
 
-```
+(Only EVM chains support this method)
+
+```kotlin
 connectAdapter.signTypedData(address, data, callback)
 ```
 
-### Give Feedback
+## Give Feedback
 
 You can join our [Discord](https://discord.gg/2y44qr6CR2).

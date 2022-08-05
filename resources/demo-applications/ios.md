@@ -12,11 +12,13 @@ Install the following:
   * Your project must target these platform versions or later:
     * iOS 12
 
+## Wallet Demo
+
 ### Repository
 
 [Github Repo](https://github.com/Particle-Network/particle-ios)
 
-## Overview
+### Overview
 
 1. Auth login with email.
 2. Auth login with phone.
@@ -27,3 +29,7 @@ Install the following:
 {% hint style="info" %}
 You should modify project and app config before build.
 {% endhint %}
+
+## Connect SDK Demo
+
+[https://github.com/Particle-Network/particle-connect-ios](https://github.com/Particle-Network/particle-connect-ios)

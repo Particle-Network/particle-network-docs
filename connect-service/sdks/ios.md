@@ -1,16 +1,20 @@
 # iOS
 
-### Summary
+## Github Demo
+
+[https://github.com/Particle-Network/particle-connect-ios](https://github.com/Particle-Network/particle-connect-ios)
+
+## Summary
 
 Modular Swift wallet adapters and components for EVM & Solana chains. Manage wallet and custom RPC request.
 
 ![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
 
-### Quick Start
+## Quick Start
 
-## Add Connect Service to Your iOS Project
+### Add Connect Service to Your iOS Project
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+#### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
   * Xcode 13.3.1
@@ -18,13 +22,13 @@ Modular Swift wallet adapters and components for EVM & Solana chains. Manage wal
   * Your project must target these platform versions or later:
     * iOS 13
 
-### Create a Particle Project and App
+#### Create a Particle Project and App
 
 Before you can add our Connect Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
-### Add the Connect Service SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
+#### Add the Connect Service SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
 
 Auth Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
@@ -165,13 +169,13 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 ####
 
-Switch chain.
+### Switch chain.
 
 ```swift
 ParticleConnect.setChain(chainName: .ethereum(.mainnet))
 ```
 
-Get all wallet adapters.
+### Get all wallet adapters.
 
 ```swift
 let adapters = ParticleConnect.getAdapters(chainType: .evm)
@@ -179,13 +183,15 @@ let adapters = ParticleConnect.getAdapters(chainType: .evm)
 let adapter = ParticleConnect.getAdapterByAddress(publicAddress: address)
 ```
 
-Get adapter accounts.
+### Get adapter accounts.
 
 ```swift
 let accounts = adapter.getAccounts()
 ```
 
-Connect wallet. (For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet)
+### Connect wallet.
+
+(For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet)
 
 ```swift
 connectAdapter.connect().subscribe { [weak self] result in
@@ -199,7 +205,7 @@ connectAdapter.connect().subscribe { [weak self] result in
 
 ```
 
-Disconnect wallet.
+### Disconnect wallet.
 
 ```swift
 connectAdapter.disconnect(address).subscribe { [weak self] result in
@@ -213,13 +219,15 @@ connectAdapter.disconnect(address).subscribe { [weak self] result in
 
 ```
 
-Check whether the account is connected.
+### Check whether the account is connected.
 
 ```swift
 let result = connectAdapter.isConnected(address)
 ```
 
-Import wallet. (Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+### Import wallet.
+
+(Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
 
 ```swift
 // import wallet with private key
@@ -245,7 +253,9 @@ connectAdapter.importWalletFromMnemonic(mnemonic).subscribe { [weak self] result
 }
 ```
 
-Export wallet. (Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+### Export wallet.
+
+(Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
 
 ```swift
 connectAdapter.exportWalletPrivateKey(publicAddress: address).subscribe { [weak self] result in
@@ -259,7 +269,7 @@ connectAdapter.exportWalletPrivateKey(publicAddress: address).subscribe { [weak 
 }
 ```
 
-Sign and send transaction.
+### Sign and send transaction.
 
 ```swift
 // todo: check connected before sign
@@ -274,7 +284,9 @@ connectAdapter.signAndSendTransaction(publicAddress: address, transaction: trans
 }
 ```
 
-Sign transaction. (Only Solana chain support this method)
+#### Sign transaction.
+
+(Only Solana chain support this method)
 
 ```swift
 connectAdapter.signTransaction(publicAddress: address, transaction: transaction).subscribe { [weak self] result in
@@ -288,7 +300,9 @@ connectAdapter.signTransaction(publicAddress: address, transaction: transaction)
 }
 ```
 
-Sign all transactions. (Only Solana chain support this method)
+### Sign all transactions.
+
+(Only Solana chain support this method)
 
 ```swift
 connectAdapter.signAllTransactions(publicAddress: address, transactions: transactions).subscribe { [weak self] result in
@@ -302,7 +316,9 @@ connectAdapter.signAllTransactions(publicAddress: address, transactions: transac
 }
 ```
 
-Sign message. (EVM call `personal_sign`)
+### Sign message.
+
+(EVM call `personal_sign`)
 
 ```swift
 connectAdapter.signMessage(publicAddress: address, message: message).subscribe { [weak self] result in
@@ -316,7 +332,9 @@ connectAdapter.signMessage(publicAddress: address, message: message).subscribe {
 }
 ```
 
-Sign typed data. (Only EVM chains support this method)
+### Sign typed data.
+
+(Only EVM chains support this method)
 
 ```swift
 connectAdapter.signTypedData(publicAddress: address, data: data).subscribe { [weak self] result in
@@ -330,6 +348,6 @@ connectAdapter.signTypedData(publicAddress: address, data: data).subscribe { [we
 }
 ```
 
-### Give Feedback
+## Give Feedback
 
 You can join our [Discord](https://discord.gg/2y44qr6CR2).
