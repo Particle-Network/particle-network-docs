@@ -10,6 +10,12 @@ coverY: 0
 
 ## Products
 
+### Connect Service
+
+**Particle Connect** is the SSO for web3. We help you onboard both Web2 & Web3 users **seamlessly, securely & user-friendly.**
+
+[👉 Learn more about Particle Connect](broken-reference)
+
 ### Auth Service
 
 **Particle Auth** provides MPC (Multi-Party Computation)-based threshold signatures.

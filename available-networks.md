@@ -8,21 +8,21 @@ The `mainnet` and `testnet` are both available for all the following chains.
 
 ## Products
 
-| Chains/Products     | Auth Service                           | Wallet Service                           | Node Service                           |
-| ------------------- | -------------------------------------- | ---------------------------------------- | -------------------------------------- |
-| Solana              | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | ✅ [Docs](node-service/solana-api/)     |
-| Ethereum            | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| BSC (BNB Chain)     | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Polygon (Matic)     | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Avalanche (C-Chain) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Fantom              | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Arbitrum            | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Harmony             | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Moonbeam/Moonriver  | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Heco                | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Aurora              | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Optimism            | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| KCC                 | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Chains/Products     | Connect Service            | Auth Service                           | Wallet Service                           | Node Service                           |
+| ------------------- | -------------------------- | -------------------------------------- | ---------------------------------------- | -------------------------------------- |
+| Solana              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | ✅ [Docs](node-service/solana-api/)     |
+| Ethereum            | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| BSC (BNB Chain)     | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Polygon (Matic)     | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Avalanche (C-Chain) | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Fantom              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Arbitrum            | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Harmony             | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Moonbeam/Moonriver  | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Heco                | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Aurora              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Optimism            | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| KCC                 | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 
 ## NFT Service
 
