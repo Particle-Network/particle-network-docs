@@ -167,6 +167,20 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 ![Config scheme url](<../../.gitbook/assets/image (1).png>)
 
+8\. Add LSApplicationQueriesSchemes to info.plist.
+
+```
+<key>LSApplicationQueriesSchemes</key>
+<array>
+	<string>trust</string>
+	<string>rainbow</string>
+	<string>imtokenv2</string>
+	<string>metamask</string>
+	<string>phantom</string>
+	<string>bitkeep</string>
+</array>
+```
+
 ####
 
 ### Switch chain.
