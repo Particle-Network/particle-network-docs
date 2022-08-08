@@ -59,6 +59,8 @@ For everyone with an M1 (Silicon) device who wishes to run their projects on a s
 post_install do |installer|
   installer.pods_project.build_configurations.each do |config|
     config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    config.build_settings["ARCHS[sdk=iphonesimulator*]"] = "x86_64"
+    config.build_settings["ARCHS[sdk=iphoneos*]"] = "arm64"
   end
 end
 ```
