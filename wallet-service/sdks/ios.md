@@ -52,7 +52,7 @@ open our-project.xcworkspace
 The Wallet Service can only be used after a successful log-in with Auth Service.
 
 {% hint style="info" %}
-Wallet GUI depends on Auth Service, you must import [Auth Service](broken-reference).
+Wallet GUI depends on Connect Service, you must import [Connect Service](broken-reference).
 {% endhint %}
 
 {% hint style="info" %}
@@ -70,6 +70,8 @@ For everyone with an M1 (Silicon) device who want run their projects on a simula
 post_install do |installer|
   installer.pods_project.build_configurations.each do |config|
     config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    config.build_settings["ARCHS[sdk=iphonesimulator*]"] = "x86_64"
+    config.build_settings["ARCHS[sdk=iphoneos*]"] = "arm64"
   end
 end
 ```
