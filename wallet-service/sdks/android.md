@@ -97,8 +97,8 @@ class App : Application() {
             BscChain(BscChainId.Mainnet)
         )
         ParticleWallet.init(this,supportChains).apply {
-            showTestNetworks() // show test networks
-            hideManageWallet() // hide manage wallet item in setting page
+            showTestNetworks() // show test networks,default is hide
+            hideManageWallet() // hide manage wallet item in setting page,default is show
         }
       
     }
