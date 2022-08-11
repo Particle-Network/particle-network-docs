@@ -76,6 +76,35 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 
 ## Wallet Core Reference
 
+### Initialize the SDK
+
+```kotlin
+class App : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        //init Particle SDK for solana chain 
+        ParticleNetwork.init(this, Env.DEV, SolanaChain(SolanaChainId.Mainnet))
+        
+        //init wallet service
+        /**
+         *  supportChains is optional, if not provided, all chains will be supported
+         *  if provided, only the chains in the list will be supported,Only the main chain is required,
+         *  if you want to support devnet, you can call showTestNetworks() to show the devnet networks
+         */
+        val supportChains = mutableListOf(
+            SolanaChain(SolanaChainId.Mainnet),
+            EthereumChain(EthereumChainId.Mainnet),
+            BscChain(BscChainId.Mainnet)
+        )
+        ParticleWallet.init(this,supportChains).apply {
+            showTestNetworks() // show test networks
+            hideManageWallet() // hide manage wallet item in setting page
+        }
+      
+    }
+}
+```
+
 ### Solana Service
 
 #### Get the real-time exchange rate of the Solana token
