@@ -116,23 +116,23 @@ import ParticleAuthService
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// select a network from ChainName enum.
-let chainName = ParticleNetwork.ChainName.ethereum(.mainnet)
+// select a network from ChainInfo.
+let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
 let devEnv = ParticleNetwork.DevEnvironment.debug
-let config = ParticleNetworkConfiguration(chainName: chainName, devEnv: devEnv)
+let config = ParticleNetworkConfiguration(chainInfo: chainInfo, devEnv: devEnv)
 ParticleNetwork.initialize(config: config)
 
 // also custom your evm network.
-let chainName = ParticleNetwork.ChainName.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
+let chainInfo = ParticleNetwork.ChainName.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
 ```
 {% endtab %}
 
 {% tab title="Objective-C" %}
 ```objectivec
 // select a network from ChainName enum.
-ChainName *chainName = [ChainName ethereum:EthereumNetworkMainnet];
+ChainInfo *chainInfo = [ChainInfo ethereum:EthereumNetworkMainnet];
 DevEnvironment devEnv = DevEnvironmentDebug;
-ParticleNetworkConfiguration *config = [[ParticleNetworkConfiguration alloc] initWithChainName:chainName devEnv:devEnv];
+ParticleNetworkConfiguration *config = [[ParticleNetworkConfiguration alloc] initWithChainInfo:chainInfo devEnv:devEnv];
 [ParticleNetwork initializeWithConfig:config];
 
 // also custom your evm network.
@@ -169,18 +169,18 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% endhint %}
 
-#### Dynamically switch the chain name:
+#### Dynamically switch the chain info:
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// Async switch chain name, it will check if user has logged in this chain name.
-// For example, if a user logged in with ethereum, then switch to  bsc,
+// Async switch chain info, it will check if user has logged in this chain name.
+// For example, if a user logged in with ethereum, then switch to bsc,
 // it will switch to bsc directly, beacuse both bsc and ethereum are evm,
 // but if switch to solana, beacuse user didn't log in solana before, it will 
 // present a web browser for additional information automatically.
-let chainName = ParticleNetwork.ChainName.ethereum(.kovan)
-ParticleAuthService.setChainName(chainName).subscribe { [weak self] result in
+let chainInfo = ParticleNetwork.ChainInfo.ethereum(.kovan)
+ParticleAuthService.setChainInfo(chainInfo).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -190,9 +190,9 @@ ParticleAuthService.setChainName(chainName).subscribe { [weak self] result in
     }
 }.disposed(by: bag)
 
-// Sync switch chain name. it will wont check if user has logged in.
-let chainName = ParticleNetwork.ChainName.ethereum(.kovan)
-ParticleNetwork.setChainName(chainName)
+// Sync switch chain info. it will wont check if user has logged in.
+let chainInfo = ParticleNetwork.ChainInfo.ethereum(.kovan)
+ParticleNetwork.setChainInfo(chainInfo)
 ```
 {% endtab %}
 
@@ -215,6 +215,7 @@ To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. Y
 ///   - type: Login type, support email, phone, google, apple and facebook
 ///   - account: When login type is email or phone, you could pass email address or phone number.
 ///   - supportAuthType: Controls whether third-party login buttons are displayed. default will show all third-party login buttons.
+///   - loginFormMode: Controls whether show light UI in web, default is false. 
 /// - Returns: User infomation single
 ParticleAuthService.login(type: .email).subscribe { [weak self] result in
     guard let self = self else { return }
