@@ -131,7 +131,7 @@ import ParticleConnect
 {% tab title="Swift" %}
 ```swift
  ParticleConnect.initialize(env: .debug, 
- chainName: .ethereum(.mainnet), 
+ chainInfo: .ethereum(.mainnet), 
  dAppData: DAppMetaData(name: "Test", 
  icon: URL(string: "https://static.particle.network/wallet-icons/Particle.png")!, 
  url: URL(string: "https://static.particle.network")!)) {
@@ -186,7 +186,7 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 ### Switch chain.
 
 ```swift
-ParticleConnect.setChain(chainName: .ethereum(.mainnet))
+ParticleConnect.setChain(chainInfo: .ethereum(.mainnet))
 ```
 
 ### Get all wallet adapters.
@@ -298,7 +298,7 @@ connectAdapter.signAndSendTransaction(publicAddress: address, transaction: trans
 }
 ```
 
-#### Sign transaction.
+### Sign transaction.
 
 (Only Solana chain support this method)
 
@@ -361,6 +361,53 @@ connectAdapter.signTypedData(publicAddress: address, data: data).subscribe { [we
     }
 }
 ```
+
+### Login
+
+```swift
+// We have full example in github demo.
+let message = try! getSiweMessage()
+self.siweMessage = message
+print("message = \(message.description)")
+adapter.login(config: message, publicAddress: getSender()).subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        print(error)
+        if let connectError = error as? ConnectError {
+            self.resultLabel.text = "code = \(String(describing: connectError.code)), message = \(String(describing: connectError.message))"
+        } else {
+            self.resultLabel.text = error.localizedDescription
+        }
+    case .success(let (sourceMessage, signedMessage)):
+        print("sourceMessage = \(sourceMessage), \n\nsignedMessage = \(signedMessage)")
+        self.resultLabel.text = signedMessage
+    }
+}.disposed(by: bag)
+```
+
+### Verify locally
+
+<pre class="language-swift"><code class="lang-swift">// We have full example in github demo.
+<strong>guard let message = siweMessage else {
+</strong>    return
+}
+let against = resultLabel.text ?? ""
+adapter.verify(message: message, against: against).subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        print(error)
+        if let connectError = error as? ConnectError {
+            self.resultLabel.text = "code = \(String(describing: connectError.code)), message = \(String(describing: connectError.message))"
+        } else {
+            self.resultLabel.text = error.localizedDescription
+        }
+    case .success(let flag):
+        print(flag)
+        self.resultLabel.text = flag ? "True" : "False"
+    }
+}.disposed(by: bag)</code></pre>
 
 ## Give Feedback
 

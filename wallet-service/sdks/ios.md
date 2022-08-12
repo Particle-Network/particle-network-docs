@@ -843,24 +843,6 @@ ParticleWalletGUI.enablePay(false)
 {% endtab %}
 {% endtabs %}
 
-### Custom Wallet UI &#x20;
-
-Control show or hide test network, manage wallet page, support chain.
-
-Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
-
-{% tabs %}
-{% tab title="Swift" %}
-<pre class="language-swift"><code class="lang-swift">// show or hide test network, default is false.
-<strong>ParticleWalletGUI.showTestNetwork(false)
-</strong><strong>// support chain, Particle Connect initialize chain will add as a support chain automatically.
-</strong><strong>// default support all chains in Particle Network base
-</strong>ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
-// show or hide manage wallet page.
-ParticleWalletGUI.showManageWallet(true)</code></pre>
-{% endtab %}
-{% endtabs %}
-
 ### Open Wallet
 
 {% tabs %}
