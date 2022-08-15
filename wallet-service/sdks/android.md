@@ -433,6 +433,35 @@ ParticleWallet.enablePay(ParticleNetwork.INSTANCE,false);
 {% endtab %}
 {% endtabs %}
 
+### Custom Wallet UI &#x20;
+
+Control show or hide test network, manage wallet page, support chain.
+
+Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
+
+```kotlin
+// show or hide test network, default is false.
+ParticleWallet.showTestNetworks()
+
+// show or hide manage wallet page.
+ParticleWallet.hideManageWallet()
+
+// support chain, Particle Connect initialize chain will add as a support chain automatically.
+// default support all chains in Particle Network base
+ParticleWallet.init(context,supportChains)
+
+//You can initialize the above configuration with a single statement
+ParticleWallet.init(
+        this,
+        supportChains,
+    ).apply {
+        showTestNetworks() // show test networks,default is hide
+        hideManageWallet() // hide manage wallet,default is show
+    }
+```
+
+###
+
 ### Open Wallet
 
 {% tabs %}
