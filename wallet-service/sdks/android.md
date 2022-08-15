@@ -416,6 +416,23 @@ val output = ParticleNetwork.evm.rpc("eth_call", listOf(tx, quantity))
 
 ## Wallet UI Reference
 
+### Set pay feature, default support pay feature.
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// You can disable pay feature in UI, default is true.
+ParticleNetwork.enablePay(false)
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+ParticleWallet.enablePay(ParticleNetwork.INSTANCE,false);
+```
+{% endtab %}
+{% endtabs %}
+
 ### Open Wallet
 
 {% tabs %}
