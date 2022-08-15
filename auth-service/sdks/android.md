@@ -238,7 +238,7 @@ ParticleNetwork.login(
         loginType = LoginType.PHONE,
         account = "",
         supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
-        loginFormMode: Boolean = false,
+        loginFormMode = false,
         loginCallback = object : WebServiceCallback<LoginOutput> {
             override fun success(output: LoginOutput) {
             }
@@ -250,7 +250,7 @@ ParticleNetwork.login(
 ParticleNetwork.login(
         loginType = LoginType.PHONE,
         supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
-        loginFormMode: Boolean = false,
+        loginFormMode = false,
         loginCallback = object : WebServiceCallback<LoginOutput> {
             override fun success(output: LoginOutput) {
             }
