@@ -452,15 +452,13 @@ ParticleWallet.init(context,supportChains)
 
 //You can initialize the above configuration with a single statement
 ParticleWallet.init(
-        this,
+        context,
         supportChains,
     ).apply {
         showTestNetworks() // show test networks,default is hide
         hideManageWallet() // hide manage wallet,default is show
     }
 ```
-
-###
 
 ### Open Wallet
 
