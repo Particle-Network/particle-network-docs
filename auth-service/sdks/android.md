@@ -233,10 +233,12 @@ To auth login with Particle, call `ParticleNetwork.login(...)`with `activity` an
 //   - loginType: Login type, support email, phone, google, apple and facebook
 //   - account: When login type is email or phone, you could pass email address or phone number,Optional.
 //   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
+//   - loginFormMode: Controls whether show light UI in web, default is false.
 ParticleNetwork.login(
         loginType = LoginType.PHONE,
         account = "",
         supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
+        loginFormMode: Boolean = false,
         loginCallback = object : WebServiceCallback<LoginOutput> {
             override fun success(output: LoginOutput) {
             }
@@ -248,6 +250,7 @@ ParticleNetwork.login(
 ParticleNetwork.login(
         loginType = LoginType.PHONE,
         supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
+        loginFormMode: Boolean = false,
         loginCallback = object : WebServiceCallback<LoginOutput> {
             override fun success(output: LoginOutput) {
             }
@@ -263,8 +266,10 @@ ParticleNetwork.login(
 //   - loginType: Login type, support email, phone, google, apple and facebook
 //   - account: When login type is email or phone, you could pass email address or phone number,Optional.
 //   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
+//   - loginFormMode:Controls whether show light UI in web, default is false.
 ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,"",
         SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
+        false,
         new WebServiceCallback<LoginOutput>() {
             @Override
             public void failure(@NonNull WebServiceError errMsg) {
@@ -277,6 +282,7 @@ ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,"",
 // - without account parameter you can use this method overwrite
 ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,
         SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
+        false,
         new WebServiceCallback<LoginOutput>() {
             @Override
             public void failure(@NonNull WebServiceError errMsg) {
