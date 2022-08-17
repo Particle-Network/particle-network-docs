@@ -460,7 +460,7 @@ ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe 
 
 {% tabs %}
 {% tab title="Swift" %}
-```kotlin
+```swift
 // call custom abi function
 func customMethodAbiEncode() {
     let contractAddress = ""
@@ -602,6 +602,10 @@ func erc1155SafeTransferFrom() {
 ```
 {% endtab %}
 {% endtabs %}
+
+Read Contract
+
+
 
 #### Create Transaction
 
@@ -770,25 +774,44 @@ You can create contractParams object by these `ContractParams`static methods&#x2
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// Reference cases in github demo.
+// example for evm read contract
 func readContract() {
-    let from = ParticleAuthService.getAddress()
-    let to = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
-    let data = "0x"
-    let txData = ReadContractData(from: from, to: to, data: data)
-    
-    // Integer block number, or the string 'latest', 'earliest' or 'pending'
-    let quantity = "latest"
-    
-    ParticleWalletAPI.getEvmService().rpc(method: "eth_call", params: [txData, quantity]).subscribe { response in
-        print(response)
+    let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "balanceOf", params: ["0xBbc1CA8776EfDeC12C75e218C64e96ce52aC6671"])
+    ParticleWalletAPI.getEvmService().readContract(contractParams: params).subscribe {
+        [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let json):
+                print(json)
+            }
     }.disposed(by: self.bag)
 }
+```
+{% endtab %}
+{% endtabs %}
 
-struct ReadContractData: Codable {
-    let from: String
-    let to: String
-    let data: String
+#### Write Contract
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// example for evm write contract
+// mint 1 NFT in kovan testnet, the from is sender address or user address in general.
+// result is a transaciton string which presented in hex format.
+func writeContract() {
+    let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "mint", params: ["1"])
+    let from = "0x0cf3ffe33e45ad43fcd0aa7016c590b5f629d9aa"
+    ParticleWalletAPI.getEvmService().writeContract(contractParams: params, from: from)
+    .subscribe {
+        [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let transaction):
+                print(transaction)
+            }
+    }.disposed(by: self.bag)
 }
 ```
 {% endtab %}
@@ -843,12 +866,30 @@ ParticleWalletGUI.enablePay(false)
 {% endtab %}
 {% endtabs %}
 
+### Custom Wallet UI &#x20;
+
+Control show or hide test network, manage wallet page, support chain.
+
+Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
+
+{% tabs %}
+{% tab title="Swift" %}
+<pre class="language-swift"><code class="lang-swift">// show or hide test network, default is false.
+<strong>ParticleWalletGUI.showTestNetwork(false)
+</strong><strong>// support chain, Particle Connect initialize chain will add as a support chain automatically.
+</strong><strong>// default support all chains in Particle Network base
+</strong>ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
+// show or hide manage wallet page.
+ParticleWalletGUI.showManageWallet(true)</code></pre>
+{% endtab %}
+{% endtabs %}
+
 ### Open Wallet
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-PNRouter.navigator(routhPath: .wallet)
+PNRouter.navigatorWallet()
 ```
 {% endtab %}
 
@@ -895,7 +936,11 @@ Display your address QR code.
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-PNRouter.navigator(routhPath: .tokenReceive)
+// display default QR code
+PNRouter.navigatorTokenReceive()
+// display QR code with token image in center.
+let config = TokenReceiveConfig(tokenAddress: "")
+PNRouter.navigatorTokenReceive(tokenReceiveConfig: config)
 ```
 {% endtab %}
 
@@ -955,6 +1000,16 @@ NSString *mintAddress = @"";
 NSString *tokenId = @"";
 NFTDetailsConfig *config = [[NFTDetailsConfig alloc] initWithAddress:mintAddress tokenId:tokenId];
 [PNRouter navigatorNFTDetailsWithNftDetailsConfig:config];
+```
+{% endtab %}
+{% endtabs %}
+
+### Open Buy Crypto
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+PNRouter.navigatorPay()
 ```
 {% endtab %}
 {% endtabs %}
