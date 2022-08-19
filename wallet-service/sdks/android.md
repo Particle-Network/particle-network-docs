@@ -272,6 +272,46 @@ ParticleNetwork.evm.rpc("eth_estimateGas",listOf(mapOf("from" to "0xXXX...", "to
 {% endtab %}
 {% endtabs %}
 
+#### Read Contract
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// example for evm read contract
+private suspend fun readContract() {
+    ParticleNetwork.evm.readContract(
+        "0xd000f000aa1f8accbd5815056ea32a54777b2fc4",
+        "balanceOf",
+        listOf("0xBbc1CA8776EfDeC12C75e218C64e96ce52aC6671")
+    )
+}
+```
+{% endtab %}
+{% endtabs %}
+
+#### Write Contract
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// example for evm write contract
+// mint 1 NFT in kovan testnet, the from is sender address or user address in general.
+// result is a transaciton string which presented in hex format.
+private suspend fun writeContract() {
+    val params = ContractParams.customAbiEncodeFunctionCall(
+        contractAddress = "0xd000f000aa1f8accbd5815056ea32a54777b2fc4",
+        methodName = "mint",
+        params = listOf("1")
+    )
+    ParticleNetwork.evm.writeContract(
+        "0xd000f000aa1f8accbd5815056ea32a54777b2fc4",
+        params
+    )
+}
+```
+{% endtab %}
+{% endtabs %}
+
 #### Add Custom Tokens
 
 {% tabs %}
