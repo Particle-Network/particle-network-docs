@@ -603,10 +603,6 @@ func erc1155SafeTransferFrom() {
 {% endtab %}
 {% endtabs %}
 
-Read Contract
-
-
-
 #### Create Transaction
 
 {% tabs %}
