@@ -233,6 +233,15 @@ connectAdapter.disconnect(address).subscribe { [weak self] result in
 
 ```
 
+### ReconnectIfNeeded
+
+```swift
+// Wallet Connect Adapter need reconnect after app launch
+// other sub adapter as MetaMaskConnectAdapter, RainConnectAdaper ... also need reconnect after app launch 
+// call reconnectIfNeeded after app launch, or before call other sign methods.
+(adapter as? WalletConnectAdapter)?.reconnectIfNeeded(publicAddress: getSender())
+```
+
 ### Check whether the account is connected.
 
 ```swift
