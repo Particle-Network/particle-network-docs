@@ -61,6 +61,7 @@
 
 ## Resources
 
+* [Logos & Assets](resources/logos-and-assets.md)
 * [FAQ](resouces/faq.md)
 * [Demo Applications](resources/demo-applications/README.md)
   * [Android](resources/demo-applications/android.md)
