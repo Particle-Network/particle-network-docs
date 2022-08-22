@@ -212,7 +212,7 @@ To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. Y
 ```swift
 /// Login
 /// - Parameters:
-///   - type: Login type, support email, phone, google, apple and facebook
+///   - type: Login type, support email, phone, google, apple, facebook and so on.
 ///   - account: When login type is email or phone, you could pass email address or phone number.
 ///   - supportAuthType: Controls whether third-party login buttons are displayed. default will show all third-party login buttons.
 ///   - loginFormMode: Controls whether show light UI in web, default is false. 
