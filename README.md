@@ -1,12 +1,12 @@
 ---
-description: A mobile app data and development platform for Web3
+description: The Full-Stack Web3 Infrastructure
 cover: .gitbook/assets/cover1 (1) (1).png
 coverY: 0
 ---
 
 # Introduction
 
-**Particle Network** is a mobile-first, data-driven, and composable Web3 data and development platform. Our vision is to accelerate the world's transition into the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
+**Particle Network** is a full-stack, data-driven, and composable Web3 data and development platform. Our vision is to accelerate the world's transition into the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
 
 ## Products
 
