@@ -10,15 +10,18 @@ For JSON-RPC-specific errors, our API returns a `200` with the JSON-RPC error in
 
 ### Example Error Response
 
-```typescript
+```json
 {
-  "jsonrpc": "2.0",
-  "chainId": 101, // optional; only chains's rpc returns this
-  "id": 1,
-  "error": {
-    "code": -32602,
-    "message": "Invalid params: invalid length 63, expected a 0x-prefixed, padded, hex-encoded hash with length 64."
-  }
+    "jsonrpc": "2.0",
+    "chainId": 101, // optional; only chains's rpc returns this
+    "id": 1,
+    "error": {
+        "code": -32602,
+        "message": "Invalid params: invalid length 63, expected a 0x-prefixed, padded, hex-encoded hash with length 64.",
+        "data": {
+            "extraMessage": ""
+        }
+    }
 }
 ```
 
