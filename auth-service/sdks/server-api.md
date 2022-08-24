@@ -41,6 +41,20 @@ Use this API to integrate Particle Auth into your user ID system :tada:
   * `googleEmail: <string>`
   * `appleId: <string>`,  exist when user login with apple
   * `appleEmail: <string>`
+  * `twitterId: <string>`,  exist when user login with twitter
+  * `twitterEmail: <string>`
+  * `telegramId: <string>`,  exist when user login with telegram
+  * `telegramPhone: <string>`
+  * `discordId: <string>`,  exist when user login with discord
+  * `discordEmail: <string>`
+  * `githubId: <string>`,  exist when user login with github
+  * `githubEmail: <string>`
+  * `twitchId: <string>`,  exist when user login with twitch
+  * `twitchEmail: <string>`
+  * `miscrosoftId: <string>`,  exist when user login with miscrosoft
+  * `miscrosoftEmail: <string>`
+  * `linkedinId: <string>`,  exist when user login with linked
+  * `linkedEmail: <string>`
   * `wallets: <[object]>`, user wallets with public address
 
 #### Request example:
@@ -89,11 +103,11 @@ Response example:
 
 ```typescript
 {
-    "jsonrpc": "2.0", 
-    "id": 1, 
+    "jsonrpc": "2.0",
+    "id": 1,
     "result": {
-        "uuid": "2d7b1ff2-0791-4fd2-a26e-16fbcaefdf8a", 
-        "phone": null, 
+        "uuid": "2d7b1ff2-0791-4fd2-a26e-16fbcaefdf8a",
+        "phone": null,
         "email": "U1gphy1mnU@particle.network",
         "name": null,
         "avatar": null,
@@ -102,16 +116,30 @@ Response example:
         "googleId": null,
         "googleEmail": null,
         "appleId": null,
-        "appleEmail": null, 
-        "createdAt": "2022-06-08T07:47:54.000Z", 
-        "updatedAt": "2022-06-08T07:47:55.000Z", 
+        "appleEmail": null,
+        "twitterId": null,
+        "twitterEmail": null,
+        "telegramId": null,
+        "telegramPhone": null,
+        "discordId": null,
+        "discordEmail": null,
+        "githubId": null,
+        "githubEmail": null,
+        "twitchId": null,
+        "twitchEmail": null,
+        "microsoftId": null,
+        "microsoftEmail": null,
+        "linkedinId": null,
+        "linkedinEmail": null,
+        "createdAt": "2022-06-08T07:47:54.000Z",
+        "updatedAt": "2022-06-08T07:47:55.000Z",
         "wallets": [
             {
-                "chain": "evm_chain", 
+                "chain": "evm_chain",
                 "publicAddress": "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF"
-            }, 
+            },
             {
-                "chain": "solana", 
+                "chain": "solana",
                 "publicAddress": "3k61BRDo253SF1XuknbBSUh8FvFqJkcMYzmZuvMMhCC1"
             }
         ]
