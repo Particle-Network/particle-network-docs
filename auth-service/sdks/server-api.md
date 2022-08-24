@@ -54,7 +54,7 @@ Use this API to integrate Particle Auth into your user ID system :tada:
   * `miscrosoftId: <string>`,  exist when user login with miscrosoft
   * `miscrosoftEmail: <string>`
   * `linkedinId: <string>`,  exist when user login with linked
-  * `linkedEmail: <string>`
+  * `linkedinEmail: <string>`
   * `wallets: <[object]>`, user wallets with public address
 
 #### Request example:
