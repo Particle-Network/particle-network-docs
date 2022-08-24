@@ -253,7 +253,7 @@ ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] resu
 {% endtab %}
 {% endtabs %}
 
-#### Access any standard RPC
+#### Access 👉 [any RPC ](../../node-service/solana-api/)
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -440,7 +440,7 @@ guard let self = self else { return }
 {% endtab %}
 {% endtabs %}
 
-#### Access any standard RPC
+#### Access 👉 [any RPC](../../node-service/evm-chains-api/)
 
 {% tabs %}
 {% tab title="Swift" %}
