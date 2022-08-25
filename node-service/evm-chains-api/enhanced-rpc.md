@@ -477,7 +477,7 @@ Response example:
 **Parameters:**
 
 * `<string>` - account address
-* `<array[string]>` - nft contract addresses to filter  (optional; default get alll nfts)
+* `<array[string]>` - nft contract addresses to filter (optional; default get all nfts)
 
 **Results:**
 
@@ -506,16 +506,6 @@ const axios = require('axios');
 
     console.log(response.data);
 })();
-```
-{% endtab %}
-
-{% tab title="Curl" %}
-```powershell
-curl 'https://api.particle.network/evm-chain/rpc' \
---header 'Authorization: Basic { Auth String }' \
--X POST -H "Content-Type: application/json" -d '
-    {"chainId":1,"jsonrpc":"2.0","id":1,"method":"particle_getTokensAndNFTs","params":["0x329a7f8b91Ce7479035cb1B5D62AB41845830Ce8"]}
-'
 ```
 {% endtab %}
 {% endtabs %}
