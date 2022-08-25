@@ -408,3 +408,84 @@ const pn = new ParticleNetwork({...});
 const info = pn.auth.userInfo();
 ```
 
+#### Set Auth Theme
+
+```typescript
+import { ParticleNetwork } from "@particle-network/auth";
+
+const pn = new ParticleNetwork({...});
+pn.setAuthTheme({
+  uiMode: "dark",
+  displayCloseButton: true,
+});
+
+```
+
+#### Set Chain Info
+
+```typescript
+import { ParticleNetwork } from "@particle-network/auth";
+
+const pn = new ParticleNetwork({...});
+// you can set chain info when new ParticleNetwork, or call setChainInfo
+pn.setChainInfo({
+    name: "polygon",
+    id: 137,
+})
+```
+
+## EVM Web3Modal Integration
+
+If you use [web3modal](https://github.com/WalletConnect/web3modal) connect wallet, you can use custom provider to add particle auth.
+
+[👉 Sample](https://web-demo.particle.network/web3Modal)
+
+[👉 Source Code](https://github.com/Particle-Network/particle-web-demo/blob/master/src/web3Modal.ts)
+
+## Solana Wallet-Adapter Integration
+
+Particle Auth support Solana official component [wallet-adapter](https://github.com/solana-labs/wallet-adapter), you can quickly add Particle Auth to your DApp.
+
+```typescript
+export const Wallet: FC = () => {
+    // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
+    const network = WalletAdapterNetwork.Devnet;
+
+    // You can also provide a custom RPC endpoint.
+    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+
+    const wallets = useMemo(
+        () => [
+            /**
+             * Select the wallets you wish to support, by instantiating wallet adapters here.
+             *
+             * Common adapters can be found in the npm package `@solana/wallet-adapter-wallets`.
+             * That package supports tree shaking and lazy loading -- only the wallets you import
+             * will be compiled into your application, and only the dependencies of wallets that
+             * your users connect to will be loaded.
+             */
+            new ParticleAdapter(), //add particle adapter
+        ],
+        []
+    );
+
+    return (
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={wallets} autoConnect>
+                <WalletModalProvider>
+                    <WalletMultiButton />
+                    <WalletDisconnectButton />
+                    { /* Your app's components go here, nested within the context providers. */ }
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
+    );
+};
+```
+
+For detailed usage, please refer to the wallet-adapter [documentation](https://solana-labs.github.io/wallet-adapter/)
+
+
+
+
+
