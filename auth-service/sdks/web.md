@@ -102,6 +102,18 @@ const pn = new ParticleNetwork({...});
 
 // Request user login if needed, returns current user info
 pn.auth.login()
+
+// optional: custom login params.
+// support auth types: email,phone,facebook,google,apple,discord,github,twitch,microsoft,linkedin
+pn.auth.login({
+    // when set social login auth type, will open thirdparty auth page directly.
+    preferredAuthType?: AuthType;
+    // when set email or phone account and preferredAuthType is email or phone, Particle
+    // Auth will enter directly input verification code page 
+    emailOrPhoneAccount?: string; 
+    supportAuthTypes?: string; //need support social login types, split with ','.
+    loginFormMode?: boolean; // login form mode will hide others ui except login form. 
+  })
 ```
 
 User login modal can also be triggered through web3 accounts.
