@@ -438,7 +438,7 @@ pn.setChainInfo({
 
 If you use [web3modal](https://github.com/WalletConnect/web3modal) connect wallet, you can use custom provider to add particle auth.
 
-[👉 Sample](https://web-demo.particle.network/web3Modal)
+[👉 Sample](https://web-demo.particle.network/)
 
 [👉 Source Code](https://github.com/Particle-Network/particle-web-demo/blob/master/src/web3Modal.ts)
 
