@@ -516,7 +516,7 @@ PNRouter.build(RouterPath.Wallet).navigation();
 {% endtab %}
 {% endtabs %}
 
-`navigation()`can add parameters, `callback` to listen to results.
+`navigation()`can add parameters
 
 ### Open Send Token
 

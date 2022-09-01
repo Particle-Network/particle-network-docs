@@ -68,6 +68,7 @@ Declare them in you app AndroidManifest.xml (usually app/src/main/AndroidManifes
                 android:name="com.particle.network.controller.WebActivity"
                 android:exported="true"
                 android:launchMode="singleTask"
+                android:configChanges="orientation|keyboardHidden|screenSize"
                 android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
                 >
             <intent-filter>
