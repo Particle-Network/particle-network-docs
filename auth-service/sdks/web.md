@@ -34,11 +34,11 @@ yarn add @particle-network/solana-wallet
 ```html
 browser
 
-<script src="https://static.particle.network/sdks/web/auth/0.5.6/auth.min.js"></script>
+<script src="https://static.particle.network/sdks/web/auth/0.6.2/auth.min.js"></script>
 <!-- Optional: Add EVM Chains suport -->
-<script src="https://static.particle.network/sdks/web/provider/0.5.6/provider.min.js"></script>
+<script src="https://static.particle.network/sdks/web/provider/0.6.2/provider.min.js"></script>
 <!-- Optional: Add Solana Chain suport -->
-<script src="https://static.particle.network/sdks/web/solana-wallet/0.5.6/solanaWallet.min.js"></script>
+<script src="https://static.particle.network/sdks/web/solana-wallet/0.6.2/solanaWallet.min.js"></script>
 ```
 
 ### Step 2: Setup Developer API Key
