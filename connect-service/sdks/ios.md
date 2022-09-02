@@ -132,9 +132,9 @@ import ParticleConnect
 ```swift
  ParticleConnect.initialize(env: .debug, 
  chainInfo: .ethereum(.mainnet), 
- dAppData: DAppMetaData(name: "Test", 
- icon: URL(string: "https://static.particle.network/wallet-icons/Particle.png")!, 
- url: URL(string: "https://static.particle.network")!)) {
+ dAppData: DAppMetaData(name: "Particle Connect", 
+ icon: URL(string: "https://connect.particle.network/icons/512.png")!, 
+ url: URL(string: "https://connect.particle.network")!)) {
       [ParticleConnectAdapter(),
        WalletConnectAdapter(),
        MetaMaskConnectAdapter(),
