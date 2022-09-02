@@ -864,7 +864,7 @@ ParticleWalletGUI.enablePay(false)
 
 ### Custom Wallet UI &#x20;
 
-Control show or hide test network, manage wallet page, support chain.
+Control show or hide test network, manage wallet page, support chain, set language and set user interface style.
 
 Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
 
@@ -876,7 +876,30 @@ Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initia
 </strong><strong>// default support all chains in Particle Network base
 </strong>ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
 // show or hide manage wallet page.
-ParticleWalletGUI.showManageWallet(true)</code></pre>
+ParticleWalletGUI.showManageWallet(true)
+// set language
+ParticleWalletGUI.setLanguage(.en)
+// set interface style
+ParticleWalletGUI.setInterfaceStyle(.dark)</code></pre>
+{% endtab %}
+{% endtabs %}
+
+### Switch Wallet
+
+Particle Wallet GUI support multi wallets, if you switch to another wallet or connect another wallet , you should call this method to make sure Particle Wallet GUI show the right address.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+/// Switch wallet before wallet open any ParticleWalletGUI page.
+/// If you swich another wallet in your app, you should call this method to tell gui, which to show later.
+/// GUI will sync with ParticleConnect and set default wallet with wallet type and public address.
+/// - Parameters:
+///   - walletType: Wallet type
+///   - publicAddress: Public address
+/// - Returns: If wallet is found, return ture and set the default wallet, otherwise return false.
+ParticleWalletGUI.switchWallet(walletType: .metaMask, publicAddress: "YOUR_PUBLIC_ADDRESS")
+```
 {% endtab %}
 {% endtabs %}
 
@@ -896,7 +919,7 @@ PNRouter.navigatorWallet()
 {% endtab %}
 {% endtabs %}
 
-### Open Send Token
+### O pen Send Token
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -1007,5 +1030,20 @@ NFTDetailsConfig *config = [[NFTDetailsConfig alloc] initWithAddress:mintAddress
 ```swift
 PNRouter.navigatorPay()
 ```
+{% endtab %}
+{% endtabs %}
+
+### Open Swap&#x20;
+
+{% tabs %}
+{% tab title="Swift" %}
+<pre class="language-swift"><code class="lang-swift"><strong>// open default swap page
+</strong><strong>PNRouter.navigatorSwap()
+</strong><strong>
+</strong>// open swap page with from token, to token, and amount, all parameters is optional.
+let config = SwapConfig(fromTokenAddress: nil,
+                toTokenAddress: nil,
+                fromTokenAmount: nil)
+navigatorSwap(swapConfig: config)</code></pre>
 {% endtab %}
 {% endtabs %}
