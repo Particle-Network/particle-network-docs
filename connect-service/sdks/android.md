@@ -215,8 +215,6 @@ connectAdapter.signMessage(address, message, callback)
 
 ### Login\&Verify locally
 
-{% tabs %}
-{% tab title="First Tab" %}
 ```kotlin
 // We have full example in github demo.
 val msg = Eip4361Message.createWithRequiredParameter(
@@ -242,10 +240,7 @@ adapter.login(
         override fun onError(error: ConnectError) {
         }
     })
-
 ```
-{% endtab %}
-{% endtabs %}
 
 
 
