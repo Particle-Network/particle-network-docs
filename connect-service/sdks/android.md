@@ -211,9 +211,43 @@ connectAdapter.signMessage(address, message, callback)
 
 (Only EVM chains support this method)
 
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>connectAdapter.signTypedData(address, data, callback)</strong></code></pre>
+
+### Login\&Verify locally
+
+{% tabs %}
+{% tab title="First Tab" %}
 ```kotlin
-connectAdapter.signTypedData(address, data, callback)
+// We have full example in github demo.
+val msg = Eip4361Message.createWithRequiredParameter(
+
+            "particle.network",
+            "https://service.org/login",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc21"
+        )
+val message = eip4361Message.toString()
+adapter.login(
+    publicAddress,
+    eip4361Message,
+    object : SignCallback {
+        override fun onSigned(signature: String) {
+            // Verify locally
+            val verifyResult = adapter.verify(
+                publicAddress,
+                signature,
+                message
+            )
+        }
+
+        override fun onError(error: ConnectError) {
+        }
+    })
+
 ```
+{% endtab %}
+{% endtabs %}
+
+
 
 ## Give Feedback
 
