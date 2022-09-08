@@ -44,6 +44,8 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 69                  | optimism                | Optimism Testnet Kovan      |
 | 321                 | kcc                     | KCC Mainnet                 |
 | 322                 | kcc                     | KCC Testnet                 |
+| 210425              | platon                  | platON Mainnet              |
+| 2203181             | platon                  | platON Testnet              |
 
 ### Standard RPC
 
