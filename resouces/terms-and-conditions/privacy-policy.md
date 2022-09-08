@@ -49,3 +49,11 @@ Further information we collect from you in relation to [https://particle.network
 3. Information required to comply with anti-money laundering (AML) laws and know-your-customer (KYC) requirements (such as nationality and place of birth);
 4. Source of funds for participating in token launches;
 5. and Information that you give us in relation to your purchased token holdings, such as earnings received from staking, and the number of tokens in your wallet.
+
+### 10. Company Information
+
+Name: **MINI JOY GLOBAL PTE. LTD.**
+
+Reg Number: **202014032M**
+
+Address: **100 JALAN SULTAN #05-27 SULTAN PLAZA SINGAPORE (199001)**

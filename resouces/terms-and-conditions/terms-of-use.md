@@ -220,3 +220,11 @@ You have certain rights with respect to your Personal Data, including those set 
 ## Changes to this Privacy Policy
 
 We’re constantly trying to improve our Services, so we may need to change this Privacy Policy from time to time, but we will alert you to any such changes by placing a notice on the Particle Network website, by sending you an email and/or by some other means. Please note that if you’ve opted not to receive legal notice emails from us (or you haven’t provided us with your email address), those legal notices will still govern your use of the Services, and you are still responsible for reading and understanding them. If you use the Services after any changes to the Privacy Policy have been posted, that means you agree to all of the changes. Use of information we collect is subject to the Privacy Policy in effect at the time such information is collected.
+
+## Company Information
+
+Name: **MINI JOY GLOBAL PTE. LTD.**
+
+Reg Number: **202014032M**
+
+Address: **100 JALAN SULTAN #05-27 SULTAN PLAZA SINGAPORE (199001)**
