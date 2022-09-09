@@ -18,6 +18,7 @@
 * [SDKs](connect-service/sdks/README.md)
   * [Android](connect-service/sdks/android.md)
   * [iOS](connect-service/sdks/ios.md)
+  * [Unity](connect-service/sdks/unity.md)
 
 ## AUTH SERVICE
 
@@ -35,6 +36,7 @@
 * [SDKs](wallet-service/sdks/README.md)
   * [Android](wallet-service/sdks/android.md)
   * [iOS](wallet-service/sdks/ios.md)
+  * [Unity](wallet-service/sdks/unity.md)
 
 ## NFT SERVICE
 
