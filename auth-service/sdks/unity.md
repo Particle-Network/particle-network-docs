@@ -6,6 +6,8 @@ description: Power up your Unity games with Particle Network SDKs.
 
 Before using, please review [the prerequisites](../../dashboard/unity-sdk-prerequisites.md)
 
+All unity sdk are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
+
 \
 Initialize the SDK
 
