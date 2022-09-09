@@ -71,6 +71,7 @@
   * [iOS](resources/demo-applications/ios.md)
   * [Web](resources/demo-applications/web.md)
   * [Web NFT Demo](resources/demo-applications/web-nft-demo.md)
+  * [Unity](resources/demo-applications/unity.md)
 * [Discord Community](https://discord.gg/2y44qr6CR2)
 * [Github](https://github.com/Particle-Network)
 * [Twitter](https://twitter.com/ParticleNtwrk)

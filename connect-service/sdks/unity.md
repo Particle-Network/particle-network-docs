@@ -1,22 +1,8 @@
----
-description: SSO for Web3
----
-
 # Unity
 
 Before using, please review [the prerequisites](../../dashboard/unity-sdk-prerequisites.md)
 
-All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
-
-## Github Demo/Packages
-
-[https://github.com/Particle-Network/particle-unity](https://github.com/Particle-Network/particle-unity)
-
-## Summary
-
-![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
-
-## Quick Start
+All unity sdk are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
 
 ### Init
 
