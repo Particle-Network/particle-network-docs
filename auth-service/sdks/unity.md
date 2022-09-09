@@ -11,7 +11,7 @@ description: Power up your Unity games with Particle Network SDKs.
   * Xcode 13.3.1 or higher
   * CocoaPods 1.10.0 or higher
 * Make sure that your Unity project meets these requirements:
-  * **For iOS** — targets iOS 12 or higher
+  * **For iOS** — targets iOS 13 or higher
   * **For Android** — Minimum API Level 23 or higher,Targets API level 31 or higher，Pack apk must be with exporting project to Android Studio, [change Java SDK version to 11](https://stackoverflow.com/questions/66449161/how-to-upgrade-an-android-project-to-java-11)
 
 ### Create a Particle Project and App
@@ -30,15 +30,16 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 
 * **Configure scheme url in Unity Editor**
 
-****
-
 1. Open the [iOS Player Settings](https://docs.unity3d.com/Manual/class-PlayerSettingsiOS.html) window (menu: **Edit** > **Project Settings** > **Player Settings**, then select **iOS**).
 2. Select **Other**, then scroll down to **Configuration**.
 3. Expand the **Supported URL schemes** section and, in the **Element 0** field, enter the URL scheme to associate with your application. For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f"
 
 * **Remove other service code if you don't need them.**
 
-1. In ParticleNetworkIOSBridge.cs, there are 4 part ParticleNetworkBase, ParticleAuthService, ParticleWalletAPI, ParticleWalletGUI, works for interact with iOS native. ParticleNetworkBase is required, ParticleAuthService if required for Auth Service, you can remove other codes if you don't need them.
+1. In ParticleNetworkIOSBridge.cs, there are 5 part ParticleNetworkBase, ParticleAuthService, ParticleWalletAPI, ParticleWalletGUI, ParticleConnect, works for interact with iOS native. ParticleNetworkBase is required,&#x20;
+2. ParticleAuthService if required for Auth Service,&#x20;
+3. ParticleConnect is required for Connect Service.
+4. You can remove other codes if you don't need them.
 
 * **Configure Xcode project after iOS build.**
 
@@ -47,11 +48,16 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     ```ruby
     pod init
     ```
-2.  To your Podfile, add the Auth Service pods that you want to use in your app:
+2.  To your Podfile, add select these pods that you want to use in your app:
 
-    ```ruby
-    pod 'ParticleAuthService'
-    ```
+    <pre class="language-ruby"><code class="lang-ruby"><strong>
+    </strong><strong>// ParticleWalletGUI contains all other services.
+    </strong>pod 'ParticleWalletGUI'
+    // ParticleAuthService provide auth service.
+    <strong>pod 'ParticleAuthService'
+    </strong>// PaticleConnectService privide wallet connect and auth service.
+    pod 'ParticleConnect'
+    pod 'CommonConnect'</code></pre>
 3.  &#x20;Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
     ```ruby
@@ -126,15 +132,17 @@ dependencies {
 
 **iOS**&#x20;
 
-1. Download UnityManger.swift, Unity-iPhone-Bridging-Header.h and AppDelegate.swift from [`github`](https://github.com/Particle-Network/particle-unity/tree/main/iOS),Copy files into the root of your Xcode project. Xcode will ask you if auto create Bridging file, click yes.
+1. Download `UnityManger.swift`, `Unity-iPhone-Bridging-Header.h` and `AppDelegate.swift` from under github `/Assets/Plugins/iOS/.Swift` , Copy files into the root of your Xcode project. Xcode will ask you if auto create Bridging file, click yes.
+
+
 
 ![](<../../.gitbook/assets/image (2).png>)
 
-2\. Remove main.mm under MainApp folder.
+2\. Remove `main.mm` under MainApp folder.
 
-3\. Under Libraries/Plugins/iOS is NativeCallProxy files, they are requested by Unity to interact with  iOS code. Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
+3\. Under `/Assets/Plugins/iOS` is NativeCallProxy files, they are requested by Unity to interact with  iOS code. Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
 
-4\. In UnityManger.swift,  Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
+4\. In `UnityManger.swift`, it has implemented methods defined in `NativeCallProxy.h`
 
 5\. Select NativeCallProxy.h, in the file inspector, check public in Target Membership.
 
