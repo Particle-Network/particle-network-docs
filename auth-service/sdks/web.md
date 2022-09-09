@@ -34,11 +34,11 @@ yarn add @particle-network/solana-wallet
 ```html
 browser
 
-<script src="https://static.particle.network/sdks/web/auth/0.6.2/auth.min.js"></script>
+<script src="https://static.particle.network/sdks/web/auth/0.7.4/auth.min.js"></script>
 <!-- Optional: Add EVM Chains suport -->
-<script src="https://static.particle.network/sdks/web/provider/0.6.2/provider.min.js"></script>
+<script src="https://static.particle.network/sdks/web/provider/0.7.4/provider.min.js"></script>
 <!-- Optional: Add Solana Chain suport -->
-<script src="https://static.particle.network/sdks/web/solana-wallet/0.6.2/solana-wallet.min.js"></script>
+<script src="https://static.particle.network/sdks/web/solana-wallet/0.7.4/solana-wallet.min.js"></script>
 ```
 
 ### Step 2: Setup Developer API Key
@@ -55,8 +55,8 @@ const pn = new ParticleNetwork({
   projectId: "xx",
   clientKey: "xx",
   appId: "xx",
-  chainName: "ethereum",
-  chainId: 42,
+  chainName: "Ethereum",
+  chainId: 1,
 });
 
 const evmProvider = new ParticleProvider(pn.auth);
@@ -81,8 +81,8 @@ const pn = new ParticleNetwork({
   projectId: "xx",
   clientKey: "xx",
   appId: "xx",
-  chainName: "ethereum",
-  chainId: 42, //mainnet 1
+  chainName: "Ethereum",
+  chainId: 1, //mainnet
 });
 
 //bsc testnet
@@ -90,8 +90,8 @@ const pn = new ParticleNetwork({
   projectId: "xx",
   clientKey: "xx",
   appId: "xx",
-  chainName: "bsc",
-  chainId: 97, // mainnet 56
+  chainName: "BSC",
+  chainId: 56, // mainnet
 });
 
 //...
@@ -440,6 +440,7 @@ const pn = new ParticleNetwork({...});
 pn.setAuthTheme({
   uiMode: "dark",
   displayCloseButton: true,
+  displayWallet: true, // display wallet entrance when send transaction
 });
 
 ```
@@ -452,9 +453,23 @@ import { ParticleNetwork } from "@particle-network/auth";
 const pn = new ParticleNetwork({...});
 // you can set chain info when new ParticleNetwork, or call setChainInfo
 pn.setChainInfo({
-    name: "polygon",
+    name: "Polygon",
     id: 137,
 })
+```
+
+## Open Particle Web Wallet
+
+When connect particle auth success, you can open particle wallet by below interface.
+
+```typescript
+import { ParticleNetwork } from "@particle-network/auth";
+
+const pn = new ParticleNetwork({...});
+
+// Need check login state when open wallet.
+// To set target and features for custom window style, same as window.open().
+pn.openWallet(target?: string, features?: string)
 ```
 
 ## EVM Web3Modal Integration

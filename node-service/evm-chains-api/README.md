@@ -18,7 +18,6 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 3                   | ethereum                | Ethereum Ropsten            |
 | 4                   | ethereum                | Ethereum Rinkeby            |
 | 5                   | ethereum                | Ethereum Goerli             |
-| 42                  | ethereum                | Ethereum Kovan              |
 | 56                  | bsc                     | Binance Smart Chain Mainnet |
 | 97                  | bsc                     | Binance Smart Chain Testnet |
 | 137                 | polygon                 | Polygon Mainnet             |
