@@ -59,15 +59,56 @@ const pn = new ParticleNetwork({
   chainId: 1,
 });
 
-const evmProvider = new ParticleProvider(pn.auth);
+const particleProvider = new ParticleProvider(pn.auth);
 //if you need support solana chain
 const solanaWallet = new SolanaWallet(pn.auth);
 
-window.web3 = new Web3(evmProvider);
+//if you use web3.js
+window.web3 = new Web3(particleProvider);
 window.web3.currentProvider.isParticleNetwork // => true
+
+//if you use ethers.js
+import { ethers } from "ethers";
+const ethersProvider = new ethers.providers.Web3Provider(providerProvider, "any");
+const ethersSigner = ethersProvider.getSigner();
 ```
 
 Your first Particle Network dApp! 🎉 You can implement web3 functionalities just like how you would normally with MetaMask.
+
+### Tips
+
+If you use `window.ethereum` to call RPC, The following things need to be noted:
+
+#### Only use the Particle
+
+Use only the Particle wallet and block other plugin wallets. For example, you can directly replace the global variable window.ethereum injected by the Metamask plugin with particleProvider:&#x20;
+
+```typescript
+window.ethereum = particleProvider;
+```
+
+#### Co-exists with other wallets
+
+The Particle wallet co-exists with other plug-in wallets. You can create a new Provider object when switching wallets, avoiding contamination of Particle or Ethereum with assignment operations：
+
+```typescript
+let provider = Object.create(particleProvider);
+const ParticleWallet = document.getElementById("ParticleWallet");
+const MetaMaskWallet = document.getElementById("MetaMaskWallet");
+ParticleWallet.onclick = async () => {
+  provider = Object.create(particleProvider);
+  ethersProvider = new ethers.providers.Web3Provider(provider, "any");
+};
+MetaMaskWallet.onclick = async () => {
+  if (window.ethereum) {
+    provider = Object.create(window.ethereum);
+  }
+  ethersProvider = new ethers.providers.Web3Provider(provider, "any");
+};
+const accounts = await provider.request({
+  method: "eth_requestAccounts",
+});
+```
 
 ## Web3 Integration
 
