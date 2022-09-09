@@ -40,5 +40,5 @@ Particle Auth comes with simple SDKs that can be integrated in multiple ways to 
 * 👉 [Android](sdks/android.md)
 * 👉 [iOS](sdks/ios.md)
 * 👉 [Web](sdks/web.md)
-* 👉 Unity: coming soon
+* [👉 Unity](sdks/unity.md)
 * 👉 Flutter: coming soon

@@ -4,6 +4,12 @@ description: SSO for Web3
 
 # Introduction
 
+### Architecture
+
+Modular wallet adapters and components for EVM & Solana chains. Manage wallet and custom RPC requests.
+
+![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
+
 ### 1. Simple Onboarding
 
 **Web2 Methods**: Email, Phone & Social Providers: Google, Facebook, Apple, Twitter, Discord, Telegram, Microsoft, Linkedin, Github, Twitch, etc.

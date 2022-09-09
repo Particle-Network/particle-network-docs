@@ -37,5 +37,5 @@ Particle Wallet comes with simple SDKs that can be integrated in multiple ways t
 * 👉 [Android](sdks/android.md)
 * 👉 [iOS](sdks/ios.md)
 * 👉 Web: coming soon
-* 👉 Unity: coming soon
+* [👉 Unity](sdks/unity.md)
 * 👉 Flutter: coming soon
