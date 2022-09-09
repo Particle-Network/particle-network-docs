@@ -11,6 +11,7 @@
 * [Manage Projects](dashboard/manage-projects.md)
 * [Manage Apps](dashboard/manage-apps.md)
 * [Manage Assets](dashboard/manage-assets.md)
+* [Unity SDK Prerequisites](dashboard/unity-sdk-prerequisites.md)
 
 ## Connect Service
 
