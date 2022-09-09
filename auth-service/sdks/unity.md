@@ -4,12 +4,9 @@ description: Power up your Unity games with Particle Network SDKs.
 
 # Unity
 
-Before using, please review [the prerequisites](../../dashboard/unity-sdk-prerequisites.md)
+Before using, please review [the prerequisites](../../dashboard/unity-sdk-prerequisites.md),All unity sdk are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
 
-All unity sdk are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
-
-\
-Initialize the SDK
+### &#x20;Initialize the SDK
 
 1**.Before using the sdk you have to call init(Required)**&#x20;
 
