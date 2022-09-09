@@ -480,6 +480,20 @@ ParticleNetworkAuth.signMessage(ParticleNetwork.INSTANCE,message, new WebService
 
 You can create `transaction` with `TxData`.There's an easy way to do this with [Wallet Service](broken-reference)
 
+### Set Display Wallet
+
+```kotlin
+// set display wallet when call sign and send transaction. default is false
+ParticleNetwork.setDisplayWallet(true) 
+```
+
+### Open Web Wallet
+
+```kotlin
+// if user is login, it will open web wallet.
+ParticleNetwork.openWebWallet()t
+```
+
 ### Error
 
 `WebServiceError` contains error details. You can check the information by printing the `message` attribute.

@@ -38,6 +38,7 @@
   * [Android](wallet-service/sdks/android.md)
   * [iOS](wallet-service/sdks/ios.md)
   * [Unity](wallet-service/sdks/unity.md)
+  * [Web](wallet-service/sdks/web.md)
 
 ## NFT SERVICE
 
