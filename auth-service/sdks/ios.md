@@ -320,9 +320,23 @@ ParticleAuthService.getAddress()
 ParticleAuthService.setModalPresentStyle(.fullScreen)
 ```
 {% endtab %}
+{% endtabs %}
 
-{% tab title="Objective-C" %}
+### Custom interface style
 
+{% tabs %}
+{% tab title="Swift" %}
+<pre class="language-swift"><code class="lang-swift"><strong>// set interface style, default value if follow system.
+</strong><strong>ParticleAuthService.setInterfaceStyle(.dark)</strong></code></pre>
+{% endtab %}
+{% endtabs %}
+
+### Set Display Wallet
+
+{% tabs %}
+{% tab title="Swift" %}
+<pre class="language-swift"><code class="lang-swift"><strong>// set display wallet when call sign and send transaction.
+</strong><strong>ParticleAuthService.setDisplayWallet(true)</strong></code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -431,6 +445,17 @@ ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self]
 {% endtabs %}
 
 You can create a `transaction` with `TxData`. There's an easy way to do this with [Wallet Service](broken-reference).
+
+### Open Web Wallet
+
+{% tabs %}
+{% tab title="Swift" %}
+```
+// if user is login, it will open web wallet.
+ParticleAuthService.openWebWallet() 
+```
+{% endtab %}
+{% endtabs %}
 
 ### Error
 
