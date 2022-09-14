@@ -79,6 +79,18 @@ end
 2\. Run Xcode with Rosetta.
 {% endhint %}
 
+
+
+{% hint style="info" %}
+### ParticleWalletAPI dependency GRDB.swift error
+
+GRDB has released new version 6.0 to support Xcode 14 and swift 5.7, if you meet error with GRDB, please specify version 5.26.1 in Podfile.
+
+<pre><code><strong>pod 'GRDB.swift', '5.26.1'</strong></code></pre>
+{% endhint %}
+
+
+
 ## Wallet Core Reference
 
 ### Solana Service
