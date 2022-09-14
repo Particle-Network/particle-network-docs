@@ -5,7 +5,7 @@
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 13.3.1
+  * Xcode 13.3.1 \~ 13.4.1
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 13
