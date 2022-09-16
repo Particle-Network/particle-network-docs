@@ -10,6 +10,12 @@
   * Your project must target these platform versions or later:
     * iOS 13
 
+{% hint style="info" %}
+### Xcode 14
+
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version 0.7.9.1
+{% endhint %}
+
 ### Create a Particle Project and App
 
 Before you can add the Wallet Service to your iOS app, you need to create a Particle project to connect to your iOS app. Visit [Particle Dashboard](broken-reference) to learn more about Particle projects and apps.
@@ -78,8 +84,6 @@ end
 
 2\. Run Xcode with Rosetta.
 {% endhint %}
-
-
 
 {% hint style="info" %}
 ### ParticleWalletAPI dependency GRDB.swift error
