@@ -26,7 +26,17 @@ Using Particle Wallet, you have the flexibility to choose between building an ap
 * **A complete UI interface**: Particle Wallet provides a variety of highly adaptable UI interfaces for different app styles and scenarios.
 * **Supports the use of independent functions**: to ensure the continuity of user experience, we support the utilization of a single function in a specific scenario. For example: to transfer funds, the user can call on a "transfer" page rather than having to enter the wallet.
 
-![](<../.gitbook/assets/qiabao2 .jpg>)
+{% embed url="https://youtu.be/_X2enkLbpEs" %}
+Send & Receive
+{% endembed %}
+
+{% embed url="https://youtu.be/k3g3HQQtXUw" %}
+A beautiful home for your uses' NFTs
+{% endembed %}
+
+{% embed url="https://youtu.be/gn9YBM_Dufs" %}
+Swap with the best price
+{% endembed %}
 
 ## How can I use Particle Wallet? <a href="#how-can-i-use-web3auth" id="how-can-i-use-web3auth"></a>
 
