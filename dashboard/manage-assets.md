@@ -6,6 +6,8 @@ But in some cases, we need the ability to control user's assets in the project f
 
 Now you can have the ability, we'll detail the process of how to manage user's assets in your project.
 
+<figure><img src="../.gitbook/assets/Asset control (1).png" alt=""><figcaption></figcaption></figure>
+
 ### Adding a Project Contract
 
 1. Select the project you'd like to add a project contact to and enter its project overview page

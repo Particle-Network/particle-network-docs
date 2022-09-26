@@ -10,7 +10,7 @@ description: Your one-stop wallet solution
 
 With Particle Wallet, you can integrate a wallet tailored to your app's needs, with features including transaction functions, NFT displays, and more.
 
-![Wallet](<../.gitbook/assets/qiabao .jpg>)
+<figure><img src="../.gitbook/assets/wallet.png" alt=""><figcaption><p>Wallet</p></figcaption></figure>
 
 ## Using Particle Wallet to Build Your Wallet <a href="#using-web3auth-to-build-your-wallet" id="using-web3auth-to-build-your-wallet"></a>
 

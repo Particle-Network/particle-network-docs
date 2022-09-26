@@ -28,7 +28,7 @@ By integrating Particle Auth into your project, your users can experience the fo
 * **Whitelabel:** customize Particle Auth's UI so that it blends directly into your application.
 * **Signature**: a full signature service.
 
-![Approve & Sign](../.gitbook/assets/sign.jpg)
+<figure><img src="../.gitbook/assets/Approve.png" alt=""><figcaption><p>Transaction &#x26; Approve</p></figcaption></figure>
 
 ## How Do I Integrate Particle Auth? <a href="#how-can-i-use-web3auth" id="how-can-i-use-web3auth"></a>
 
