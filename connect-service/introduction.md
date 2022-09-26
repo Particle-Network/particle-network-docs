@@ -37,3 +37,7 @@ Solana and almost all EVM chains are supported. 👉[ Available Network](../avai
 **Particle Connect** is the best way to **onboard any user** for your dApp. Join our [Discord](https://discord.gg/2y44qr6CR2) community to give us feedback.
 
 ![Web2 & Web3 Support](https://static.particle.network/docs-images/add-wallet.png) ![Secure import / generate private key](https://static.particle.network/docs-images/import-private-key.png)
+
+{% embed url="https://youtu.be/0gzjHYuc_5c" %}
+Connect Service
+{% endembed %}
