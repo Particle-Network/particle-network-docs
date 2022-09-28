@@ -6,26 +6,24 @@ description: Authenticate yourself to the Particle Node Service API
 
 ## Endpoint
 
-**Base URL:**
+**Base URL: https://api.particle.network**
 
-&#x20;   **https://rpc.particle.network**
+The Server RPC URL is:
 
-&#x20;   **https://api.particle.network(deprecated)**
+{% hint style="info" %}
+**https://api.particle.network/server/rpc**
+{% endhint %}
 
 The Solana chain's RPC URL is:
 
 {% hint style="info" %}
-&#x20;**https://rpc.particle.network/solana**
-
-**https://api.particle.network/solana/rpc(deprecated)**
+**https://api.particle.network/solana/rpc**
 {% endhint %}
 
 All EVM-compatible chains' RPC URL is:
 
 {% hint style="info" %}
-**https://rpc.particle.network/evm-chain**
-
-**https://api.particle.network/evm-chain/rpc(deprecated)**
+**https://api.particle.network/evm-chain/rpc**
 {% endhint %}
 
 ## Authentication
@@ -36,10 +34,10 @@ We assume you already have a [Particle Account](https://dashboard.particle.netwo
 
 The Web3 APIs require **HTTP Basic Authentication**:
 
-| Basic Auth Key | Basic Auth Value                     |
-| -------------- | ------------------------------------ |
-| Username       | Your Project Id                      |
-| Password       | Your Project Client Key / Server Key |
+| Basic Auth Key | Basic Auth Value        |
+| -------------- | ----------------------- |
+| Username       | Your Project Id         |
+| Password       | Your Project Server Key |
 
 ## Code Example
 
@@ -49,7 +47,7 @@ The Web3 APIs require **HTTP Basic Authentication**:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.get('https://rpc.particle.network/evm-chain?chainId=1', {
+    const response = await axios.get('https://api.particle.network/server/rpc', {
         auth: {
             username: 'Your Project Id',
             password: 'Your Project Server Key',

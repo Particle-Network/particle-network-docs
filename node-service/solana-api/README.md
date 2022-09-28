@@ -3,9 +3,7 @@
 ### Endpoint
 
 {% hint style="info" %}
-**https://rpc.particle.network/solana**
-
-**https://api.particle.network/solana/rpc(deprecated)**
+**https://api.particle.network/solana/rpc**
 {% endhint %}
 
 ### Structure
