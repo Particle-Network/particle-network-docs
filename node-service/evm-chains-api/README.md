@@ -3,7 +3,9 @@
 ### Endpoint
 
 {% hint style="info" %}
-**https://api.particle.network/evm-chain/rpc**
+**https://rpc.particle.network/evm-chain**
+
+**https://api.particle.network/evm-chain/rpc(deprecated)**
 {% endhint %}
 
 ### Structure
