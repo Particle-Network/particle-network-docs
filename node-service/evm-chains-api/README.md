@@ -58,6 +58,6 @@ The EVM Chains API offers several enhanced API methods on top of existing offici
 
 The Enhanced API is easy and powerful, which makes app-building faster and saves your time.
 
-{% content-ref url="enhanced-rpc.md" %}
-[enhanced-rpc.md](enhanced-rpc.md)
+{% content-ref url="enhanced-rpc/" %}
+[enhanced-rpc](enhanced-rpc/)
 {% endcontent-ref %}
