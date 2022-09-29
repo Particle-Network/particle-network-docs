@@ -20,6 +20,7 @@
   * [Android](connect-service/sdks/android.md)
   * [iOS](connect-service/sdks/ios.md)
   * [Unity](connect-service/sdks/unity.md)
+  * [Web](connect-service/sdks/web.md)
 
 ## AUTH SERVICE
 
