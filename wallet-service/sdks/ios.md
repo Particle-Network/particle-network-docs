@@ -638,6 +638,18 @@ func erc1155SafeTransferFrom() {
 public func createTransaction(from: String, to: String, value: String? = nil, contractParams: ContractParams? = nil, type: String = "0x2", nonce: String = "0x0", gasFeeLevel: GasFeeLevel = .medium, action: Action = .normal) -> Single<String>
 
 
+/// Create a transaciton if you have got the data by yourself.
+/// - Parameters:
+///   - from: From address
+///   - to: If you send a erc20, erc721, erc1155 or interact with a contract, this is the contract address, if you send native, this is receiver address.
+///   - value: Native value, default is nil, expressed as a hex string.
+///   - data: Data
+///   - type: TxData type, 0x2 is EIP1155, 0x1 is EIP2930, 0x0 is legacy.
+///   - gasFeeLevel: Gas fee level
+///   - action: Normal is send, or cancel, speedUp.
+/// - Returns: A transacion presented in hex string.
+public func createTransaction(from: String, to: String, value: String? = nil, data: String = "0x", type: String = "0x2", gasFeeLevel: GasFeeLevel = .medium, action: Action = .normal) -> Single<String>
+
 func sendNativeEVM() {
     showLoading()
     // firstly, make sure current user has some native token for test there methods
@@ -687,6 +699,26 @@ func sendErc20Token() {
         }
         self.hideLoading()
     }.disposed(by: self.bag)
+}
+
+func deployContract() {
+    // firstly, make sure current user has some native token to pay gas fee.
+    // deploy a contract then sign and send with Particle Auth.
+    let data = getContractData()
+    let from = ParticleAuthService.getAddress()
+    let to = "0x0000000000000000000000000000000000000000"
+    ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, data: data).flatMap {
+        transaction -> Single<String> in
+        print("transaction = \(transaction)")
+        return ParticleAuthService.signAndSendTransaction(transaction)
+    }.subscribe { [weak self] result in
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let signature):
+            print(signature)
+        }
+    }.disposed(by: bag)
 }
 ```
 {% endtab %}
