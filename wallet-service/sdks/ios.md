@@ -706,7 +706,7 @@ func deployContract() {
     // deploy a contract then sign and send with Particle Auth.
     let data = getContractData()
     let from = ParticleAuthService.getAddress()
-    let to: String? = nil
+    let to = ""
     ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, data: data).flatMap {
         transaction -> Single<String> in
         print("transaction = \(transaction)")
