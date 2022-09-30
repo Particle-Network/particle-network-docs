@@ -967,7 +967,7 @@ PNRouter.navigatorWallet()
 {% endtab %}
 {% endtabs %}
 
-### O pen Send Token
+### Open Send Token
 
 {% tabs %}
 {% tab title="Swift" %}
