@@ -159,12 +159,43 @@ pn.auth.login()
 // support auth types: email,phone,facebook,google,apple,discord,github,twitch,microsoft,linkedin
 pn.auth.login({
     // when set social login auth type, will open thirdparty auth page directly.
-    preferredAuthType?: AuthType;
-    // when set email or phone account and preferredAuthType is email or phone, Particle
-    // Auth will enter directly input verification code page 
-    emailOrPhoneAccount?: string; 
-    supportAuthTypes?: string; //need support social login types, split with ','.
-    loginFormMode?: boolean; // login form mode will hide others ui except login form. 
+    preferredAuthType?: AuthType,
+    // when set email/phone account and preferredAuthType is email or phone, 
+    // Particle Auth will enter directly input verification code page.
+    // when set JWT value and preferredAuthType is jwt, Particle Auth will auto login.
+    account?: string,
+    supportAuthTypes?: string, //need support social login types, split with ','. default value 'all'.
+    loginFormMode?: boolean, // login form mode will hide others ui except login form. only support supportAuthTypes equals email or phone.
+    hideLoading?: boolean, //hide particle loading when use jwt authorization.
+    socialLoginPrompt?: string, //social login prompt.  none | consent | select_account
+  })
+```
+
+Login with Phone and input verification code directly.
+
+```typescript
+pn.auth.login({
+    preferredAuthType: 'phone',
+    account: '+14155552671', //phone number must use E.164
+  });
+```
+
+Login with Social Account.
+
+```typescript
+pn.auth.login({
+    preferredAuthType: 'google', //support facebook,google,apple,discord,github,twitch,microsoft,linkedin etc.
+    socialLoginPrompt: 'none', //default vaue is none
+  })
+```
+
+Login with JWT
+
+```typescript
+pn.auth.login({
+    preferredAuthType: 'jwt',
+    account: 'JWT Value',
+    hideLoading: true,   //optional: hide particle loading when login.
   })
 ```
 
@@ -180,7 +211,7 @@ web3.eth.getAccounts((error, accounts) => {
 });
 ```
 
-A modal will open to ask users to sign up for an account or login with their mobile phone number or email.
+A modal will open to ask users to sign up for an account or login with their mobile phone number/email or social account.
 
 ### Send Transaction
 
