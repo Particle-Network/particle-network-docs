@@ -55,6 +55,7 @@ root.render(
 Then, in your app, import and render the `ConnectButton` component.
 
 ```typescript
+import '@particle-network/connect-react-ui/dist/index.css';
 import { ConnectButton } from '@particle-network/connect-react-ui';
 
 export const App = () => {
