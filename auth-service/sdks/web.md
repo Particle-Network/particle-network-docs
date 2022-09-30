@@ -542,6 +542,10 @@ const pn = new ParticleNetwork({...});
 // Need check login state when open wallet.
 // To set target and features for custom window style, same as window.open().
 pn.openWallet(target?: string, features?: string)
+
+
+//optional: get wallet url, you can open wallet in iframe.
+const url = pn.walletUrl();
 ```
 
 ## EVM Web3Modal Integration
