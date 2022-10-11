@@ -13,7 +13,7 @@
 {% hint style="info" %}
 ### Xcode 14
 
-#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [wallet](https://github.com/Particle-Network/particle-ios) page
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version 0.7.10.1
 {% endhint %}
 
 ### Create a Particle Project and App
