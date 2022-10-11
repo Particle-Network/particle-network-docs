@@ -25,7 +25,7 @@ Modular Swift wallet adapters and components for EVM & Solana chains. Manage wal
 {% hint style="info" %}
 ### Xcode 14
 
-#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version 0.1.18.1
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore out github [connect](https://github.com/Particle-Network/particle-connect-ios) page
 {% endhint %}
 
 #### Create a Particle Project and App
