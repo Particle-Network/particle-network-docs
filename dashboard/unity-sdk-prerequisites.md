@@ -71,7 +71,7 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 {% hint style="info" %}
 ### Xcode 14
 
-#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore out github [connect](https://github.com/Particle-Network/particle-connect-ios) page and [wallet](https://github.com/Particle-Network/particle-ios) page.
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [connect](https://github.com/Particle-Network/particle-connect-ios) page and [wallet](https://github.com/Particle-Network/particle-ios) page.
 {% endhint %}
 
 * **Configure Project information.**
