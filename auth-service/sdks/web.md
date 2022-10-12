@@ -556,6 +556,52 @@ If you use [web3modal](https://github.com/WalletConnect/web3modal) connect walle
 
 [👉 Source Code](https://github.com/Particle-Network/particle-web-demo/blob/master/src/web3Modal.ts)
 
+## EVM RainbowKit Integration
+
+If you use [RainbowKit](https://github.com/rainbow-me/rainbowkit) connect wallet, you can add particle auth quickly.
+
+<figure><img src="https://static.particle.network/docs-images/rainbowkit-particle-ext.png" alt=""><figcaption></figcaption></figure>
+
+```bash
+//install particle rainbowkit extension.
+yarn add @particle-network/rainbowkit-ext
+```
+
+Init Particle.
+
+```typescript
+// replace config 'xxx'
+new ParticleNetwork({
+    appId: 'xxx',
+    clientKey: 'xxx',
+    projectId: 'xxx',
+});
+```
+
+Add Particle to RainbowKit wallet list.
+
+```typescript
+// add particle in group Popular
+const popularWallets = {
+  groupName: "Popular",
+  wallets: [
+    particleWallet({ chains, authType: "google" }),
+    particleWallet({ chains, authType: "facebook" }),
+    particleWallet({ chains, authType: "apple" }),
+    particleWallet({ chains }),
+    injectedWallet({ chains }),
+    rainbowWallet({ chains }),
+    coinbaseWallet({ appName: "RainbowKit demo", chains }),
+    metaMaskWallet({ chains }),
+    walletConnectWallet({ chains }),
+  ],
+};
+```
+
+[👉 Sample](https://web-demo.particle.network/)
+
+👉 [Source Code](https://github.com/Particle-Network/particle-web-demo/blob/master/src/rainbowkit/rainbowkit-demo.ts)
+
 ## Solana Wallet-Adapter Integration
 
 Particle Auth support Solana official component [wallet-adapter](https://github.com/solana-labs/wallet-adapter), you can quickly add Particle Auth to your DApp.
