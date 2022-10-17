@@ -68,6 +68,12 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     open your-project.xcworkspace
     ```
 
+{% hint style="info" %}
+### Xcode 14
+
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [connect](https://github.com/Particle-Network/particle-connect-ios) page and [wallet](https://github.com/Particle-Network/particle-ios) page.
+{% endhint %}
+
 * **Configure Project information.**
 
 1. Create a **ParticleNetwork-Info.plist** into the root of your Xcode project

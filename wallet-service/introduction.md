@@ -12,15 +12,9 @@ With Particle Wallet, you can integrate a wallet tailored to your app's needs, w
 
 <figure><img src="../.gitbook/assets/wallet.png" alt=""><figcaption><p>Wallet</p></figcaption></figure>
 
-## Using Particle Wallet to Build Your Wallet <a href="#using-web3auth-to-build-your-wallet" id="using-web3auth-to-build-your-wallet"></a>
+## Why Particle **Wallet**?
 
 Using Particle Wallet, you have the flexibility to choose between building an app with an in-app wallet, or a standalone wallet itself. This has its advantages:
-
-* **Ownership**: the dApp/wallet owns the whole experience, with minimal external branding. You'll even be able to use your own OAuth or single sign-on (SSO).
-* **Easy to understand**: first-time users don't need the mental overhead of understanding the concept of a "wallet" to use your app.
-* **In-app experience**: users can manage their wallets and make transactions within your app, creating a seamless experience specific to your app.
-
-## What Are Particle **Wallet**'s features?
 
 * **Rapid development**: we provide a complete wallet SDK with functions including transaction abilities, NFT displays and trading, signatures, etc. This reduces development time for you and ensures security for users.
 * **A complete UI interface**: Particle Wallet provides a variety of highly adaptable UI interfaces for different app styles and scenarios.

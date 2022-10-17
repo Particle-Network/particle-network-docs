@@ -12,14 +12,15 @@ Particle Auth is a simple self-custodial auth infra for Web3 apps and wallets. W
 
 {% embed url="https://youtu.be/TuWJqP_RdHA" %}
 
-## What does Particle Auth do? <a href="#what-does-web3auth-do" id="what-does-web3auth-do"></a>
+## Why Particle Auth?&#x20;
 
-By integrating Particle Auth into your project, your users can experience the following services:
+Particle Auth is committed to helping Web2 users enter the Web3 world easily with their most familiar login methods.&#x20;
 
-* **Email/Mobile number logins and passwordless flows**: users can register with a mobile phone number or email address, then log in using a verification code. This shortens the login process while maintaining a secure login.Now, we also provide mainstream social media logins for Web3 developers.
-* **Provide MPC (Multi-Party Computation)-based threshold signatures:** With threshold signatures, each of the parties creates a key independently. Then, they forge the vault’s lock together, in a modular way, in which each party shapes a part of the lock that corresponds to its key.
+Users can login to your dApp through **Google, Apple ID, Facebook, Twitter and other social methods**, and can also login with **Email / Mobile number** without password.&#x20;
 
-![](../.gitbook/assets/952qs-wk47v.gif)
+After the user successfully logs in, Particle Auth will automatically create a crypto wallet without a private key. The security is guaranteed by **MPC (Multi Party Computing) - based threshold signatures**, which is ahead of other technologies.
+
+<figure><img src="../.gitbook/assets/组 12.png" alt=""><figcaption></figcaption></figure>
 
 ## What Are Particle Auth's features?
 
