@@ -26,7 +26,7 @@ After the user successfully logs in, Particle Auth will automatically create a c
 
 * **Speedy logins**: the log-in process is no different from that of a Web2.0 login, which greatly lowers the barriers to entry and improves user experience.
 * **Non-custodial private key infrastructure**: Particle Network provides MPC (Multi-Party Computation)-based TSS (Threshold Signatures Scheme). With TSS, each party creates an independent key. They then forge the vault's lock together in a modular way, in which each party shapes a part of the lock that corresponds to its key. The user is always in control of ownership and access to their cryptographic key pair.
-* **Whitelabel:** customize Particle Auth's UI so that it blends directly into your application, you can brand in the Dashboard.
+* **Custom UI:** customize Particle Auth's UI so that it blends directly into your application, you can brand in the Dashboard.
 * **Signature**: a full signature service, including Send Transaction, Sign Message and so on. Your users can view the detailed data of each signature.
 
 <figure><img src="../.gitbook/assets/Approve.png" alt=""><figcaption><p>Transaction &#x26; Approve</p></figcaption></figure>
