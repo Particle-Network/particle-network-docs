@@ -10,9 +10,9 @@ flutter pub add particle_auth
 
 ### 2.Configure Android project
 
-**open ${your flutter project} /android/app/build.gradle**
+open ${your flutter project} /android/app/build.gradle
 
-2.1 add project config and update minSdkVersion to 23
+2.1 add project config and update the minSdkVersion to 23
 
 ```groovy
 //Modify these configurations
@@ -75,4 +75,4 @@ dataBinding {
 
 Now,Android configuration is complete!
 
-### 3.Configure Android project
+### 3.Configure iOS project
