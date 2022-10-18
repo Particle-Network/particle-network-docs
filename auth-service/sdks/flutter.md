@@ -1,6 +1,6 @@
 # Flutter
 
-### Add the Auth Service SDK to Your Flutter App <a href="#add-sdks" id="add-sdks"></a>
+### 1.Add the Auth Service SDK to Your Flutter App <a href="#add-sdks" id="add-sdks"></a>
 
 Run this command:With Flutter:
 
