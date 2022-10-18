@@ -79,6 +79,20 @@ Now,Android configuration is complete!
 
 ### 3.Configure iOS project
 
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+
+* Install the following:
+  * Xcode 13.3.1 \~ 13.4.1
+* Make sure that your project meets the following requirements:
+  * Your project must target these platform versions or later:
+    * iOS 13
+
+{% hint style="info" %}
+### Xcode 14
+
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [auth](https://github.com/Particle-Network/particle-ios) page
+{% endhint %}
+
 3.1 After export iOS project, open Runner.xcworkspace under ios folder.
 
 ![](../../.gitbook/assets/image.png)
