@@ -143,23 +143,7 @@ Your scheme URL should be "pn" + your project app uuid.
 
 For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
-![Config scheme url](<../../.gitbook/assets/image (1).png>)
-
-3.8 Update Flutter/Debug.xcconfig, and Flutter/Release.xcconfig files
-
-![](<../../.gitbook/assets/image (4).png>)
-
-```
-// copy into Flutter/Debug.xcconfig
-#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
-```
-
-```
-// copy into Flutter/Release.xcconfig
-#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
-```
-
-
+![Config scheme url3.8 Update Flutter/Debug.xcconfig, and Flutter/Release.xcconfig files](<../../.gitbook/assets/image (1).png>)
 
 ### Initialize the SDK
 
