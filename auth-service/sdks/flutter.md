@@ -8,6 +8,8 @@ Run this command:With Flutter:
 flutter pub add particle_auth
 ```
 
+click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-auth) to get the demo source code&#x20;
+
 ### 2.Configure Android project
 
 open ${your flutter project} /android/app/build.gradle
