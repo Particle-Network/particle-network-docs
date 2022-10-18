@@ -77,9 +77,85 @@ Now,Android configuration is complete!
 
 ### 3.Configure iOS project
 
+3.1 After export iOS project, open Runner.xcworkspace under ios folder.
 
+![](../../.gitbook/assets/image.png)
 
+3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project
 
+3.3 Copy the following text into this file:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PROJECT_UUID</key>
+	<string>YOUR_PROJECT_UUID</string>
+	<key>PROJECT_CLIENT_KEY</key>
+	<string>YOUR_PROJECT_CLIENT_KEY</string>
+	<key>PROJECT_APP_UUID</key>
+	<string>YOUR_PROJECT_APP_UUID</string>
+</dict>
+</plist>
+
+```
+
+3.4 Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
+
+3.5. Import the `ParticleAuthService` module in your `AppDelegate.swift` file.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+import ParticleAuthService
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+@import ParticleAuthService;
+```
+{% endtab %}
+{% endtabs %}
+
+3.6. Add the scheme URL handle in your app's `application(_:open:options:)` method
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+return ParticleAuthService.handleUrl(url)
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+return [ParticleAuthService handleUrl:url];
+```
+{% endtab %}
+{% endtabs %}
+
+3.7. Configure your app scheme URL, select your app target in the info section, click to add the URL type, and pass your scheme in URL Schemes
+
+Your scheme URL should be "pn" + your project app uuid.
+
+For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
+
+![Config scheme url](<../../.gitbook/assets/image (1).png>)
+
+3.8 Update Flutter/Debug.xcconfig, and Flutter/Release.xcconfig files
+
+![](<../../.gitbook/assets/image (4).png>)
+
+```
+// copy into Flutter/Debug.xcconfig
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+```
+
+```
+// copy into Flutter/Release.xcconfig
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+```
 
 
 
