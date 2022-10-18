@@ -76,3 +76,139 @@ dataBinding {
 Now,Android configuration is complete!
 
 ### 3.Configure iOS project
+
+
+
+
+
+
+
+### Initialize the SDK
+
+1. **Before using the sdk you have to call init(Required)**&#x20;
+
+<pre class="language-dart"><code class="lang-dart"><strong>ParticleAuth.init(SolanaChain.devnet(), env);</strong></code></pre>
+
+### Login
+
+```dart
+List<SupportAuthType> supportAuthType = <SupportAuthType>[];
+supportAuthType.add(SupportAuthType.all);
+String result =await ParticleAuth.login(LoginType.phone, "", supportAuthType);
+```
+
+### Logout
+
+```dart
+String result = await ParticleAuth.logout();
+debugPrint("logout: $result");
+```
+
+### GetAddress
+
+```dart
+final address = await ParticleAuth.getAddress();
+print("getAddress: $address");
+```
+
+### SignMessage
+
+```dart
+ String result = await ParticleAuth.signMessage("Hello Particle");
+ debugPrint("signMessage: $result");
+```
+
+### SignTransaction
+
+```dart
+ChainInfo currChainInfo = SolanaChain.devnet();
+String? pubAddress = await ParticleAuth.getAddress();
+if (currChainInfo is SolanaChain) {
+  if (pubAddress == null) return;
+  final trans = await TransactionMock.mockSolanaTransaction(pubAddress);
+  String result = await ParticleAuth.signTransaction(trans);
+  debugPrint("signTransaction: $result");
+  showToast("signTransaction: $result");
+} else {
+  showToast('only solana chain support!');
+}
+```
+
+### SignAllTransactions
+
+```dart
+ChainInfo currChainInfo = SolanaChain.devnet();
+String? pubAddress = await ParticleAuth.getAddress();
+if (currChainInfo is SolanaChain) {
+  if (pubAddress == null) return;
+  final trans1 = await TransactionMock.mockSolanaTransaction(pubAddress);
+  final trans2 = await TransactionMock.mockSolanaTransaction(pubAddress);
+  List<String> trans = <String>[];
+  trans.add(trans1);
+  trans.add(trans2);
+  String result = await ParticleAuth.signAllTransactions(trans);
+  debugPrint("signAllTransactions: $result");
+  showToast("signAllTransactions: $result");
+} else {
+  showToast('only solana chain support!');
+}
+```
+
+### SignAndSendTransaction
+
+```dart
+ChainInfo currChainInfo = SolanaChain.devnet();
+String? pubAddress = await ParticleAuth.getAddress();
+if (currChainInfo is SolanaChain) {
+  final trans = await TransactionMock.mockSolanaTransaction(pubAddress);
+  String result = await ParticleAuth.signAndSendTransaction(trans);
+  debugPrint("signAndSendTransaction: $result");
+  showToast("signAndSendTransaction: $result");
+} else {
+  final trans = await TransactionMock.mockEvmTransaction(pubAddress);
+  String result = await ParticleAuth.signAndSendTransaction(trans);
+  debugPrint("signAndSendTransaction: $result");
+  showToast("signAndSendTransaction: $result");
+}
+```
+
+### SignTypedData
+
+You can get the demo source code from [here](https://github.com/Particle-Network/particle-flutter/blob/master/particle-auth/example/lib/auth\_demo/auth\_logic.dart)
+
+```dart
+ChainInfo currChainInfo = SolanaChain.devnet();
+if (currChainInfo is SolanaChain) {
+      showToast("only evm chain support!");
+      return;
+}
+String typedData = '''[
+  {
+    "type":"string",
+    "name":"Message",
+    "value":"Hi, Alice!"
+  },
+  {
+    "type":"uint32",
+    "name":"A nunmber",
+    "value":"1337"
+  }
+]''';
+String result =
+    await ParticleAuth.signTypedData(typedData, SignTypedDataVersion.v1);
+debugPrint("signTypedData: $result");
+```
+
+### SetChainInfoASync
+
+```dart
+bool isSuccess = await ParticleAuth.setChainInfo(EthereumChain.goerli());
+print("setChainInfo: $isSuccess");
+```
+
+### SetChainInfoSync
+
+```dart
+bool isSuccess = await ParticleAuth.setChainInfoAsync(SolanaChain.devnet());
+print("setChainInfoAsync: $isSuccess");
+```
