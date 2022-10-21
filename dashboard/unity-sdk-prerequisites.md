@@ -148,6 +148,71 @@ dependencies {
 
 5\. Select NativeCallProxy.h, in the file inspector, check public in Target Membership.
 
-![](<../.gitbook/assets/image (3) (2).png>)
+![](<../.gitbook/assets/image (3).png>)
 
 6\. If you are skilled in iOS, you can modify these files as you like. For example, add other services.
+
+### FAQ
+
+### Unity Editor
+
+1. In demo, after login tap Sign And Send Transaction encounter failed or error?
+
+In demo, we create a test transaction, that send some tokens in Ethereum Goerli Testnet, after you login from particle auth, other wallet or private key, your account may not have enough tokens.
+
+you could get some test tokens from out test account, in file`TestAccount.cs` , we provide private keys for you to test in demo.
+
+or get test tokens from the following URL
+
+&#x20;[https://faucets.chain.link/](https://faucets.chain.link/) or [https://goerlifaucet.com/](https://goerlifaucet.com/)
+
+Before sign and send transaction, make sure you have enough token to finish the transaction.
+
+### iOS
+
+1. After export to Xcode project, when you encounter error ''Module complied with Swift 5.6.1 cannot be imported by the Swift 5.7 complier'' ?
+
+If your Xcode version is 14,  you should specify pod version in Podfile, more pod version information is here.
+
+&#x20;[https://github.com/Particle-Network/particle-ios](https://github.com/Particle-Network/particle-ios)
+
+&#x20;[https://github.com/Particle-Network/particle-connect-ios](https://github.com/Particle-Network/particle-connect-ios)
+
+Here is an example in Podfile.  All particle pods should under target 'Unity-iPhone' not target 'UnityFramework’.
+
+```
+platform :ios, '13.0'
+target 'Unity-iPhone' do
+  source 'https://github.com/CocoaPods/Specs.git'
+  use_frameworks!
+  
+pod 'ParticleWalletGUI', '0.7.19.1’
+pod 'ParticleAuthService', '0.7.19.1’
+pod 'ParticleWalletAPI', '0.7.19.1’
+pod 'ParticleNetworkBase', '0.7.19.1’
+pod 'ConnectWalletConnectAdapter', '0.1.25.1’
+pod 'ConnectPhantomAdapter','0.1.25.1’
+pod 'ConnectEVMAdapter', '0.1.25.1’
+pod 'ConnectSolanaAdapter', '0.1.25.1’
+pod 'ParticleConnect', '0.1.25.1’
+pod 'ConnectCommon', '0.1.25.1’
+
+end
+
+target 'UnityFramework' do
+  use_frameworks!
+end
+```
+
+2\. After export to Xcode project, when you encounter error ''Cannot find type 'NativeCallsProtocol'.h in scope''.
+
+Make sure you have changed NativaProxy.h from project to public, select this file, then in the right area, you can see a Target Membership, in iOS step-5.
+
+3\. When execute pod install in Terminal, encounter error “Unable to determine Swift version for the following pods”
+
+Remove particle pods in podfile, then execute pod install, open Unity-iPhone.xcworkspace, select Unity-iPhone under TARGETS, in Building Settings, Swift Complier-Language, set swift version to swift 5, if there is no Swift Complier section, you should create an empty swift file,  you can see swift version after do that.
+
+\
+
+
+### Android
