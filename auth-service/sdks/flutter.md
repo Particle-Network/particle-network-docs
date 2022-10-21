@@ -82,7 +82,7 @@ Now,Android configuration is complete!
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 13.3.1 \~ 13.4.1
+  * Xcode 13.3.1 \~ 14.0.1
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 13
@@ -97,7 +97,9 @@ Now,Android configuration is complete!
 
 ![](../../.gitbook/assets/image.png)
 
-3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project
+3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is check under Target Membership.
+
+![](<../../.gitbook/assets/image (3).png>)
 
 3.3 Copy the following text into this file:
 
@@ -151,13 +153,13 @@ return [ParticleAuthService handleUrl:url];
 {% endtab %}
 {% endtabs %}
 
-3.7. Configure your app scheme URL, select your app target in the info section, click to add the URL type, and pass your scheme in URL Schemes
+3.7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
 For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
-![Config scheme url3.8 Update Flutter/Debug.xcconfig, and Flutter/Release.xcconfig files](<../../.gitbook/assets/image (1).png>)
+![Config scheme url](<../../.gitbook/assets/image (1).png>)
 
 ### Initialize the SDK
 

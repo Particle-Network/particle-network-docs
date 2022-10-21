@@ -148,6 +148,6 @@ dependencies {
 
 5\. Select NativeCallProxy.h, in the file inspector, check public in Target Membership.
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (2).png>)
 
 6\. If you are skilled in iOS, you can modify these files as you like. For example, add other services.

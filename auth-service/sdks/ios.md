@@ -5,7 +5,8 @@
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 13.3.1 \~ 13.4.1
+  * Xcode 13.3.1 \~ 14.0.1
+  * CocoaPods 1.10.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 13
@@ -13,7 +14,7 @@
 {% hint style="info" %}
 ### Xcode 14
 
-#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [auth](https://github.com/Particle-Network/particle-ios) page
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version in Podfile, for more versions information, please explore our github [auth](https://github.com/Particle-Network/particle-ios) page
 {% endhint %}
 
 ### Create a Particle Project and App
@@ -163,7 +164,7 @@ return [ParticleAuthService handleUrl:url];
 {% endtab %}
 {% endtabs %}
 
-7\. Configure your app scheme URL, select your app target in the info section, click to add the URL type, and pass your scheme in URL Schemes
+7\. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
