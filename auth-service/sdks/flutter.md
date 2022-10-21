@@ -95,11 +95,11 @@ Now,Android configuration is complete!
 
 3.1 After export iOS project, open Runner.xcworkspace under ios folder.
 
-![](<../../.gitbook/assets/image (2).png>)
+![](../../.gitbook/assets/image.png)
 
 3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is check under Target Membership.
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (1).png>)
 
 3.3 Copy the following text into this file:
 
@@ -159,7 +159,7 @@ Your scheme URL should be "pn" + your project app uuid.
 
 For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
-![Config scheme url](<../../.gitbook/assets/image (1).png>)
+![Config scheme url](<../../.gitbook/assets/image (1) (2).png>)
 
 ### Initialize the SDK
 

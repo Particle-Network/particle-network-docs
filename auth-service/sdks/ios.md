@@ -170,7 +170,7 @@ Your scheme URL should be "pn" + your project app uuid.
 
 For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
-![Config scheme url](<../../.gitbook/assets/image (1).png>)
+![Config scheme url](<../../.gitbook/assets/image (1) (2).png>)
 
 {% hint style="info" %}
 devEnv needs to be modified to be `DevEnvironment.production` for release.
@@ -221,6 +221,7 @@ To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. Y
 /// - Parameters:
 ///   - type: Login type, support email, phone, google, apple, facebook and so on.
 ///   - account: When login type is email or phone, you could pass email address or phone number.
+///              When login type is jwt, you must pass json web token.
 ///   - supportAuthType: Controls whether third-party login buttons are displayed. default will show all third-party login buttons.
 ///   - loginFormMode: Controls whether show light UI in web, default is false. 
 /// - Returns: User infomation single
