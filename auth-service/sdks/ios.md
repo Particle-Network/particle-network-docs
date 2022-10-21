@@ -233,6 +233,18 @@ ParticleAuthService.login(type: .email).subscribe { [weak self] result in
         // login success, handle userinfo
     }
 }.disposed(by: bag)
+
+/// Login with JWT
+let account = "json web token"
+ParticleAuthService.login(type: .jwt, account: account).subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let userinfo):
+        // login success, handle userinfo
+    }
+}.disposed(by: bag)
 ```
 {% endtab %}
 
