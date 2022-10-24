@@ -95,11 +95,11 @@ Now,Android configuration is complete!
 
 3.1 After export iOS project, open Runner.xcworkspace under ios folder.
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (5).png>)
 
 3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is check under Target Membership.
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (3).png>)
 
 3.3 Copy the following text into this file:
 
