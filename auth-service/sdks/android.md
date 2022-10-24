@@ -491,7 +491,7 @@ ParticleNetwork.setDisplayWallet(true)
 
 ```kotlin
 // if user is login, it will open web wallet.
-ParticleNetwork.openWebWallet()t
+ParticleNetwork.openWebWallet()
 ```
 
 ### Error
