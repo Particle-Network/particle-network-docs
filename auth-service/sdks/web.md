@@ -34,11 +34,11 @@ yarn add @particle-network/solana-wallet
 ```html
 browser
 
-<script src="https://static.particle.network/sdks/web/auth/0.7.14/auth.min.js"></script>
+<script src="https://static.particle.network/sdks/web/auth/0.7.19/auth.min.js"></script>
 <!-- Optional: Add EVM Chains suport -->
-<script src="https://static.particle.network/sdks/web/provider/0.7.17/provider.min.js"></script>
+<script src="https://static.particle.network/sdks/web/provider/0.7.23/provider.min.js"></script>
 <!-- Optional: Add Solana Chain suport -->
-<script src="https://static.particle.network/sdks/web/solana-wallet/0.7.14/solana-wallet.min.js"></script>
+<script src="https://static.particle.network/sdks/web/solana-wallet/0.7.20/solana-wallet.min.js"></script>
 ```
 
 ### Step 2: Setup Developer API Key
@@ -48,15 +48,20 @@ Before you can add Auth Service to your app, you need to create a Particle proje
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
 ```typescript
-import { ParticleNetwork } from "@particle-network/auth";
+import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({
   projectId: "xx",
   clientKey: "xx",
   appId: "xx",
-  chainName: "Ethereum",
-  chainId: 1,
+  chainName: "Ethereum", //optional: current chain name, default Ethereum.
+  chainId: 1, //optional: current chain id, default 1.
+  wallet: {   //optional: by default, the wallet entry is displayed in the bottom right corner of the webpage.
+    displayWalletEntry: true,  //show wallet entry when connect particle.
+    defaultWalletEntryPosition: WalletEntryPosition.BR, //wallet entry position
+    supportChains: [{ id: 1, name: "Ethereum"}, { id: 5, name: "Ethereum"}], // optional: web wallet support chains.
+  }
 });
 
 const particleProvider = new ParticleProvider(pn.auth);
