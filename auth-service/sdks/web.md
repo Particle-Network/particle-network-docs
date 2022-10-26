@@ -36,7 +36,7 @@ browser
 
 <script src="https://static.particle.network/sdks/web/auth/0.7.19/auth.min.js"></script>
 <!-- Optional: Add EVM Chains suport -->
-<script src="https://static.particle.network/sdks/web/provider/0.7.23/provider.min.js"></script>
+<script src="https://static.particle.network/sdks/web/provider/0.7.24/provider.min.js"></script>
 <!-- Optional: Add Solana Chain suport -->
 <script src="https://static.particle.network/sdks/web/solana-wallet/0.7.20/solana-wallet.min.js"></script>
 ```
