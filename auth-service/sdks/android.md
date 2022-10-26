@@ -231,8 +231,9 @@ To auth login with Particle, call `ParticleNetwork.login(...)`with `activity` an
 {% tab title="Kotlin" %}
 ```kotlin
 //   - Parameters:
-//   - loginType: Login type, support email, phone, google, apple and facebook
+//   - loginType: Login type, support jwt,email, phone, google, apple and facebook
 //   - account: When login type is email or phone, you could pass email address or phone number,Optional.
+                When login type is jwt, you must pass json web token.
 //   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
 //   - loginFormMode: Controls whether show light UI in web, default is false.
 ParticleNetwork.login(
@@ -255,6 +256,22 @@ ParticleNetwork.login(
         loginCallback = object : WebServiceCallback<LoginOutput> {
             override fun success(output: LoginOutput) {
             }
+            override fun failure(errMsg: WebServiceError) {
+            }
+        })
+        
+        
+// Login with JWT
+val account = "json web token"
+    ParticleNetwork.login(
+        loginType = LoginType.JWT,
+        account = account,
+        supportAuthTypeValues = SupportAuthType.ALL.value,
+        loginFormMode = false,
+        object : WebServiceCallback<LoginOutput> {
+            override fun success(output: LoginOutput) {
+            }
+
             override fun failure(errMsg: WebServiceError) {
             }
         })
