@@ -271,7 +271,6 @@ val account = "json web token"
         object : WebServiceCallback<LoginOutput> {
             override fun success(output: LoginOutput) {
             }
-
             override fun failure(errMsg: WebServiceError) {
             }
         })
