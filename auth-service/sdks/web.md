@@ -49,6 +49,8 @@ Before you can add Auth Service to your app, you need to create a Particle proje
 
 ```typescript
 import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
+import { ParticleProvider } from "@particle-network/provider";
+import { SolanaWallet } from "@particle-network/solana-wallet";
 import Web3 from "web3";
 
 const pn = new ParticleNetwork({
