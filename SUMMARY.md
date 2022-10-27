@@ -12,7 +12,6 @@
 * [Manage Apps](dashboard/manage-apps.md)
 * [Manage Assets](dashboard/manage-assets.md)
 * [Unity SDK Prerequisites](dashboard/unity-sdk-prerequisites.md)
-* [Branding](dashboard/branding.md)
 
 ## Connect Service
 
@@ -26,6 +25,7 @@
 ## AUTH SERVICE
 
 * [Introduction](auth-service/introduction.md)
+* [Branding](auth-service/branding.md)
 * [SDKs](auth-service/sdks/README.md)
   * [Server API](auth-service/sdks/server-api.md)
   * [Android](auth-service/sdks/android.md)
