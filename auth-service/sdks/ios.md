@@ -25,7 +25,7 @@ Before you can add our Auth Service to your iOS app, you need to create a Partic
 
 ### Add the Auth Service SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
 
-Auth Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
+Auth Service supports installation with [CocoaPds](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
 Auth Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0 or higher. Here's how to install the Auth Service using CocoaPods:
 
@@ -480,3 +480,105 @@ ParticleAuthService.openWebWallet()
 ### Error
 
 `ParticleNetwork.Error` contains error details. The error will be logged in `debug` `DevEnvironment`.
+
+## Particle Wallet Connect
+
+Integrate your app as a wallet connect wallet.
+
+Add Particle Wallet Connect with CocoaPods
+
+```ruby
+pod 'ParticleWalletConnect'
+```
+
+## API Reference
+
+### Initialize
+
+```swift
+// Initialize Particle Wallet Connect SDK, a wallet meta data
+ParticleWalletConnect.initialize(
+            WalletMetaData(name: "Particle Wallet",
+            icon: URL(string: "https://connect.particle.network/icons/512.png")!,
+            url: URL(string: "https://particle.network")!,
+            description: nil))
+```
+
+### Connect
+
+```swift
+// Connect to a wallet connect code
+let wcCode = "wc:DDCBBAA8-B1F1-4B98-8F74-84939E0B1533@1?bridge=https%3A%2F%2Fbridge%2Ewalletconnect%2Eorg%2F&key=3da9dbb33b560beeb1750203a8d0e3487b4fe3fdd7b7953d79fbccadae8aab48"
+ParticleWalletConnect.shared.connect(code: wcCode)
+```
+
+### Set delegate in your controller or view model.
+
+```swift
+ParticleWalletConnect.shared.delegate = self
+```
+
+Handle connect result by implement ParticleWalletConnectDelegate protocol.
+
+```swift
+public protocol ParticleWalletConnectDelegate: AnyObject {
+    /// Handle request from dapp
+    /// - Parameters:
+    ///   - topic: Topic
+    ///   - method: Method name
+    ///   - params: Params
+    ///   - completion: Result, encode to data
+    func request(topic: String, method: String, params: [Encodable], completion: @escaping (Result<Data?>) -> Void)
+
+    /// Did connect session
+    /// - Parameter session: Session
+    func didConnectSession(_ session: Session)
+
+    /// Did disconnect session
+    /// - Parameter session: Session
+    func didDisconnect(_ session: Session)
+
+    /// Should start session, usually called after connect,
+    /// you could save session.topic for quert session and manage session.
+    /// - Parameters:
+    ///   - session: Session
+    ///   - completion: Should return public address and chain id.
+    func shouldStartSession(_ session: Session, completion: @escaping (String, Int) -> Void)
+}
+```
+
+### Get session&#x20;
+
+```swift
+// Get wallet connect session by topic
+let session = ParticleWalletConnect.shared.getSession(by: topic)
+```
+
+### Remove session
+
+```swift
+// Remove wallet connect session by topic
+ParticleWalletConnect.shared.removeSession(by: topic)
+```
+
+### Get all sessions
+
+```swift
+// Get all wallet connect sessions 
+let sessions = ParticleWalletConnect.shared.getAllSessions()
+```
+
+### Update session
+
+```swift
+// updata wallet connect public address and chain id.
+ParticleWalletConnect.shared.update(session, publicAddress: publicAddress, chainId: chainId)
+```
+
+### Disconnect
+
+```swift
+// Disconnect wallet connect session
+ParticleWalletConnect.shared.disconnect(session: session)
+```
+
