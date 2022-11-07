@@ -1077,7 +1077,17 @@ NFTDetailsConfig *config = [[NFTDetailsConfig alloc] initWithAddress:mintAddress
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-PNRouter.navigatorPay()
+// open buy crypto with parameters
+// every parameter is optional
+let walletAddress = ""
+let network: OpenBuyNetwork = .ethereum
+let cryptoCoin = "USDT"
+let fiatCoin = "USD"
+let fiatAmt = 1000
+PNRouter.navigatorBuy(walletAddress: walletAddress, network: network, cryptoCoin: cryptoCoin, fiatCoin: fiatCoin, fiatAmt: fiatAmt)
+
+// open buy crypto without parameters
+PNRouter.navigatorBuy()
 ```
 {% endtab %}
 {% endtabs %}
