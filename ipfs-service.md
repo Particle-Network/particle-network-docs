@@ -19,7 +19,8 @@ const formData = require('form-data');
 const fs = require('fs');
 const axios = require('axios');
 
-const IPFS_URL = 'https://api.particle.network/ipfs/upload';
+const IPFS_URL = 'https://rpc.particle.network/ipfs/upload';
+// const IPFS_URL = 'https://api.particle.network/ipfs/upload'; // deprecated
 
 (async () => {
     const filePath = 'Your file path';
@@ -47,10 +48,14 @@ const IPFS_URL = 'https://api.particle.network/ipfs/upload';
 {
     // v1 cid: @see https://docs.ipfs.io/concepts/content-addressing/#identifier-formats
     "cid": "bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi",
+    // IPFS format address
+    "ipfs": "ipfs://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi",
+    // Preferred url with CDN cache for better performance
+    "fastUrl": "https://ipfs.particle.network/bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi",
     // Preferred url
-    "url": "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.nftstorage.link",
+    "ipfsUrl": "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.nftstorage.link",
     // Other working urls: @see https://ipfs.github.io/public-gateway-checker/
-    "urls": [
+    "ipfsUrls": [
         "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.nftstorage.link",
         "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.dweb.link",
         "https://bafybeidhaeimld7itiwr4v4jpxiscbkrxioapmawty7mhucp5kcdywgcvi.ipfs.infura-ipfs.io",
@@ -74,7 +79,8 @@ const IPFS_URL = 'https://api.particle.network/ipfs/upload';
 ```typescript
 const axios = require('axios');
 
-const IPFS_URL = 'https://api.particle.network/ipfs/upload_json';
+const IPFS_URL = 'https://rpc.particle.network/ipfs/upload_json';
+// const IPFS_URL = 'https://api.particle.network/ipfs/upload_json'; // deprecated
 
 (async () => {
     let res = await axios.post(IPFS_URL, {// json data}, {
@@ -96,8 +102,12 @@ const IPFS_URL = 'https://api.particle.network/ipfs/upload_json';
 {
     // v1 cid: @see https://docs.ipfs.io/concepts/content-addressing/#identifier-formats
     "cid": "bafybeiatchjoos436vysr7q3tna6ubd2xgseylsh4uo66swxualkzbnlnq",
+    // IPFS format address
+    "ipfs": "ipfs://bafybeiatchjoos436vysr7q3tna6ubd2xgseylsh4uo66swxualkzbnlnq",
+    // Preferred url with CDN cache for better performance
+    "fastUrl": "https://ipfs.particle.network/bafybeiatchjoos436vysr7q3tna6ubd2xgseylsh4uo66swxualkzbnlnq",
     // Preferred url
-    "url": "https://bafybeiatchjoos436vysr7q3tna6ubd2xgseylsh4uo66swxualkzbnlnq.ipfs.nftstorage.link",
+    "ipfsUrl": "https://bafybeiatchjoos436vysr7q3tna6ubd2xgseylsh4uo66swxualkzbnlnq.ipfs.nftstorage.link",
     // Other working urls: @see https://ipfs.github.io/public-gateway-checker/
     "urls": [
         "https://bafybeiatchjoos436vysr7q3tna6ubd2xgseylsh4uo66swxualkzbnlnq.ipfs.nftstorage.link",
