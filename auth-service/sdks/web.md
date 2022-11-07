@@ -557,14 +557,13 @@ const url = pn.walletUrl();
 
 ## Open Crypto Token Buy
 
-When initializing the article is complete, you can open the Buy Tokens page.
+When initializing the Particle is complete, you can open the Buy Tokens page.
 
 ```typescript
-// open buy
 import { ParticleNetwork } from "@particle-network/auth";
 
 const pn = new ParticleNetwork({...});
-
+// open buy
 // To set target and features for custom window style, same as window.open().
 pn.openBuy(options?: OpenBuyOptions, target?: string, features?: string)
 
