@@ -900,26 +900,21 @@ ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.g
 
 ## Wallet UI Reference
 
-### Set pay feature, default support pay feature.
-
-{% tabs %}
-{% tab title="Swift" %}
-```swift
-// You can disable pay feature in UI, default is true.
-ParticleWalletGUI.enablePay(false)
-```
-{% endtab %}
-{% endtabs %}
-
 ### Custom Wallet UI &#x20;
 
-Control show or hide test network, manage wallet page, support chain, set language and set user interface style.
+Control show or hide test network, swap feature, buy crypto feature, support wallet connect, manage wallet page, support chain, set language and set user interface style.
 
 Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
 
 {% tabs %}
 {% tab title="Swift" %}
-<pre class="language-swift"><code class="lang-swift">// show or hide test network, default is false.
+<pre class="language-swift"><code class="lang-swift">// You can disable buy crypto feature in UI, default is true.
+ParticleWalletGUI.enablePay(false)
+// You can disable swap feature in UI, default is true.
+ParticleWalletGUI.enableSwap(false)
+// You can disable wallet connect feature, default is true.
+ParticleWalletGUI.supportWalletConnect(false)
+// show or hide test network, default is false.
 <strong>ParticleWalletGUI.showTestNetwork(false)
 </strong><strong>// support chain, Particle Connect initialize chain will add as a support chain automatically.
 </strong><strong>// default support all chains in Particle Network base
@@ -932,6 +927,19 @@ ParticleWalletGUI.setLanguage(.en)
 ParticleWalletGUI.setInterfaceStyle(.dark)</code></pre>
 {% endtab %}
 {% endtabs %}
+
+If your want to support wallet connect feature in GUI, should call method `handleWalletConnectUrl`
+
+```swift
+// in AppDelegate.swift, under application(_:open:options:)
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+    if ParticleWalletGUI.handleWalletConnectUrl(url, withScheme: "particlewallet") {
+        return true
+    } else {
+        return ParticleConnect.handleUrl(url)
+    }
+}
+```
 
 ### Switch Wallet
 

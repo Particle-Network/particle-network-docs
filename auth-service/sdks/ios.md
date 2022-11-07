@@ -483,7 +483,7 @@ ParticleAuthService.openWebWallet()
 
 ## Particle Wallet Connect
 
-Integrate your app as a wallet connect wallet.
+Integrate your app as a wallet connect wallet. If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
 
 Add Particle Wallet Connect with CocoaPods
 
