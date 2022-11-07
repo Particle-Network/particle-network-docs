@@ -595,6 +595,10 @@ pn.openBuy(options?: OpenBuyOptions, target?: string, features?: string)
 |         nonce        |                                                                           nonce                                                                           | string |   False  |
 |         theme        |                                    Theme color, mainly to match the main color of the partner's website or application.                                   | string |   False  |
 
+{% hint style="info" %}
+If Particle not connected. network and walletAddress are requried.
+{% endhint %}
+
 ## EVM Web3Modal Integration
 
 If you use [web3modal](https://github.com/WalletConnect/web3modal) connect wallet, you can use custom provider to add particle auth.
