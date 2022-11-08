@@ -34,7 +34,7 @@ Request example:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/evm-chain/rpc', {
+    const response = await axios.post('https://rpc.particle.network/evm-chain', {
         chainId: 42,
         jsonrpc: '2.0',
         id: 1,
@@ -63,7 +63,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/evm-chain/rpc' \
+curl 'https://rpc.particle.network/evm-chain' \
 --header 'Authorization: Basic YmEwNTA5ZTctZThiYi00MzY2LTg5YjctYjM5ZjAyYmNkMDg0OmNnZjE4YXNMbG9zSkJzZlZXbWxvNHNuZ2lFRVZzc1gzNHFlTUxmZzQ=' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":42,"jsonrpc":"2.0","id":1,"method":"particle_getPrice","params":[["native","0x7968bc6a03017eA2de509AAA816F163Db0f35148"],["usd","cny"]]}
@@ -150,7 +150,7 @@ Request Example:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/evm-chain/rpc', {
+    const response = await axios.post('https://rpc.particle.network/evm-chain', {
         chainId: 42,
         jsonrpc: '2.0',
         id: 1,
@@ -170,7 +170,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/evm-chain/rpc' \
+curl 'https://rpc.particle.network/evm-chain' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":42,"jsonrpc":"2.0","id":1,"method":"particle_suggestedGasFees","params":[]}
@@ -259,7 +259,7 @@ Request Example:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/evm-chain/rpc', {
+    const response = await axios.post('https://rpc.particle.network/evm-chain', {
         chainId: 42,
         jsonrpc: '2.0',
         id: 1,
@@ -279,7 +279,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/evm-chain/rpc' \
+curl 'https://rpc.particle.network/evm-chain' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":42,"jsonrpc":"2.0","id":1,"method":"particle_getTransactionsByAddress","params":["0x425249Cf0F2f91f488E24cF7B1AA3186748f7516"]}
@@ -385,7 +385,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/evm-chain/rpc' \
+curl 'https://rpc.particle.network/evm-chain' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":1,"jsonrpc":"2.0","id":1,"method":"particle_abi_encodeFunctionCall","params":["0xB8c77482e45F1F44dE1745F52C74426C631bDD52","erc20_transfer",["0x329a7f8b91Ce7479035cb1B5D62AB41845830Ce8","1000000000000000000"]]}
@@ -470,7 +470,7 @@ Request Example:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/evm-chain/rpc', {
+    const response = await axios.post('https://rpc.particle.network/evm-chain', {
         chainId: 1,
         jsonrpc: '2.0',
         id: 1,
@@ -493,7 +493,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/evm-chain/rpc' \
+curl 'https://rpc.particle.network/evm-chain' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":1,"jsonrpc":"2.0","id":1,"method":"particle_deserializeTransaction","params":["0x03afc65278e6d37f23bc0b8bf4c9d61bd35edfc8","0x02f8d30182030a843b9aca00850608379d4b8301122e9499ecdf17ded4fcb6c5f0fe280d21f832af464f6780b86442842e0e00000000000000000000000003afc65278e6d37f23bc0b8bf4c9d61bd35edfc8000000000000000000000000a058fb195d274afbae4dc317be362d4e96ffa1b400000000000000000000000000000000000000000000000000000000000006c1c001a0f7e0c908e4b549d24dad47f28205d3437e00b123e9b57bec95dcd61e1fd8065ca053495aaeec3740c0520e7717060a208aac0970dbc30ef3380e3ae9f81f4f6f66"]}

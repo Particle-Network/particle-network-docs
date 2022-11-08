@@ -20,7 +20,6 @@ const fs = require('fs');
 const axios = require('axios');
 
 const IPFS_URL = 'https://rpc.particle.network/ipfs/upload';
-// const IPFS_URL = 'https://api.particle.network/ipfs/upload'; // deprecated
 
 (async () => {
     const filePath = 'Your file path';
@@ -80,7 +79,6 @@ const IPFS_URL = 'https://rpc.particle.network/ipfs/upload';
 const axios = require('axios');
 
 const IPFS_URL = 'https://rpc.particle.network/ipfs/upload_json';
-// const IPFS_URL = 'https://api.particle.network/ipfs/upload_json'; // deprecated
 
 (async () => {
     let res = await axios.post(IPFS_URL, {// json data}, {

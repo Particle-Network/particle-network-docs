@@ -53,7 +53,7 @@ const axios = require('axios');
 const bs58 = require('bs58');
 const { Keypair, Transaction } = require('@solana/web3.js');
 
-const SOLANA_RPC_URL = 'https://api.particle.network/solana/rpc';
+const SOLANA_RPC_URL = 'https://rpc.particle.network/solana';
 
 // generate or set a keypair
 const keypair = Keypair.fromSecretKey(Buffer.from([]));

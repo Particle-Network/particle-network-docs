@@ -25,7 +25,7 @@ Request Example：
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/solana/rpc', {
+    const response = await axios.post('https://api.particle.network/solana', {
         chainId: 103,
         jsonrpc: '2.0',
         id: 0,
@@ -45,7 +45,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/solana/rpc' \
+curl 'https://rpc.particle.network/solana' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":103,"jsonrpc":"2.0","id":0,"method":"getBalance","params":["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]}

@@ -34,7 +34,7 @@ Request example:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/solana/rpc', {
+    const response = await axios.post('https://rpc.particle.network/solana', {
         chainId: 103,
         jsonrpc: '2.0',
         id: 0,
@@ -63,7 +63,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/solana/rpc' \
+curl 'https://rpc.particle.network/solana' \
 --header 'Authorization: Basic YmEwNTA5ZTctZThiYi00MzY2LTg5YjctYjM5ZjAyYmNkMDg0OmNnZjE4YXNMbG9zSkJzZlZXbWxvNHNuZ2lFRVZzc1gzNHFlTUxmZzQ=' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetPrice","params":[["native","2Dzzc14S1D7cEFGJyMZMACuoQRHVUYFhVE74C5o8Fwau"],["usd","cny"]]}
@@ -151,7 +151,7 @@ Request Example
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/solana/rpc', {
+    const response = await axios.post('https://rpc.particle.network/solana', {
         chainId: 103,
         jsonrpc: '2.0',
         id: 0,
@@ -173,7 +173,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/solana/rpc' \
+curl 'https://rpc.particle.network/solana' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetTokensAndNFTs","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}
@@ -294,7 +294,7 @@ Request example:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/solana/rpc', {
+    const response = await axios.post('https://rpc.particle.network/solana', {
         chainId: 103,
         jsonrpc: '2.0',
         id: 0,
@@ -314,7 +314,7 @@ const axios = require('axios');
 
 {% tab title="Curl" %}
 ```powershell
-curl 'https://api.particle.network/solana/rpc' \
+curl 'https://rpc.particle.network/solana' \
 --header 'Authorization: Basic { Auth String }' \
 -X POST -H "Content-Type: application/json" -d '
     {"chainId":103,"jsonrpc":"2.0","id":0,"method":"enhancedGetTransactionsByAddress","params":["6XU36wCxWobLx5Rtsb58kmgAJKVYmMVqy4SHXxENAyAe"]}

@@ -4,8 +4,6 @@
 
 {% hint style="info" %}
 **https://rpc.particle.network/solana**
-
-**https://api.particle.network/solana/rpc(deprecated)**
 {% endhint %}
 
 ### Structure

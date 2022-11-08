@@ -10,22 +10,16 @@ description: Authenticate yourself to the Particle Node Service API
 
 &#x20;   **https://rpc.particle.network**
 
-&#x20;   **https://api.particle.network(deprecated)**
-
 The Solana chain's RPC URL is:
 
 {% hint style="info" %}
 &#x20;**https://rpc.particle.network/solana**
-
-**https://api.particle.network/solana/rpc(deprecated)**
 {% endhint %}
 
 All EVM-compatible chains' RPC URL is:
 
 {% hint style="info" %}
 **https://rpc.particle.network/evm-chain**
-
-**https://api.particle.network/evm-chain/rpc(deprecated)**
 {% endhint %}
 
 ## Authentication

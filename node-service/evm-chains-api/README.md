@@ -4,8 +4,6 @@
 
 {% hint style="info" %}
 **https://rpc.particle.network/evm-chain**
-
-**https://api.particle.network/evm-chain/rpc(deprecated)**
 {% endhint %}
 
 ### Structure
@@ -26,8 +24,8 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 43113               | avalanche               | Avalanche Testnet(Fuji)     |
 | 250                 | fantom                  | Fantom Mainnet(Opera)       |
 | 4002                | fantom                  | Fantom Testnet              |
-| 42161               | arbitrum                | Arbitrum Mainnet(One)       |
-| 421611              | arbitrum                | Arbitrum Testnet(Rinkeby)   |
+| 42161               | arbitrum                | Arbitrum One                |
+| 421613              | arbitrum                | Arbitrum Goerli             |
 | 1284                | moonbeam                | Moonbeam                    |
 | 1285                | moonriver               | Moonriver                   |
 | 1287                | moonbeam/moonriver      | Moonbase Alpha              |
@@ -39,8 +37,8 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 256                 | heco                    | Huobi ECO Chain Testnet     |
 | 1313161554          | aurora                  | Aurora Mainnet              |
 | 1313161555          | aurora                  | Aurora Testnet              |
-| 10                  | optimism                | Optimism One Mainnet        |
-| 69                  | optimism                | Optimism Testnet Kovan      |
+| 10                  | optimism                | Optimism Mainnet            |
+| 420                 | optimism                | Optimism Testnet Goerli     |
 | 321                 | kcc                     | KCC Mainnet                 |
 | 322                 | kcc                     | KCC Testnet                 |
 | 210425              | platon                  | PlatON Mainnet              |
