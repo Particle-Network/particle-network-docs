@@ -358,7 +358,7 @@ Request Example:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.post('https://api.particle.network/evm-chain/rpc', {
+    const response = await axios.post('https://rpc.particle.network/evm-chain', {
         chainId: 1,
         jsonrpc: '2.0',
         id: 1,

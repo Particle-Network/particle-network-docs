@@ -44,7 +44,7 @@ Request Example
 const axios = require('axios');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -119,7 +119,7 @@ Request Example
 const axios = require('axios');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -184,7 +184,7 @@ Request Example
 const axios = require('axios');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -249,7 +249,7 @@ Request Example
 const axios = require('axios');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -322,7 +322,7 @@ const axios = require('axios');
 const { LAMPORTS_PER_SOL } = require('@solana/web3.js');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -393,7 +393,7 @@ Request Example
 const axios = require('axios');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -465,7 +465,7 @@ const axios = require('axios');
 const { LAMPORTS_PER_SOL } = require('@solana/web3.js');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -537,7 +537,7 @@ Request Example
 const axios = require('axios');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
@@ -602,7 +602,7 @@ Request Example
 const axios = require('axios');
 
 // chainId: 101 => mainnet; 102 => testnet; 103 => devnet;
-const RPC_URL = 'https://api.particle.network/solana/rpc?chainId=103';
+const RPC_URL = 'https://rpc.particle.network/solana?chainId=103';
 const auth = {
     username: 'Your Project Id',
     password: 'Your Project Server Key',
