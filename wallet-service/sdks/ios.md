@@ -5,17 +5,11 @@
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 13.3.1 \~ 14.0.1
+  * Xcode 13.3.1 or later
   * CocoaPods 1.10.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 13
-
-{% hint style="info" %}
-### Xcode 14
-
-#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [wallet](https://github.com/Particle-Network/particle-ios) page
-{% endhint %}
 
 ### Create a Particle Project and App
 
@@ -67,34 +61,19 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 {% endhint %}
 
 {% hint style="info" %}
-### ARM64 Simulator support
-
-For everyone with an M1 (Silicon) device who want run their projects on a simulator, There are two solutions.
-
-1. Set arm64 as excluding architecture for Any iOS Simulator SDK. add the following to Podfile
+### Edit Podfile
 
 ```ruby
+// paste there code into pod file
 post_install do |installer|
-  installer.pods_project.build_configurations.each do |config|
-    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-    config.build_settings["ARCHS[sdk=iphonesimulator*]"] = "x86_64"
-    config.build_settings["ARCHS[sdk=iphoneos*]"] = "arm64"
+installer.pods_project.targets.each do |target|
+  target.build_configurations.each do |config|
+  config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
   end
-end
+ end
 ```
-
-2\. Run Xcode with Rosetta.
 {% endhint %}
-
-{% hint style="info" %}
-### ParticleWalletAPI dependency GRDB.swift error
-
-GRDB has released new version 6.0 to support Xcode 14 and swift 5.7, if you meet error with GRDB, please specify version 5.26.1 in Podfile.
-
-<pre><code><strong>pod 'GRDB.swift', '5.26.1'</strong></code></pre>
-{% endhint %}
-
-
 
 ## Wallet Core Reference
 

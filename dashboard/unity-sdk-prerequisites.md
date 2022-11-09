@@ -50,15 +50,14 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     ```
 2.  To your Podfile, add select these pods that you want to use in your app:
 
-    ```ruby
-    // ParticleWalletGUI contains all other services.
-    pod 'ParticleWalletGUI'
+    <pre class="language-ruby"><code class="lang-ruby"><strong>
+    </strong><strong>// ParticleWalletGUI contains all other services.
+    </strong>pod 'ParticleWalletGUI'
     // ParticleAuthService provide auth service.
-    pod 'ParticleAuthService'
-    // PaticleConnectService privide wallet connect and auth service.
+    <strong>pod 'ParticleAuthService'
+    </strong>// PaticleConnectService privide wallet connect and auth service.
     pod 'ParticleConnect'
-    pod 'CommonConnect'
-    ```
+    pod 'CommonConnect'</code></pre>
 3.  &#x20;Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
     ```ruby
@@ -69,23 +68,11 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     open your-project.xcworkspace
     ```
 
-*   Edit Podfile
+{% hint style="info" %}
+### Xcode 14
 
-    {% hint style="info" %}
-    ### Edit Podfile
-
-    ```ruby
-    // paste there code into pod file
-    post_install do |installer|
-    installer.pods_project.targets.each do |target|
-      target.build_configurations.each do |config|
-      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-        end
-      end
-     end
-    ```
-    {% endhint %}
-
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [connect](https://github.com/Particle-Network/particle-connect-ios) page and [wallet](https://github.com/Particle-Network/particle-ios) page.
+{% endhint %}
 
 * **Configure Project information.**
 

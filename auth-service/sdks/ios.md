@@ -5,11 +5,17 @@
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 13.3.1 or later
+  * Xcode 13.3.1 \~ 14.0.1
   * CocoaPods 1.10.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 13
+
+{% hint style="info" %}
+### Xcode 14
+
+#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version in Podfile, for more versions information, please explore our github [auth](https://github.com/Particle-Network/particle-ios) page
+{% endhint %}
 
 ### Create a Particle Project and App
 
@@ -50,18 +56,23 @@ If you would like to receive release updates, subscribe to our [GitHub repositor
 {% endhint %}
 
 {% hint style="info" %}
-### Edit Podfile
+### ARM64 Simulator support
+
+For everyone with an M1 (Silicon) device who wishes to run their projects on a simulator, There are two solutions.
+
+1. Set arm64 to exclude the architecture for any iOS Simulator SDK, then add the following to the Podfile:
 
 ```ruby
-// paste there code into pod file
 post_install do |installer|
-installer.pods_project.targets.each do |target|
-  target.build_configurations.each do |config|
-  config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-    end
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    config.build_settings["ARCHS[sdk=iphonesimulator*]"] = "x86_64"
+    config.build_settings["ARCHS[sdk=iphoneos*]"] = "arm64"
   end
- end
+end
 ```
+
+2\. Run Xcode with Rosetta.
 {% endhint %}
 
 ### Initialize Auth Service in your app <a href="#initialize-firebase" id="initialize-firebase"></a>
