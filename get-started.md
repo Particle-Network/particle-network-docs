@@ -10,9 +10,9 @@ description: Integrate Particle products to your dApp within minutes
 2. :bulb: **Create a project & configure your Android/iOS/Web app**
 3. :tada: **Integrate our native SDKs**
    1. [**Connect Service SDKs**](broken-reference)****
-   2. [**Auth Service SDKs**](auth-service/sdks/)
+   2. [**Auth Service SDKs**](connect-service/sdks/)
    3. [**Wallet Service SDKs**](wallet-service/sdks/)
-   4. [**Node Service RPCs**](broken-reference/)
+   4. ****[**Node Service RPCs**](broken-reference)****
    5. [**NFT Service RPCs**](broken-reference)****
    6. ****[**IPFS API**](ipfs-service.md)****
 

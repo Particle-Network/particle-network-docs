@@ -35,7 +35,7 @@ After the user successfully logs in, Particle Auth will automatically create a c
 
 Particle Auth comes with simple SDKs that can be integrated in multiple ways to provide the best experience for your users. We support all the available chains out there, with special providers available for EVM and Solana.
 
-### 👉 [Auth SDKs](sdks/)
+### 👉 [Auth SDKs](../connect-service/sdks/)
 
 * 👉 [Server API](sdks/server-api.md)
 * 👉 [Android](sdks/android.md)

@@ -6,7 +6,7 @@ But in some cases, we need the ability to control user's assets in the project f
 
 Now you can have the ability, we'll detail the process of how to manage user's assets in your project.
 
-<figure><img src="../.gitbook/assets/Asset control (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Asset control.png" alt=""><figcaption></figcaption></figure>
 
 ### Adding a Project Contract
 

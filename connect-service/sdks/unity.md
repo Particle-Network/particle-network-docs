@@ -28,10 +28,22 @@ ParticleNetwork.Init(_chainInfo);
 ParticleConnectInteraction.Init(_chainInfo, metadata);
 ```
 
-### Connect Wallet
+### Set chain info Sync
+
+use before connect
 
 ```csharp
-var nativeResultData = await ParticleConnect.Instance.Connect(this._walletType);
+ParticleConnectInteraction.SetChainInfo(_chainInfo);
+```
+
+### Set chain info async
+
+use after connect, because ParticleAuthService support both solana and evm, if switch to solana from evm, Auth Service will create a evm address if the user doesn't has a evm address.
+
+```csharp
+var nativeResultData = await ParticleConnect.Instance.SetChainInfoAsync(_chainInfo);
+Debug.Log(nativeResultData.data);
+
 if (nativeResultData.isSuccess)
 {
     Debug.Log(nativeResultData.data);
@@ -42,6 +54,38 @@ else
     Debug.Log(errorData);
 }
 ```
+
+### Connect Wallet
+
+<pre class="language-csharp"><code class="lang-csharp"><strong>var nativeResultData = await ParticleConnect.Instance.Connect(this._walletType);
+</strong>if (nativeResultData.isSuccess)
+{
+    Debug.Log(nativeResultData.data);
+}
+else
+{
+    var errorData = JsonConvert.DeserializeObject&#x3C;NativeErrorData>(nativeResultData.data);
+    Debug.Log(errorData);
+}
+
+// if conenct with particle, you could pass a config parameter,
+// like ParticleAuthService.login
+// contains login type, account, support auth types and login from mode.
+ConnectConfig config = new ConnectConfig(LoginType.PHONE, null, SupportAuthType.ALL, false);
+var nativeResultData = await ParticleConnect.Instance.Connect(WalletType.Particle, config);
+Debug.Log(nativeResultData.data);
+
+if (nativeResultData.isSuccess)
+{
+    ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Success:{nativeResultData.data}");
+    Debug.Log(nativeResultData.data);
+}
+else
+{
+    ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Failed:{nativeResultData.data}");
+    var errorData = JsonConvert.DeserializeObject&#x3C;NativeErrorData>(nativeResultData.data);
+    Debug.Log(errorData);
+}</code></pre>
 
 ### Disconnect Wallet
 
