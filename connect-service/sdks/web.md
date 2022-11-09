@@ -37,12 +37,15 @@ root.render(
                 projectId: 'replace with your projectId',
                 clientKey: 'replace with your clientKey',
                 appId: 'replace with your appId',
-                chain: {
-                    name: 'Ethereum',
-                    id: 1,
-                },
+                chains: [
+                    {
+                        id: 1,
+                        name: 'Ethereum',
+                    }
+                ],
                 wallets: evmWallets({ qrcode: false }),
             }}
+            theme={'auto'}
         >
             <App />
         </ModalProvider>
@@ -96,10 +99,12 @@ cost connectKit = new ParticleConnect({
                 projectId: 'replace with your projectId',
                 clientKey: 'replace with your clientKey',
                 appId: 'replace with your appId',
-                chain: {
-                    name: 'Ethereum',
-                    id: 1,
-                },
+                chains: [
+                    {
+                        id: 1,
+                        name: 'Ethereum',
+                    }
+                ],
                 wallets: evmWallets({ qrcode: false }),
             });
 
