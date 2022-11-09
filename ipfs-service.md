@@ -121,3 +121,38 @@ const IPFS_URL = 'https://rpc.particle.network/ipfs/upload_json';
     ]
 }
 ```
+
+### Gateway
+
+Our IPFS gateway provides a read-only, HTTP-accessible interface to the Interplanetary File System (IPFS). It's **super fast** and **easy to use.**
+
+#### How to use
+
+{% hint style="info" %}
+// format
+
+**https://ipfs.particle.network/{cid}**
+
+
+
+// For example
+
+[https://ipfs.particle.network/QmUzWU3kjXHg8rKSSB8H7XUKbTPRhA2zcFQed2ytK1CPyS](https://ipfs.particle.network/QmUzWU3kjXHg8rKSSB8H7XUKbTPRhA2zcFQed2ytK1CPyS)[https://ipfs.particle.network/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/1.png](https://ipfs.particle.network/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/1.png)
+{% endhint %}
+
+In addition, we provide **cropping of image content** to help you optimize and speed up local content access.
+
+{% hint style="info" %}
+// format
+
+**https://ipfs.particle.network/{cid}\_\_{width}x{height}**
+
+
+
+// For example（Returns a 300x300 image）
+
+[https://ipfs.particle.network/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/1.png\_\_300x300](https://ipfs.particle.network/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/1.png\_\_300x300)
+{% endhint %}
+
+****
+
