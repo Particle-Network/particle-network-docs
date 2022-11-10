@@ -513,3 +513,133 @@ ParticleNetwork.openWebWallet()
 ### Error
 
 `WebServiceError` contains error details. You can check the information by printing the `message` attribute.
+
+## Particle Wallet Connect V1
+
+Integrate your app as a wallet connect wallet.
+
+### Add the Particle Wallet Connect  SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+repositories {
+    google()
+    mavenCentral()
+    maven { setUrl("https://jitpack.io") }
+    //...
+}
+dependencies {
+    // Particle Wallet Connect Service
+    implementation("network.particle:particle-wallet-connect:${latest_version}")
+    //...
+}
+```
+{% endtab %}
+
+{% tab title="Groovy" %}
+```groovy
+repositories {
+    google()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    //...
+}
+dependencies {
+    // Particle Auth Service
+    implementation 'network.particle:particle-wallet-connect:${latest_version}'
+    //...
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Initialize
+
+{% tabs %}
+{% tab title="Kotlin" %}
+<pre class="language-kotlin"><code class="lang-kotlin">// Note: If you want to add listening events, you need to put them before init
+<strong>ParticleWalletConnect.onXXListeners = {
+</strong>    ...
+}
+// Initialize Particle Wallet Connect SDK, a wallet meta data
+val wcPeerMeta = WCPeerMeta( "Particle Wallet", "https://particle.network",icons = listOf("https://connect.particle.network/icons/512.png"))
+ParticleWalletConnect.init(context,wcPeerMeta)</code></pre>
+{% endtab %}
+{% endtabs %}
+
+### Connect
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+// Connect to a wallet connect code
+val wcCode = "wc:DDCBBAA8-B1F1-4B98-8F74-84939E0B1533@1?bridge=https%3A%2F%2Fbridge%2Ewalletconnect%2Eorg%2F&key=3da9dbb33b560beeb1750203a8d0e3487b4fe3fdd7b7953d79fbccadae8aab48"
+ParticleWalletConnect.connect()
+```
+{% endtab %}
+{% endtabs %}
+
+### Set Provider  And Listeners&#x20;
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+//require: This method needs to be called before ParticleWalletConnect.init
+//AuthProvider Implemented the following methods：
+//personal_sign、eth_signTypedData_v1、eth_signTypedData_v3、eth_signTypedData_v4、eth_sendTransaction、eth_chainId、eth_accounts、eth_requestAccounts
+//Here you can replace  your own Provider
+ParticleWalletConnect.iprovider = { topic, method, params ->
+    AuthProvider.request(method, params, object : WebServiceCallback<WebOutput> {
+        override fun success(output: WebOutput) {
+            when (output) {
+                is SignOutput -> {}
+                is EthChainId -> {}
+                is EthAccounts -> {}
+            }
+        }
+        override fun failure(errMsg: WebServiceError) {
+            LogUtils.d("AuthProvider request failure", method, errMsg)
+        }
+    })
+}
+
+//approve or reject
+ParticleWalletConnect.onSessionRequest = { id, peerMeta ->
+    //approve
+    ParticleWalletConnect.approveSession(context,"PublicAddress",chainId)
+    //or reject
+    ParticleWalletConnect.rejectSession()
+}
+//disconnect session
+ParticleWalletConnect.onDisconnect = { code, topic, reason ->
+    //disconnect
+    ParticleWalletConnect.delWCSessionStoreItem(topic)
+}
+
+//receive change network request
+ParticleWalletConnect.onWalletChangeNetwork = { id, topic, chainId ->
+    //show dialog to switch network
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Session Operation
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+//when ParticleWalletConnect.approveSession() is call,a new Session can be saved
+//get All Session Info
+ParticleWalletConnect.getAllWCSessionStoreItem()
+//get Session by topic
+ParticleWalletConnect.getWCSessionStoreItem(topic)
+//delete Session by topic
+ParticleWalletConnect.delWCSessionStoreItem(topic)
+//delete all Sessions
+ParticleWalletConnect.clearWCSessionStore()
+```
+{% endtab %}
+{% endtabs %}
+
