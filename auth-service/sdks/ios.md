@@ -459,12 +459,35 @@ You can create a `transaction` with `TxData`. There's an easy way to do this wit
 
 {% tabs %}
 {% tab title="Swift" %}
-```
+```swift
 // if user is login, it will open web wallet.
 ParticleAuthService.openWebWallet() 
 ```
 {% endtab %}
 {% endtabs %}
+
+### Particle Provider
+
+```swift
+// handle request from walle connect, could be used with ParticleWalletConnect
+// support following methods:
+// eth_sendTransaction, return signature or error
+// eth_signTypedData, return signature or error
+// personal_sign, return signature or error
+// wallet_switchEthereumChain, return null or error
+// eth_chainId, return chainId string like "0x5" or error
+// eth_signTypedData_v1, return signature or error
+// eth_signTypedData_v3, return signature or error
+// eth_signTypedData_v4, return signature or error
+public static func request(method: String, params: [Encodable]) -> Single<Data?>
+
+// for example
+ParticleProvider.request(method: method, params: params).subscribe { data in
+   // handle data
+} onFailure: { error in
+    // handle error
+}.disposed(by: bag)
+```
 
 ### Error
 
