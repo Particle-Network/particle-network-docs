@@ -43,6 +43,7 @@
   * [iOS](wallet-service/sdks/ios.md)
   * [Unity](wallet-service/sdks/unity.md)
   * [Web](wallet-service/sdks/web.md)
+  * [Flutter](wallet-service/sdks/flutter.md)
 
 ## NFT SERVICE
 
