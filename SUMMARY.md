@@ -21,6 +21,7 @@
   * [iOS](connect-service/sdks/ios.md)
   * [Unity](connect-service/sdks/unity.md)
   * [Web](connect-service/sdks/web.md)
+  * [Flutter](connect-service/sdks/flutter.md)
 
 ## AUTH SERVICE
 

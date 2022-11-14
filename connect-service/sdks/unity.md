@@ -212,7 +212,7 @@ else
 }
 ```
 
-### Login, Sign-In With Ethereum or Solana.
+### Login (Sign-In With Ethereum or Solana)
 
 ```csharp
 string publicAddress = TestAccount.EVM.PublicAddress;

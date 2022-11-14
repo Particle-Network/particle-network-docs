@@ -2,7 +2,7 @@
 description: API for the marketplace, which is escrowless.
 ---
 
-# Auction House
+# Auction House (recommend)
 
 {% hint style="info" %}
 Based on [the auction house protocol](https://docs.metaplex.com/auction-house/definition). It is simple, fast and very cheap.
@@ -10,13 +10,13 @@ Based on [the auction house protocol](https://docs.metaplex.com/auction-house/de
 
 ### Overview
 
-![Architecture](../../.gitbook/assets/API\_Flow.png)
+![Architecture](<../../.gitbook/assets/API\_Flow (1).png>)
 
 {% hint style="info" %}
 If you want to build your market, you need to implement some centralized functions yourself, such as the list of NFTs being sold, the history activities of NFTs, etc.
 {% endhint %}
 
-### 🔥 NFT_AH_initializeMarket
+### 🔥 NFT\_AH\_initializeMarket
 
 > Initialize a market that can buy and sell NFT from
 
@@ -69,7 +69,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -94,7 +93,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_updateMarket
+### 🔥 NFT\_AH\_updateMarket
 
 > Update a market config
 
@@ -142,7 +141,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -164,7 +162,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_isMarketInitialized
+### 🔥 NFT\_AH\_isMarketInitialized
 
 > Check market is initialized
 
@@ -202,7 +200,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -221,7 +218,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_marketInfo
+### 🔥 NFT\_AH\_marketInfo
 
 > Get market info
 
@@ -267,7 +264,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -292,7 +288,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_list
+### 🔥 NFT\_AH\_list
 
 > List an NFT to the market
 
@@ -348,7 +344,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -370,7 +365,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_unlist
+### 🔥 NFT\_AH\_unlist
 
 > Unlist an NFT from the market
 
@@ -416,7 +411,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -438,7 +432,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_buy
+### 🔥 NFT\_AH\_buy
 
 > Buy an NFT from the market
 
@@ -491,7 +485,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -513,7 +506,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_isSaleValid
+### 🔥 NFT\_AH\_isSaleValid
 
 > Check the sale in the market is valid
 
@@ -563,7 +556,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -579,7 +571,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_AH_marketWithdraw
+### 🔥 NFT\_AH\_marketWithdraw
 
 > Withdraw money from the market treasury account to the market manager account
 
@@ -625,7 +617,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -646,5 +637,3 @@ Response Example
     "chainId": 103
 }
 ```
-
-

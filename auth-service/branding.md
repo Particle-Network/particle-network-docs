@@ -32,7 +32,7 @@ In the two modes, colors and logos need to be set separately; Fonts, Borders and
 
 You can set the style of verification code mail, including its logo and project name in the title.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Branding - Email</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Branding - Email</p></figcaption></figure>
 
 ### Save and Publish&#x20;
 

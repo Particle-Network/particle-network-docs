@@ -2,7 +2,9 @@
 
 ### 1.Add the Auth Service SDK to Your Flutter App <a href="#add-sdks" id="add-sdks"></a>
 
-Run this command:With Flutter:
+Run this command:
+
+With Flutter:
 
 ```dart
 flutter pub add particle_auth
@@ -82,22 +84,16 @@ Now,Android configuration is complete!
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 13.3.1 \~ 14.0.1
+  * Xcode 13.3.1 or later
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 13
-
-{% hint style="info" %}
-### Xcode 14
-
-#### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version, for more versions information, please explore our github [auth](https://github.com/Particle-Network/particle-ios) page
-{% endhint %}
 
 3.1 After export iOS project, open Runner.xcworkspace under ios folder.
 
 ![](<../../.gitbook/assets/image (5).png>)
 
-3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is check under Target Membership.
+3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is checked under Target Membership.
 
 ![](<../../.gitbook/assets/image (1) (3).png>)
 
@@ -129,12 +125,6 @@ Now,Android configuration is complete!
 import ParticleAuthService
 ```
 {% endtab %}
-
-{% tab title="Objective-C" %}
-```objectivec
-@import ParticleAuthService;
-```
-{% endtab %}
 {% endtabs %}
 
 3.6. Add the scheme URL handle in your app's `application(_:open:options:)` method
@@ -142,13 +132,13 @@ import ParticleAuthService
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-return ParticleAuthService.handleUrl(url)
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```objectivec
-return [ParticleAuthService handleUrl:url];
+override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+    if ParticleAuthService.handleUrl(url) {
+        return true
+    } else {
+        return super.application(app, open: url, options: options)
+    }
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -163,9 +153,11 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 ### Initialize the SDK
 
-1. **Before using the sdk you have to call init(Required)**&#x20;
+**Before using the sdk you have to call init(Required)**&#x20;
 
-<pre class="language-dart"><code class="lang-dart"><strong>ParticleAuth.init(SolanaChain.devnet(), env);</strong></code></pre>
+```dart
+ParticleAuth.init(SolanaChain.devnet(), env);
+```
 
 ### Login
 
