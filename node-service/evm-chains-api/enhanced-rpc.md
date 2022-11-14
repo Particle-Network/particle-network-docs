@@ -412,7 +412,7 @@ Response Example:
 **Parameters:**
 
 * `<string>` - contract address
-* `<boolen>` - if the contract is a proxy contract, will parse the final contract abi
+* `<boolen>` - if the contract is a proxy contract, whether to parse the final contract abi
 
 **Results:**
 
