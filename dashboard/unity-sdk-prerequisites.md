@@ -153,17 +153,21 @@ dependencies {
 
 ![](<../.gitbook/assets/image (2) (1).png>)
 
-2\. Remove `main.mm` under MainApp folder.
+2.Make sure Build Settings, Swift Compiler - General, has Objective-C Bridging Header, its connect is Unity-iPhone-Bridging-Header.h 's local path.
 
-3\. Under `/Assets/Plugins/iOS` is NativeCallProxy files, they are requested by Unity to interact with iOS code. Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-4\. In `UnityManger.swift`, it has implemented methods defined in `NativeCallProxy.h`
+3\. Remove `main.mm` under MainApp folder.
 
-5\. Select NativeCallProxy.h, in the file inspector, check public in Target Membership.
+4\. Under `/Assets/Plugins/iOS` is NativeCallProxy files, they are requested by Unity to interact with iOS code. Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
+
+5\. In `UnityManger.swift`, it has implemented methods defined in `NativeCallProxy.h`
+
+6\. Select NativeCallProxy.h, in the file inspector, check public in Target Membership.
 
 ![](<../.gitbook/assets/image (3).png>)
 
-6\. If you are skilled in iOS, you can modify these files as you like. For example, add other services.
+7\. If you are skilled in iOS, you can modify these files as you like. For example, add other services.
 
 ### FAQ
 
