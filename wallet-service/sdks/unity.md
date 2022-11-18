@@ -98,14 +98,23 @@ public void NavigatorNFTDetails()
 }
 ```
 
-### Navigator Pay
+### Navigator Buy Crypto
 
 ```csharp
-public void NavigatorPay()
+public void NavigatorBuyCrypto()
 {
-    ParticleWalletGUI.NavigatorPay();
+    // buy crypto with parameters
+    BuyCryptoConfig config = new BuyCryptoConfig(TestAccount.EVM.PublicAddress,
+                OpenBuyNetwork.BinanceSmartChain, "BNB", "USD", 100);
+    ParticleWalletGUI.NavigatorBuyCrypto(config);
+
+    // also support buy crypto without parameters
+    ParticleWalletGUI.NavigatorBuyCrypto();
+    
 }
 ```
+
+
 
 ### Navigator Login List
 

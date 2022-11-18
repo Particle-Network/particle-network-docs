@@ -319,3 +319,58 @@ else
     Debug.Log(errorData);
 }
 ```
+
+### Add Ethereum Chain
+
+use to add ethereum chain to wallet which comes from wallet connect, bridge underlayer wallet\_addEthereumChain, only support MetaMask.
+
+```csharp
+// add ethereum chain example
+// define chain id, chain name, native currency, block explorer url and rpc url.
+var nativeResultData =
+    await ParticleConnect.Instance.AddEthereumChain(_walletType, publicAddress, (int)PolygonChainId.Mumbai, 
+        "Polygon Mumbai", 
+        new NativeCurrency("Polygon Mumbai", "Matic", 18), 
+        "https://matic-mumbai.chainstacklabs.com", "https://mumbai.polygonscan.com");
+        
+// define chain id, other parameters will auto configure in SDK.
+// var nativeResultData =
+    // await ParticleConnect.Instance.AddEthereumChain(_walletType, publicAddress, (int)PolygonChainId.Mumbai);
+Debug.Log(nativeResultData.data);
+
+if (nativeResultData.isSuccess)
+{
+    Tips.Instance.Show($"{MethodBase.GetCurrentMethod()?.Name} Success:{nativeResultData.data}");
+    Debug.Log("AddEthereumChain:" + nativeResultData.data);
+    Tips.Instance.Show(nativeResultData.data);
+}
+else
+{
+    Tips.Instance.Show($"{MethodBase.GetCurrentMethod()?.Name} Failed:{nativeResultData.data}");
+    var errorData = JsonConvert.DeserializeObject<NativeErrorData>(nativeResultData.data);
+    Debug.Log(errorData);
+}
+```
+
+### Switch Ethereum Chain
+
+use to switch ethereum chain with wallet which comes from wallet connect, bridge underlayer wallet\_switchEthereumChain, only support MetaMask.
+
+```csharp
+var nativeResultData =
+        await ParticleConnect.Instance.SwitchEthereumChain(_walletType, publicAddress, (int)EthereumChainId.Goerli);
+Debug.Log(nativeResultData.data);
+
+if (nativeResultData.isSuccess)
+{
+    Tips.Instance.Show($"{MethodBase.GetCurrentMethod()?.Name} Success:{nativeResultData.data}");
+    Debug.Log("SwitchEthereumChain:" + nativeResultData.data);
+    Tips.Instance.Show(nativeResultData.data);
+}
+else
+{
+    Tips.Instance.Show($"{MethodBase.GetCurrentMethod()?.Name} Failed:{nativeResultData.data}");
+    var errorData = JsonConvert.DeserializeObject<NativeErrorData>(nativeResultData.data);
+    Debug.Log(errorData);
+}
+```
