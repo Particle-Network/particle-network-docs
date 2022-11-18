@@ -55,6 +55,8 @@ Use this API to integrate Particle Auth into your user ID system :tada:
   * `miscrosoftEmail: <string>`
   * `linkedinId: <string>`,  exist when user login with linkedin
   * `linkedinEmail: <string>`
+  * `jwtId: <string>`, exist when user login with JWT(Custom Auth)
+    * Format: `projectId + : + jwt unique id`
   * `wallets: <[object]>`, user wallets with public address
 
 #### Request example:
