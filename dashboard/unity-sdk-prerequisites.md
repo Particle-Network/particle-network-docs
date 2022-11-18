@@ -155,7 +155,7 @@ dependencies {
 
 2.Make sure Build Settings, Swift Compiler - General, has Objective-C Bridging Header, its connect is Unity-iPhone-Bridging-Header.h 's local path.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 3\. Remove `main.mm` under MainApp folder.
 
@@ -189,7 +189,11 @@ Before sign and send transaction, make sure you have enough token to finish the 
 
 1. After export to Xcode project, when you encounter error ''Module complied with Swift 5.6.1 cannot be imported by the Swift 5.7 complier'' ?
 
-If your Xcode version is 14,  you should specify pod version in Podfile, more pod version information is here.
+Firstly, check the Podfile, do you add the code in Edit Podfile in Prerequistites.
+
+Secondly, check the Podfile, do you add the pods to under right target.
+
+more pod version information is here.
 
 &#x20;[https://github.com/Particle-Network/particle-ios](https://github.com/Particle-Network/particle-ios)
 
@@ -203,22 +207,31 @@ target 'Unity-iPhone' do
   source 'https://github.com/CocoaPods/Specs.git'
   use_frameworks!
   
-pod 'ParticleWalletGUI', '0.7.19.1’
-pod 'ParticleAuthService', '0.7.19.1’
-pod 'ParticleWalletAPI', '0.7.19.1’
-pod 'ParticleNetworkBase', '0.7.19.1’
-pod 'ConnectWalletConnectAdapter', '0.1.25.1’
-pod 'ConnectPhantomAdapter','0.1.25.1’
-pod 'ConnectEVMAdapter', '0.1.25.1’
-pod 'ConnectSolanaAdapter', '0.1.25.1’
-pod 'ParticleConnect', '0.1.25.1’
-pod 'ConnectCommon', '0.1.25.1’
+pod 'ParticleWalletGUI', '0.8.9’
+pod 'ParticleAuthService', '0.8.9’
+pod 'ParticleWalletAPI', '0.8.9’
+pod 'ParticleNetworkBase', '0.8.9’
+pod 'ParticelWalletConnect', '0.8.9'
+pod 'ConnectWalletConnectAdapter', '0.1.34’
+pod 'ConnectPhantomAdapter','0.1.34’
+pod 'ConnectEVMAdapter', '0.1.34’
+pod 'ConnectSolanaAdapter', '0.1.34’
+pod 'ParticleConnect', '0.1.34’
+pod 'ConnectCommon', '0.1.34’
 
 end
 
 target 'UnityFramework' do
   use_frameworks!
 end
+
+post_install do |installer|
+installer.pods_project.targets.each do |target|
+  target.build_configurations.each do |config|
+  config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+ end
 ```
 
 2\. After export to Xcode project, when you encounter error ''Cannot find type 'NativeCallsProtocol'.h in scope''.

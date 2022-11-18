@@ -30,7 +30,7 @@ click [here](https://github.com/Particle-Network/particle-flutter/tree/master/pa
 
 3.1 After export iOS project, open Runner.xcworkspace under ios folder.
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (5) (1).png>)
 
 3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is check under Target Membership.
 
