@@ -167,7 +167,22 @@ dependencies {
 
 ![](<../.gitbook/assets/image (3).png>)
 
-7\. If you are skilled in iOS, you can modify these files as you like. For example, add other services.
+7\. If you want to use ParticleConnect, you should add LSApplicationQueriesSchemes to info.plist.
+
+```
+<key>LSApplicationQueriesSchemes</key>
+<array>
+	<string>metamask</string>
+	<string>phantom</string>
+	<string>bitkeep</string>
+	<string>imtokenv2</string>
+	<string>rainbow</string>
+	<string>trust</string>
+	<string>gnosissafe</string>
+</array>
+```
+
+8\. If you are skilled in iOS, you can modify these files as you like. For example, add other services.
 
 ### FAQ
 

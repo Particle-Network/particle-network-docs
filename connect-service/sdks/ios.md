@@ -167,12 +167,13 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 ```
 <key>LSApplicationQueriesSchemes</key>
 <array>
-	<string>trust</string>
-	<string>rainbow</string>
-	<string>imtokenv2</string>
 	<string>metamask</string>
 	<string>phantom</string>
 	<string>bitkeep</string>
+	<string>imtokenv2</string>
+	<string>rainbow</string>
+	<string>trust</string>
+	<string>gnosissafe</string>
 </array>
 ```
 
