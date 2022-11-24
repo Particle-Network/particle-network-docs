@@ -69,7 +69,7 @@ Declare them in you app AndroidManifest.xml (usually app/src/main/AndroidManifes
                 android:exported="true"
                 android:launchMode="singleTask"
                 android:configChanges="orientation|keyboardHidden|screenSize"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                android:theme="@style/ThemeAuthWeb"
                 >
             <intent-filter>
                 <data android:scheme="pn${pn_app_id}" />

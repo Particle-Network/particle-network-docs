@@ -45,7 +45,8 @@ Add below config to AndroidManifest.xml
                 android:name="com.particle.network.controller.WebActivity"
                 android:exported="true"
                 android:launchMode="singleTask"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@style/ThemeAuthWeb"
                 >
             <intent-filter>
                 <data android:scheme="pn${pn_app_id}" />
@@ -61,6 +62,7 @@ Add below config to AndroidManifest.xml
             android:name="com.connect.common.controller.RedirectActivity"
             android:exported="true"
             android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
