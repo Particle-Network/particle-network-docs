@@ -6,16 +6,31 @@ All unity SDKs are open source, [click here to view](https://github.com/Particle
 
 ### Init
 
-```csharp
-public void Init()
-{
-    var metadata = DAppMetadata.Create("Particle Connect",
-        "https://connect.particle.network/icons/512.png",
-        "https://connect.particle.network");
+It is required before call other method, you can define your app info as a metadata or user the default value, metadata is used for wallet connect.
 
-    ParticleNetwork.Init(_chainInfo);
-    ParticleConnectInteraction.Init(_chainInfo, metadata);
-}
+```csharp
+var metadata = DAppMetadata.Create("Particle Connect",
+                "https://connect.particle.network/icons/512.png",
+                "https://connect.particle.network");
+            
+ChainInfo chainInfo = new AvalancheChain(AvalancheChainId.Mainnet);
+// Init and set default chain info.
+ParticleNetwork.Init(chainInfo);
+ParticleConnectInteraction.Init(chainInfo, metadata);
+
+// There are some methods use cases, that can call after init.
+
+// Set support chain info array. you can set a chain info array.
+// Default value is support all chains.
+ParticleWalletGUI.SupportChain(new []{chainInfo});
+// Disable buy 
+ParticleWalletGUI.EnablePay(false);
+// Disable testnet if release
+ParticleWalletGUI.ShowTestNetwork(false);
+// Disable wallet manage page if you only support one wallet
+ParticleWalletGUI.ShowManageWallet(false);
+// Use this method to control dark mode or light mode. you can call this method with your button.
+ParticleWalletGUI.SetInterfaceStyle(UserInterfaceStyle.DARK);
 ```
 
 ### Navigator Wallet
@@ -142,3 +157,78 @@ public void NavigatorSwap()
     ParticleWalletGUI.NavigatorSwap();
 }
 ```
+
+### Switch Wallet
+
+You'd better call this method to sync wallet with GUI, before open any GUI page.
+
+For example, user connects more than one wallet, then open wallet page, call this method to make sure open this right wallet in GUI pages.
+
+```csharp
+public async void SwitchWallet()
+{
+    var walletType = WalletType.MetaMask;
+    var publicAddress = "";
+    var nativeResultData = await ParticleWalletGUI.Instance.SwitchWallet(walletType, publicAddress);
+    
+    Debug.Log(nativeResultData.data);
+
+    if (nativeResultData.isSuccess)
+    {
+        ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Success:{nativeResultData.data}");
+        Debug.Log(nativeResultData.data);
+    }
+    else
+    {
+        ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Failed:{nativeResultData.data}");
+        var errorData = JsonConvert.DeserializeObject<NativeErrorData>(nativeResultData.data);
+        Debug.Log(errorData);
+    }
+}
+```
+
+### Set support chain infos, default value is support all chain infos.
+
+```csharp
+ChainInfo avalanche = new AvalancheChain(AvalancheChainId.Mainnet);
+ChainInfo ethereum = new EthereumChain(EthereumChainId.Mainnet);
+ChainInfo bsc = new BSCChain(BscChainId.Mainnet);
+ParticleWalletGUI.SupportChain(new []{avalanche, bsc, ethereum});
+```
+
+### Set enable or disable swap feature, default value is true.
+
+```csharp
+ParticleWalletGUI.EnableSwap(true);
+```
+
+### Set enable or disable buy crypto feature, default value is true.
+
+```csharp
+ParticleWalletGUI.EnablePay(true);
+```
+
+### Set show or hidden test network in switch network page, default value is false.
+
+```csharp
+ParticleWalletGUI.ShowTestNetwork(false);
+```
+
+### Set show or hidden wallet manage page, default value is true.
+
+```csharp
+ParticleWalletGUI.ShowManageWallet(false);
+```
+
+### Set user interface style, default value is follow system.
+
+```csharp
+ParticleWalletGUI.SetInterfaceStyle(UserInterfaceStyle.DARK);
+```
+
+### Set language, default value is follow system.
+
+```csharp
+ParticleWalletGUI.SetLanguage(Language.EN);
+```
+
