@@ -46,6 +46,7 @@
   * [Unity](wallet-service/sdks/unity.md)
   * [Web](wallet-service/sdks/web.md)
   * [Flutter](wallet-service/sdks/flutter.md)
+  * [React Native](wallet-service/sdks/react-native.md)
 
 ## NFT SERVICE
 

@@ -28,11 +28,11 @@ click [here](https://github.com/Particle-Network/particle-react-native/tree/mast
 
 3.1 After export iOS project, open `your_project_name.xcworkspace` under ios folder, here its name is `ParticleAuthExample.xcworkspace.`
 
-![](<../../.gitbook/assets/image (1) (4).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 
 3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is checked under Target Membership.
 
-<img src="../../.gitbook/assets/image (1).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image.png" alt="" data-size="original">
 
 3.3 Copy the following text into this file:
 
