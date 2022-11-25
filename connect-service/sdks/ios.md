@@ -229,6 +229,26 @@ connectAdapter.disconnect(address).subscribe { [weak self] result in
 
 ```
 
+### Is connected
+
+call this method to check if the public address is connected.
+
+After user connects with a third party wallet, user can remove the wallet connect's session in the third party wallet, when receive disconnect request, local session cache should be removed.&#x20;
+
+It is better to call `reconnectIfNeeded` when start app.
+
+before sign or open GUI page, check the method `isConnected,` if result is disconnected, you need to connect again.
+
+```swift
+let publicAddress = getSender()
+let result = adapter.isConnected(publicAddress: publicAddress)
+if result {
+    print("publicAddress \(publicAddress) is connected")
+} else {
+    print("publicAddress \(publicAddress) is disconnected")
+}
+```
+
 ### Reconnect if needed
 
 ```swift
