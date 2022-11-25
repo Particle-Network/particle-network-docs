@@ -232,3 +232,23 @@ ParticleWalletGUI.SetInterfaceStyle(UserInterfaceStyle.DARK);
 ParticleWalletGUI.SetLanguage(Language.EN);
 ```
 
+Get swap enabled **** state ****&#x20;
+
+```csharp
+public void GetSwapEnableState()
+{
+    var result = ParticleWalletGUI.GetEnableSwap();
+    Debug.Log($"Swap enable state = {result}");
+}
+```
+
+Get buy crypto enabled state
+
+```csharp
+public void GetBuyCryptoEnableState()
+{
+    var result = ParticleWalletGUI.GetEnablePay();
+    Debug.Log($"Buy crypto enable state = {result}");
+}
+```
+
