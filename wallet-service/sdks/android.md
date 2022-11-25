@@ -625,5 +625,10 @@ val fiatAmt = 1000
 ParticleNetwork.navigatorBuy(walletAddress,network,cryptoCoin,fiatCoin,fiatAmt)
 ```
 
+### Open Swap
 
+```kotlin
+//tokenAddress: optional, swap token address, default native token
+PNRouter.navigatorSwap(tokenAddress)
+```
 
