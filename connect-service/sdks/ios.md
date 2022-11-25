@@ -160,7 +160,7 @@ Your scheme URL should be "pn" + your project app uuid.
 
 For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
 
-![Config scheme url](<../../.gitbook/assets/image (1) (2).png>)
+![Config scheme url](<../../.gitbook/assets/image (1) (2) (1).png>)
 
 8\. Add LSApplicationQueriesSchemes to info.plist.
 

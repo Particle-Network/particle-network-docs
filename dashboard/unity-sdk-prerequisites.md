@@ -165,7 +165,7 @@ dependencies {
 
 6\. Select NativeCallProxy.h, in the file inspector, check public in Target Membership.
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (1).png>)
 
 7\. If you want to use ParticleConnect, you should add LSApplicationQueriesSchemes to info.plist.
 

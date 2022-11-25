@@ -34,6 +34,7 @@
   * [Web](auth-service/sdks/web.md)
   * [Unity](auth-service/sdks/unity.md)
   * [Flutter](auth-service/sdks/flutter.md)
+  * [React Native](auth-service/sdks/react-native.md)
 
 ## WALLET SERVICE
 

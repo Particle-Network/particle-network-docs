@@ -10,7 +10,7 @@ You can customize your Auth UI (Light Mode/Dark Mode) and Code Email in Dashboar
 
 Including the UI for Login and Verification
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Branding - Login</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Branding - Login</p></figcaption></figure>
 
 #### Full Mode / Form Mode
 
