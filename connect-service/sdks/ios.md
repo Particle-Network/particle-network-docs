@@ -229,7 +229,7 @@ connectAdapter.disconnect(address).subscribe { [weak self] result in
 
 ```
 
-### ReconnectIfNeeded
+### Reconnect if needed
 
 ```swift
 // Wallet Connect Adapter need reconnect after app launch
