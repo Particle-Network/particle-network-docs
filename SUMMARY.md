@@ -22,6 +22,7 @@
   * [Unity](connect-service/sdks/unity.md)
   * [Web](connect-service/sdks/web.md)
   * [Flutter](connect-service/sdks/flutter.md)
+  * [React Native](connect-service/sdks/react-native.md)
 
 ## AUTH SERVICE
 
