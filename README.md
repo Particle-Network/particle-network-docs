@@ -66,7 +66,7 @@ We support IPFS now, and more decentralized storage services are coming.
 
 ## SDKs
 
-We support [Android, iOS, Web, and Unity ](https://github.com/Particle-Network/)now. The  Flutter SDK, Reactive Native SDK and other platforms' SDK are in development and will launch soon.
+We support [Android, iOS, Web, and Unity, Flutter, and React Native](https://github.com/particle-network/) now. And other platforms' SDK are in development and will launch soon.
 
 ## Available Networks
 
