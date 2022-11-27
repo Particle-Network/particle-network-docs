@@ -31,8 +31,6 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 1287                | moonbeam/moonriver      | Moonbase Alpha              |
 | 1666600000          | harmony                 | Harmony Mainnet             |
 | 1666700000          | harmony                 | Harmony Testnet             |
-| 10                  | optimism                | Optimism Mainnet            |
-| 69                  | optimism                | Optimism Testnet(Kovan)     |
 | 128                 | heco                    | Huobi ECO Chain Mainnet     |
 | 256                 | heco                    | Huobi ECO Chain Testnet     |
 | 1313161554          | aurora                  | Aurora Mainnet              |
