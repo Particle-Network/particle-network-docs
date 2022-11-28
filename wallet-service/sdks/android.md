@@ -1,5 +1,7 @@
 # Android
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/network.particle/auth-service/badge.svg?style=flat)](https://search.maven.org/search?q=g:network.particle)
+
 ## Add Wallet Service to Your Android Project
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
