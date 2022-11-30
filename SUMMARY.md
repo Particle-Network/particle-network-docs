@@ -28,6 +28,7 @@
 
 * [Introduction](auth-service/introduction.md)
 * [Branding](auth-service/branding.md)
+* [Custom](auth-service/custom.md)
 * [SDKs](auth-service/sdks/README.md)
   * [Server API](auth-service/sdks/server-api.md)
   * [Android](auth-service/sdks/android.md)
