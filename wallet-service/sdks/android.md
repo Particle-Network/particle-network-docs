@@ -410,7 +410,6 @@ suspend fun erc1155SafeTransferFrom() {
 {% tab title="Kotlin" %}
 ```kotlin
 /**
- *
  * from: sender address.
  * to: receiver address or contract address.
  * value: (optional) hex of the value sent with this transaction.
@@ -419,9 +418,10 @@ suspend fun erc1155SafeTransferFrom() {
  * nonce: default value "0x0", particle auth manage nonce without cancel or speed transaction.
  * gasFeeLevel: default value TransGasFeeMode.medium, transaction gas fee level.
  * action: detault TxAction.normal. if you cancel/speed tracsaction, set the vaule.
+ * abiEncodeData: the abi_encodeFunctionCall result, default value is null.
  */
 val tx = ParticleNetwork.evm.createTransaction(from, to, value, contractParams,
-     type, nonce, gasFeeLevel, action)
+     type, nonce, gasFeeLevel, action,abiEncodeData)
 
 //send transaction with particle auth
 ParticleNetwork.signAndSendTransaction(activity, tx.serialize(), callback)
