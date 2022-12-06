@@ -141,6 +141,10 @@ openConnectModal without ConnectButton.
 
 Get connected id.
 
+### useSwitchChains
+
+Check if you can switch chain, and get chains.
+
 ### useLanguage
 
 Get current language and set language.
@@ -186,6 +190,9 @@ connectKit.on('connect', (provider) => {});
 connectKit.on('disconnect', () => {});
 connectKit.on('chainChanged', (chain) => {});
 connectKit.on('accountsChanged', (accounts) => {});
+
+//switch chain
+connectKit.switchChain(chain);
 
 //get registered wallet metadata
 connectKit.walletMetas();
