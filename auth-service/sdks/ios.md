@@ -478,6 +478,17 @@ ParticleAuthService.openWebWallet()
 {% endtab %}
 {% endtabs %}
 
+### TRON network support
+
+<pre class="language-swift"><code class="lang-swift">// convert tron base58 address to hex address
+<strong>let tronAddressHex = TronFormatAddress.toHex("TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto")
+</strong><strong>print(tronAddressHex) // 0x2648cfe97e33345300db8154670347b08643570b
+</strong>
+// convert hex address to tron base58 address
+let tronAddressBase58 = TronFormatAddress.fromHex("0x2648cfe97e33345300db8154670347b08643570b")
+print(tronAddressBase58) // TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto
+</code></pre>
+
 ### Particle Provider
 
 ```swift
