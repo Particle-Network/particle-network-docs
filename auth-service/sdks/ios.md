@@ -336,7 +336,8 @@ ParticleAuthService.setModalPresentStyle(.fullScreen)
 {% tabs %}
 {% tab title="Swift" %}
 <pre class="language-swift"><code class="lang-swift"><strong>// set interface style, default value if follow system.
-</strong><strong>ParticleAuthService.setInterfaceStyle(.dark)</strong></code></pre>
+</strong><strong>ParticleAuthService.setInterfaceStyle(.dark)
+</strong></code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -345,9 +346,20 @@ ParticleAuthService.setModalPresentStyle(.fullScreen)
 {% tabs %}
 {% tab title="Swift" %}
 <pre class="language-swift"><code class="lang-swift"><strong>// set display wallet when call sign and send transaction.
-</strong><strong>ParticleAuthService.setDisplayWallet(true)</strong></code></pre>
+</strong><strong>ParticleAuthService.setDisplayWallet(true)
+</strong></code></pre>
 {% endtab %}
 {% endtabs %}
+
+### Set language
+
+```swift
+// Default value is unspecified, that follows user system language.
+// If you integrate both ParticleAuthService and ParticleWalletGUI.
+// You should call the same method in ParticleWalletGUI.
+// It contains current method.
+ParticleAuthService.setLanguage(Language.en)
+```
 
 ### Signatures
 
