@@ -115,6 +115,10 @@ export const App = () => {
 
 ```
 
+{% hint style="info" %}
+Have a problem? you can refer to this [FAQ](../../resouces/faq.md#web-sdk-integration-problems).
+{% endhint %}
+
 ## Connect React Hooks
 
 ### useParticleProvider

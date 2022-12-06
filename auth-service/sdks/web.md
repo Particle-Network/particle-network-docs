@@ -82,6 +82,10 @@ const ethersSigner = ethersProvider.getSigner();
 
 Your first Particle Network dApp! 🎉 You can implement web3 functionalities just like how you would normally with MetaMask.
 
+{% hint style="info" %}
+Have a problem? you can refer to this [FAQ](../../resouces/faq.md#web-sdk-integration-problems).
+{% endhint %}
+
 ### Tips
 
 If you use `window.ethereum` to call RPC, The following things need to be noted:

@@ -14,6 +14,8 @@ After the user successfully logs in, **Particle Auth** SDK will return the user 
 
 ## Web SDK integration problems
 
+### webpack 5 polyfills error
+
 If your project use webpack 5, you need include polyfills for node.js core modules, add config to `webpack.config.js`
 
 ```typescript
