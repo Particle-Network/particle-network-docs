@@ -17,16 +17,18 @@ Github: [https://github.com/Particle-Network/particle-web-demo](https://github.c
 ### Step 1: Install Connect SDK.
 
 <pre class="language-bash"><code class="lang-bash">// react connect kit
-<strong>yarn add @particle-network/connect-react-ui
+<strong>yarn add @particle-network/connect-react-ui @particle-network/auth @particle-network/provider @walletconnect/ethereum-provider
 </strong>
 //optional: if you only use connect interface
-yarn add @particle-network/connect
+yarn add @particle-network/connect @particle-network/auth @particle-network/provider @walletconnect/ethereum-provider
+
 </code></pre>
 
 ### Step 2: Init Connect SDK.
 
 ```typescript
-import { ModalProvider } from '@particle-network/connect-react-ui';
+import { ModalProvider, Ethereum, EthereumGoerli, evmWallets } from '@particle-network/connect-react-ui';
+import { WalletEntryPosition } from '@particle-network/auth';
 
 // use react kit
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
@@ -38,14 +40,29 @@ root.render(
                 clientKey: 'replace with your clientKey',
                 appId: 'replace with your appId',
                 chains: [
-                    {
-                        id: 1,
-                        name: 'Ethereum',
-                    }
+                    Ethereum,
+                    EthereumGoerli
                 ],
+                particleWalletEntry: {    //optional: particle wallet config
+                    displayWalletEntry: true,
+                    defaultWalletEntryPosition: WalletEntryPosition.BR,
+                    supportChains:[
+                        Ethereum,
+                        EthereumGoerli
+                    ],
+                },
                 wallets: evmWallets({ qrcode: false }),
             }}
             theme={'auto'}
+            language={'en'}   //optional：localize, default en
+            walletSort={['Particle Auth', 'Wallet']} //optional：walelt order
+            particleAuthSort={[    //optional：display particle auth items and order
+                'email',
+                'phone',
+                'google',
+                'apple',
+                'facebook'
+            ]}
         >
             <App />
         </ModalProvider>
@@ -64,6 +81,38 @@ import { ConnectButton } from '@particle-network/connect-react-ui';
 export const App = () => {
   return <ConnectButton />;
 };
+
+// if you want to custom connet button, you can use ConnectButton.Custom.
+export const App = () => {
+  return (
+        <ConnectButton.Custom>
+            {({ account, chain, openAccountModal, openConnectModal, openChainModal, accountLoading }) => {
+                return (
+                    <div>
+                        <button onClick={openConnectModal} disabled={!!account}>
+                            Open Connect
+                        </button>
+                        <br />
+                        <br />
+                        <button onClick={openAccountModal} disabled={!account}>
+                            Open Account
+                        </button>
+                        <br />
+                        <br />
+                        <button onClick={openChainModal} disabled={!account}>
+                            Open Switch Network
+                        </button>
+                        <div>
+                            <h3>account</h3>
+                            <p>{account}</p>
+                        </div>
+                    </div>
+                );
+            }}
+        </ConnectButton.Custom>
+    );
+};
+
 ```
 
 ## Connect React Hooks
@@ -84,6 +133,18 @@ Get `connect()` and `disconnect()` function for action.
 
 Get `ParticleConnect` instance do custom action.
 
+### useConnectModal
+
+openConnectModal without ConnectButton.
+
+### useConnectId
+
+Get connected id.
+
+### useLanguage
+
+Get current language and set language.
+
 ### useWalletMetas
 
 Get registered wallet metadata.
@@ -93,7 +154,7 @@ Get registered wallet metadata.
 You can only use `@particle-network/connect` to custom UI.
 
 ```typescript
-import { evmWallets, evmInjectedWallet, ParticleConnect } from '@particle-network/connect';
+import { evmWallets, ParticleConnect } from '@particle-network/connect';
 // init
 cost connectKit = new ParticleConnect({
                 projectId: 'replace with your projectId',
