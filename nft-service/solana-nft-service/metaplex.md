@@ -8,7 +8,7 @@ description: API for the marketplace.
 Based on [the metaplex protocol](https://docs.metaplex.com/architecture/overview).
 {% endhint %}
 
-### 🔥 NFT_MP_initializeMarket
+### 🔥 NFT\_MP\_initializeMarket
 
 > Initialize a market that can buy and sell NFT from
 
@@ -48,7 +48,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -71,7 +70,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_isMarketInitialized
+### 🔥 NFT\_MP\_isMarketInitialized
 
 > Check the market is initialized
 
@@ -109,7 +108,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -132,7 +130,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_setMarketCreator
+### 🔥 NFT\_MP\_setMarketCreator
 
 > Set an account become the creator of the market
 
@@ -178,7 +176,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -201,7 +198,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_isMarketCreatorActivated
+### 🔥 NFT\_MP\_isMarketCreatorActivated
 
 > Check the creator is activated in the market
 
@@ -246,7 +243,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -262,7 +258,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_list
+### 🔥 NFT\_MP\_list
 
 > List an NFT to the market
 
@@ -314,7 +310,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -380,7 +375,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_unlist
+### 🔥 NFT\_MP\_unlist
 
 > Unlist an NFT from the market
 
@@ -426,7 +421,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -448,14 +442,14 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_buy
+### 🔥 NFT\_MP\_buy
 
 > Buy an NFT from the market
 
 {% hint style="info" %}
 When the buyer buys the NFT, the seller needs to settle first to get the money.
 
-See [NFT_MP_settle](metaplex.md#nft_mp_settle)
+See [NFT\_MP\_settle](metaplex.md#nft\_mp\_settle)
 {% endhint %}
 
 **Parameters:**
@@ -503,7 +497,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -539,7 +532,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_settle
+### 🔥 NFT\_MP\_settle
 
 > Settle your NFT auction and transfer sol to your **sol token account**
 
@@ -548,7 +541,7 @@ Sol token account is not your native account.
 
 It is a specially generated account for the auction, and all the sol obtained from the auction will be transferred to this account first.
 
-If you want to withdraw from the sol token account to your native account, see [NFT_MP_withdraw](metaplex.md#nft_mp_withdraw).
+If you want to withdraw from the sol token account to your native account, see [NFT\_MP\_withdraw](metaplex.md#nft\_mp\_withdraw).
 {% endhint %}
 
 **Parameters:**
@@ -596,7 +589,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -619,7 +611,7 @@ Response Example
 }
 ```
 
-### 🔥 NFT_MP_withdraw
+### 🔥 NFT\_MP\_withdraw
 
 > Withdraw from sol token account to native account
 
@@ -658,7 +650,6 @@ const auth = {
 
     console.log(response.data);
 })();
-
 ```
 {% endtab %}
 {% endtabs %}

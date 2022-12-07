@@ -3,7 +3,8 @@
 * [Introduction](README.md)
 * [Get Started](get-started.md)
 * [Security](security.md)
-* [Available Networks](available-networks.md)
+* [Available Networks](available-networks/README.md)
+  * [Changelog](available-networks/changelog.md)
 
 ## Dashboard
 

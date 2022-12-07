@@ -2,7 +2,7 @@
 
 ## What networks do you support?
 
-[👉 Check out our supported networks here](../available-networks.md)
+[👉 Check out our supported networks here](../available-networks/)
 
 ## How do I integrate my own user ID system?
 

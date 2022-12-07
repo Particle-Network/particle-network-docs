@@ -161,7 +161,7 @@ Response example:
   * `chain: <string>`, wallets chain name, the type value is as below
     * `solana`
     * `evm_chain`
-  * `chainId: <uint64>`, chain id, see [#chainid-configs](../../available-networks.md#chainid-configs "mention")
+  * `chainId: <uint64>`, chain id, see [#chainid-configs](../../available-networks/#chainid-configs "mention")
   * `publicAddress: <string>`, user wallet public address
   * `contractAddress: <string>`, your contract/program address
   * `time: <uint64>`, lock time(seconds), and max lock time is 86400(24hours)
