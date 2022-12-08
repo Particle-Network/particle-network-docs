@@ -510,6 +510,28 @@ ParticleNetwork.setDisplayWallet(true)
 ParticleNetwork.openWebWallet()
 ```
 
+### Custom interface style
+
+```kotlin
+//this is the default setting
+ParticleNetwork.setAppearence(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+//dark mode 
+ParticleNetwork.setAppearence(AppCompatDelegate.MODE_NIGHT_YES)
+//light mode 
+ParticleNetwork.setAppearence(AppCompatDelegate.MODE_NIGHT_NO)
+```
+
+### Language setting&#x20;
+
+```kotlin
+//Set the language of the SDK
+//support LanguageEnum.EN、LanguageEnum.JA、LanguageEnum.KO、LanguageEnum.ZH_CN、LanguageEnum.ZH_TW
+ParticleNetwork.setAppliedLanguage(LanguageEnum.EN)
+
+//Get Applied Language
+val languageEnum = ParticleNetwork.getAppliedLanguage()
+```
+
 ### Error
 
 `WebServiceError` contains error details. You can check the information by printing the `message` attribute.
@@ -564,7 +586,8 @@ dependencies {
 }
 // Initialize Particle Wallet Connect SDK, a wallet meta data
 val wcPeerMeta = WCPeerMeta( "Particle Wallet", "https://particle.network",icons = listOf("https://connect.particle.network/icons/512.png"))
-ParticleWalletConnect.init(context,wcPeerMeta)</code></pre>
+ParticleWalletConnect.init(context,wcPeerMeta)
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
