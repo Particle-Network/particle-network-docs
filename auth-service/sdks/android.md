@@ -514,11 +514,11 @@ ParticleNetwork.openWebWallet()
 
 ```kotlin
 //this is the default setting
-ParticleNetwork.setAppearence(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-//dark mode 
-ParticleNetwork.setAppearence(AppCompatDelegate.MODE_NIGHT_YES)
-//light mode 
-ParticleNetwork.setAppearence(AppCompatDelegate.MODE_NIGHT_NO)
+ParticleNetwork.setAppearence(ThemeEnum.AUTO)
+//dark 
+ParticleNetwork.setAppearence(ThemeEnum.DARK)
+//light
+ParticleNetwork.setAppearence(ThemeEnum.LIGHT)
 ```
 
 ### Language setting&#x20;
