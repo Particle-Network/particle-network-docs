@@ -889,21 +889,24 @@ Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initia
 {% tab title="Swift" %}
 <pre class="language-swift"><code class="lang-swift">// You can disable buy crypto feature in UI, default is true.
 ParticleWalletGUI.enablePay(false)
-// You can disable swap feature in UI, default is true.
+// You can disable swap feature in UI, default value is true.
 ParticleWalletGUI.enableSwap(false)
-// You can disable wallet connect feature, default is true.
+// You can disable wallet connect feature, default value is true.
 ParticleWalletGUI.supportWalletConnect(false)
-// show or hide test network, default is false.
+// show or hide test network, default value is false.
 <strong>ParticleWalletGUI.showTestNetwork(false)
 </strong><strong>// support chain, Particle Connect initialize chain will add as a support chain automatically.
 </strong><strong>// default support all chains in Particle Network base
 </strong>ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
-// show or hide manage wallet page.
+// show or hide manage wallet page, default value is true.
 ParticleWalletGUI.showManageWallet(true)
-// set language
-ParticleWalletGUI.setLanguage(.en)
-// set interface style
-ParticleWalletGUI.setInterfaceStyle(.dark)</code></pre>
+// show language setting in setting page, default value is false.
+ParticleWalletGUI.showLanguageSetting(true)
+// show appearance setting in setting page, default value is false.
+ParticleWalletGUI.showAppearanceSetting(true)
+// set language, default value value is en.
+ParticleWalletGUI.setLanguage(Language.en)
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -1090,6 +1093,7 @@ PNRouter.navigatorBuy()
 let config = SwapConfig(fromTokenAddress: nil,
                 toTokenAddress: nil,
                 fromTokenAmount: nil)
-navigatorSwap(swapConfig: config)</code></pre>
+navigatorSwap(swapConfig: config)
+</code></pre>
 {% endtab %}
 {% endtabs %}
