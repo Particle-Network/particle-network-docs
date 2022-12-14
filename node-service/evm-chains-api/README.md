@@ -41,6 +41,11 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 322                 | kcc                     | KCC Testnet                 |
 | 210425              | platon                  | PlatON Mainnet              |
 | 2203181             | platon                  | PlatON Testnet              |
+| 728126428           | tron                    | Tron Mainnet                |
+| 2494104990          | tron                    | Tron Shasta                 |
+| 3448148188          | tron                    | Tron Nile                   |
+| 66                  | okc                     | OKC Mainnet                 |
+| 65                  | okc                     | OKC Testnet                 |
 
 ### Standard RPC
 
