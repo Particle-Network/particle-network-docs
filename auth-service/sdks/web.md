@@ -555,8 +555,23 @@ const pn = new ParticleNetwork({...});
 pn.openWallet(target?: string, features?: string)
 
 
-//optional: get wallet url, you can open wallet in iframe.
-const url = pn.walletUrl();
+//open wallet in iframe.
+const url = pn.buildWalletUrl({
+    //optional: left top menu style, close or fullscreen
+    //"fullscreen": wallet will be fullscreen when user click.
+    //"close": developer need handle click event
+    topMenuType: "close"   
+});
+
+const iframe = document.createElement("iframe");
+iframe.src = url;
+//if topMenuType is "close"
+window.addEventListener("message", (event) => {
+    if (event.data === "PARTICLE_WALLET_CLOSE_IFRAME") {
+        //close click event
+    }
+})
+
 ```
 
 ## Open Crypto Token Buy
