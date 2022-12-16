@@ -881,7 +881,7 @@ ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.g
 
 ### Custom Wallet UI &#x20;
 
-Control show or hide test network, swap feature, buy crypto feature, support wallet connect, manage wallet page, support chain, set language and set user interface style.
+Control show or hide test network, swap feature, buy crypto feature, support wallet connect, manage wallet page, support chain, set language, set user interface style and more.
 
 Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
 
@@ -889,23 +889,60 @@ Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initia
 {% tab title="Swift" %}
 <pre class="language-swift"><code class="lang-swift">// You can disable buy crypto feature in UI, default is true.
 ParticleWalletGUI.enablePay(false)
+
 // You can disable swap feature in UI, default value is true.
 ParticleWalletGUI.enableSwap(false)
+
 // You can disable wallet connect feature, default value is true.
 ParticleWalletGUI.supportWalletConnect(false)
+
 // show or hide test network, default value is false.
 <strong>ParticleWalletGUI.showTestNetwork(false)
+</strong><strong>
 </strong><strong>// support chain, Particle Connect initialize chain will add as a support chain automatically.
 </strong><strong>// default support all chains in Particle Network base
 </strong>ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
+
 // show or hide manage wallet page, default value is true.
 ParticleWalletGUI.showManageWallet(true)
+
 // show language setting in setting page, default value is false.
 ParticleWalletGUI.showLanguageSetting(true)
+
 // show appearance setting in setting page, default value is false.
 ParticleWalletGUI.showAppearanceSetting(true)
+
 // set language, default value value is en.
 ParticleWalletGUI.setLanguage(Language.en)
+
+// set support add token, default value is true, true will show add token button, false will hide add token button.
+ParticleWalletGUI.setSupportAddToken(false)
+
+// Set display token addresses 
+// If you called this method, Wallet SDK will only show tokens in the token addresses.
+// You can pass nil to reset.
+ParticleWalletGUI.setDisplayTokenAddresses([tokenAddress])
+
+// Set display NFT contract addresses
+// If you called this method, Wallet SDK will only show NFTs in the NFT contract addresses.
+// You can pass nil to reset.
+ParticleWalletGUI.setDisplayNFTContractAddresses([nftContractAddress])
+
+// Set fait coin, currently support USD, CNY, JPY, HKD, INR, KRW.
+// If you called this method, we will hide curreny change button in setting page.
+// You can pass nil to reset, after reset default fiatcoin is USD and curreny change button will show in setting page.
+ParticleWalletGUI.setFiatCoin("HKD")
+
+// There is two way to set custom UI
+// 1.You can set custom ui json path to enable custom UI
+// In demo, make sure customUIConfig.json is mark Target Membership Demo.
+if let path = Bundle.main.path(forResource: "customUIConfig", ofType: "json") {
+    try! ParticleWalletGUI.loadCustomUI(path: path)
+}
+        
+// 2.Another way to set custom ui is pass json string
+let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
+try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
 </code></pre>
 {% endtab %}
 {% endtabs %}
