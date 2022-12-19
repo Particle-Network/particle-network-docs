@@ -223,7 +223,7 @@ ParticleWalletGUI.ShowManageWallet(false);
 ### Set user interface style, default value is follow system.
 
 ```csharp
-ParticleWalletGUI.SetInterfaceStyle(UserInterfaceStyle.DARK);
+ParticleNetwork.SetInterfaceStyle(UserInterfaceStyle.DARK);
 ```
 
 ### Set language, default value is follow system.
