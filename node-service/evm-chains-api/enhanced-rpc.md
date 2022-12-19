@@ -343,7 +343,7 @@ Response Example:
   * `erc721_safeTransferFrom`
   * `erc1155_safeTransferFrom`
   * `custom_{methodName}` - any other functions which not mentioned above
-* `<string>` - function params string
+* `<array[any]>` - function params
 * `<string>: optional` - function abi json string
 
 **Results:**
