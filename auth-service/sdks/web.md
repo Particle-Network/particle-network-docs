@@ -47,8 +47,7 @@ Before you can add Auth Service to your app, you need to create a Particle proje
 
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
-```typescript
-import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
+<pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
 import { ParticleProvider } from "@particle-network/provider";
 import { SolanaWallet } from "@particle-network/solana-wallet";
 import Web3 from "web3";
@@ -63,7 +62,8 @@ const pn = new ParticleNetwork({
     displayWalletEntry: true,  //show wallet entry when connect particle.
     defaultWalletEntryPosition: WalletEntryPosition.BR, //wallet entry position
     supportChains: [{ id: 1, name: "Ethereum"}, { id: 5, name: "Ethereum"}], // optional: web wallet support chains.
-  }
+<strong>    customStyle: {}, //optional: custom wallet style
+</strong>  }
 });
 
 const particleProvider = new ParticleProvider(pn.auth);
@@ -78,13 +78,15 @@ window.web3.currentProvider.isParticleNetwork // => true
 import { ethers } from "ethers";
 const ethersProvider = new ethers.providers.Web3Provider(providerProvider, "any");
 const ethersSigner = ethersProvider.getSigner();
-```
+</code></pre>
 
 Your first Particle Network dApp! 🎉 You can implement web3 functionalities just like how you would normally with MetaMask.
 
 {% hint style="info" %}
 Have a problem? you can refer to this [FAQ](../../resouces/faq.md#web-sdk-integration-problems).
 {% endhint %}
+
+### [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)
 
 ### Tips
 
