@@ -4,10 +4,6 @@ description: Particle provides a complete wallet service.
 
 # Web
 
-```typescript
-supportChains
-```
-
 ## Usage
 
 ### Open Wallet Use Particle Default Config
