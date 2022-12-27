@@ -18,6 +18,13 @@ We only support RS256 by now.
 
 But if you're using `jose` or `jsonwebtoken` package to generate a JWT token for login.
 
+Libraries:
+
+1. Java: [https://github.com/auth0/java-jwt](https://github.com/auth0/java-jwt)
+2. Nodejs: [https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+3. PHP: [https://github.com/lcobucci/jwt](https://github.com/lcobucci/jwt)
+4. Go: [https://github.com/auth0/go-jwt-middleware](https://github.com/auth0/go-jwt-middleware)
+
 Then here's the step to do so:
 
 1. Create a Private Key using openssl. `openssl genrsa -out privateKey.pem 512`: This privateKey will be used to sign the token.
