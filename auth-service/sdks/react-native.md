@@ -32,7 +32,7 @@ click [here](https://github.com/Particle-Network/particle-react-native/tree/mast
 
 3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is checked under Target Membership.
 
-<img src="../../.gitbook/assets/image.png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image (6).png" alt="" data-size="original">
 
 3.3 Copy the following text into this file:
 
