@@ -24,8 +24,10 @@ The `mainnet` and `testnet` are both available for all the following chains.
 | Optimism            | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | KCC                 | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | PlatON              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
-| Tron                | [✅ Docs](broken-reference) | [✅ Docs](broken-reference)             | [✅ Docs](broken-reference)               | not support                            |
-| OKC                 | [✅ Docs](broken-reference) | [✅ Docs](broken-reference)             | [✅ Docs](broken-reference)               | [✅ Docs](broken-reference)             |
+| Tron                | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | not support                            |
+| OKC                 | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| ThunderCore         | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Cronos              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 
 ## NFT Service
 
