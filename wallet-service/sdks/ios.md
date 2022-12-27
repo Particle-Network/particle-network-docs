@@ -1130,7 +1130,15 @@ PNRouter.navigatorBuy()
 let config = SwapConfig(fromTokenAddress: nil,
                 toTokenAddress: nil,
                 fromTokenAmount: nil)
-navigatorSwap(swapConfig: config)
+PNRouter.navigatorSwap(swapConfig: config)
 </code></pre>
 {% endtab %}
 {% endtabs %}
+
+### Open dapp browser page
+
+```swift
+if let url = URL(string: "app.uniswap.org") {
+    PNRouter.navigatorDappBrowser(url: url)
+}
+```
