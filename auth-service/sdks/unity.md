@@ -214,5 +214,28 @@ public void SetChainInfoSync()
 }
 ```
 
+### SetiOSModalPresentStyle
 
+```csharp
+public void SetiOSModalStyle()
+{
+    // call this method to set embedded safari fullscreen or formsheet, 
+    // default value is formsheet 
+    ParticleAuthServiceInteraction.SetiOSModalPresentStyle(iOSModalPresentStyle.FullScreen);
+}
+```
+
+### SetiOSMediumScreen
+
+```csharp
+public void SetiOSMediumScreen()
+{
+    // call this method to set embedded safari medium screen
+    // default value is false
+    // if you want to use medium screen, 
+    // make sure not call SetiOSModalPresentStyle with FullScreen,
+    // FullScreen conflicts with medium screen.
+    ParticleAuthServiceInteraction.SetiOSMediumScreen(true);
+}
+```
 
