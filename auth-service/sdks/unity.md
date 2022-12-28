@@ -230,8 +230,9 @@ public void SetiOSModalStyle()
 ```csharp
 public void SetiOSMediumScreen()
 {
-    // call this method to set embedded safari medium screen
-    // default value is false
+    // support from iOS 15,
+    // call this method to set embedded safari medium screen,
+    // default value is false,
     // if you want to use medium screen, 
     // make sure not call SetiOSModalPresentStyle with FullScreen,
     // FullScreen conflicts with medium screen.
