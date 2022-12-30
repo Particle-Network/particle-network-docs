@@ -74,6 +74,10 @@
 * [IPFS API](ipfs-service.md)
 * [Error Reference](node-service/error-reference.md)
 
+## After SDK Integrations
+
+* [After SDK Integrations](after-sdk-integrations/after-sdk-integrations.md)
+
 ## Resources
 
 * [Logos & Assets](resources/logos-and-assets.md)

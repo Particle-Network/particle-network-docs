@@ -20,7 +20,7 @@ Users can login to your dApp through **Google, Apple ID, Facebook, Twitter and o
 
 After the user successfully logs in, Particle Auth will automatically create a crypto wallet without a private key. The security is guaranteed by **MPC (Multi Party Computing) - based threshold signatures**, which is ahead of other technologies.
 
-<figure><img src="../.gitbook/assets/组 12.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/组 12 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## What Are Particle Auth's features?
 

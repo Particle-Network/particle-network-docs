@@ -327,6 +327,11 @@ ParticleAuthService.getAddress()
 // support fullScreen and formSheet
 // default web broswer modal present style is formSheet
 ParticleAuthService.setModalPresentStyle(.fullScreen)
+
+// Set safari page show in medium screen, this method works from iOS 15
+// default value is false.
+// if you want to use medium screen, you must setModalPresentStyle fullScreen
+ParticleAuthService.setMediumScreen(true)
 ```
 {% endtab %}
 {% endtabs %}
