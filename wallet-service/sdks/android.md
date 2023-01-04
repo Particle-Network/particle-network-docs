@@ -628,7 +628,16 @@ ParticleNetwork.navigatorBuy(walletAddress,network,cryptoCoin,fiatCoin,fiatAmt)
 ### Open Swap
 
 ```kotlin
-//tokenAddress: optional, swap token address, default native token
-PNRouter.navigatorSwap(tokenAddress)
+// open default swap page
+PNRouter.navigatorSwap()
+
+// open swap page with from token, to token, and uiAmount, all parameters is optional.
+val swapConfig = SwapConfig(
+    fromTokenAddress="", 
+    toTokenAddress="", 
+    fromTokenUIAmount="0.1"
+    )
+PNRouter.navigatorSwap(swapConfig)
+
 ```
 
