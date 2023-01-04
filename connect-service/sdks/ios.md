@@ -432,7 +432,8 @@ adapter.verify(message: message, against: against).subscribe { [weak self] resul
         print(flag)
         self.resultLabel.text = flag ? "True" : "False"
     }
-}.disposed(by: bag)</code></pre>
+}.disposed(by: bag)
+</code></pre>
 
 ### Request&#x20;
 
@@ -474,7 +475,13 @@ ParticleWalletAPI.getEvmService().abiEncodeFunctionCall(contractAddress: contrac
 
 ### Add Ethereum Chain&#x20;
 
-from tests, wallet connect MetaMask works well, other wallets not work.
+From tests, wallet connect MetaMask works well, other wallets not work.
+
+MetaMask doesn't support add ethereum testnet, such as goerli, instead support switch to goerli.
+
+MetaMask doesn't support add or switch optimism mainnet,
+
+if you want to add or switch other chain, just call add chain is enough, MetaMask has optimized, when you add chain, it will present add pop-up, after confirm, it will present switch pop-up.
 
 ```swift
 // add ethereum chain
@@ -497,7 +504,7 @@ adapter.addEthereumChain(publicAddress: publicAddress, chainId: chainId, chainNa
 
 ### Switch Ethereum Chain
 
-from tests, wallet connect MetaMask works well, other wallets not work.
+From tests, wallet connect MetaMask works well, other wallets not work.
 
 ```swift
 // switch ethereum chain
