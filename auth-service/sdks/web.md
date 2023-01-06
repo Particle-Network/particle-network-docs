@@ -93,7 +93,7 @@ import { ParticleNetwork } from "@particle-network/auth";
 
 // open security account settings
 const pn = new ParticleNetwork({...});
-pn.auth.accountSecurity().then((error) => {
+pn.auth.accountSecurity().catch((error) => {
     if (error.code === 4011) {
         //ignore window close
     } else if (error.code === 10005) {
