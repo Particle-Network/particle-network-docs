@@ -490,9 +490,23 @@ ParticleAuthService.openWebWallet()
 {% endtab %}
 {% endtabs %}
 
+### CheckSum support
+
+```swift
+import ParticleNetworkBase
+/// Ethereum address checksum, follow EIP55.
+/// Don't use it with solana address.
+/// - Returns: Checksum Address
+func toChecksumAddress() -> String 
+
+print("0x2648cfe97e33345300db8154670347b08643570b".toChecksumAddress())
+```
+
 ### TRON network support
 
-<pre class="language-swift"><code class="lang-swift">// convert tron base58 address to hex address
+<pre class="language-swift"><code class="lang-swift">import ParticleNetworkBase
+
+// convert tron base58 address to hex address
 <strong>let tronAddressHex = TronFormatAddress.toHex("TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto")
 </strong><strong>print(tronAddressHex) // 0x2648cfe97e33345300db8154670347b08643570b
 </strong>
