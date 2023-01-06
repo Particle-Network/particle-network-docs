@@ -86,6 +86,24 @@ Your first Particle Network dApp! 🎉 You can implement web3 functionalities ju
 Have a problem? you can refer to this [FAQ](../../resouces/faq.md#web-sdk-integration-problems).
 {% endhint %}
 
+### Security Account
+
+```typescript
+import { ParticleNetwork } from "@particle-network/auth";
+
+// open security account settings
+const pn = new ParticleNetwork({...});
+pn.auth.accountSecurity().then((error) => {
+    if (error.code === 4011) {
+        //ignore window close
+    } else if (error.code === 10005) {
+        //invalid token
+    } else if (error.code === 8005) {
+        //user not login
+    }
+});
+```
+
 ### [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)
 
 ### Tips
@@ -153,7 +171,7 @@ const pn = new ParticleNetwork({
 
 Particle support more [EVM Chains](../../node-service/evm-chains-api/#structure).
 
-## [👉 ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
+### [👉 ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
 
 ### Get User Account
 
