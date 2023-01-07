@@ -4,6 +4,12 @@ description: Changelog
 
 # Changelog
 
+## 20230106
+
+1. We add Payment Password for Particle Auth MPC wallet
+2. Particle Auth SDK supports quick/silent logout feature
+3. UI Optimization
+
 ## 20221227
 
 1. Add new EVM chains: ThunderCore & Cronos
