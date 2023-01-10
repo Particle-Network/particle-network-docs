@@ -658,15 +658,82 @@ func sendErc20Token() {
     // firstly, make sure current user has some native token and erc20 token for test there methods
     // send 0.0001 erc20 token from self to receiver
     let from = ParticleAuthService.getAddress()
-    let to = "0xa36085F69e2889c224210F603D836748e7dC0088"
+    // this token's decimals is 18, convert 0.0001 to minimum unit
     let amount = BDouble(0.0001 * pow(10, 18)).rounded()
+    // this is your token contract address
     let contractAddress = "0xa36085F69e2889c224210F603D836748e7dC0088"
+    // this is receiver address
     let receiver = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
-    let contractParams = ContractParams.erc20Transform(contractAddress: contractAddress, to: receiver, amount: amount)
+    
+    let contractParams = ContractParams.erc20Transfer(contractAddress: contractAddress, to: receiver, amount: amount)
     
     // because you want to send erc20 token, interact with contact, 'to' should be the contract address.
     // and value could be nil.
-    ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
+    ParticleWalletAPI.getEvmService().createTransaction(from: from, to: contractAddress, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
+        print(transaction)
+        return ParticleAuthService.signAndSendTransaction(transaction)
+    }.subscribe { [weak self] result in
+        guard let self = self else { return }
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let signature):
+            print(signature)
+        }
+        self.hideLoading()
+    }.disposed(by: self.bag)
+}
+
+func sendErc721NFT() {
+    showLoading()
+    // firstly, make sure current user has some native token and the NFT for test there methods
+    // send 1 erc721 NFT from self to receiver
+    let from = ParticleAuthService.getAddress()
+    // this is your nft contract address
+    let contractAddress = "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
+    // this is receiver address
+    let receiver = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
+    // your NFT token id, make sure you own the NFT
+    let tokenId = "2302"
+    
+    let contractParams = ContractParams.erc721SafeTransferFrom(contractAddress: contractAddress, from: from, to: receiver, tokenId: tokenId)
+    
+    // because you want to send erc721 NFT, interact with contact, 'to' should be the contract address.
+    // and value could be nil.
+    ParticleWalletAPI.getEvmService().createTransaction(from: from, to: contractAddress, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
+        print(transaction)
+        return ParticleAuthService.signAndSendTransaction(transaction)
+    }.subscribe { [weak self] result in
+        guard let self = self else { return }
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let signature):
+            print(signature)
+        }
+        self.hideLoading()
+    }.disposed(by: self.bag)
+}
+
+func sendErc1155NFT() {
+    showLoading()
+    // firstly, make sure current user has some native token and the NFT for test there methods
+    // send 10 erc1155 NFT from self to receiver
+    let from = ParticleAuthService.getAddress()
+    // this is your nft contract address
+    let contractAddress = "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
+    // this is receiver address
+    let receiver = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
+    // your NFT token id, make sure you own the NFT
+    let tokenId = "2302"
+    // send amount
+    let tokenAmount: BInt = 10
+    
+    let contractParams = ContractParams.erc1155SafeTransferFrom(contractAddress: contractAddress, from: from, to: receiver, id: tokenId, amount: tokenAmount, data: "0x")
+    
+    // because you want to send erc1155 NFT, interact with contact, 'to' should be the contract address.
+    // and value could be nil.
+    ParticleWalletAPI.getEvmService().createTransaction(from: from, to: contractAddress, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
         print(transaction)
         return ParticleAuthService.signAndSendTransaction(transaction)
     }.subscribe { [weak self] result in
