@@ -196,8 +196,11 @@ ParticleConnect.setChain(chainInfo: .ethereum(.mainnet))
 ### Get all wallet adapters.
 
 ```swift
+let adapter = ParticleConnect.getAllAdapters()
+                .filter { $0.walletType == .particle }.first
+
 let adapters = ParticleConnect.getAdapters(chainType: .evm)
-//or
+
 let adapter = ParticleConnect.getAdapterByAddress(publicAddress: address)
 ```
 
@@ -209,7 +212,7 @@ let accounts = adapter.getAccounts()
 
 ### Connect wallet.
 
-(For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet)
+For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet
 
 ```swift
 connectAdapter.connect().subscribe { [weak self] result in
@@ -219,7 +222,7 @@ connectAdapter.connect().subscribe { [weak self] result in
         print(error)
         case .success(let account):
         print(account)
-    }
+    }.disposed(by: bag)
 
 ```
 
@@ -233,7 +236,7 @@ connectAdapter.disconnect(address).subscribe { [weak self] result in
         print(error)
         case .success(let success):
         print(success)
-    }
+    }.disposed(by: bag)
 
 ```
 
@@ -286,7 +289,7 @@ connectAdapter.importWalletFromPrivateKey(privateKey).subscribe { [weak self] re
         case .success(let account):
         print(account)
     }
-}
+}.disposed(by: bag)
 
 // import wallet with mnemonic(Split with space).
 connectAdapter.importWalletFromMnemonic(mnemonic).subscribe { [weak self] result in
@@ -297,7 +300,7 @@ connectAdapter.importWalletFromMnemonic(mnemonic).subscribe { [weak self] result
         case .success(let account):
         print(account)
     }
-}
+}.disposed(by: bag)
 ```
 
 ### Export wallet.
@@ -313,7 +316,7 @@ connectAdapter.exportWalletPrivateKey(publicAddress: address).subscribe { [weak 
         case .success(let privateKey):
         print(privateKey)
     }
-}
+}.disposed(by: bag)
 ```
 
 ### Sign and send transaction.
@@ -328,7 +331,7 @@ connectAdapter.signAndSendTransaction(publicAddress: address, transaction: trans
         case .success(let signature):
         print(signature)
     }
-}
+}.disposed(by: bag)
 ```
 
 ### Sign transaction.
@@ -344,7 +347,7 @@ connectAdapter.signTransaction(publicAddress: address, transaction: transaction)
         case .success(let signed):
         print(signed)
     }
-}
+}.disposed(by: bag)
 ```
 
 ### Sign all transactions.
@@ -360,7 +363,7 @@ connectAdapter.signAllTransactions(publicAddress: address, transactions: transac
         case .success(let signed):
         print(signed)
     }
-}
+}.disposed(by: bag)
 ```
 
 ### Sign message.
@@ -376,7 +379,7 @@ connectAdapter.signMessage(publicAddress: address, message: message).subscribe {
         case .success(let signed):
         print(signed)
     }
-}
+}.disposed(by: bag)
 ```
 
 ### Sign typed data.
@@ -392,7 +395,7 @@ connectAdapter.signTypedData(publicAddress: address, data: data).subscribe { [we
         case .success(let signed):
         print(signed)
     }
-}
+}.disposed(by: bag)
 ```
 
 ### Login (Sign-In With Ethereum or Solana)
