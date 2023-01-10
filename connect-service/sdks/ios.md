@@ -125,12 +125,10 @@ import ParticleConnect
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
- ParticleConnect.initialize(env: .debug, 
- chainInfo: .ethereum(.mainnet), 
- dAppData: DAppMetaData(name: "Particle Connect", 
- icon: URL(string: "https://connect.particle.network/icons/512.png")!, 
- url: URL(string: "https://connect.particle.network")!)) {
-      [ParticleConnectAdapter(),
+ // initialize method
+ // you can modify the adapters, remove the one you dont need.
+ let adapters: [
+       ParticleConnectAdapter(),
        WalletConnectAdapter(),
        MetaMaskConnectAdapter(),
        PhantomConnectAdapter(),
@@ -138,7 +136,17 @@ import ParticleConnect
        SolanaConnectAdapter(),
        ImtokenConnectAdapter(),
        BitkeepConnectAdapter(),
-       RainbowConnectAdapter()]
+       RainbowConnectAdapter(),
+       TrustConnectAdapter(),
+       GnosisConnectAdapter()
+       ]
+        
+ ParticleConnect.initialize(env: .debug, 
+ chainInfo: .ethereum(.mainnet), 
+ dAppData: DAppMetaData(name: "Particle Connect", 
+ icon: URL(string: "https://connect.particle.network/icons/512.png")!, 
+ url: URL(string: "https://connect.particle.network")!)) {
+      adapters
 }
 ```
 {% endtab %}
