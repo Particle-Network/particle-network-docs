@@ -50,6 +50,8 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 18                  | thundercore             | ThunderCore Testnet         |
 | 25                  | cronos                  | Cronos Mainnet              |
 | 338                 | cronos                  | Cronos Testnet              |
+| 42262               | oasisemerald            | OasisEmerald Mainnet        |
+| 42261               | oasisemerald            | OasisEmerald Testnet        |
 
 ### Standard RPC
 

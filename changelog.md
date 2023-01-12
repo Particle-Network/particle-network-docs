@@ -4,15 +4,6 @@ description: Changelog
 
 # Changelog
 
-## 20230112
-
-1. Add new EVM chains: Oasis Emerald
-2. Auth SDK supports silent logout/quick logout
-3. Auth SDK: optimize login & logout logic
-4. Approve Page: Parse Seaport, Uniswap, Element contracts
-5. Web Wallet: bug fix & login session sync to auth
-6. Optimize UI & UX
-
 ## 20230106
 
 1. We add Payment Password for Particle Auth MPC wallet

@@ -28,6 +28,7 @@ The `mainnet` and `testnet` are both available for all the following chains.
 | OKC                 | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | ThunderCore         | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | Cronos              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Oasis Emerald       | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 
 ## NFT Service
 
