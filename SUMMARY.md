@@ -24,6 +24,7 @@
   * [Web](connect-service/sdks/web.md)
   * [Flutter](connect-service/sdks/flutter.md)
   * [React Native](connect-service/sdks/react-native.md)
+* [FAQ](connect-service/faq.md)
 
 ## AUTH SERVICE
 

@@ -488,11 +488,13 @@ ParticleWalletAPI.getEvmService().abiEncodeFunctionCall(contractAddress: contrac
 
 From tests, wallet connect MetaMask works well, other wallets not work.
 
+{% hint style="info" %}
 MetaMask doesn't support add ethereum testnet, such as goerli, instead support switch to goerli.
 
 MetaMask doesn't support add or switch optimism mainnet,
 
-if you want to add or switch other chain, just call add chain is enough, MetaMask has optimized, when you add chain, it will present add pop-up, after confirm, it will present switch pop-up.
+if you want to add or switch other chain, just call add chain is enough, MetaMask has optimized, when you call add chain, it will present add pop-up, after confirm, it will present switch pop-up.
+{% endhint %}
 
 ```swift
 // add ethereum chain

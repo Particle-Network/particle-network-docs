@@ -282,13 +282,3 @@ print("setChainInfo: $isSuccess");
 bool isSuccess = await ParticleAuth.setChainInfoAsync(SolanaChain.devnet());
 print("setChainInfoAsync: $isSuccess");
 ```
-
-### GetChainInfo
-
-```dart
-String result = await ParticleAuth.getChainInfo();
-print(result);
-String chainName = jsonDecode(result)["chain_name"];
-int chainId = jsonDecode(result)["chain_id"];
-String chainIdName = jsonDecode(result)["chain_id_name"];
-```

@@ -109,7 +109,8 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 &#x3C;key>NSPhotoLibraryUsageDescription&#x3C;/key>
     &#x3C;string>We need access in order to open photos of barcodes&#x3C;/string>
 &#x3C;key>NSCameraUsageDescription&#x3C;/key>
-    &#x3C;string>We use the camera to scan barcodes&#x3C;/string></code></pre>
+    &#x3C;string>We use the camera to scan barcodes&#x3C;/string>
+</code></pre>
 
 
 
@@ -231,4 +232,23 @@ if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
 } else {
   print("${jsonResult["data"]}");
 }
+```
+
+### Add ethereum chain
+
+only support metamask, other wallets don't support this method.
+
+<pre class="language-dart"><code class="lang-dart">int chainId = 80001;
+<strong>String result = await ParticleConnect.addEthereumChain(walletType, getPublicAddress(), chainId);
+</strong>print(result);
+</code></pre>
+
+### Switch ethereum chain
+
+only support metamask, other wallets don't support this method
+
+```dart
+int chainId = 5;
+String result = await ParticleConnect.switchEthereumChain(walletType, getPublicAddress(), chainId);
+print(result);
 ```
