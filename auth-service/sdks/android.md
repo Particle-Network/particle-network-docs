@@ -352,6 +352,41 @@ ParticleNetworkAuth.logout(ParticleNetwork.INSTANCE,new WebServiceCallback<WebOu
 {% endtab %}
 {% endtabs %}
 
+### Fast Logout
+
+Logout without broswer,The SDK will delete users' account information in cache.
+
+{% tabs %}
+{% tab title="Kotlin" %}
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>ParticleNetwork.fastLogout(object : FastLogoutCallBack {
+</strong>    override fun success() {
+        //logout success
+    }
+
+    override fun failure() {
+        //handle error
+    }
+})
+</code></pre>
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+ParticleNetworkAuth.fastLogout(ParticleNetwork.INSTANCE, new FastLogoutCallBack() {
+    @Override
+    public void success() {
+        //logout success
+    }
+
+    @Override
+    public void failure() {
+        //logout failure
+    }
+});
+```
+{% endtab %}
+{% endtabs %}
+
 ### Is User Logged In
 
 {% tabs %}
@@ -530,6 +565,16 @@ ParticleNetwork.setAppliedLanguage(LanguageEnum.EN)
 
 //Get Applied Language
 val languageEnum = ParticleNetwork.getAppliedLanguage()
+```
+
+### Control setpassword dialog
+
+If the user does not set a password, a dialog box will pop up when the user sends a transaction,
+
+If you don't want to prompt the user, you can call the following code
+
+```kotlin
+ParticleNetwork.setSecurityAccountConfig(SecurityAccountConfig(false))
 ```
 
 ### Error
