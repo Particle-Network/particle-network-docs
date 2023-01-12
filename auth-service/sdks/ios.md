@@ -254,7 +254,7 @@ ParticleAuthService.login(type: .jwt, account: account).subscribe { [weak self] 
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
-### Is User Login
+### Is user login
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -351,7 +351,7 @@ ParticleNetwork.setInterfaceStyle(.dark)
 {% endtab %}
 {% endtabs %}
 
-### Set Display Wallet
+### Set display wallet
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -479,7 +479,7 @@ ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self]
 
 You can create a `transaction` with `TxData`. There's an easy way to do this with [Wallet Service](broken-reference).
 
-### Open Web Wallet
+### Open web wallet
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -489,6 +489,19 @@ ParticleAuthService.openWebWallet()
 ```
 {% endtab %}
 {% endtabs %}
+
+### Open account and security
+
+```swift
+ParticleAuthService.openAccountAndSecurity()
+```
+
+### Set security account config
+
+```swift
+// set security account config, default value is true
+ParticleAuthService.setSecurityAccountConfig(config: .init(promptSettingWhenSign: true))
+```
 
 ### CheckSum support
 
