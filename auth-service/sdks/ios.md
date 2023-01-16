@@ -270,14 +270,27 @@ ParticleAuthService.isLogin()
 {% endtab %}
 {% endtabs %}
 
-### Logout
+### Logout and FastLogout
 
-The SDK will delete users' account information in cache.
+The SDK will delete user's account information in cache.
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
+// This method presents a safari view controller, please keep the presented view controller alive,
+// let safari view controller close automaticlly, then you will get the result.
 ParticleAuthService.logout().subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .failure(let error):
+        // handle error
+    case .success(let success):
+        // logout success
+    }
+}.disposed(by: bag)
+
+// This method do logout in a slient way.
+ParticleAuthService.fastLogout().subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -300,6 +313,8 @@ ParticleAuthService.logout().subscribe { [weak self] result in
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 ### Get user info and address after login
 
