@@ -198,7 +198,7 @@ print("result: $result");
 ### Import private key
 
 ```dart
-String result = await ParticleConnect.importPrivateKey(WalletType.particle, privateKey);
+String result = await ParticleConnect.importPrivateKey(WalletType.evmPrivateKey, privateKey);
 Map<String, dynamic> jsonResult = jsonDecode(result);
 if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
   publicAddress = jsonResult["data"]["publicAddress"];
@@ -211,7 +211,7 @@ if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
 ### Import mnemonic
 
 ```dart
-String result = await ParticleConnect.importMnemonic(WalletType.particle, mnemonic);
+String result = await ParticleConnect.importMnemonic(WalletType.evmPrivateKey, mnemonic);
 Map<String, dynamic> jsonResult = jsonDecode(result);
 if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
   publicAddress = jsonResult["data"]["publicAddress"];
@@ -224,7 +224,7 @@ if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
 ### Export private key
 
 ```dart
-String result = await ParticleConnect.exportPrivateKey(WalletType.particle, getPublicAddress());
+String result = await ParticleConnect.exportPrivateKey(WalletType.evmPrivateKey, getPublicAddress());
 Map<String, dynamic> jsonResult = jsonDecode(result);
 if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
   publicAddress = jsonResult["data"]["publicAddress"];
