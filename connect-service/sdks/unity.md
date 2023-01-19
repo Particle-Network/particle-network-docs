@@ -16,6 +16,8 @@ All unity SDKs are open source, [click here to view](https://github.com/Particle
 
 ![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
 
+<mark style="color:red;">**It is strongly discouraged to use private key or mnemonic import/generate function, if you use it, you need to secure the data yourself, Particle's SDK has no relationship with the imported/generated mnemonic or private key.**</mark>
+
 ## Quick Start
 
 ### Init
@@ -85,7 +87,8 @@ else
     ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Failed:{nativeResultData.data}");
     var errorData = JsonConvert.DeserializeObject&#x3C;NativeErrorData>(nativeResultData.data);
     Debug.Log(errorData);
-}</code></pre>
+}
+</code></pre>
 
 ### Disconnect Wallet
 

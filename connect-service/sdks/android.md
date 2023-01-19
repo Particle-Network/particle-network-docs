@@ -14,6 +14,8 @@ Modular Kotlin wallet adapters and components for EVM & Solana chains. Manage wa
 
 ![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
 
+<mark style="color:red;">**It is strongly discouraged to use private key or mnemonic import/generate function, if you use it, you need to secure the data yourself, Particle's SDK has no relationship with the imported/generated mnemonic or private key.**</mark>
+
 ## Quick Start
 
 ```groovy
@@ -213,7 +215,8 @@ connectAdapter.signMessage(address, message, callback)
 
 (Only EVM chains support this method)
 
-<pre class="language-kotlin"><code class="lang-kotlin"><strong>connectAdapter.signTypedData(address, data, callback)</strong></code></pre>
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>connectAdapter.signTypedData(address, data, callback)
+</strong></code></pre>
 
 ### Login\&Verify locally
 

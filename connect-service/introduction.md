@@ -22,6 +22,8 @@ Solana Wallets: Phantom (more wallets are under supporting)
 
 **Generate Or Import**: Private Key/Seed Phase
 
+* <mark style="color:red;">**It is strongly discouraged to use private key or mnemonic import/generate function, if you use it, you need to secure the data yourself, Particle's SDK has no relationship with the imported/generated mnemonic or private key.**</mark>
+
 ### 2. Secure Transaction & Wallet Management
 
 Smart nonce management

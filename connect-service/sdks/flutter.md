@@ -1,5 +1,7 @@
 # Flutter
 
+<mark style="color:red;">**It is strongly discouraged to use private key or mnemonic import/generate function, if you use it, you need to secure the data yourself, Particle's SDK has no relationship with the imported/generated mnemonic or private key.**</mark>
+
 ### 1.Add the Connect Service SDK to Your Flutter App <a href="#add-sdks" id="add-sdks"></a>
 
 Run this command:

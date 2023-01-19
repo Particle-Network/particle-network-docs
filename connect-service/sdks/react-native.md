@@ -1,5 +1,7 @@
 # React Native
 
+<mark style="color:red;">**It is strongly discouraged to use private key or mnemonic import/generate function, if you use it, you need to secure the data yourself, Particle's SDK has no relationship with the imported/generated mnemonic or private key.**</mark>
+
 ### 1.Add the Connect Service SDK to Your React Native App <a href="#add-sdks" id="add-sdks"></a>
 
 Run this command:
@@ -108,7 +110,8 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 &#x3C;key>NSPhotoLibraryUsageDescription&#x3C;/key>
     &#x3C;string>We need access in order to open photos of barcodes&#x3C;/string>
 &#x3C;key>NSCameraUsageDescription&#x3C;/key>
-    &#x3C;string>We use the camera to scan barcodes&#x3C;/string></code></pre>
+    &#x3C;string>We use the camera to scan barcodes&#x3C;/string>
+</code></pre>
 
 ### Usage
 
