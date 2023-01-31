@@ -238,16 +238,17 @@ if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
 
 ### Add ethereum chain
 
-only support metamask, other wallets don't support this method.
+from test, this method works well in metamask, it doesn't work well in other wallets.
 
-<pre class="language-dart"><code class="lang-dart">int chainId = 80001;
-<strong>String result = await ParticleConnect.addEthereumChain(walletType, getPublicAddress(), chainId);
-</strong>print(result);
-</code></pre>
+```dart
+int chainId = 80001;
+String result = await ParticleConnect.addEthereumChain(walletType, getPublicAddress(), chainId);
+print(result);
+```
 
 ### Switch ethereum chain
 
-only support metamask, other wallets don't support this method
+from test, this method works well in metamask, it doesn't work well in other wallets.
 
 ```dart
 int chainId = 5;
