@@ -232,7 +232,7 @@ ParticleNetwork.SetInterfaceStyle(UserInterfaceStyle.DARK);
 ParticleWalletGUI.SetLanguage(Language.EN);
 ```
 
-Get swap enabled **** state ****&#x20;
+### Get swap enabled **** state ****&#x20;
 
 ```csharp
 public void GetSwapEnableState()
@@ -242,7 +242,7 @@ public void GetSwapEnableState()
 }
 ```
 
-Get buy crypto enabled state
+### Get buy crypto enabled state
 
 ```csharp
 public void GetBuyCryptoEnableState()
