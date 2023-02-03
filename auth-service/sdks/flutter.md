@@ -174,21 +174,21 @@ String result = await ParticleAuth.logout();
 debugPrint("logout: $result");
 ```
 
-### GetAddress
+### Get address
 
 ```dart
 final address = await ParticleAuth.getAddress();
 print("getAddress: $address");
 ```
 
-### SignMessage
+### Sign message
 
 ```dart
  String result = await ParticleAuth.signMessage("Hello Particle");
  debugPrint("signMessage: $result");
 ```
 
-### SignTransaction
+### Sign transaction
 
 ```dart
 ChainInfo currChainInfo = SolanaChain.devnet();
@@ -204,7 +204,7 @@ if (currChainInfo is SolanaChain) {
 }
 ```
 
-### SignAllTransactions
+### Sign all transactions
 
 ```dart
 ChainInfo currChainInfo = SolanaChain.devnet();
@@ -224,7 +224,7 @@ if (currChainInfo is SolanaChain) {
 }
 ```
 
-### SignAndSendTransaction
+### Sign and send transaction
 
 ```dart
 ChainInfo currChainInfo = SolanaChain.devnet();
@@ -242,7 +242,7 @@ if (currChainInfo is SolanaChain) {
 }
 ```
 
-### SignTypedData
+### Sign typed data
 
 You can get the demo source code from [here](https://github.com/Particle-Network/particle-flutter/blob/master/particle-auth/example/lib/auth\_demo/auth\_logic.dart)
 
@@ -269,16 +269,78 @@ String result =
 debugPrint("signTypedData: $result");
 ```
 
-### SetChainInfoASync
+### Set chain info async
 
 ```dart
-bool isSuccess = await ParticleAuth.setChainInfo(EthereumChain.goerli());
-print("setChainInfo: $isSuccess");
-```
-
-### SetChainInfoSync
-
-```dart
-bool isSuccess = await ParticleAuth.setChainInfoAsync(SolanaChain.devnet());
+bool isSuccess = await ParticleAuth.setChainInfoAsync(EthereumChain.goerli());
 print("setChainInfoAsync: $isSuccess");
 ```
+
+### Set chain info sync
+
+```dart
+bool isSuccess = await ParticleAuth.setChainInfo(SolanaChain.devnet());
+print("setChainInfoSync: $isSuccess");
+```
+
+### Get chain info
+
+```dart
+String result = await ParticleAuth.getChainInfo();
+print(result);
+String chainName = jsonDecode(result)["chain_name"];
+int chainId = jsonDecode(result)["chain_id"];
+String chainIdName = jsonDecode(result)["chain_id_name"];
+```
+
+### Set Security account config
+
+```dart
+static void setSecurityAccountConfig() {
+    final config = SecurityAccountConfig(true);
+    ParticleAuth.setSecurityAccountConfig(config);
+}
+```
+
+### Open account and security page
+
+If user is expired, should return error, If user is expired, should return error, otherwise return nothing.
+
+```dart
+static void openAccountAndSecurity() async {
+    String result = await ParticleAuth.openAccountAndSecurity();
+    print(result);
+}
+```
+
+### Set iOS modal present style
+
+```dart
+static void setModalPresentStyle() {
+    ParticleAuth.setModalPresentStyle(IOSModalPresentStyle.fullScreen);
+}
+```
+
+### Set iOS medium screen
+
+Set iOS medium screen, true is medium screen, false is large screen,  default value if false.&#x20;
+
+Only support iOS 15 or higher.
+
+If you want to set medium screen, don't call setModalPresentStyle with IOSModalPresentStyle.fullScreen
+
+```dart
+static void setMediumScreen() {
+    ParticleAuth.setMediumScreen(true);
+}
+```
+
+### Set language
+
+```dart
+static void setLanguage() {
+    const language = Language.ja;
+    ParticleAuth.setLanguage(language);
+}
+```
+

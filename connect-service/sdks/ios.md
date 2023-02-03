@@ -45,6 +45,7 @@ pod init
 2\. To your Podfile, add the Auth Service pods that you want to use in your app:
 
 ```ruby
+pod 'ConmonConnect'
 pod 'ParticleConnect'
 pod 'ConnectWalletConnectAdapter'
 pod 'ConnectEVMAdapter'
@@ -70,6 +71,9 @@ If you would like to receive release updates, subscribe to our [GitHub repositor
 ### Edit Podfile
 
 ```ruby
+// From 0.1.45, you should add more in podfile
+pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
+
 // paste there code into pod file
 post_install do |installer|
 installer.pods_project.targets.each do |target|
