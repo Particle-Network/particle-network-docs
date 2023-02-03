@@ -133,7 +133,7 @@ import ParticleConnect
 ```swift
  // initialize method
  // you can modify the adapters, remove the one you dont need.
- let adapters: [
+ var adapters: [
        ParticleConnectAdapter(),
        WalletConnectAdapter(),
        MetaMaskConnectAdapter(),
@@ -147,6 +147,19 @@ import ParticleConnect
        GnosisConnectAdapter()
        ]
         
+ let moreAdapterClasses: [WalletConnectAdapter.Type] =
+     [ZerionConnectAdapter.self,
+      MathConnectAdapter.self,
+      OmniConnectAdapter.self,
+      Inch1ConnectAdapter.self,
+      ZengoConnectAdapter.self,
+      AlphaConnectAdapter.self,
+      BitpieConnectAdapter.self]
+
+ adapters.append(contentsOf: moreAdapterClasses.map {
+     $0.init()
+ })
+ 
  ParticleConnect.initialize(env: .debug, 
  chainInfo: .ethereum(.mainnet), 
  dAppData: DAppMetaData(name: "Particle Connect", 
@@ -178,6 +191,8 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 8\. Add LSApplicationQueriesSchemes to info.plist.
 
+each of them is optional, you can add which you want.
+
 ```
 <key>LSApplicationQueriesSchemes</key>
 <array>
@@ -188,10 +203,14 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 	<string>rainbow</string>
 	<string>trust</string>
 	<string>gnosissafe</string>
+	
+	<string>zerion</string>
+        <string>mathwallet</string>
+        <string>1inch</string>
+        <string>awallet</string>
+        <string>bitpie</string>
 </array>
 ```
-
-####
 
 ### Switch chain.
 
@@ -542,6 +561,33 @@ adapter.switchEthereumChain(publicAddress: publicAddress, chainId: chainId).subs
     }
     
 }.disposed(by: bag)
+```
+
+### Custom wallet connect adapter
+
+```swift
+/// How to define a custom wallet connect adapter
+/// for examle coin98 wallet
+/// 1. subclass from WalletConnectAdapter
+/// 2. override walletType, provide a AdapterInfo object
+/// don't use teh same redirectUrlHost with other connect adapters
+/// if the app has a universal link, like metamask's is "https://metamask.app.link/"
+/// set it to deeplink
+/// if the app doesn't have a universal link, set scheme as the deeplink
+/// if the app has neither universal link nor scheme,
+/// it is not ready for wallet connect.
+public class Coin98WalletConnectAdapter: WalletConnectAdapter {
+    public override var walletType: WalletType {
+        return WalletType.custom(info: AdapterInfo.init(name: "Coin98",
+                     url: "https://coin98.com/",
+                     icon: "https://registry.walletconnect.com/v2/logo/md/dee547be-936a-4c92-9e3f-7a2350a62e00",
+                     redirectUrlHost: "coin98",
+                     supportChains: [.evm],
+                     deepLink: "coin98://",
+                     scheme: "coin98://"))
+    }
+}
+
 ```
 
 ## Give Feedback
