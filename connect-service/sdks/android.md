@@ -247,7 +247,37 @@ adapter.login(
     })
 ```
 
+### Custom wallet connect adapter
 
+```kotlin
+/// How to define a custom wallet connect adapter
+/// for examle coin98 wallet
+/// 1. subclass from BaseWalletConnectAdapter
+/// 2. override name、icon、url、 mobileWallet and readyState
+class Coin98ConnectAdapter : BaseWalletConnectAdapter() {
+
+    val coin98 = MobileWCWallet(name = "Coin98", packageName = "coin98.crypto.finance.media", scheme = "coin98")
+
+    override val name: WalletName = coin98.name
+
+    override val icon: IconUrl = "https://registry.walletconnect.com/v2/logo/md/dee547be-936a-4c92-9e3f-7a2350a62e00"
+
+    override val url: WebsiteUrl = "https://coin98.com"
+
+    override val mobileWallet: MobileWCWallet = coin98
+
+    override val readyState: WalletReadyState
+        get() {
+            if (supportChains.contains(ConnectManager.chainType)) {
+                return if (AppUtils.isAppInstalled(
+                        ConnectManager.context, coin98.packageName
+                    )
+                ) WalletReadyState.Installed else WalletReadyState.NotDetected
+            }
+            return WalletReadyState.Unsupported
+        }
+}
+```
 
 ## Give Feedback
 
