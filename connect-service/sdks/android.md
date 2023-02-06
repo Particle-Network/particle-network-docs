@@ -250,10 +250,20 @@ adapter.login(
 ### Custom wallet connect adapter
 
 ```kotlin
-/// How to define a custom wallet connect adapter
-/// for examle coin98 wallet
-/// 1. subclass from BaseWalletConnectAdapter
-/// 2. override name、icon、url、 mobileWallet and readyState
+// How to define a custom wallet connect adapter
+// for examle coin98 wallet
+// 1. add queries in manifest ,
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.connect.demo">
+        <queries>
+            ...
+            <package android:name="coin98.crypto.finance.media" />
+        </queries>
+        <application>
+        </application>
+    </manifest>
+// 2. subclass from BaseWalletConnectAdapter
+// 3. override name、icon、url、 mobileWallet and readyState
 class Coin98ConnectAdapter : BaseWalletConnectAdapter() {
 
     val coin98 = MobileWCWallet(name = "Coin98", packageName = "coin98.crypto.finance.media", scheme = "coin98")
