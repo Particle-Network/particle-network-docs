@@ -192,7 +192,7 @@ if (result.status) {
 }
 ```
 
-### SignAllTransactions
+### Sign all transactions
 
 ```dart
 const chainInfo = await particleAuth.getChainInfo();
@@ -214,7 +214,7 @@ if (result.status) {
 }
 ```
 
-### SignAndSendTransaction
+### Sign and send transaction
 
 ```dart
 const sender = await particleAuth.getAddress();
@@ -236,7 +236,7 @@ if (result.status) {
 }
 ```
 
-### SignTypedData
+### Sign typed data
 
 ```dart
 const chainInfo = await particleAuth.getChainInfo();
@@ -286,13 +286,6 @@ const result = await particleAuth.getChainInfo();
 console.log(result);
 ```
 
-### Set iOS modal present style
-
-```javascript
-const style = iOSModalPresentStyle.FullScreen;
-particleAuth.setModalPresentStyle(style)
-```
-
 ### Set display wallet
 
 ```javascript
@@ -304,5 +297,42 @@ particleAuth.setDisplayWallet(isDisplay);
 
 ```javascript
 particleAuth.openWebWallet();
+```
+
+### Open account and security page
+
+```javascript
+const result = await particleAuth.openAccountAndSecurity();
+if (result.status) {
+    const data = result.data;
+    console.log(data);
+} else {
+    const error = result.data;
+    console.log(error);
+}
+```
+
+### Set iOS modal present style and medium screen
+
+```javascript
+setModalPresentStyle = async () => {
+    const style = iOSModalPresentStyle.FormSheet;
+    particleAuth.setModalPresentStyle(style)
+}
+
+// request iOS 15 or later
+setMediumScreen = async () => {
+    const isMedium = true;
+    particleAuth.setMediumScreen(isMedium);
+}
+```
+
+### Set language
+
+```javascript
+setLanguage = async () => {
+    const language = Language.JA;
+    particleAuth.setLanguage(language);
+}
 ```
 

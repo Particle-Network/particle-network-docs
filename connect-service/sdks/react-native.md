@@ -371,3 +371,44 @@ console.log(result);
 const chainInfo = await ParticleConnect.getChainInfo();
 console.log(chainInfo);
 ```
+
+### Add ethereum chain
+
+for how to connect a wallet, please look at this [page](../faq.md) , the principle is the same.
+
+```javascript
+addEthereumChain = async () => {
+    const publicAddress = TestAccountEVM.publicAddress;
+    const chainId = 80001; // polygon testnet
+
+    const result = await particleConnect.addEthereumChain(WalletType.MetaMask, publicAddress, chainId);
+
+    if (result.status) {
+        const data = result.data;
+        console.log(data);
+    } else {
+        const error = result.data;
+        console.log(error);
+    }
+}
+```
+
+### Switch ethereum chain&#x20;
+
+```javascript
+switchEthereumChain = async () => {
+    const publicAddress = TestAccountEVM.publicAddress;
+    const chainId = 137; // polygon mainnet
+
+    const result = await particleConnect.switchEthereumChain(WalletType.MetaMask, publicAddress, chainId);
+
+    if (result.status) {
+        const data = result.data;
+        console.log(data);
+    } else {
+        const error = result.data;
+        console.log(error);
+    }
+}
+```
+

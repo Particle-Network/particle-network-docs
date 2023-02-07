@@ -165,16 +165,38 @@ const isShow = true;
 particleWallet.showManageWallet(isShow);
 ```
 
-### Set language
+### Custom UI
 
 ```javascript
-const language = Language.Zh_hans
-particleWallet.setLanguage(language);
-```
+setLanguage = async () => {
+    const language = Language.JA;
+    particleWallet.setLanguage(language);
+}
 
-### Set interface style
+setFiatCoin = async () => {
+    const faitCoin = FaitCoin.HKD;
+    particleWallet.setFiatCoin(faitCoin);
+}
 
-```javascript
-const userInterfaceStyle = UserInterfaceStyle.Light
-particleWallet.setInterfaceStyle(userInterfaceStyle);
+setDisplayTokenAddresses = async () => {
+    const tokenAddresses = ["", ""];
+    particleWallet.setDisplayTokenAddresses(tokenAddresses);
+}
+
+setDisplayNFTContractAddresses = async () => {
+    const nftContractAddresses = ["", ""];
+    particleWallet.setDisplayNFTContractAddresses(nftContractAddresses);
+}
+
+showLanguageSetting = async () => {
+    particleWallet.showLanguageSetting(false);
+}
+
+showAppearanceSetting = async () => {
+    particleWallet.showAppearanceSetting(false);
+}
+
+setSupportAddToken = async () => {
+    particleWallet.setSupportAddToken(false);
+}
 ```
