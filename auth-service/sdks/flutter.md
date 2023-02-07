@@ -153,6 +153,8 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 ### Initialize the SDK
 
+### Initialize the SDK
+
 **Before using the sdk you have to call init(Required)**&#x20;
 
 ```dart

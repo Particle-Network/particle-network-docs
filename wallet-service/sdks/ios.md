@@ -65,6 +65,7 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 
 ```ruby
 // From 0.9.12, you should add more in podfile
+If you use ParticleWalletGUI, you need add this one.
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
 
 // If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.

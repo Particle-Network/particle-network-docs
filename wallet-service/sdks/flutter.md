@@ -113,9 +113,19 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 &#x3C;key>NSPhotoLibraryUsageDescription&#x3C;/key>
     &#x3C;string>We need access in order to open photos of barcodes&#x3C;/string>
 &#x3C;key>NSCameraUsageDescription&#x3C;/key>
-    &#x3C;string>We use the camera to scan barcodes&#x3C;/string></code></pre>
+    &#x3C;string>We use the camera to scan barcodes&#x3C;/string>
+</code></pre>
 
+3.9 Edit Podfile, there is a Podfile under ios folder,&#x20;
 
+```ruby
+// From iOS native SDK 0.9.12, you should add more in podfile
+If you use ParticleWalletGUI, you need add this one.
+pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
+
+// If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.
+pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
+```
 
 ### Initialize the SDK
 
