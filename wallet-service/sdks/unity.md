@@ -9,28 +9,44 @@ All unity SDKs are open source, [click here to view](https://github.com/Particle
 It is required before call other method, you can define your app info as a metadata or user the default value, metadata is used for wallet connect.
 
 ```csharp
-var metadata = DAppMetadata.Create("Particle Connect",
+var metadata = new DAppMetaData("Particle Connect",
                 "https://connect.particle.network/icons/512.png",
                 "https://connect.particle.network");
-            
+
 ChainInfo chainInfo = new AvalancheChain(AvalancheChainId.Mainnet);
 // Init and set default chain info.
 ParticleNetwork.Init(chainInfo);
 ParticleConnectInteraction.Init(chainInfo, metadata);
 
-// There are some methods use cases, that can call after init.
-
-// Set support chain info array. you can set a chain info array.
-// Default value is support all chains.
+// Set support chain info array. you can a chain info array.
 ParticleWalletGUI.SupportChain(new []{chainInfo});
-// Disable buy 
+// Disable buy.
 ParticleWalletGUI.EnablePay(false);
-// Disable testnet if release
+// Disable testnet if release.
 ParticleWalletGUI.ShowTestNetwork(false);
-// Disable wallet manage page if you only support one wallet
+// Disable wallet manage page if you only support one wallet.
 ParticleWalletGUI.ShowManageWallet(false);
 // Use this method to control dark mode or light mode. you can call this method with your button.
-ParticleWalletGUI.SetInterfaceStyle(UserInterfaceStyle.DARK);
+ParticleNetwork.SetInterfaceStyle(UserInterfaceStyle.DARK);
+
+// Manage Tokens and NFTs, set show only native and your tokens, NFTs. don't show other tokens and NFTs.
+ParticleWalletGUI.SetDisplayTokenAddresses(new []{"Your token address"});
+ParticleWalletGUI.SetDisplayNFTContractAddresses(new []{"Your nft address"});
+
+// Control if show add button in wallet page.
+ParticleWalletGUI.SetSupportAddToken(false);
+
+// Control UI pages native currency symbol
+ParticleWalletGUI.SetFiatCoin("HKD");
+
+// Set language
+ParticleWalletGUI.SetLanguage(Language.KO);
+
+// Control if show language setting button in setting page.
+ParticleWalletGUI.ShowLanguageSetting(true);
+
+// Control if show appearance setting button in setting page.
+ParticleWalletGUI.ShowAppearanceSetting(true);
 ```
 
 ### Navigator Wallet
