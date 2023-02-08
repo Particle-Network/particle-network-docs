@@ -18,7 +18,9 @@ ChainInfo chainInfo = new AvalancheChain(AvalancheChainId.Mainnet);
 ParticleNetwork.Init(chainInfo);
 ParticleConnectInteraction.Init(chainInfo, metadata);
 
-// Set support chain info array. you can a chain info array.
+// The following methods are optional, used for configure your project.
+
+// Set support chain info array. you can set a chain info array, default value is all chains.
 ParticleWalletGUI.SupportChain(new []{chainInfo});
 // Disable buy.
 ParticleWalletGUI.EnablePay(false);
