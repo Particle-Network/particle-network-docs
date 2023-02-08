@@ -109,6 +109,11 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
     &#x3C;string>trust&#x3C;/string>
     &#x3C;string>rainbow&#x3C;/string>
     &#x3C;string>gnosissafe&#x3C;/string>
+    &#x3C;string>zerion&#x3C;/string>
+    &#x3C;string>mathwallet&#x3C;/string>
+    &#x3C;string>1inch&#x3C;/string>
+    &#x3C;string>awallet&#x3C;/string>
+    &#x3C;string>bitpie&#x3C;/string>
 &#x3C;/array>
 &#x3C;key>NSPhotoLibraryUsageDescription&#x3C;/key>
     &#x3C;string>We need access in order to open photos of barcodes&#x3C;/string>
