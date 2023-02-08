@@ -75,6 +75,13 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     ### Edit Podfile
 
     ```ruby
+    // From 0.9.12, you should add more in podfile
+    If you use ParticleWalletGUI, you need add this one.
+    pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
+
+    // If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.
+    pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
+
     // paste there code into pod file
     post_install do |installer|
     installer.pods_project.targets.each do |target|
@@ -172,13 +179,18 @@ dependencies {
 ```
 <key>LSApplicationQueriesSchemes</key>
 <array>
-	<string>metamask</string>
-	<string>phantom</string>
-	<string>bitkeep</string>
-	<string>imtokenv2</string>
-	<string>rainbow</string>
-	<string>trust</string>
-	<string>gnosissafe</string>
+    <string>metamask</string>
+    <string>phantom</string>
+    <string>bitkeep</string>
+    <string>imtokenv2</string>
+    <string>rainbow</string>
+    <string>trust</string>
+    <string>gnosissafe</string>
+    <string>zerion</string>
+    <string>mathwallet</string>
+    <string>1inch</string>
+    <string>awallet</string>
+    <string>bitpie</string>
 </array>
 ```
 
@@ -222,17 +234,17 @@ target 'Unity-iPhone' do
   source 'https://github.com/CocoaPods/Specs.git'
   use_frameworks!
   
-pod 'ParticleWalletGUI', '0.8.9’
-pod 'ParticleAuthService', '0.8.9’
-pod 'ParticleWalletAPI', '0.8.9’
-pod 'ParticleNetworkBase', '0.8.9’
-pod 'ParticelWalletConnect', '0.8.9'
-pod 'ConnectWalletConnectAdapter', '0.1.34’
-pod 'ConnectPhantomAdapter','0.1.34’
-pod 'ConnectEVMAdapter', '0.1.34’
-pod 'ConnectSolanaAdapter', '0.1.34’
-pod 'ParticleConnect', '0.1.34’
-pod 'ConnectCommon', '0.1.34’
+pod 'ParticleWalletGUI', '0.9.13’
+pod 'ParticleAuthService', '0.9.13’
+pod 'ParticleWalletAPI', '0.9.13’
+pod 'ParticleNetworkBase', '0.9.13’
+pod 'ParticelWalletConnect', '0.9.13'
+pod 'ConnectWalletConnectAdapter', '0.1.45’
+pod 'ConnectPhantomAdapter','0.1.45’
+pod 'ConnectEVMAdapter', '0.1.45’
+pod 'ConnectSolanaAdapter', '0.1.45’
+pod 'ParticleConnect', '0.1.45’
+pod 'ConnectCommon', '0.1.45’
 
 end
 
