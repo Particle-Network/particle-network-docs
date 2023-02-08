@@ -119,7 +119,7 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
     &#x3C;string>We use the camera to scan barcodes&#x3C;/string>
 </code></pre>
 
-3.9 Edit Podfile, there is a Podfile under ios folder,&#x20;
+3.9 Edit Podfile, there is a Podfile under ios folder.
 
 ```ruby
 // From iOS native SDK 0.9.12, you should add more in podfile
