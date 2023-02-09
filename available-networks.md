@@ -29,6 +29,12 @@ The `mainnet` and `testnet` are both available for all the following chains.
 | ThunderCore         | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | Cronos              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | Oasis Emerald       | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Gnosis (xDAI)       | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Celo                | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Klaytn              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Scroll              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| ZkSync v2           | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Metis               | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 
 ## NFT Service
 

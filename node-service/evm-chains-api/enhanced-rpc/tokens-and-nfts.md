@@ -1,5 +1,34 @@
 # Tokens & NFTs
 
+### Support by Networks
+
+| Networks (Mainnet & Testnet) | Transactions | Tokens |              NFTs              |
+| ---------------------------- | :----------: | :----: | :----------------------------: |
+| Ethereum                     |       ✅      |    ✅   |                ✅               |
+| BSC (BNB Chain)              |       ✅      |    ✅   |                ✅               |
+| Polygon (Matic)              |       ✅      |    ✅   |                ✅               |
+| Avalanche (C-Chain)          |       ✅      |    ✅   |                ✅               |
+| Fantom                       |       ✅      |    ✅   |                ✅               |
+| Arbitrum                     |       ✅      |    ✅   | <p>✅</p><p>❌ Arbitrum Nova</p> |
+| Harmony                      |       ✅      |    ✅   |                ✅               |
+| Moonbeam/Moonriver           |       ✅      |    ✅   |                ✅               |
+| Heco                         |       ✅      |    ✅   |                ❌               |
+| Aurora                       |       ✅      |    ✅   |                ✅               |
+| Optimism                     |       ✅      |    ✅   |  <p>✅ Mainnet<br>❌ Testnet</p> |
+| KCC                          |       ✅      |    ✅   |                ❌               |
+| PlatON                       |       ✅      |    ✅   |                ❌               |
+| Tron                         |       ✅      |    ✅   |                ❌               |
+| OKC                          |       ✅      |    ✅   |                ❌               |
+| ThunderCore                  |       ✅      |    ✅   |                ❌               |
+| Cronos                       |       ✅      |    ✅   |                ✅               |
+| Oasis Emerald                |       ✅      |    ✅   |  <p>✅ Mainnet<br>❌ Testnet</p> |
+| Gnosis (xDAI)                |       ✅      |    ✅   |                ❌               |
+| Celo                         |       ✅      |    ✅   |                ❌               |
+| Klaytn                       |       ✅      |    ✅   |                ❌               |
+| Scroll                       |       ✅      |    ✅   |                ❌               |
+| ZkSync v2                    |       ❌      |    ❌   |                ❌               |
+| Metis                        |       ✅      |    ✅   |                ✅               |
+
 ### 🔥 particle\_getTokensAndNFTs
 
 > Get token and nfts by giving an address
@@ -7,7 +36,7 @@
 **Parameters:**
 
 * `<string>` - account address
-* `<array[string]>` - token addresses  (optional)
+* `<array[string]>` - token addresses (optional)
 
 **Results:**
 
@@ -176,7 +205,7 @@ Response example:
 **Parameters:**
 
 * `<string>` - account address
-* `<array[string]>` - token addresses  (optional)
+* `<array[string]>` - token addresses (optional)
 
 **Results:**
 
