@@ -345,13 +345,13 @@ NSArray *currencies = @[@"usd"];
 ```swift
 // address is user public address
 let address = ""
-ParticleWalletAPI.getEvmService().getTokensAndNFTs(by: address).subscribe { [weak self] _ in
+ParticleWalletAPI.getEvmService().getTokensAndNFTs(by: address).subscribe { [weak self] result in
 guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
 
-// also get from database
-ParticleWalletAPI.getEvmService().getTokensAndNFTsFromDB(by: address).subscribe { [weak self] _ in
+// also get from database, no rpc request.
+ParticleWalletAPI.getEvmService().getTokensAndNFTsFromDB(by: address).subscribe { [weak self] result in
 guard let self = self else { return }
     // handle result
 }.disposed(by: bag)
@@ -377,6 +377,22 @@ NSString *address = @"";
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Get only tokens or only NFTs
+
+```swift
+// get only tokens
+let address = ""
+ParticleWalletAPI.getEvmService().getTokens(by: address, tokenAddresses: []).subscribe { result in
+    // handle result
+}.disposed(by: self.bag)
+
+// get only NFTs
+let address = ""
+ParticleWalletAPI.getEvmService().getNFTs(by: address, tokenAddresses: []).subscribe { result in
+    // handle result
+}.disposed(by: self.bag)
+```
 
 #### Get the parsed transaction history by giving an address
 
