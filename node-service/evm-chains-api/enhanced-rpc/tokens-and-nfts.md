@@ -5,8 +5,8 @@
 | Networks (Mainnet & Testnet) | Transactions | Tokens |              NFTs              |
 | ---------------------------- | :----------: | :----: | :----------------------------: |
 | Ethereum                     |       ✅      |    ✅   |                ✅               |
-| BSC (BNB Chain)              |       ✅      |    ✅   |                ✅               |
-| Polygon (Matic)              |       ✅      |    ✅   |                ✅               |
+| BSC (BNB Smart Chain)        |       ✅      |    ✅   |                ✅               |
+| Polygon                      |       ✅      |    ✅   |                ✅               |
 | Avalanche (C-Chain)          |       ✅      |    ✅   |                ✅               |
 | Fantom                       |       ✅      |    ✅   |                ✅               |
 | Arbitrum                     |       ✅      |    ✅   | <p>✅</p><p>❌ Arbitrum Nova</p> |
