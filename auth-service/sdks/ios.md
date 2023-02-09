@@ -483,7 +483,7 @@ ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self]
 
 // sign typed data, request hex string in evm, not support solana.
 // support v1, v3, v4 typed data
-[ParticleAuthService signMessage:message successHandler:^(NSString * signedMessage) {
+[ParticleAuthService signTypedData:message successHandler:^(NSString * signedMessage) {
     NSLog(@"%@", signedMessage);
 } failureHandler:^(NSError * error) {
     NSLog(@"%@", error);
