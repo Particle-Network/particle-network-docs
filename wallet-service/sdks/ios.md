@@ -1018,6 +1018,16 @@ ParticleWalletGUI.setDisplayTokenAddresses([tokenAddress])
 // You can pass nil to reset.
 ParticleWalletGUI.setDisplayNFTContractAddresses([nftContractAddress])
 
+/// Set priority token addresses, priority token will show in top part of the list.
+/// If you called this method, Wallet SDK will show these tokens in top part of the list
+/// You can pass nil to reset.
+ParticleWalletGUI.setPriorityTokenAddresses([tokenAddress])
+
+/// Set priority NFT contract addresses, priority NFT will show in top part of list.
+/// If you called this method, Wallet SDK will only show NFTs in top part of list.
+/// You can pass nil to reset.
+ParticleWalletGUI.setPriorityNFTContractAddresses([nftContractAddress])
+
 // Set fait coin, currently support USD, CNY, JPY, HKD, INR, KRW.
 // If you called this method, we will hide curreny change button in setting page.
 // You can pass nil to reset, after reset default fiatcoin is USD and curreny change button will show in setting page.
