@@ -213,6 +213,7 @@ To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. Y
 ///              When login type is jwt, you must pass json web token.
 ///   - supportAuthType: Controls whether third-party login buttons are displayed. default will show all third-party login buttons.
 ///   - loginFormMode: Controls whether show light UI in web, default is false. 
+///   - socialLoginPrompt: Social login prompt.
 /// - Returns: User infomation single
 ParticleAuthService.login(type: .email).subscribe { [weak self] result in
     guard let self = self else { return }
