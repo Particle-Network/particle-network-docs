@@ -25,6 +25,7 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 250                 | fantom                  | Fantom Mainnet(Opera)       |
 | 4002                | fantom                  | Fantom Testnet              |
 | 42161               | arbitrum                | Arbitrum One                |
+| 42170               | arbitrum                | Arbitrum Nova               |
 | 421613              | arbitrum                | Arbitrum Goerli             |
 | 1284                | moonbeam                | Moonbeam                    |
 | 1285                | moonriver               | Moonriver                   |
@@ -52,6 +53,18 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 338                 | cronos                  | Cronos Testnet              |
 | 42262               | oasisemerald            | OasisEmerald Mainnet        |
 | 42261               | oasisemerald            | OasisEmerald Testnet        |
+| 100                 | gnosis                  | Gnosis Mainnet              |
+| 10200               | gnosis                  | Gnosis Testnet              |
+| 42220               | celo                    | Celo Mainnet                |
+| 44787               | celo                    | Celo Mainnet                |
+| 8217                | klaytn                  | Klaytn Mainnet              |
+| 1001                | klaytn                  | Klaytn Testnet              |
+| 534351              | scroll                  | Scroll L1 Testnet           |
+| 534354              | scroll                  | Scroll L2 Testnet           |
+| 324                 | zksync                  | zkSyncV2 Mainnet            |
+| 280                 | zksync                  | zkSyncV2 Testnet            |
+| 1088                | metis                   | Metis Mainnet               |
+| 599                 | metis                   | Metis Testnet               |
 
 ### Standard RPC
 
