@@ -545,6 +545,22 @@ ParticleNetwork.setDisplayWallet(true)
 ParticleNetwork.openWebWallet()
 ```
 
+### Open account and security
+
+```kotlin
+ParticleNetwork.openAccountAndSecurity()
+```
+
+### Set security account config
+
+```kotlin
+// set security account config, default value is 1.
+// 0 no prompt
+// 1 first time show prompt
+// 2 every time show prompt
+ParticleNetwork.setSecurityAccountConfig(SecurityAccountConfig(promptSettingWhenSign=1))
+```
+
 ### Custom interface style
 
 ```kotlin
