@@ -493,7 +493,7 @@ ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self]
 {% endtab %}
 {% endtabs %}
 
-You can create a `transaction` with `TxData`. There's an easy way to do this with [Wallet Service](broken-reference).
+You can create a `transaction` with `TxData` and `FeeMarketEIP1559TxData` There's an easy way to do this with [Wallet Service](broken-reference).
 
 ### Open web wallet
 
