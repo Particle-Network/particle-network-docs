@@ -641,3 +641,10 @@ PNRouter.navigatorSwap(swapConfig)
 
 ```
 
+### Open dapp browser page
+
+```kotlin
+PNRouter.navigatorDappBrowser(url:String)
+or
+ParticleNetwork.navigatorDAppBrowser(url:String)
+```
