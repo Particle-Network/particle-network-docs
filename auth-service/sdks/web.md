@@ -536,17 +536,17 @@ const info = pn.auth.userInfo();
 
 #### Set Auth Theme
 
-```typescript
-import { ParticleNetwork } from "@particle-network/auth";
+<pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork } from "@particle-network/auth";
 
 const pn = new ParticleNetwork({...});
 pn.setAuthTheme({
   uiMode: "dark",
   displayCloseButton: true,
-  displayWallet: true, // display wallet entrance when send transaction
-});
+  displayWallet: true, // display wallet entrance when send transaction.
+<strong>  modalBorderRadius: 10, // auth &#x26; wallet modal border radius. default 10.
+</strong>});
 
-```
+</code></pre>
 
 #### Switch Chain Info
 
