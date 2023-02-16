@@ -12,9 +12,7 @@ click [here](https://github.com/Particle-Network/particle-react-native/tree/mast
 
 ### 2.Configure Android project
 
-
-
-
+is same with [Connect Service ](../../connect-service/sdks/react-native.md)
 
 ### 3.Configure iOS project
 
