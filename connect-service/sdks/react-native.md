@@ -14,11 +14,36 @@ click [here](https://github.com/Particle-Network/particle-react-native/tree/mast
 
 ### 2.Configure Android project
 
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
+Make sure that your project meets the following requirements:
 
+* Targets API Level 23 (Marshmallow) or higher
+* Uses Android 6.0 or higher
+* Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
+* Java 11
 
+Configure project information，Refer to [here](https://github.com/Particle-Network/particle-react-native/blob/master/particle-auth/example/android/app/build.gradle)
 
+```gradle
 
+android {
+    ...
+    defaultConfig {
+        ......
+        manifestPlaceholders["PN_PROJECT_ID"] = "your project id"
+        manifestPlaceholders["PN_PROJECT_CLIENT_KEY"] = "your project client key"
+        manifestPlaceholders["PN_APP_ID"] = "your app id"
+    }
+   
+   //How you quote wallet sdk, you must set it
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+```
 
 ### 3.Configure iOS project
 
