@@ -43,6 +43,7 @@
 ## WALLET SERVICE
 
 * [Introduction](wallet-service/introduction.md)
+* [On & Off Ramps](wallet-service/on-and-off-ramps.md)
 * [SDKs](wallet-service/sdks/README.md)
   * [Android](wallet-service/sdks/android.md)
   * [iOS](wallet-service/sdks/ios.md)
