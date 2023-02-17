@@ -10,6 +10,16 @@ description: Particle provides a complete wallet service.
 
 👉 [https://wallet.particle.network/](https://wallet.particle.network/)
 
+#### Open Wallet in iframe
+
+Particle Wallet support scan address QRCode and WalletConnect QRCode, so you need add camera permission to iframe.
+
+```typescript
+// get iframe element and add 'camera' permission
+const iframe = document.getElementById('particle-wallet-iframe');
+iframe?.allow = 'camera';
+```
+
 ### Open Wallet By Particle Auth
 
 When your DApp integration [Particle Auth](../../auth-service/sdks/web.md#open-particle-web-wallet), you can call `openWalllet()` open wallet.
