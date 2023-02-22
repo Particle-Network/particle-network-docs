@@ -1,6 +1,6 @@
 ---
 description: The Full-Stack Web3 Infrastructure
-cover: .gitbook/assets/cover1 (1) (1).png
+cover: .gitbook/assets/飞书20230222-162930.png
 coverY: 0
 ---
 
