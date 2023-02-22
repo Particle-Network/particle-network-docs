@@ -43,7 +43,7 @@ The Web3 APIs require **HTTP Basic Authentication**:
 const axios = require('axios');
 
 (async () => {
-    const response = await axios.get('https://rpc.particle.network/evm-chain?chainId=1', {
+    const response = await axios.post('https://rpc.particle.network/evm-chain?chainId=1', {
         auth: {
             username: 'Your Project Id',
             password: 'Your Project Server Key',
