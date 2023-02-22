@@ -6,9 +6,7 @@ description: Authenticate yourself to the Particle Node Service API
 
 ## Endpoint
 
-**Base URL:**
-
-&#x20;   **https://rpc.particle.network**
+**Base URL: https://rpc.particle.network**
 
 The Solana chain's RPC URL is:
 
