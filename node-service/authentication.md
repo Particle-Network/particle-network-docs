@@ -42,11 +42,21 @@ The Web3 APIs require **HTTP Basic Authentication**:
 ```typescript
 const axios = require('axios');
 
+const chainId = 5; // Goerli Network
+const projectId = 'Your Project Id';
+const projectServerKey = 'Your Project Client Or Server Key';
+
 (async () => {
-    const response = await axios.post('https://rpc.particle.network/evm-chain?chainId=1', {
+    const response = await axios.post(`https://rpc.particle.network/evm-chain?chainId=${chainId}`, {
+        method: 'eth_getBalance',
+        params: [
+            '0xE860aE9379B1902DC08F67F50de7b9CC066AF0FF',
+            'latest',
+        ],
+    }, {
         auth: {
-            username: 'Your Project Id',
-            password: 'Your Project Server Key',
+            username: projectId,
+            password: projectServerKey,
         },
     });
 
