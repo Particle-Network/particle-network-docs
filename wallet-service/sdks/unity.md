@@ -31,9 +31,13 @@ ParticleWalletGUI.ShowManageWallet(false);
 // Use this method to control dark mode or light mode. you can call this method with your button.
 ParticleNetwork.SetInterfaceStyle(UserInterfaceStyle.DARK);
 
-// Manage Tokens and NFTs, set show only native and your tokens, NFTs. don't show other tokens and NFTs.
+// Manage Tokens and NFTs, set show only native and your tokens, NFTs, don't show other tokens and NFTs.
 ParticleWalletGUI.SetDisplayTokenAddresses(new []{"Your token address"});
 ParticleWalletGUI.SetDisplayNFTContractAddresses(new []{"Your nft address"});
+
+// Manage Tokens and NFTs, set priority tokens and NFTs. 
+ParticleWalletGUI.SetPriorityTokenAddresses(new []{"Your token address"});
+ParticleWalletGUI.SetPriorityNFTContractAddresses(new []{"Your nft address"});
 
 // Control if show add button in wallet page.
 ParticleWalletGUI.SetSupportAddToken(false);
@@ -146,8 +150,6 @@ public void NavigatorBuyCrypto()
     
 }
 ```
-
-
 
 ### Navigator Login List
 
