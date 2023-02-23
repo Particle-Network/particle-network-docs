@@ -186,6 +186,16 @@ setDisplayNFTContractAddresses = async () => {
     particleWallet.setDisplayNFTContractAddresses(nftContractAddresses);
 }
 
+setPriorityTokenAddresses = async () => {
+    const tokenAddresses = ["", ""];
+    particleWallet.setPriorityTokenAddresses(tokenAddresses);
+}
+
+setPriorityNFTContractAddresses = async () => {
+    const nftContractAddresses = ["", ""];
+    particleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
+}
+
 showLanguageSetting = async () => {
     particleWallet.showLanguageSetting(false);
 }
