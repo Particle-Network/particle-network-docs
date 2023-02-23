@@ -451,3 +451,28 @@ switchEthereumChain = async () => {
 }
 ```
 
+### Reconnect wallet connect wallet
+
+only support iOS, usually use when open app, if current wallet is from wallet connect, call this method to reconnect, you can call this method anywhere anytime.
+
+It is better to start a connection before sign.
+
+```javascript
+reconnectIfNeeded = async () => {
+    const publicAddress = TestAccountEVM.publicAddress;
+
+    const result = await particleConnect.reconnectIfNeeded(
+        WalletType.MetaMask,
+        publicAddress
+    );
+
+    if (result.status) {
+        const data = result.data;
+        console.log(data);
+    } else {
+        const error = result.data;
+        console.log(error);
+    }
+};
+```
+
