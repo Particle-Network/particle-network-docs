@@ -174,6 +174,13 @@ String result = await ParticleAuth.logout();
 debugPrint("logout: $result");
 ```
 
+### Fast logout
+
+```dart
+String result = await ParticleAuth.fastLogoudar();
+debugPrint("logout: $result");
+```
+
 ### Get address
 
 ```dart
