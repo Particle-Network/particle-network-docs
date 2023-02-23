@@ -329,3 +329,13 @@ int chainId = 5;
 String result = await ParticleConnect.switchEthereumChain(walletType, getPublicAddress(), chainId);
 print(result);
 ```
+
+### Reconnect wallet connect wallet
+
+only support iOS, usually use when open app, if current wallet is from wallet connect, call this method to reconnect, you can call this method anywhere anytime.
+
+It is better to start a connection before sign.
+
+```dart
+ParticleConnect.reconnectIfNeeded(walletType, getPublicAddress());
+```
