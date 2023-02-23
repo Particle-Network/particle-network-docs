@@ -333,9 +333,64 @@ Language language = Language.system;
 ParticleWallet.setLanguage(language);
 ```
 
-### Set interface style
+### Custom UI
 
 ```dart
-UserInterfaceStyle interfaceStyle = UserInterfaceStyle.light;
-ParticleWallet.setInterfaceStyle(interfaceStyle);
+static void showLanguageSetting() {
+  const isShow = false;
+  ParticleWallet.showLanguageSetting(isShow);
+}
+
+static void showAppearanceSetting() {
+  const isShow = false;
+  ParticleWallet.showAppearanceSetting(isShow);
+}
+
+static void setSupportAddToken() {
+  const isShow = false;
+  ParticleWallet.setSupportAddToken(isShow);
+}
+
+static void setDisplayTokenAddresses() {
+  List<String> tokenAddresses = <String>[
+    "0x303b35f48684bea50D0e7D1AcDdeaf78A7188798"
+  ];
+
+  ParticleWallet.setDisplayTokenAddresses(tokenAddresses);
+}
+
+static void setDisplayNFTContractAddresses() {
+  List<String> nftContractAddresses = <String>[
+    "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
+  ];
+  ParticleWallet.setDisplayNFTContractAddresses(nftContractAddresses);
+}
+
+static void setPriorityTokenAddresses() {
+  List<String> tokenAddresses = <String>[
+    "0x303b35f48684bea50D0e7D1AcDdeaf78A7188798"
+  ];
+
+  ParticleWallet.setPriorityTokenAddresses(tokenAddresses);
+}
+
+static void setPriorityNFTContractAddresses() {
+  List<String> nftContractAddresses = <String>[
+    "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
+  ];
+  ParticleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
+}
+
+static void setFiatCoin() {
+  const fiatCoin = FiatCoin.HKD;
+  ParticleWallet.setFiatCoin(fiatCoin);
+}
+
+static void loadCustomUIJsonString() {
+  // your custom json string.
+  // example https://github.com/Particle-Network/particle-ios/blob/main/Demo/Demo/customUIConfig.json
+  const json = "";
+  ParticleWallet.loadCustomUIJsonString(json);
+}
+
 ```
