@@ -59,6 +59,26 @@ public async void Logout()
 }
 ```
 
+### Fast logout
+
+```csharp
+public async void FastLogout()
+{
+    var nativeResultData = await ParticleAuthService.Instance.FastLogout();
+    Debug.Log(nativeResultData.data);
+
+    if (nativeResultData.isSuccess)
+    {
+        Debug.Log(nativeResultData.data);
+    }
+    else
+    {
+        var errorData = JsonConvert.DeserializeObject<NativeErrorData>(nativeResultData.data);
+        Debug.Log(errorData);
+    }
+}
+```
+
 ### IsLogin
 
 ```csharp
