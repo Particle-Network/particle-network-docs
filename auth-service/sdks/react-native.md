@@ -161,7 +161,21 @@ if (result.status) {
 }
 ```
 
-### Is user logged in
+### Fast logout
+
+logout silently
+
+```javascript
+const result = await particleAuth.fastLogout();
+if (result.status) {
+    console.log(result.data);
+} else {
+    const error = result.data;
+    console.log(error);
+}
+```
+
+### Is Login
 
 ```javascript
 const result = await particleAuth.isLogin();
