@@ -351,3 +351,18 @@ static void setLanguage() {
 }
 ```
 
+### Set display wallet
+
+```dart
+static void setDisplayWallet() {
+  ParticleAuth.setDisplayWallet(true);
+}
+```
+
+### Open web wallet
+
+```dart
+static void openWebWallet() {
+  ParticleAuth.openWebWallet();
+}
+```
