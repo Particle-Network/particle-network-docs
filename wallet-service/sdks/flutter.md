@@ -293,6 +293,13 @@ daString result = await ParticleWallet.navigatorLoginList();
 print("result:$result");
 ```
 
+### Navigator dapp browser
+
+```dart
+const url = "https://opensea.io";
+ParticleWallet.navigatorDappBrowser(url: url);
+```
+
 ### Set Support chain
 
 ```dart
@@ -345,6 +352,23 @@ static void showAppearanceSetting() {
   const isShow = false;
   ParticleWallet.showAppearanceSetting(isShow);
 }
+
+
+/// Set support dapp broswer in wallet page, default is true
+static void supportDappBrowser() {
+  ParticleWallet.supportDappBrowser(false);
+}
+
+/// Set support wallet connect as a wallet, default is true
+static void supportWalletConnect() {
+  ParticleWallet.supportWalletConnect(false);
+}
+
+static void navigatorDappBrowser() {
+  const url = "https://opensea.io";
+  ParticleWallet.navigatorDappBrowser(url: url);
+}
+
 
 static void setSupportAddToken() {
   const isShow = false;

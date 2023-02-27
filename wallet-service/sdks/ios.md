@@ -986,6 +986,9 @@ ParticleWalletGUI.enableSwap(false)
 // You can disable wallet connect feature, default value is true.
 ParticleWalletGUI.supportWalletConnect(false)
 
+// You can disable dapp browser in wallet page, default value is true.
+ParticleWalletGUI.supportDappBrowser(false)
+
 // show or hide test network, default value is false.
 <strong>ParticleWalletGUI.showTestNetwork(false)
 </strong><strong>
