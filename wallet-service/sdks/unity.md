@@ -42,6 +42,12 @@ ParticleWalletGUI.SetPriorityNFTContractAddresses(new []{"Your nft address"});
 // Control if show add button in wallet page.
 ParticleWalletGUI.SetSupportAddToken(false);
 
+// Control if support wallet connect as a wallet
+ParticleWalletGUI.SupportWalletConnect(false)
+
+// Control if show dapp browser in wallet page
+ParticleWalletGUI.SupportDappBrowser(false)
+
 // Control UI pages native currency symbol
 ParticleWalletGUI.SetFiatCoin("HKD");
 
