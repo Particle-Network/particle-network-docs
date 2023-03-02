@@ -236,7 +236,7 @@ To auth login with Particle, call `ParticleNetwork.login(...)`with `activity` an
                 When login type is jwt, you must pass json web token.
 //   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
 //   - loginFormMode: Controls whether show light UI in web, default is false.
-//   - prompt: Social login prompt.default is null
+//   - prompt: Social login prompt. default is null
 ParticleNetwork.login(
         loginType = LoginType.PHONE,
         account = "",
@@ -286,7 +286,7 @@ val account = "json web token"
 //   - account: When login type is email or phone, you could pass email address or phone number,Optional.
 //   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
 //   - loginFormMode:Controls whether show light UI in web, default is false.
-//   - prompt: Social login prompt.default is null
+//   - prompt: Social login prompt. default is null
 ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,"",
         SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
         false,
