@@ -40,6 +40,7 @@
   * [Flutter](auth-service/sdks/flutter.md)
   * [React Native](auth-service/sdks/react-native.md)
   * [Unreal](auth-service/sdks/unreal.md)
+  * [Unity-Windows-macOS](auth-service/sdks/unity-windows-macos.md)
 
 ## WALLET SERVICE
 
