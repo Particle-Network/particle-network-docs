@@ -259,10 +259,11 @@ const Axios = require("axios");
 const chainId = 5; // Goerli Network
 const projectUuId = 'Your Project Id';
 const projectKey = 'Your Project Client Or Server Key';
-const contractAddress = '0xE860aE9379B1902DC08F67F50de7b9CC066AF0FF';
+const tokenId = '5';
+const contractAddress = '0x14CC6aF7A7318347419758274049e93DB03236C9';
 
 (async () => {
-    const response = await Axios.get(`https://api-market-debug.particle.network/chains/${chainId}/contractAddress/${contractAddress}`, {
+    const response = await Axios.get(`https://api-market-debug.particle.network/chains/${chainId}/contractAddress/${contractAddress}/activity`, {
         params: {
             projectUuid,
             projectKey,
@@ -278,6 +279,472 @@ const contractAddress = '0xE860aE9379B1902DC08F67F50de7b9CC066AF0FF';
 Response example:
 
 ```json
+{
+    "error_code": 0,
+    "data": {
+        "isLastPage": true,
+        "data": [
+            {
+                "_id": "641068eba2f331c680d3e4db",
+                "chainId": 5,
+                "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                "tokenId": "3",
+                "tags": [
+                    "activityType:sale$",
+                    "fromAddress:0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a$",
+                    "toAddress:0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a$",
+                    "tokenId:3$"
+                ],
+                "activityType": "sale",
+                "fromAddress": "0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a",
+                "toAddress": "0x7DDd4989abb3cDa01BA31ac283c194852E42e1a8",
+                "transactionHash": "",
+                "data": {
+                    "orderTokenPrice": {
+                        "orderPrice": "1000000000000000",
+                        "orderToken": "0x0000000000000000000000000000000000000000",
+                        "orderTokenDecimals": 18,
+                        "orderTokenSymbol": "ETH"
+                    }
+                },
+                "eventAt": 1678797035925,
+                "createdAt": 1678797035926,
+                "token": {
+                    "_id": "6409cabe855ea269acff55fa",
+                    "chainId": 5,
+                    "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                    "contractType": 2,
+                    "tokenId": "3",
+                    "tokenUri": "https://ikzttp.mypinata.cloud/ipfs/QmQFkLSQysj94s5GvTHPyzTxrawwtjgiiYS2TBLgrvw8CW/3",
+                    "metadata": {
+                        "name": "Azuki #3",
+                        "image": "https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/3.png",
+                        "attributes": [
+                            { "trait_type": "Type", "value": "Human" },
+                            { "trait_type": "Hair", "value": "Green Spiky" },
+                            { "trait_type": "Headgear", "value": "Frog Headband" },
+                            { "trait_type": "Neck", "value": "Frog Headphones" },
+                            { "trait_type": "Clothing", "value": "Green Yukata" },
+                            { "trait_type": "Eyes", "value": "Careless" },
+                            { "trait_type": "Mouth", "value": "Grass" },
+                            { "trait_type": "Offhand", "value": "Katana" },
+                            { "trait_type": "Background", "value": "Red" }
+                        ]
+                    },
+                    "status": 0,
+                    "tags": [
+                        "attribute:Type:Human$",
+                        "attribute:Hair:Green Spiky$",
+                        "attribute:Headgear:Frog Headband$",
+                        "attribute:Neck:Frog Headphones$",
+                        "attribute:Clothing:Green Yukata$",
+                        "attribute:Eyes:Careless$",
+                        "attribute:Mouth:Grass$",
+                        "attribute:Offhand:Katana$",
+                        "attribute:Background:Red$",
+                        "status:0$",
+                        "currentOwner:0x7DDd4989abb3cDa01BA31ac283c194852E42e1a8$"
+                    ],
+                    "currentOwner": "0x7DDd4989abb3cDa01BA31ac283c194852E42e1a8",
+                    "currentOrderHash": "",
+                    "currentOrderPrice": "0",
+                    "currentOrderToken": "",
+                    "currentOrderTokenSymbol": "ETH",
+                    "currentOrderTokenDecimals": 0,
+                    "listedTime": 0,
+                    "expiredTime": 0,
+                    "particleCustomScore1": "0",
+                    "particleCustomScore2": "0",
+                    "particleCustomScore3": "0",
+                    "createdAt": 1678363326641,
+                    "updatedAt": 1678797035906,
+                    "currentOrder": null,
+                    "lastSale": {
+                        "orderPrice": "1000000000000000",
+                        "orderToken": "0x0000000000000000000000000000000000000000",
+                        "orderTokenDecimals": 18,
+                        "orderTokenSymbol": "ETH"
+                    }
+                }
+            },
+            {
+                "_id": "641068b8a2f331c680d3e497",
+                "chainId": 5,
+                "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                "tokenId": "0",
+                "tags": [
+                    "activityType:list$",
+                    "fromAddress:0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a$",
+                    "toAddress:0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a$",
+                    "tokenId:0$"
+                ],
+                "activityType": "list",
+                "fromAddress": "0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a",
+                "toAddress": "",
+                "transactionHash": "",
+                "data": {
+                    "orderTokenPrice": {
+                        "orderPrice": "1000000000000000",
+                        "orderToken": "0x0000000000000000000000000000000000000000",
+                        "orderTokenDecimals": 18,
+                        "orderTokenSymbol": "ETH"
+                    }
+                },
+                "eventAt": 1678796984373,
+                "createdAt": 1678796984373,
+                "token": {
+                    "_id": "6409c996c6ad79f56aa8baac",
+                    "chainId": 5,
+                    "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                    "contractType": 2,
+                    "tokenId": "0",
+                    "tokenUri": "https://ikzttp.mypinata.cloud/ipfs/QmQFkLSQysj94s5GvTHPyzTxrawwtjgiiYS2TBLgrvw8CW/0",
+                    "metadata": {
+                        "name": "Azuki #0",
+                        "image": "https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/0.png",
+                        "attributes": [
+                            { "trait_type": "Type", "value": "Human" },
+                            { "trait_type": "Hair", "value": "Water" },
+                            { "trait_type": "Clothing", "value": "Pink Oversized Kimono" },
+                            { "trait_type": "Eyes", "value": "Striking" },
+                            { "trait_type": "Mouth", "value": "Frown" },
+                            { "trait_type": "Offhand", "value": "Monkey King Staff" },
+                            { "trait_type": "Background", "value": "Off White A" }
+                        ]
+                    },
+                    "status": 1,
+                    "tags": [
+                        "attribute:Type:Human$",
+                        "attribute:Hair:Water$",
+                        "attribute:Clothing:Pink Oversized Kimono$",
+                        "attribute:Eyes:Striking$",
+                        "attribute:Mouth:Frown$",
+                        "attribute:Offhand:Monkey King Staff$",
+                        "attribute:Background:Off White A$",
+                        "status:1$",
+                        "currentOwner:0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a$"
+                    ],
+                    "currentOwner": "0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a",
+                    "currentOrderHash": "0xbb0d8413602591f49f98220056ce834246dccf3c5bb693adcd05d292126e8bd3",
+                    "currentOrderPrice": "1000000000000000",
+                    "currentOrderToken": "0x0000000000000000000000000000000000000000",
+                    "currentOrderTokenSymbol": "ETH",
+                    "currentOrderTokenDecimals": 18,
+                    "listedTime": 1678796976000,
+                    "expiredTime": 9007199254740991,
+                    "particleCustomScore1": "0",
+                    "particleCustomScore2": "0",
+                    "particleCustomScore3": "0",
+                    "createdAt": 1678363030668,
+                    "updatedAt": 1678796984356,
+                    "currentOrder": {
+                        "chainId": 5,
+                        "hash": "0xbb0d8413602591f49f98220056ce834246dccf3c5bb693adcd05d292126e8bd3",
+                        "protocolAddress": "0x00000000006c3852cbEf3e08E8dF289169EdE581",
+                        "protocolData": {
+                            "parameters": {
+                                "offerer": "0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a",
+                                "zone": "0x0000000000000000000000000000000000000000",
+                                "zoneHash": "0x3000000000000000000000000000000000000000000000000000000000000000",
+                                "startTime": "1678796976",
+                                "endTime": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+                                "orderType": 0,
+                                "offer": [
+                                    {
+                                        "itemType": 2,
+                                        "token": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                                        "identifierOrCriteria": "0",
+                                        "startAmount": "1",
+                                        "endAmount": "1"
+                                    }
+                                ],
+                                "consideration": [
+                                    {
+                                        "itemType": 0,
+                                        "token": "0x0000000000000000000000000000000000000000",
+                                        "identifierOrCriteria": "0",
+                                        "startAmount": "940000000000000",
+                                        "endAmount": "940000000000000",
+                                        "recipient": "0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a"
+                                    },
+                                    {
+                                        "itemType": 0,
+                                        "token": "0x0000000000000000000000000000000000000000",
+                                        "identifierOrCriteria": "0",
+                                        "startAmount": "60000000000000",
+                                        "endAmount": "60000000000000",
+                                        "recipient": "0x7DDd4989abb3cDa01BA31ac283c194852E42e1a8"
+                                    }
+                                ],
+                                "totalOriginalConsiderationItems": 2,
+                                "salt": "0x000000008d0e2171c9bd6949",
+                                "conduitKey": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                                "counter": 0
+                            },
+                            "signature": "0xc1bae888bbb406cad9803a916895c6f51792e9919582d1e60c170e954b073a48181ab3c1f06f068fe7aa49138dd2f76e0f36fb61d2a6d5466e73e7d1c2f8802c"
+                        },
+                        "type": "listing",
+                        "status": 0,
+                        "associatedTokens": [{ "tokenAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9", "tokenId": "0", "_id": {} }],
+                        "_id": {},
+                        "createdAt": "2023-03-14T12:29:44.342Z",
+                        "updatedAt": "2023-03-14T12:29:44.343Z"
+                    }
+                }
+            },
+
+            {
+                "_id": "64106850a2f331c680d3e452",
+                "chainId": 5,
+                "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                "tokenId": "2",
+                "tags": [
+                    "activityType:transfer$",
+                    "fromAddress:0x027b35c8d685dfe7e3b2b08970bc8650a14cc58a$",
+                    "toAddress:0x027b35c8d685dfe7e3b2b08970bc8650a14cc58a$",
+                    "tokenId:2$"
+                ],
+                "activityType": "transfer",
+                "fromAddress": "0x027b35c8d685dfe7e3b2b08970bc8650a14cc58a",
+                "toAddress": "0x56ce8d1c22699408ba5e9c4be6fd32278313d906",
+                "transactionHash": "0x2e52e80f18469a8c4216a8412dae00346c6cbff72c96b347fe3dee44b31aea88",
+                "data": {
+                    "block_number": "8653690",
+                    "block_timestamp": "2023-03-14T12:27:48.000Z",
+                    "block_hash": "0x25f4bd26b8a671209020db2f9dd4bfb49a105b950382aedf285f8a0e4c98bb6f",
+                    "transaction_hash": "0x2e52e80f18469a8c4216a8412dae00346c6cbff72c96b347fe3dee44b31aea88",
+                    "transaction_index": 65,
+                    "log_index": 95,
+                    "value": "0",
+                    "contract_type": "ERC721",
+                    "transaction_type": "Single",
+                    "token_address": "0x14cc6af7a7318347419758274049e93db03236c9",
+                    "token_id": "2",
+                    "from_address": "0x027b35c8d685dfe7e3b2b08970bc8650a14cc58a",
+                    "to_address": "0x56ce8d1c22699408ba5e9c4be6fd32278313d906",
+                    "amount": "1",
+                    "verified": 1,
+                    "operator": null
+                },
+                "eventAt": 1678796868000,
+                "createdAt": 1678796880331,
+                "token": {
+                    "_id": "6409cac0855ea269acff5600",
+                    "chainId": 5,
+                    "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                    "contractType": 2,
+                    "tokenId": "2",
+                    "tokenUri": "https://ikzttp.mypinata.cloud/ipfs/QmQFkLSQysj94s5GvTHPyzTxrawwtjgiiYS2TBLgrvw8CW/2",
+                    "metadata": {
+                        "name": "Azuki #2",
+                        "image": "https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/2.png",
+                        "attributes": [
+                            { "trait_type": "Type", "value": "Human" },
+                            { "trait_type": "Hair", "value": "Pink Flowy" },
+                            { "trait_type": "Ear", "value": "Red Tassel" },
+                            { "trait_type": "Clothing", "value": "Vest" },
+                            { "trait_type": "Eyes", "value": "Ruby" },
+                            { "trait_type": "Mouth", "value": "Chewing" },
+                            { "trait_type": "Background", "value": "Red" }
+                        ]
+                    },
+                    "status": 0,
+                    "tags": [
+                        "attribute:Type:Human$",
+                        "attribute:Hair:Pink Flowy$",
+                        "attribute:Ear:Red Tassel$",
+                        "attribute:Clothing:Vest$",
+                        "attribute:Eyes:Ruby$",
+                        "attribute:Mouth:Chewing$",
+                        "attribute:Background:Red$",
+                        "status:0$",
+                        "currentOwner:0x56cE8D1C22699408Ba5E9C4bE6fD32278313D906$"
+                    ],
+                    "currentOwner": "0x56cE8D1C22699408Ba5E9C4bE6fD32278313D906",
+                    "currentOrderHash": "",
+                    "currentOrderPrice": "0",
+                    "currentOrderToken": "",
+                    "currentOrderTokenSymbol": "ETH",
+                    "currentOrderTokenDecimals": 0,
+                    "listedTime": 0,
+                    "expiredTime": 0,
+                    "particleCustomScore1": "0",
+                    "particleCustomScore2": "0",
+                    "particleCustomScore3": "0",
+                    "createdAt": 1678363328531,
+                    "updatedAt": 1678797004208,
+                    "currentOrder": null
+                }
+            },
+
+            {
+                "_id": "6410673da2f331c680d3e40f",
+                "chainId": 5,
+                "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                "tokenId": "3",
+                "tags": [
+                    "activityType:unlist$",
+                    "fromAddress:0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a$",
+                    "toAddress:0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a$",
+                    "tokenId:3$"
+                ],
+                "activityType": "unlist",
+                "fromAddress": "0x027B35c8D685dfE7e3b2B08970bc8650A14CC58a",
+                "toAddress": "",
+                "transactionHash": "",
+                "data": {
+                    "orderTokenPrice": {
+                        "orderPrice": "1000000000000000",
+                        "orderToken": "0x0000000000000000000000000000000000000000",
+                        "orderTokenDecimals": 18,
+                        "orderTokenSymbol": "ETH"
+                    }
+                },
+                "eventAt": 1678796605158,
+                "createdAt": 1678796605158,
+                "token": {
+                    "_id": "6409cabe855ea269acff55fa",
+                    "chainId": 5,
+                    "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                    "contractType": 2,
+                    "tokenId": "3",
+                    "tokenUri": "https://ikzttp.mypinata.cloud/ipfs/QmQFkLSQysj94s5GvTHPyzTxrawwtjgiiYS2TBLgrvw8CW/3",
+                    "metadata": {
+                        "name": "Azuki #3",
+                        "image": "https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/3.png",
+                        "attributes": [
+                            { "trait_type": "Type", "value": "Human" },
+                            { "trait_type": "Hair", "value": "Green Spiky" },
+                            { "trait_type": "Headgear", "value": "Frog Headband" },
+                            { "trait_type": "Neck", "value": "Frog Headphones" },
+                            { "trait_type": "Clothing", "value": "Green Yukata" },
+                            { "trait_type": "Eyes", "value": "Careless" },
+                            { "trait_type": "Mouth", "value": "Grass" },
+                            { "trait_type": "Offhand", "value": "Katana" },
+                            { "trait_type": "Background", "value": "Red" }
+                        ]
+                    },
+                    "status": 0,
+                    "tags": [
+                        "attribute:Type:Human$",
+                        "attribute:Hair:Green Spiky$",
+                        "attribute:Headgear:Frog Headband$",
+                        "attribute:Neck:Frog Headphones$",
+                        "attribute:Clothing:Green Yukata$",
+                        "attribute:Eyes:Careless$",
+                        "attribute:Mouth:Grass$",
+                        "attribute:Offhand:Katana$",
+                        "attribute:Background:Red$",
+                        "status:0$",
+                        "currentOwner:0x7DDd4989abb3cDa01BA31ac283c194852E42e1a8$"
+                    ],
+                    "currentOwner": "0x7DDd4989abb3cDa01BA31ac283c194852E42e1a8",
+                    "currentOrderHash": "",
+                    "currentOrderPrice": "0",
+                    "currentOrderToken": "",
+                    "currentOrderTokenSymbol": "ETH",
+                    "currentOrderTokenDecimals": 0,
+                    "listedTime": 0,
+                    "expiredTime": 0,
+                    "particleCustomScore1": "0",
+                    "particleCustomScore2": "0",
+                    "particleCustomScore3": "0",
+                    "createdAt": 1678363326641,
+                    "updatedAt": 1678797035906,
+                    "currentOrder": null,
+                    "lastSale": {
+                        "orderPrice": "1000000000000000",
+                        "orderToken": "0x0000000000000000000000000000000000000000",
+                        "orderTokenDecimals": 18,
+                        "orderTokenSymbol": "ETH"
+                    }
+                }
+            },
+            {
+                "_id": "641066e8a2f331c680d3e39a",
+                "chainId": 5,
+                "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                "tokenId": "6",
+                "tags": [
+                    "activityType:mint$",
+                    "fromAddress:0x0000000000000000000000000000000000000000$",
+                    "toAddress:0x0000000000000000000000000000000000000000$",
+                    "tokenId:6$"
+                ],
+                "activityType": "mint",
+                "fromAddress": "0x0000000000000000000000000000000000000000",
+                "toAddress": "0xac6a87c681a5ed4cb58bc4fa7bf81a83b928c83c",
+                "transactionHash": "0xc1bf7e6f1770e6b23f4988c80c9a06243c5c6f4011d5f2546086fb67ca76a330",
+                "data": {
+                    "block_number": "8653664",
+                    "block_timestamp": "2023-03-14T12:21:48.000Z",
+                    "block_hash": "0x3a64608d7280b40429a6b501e8375009d7df46152ea71ffa462131b3845cc80b",
+                    "transaction_hash": "0xc1bf7e6f1770e6b23f4988c80c9a06243c5c6f4011d5f2546086fb67ca76a330",
+                    "transaction_index": 47,
+                    "log_index": 49,
+                    "value": "0",
+                    "contract_type": "ERC721",
+                    "transaction_type": "Single",
+                    "token_address": "0x14cc6af7a7318347419758274049e93db03236c9",
+                    "token_id": "6",
+                    "from_address": "0x0000000000000000000000000000000000000000",
+                    "to_address": "0xac6a87c681a5ed4cb58bc4fa7bf81a83b928c83c",
+                    "amount": "1",
+                    "verified": 1,
+                    "operator": null
+                },
+                "eventAt": 1678796508000,
+                "createdAt": 1678796520347,
+                "token": {
+                    "_id": "641066eca2f331c680d3e3a1",
+                    "chainId": 5,
+                    "contractAddress": "0x14CC6aF7A7318347419758274049e93DB03236C9",
+                    "contractType": 2,
+                    "tokenId": "6",
+                    "tokenUri": "https://ikzttp.mypinata.cloud/ipfs/QmQFkLSQysj94s5GvTHPyzTxrawwtjgiiYS2TBLgrvw8CW/6",
+                    "metadata": {
+                        "name": "Azuki #6",
+                        "image": "https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/6.png",
+                        "attributes": [
+                            { "trait_type": "Type", "value": "Human" },
+                            { "trait_type": "Hair", "value": "Teal Bun" },
+                            { "trait_type": "Clothing", "value": "Alpine Jacket" },
+                            { "trait_type": "Eyes", "value": "Calm" },
+                            { "trait_type": "Mouth", "value": "Tongue Out" },
+                            { "trait_type": "Offhand", "value": "Leather Katana" },
+                            { "trait_type": "Background", "value": "Off White A" }
+                        ]
+                    },
+                    "status": 0,
+                    "tags": [
+                        "attribute:Type:Human$",
+                        "attribute:Hair:Teal Bun$",
+                        "attribute:Clothing:Alpine Jacket$",
+                        "attribute:Eyes:Calm$",
+                        "attribute:Mouth:Tongue Out$",
+                        "attribute:Offhand:Leather Katana$",
+                        "attribute:Background:Off White A$",
+                        "status:0$",
+                        "currentOwner:0xaC6A87c681A5Ed4cb58bC4fa7bF81a83b928C83C$"
+                    ],
+                    "currentOwner": "0xaC6A87c681A5Ed4cb58bC4fa7bF81a83b928C83C",
+                    "currentOrderHash": "",
+                    "currentOrderPrice": "0",
+                    "currentOrderToken": "",
+                    "currentOrderTokenSymbol": "",
+                    "currentOrderTokenDecimals": 0,
+                    "listedTime": 0,
+                    "expiredTime": 0,
+                    "particleCustomScore1": "0",
+                    "particleCustomScore2": "0",
+                    "particleCustomScore3": "0",
+                    "createdAt": 1678796524418,
+                    "updatedAt": 1678796524419
+                }
+            }
+        ]
+    }
+}
 ```
 
 ### 🔥 Gets all the tokens in a collection
@@ -674,3 +1141,54 @@ Response example:
 }
 ```
 
+### 🔥 Upload order
+
+{% hint style="info" %}
+The Particle Market currently only supports [the Seaport protocol](https://github.com/ProjectOpenSea/seaport)
+
+Uploaded orders only support single NFT purchases
+{% endhint %}
+
+**Body Parameters:**
+
+* `order <seaport order struct>`: An order created through seaport Which contains `parameters` and `signature`
+
+**Results:**
+
+* `<object>`
+
+Request example:
+
+{% tabs %}
+{% tab title="Node.js" %}
+```javascript
+const Axios = require("axios");
+
+const chainId = 5; // Goerli Network
+const projectUuId = 'Your Project Id';
+const projectKey = 'Your Project Client Or Server Key';
+const tokenId = '5';
+const order = {}; // create from seaport
+
+(async () => {
+    const response = await axios.get(`https://api-market-debug.particle.network/chains/${chainId}/orders`, {
+        params: {
+            projectUuid,
+            projectKey,
+            order,
+        },
+    });
+
+    console.log(JSON.stringify(response.data));
+})();
+```
+{% endtab %}
+{% endtabs %}
+
+Response example:
+
+```json
+{
+    "success": true
+}
+```
