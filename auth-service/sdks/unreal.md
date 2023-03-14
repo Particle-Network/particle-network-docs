@@ -61,7 +61,7 @@ create a `SignAndSendTransaction` function in the Widget Blueprint, and then com
 2. `MakeEvmTransaction`: is a helper method to create a evm transaction, also you can create by yourself, then serilized to json string.
 3. `OnSignAndSendTransactionEvent`: Json string, when user confirmed signing the transaction in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Sign and send transaction</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption><p>Sign and send transaction</p></figcaption></figure>
 
 ### Sign typed data
 
@@ -89,4 +89,4 @@ only support solana, create a `SignAllTransactions` function in the Widget Bluep
 1. `Transactions`: the transactions to be signed by Particle Auth Service. request base58 string array.
 2. `OnSignAllTransactionsEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>
