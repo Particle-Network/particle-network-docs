@@ -612,7 +612,7 @@ pn.openBuy(options?: OpenBuyOptions, target?: string, features?: string)
 
 |      name     |                                     description                                     |  type  | required |
 | :-----------: | :---------------------------------------------------------------------------------: | :----: | :------: |
-|    network    |             \[Solana, Ethereum, Binance Smart Chain, Avalanche, Polygon]            | string |   False  |
+|    network    |   \[Solana, Ethereum, Binance Smart Chain,  Polygon, Tron, Optimism, Arbitrum One]  | string |   False  |
 |    fiatCoin   |                                    Fiat currency                                    | string |   False  |
 |   cryptoCoin  |                                   crypto currency                                   | string |   False  |
 |    fiatAmt    |  The amount of fiat currency that the user wants to spend.It's just for Buy Crypto  | number |   False  |
