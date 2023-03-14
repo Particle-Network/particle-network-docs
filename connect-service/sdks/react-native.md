@@ -57,7 +57,7 @@ android {
 
 3.1 After export iOS project, open `your_project_name.xcworkspace` under ios folder, here its name is `ParticleConnectExample.xcworkspace.`
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 3.2 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, and make sure the file is checked under Target Membership.
 

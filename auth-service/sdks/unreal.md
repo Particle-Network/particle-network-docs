@@ -51,7 +51,7 @@ create a `SignMessage` function in the Widget Blueprint, and then complete its p
 1. `Message`: the message to be signed by Particle Auth Service. in evm, request utf8 string, like "hello world", in solana, request base58 string.&#x20;
 2. `OnSignMessageEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Sign message</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (3).png" alt=""><figcaption><p>Sign message</p></figcaption></figure>
 
 ### Sign and send transaction
 
@@ -89,4 +89,4 @@ only support solana, create a `SignAllTransactions` function in the Widget Bluep
 1. `Transactions`: the transactions to be signed by Particle Auth Service. request base58 string array.
 2. `OnSignAllTransactionsEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>

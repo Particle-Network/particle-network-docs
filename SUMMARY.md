@@ -82,6 +82,11 @@
 
 * [After SDK Integrations](after-sdk-integrations/after-sdk-integrations.md)
 
+***
+
+* [NFT Market](nft-market/README.md)
+  * [Configure Your Contract](nft-market/configure-your-contract.md)
+
 ## Resources
 
 * [Logos & Assets](resources/logos-and-assets.md)
