@@ -86,6 +86,7 @@
 
 * [NFT Market](nft-market/README.md)
   * [Configure Your Contract](nft-market/configure-your-contract.md)
+  * [NFT Market API](nft-market/nft-market-api.md)
 
 ## Resources
 
