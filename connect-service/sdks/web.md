@@ -16,11 +16,14 @@ Github: [https://github.com/Particle-Network/particle-web-demo](https://github.c
 
 ### Step 1: Install Connect SDK.
 
-<pre class="language-bash"><code class="lang-bash">// react connect kit
-<strong>yarn add @particle-network/connect-react-ui @particle-network/auth @particle-network/provider @walletconnect/ethereum-provider
+<pre class="language-bash"><code class="lang-bash"># react connect kit
+<strong>yarn add @particle-network/connect-react-ui @particle-network/auth @particle-network/provider @particle-network/solana-wallet @walletconnect/ethereum-provider@1.8.0
 </strong>
-//optional: if you only use connect interface
-yarn add @particle-network/connect @particle-network/auth @particle-network/provider @walletconnect/ethereum-provider
+# optional: if you only use connect interface
+yarn add @particle-network/connect @particle-network/auth @particle-network/provider @particle-network/solana-wallet @walletconnect/ethereum-provider@1.8.0
+
+# if not support solana, you can add solana-wallet to devDependencies
+yarn add @particle-network/solana-wallet -D
 
 </code></pre>
 
