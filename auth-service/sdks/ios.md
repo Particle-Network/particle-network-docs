@@ -515,11 +515,14 @@ ParticleAuthService.openAccountAndSecurity()
 ### Set security account config
 
 ```swift
-// set security account config, default value is 1.
+// set security account config, 
+// promptSettingWhenSign default value is 1.
+// promptMasterPasswordSettingWhenLogin default value is 0.
 // 0 no prompt
 // 1 first time show prompt
 // 2 every time show prompt
-ParticleAuthService.setSecurityAccountConfig(config: .init(promptSettingWhenSign: 1))
+ParticleAuthService.setSecurityAccountConfig(config: 
+.init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
 ```
 
 ### CheckSum support
