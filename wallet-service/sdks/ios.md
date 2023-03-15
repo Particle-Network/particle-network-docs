@@ -1216,8 +1216,19 @@ let fiatCoin = "USD"
 let fiatAmt = 1000
 PNRouter.navigatorBuy(walletAddress: walletAddress, network: network, cryptoCoin: cryptoCoin, fiatCoin: fiatCoin, fiatAmt: fiatAmt)
 
-// open buy crypto without parameters
-PNRouter.navigatorBuy()
+// open buy crypto with full parameters
+let buyCryptoConfig = BuyCryptoConfig(walletAddress: "YOUR WALLET ADDRESS",
+                                              network: .ethereum,
+                                              cryptoCoin: "ETH",
+                                              fiatAmt: 1000,
+                                              fiatCoin: "USD",
+                                              fixFiatCoin: false,
+                                              fixFiatAmt: false,
+                                              fixCryptoCoin: false,
+                                              theme: "light",
+                                              language: "en-US")
+        
+PNRouter.navigatorBuy(buyCryptoConfig: buyCryptoConfig)
 ```
 {% endtab %}
 {% endtabs %}
