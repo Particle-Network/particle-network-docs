@@ -134,6 +134,109 @@ const env = Env.Production;
 particleAuth.init(chainInfo, env);
 ```
 
+### Web3 provider
+
+you can use our SDK as a web3 provider
+
+```javascript
+const web3 = createWeb3('your project id', 'your client key');
+
+web3_getAccounts = async () => { 
+    const accounts = await web3.eth.getAccounts();
+    console.log('web3.eth.getAccounts', accounts);
+}
+
+web3_getBalance = async () => {
+    const accounts = await web3.eth.getAccounts();
+    const balance = await web3.eth.getBalance(accounts[0]);
+    console.log('web3.eth.getBalance', balance);
+}
+
+web3_getChainId = async () => { 
+    const chainId = await web3.eth.getChainId();
+    console.log('web3.eth.getChainId', chainId);
+}
+
+web3_personalSign = async () => { 
+    // for persion_sign
+    // don't use web3.eth.personal.sign
+    const result = await web3.currentProvider.request({
+        method: 'personal_sign',
+        params: ['hello world']
+    });
+    console.log('web3.eth.personal.sign', result);
+}
+
+web3_signTypedData_v1 = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await web3.currentProvider.request({
+            method: 'eth_signTypedData_v1',
+            params: [[{ 'your typed data v1'}], accounts[0]]
+        });
+        console.log('web3 eth_signTypedData_v1', result);
+    } catch (error) {
+        console.log('web3 eth_signTypedData_v1', error);
+    }
+}
+
+web3_signTypedData_v3 = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await web3.currentProvider.request({
+            method: 'eth_signTypedData_v3',
+            params: [accounts[0], { 'your typed data v3' }]
+        });
+        console.log('web3 eth_signTypedData_v3', result);
+    } catch (error) {
+        console.log('web3 eth_signTypedData_v3', error);
+    }
+}
+
+web3_signTypedData_v4 = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await web3.currentProvider.request({
+            method: 'eth_signTypedData_v4',
+            params: [accounts[0], { 'your typed data v4 '}]
+        });
+        console.log('web3 eth_signTypedData_v4', result);
+    } catch (error) {
+        console.log('web3 eth_signTypedData_v4', error);
+    }
+}
+
+web3_sendTransaction = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await web3.eth.sendTransaction(
+            {
+                from: accounts[0],
+                to: 'a receiver address or contract address',
+                value: '1000000',
+                data: '0x'
+            }
+        )
+        console.log('web3.eth.sendTransaction', result);
+    } catch (error) {
+        console.log('web3.eth.sendTransaction', error);
+    }
+}
+
+web3_wallet_switchEthereumChain = async () => {
+    try {
+        const result = await web3.currentProvider.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: '0x61' }]
+        })
+        console.log('web3 wallet_switchEthereumChain', result);
+    } catch (error) {
+        console.log('web3 wallet_switchEthereumChain', error);
+    }
+
+}
+```
+
 ### Login
 
 ```javascript
