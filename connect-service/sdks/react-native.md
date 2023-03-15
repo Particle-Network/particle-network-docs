@@ -169,8 +169,143 @@ import * as particleConnect from 'react-native-particle-connect';
 const chainInfo = ChainInfo.EthereumGoerli;
 const env = Env.Dev;
 const metadata = { name: "Particle Connect", icon: "https://connect.particle.network/icons/512.png", url: "https://connect.particle.network" }
+
+// the rpcUrl works for WalletType EvmPrivateKey and SolanaPrivakey
+    // we have default rpc url in native SDK
 const rpcUrl = { evm_url: null, solana_url: null };
 particleConnect.init(chainInfo, env, metadata, rpcUrl);
+```
+
+### Web3 provider
+
+you can use our SDK as a web3 provider
+
+```javascript
+// Start with new web3, at this time, you don't connect with this walletType, and dont know any publicAddress
+var newWeb3 = undefined;
+
+// After connected a wallet, restoreWeb3 when getAccounts.
+// We need to check if the walletType and publicAddress is connected. 
+var web3 = undefined;
+
+newWeb3_getAccounts = async () => {
+    try {
+        const accounts = await newWeb3.eth.getAccounts();
+        pnaccount = new PNAccount("","",accounts[0],"");
+        console.log('web3.eth.getAccounts', accounts);
+    } catch (error) {
+        console.log('web3.eth.getAccounts', error);
+    }
+}
+
+restoreWeb3_getAccounts = async () => {
+    try {
+        console.log('pnaccount.publicAddress ', pnaccount.publicAddress);
+        web3 = restoreWeb3('your project id', 'your client key', PNAccount.walletType, pnaccount.publicAddress);
+       
+        const accounts = await web3.eth.getAccounts();
+        console.log('web3.eth.getAccounts', accounts);
+    } catch (error) {
+        console.log('web3.eth.getAccounts', error);
+    }
+}
+
+
+web3_getBalance = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const balance = await web3.eth.getBalance(accounts[0]);
+        console.log('web3.eth.getBalance', balance);
+    } catch (error) {
+        console.log('web3.eth.getBalance', error);
+    }
+
+}
+
+web3_getChainId = async () => {
+    try {
+        const chainId = await web3.eth.getChainId();
+        console.log('web3.eth.getChainId', chainId);
+    } catch (error) {
+        console.log('web3.eth.getChainId', error);
+    }
+
+}
+
+web3_personalSign = async () => {
+    // for persion_sign
+    // don't use web3.eth.personal.sign
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await web3.currentProvider.request({
+            method: 'personal_sign',
+            params: ['hello world', accounts[0]]
+        });
+
+        console.log('web3.eth.personal.sign', result);
+    } catch (error) {
+        console.log('web3.eth.personal.sign', error);
+    }
+}
+
+web3_signTypedData_v4 = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await web3.currentProvider.request({
+            method: 'eth_signTypedData_v4',
+            params: [accounts[0], { 'your typed data v4' }]
+        });
+        console.log('web3 eth_signTypedData_v4', result);
+    } catch (error) {
+        console.log('web3 eth_signTypedData_v4', error);
+    }
+}
+
+web3_sendTransaction = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await web3.eth.sendTransaction(
+            {
+                from: accounts[0],
+                to: 'a receiver address or contract address',
+                value: '1000000',
+                data: '0x'
+            }
+        )
+        console.log('web3.eth.sendTransaction', result);
+    } catch (error) {
+        console.log('web3.eth.sendTransaction', error);
+    }
+
+}
+
+web3_wallet_switchEthereumChain = async () => {
+    try {
+        const chainId = "0x" + EvmService.currentChainInfo.chain_id.toString(16);
+        const result = await web3.currentProvider.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: chainId }]
+        })
+        console.log('web3 wallet_switchEthereumChain', result);
+    } catch (error) {
+        console.log('web3 wallet_switchEthereumChain', error);
+    }
+
+}
+
+web3_wallet_addEthereumChain = async () => {
+    try {
+        const chainId = "0x" + EvmService.currentChainInfo.chain_id.toString(16);
+        const result = await web3.currentProvider.request({
+            method: 'wallet_addEthereumChain',
+            params: [{ chainId: chainId }]
+        })
+        console.log('web3 wallet_addEthereumChain', result);
+    } catch (error) {
+        console.log('web3 wallet_addEthereumChain', error);
+    }
+
+}
 ```
 
 ### Connect
