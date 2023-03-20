@@ -86,7 +86,15 @@
 
 * [NFT Market](nft-market/README.md)
   * [Configure Your Contract](nft-market/configure-your-contract.md)
-  * [NFT Market API](nft-market/nft-market-api.md)
+  * [NFT Market API](nft-market/nft-market-api/README.md)
+    * [🔥 Track a Collection](nft-market/nft-market-api/track-a-collection.md)
+    * [🔥 Get the Collection list](nft-market/nft-market-api/get-the-collection-list.md)
+    * [🔥 Get a Collection](nft-market/nft-market-api/get-a-collection.md)
+    * [🔥 Gets activities of a Collection](nft-market/nft-market-api/gets-activities-of-a-collection.md)
+    * [🔥 Refresh the Collection metadata](nft-market/nft-market-api/refresh-the-collection-metadata.md)
+    * [🔥 Query Tokens in a Collection](nft-market/nft-market-api/query-tokens-in-a-collection.md)
+    * [🔥 Get the count of tokens in a Collection](nft-market/nft-market-api/get-the-count-of-tokens-in-a-collection.md)
+    * [🔥 Get single Token info](nft-market/nft-market-api/get-single-token-info.md)
 
 ## Resources
 
