@@ -617,12 +617,18 @@ PNRouter.build(RouterPath.NftDetails, params).navigation()
 ```kotlin
 // // open buy crypto with parameters
 // every parameter is optional
-val walletAddress = ""
-val network = ChainName.Ethereum
-val cryptoCoin = "USDT"
-val fiatCoin = "USD"
-val fiatAmt = 1000
-ParticleNetwork.navigatorBuy(walletAddress,network,cryptoCoin,fiatCoin,fiatAmt)
+ParticleNetwork.openBuy(
+    walletAddress: String? = null,
+    amount: Int? = null,
+    fiatCoin: String = "usd",
+    cryptoCoin: String = "eth",
+    fixFiatCoin: Boolean = false,
+    fixFiatAmt: Boolean = false,
+    fixCryptoCoin: Boolean = false,
+    theme: String = "light",
+    language: String = "en-us",
+    chainName: String? = null
+)
 ```
 
 ### Open Swap
