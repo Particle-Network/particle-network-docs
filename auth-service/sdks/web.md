@@ -632,7 +632,7 @@ If you use [web3modal](https://github.com/WalletConnect/web3modal) connect walle
 
 [👉 Sample](https://web-demo.particle.network/)
 
-[👉 Source Code](https://github.com/Particle-Network/particle-web-demo/blob/master/src/web3Modal.ts)
+[👉 Source Code](https://github.com/Particle-Network/particle-web-demo)
 
 
 
@@ -680,7 +680,7 @@ const popularWallets = {
 
 [👉 Sample](https://web-demo.particle.network/)
 
-👉 [Source Code](https://github.com/Particle-Network/particle-web-demo/blob/master/src/rainbowkit/rainbowkit-demo.ts)
+👉 [Source Code](https://github.com/Particle-Network/particle-web-demo)
 
 ## EVM WalletConnect V1 Integration
 
