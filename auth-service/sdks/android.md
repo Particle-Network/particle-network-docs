@@ -558,11 +558,18 @@ ParticleNetwork.openAccountAndSecurity()
 ### Set security account config
 
 ```kotlin
-// set security account config, default value is 1.
+// set security account config, 
+// promptSettingWhenSign default value is 1.
+// promptMasterPasswordSettingWhenLogin default value is 0.
 // 0 no prompt
 // 1 first time show prompt
 // 2 every time show prompt
-ParticleNetwork.setSecurityAccountConfig(SecurityAccountConfig(promptSettingWhenSign=1))
+ ParticleNetwork.setSecurityAccountConfig(
+    SecurityAccountConfig(
+        promptSettingWhenSign = 1,
+        promptMasterPasswordSettingWhenLogin = 2
+    )
+)
 ```
 
 ### Custom interface style
