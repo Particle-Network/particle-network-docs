@@ -10,4 +10,8 @@ This lets our partners purchase cryptocurrency directly through various local an
 
 ### Live
 
-[https://ramp.particle.network/](https://ramp.particle.network/)
+[https://ramp.particle.network/](https://ramp.particle.network/)\
+\
+Also, You can enter the On-Ramp page by clicking on the Buy button in the wallet.
+
+![](<../.gitbook/assets/image (2).png>)
