@@ -27,4 +27,4 @@ Live
 3. Select the chain where your NFT contract is deployed and enter the NFT contract address.
 4. Click the **`Add to Marketplace`** button.
 
-<figure><img src="../.gitbook/assets/a&#x27;a&#x27;a.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/a&#x27;a&#x27;a.png" alt=""><figcaption></figcaption></figure>
