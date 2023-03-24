@@ -2,7 +2,7 @@
 description: The fastest and easiest way to build your own NFT Marketplace without limits
 ---
 
-# NFT Market
+# EVM NFT Service
 
 {% hint style="info" %}
 In the Market, An NFT contract is considered a Collection.
