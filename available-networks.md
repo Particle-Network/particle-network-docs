@@ -35,6 +35,7 @@ The `mainnet` and `testnet` are both available for all the following chains.
 | Scroll              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | ZkSync v2           | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 | Metis               | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
+| Scroll              | [✅ Docs](broken-reference) | ✅ [Docs](auth-service/introduction.md) | ✅ [Docs](wallet-service/introduction.md) | [✅ Docs](node-service/evm-chains-api/) |
 
 ## NFT Service
 
