@@ -4,13 +4,14 @@ description: Changelog
 
 # Changelog
 
-## 20230324
+## 20230310
 
 1. Add Master Password
 2. [Add new on-ramp service](on-ramp/on-ramp.md)
 3. Add twitter login
-4. Improve Custom UI
-5. Bug fix
+4. Add scroll support
+5. Improve Custom UI
+6. Bug fix
 
 ## 20230211
 
