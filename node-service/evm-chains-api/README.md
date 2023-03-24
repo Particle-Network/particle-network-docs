@@ -41,7 +41,7 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 321                 | kcc                     | KCC Mainnet                 |
 | 322                 | kcc                     | KCC Testnet                 |
 | 210425              | platon                  | PlatON Mainnet              |
-| 2203181             | platon                  | PlatON Testnet              |
+| 2206132             | platon                  | PlatON Testnet              |
 | 728126428           | tron                    | Tron Mainnet                |
 | 2494104990          | tron                    | Tron Shasta                 |
 | 3448148188          | tron                    | Tron Nile                   |
@@ -65,6 +65,7 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 280                 | zksync                  | zkSyncV2 Testnet            |
 | 1088                | metis                   | Metis Mainnet               |
 | 599                 | metis                   | Metis Testnet               |
+| 534353              | scroll                  | Scroll Alpha Testnet        |
 
 ### Standard RPC
 

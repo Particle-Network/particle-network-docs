@@ -45,7 +45,7 @@
 ## WALLET SERVICE
 
 * [Introduction](wallet-service/introduction.md)
-* [On & Off Ramps](wallet-service/on-and-off-ramps.md)
+* [On-Ramp](wallet-service/on-ramp.md)
 * [SDKs](wallet-service/sdks/README.md)
   * [Android](wallet-service/sdks/android.md)
   * [iOS](wallet-service/sdks/ios.md)
@@ -57,6 +57,20 @@
 ## NFT SERVICE
 
 * [Introduction](nft-service/introduction.md)
+* [EVM NFT Service](nft-service/evm-nft-service/README.md)
+  * [Configure Your Contract](nft-service/evm-nft-service/configure-your-contract.md)
+  * [NFT Market API](nft-service/evm-nft-service/nft-market-api/README.md)
+    * [🔥 Track a Collection](nft-service/evm-nft-service/nft-market-api/track-a-collection.md)
+    * [🔥 Get the Collection list](nft-service/evm-nft-service/nft-market-api/get-the-collection-list.md)
+    * [🔥 Get a Collection](nft-service/evm-nft-service/nft-market-api/get-a-collection.md)
+    * [🔥 Gets activities of a Collection](nft-service/evm-nft-service/nft-market-api/gets-activities-of-a-collection.md)
+    * [🔥 Gets activities of a Collection By Address](nft-service/evm-nft-service/nft-market-api/gets-activities-of-a-collection-by-address.md)
+    * [🔥 Refresh the Collection metadata](nft-service/evm-nft-service/nft-market-api/refresh-the-collection-metadata.md)
+    * [🔥 Query Tokens in a Collection](nft-service/evm-nft-service/nft-market-api/query-tokens-in-a-collection.md)
+    * [🔥 Get the count of tokens in a Collection](nft-service/evm-nft-service/nft-market-api/get-the-count-of-tokens-in-a-collection.md)
+    * [🔥 Get single Token info](nft-service/evm-nft-service/nft-market-api/get-single-token-info.md)
+    * [🔥 Gets activities of a Token](nft-service/evm-nft-service/nft-market-api/gets-activities-of-a-token.md)
+    * [🔥 Upload order](nft-service/evm-nft-service/nft-market-api/upload-order.md)
 * [Solana NFT Service](nft-service/solana-nft-service/README.md)
   * [Standard NFT](nft-service/solana-nft-service/nft-rpc-api.md)
   * [Marketplace](nft-service/solana-nft-service/marketplace/README.md)
@@ -67,41 +81,20 @@
 
 * [Introduction](node-service/introduction.md)
 * [Authentication](node-service/authentication.md)
-* [Solana API](node-service/solana-api/README.md)
-  * [Standard RPC](node-service/solana/rpc.md)
-  * [Enhanced RPC](node-service/solana-api/enhanced-rpc.md)
-  * [Transaction Struct](node-service/solana-api/transaction-struct.md)
 * [EVM Chains API](node-service/evm-chains-api/README.md)
   * [Standard RPC](node-service/evm-chains-api/standard-rpc.md)
   * [Enhanced RPC](node-service/evm-chains-api/enhanced-rpc.md)
     * [Tokens & NFTs](node-service/evm-chains-api/enhanced-rpc/tokens-and-nfts.md)
+* [Solana API](node-service/solana-api/README.md)
+  * [Standard RPC](node-service/solana/rpc.md)
+  * [Enhanced RPC](node-service/solana-api/enhanced-rpc.md)
+  * [Transaction Struct](node-service/solana-api/transaction-struct.md)
 * [IPFS API](ipfs-service.md)
 * [Error Reference](node-service/error-reference.md)
 
 ## After SDK Integrations
 
 * [After SDK Integrations](after-sdk-integrations/after-sdk-integrations.md)
-
-## NFT MARKET
-
-* [NFT Market](nft-market/nft-market/README.md)
-  * [Configure Your Contract](nft-market/nft-market/configure-your-contract.md)
-  * [NFT Market API](nft-market/nft-market/nft-market-api/README.md)
-    * [🔥 Track a Collection](nft-market/nft-market/nft-market-api/track-a-collection.md)
-    * [🔥 Get the Collection list](nft-market/nft-market/nft-market-api/get-the-collection-list.md)
-    * [🔥 Get a Collection](nft-market/nft-market/nft-market-api/get-a-collection.md)
-    * [🔥 Gets activities of a Collection](nft-market/nft-market/nft-market-api/gets-activities-of-a-collection.md)
-    * [🔥 Gets activities of a Collection By Address](nft-market/nft-market/nft-market-api/gets-activities-of-a-collection-by-address.md)
-    * [🔥 Refresh the Collection metadata](nft-market/nft-market/nft-market-api/refresh-the-collection-metadata.md)
-    * [🔥 Query Tokens in a Collection](nft-market/nft-market/nft-market-api/query-tokens-in-a-collection.md)
-    * [🔥 Get the count of tokens in a Collection](nft-market/nft-market/nft-market-api/get-the-count-of-tokens-in-a-collection.md)
-    * [🔥 Get single Token info](nft-market/nft-market/nft-market-api/get-single-token-info.md)
-    * [🔥 Gets activities of a Token](nft-market/nft-market/nft-market-api/gets-activities-of-a-token.md)
-    * [🔥 Upload order](nft-market/nft-market/nft-market-api/upload-order.md)
-
-## ON RAMP
-
-* [On-Ramp](on-ramp/on-ramp.md)
 
 ## Resources
 

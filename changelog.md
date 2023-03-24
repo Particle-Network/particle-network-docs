@@ -4,6 +4,14 @@ description: Changelog
 
 # Changelog
 
+## 20230324
+
+1. Add Master Password
+2. [Add new on-ramp service](wallet-service/on-ramp.md)
+3. Add twitter login
+4. Improve Custom UI
+5. Bug fix
+
 ## 20230211
 
 1. Add new EVM chains: Arbitrum Nova, Celo, Gnosis, Klaytn, Scroll, zkSync2.0, Metis
