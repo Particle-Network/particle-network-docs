@@ -46,4 +46,4 @@ You must configure your Android/iOS/Web app to access Particle Network's auth an
 
 And don't forget to follow our [Github](https://github.com/Particle-Network), where we will release more demos for you to develop faster.
 
-👉 [Click to view our demo apps out now!](../resources/demo-applications/)
+👉 [Click to view our demo apps out now!](../developers/demo-applications/)

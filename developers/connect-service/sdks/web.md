@@ -120,7 +120,7 @@ export const App = () => {
 ```
 
 {% hint style="info" %}
-Have a problem? you can refer to this [FAQ](../../../resouces/faq.md#web-sdk-integration-problems).
+Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-problems).
 {% endhint %}
 
 ### [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)

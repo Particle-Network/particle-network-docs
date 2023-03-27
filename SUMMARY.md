@@ -85,17 +85,17 @@
   * [IPFS API](developers/node-service/ipfs-service.md)
   * [Error Reference](developers/node-service/error-reference.md)
 * [⏭ What Else](developers/what-else.md)
+* [📚 Demo Applications](developers/demo-applications/README.md)
+  * [Android](developers/demo-applications/android.md)
+  * [iOS](developers/demo-applications/ios.md)
+  * [Web](developers/demo-applications/web.md)
+  * [Web NFT Demo](developers/demo-applications/web-nft-demo.md)
+  * [Unity](developers/demo-applications/unity.md)
+* [❔ FAQ](developers/faq.md)
 
 ## Resources
 
 * [🎨 Logos & Assets](resources/logos-and-assets.md)
-* [❔ FAQ](resouces/faq.md)
-* [📚 Demo Applications](resources/demo-applications/README.md)
-  * [Android](resources/demo-applications/android.md)
-  * [iOS](resources/demo-applications/ios.md)
-  * [Web](resources/demo-applications/web.md)
-  * [Web NFT Demo](resources/demo-applications/web-nft-demo.md)
-  * [Unity](resources/demo-applications/unity.md)
 * [📊 System Status](https://status.particle.network)
 * [📜 Terms & Conditions](resouces/terms-and-conditions/README.md)
   * [Privacy Policy](resouces/terms-and-conditions/privacy-policy.md)
@@ -104,7 +104,7 @@
 
 ## Community And Support
 
+* [📆 Schedule a Demo](https://calendly.com/particle-network/30min)
 * [🎮 Discord](https://discord.gg/2y44qr6CR2)
 * [🐙 Github](https://github.com/Particle-Network)
 * [🐦 Twitter](https://twitter.com/ParticleNtwrk)
-* [📆 Schedule a Demo](https://calendly.com/particle-network/30min)
