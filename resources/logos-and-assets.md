@@ -1,4 +1,4 @@
-# Logos & Assets
+# 🎨 Logos & Assets
 
 A variety of Particle Network logos and assets for your integration can be found here:&#x20;
 

@@ -1,2 +1,2 @@
-# Demo Applications
+# 📚 Demo Applications
 
