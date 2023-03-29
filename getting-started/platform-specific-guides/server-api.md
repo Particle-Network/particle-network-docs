@@ -22,7 +22,7 @@ description: All you need to know for integrating Particle with Server API
 [dashboard](../dashboard/)
 {% endcontent-ref %}
 
-## For React Native
+## For Server API
 
 ### SDKs
 
