@@ -1,73 +1,44 @@
 ---
-description: The Full-Stack Web3 Infrastructure
-cover: .gitbook/assets/飞书20230222-164203 (1).png
+description: >-
+  The fastest path from ideas to deployment in a single workflow for high
+  performance dApps
+cover: .gitbook/assets/Particle Banner.png
 coverY: 0
 ---
 
-# 💡 What is Particle?
+# ✨ Particle Network
 
-**Particle Network** is a full-stack, data-driven, and composable Web3 data and development platform. Our vision is to accelerate the world's transition into the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
+## Overview
 
-## Products
+{% content-ref url="README (1).md" %}
+[README (1).md](<README (1).md>)
+{% endcontent-ref %}
 
-### Connect Service
+{% content-ref url="overview/security.md" %}
+[security.md](overview/security.md)
+{% endcontent-ref %}
 
-**Particle Connect** is the SSO for web3. We help you onboard both Web2 & Web3 users **seamlessly, securely & user-friendly.**
+{% content-ref url="overview/available-networks.md" %}
+[available-networks.md](overview/available-networks.md)
+{% endcontent-ref %}
 
-[👉 Learn more about Particle Connect](developers/connect-service/)
+{% content-ref url="getting-started/get-started.md" %}
+[get-started.md](getting-started/get-started.md)
+{% endcontent-ref %}
 
-### Auth Service
+## Platform-Specific Guides
 
-**Particle Auth** provides MPC (Multi-Party Computation)-based threshold signatures.
+|                                                                              🌍 Basic                                                                             |                                                                              📱 Mobile                                                                              |                                                                                                            🎮 Game                                                                                                            |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|       <p><img src=".gitbook/assets/JavaScript-logo.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/web.md">Web</a></p>      |     <p><img src=".gitbook/assets/android-logo.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/andriod.md">Andriod</a></p>     |                                    <p><img src=".gitbook/assets/U-ea48bc1d-128.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/unity/">Unity</a></p>                                    |
+| <p><img src=".gitbook/assets/926f6aaba773.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/server-api.md">Server API</a></p> |    <p><img src=".gitbook/assets/apple-logo-transparent.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/ios.md">iOS</a></p>    | <p><img src=".gitbook/assets/kisspng-unreal-tournament-unreal-engine-4-game-engine-marketplace-5ad659d01e4e40.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/unreal.md">Unreal</a></p> |
+|                                                                                                                                                                   |      <p><img src=".gitbook/assets/flutter5786.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/flutter.md">Flutter</a></p>     |                                                                                                                                                                                                                               |
+|                                                                                                                                                                   | <p><img src=".gitbook/assets/React-icon.png" alt="" data-size="line"></p><p><a href="getting-started/platform-specific-guides/react-native.md">React Native</a></p> |                                                                                                                                                                                                                               |
 
-With threshold signatures, each party creates an independent key. They then forge the vault’s lock together in a modular way, in which each party shapes a part of the lock that corresponds to its key.
+## Explore Our Services
 
-Our security is unlike any other auth/wallet service: it's better. Complex passwords and long seed phrases, browser extensions, and special hardware are no longer required for log-in. Instead, accounts are secured by industry-leading TSS implementation and KMS encryption.
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">🔌 The SSO for Web3</td><td><a href=".gitbook/assets/connect service.png">connect service.png</a></td><td><a href="developers/connect-service/">connect-service</a></td></tr><tr><td align="center">🗝 MPC-TSS based authentication</td><td><a href=".gitbook/assets/auth service.png">auth service.png</a></td><td><a href="developers/auth-service/">auth-service</a></td></tr><tr><td align="center">💰 Your one-stop wallet solution</td><td><a href=".gitbook/assets/wallet service.png">wallet service.png</a></td><td><a href="developers/wallet-service/">wallet-service</a></td></tr><tr><td align="center">💎 All-in-one NFT solution</td><td><a href=".gitbook/assets/nft service.png">nft service.png</a></td><td><a href="developers/nft-service/">nft-service</a></td></tr><tr><td align="center">🌐 Simplify scaling and powering your dApps</td><td><a href=".gitbook/assets/node service.png">node service.png</a></td><td><a href="developers/node-service/">node-service</a></td></tr></tbody></table>
 
-[👉 Learn more about how we implement this 🔐](overview/security.md)
+## Resources
 
-With Particle Auth integrated into your dApp, users can log in within seconds. By removing seed phrases, we can increase conversion rates by up to 64% for both new and Web3.0 users.
-
-[👉 Learn more about Particle Auth](developers/auth-service/)
-
-### Wallet Service
-
-**Particle Wallet** provides a one-stop wallet solution, which is easy to use but powerful and safe.
-
-We've included detailed designs in our wallet service to create the ultimate user experience. By integrating Particle Wallet with a one-line code, we help you provide users with token and NFT-related functions, transaction and payment processes, as well as other operations to deliver a first-class user experience.
-
-👉[ Learn more about Particle Wallet](developers/wallet-service/)
-
-### Node Service
-
-**Particle Node** provides a robust, secure, and highly available blockchain API.
-
-Not only do we have JSON-RPC support, but also enhanced API. This allows you to receive transaction information and NFTs through addresses, obtain token prices, smartly encode/decode transactions, and more. Compared to other node services, you develop your dApp faster while also ensuring that it performs better.
-
-[👉 Learn more about Particle Node](developers/node-service/)
-
-### **NFT Service**
-
-**Particle NFT** provides a one-stop NFT Create, Manage, Distribute, and Marketplace solution.
-
-[👉 Learn more about Particle NFT](developers/nft-service/)
-
-### Decentralized Storage
-
-We support IPFS now, and more decentralized storage services are coming.
-
-[👉 Learn more about IPFS](developers/node-service/ipfs-service.md)
-
-### More Incoming Services
-
-**Data Service**: Web3 BI system, deriving insights from real-time on- and off-chain data
-
-👉 [Join our Discord community and tell us what you need🛠. Let's **BUIDL** together!](https://discord.gg/2y44qr6CR2)
-
-## SDKs
-
-We support [Android, iOS, Web, Unity, Flutter, and React Native](https://github.com/particle-network/) now. And other platforms' SDK are in development and will launch soon.
-
-## Available Networks
-
-Currently, we support almost **all EVM-compatible chains** and **the Solana chain**. [For details check this 👉](overview/available-networks.md)
+<table data-view="cards"><thead><tr><th align="center"></th></tr></thead><tbody><tr><td align="center">🗺️ Dashboard</td></tr><tr><td align="center">📚 Demo Applications</td></tr><tr><td align="center">❓FAQ  </td></tr><tr><td align="center">📰 Blogs</td></tr><tr><td align="center">🐙 Github</td></tr><tr><td align="center">📅 Book a demo</td></tr><tr><td align="center">🎮 Discord</td></tr><tr><td align="center">🐦 Twitter</td></tr><tr><td align="center">📊 System Status</td></tr></tbody></table>
