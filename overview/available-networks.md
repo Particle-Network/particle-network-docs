@@ -33,9 +33,8 @@ The `mainnet` and `testnet` are both available for all the following chains.
 | Celo                | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
 | Klaytn              | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
 | Scroll              | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
-| ZkSync v2           | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
+| ZkSync Era          | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
 | Metis               | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
-| Scroll              | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
 
 ## NFT Service
 

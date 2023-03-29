@@ -59,10 +59,8 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 44787               | celo                    | Celo Mainnet                |
 | 8217                | klaytn                  | Klaytn Mainnet              |
 | 1001                | klaytn                  | Klaytn Testnet              |
-| 534351              | scroll                  | Scroll L1 Testnet           |
-| 534354              | scroll                  | Scroll L2 Testnet           |
-| 324                 | zksync                  | zkSyncV2 Mainnet            |
-| 280                 | zksync                  | zkSyncV2 Testnet            |
+| 324                 | zksync                  | zkSynra Era Mainnet         |
+| 280                 | zksync                  | zkSync Era Testnet          |
 | 1088                | metis                   | Metis Mainnet               |
 | 599                 | metis                   | Metis Testnet               |
 | 534353              | scroll                  | Scroll Alpha Testnet        |
