@@ -215,8 +215,7 @@ Login with Social Account.
 
 ```typescript
 pn.auth.login({
-    preferredAuthType: 'google', //support facebook,google,apple,discord,github,twitch,microsoft,linkedin etc.
-    socialLoginPrompt: 'none', //default vaue is none
+    preferredAuthType: 'google', //support facebook,google,twitter,apple,discord,github,twitch,microsoft,linkedin etc.
   })
 ```
 
