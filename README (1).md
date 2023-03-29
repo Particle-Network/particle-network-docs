@@ -1,5 +1,7 @@
 ---
 description: The Full-Stack Web3 Infrastructure
+cover: .gitbook/assets/Particle Banner.png
+coverY: 0
 ---
 
 # 💡 What is Particle?
