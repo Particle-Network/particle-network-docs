@@ -10,7 +10,7 @@ In the Market, An NFT contract is considered a Collection.
 
 Live
 
-[https://market-web-debug.particle.network/](https://market-web-debug.particle.network/)
+[https://market-web.particle.network](https://market-web.particle.network)
 
 ## Quick start
 

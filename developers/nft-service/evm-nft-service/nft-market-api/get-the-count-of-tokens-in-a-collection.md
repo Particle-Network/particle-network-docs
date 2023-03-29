@@ -46,7 +46,7 @@ const Axios = require("axios");
 const projectUuId = 'Your Project Id';
 const projectKey = 'Your Project Client Or Server Key';
 const chainId = 5; // Goerli Network
-const baseUrl = 'https://api-market-debug.particle.network';
+const baseUrl = 'https://api-market.particle.network';
 const contractAddress = '0xE860aE9379B1902DC08F67F50de7b9CC066AF0FF';
 const url = `${baseUrl}/chains/${chainId}/contractAddress/${contractAddress}/tokens/count`;
 

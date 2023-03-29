@@ -24,7 +24,7 @@ const projectUuId = 'Your Project Id';
 const projectKey = 'Your Project Client Or Server Key';
 
 (async () => {
-    const response = await Axios.get(`https://api-market-debug.particle.network/chains/${chainId}/contractAddress`, {
+    const response = await Axios.get(`https://api-market.particle.network/chains/${chainId}/contractAddress`, {
         params: {
             projectUuid,
             projectKey,

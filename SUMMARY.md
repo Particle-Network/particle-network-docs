@@ -105,6 +105,7 @@
 ## Resources
 
 * [🎨 Logos & Assets](resources/logos-and-assets.md)
+* [📰 Blogs](https://medium.com/particle-network)
 * [📊 System Status](https://status.particle.network)
 * [📜 Terms & Conditions](resouces/terms-and-conditions/README.md)
   * [Privacy Policy](resouces/terms-and-conditions/privacy-policy.md)
