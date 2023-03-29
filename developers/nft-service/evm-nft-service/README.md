@@ -8,10 +8,6 @@ description: The fastest and easiest way to build your own NFT Marketplace witho
 In the Market, An NFT contract is considered a Collection.
 {% endhint %}
 
-Live
-
-[https://market-web.particle.network](https://market-web.particle.network)
-
 ## Quick start
 
 #### 1. Prepare Your ERC721 Contract.
