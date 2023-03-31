@@ -76,6 +76,7 @@
       * [🔥 Get single Token info](developers/nft-service/evm-nft-service/nft-market-api/get-single-token-info.md)
       * [🔥 Gets activities of a Token](developers/nft-service/evm-nft-service/nft-market-api/gets-activities-of-a-token.md)
       * [🔥 Upload order](developers/nft-service/evm-nft-service/nft-market-api/upload-order.md)
+      * [🔥 Build order](developers/nft-service/evm-nft-service/nft-market-api/build-order.md)
   * [Solana NFT Service](developers/nft-service/solana-nft-service/README.md)
     * [Standard NFT](developers/nft-service/solana-nft-service/nft-rpc-api.md)
     * [Marketplace](developers/nft-service/solana-nft-service/marketplace/README.md)
