@@ -82,7 +82,7 @@ Response example:
         },
         // The order structure is a signable EIP-712 structure, 
         // signed using the signTypedDataV4 method to generate a signature.
-        // order parameters = JSON.parse(typedDataV4MessageToSign).message
+        // order parameters = typedDataV4MessageToSign.message
         // order signature = signTypedDataV4 with typedDataV4ToSign
         {
             "type": "create",
