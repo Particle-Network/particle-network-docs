@@ -18,6 +18,7 @@ Considering that some users may use languages other than JavaScript and find it 
 
 * `fromAddress <address>`: NFT owner
 * `tokenAddress <address>`: NFT contract address
+* `tokenId <string>`: NFT TokenId
 * `price <string>`: The price of an NFT is denominated in the smallest unit of the currency, such as Wei for ETH.
 * `currency <address, optional>`: Currency address - If the currency is an ERC20 token, enter the token's address here. If it is a native token, enter `0x0000000000000000000000000000000000000000`. If not entered, the default is `0x0000000000000000000000000000000000000000`.
   * Note: **The currency address must be within the currency scope defined in the contract metadata.**
