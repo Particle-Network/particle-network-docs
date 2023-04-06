@@ -329,6 +329,101 @@ Response Example:
 }
 ```
 
+### 🔥 particle\_getPendingTransactionsByAddress
+
+> Get pending transactions by giving an address
+
+**Parameters:**
+
+* `<string>` - account address
+
+**Results:**
+
+* `<[object]>` - a JSON object containing:
+  * `hash: <string>`, transaction hash
+  * `from: <string>`, transaction send from address
+  * `to: <string>`, transaction send to address
+  * `value: <string>`, transaction send value
+  * `data: <string>`, transaction send data
+  * `gasLimit: <int64>`, transaction gas limit
+  * `timestamp: <int64>`, transaction time
+  * `status: <int64>`, transaction status:, the value is as below:
+    * `0`, pending transaction in `TX-QUEUE`, can cancel
+    * `1`, pending transaction in `TX-POOL`, can speed up or cancel
+  * `type: <int64>`, transaction type, the value is as below:
+    * `0:` legacy transaction
+    * `1:` EIP-2930 access list transaction
+    * `2:` EIP-1559 gas fee market transaction
+  * `nonce: <int64>`, trancsaction nonce
+  * `accessList: <[]>`, EIP-2930 access list
+  * `maxPriorityFeePerGas: <string>`, EIP-1559 max priority fee per gas
+  * `maxFeePerGas: <string>`, EIP-1559 max fee per gas
+
+Request Example:
+
+{% tabs %}
+{% tab title="Javascript" %}
+```typescript
+const axios = require('axios');
+
+(async () => {
+    const response = await axios.post('https://rpc.particle.network/evm-chain', {
+        chainId: 5,
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'particle_getPendingTransactionsByAddress',
+        params: ['0x425249Cf0F2f91f488E24cF7B1AA3186748f7516'],
+    }, {
+        auth: {
+            username: 'Your Project Id',
+            password: 'Your Project Server Key',
+        }
+    });
+
+    console.log(response.data);
+})();
+```
+{% endtab %}
+
+{% tab title="Curl" %}
+```powershell
+curl 'https://rpc.particle.network/evm-chain' \
+--header 'Authorization: Basic { Auth String }' \
+-X POST -H "Content-Type: application/json" -d '
+    {"chainId":5,"jsonrpc":"2.0","id":1,"method":"particle_getPendingTransactionsByAddress","params":["0x425249Cf0F2f91f488E24cF7B1AA3186748f7516"]}
+'
+```
+{% endtab %}
+{% endtabs %}
+
+Response Example:
+
+```typescript
+{
+    "chainId": 5,
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "chainId": "0x5",
+            "nonce": "0x9",
+            "maxPriorityFeePerGas": "0x8c347c90",
+            "maxFeePerGas": "0xb60535d5740",
+            "gasLimit": "0x5208",
+            "to": "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF",
+            "value": "0x16345785d8a0000",
+            "data": "0x",
+            "accessList": [ ],
+            "hash": "0x301657f8691004172b756e198a680f1e38065899b74f41175dde206071c17008",
+            "from": "0x425249Cf0F2f91f488E24cF7B1AA3186748f7516",
+            "type": 2,
+            "status": 1,
+            "timestamp": 1653593819
+        }
+    ]
+}
+```
+
 ### 🔥 particle\_abi\_encodeFunctionCall
 
 > Call ABI function

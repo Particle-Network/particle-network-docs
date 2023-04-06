@@ -16,6 +16,7 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | ------------------- | ----------------------- | --------------------------- |
 | 1                   | ethereum                | Ethereum Mainnet            |
 | 5                   | ethereum                | Ethereum Goerli             |
+| 11155111            | ethereum                | Ethereum Sepolia            |
 | 56                  | bsc                     | Binance Smart Chain Mainnet |
 | 97                  | bsc                     | Binance Smart Chain Testnet |
 | 137                 | polygon                 | Polygon Mainnet             |
@@ -70,7 +71,7 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 212                 | mapprotocol             | MAP Protocol Testnet        |
 | 1101                | polygonzkevm            | Polygon zkEVM Mainnet       |
 | 1442                | polygonzkevm            | Polygon zkEVM Testnet       |
-| 84531               | base                    | Base Testnet                |
+| 84531               | base                    | Base Goerli Testnet         |
 
 ### Standard RPC
 

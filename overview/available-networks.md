@@ -35,6 +35,10 @@ The `mainnet` and `testnet` are both available for all the following chains.
 | Scroll              | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
 | ZkSync Era          | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
 | Metis               | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
+| Conflux eSpace      | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
+| MAP Protocol        | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
+| Polygon zkEVM       | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
+| Base                | [✅ Docs](../developers/connect-service/) | ✅ [Docs](../developers/auth-service/) | ✅ [Docs](../developers/wallet-service/) | [✅ Docs](../developers/node-service/evm-chains-api/) |
 
 ## NFT Service
 
