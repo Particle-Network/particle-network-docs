@@ -64,6 +64,13 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 1088                | metis                   | Metis Mainnet               |
 | 599                 | metis                   | Metis Testnet               |
 | 534353              | scroll                  | Scroll Alpha Testnet        |
+| 1030                | confluxespace           | Conflux eSpace Mainnet      |
+| 71                  | confluxespace           | Conflux eSpace Testnet      |
+| 22776               | mapprotocol             | MAP Protocol Mainnet        |
+| 212                 | mapprotocol             | MAP Protocol Testnet        |
+| 1101                | polygonzkevm            | Polygon zkEVM Mainnet       |
+| 1442                | polygonzkevm            | Polygon zkEVM Testnet       |
+| 84531               | base                    | Base Testnet                |
 
 ### Standard RPC
 

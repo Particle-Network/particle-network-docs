@@ -28,6 +28,10 @@
 | Scroll                       |              ✅              |              ✅              |                ❌               |
 | ZkSync v2                    |              ❌              |              ❌              |                ❌               |
 | Metis                        |              ✅              |              ✅              |                ✅               |
+| Conflux eSpace               |              ✅              |              ✅              |                ✅               |
+| MAP Protocol                 |              ✅              |              ✅              |                ✅               |
+| Polygon zkEVM                |              ✅              |              ❌              |                ❌               |
+| Base                         |              ✅              |              ❌              |                ❌               |
 
 ### 🔥 particle\_getTokensAndNFTs
 
