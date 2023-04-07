@@ -257,6 +257,8 @@ After log-in success, you can obtain user info by calling `ParticleNetwork.getUs
 
 ### Is user login
 
+Check is user login locally
+
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
@@ -270,6 +272,22 @@ ParticleAuthService.isLogin()
 ```
 {% endtab %}
 {% endtabs %}
+
+### Is login async
+
+Check is user login from server side
+
+```swift
+ParticleAuthService.isLoginAsync().subscribe { [weak self] result in
+    guard let self = self else { return }
+    switch result {
+    case .success(let userInfo):
+        print(userInfo)
+    case .failure(let error):
+        print(error)
+    }
+}.disposed(by: bag)
+```
 
 ### Logout and FastLogout
 
