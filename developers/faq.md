@@ -6,7 +6,7 @@
 
 ## How do I integrate my own user ID system?
 
-After the user successfully logs in, **Particle Auth** SDK will return the user **uuid** and **token**. You can then retrieve and verify the user info by calling [a server API](../developers/auth-service/sdks/server-api.md).
+After the user successfully logs in, **Particle Auth** SDK will return the user **uuid** and **token**. You can then retrieve and verify the user info by calling [a server API](auth-service/sdks/server-api.md).
 
 ## What types of NFTs are supported?
 
@@ -41,6 +41,24 @@ yarn add crypto-browserify stream-browserify buffer string_decoder
 //or
 npm install crypto-browserify stream-browserify buffer string_decoder
 ```
+
+
+
+## Unity SDK integration problems
+
+if your project use firebase tools,Refer to the following process
+
+
+
+## iOS SDK integration problems
+
+## Android SDK integration problems
+
+## Flutter SDK integration problems
+
+## ReactNative SDK integration problems
+
+
 
 
 
