@@ -258,7 +258,7 @@ ParticleNetwork.SetInterfaceStyle(UserInterfaceStyle.DARK);
 ParticleWalletGUI.SetLanguage(Language.EN);
 ```
 
-### Get swap enabled **** state ****&#x20;
+### Get swap enabled state&#x20;
 
 ```csharp
 public void GetSwapEnableState()
