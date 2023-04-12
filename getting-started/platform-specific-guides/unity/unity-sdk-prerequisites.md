@@ -158,7 +158,7 @@ dependencies {
 
 1. Download `UnityManger.swift`, `Unity-iPhone-Bridging-Header.h` and `AppDelegate.swift` from under github `/Assets/Plugins/iOS/.Swift` , Copy files into the root of your Xcode project. Xcode will ask you if auto create Bridging file, click yes.
 
-![](<../../../.gitbook/assets/image (2) (1).png>)
+![](<../../../.gitbook/assets/image (2) (1) (1).png>)
 
 2.Make sure Build Settings, Swift Compiler - General, has Objective-C Bridging Header, its connect is Unity-iPhone-Bridging-Header.h 's local path.
 

@@ -10,9 +10,9 @@ This lets our partners purchase cryptocurrency directly through various local an
 
 By allowing users to purchase cryptocurrency directly with fiat currency, exchanges, DeFi protocols, wallets, and Web3 services can more easily onboard new users into the crypto market and begin investing in digital assets.
 
-### 👉[ ](../../overview/available-networks.md)[Supported fiat currencies](https://ramp-debug.particle.network/supported\_fiat.html)
+### 👉[ ](../../overview/available-networks.md)[Supported fiat currencies](https://ramp.particle.network/supported\_fiat.html)
 
-### 👉[ ](../../overview/available-networks.md)[Supported cryptocurrencies](https://ramp-debug.particle.network/supported\_cryptocurrencies.html)
+### 👉[ ](../../overview/available-networks.md)[Supported cryptocurrencies](https://ramp.particle.network/supported\_cryptocurrencies.html)
 
 ### Live
 
@@ -22,7 +22,7 @@ By allowing users to purchase cryptocurrency directly with fiat currency, exchan
 \
 👉 You can also enter the On-Ramp page by clicking the Buy button in the wallet.
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
 ## SDK Integration
 

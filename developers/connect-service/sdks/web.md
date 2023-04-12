@@ -170,7 +170,7 @@ You can only use `@particle-network/connect` to custom UI.
 ```typescript
 import { evmWallets, ParticleConnect } from '@particle-network/connect';
 // init
-cost connectKit = new ParticleConnect({
+const connectKit = new ParticleConnect({
                 projectId: 'replace with your projectId',
                 clientKey: 'replace with your clientKey',
                 appId: 'replace with your appId',

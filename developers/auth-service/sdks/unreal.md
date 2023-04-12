@@ -89,4 +89,4 @@ only support solana, create a `SignAllTransactions` function in the Widget Bluep
 1. `Transactions`: the transactions to be signed by Particle Auth Service. request base58 string array.
 2. `OnSignAllTransactionsEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>

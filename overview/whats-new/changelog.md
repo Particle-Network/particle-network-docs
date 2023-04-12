@@ -4,6 +4,30 @@ description: Changelog
 
 # Changelog
 
+## 20230407
+
+1. Auth & Wallet Service
+   1. Add new EVM chains
+      1. Ethereum Sepolia
+      2. Conflux espace
+      3. MAPO (Map Protocol)
+      4. Base
+      5. Polygon zkEVM
+   2. Add logic for processing pending transactions before sending a new tx
+   3. Add support for binding/linking other accounts for login
+   4. On-Ramp supports Avalanche
+   5. Add support for Wallet Connect V2
+   6. Optimize the UI for EIP712, Seaport protocol
+   7. Add tag for `to` address
+   8. Add support for redirect mode
+   9. Add a new method to check user login status: `isLoginAsync`
+   10. Add support for configuring Auth and Wallet UI Mode separately
+2. Connect Service
+   1. Add Wallet, Buy, and Copy wallet connect code to Connect UI Kit\
+      ![](<../../.gitbook/assets/image (2).png>)<img src="../../.gitbook/assets/image (1).png" alt="" data-size="original">
+3. NFT Service
+   1. Add support for Ethereum Sepolia and Conflux eSpace
+
 ## 20230310
 
 1. Add Master Password

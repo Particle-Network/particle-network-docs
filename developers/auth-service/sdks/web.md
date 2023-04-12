@@ -34,11 +34,11 @@ yarn add @particle-network/solana-wallet
 ```html
 browser
 
-<script src="https://static.particle.network/sdks/web/auth/0.11.5/auth.min.js"></script>
+<script src="https://static.particle.network/sdks/web/auth/0.12.2/auth.min.js"></script>
 <!-- Optional: Add EVM Chains suport -->
-<script src="https://static.particle.network/sdks/web/provider/0.11.5/provider.min.js"></script>
+<script src="https://static.particle.network/sdks/web/provider/0.12.2/provider.min.js"></script>
 <!-- Optional: Add Solana Chain suport -->
-<script src="https://static.particle.network/sdks/web/solana-wallet/0.11.5/solana-wallet.min.js"></script>
+<script src="https://static.particle.network/sdks/web/solana-wallet/0.12.2/solana-wallet.min.js"></script>
 ```
 
 ### Step 2: Setup Developer API Key
@@ -46,6 +46,8 @@ browser
 Before you can add Auth Service to your app, you need to create a Particle project to connect to your app. Visit [Particle Dashboard](../../../getting-started/dashboard/) to learn more about Particle projects and apps.
 
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
+
+[👉 chainId and chainName configs](../../node-service/evm-chains-api/)
 
 <pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
 import { ParticleProvider } from "@particle-network/provider";
@@ -61,6 +63,7 @@ const pn = new ParticleNetwork({
   wallet: {   //optional: by default, the wallet entry is displayed in the bottom right corner of the webpage.
     displayWalletEntry: true,  //show wallet entry when connect particle.
     defaultWalletEntryPosition: WalletEntryPosition.BR, //wallet entry position
+    uiMode: "dark",  //optional: light or dark, if not set, the default is the same as web auth.
     supportChains: [{ id: 1, name: "Ethereum"}, { id: 5, name: "Ethereum"}], // optional: web wallet support chains.
 <strong>    customStyle: {}, //optional: custom wallet style
 </strong>  }
@@ -86,94 +89,9 @@ Your first Particle Network dApp! 🎉 You can implement web3 functionalities ju
 Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-problems).
 {% endhint %}
 
-### Security Account
-
-```typescript
-import { ParticleNetwork } from "@particle-network/auth";
-
-// open security account settings
-const pn = new ParticleNetwork({...});
-pn.auth.accountSecurity().catch((error) => {
-    if (error.code === 4011) {
-        //ignore window close
-    } else if (error.code === 10005) {
-        //invalid token
-    } else if (error.code === 8005) {
-        //user not login
-    }
-});
-```
-
-### [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)
-
-### Tips
-
-If you use `window.ethereum` to call RPC, The following things need to be noted:
-
-#### Only use the Particle
-
-Use only the Particle wallet and block other plugin wallets. For example, you can directly replace the global variable window.ethereum injected by the Metamask plugin with particleProvider:&#x20;
-
-```typescript
-window.ethereum = particleProvider;
-```
-
-#### Co-exists with other wallets
-
-The Particle wallet co-exists with other plug-in wallets. You can create a new Provider object when switching wallets, avoiding contamination of Particle or Ethereum with assignment operations：
-
-```typescript
-let provider = Object.create(particleProvider);
-const ParticleWallet = document.getElementById("ParticleWallet");
-const MetaMaskWallet = document.getElementById("MetaMaskWallet");
-ParticleWallet.onclick = async () => {
-  provider = Object.create(particleProvider);
-  ethersProvider = new ethers.providers.Web3Provider(provider, "any");
-};
-MetaMaskWallet.onclick = async () => {
-  if (window.ethereum) {
-    provider = Object.create(window.ethereum);
-  }
-  ethersProvider = new ethers.providers.Web3Provider(provider, "any");
-};
-const accounts = await provider.request({
-  method: "eth_requestAccounts",
-});
-```
-
 ## Web3 Integration
 
-### Network Configuration
-
-```typescript
-import { ParticleNetwork } from "@particle-network/auth";
-
-//ethereum Kovan test net
-const pn = new ParticleNetwork({
-  projectId: "xx",
-  clientKey: "xx",
-  appId: "xx",
-  chainName: "Ethereum",
-  chainId: 1, //mainnet
-});
-
-//bsc testnet
-const pn = new ParticleNetwork({
-  projectId: "xx",
-  clientKey: "xx",
-  appId: "xx",
-  chainName: "BSC",
-  chainId: 56, // mainnet
-});
-
-//...
-```
-
-Particle support more [EVM Chains](../../node-service/evm-chains-api/#structure).
-
-### [👉 ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
-
-### Get User Account
+### Connect Wallet
 
 In order for web3 to work and grab the end-users' Ethereum wallet addresses, the users have to login first (similar to unlocking account in MetaMask). You can simply trigger the login for users with the web3 function call below.
 
@@ -184,11 +102,11 @@ import Web3 from "web3";
 const pn = new ParticleNetwork({...});
 
 // Request user login if needed, returns current user info
-pn.auth.login()
+const userInfo = await pn.auth.login();
 
 // optional: custom login params.
 // support auth types: email,phone,facebook,google,apple,discord,github,twitch,microsoft,linkedin
-pn.auth.login({
+const userInfo = pn.auth.login({
     // when set social login auth type, will open thirdparty auth page directly.
     preferredAuthType?: AuthType,
     // when set email/phone account and preferredAuthType is email or phone, 
@@ -205,7 +123,7 @@ pn.auth.login({
 Login with Phone and input verification code directly.
 
 ```typescript
-pn.auth.login({
+const userInfo = await pn.auth.login({
     preferredAuthType: 'phone',
     account: '+14155552671', //phone number must use E.164
   });
@@ -213,16 +131,15 @@ pn.auth.login({
 
 Login with Social Account.
 
-```typescript
-pn.auth.login({
-    preferredAuthType: 'google', //support facebook,google,twitter,apple,discord,github,twitch,microsoft,linkedin etc.
+<pre class="language-typescript"><code class="lang-typescript"><strong>const userInfo = await pn.auth.login({
+</strong>    preferredAuthType: 'google', //support facebook,google,twitter,apple,discord,github,twitch,microsoft,linkedin etc.
   })
-```
+</code></pre>
 
 Login with JWT
 
 ```typescript
-pn.auth.login({
+const userInfo = pn.auth.login({
     preferredAuthType: 'jwt',
     account: 'JWT Value',
     hideLoading: true,   //optional: hide particle loading when login.
@@ -242,6 +159,66 @@ web3.eth.getAccounts((error, accounts) => {
 ```
 
 A modal will open to ask users to sign up for an account or login with their mobile phone number/email or social account.
+
+### Get Wallet Address
+
+#### EVM Chains
+
+{% tabs %}
+{% tab title="web3" %}
+```typescript
+import Web3 from 'web3';
+import { ParticleProvider } from "@particle-network/provider";
+
+const particleProvider = new ParticleProvider(pn.auth);
+//init web3 with paricle provider
+const web3 = new Web3(particleProvider);
+const accounts = await web3.eth.getAccounts();
+```
+{% endtab %}
+
+{% tab title="ethers" %}
+<pre class="language-typescript"><code class="lang-typescript">import { ethers } from "ethers";
+import { ParticleProvider } from "@particle-network/provider";
+<strong>
+</strong>const particleProvider = new ParticleProvider(pn.auth);
+const ethersProvider = new ethers.providers.Web3Provider(providerProvider, "any");
+const accounts = await ethersProvider.listAccounts();
+</code></pre>
+{% endtab %}
+
+{% tab title="particle" %}
+<pre class="language-typescript"><code class="lang-typescript">import { ParticleProvider } from "@particle-network/provider";
+
+//when new ParticleNetwork, chainId and chainName use EVM chain config.
+<strong>const account = pn.auth.wallet()?.public_address;
+</strong><strong>
+</strong><strong>//or you can specified chain type
+</strong>const account = pn.auth.wallet('evm_chain')?.public_address;
+
+//or get accounts with particleProvider
+const particleProvider = new ParticleProvider(pn.auth);
+const accounts = await particleProvider.request({ method: 'eth_accounts'});
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+#### Solana Chain
+
+```typescript
+import { SolanaWallet } from "@particle-network/solana-wallet";
+
+//when new ParticleNetwork, chainId and chainName use Solana chain config.
+const account = pn.auth.wallet()?.public_address;
+
+//or you can specified chain type
+const account = pn.auth.wallet('solana')?.public_address;
+
+//or get accounts with solanaWallet
+const solanaWallet = new SolanaWallet(pn.auth);
+const publicKey = solanaWallet.publicKey;
+const account = publicKey?.toBase58();
+```
 
 ### Send Transaction
 
@@ -483,9 +460,44 @@ window.web3.currentProvider
 {% endtab %}
 {% endtabs %}
 
-### Particle Network Native
+### Tips
 
-#### Login
+If you use `window.ethereum` to call RPC, The following things need to be noted:
+
+#### Only use the Particle
+
+Use only the Particle wallet and block other plugin wallets. For example, you can directly replace the global variable window.ethereum injected by the Metamask plugin with particleProvider:&#x20;
+
+```typescript
+window.ethereum = particleProvider;
+```
+
+#### Co-exists with other wallets
+
+The Particle wallet co-exists with other plug-in wallets. You can create a new Provider object when switching wallets, avoiding contamination of Particle or Ethereum with assignment operations：
+
+```typescript
+let provider = Object.create(particleProvider);
+const ParticleWallet = document.getElementById("ParticleWallet");
+const MetaMaskWallet = document.getElementById("MetaMaskWallet");
+ParticleWallet.onclick = async () => {
+  provider = Object.create(particleProvider);
+  ethersProvider = new ethers.providers.Web3Provider(provider, "any");
+};
+MetaMaskWallet.onclick = async () => {
+  if (window.ethereum) {
+    provider = Object.create(window.ethereum);
+  }
+  ethersProvider = new ethers.providers.Web3Provider(provider, "any");
+};
+const accounts = await provider.request({
+  method: "eth_requestAccounts",
+});
+```
+
+## Particle Network Native
+
+### Login
 
 ```typescript
 import { ParticleNetwork } from "@particle-network/auth";
@@ -498,7 +510,7 @@ pn.auth.login().then(info => {
 })
 ```
 
-#### Logout
+### Logout
 
 ```typescript
 import { ParticleNetwork } from "@particle-network/auth";
@@ -511,29 +523,32 @@ pn.auth.logout().then(() => {
 })
 ```
 
-#### Is User Logged In
+### Is User Logged In
+
+<pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork } from "@particle-network/auth";
+
+const pn = new ParticleNetwork({...});
+
+<strong>//check user logged
+</strong>const result = pn.auth.isLogin()
+
+//check user logged and whether the token is valid, this interface also refresh user
+//security account info.
+const userInfo = await pn.auth.isLoginAsync()
+</code></pre>
+
+### Get User Info
 
 ```typescript
 import { ParticleNetwork } from "@particle-network/auth";
 
 const pn = new ParticleNetwork({...});
 
-//check user logged
-pn.auth.isLogin()
-```
-
-#### Get User Info
-
-```typescript
-import { ParticleNetwork } from "@particle-network/auth";
-
-const pn = new ParticleNetwork({...});
-
-//get user info(token/wallet/uuid)
+//get user info(token/wallet/uuid), return null when user not login.
 const info = pn.auth.userInfo();
 ```
 
-#### Set Auth Theme
+### Set Auth Theme
 
 <pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork } from "@particle-network/auth";
 
@@ -544,10 +559,9 @@ pn.setAuthTheme({
   displayWallet: true, // display wallet entrance when send transaction.
 <strong>  modalBorderRadius: 10, // auth &#x26; wallet modal border radius. default 10.
 </strong>});
-
 </code></pre>
 
-#### Switch Chain Info
+### Switch Chain Info
 
 ```typescript
 import { ParticleNetwork } from "@particle-network/auth";
@@ -560,7 +574,29 @@ pn.switchChain({
 })
 ```
 
-## Open Particle Web Wallet
+### Security Account
+
+Open user security account dashboard, user can set Master Password, Payment Password, and Link Other accounts.
+
+```typescript
+import { ParticleNetwork } from "@particle-netwok/auth";
+
+// open security account settings
+const pn = new ParticleNetwork({...});
+pn.auth.accountSecurity().catch((error) => {
+    if (error.code === 4011) {
+        //ignore window close
+    } else if (error.code === 10005) {
+        //invalid token
+    } else if (error.code === 8005) {
+        //user not login
+    }
+});
+```
+
+
+
+### Open Particle Web Wallet
 
 When connect particle auth success, you can open particle wallet by below interface.
 
@@ -593,7 +629,7 @@ window.addEventListener("message", (event) => {
 
 ```
 
-## Open Crypto Token Buy
+### Open Crypto Token Buy
 
 When initializing the Particle is complete, you can open the Buy Tokens page.
 
@@ -624,6 +660,29 @@ pn.openBuy(options?: OpenBuyOptions, target?: string, features?: string)
 {% hint style="info" %}
 If Particle not connected. network and walletAddress are requried.
 {% endhint %}
+
+### Custom Wallet Style
+
+When "displayWalletEntry" true, you can custom wallet style by set "customStyle" config, refer to [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)
+
+```typescript
+import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
+
+const pn = new ParticleNetwork({
+  projectId: "xx",
+  clientKey: "xx",
+  appId: "xx",
+  chainName: "Ethereum", //optional: current chain name, default Ethereum.
+  chainId: 1, //optional: current chain id, default 1.
+  wallet: {   //optional: by default, the wallet entry is displayed in the bottom right corner of the webpage.
+    displayWalletEntry: true,  //show wallet entry when connect particle.
+    defaultWalletEntryPosition: WalletEntryPosition.BR, //wallet entry position
+    uiMode: "light",
+    supportChains: [{ id: 1, name: "Ethereum"}, { id: 5, name: "Ethereum"}], // optional: web wallet support chains.
+    customStyle: {}, //optional: custom wallet style
+  }
+});
+```
 
 ## EVM Web3Modal Integration
 
