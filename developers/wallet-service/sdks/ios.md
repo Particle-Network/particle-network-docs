@@ -5,7 +5,7 @@
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 141 or later
+  * Xcode 14.1 or later
   * CocoaPods 1.11.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
