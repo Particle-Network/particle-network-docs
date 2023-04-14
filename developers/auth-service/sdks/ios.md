@@ -19,9 +19,9 @@ Before you can add our Auth Service to your iOS app, you need to create a Partic
 
 ### Add the Auth Service SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
 
-Auth Service supports installation with [CocoaPds](https://guides.cocoapods.org/using/getting-started.html#getting-started).
+Auth Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-Auth Service's CocoaPods distribution requires Xcode 13.3.1 and CocoaPods 1.10.0 or higher. Here's how to install the Auth Service using CocoaPods:
+Auth Service's CocoaPods distribution requires Xcode 14.1 and CocoaPods 1.11.0 or higher. Here's how to install the Auth Service using CocoaPods:
 
 1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
