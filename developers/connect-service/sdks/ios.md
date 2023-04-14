@@ -20,6 +20,7 @@ Modular Swift wallet adapters and components for EVM & Solana chains. Manage wal
 
 * Install the following:
   * Xcode 14.1 or later
+  * CocoaPods 1.11.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 13
@@ -34,7 +35,7 @@ Before you can add our Connect Service to your iOS app, you need to create a Par
 
 Connect Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-Connect Service's CocoaPods distribution requires Xcode 14.1 and CocoaPods 1.10.0 or higher. Here's how to install the Auth Service using CocoaPods:
+Connect Service's CocoaPods distribution requires Xcode 14.1 and CocoaPods 1.11.0 or higher. Here's how to install the Auth Service using CocoaPods:
 
 1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
