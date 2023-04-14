@@ -190,7 +190,20 @@ if (result.status) {
 
 ```javascript
 const result = await particleAuth.isLogin();
-jsconsole.log(result);
+console.log(result);
+```
+
+### Is Login Async
+
+```typescript
+const result = await particleAuth.isLoginAsync();
+if (result.status) {
+    const userInfo = result.data;
+    console.log(userInfo);
+} else {
+    const error = result.data;
+    console.log(error);
+}
 ```
 
 ### Get address
@@ -231,8 +244,11 @@ if (chainInfo.chain_name.toLowerCase() != "solana") {
     return
 }
 const sender = await particleAuth.getAddress();
+const to = "";
+const amount = 1000;
+
 console.log("sender: ", sender);
-const transaction = await Helper.getSolanaTransaction(sender);
+const transaction = await Helper.getSolanaTransaction(sender, to, amount);
 console.log("transaction:", transaction);
 const result = await particleAuth.signTransaction(transaction);
 if (result.status) {
@@ -253,8 +269,10 @@ if (chainInfo.chain_name.toLowerCase() != "solana") {
     return
 }
 const sender = await particleAuth.getAddress();
-const transaction1 = await Helper.getSolanaTransaction(sender);
-const transaction2 = await Helper.getSplTokenTransaction(sender);
+const to = "";
+const amount = 1000;
+const transaction1 = await Helper.getSolanaTransaction(sender, to, amount);
+const transaction2 = await Helper.getSplTokenTransaction(sender, to, amount);
 const transactions = [transaction1, transaction2];
 const result = await particleAuth.signAllTransactions(transactions);
 if (result.status) {
@@ -270,10 +288,12 @@ if (result.status) {
 
 ```dart
 const sender = await particleAuth.getAddress();
-const chainInfo = await particleAuth.getChainInfo();
+const chainInfo = EvmService.currentChainInfo;
+const to = "";
+const amount = 1000;
 let transaction = "";
 if (chainInfo.chain_name.toLowerCase() == "solana") { 
-    transaction = await Helper.getSolanaTransaction(sender);
+    transaction = await Helper.getSolanaTransaction(sender, to, amount);
 } else {
     transaction = await Helper.getEthereumTransacion(sender);
 }
@@ -386,4 +406,11 @@ setLanguage = async () => {
     const language = Language.JA;
     particleAuth.setLanguage(language);
 }
+```
+
+### Set interface style
+
+```typescript
+let style = UserInterfaceStyle.Light;
+particleAuth.setInterfaceStyle(style);
 ```

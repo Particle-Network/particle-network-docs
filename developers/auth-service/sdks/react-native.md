@@ -282,7 +282,7 @@ if (result.status) {
 
 ```javascript
 const result = await particleAuth.isLogin();
-jsconsole.log(result);
+console.log(result);
 ```
 
 ### Get address
