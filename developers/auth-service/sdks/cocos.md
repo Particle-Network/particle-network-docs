@@ -24,7 +24,7 @@ particleAuth.init(chainInfo, env);
 
 ### Web3 provider
 
-you can use our SDK as a web3 provider, not support solana.
+you can use our SDK as a web3 provider, The web3 provider requires the web3.js library and does not support Solana.
 
 ```javascript
 private web3 = createWeb3();
@@ -223,6 +223,8 @@ console.log(userInfo);
 
 ### Sign message
 
+support both EVM and Solana.
+
 ```dart
 const message = "Hello world!"
 const result = await particleAuth.signMessage(message);
@@ -236,6 +238,8 @@ if (result.status) {
 ```
 
 ### Sign transaction
+
+support Solana only.
 
 ```dart
 const chainInfo = await particleAuth.getChainInfo();
@@ -262,6 +266,8 @@ if (result.status) {
 
 ### Sign all transactions
 
+support Solana only.
+
 ```dart
 const chainInfo = await particleAuth.getChainInfo();
 if (chainInfo.chain_name.toLowerCase() != "solana") {
@@ -286,6 +292,8 @@ if (result.status) {
 
 ### Sign and send transaction
 
+support both EVM and Solana.
+
 ```dart
 const sender = await particleAuth.getAddress();
 const chainInfo = EvmService.currentChainInfo;
@@ -309,6 +317,8 @@ if (result.status) {
 ```
 
 ### Sign typed data
+
+support evm only.
 
 ```dart
 const chainInfo = await particleAuth.getChainInfo();
