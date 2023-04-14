@@ -4,7 +4,7 @@ description: Power up your Cocos games with Particle Network SDKs.
 
 # Cocos
 
-Before using, please review [the prerequisites](../../../getting-started/platform-specific-guides/unity/unity-sdk-prerequisites.md), All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
+Before using, please review [the prerequisites](../../../getting-started/platform-specific-guides/cocos/cocos-sdk-prerequisites.md#prerequisites), All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
 
 ### Usage
 
