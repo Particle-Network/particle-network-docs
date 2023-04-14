@@ -19,12 +19,12 @@ import * as particleAuth from '../../Core/particleAuth';
 ```typescript
 const chainInfo = EvmService.currentChainInfo;
 const env = Env.Dev;
-particleAuth.init(chainInfo, env);ype
+particleAuth.init(chainInfo, env);
 ```
 
 ### Web3 provider
 
-you can use our SDK as a web3 provider
+you can use our SDK as a web3 provider, not support solana.
 
 ```javascript
 private web3 = createWeb3();
