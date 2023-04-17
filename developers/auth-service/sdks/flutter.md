@@ -167,6 +167,22 @@ supportAuthType.add(SupportAuthType.all);
 String result =await ParticleAuth.login(LoginType.phone, "", supportAuthType);
 ```
 
+### Is Login
+
+Is user login, check local data.
+
+```dart
+bool result = await ParticleAuth.isLogin();
+```
+
+### Is Login Async
+
+Is user login, check from server, recommended.
+
+```dart
+String result = await ParticleAuth.isLoginAsync();
+```
+
 ### Logout
 
 ```dart
