@@ -129,6 +129,11 @@ import * as particleAuth from "react-native-particle-auth";
 **Before using the SDK you have to call init(Required)**&#x20;
 
 ```javascript
+// Get your project id and client from dashboard,  
+// https://dashboard.particle.network/
+ParticleInfo.projectId = ''; // your project id
+ParticleInfo.clientKey = ''; // your client key 
+
 const chainInfo = ChainInfo.EthereumGoerli;
 const env = Env.Production;
 particleAuth.init(chainInfo, env);

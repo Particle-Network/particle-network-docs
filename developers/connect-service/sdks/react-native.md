@@ -163,6 +163,11 @@ import * as particleConnect from 'react-native-particle-connect';
 **Before using the sdk you have to call init(Required)**&#x20;
 
 ```javascript
+// Get your project id and client from dashboard,  
+// https://dashboard.particle.network/
+ParticleInfo.projectId = ''; // your project id
+ParticleInfo.clientKey = ''; // your client key 
+
 // Init particle connect SDK,
 // metadata is your app info, will pass to wallet when wallet connect.
 // you can use the values that we provided in example.
