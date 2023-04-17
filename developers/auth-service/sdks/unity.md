@@ -81,8 +81,31 @@ public async void FastLogout()
 
 ### IsLogin
 
+Check is user login locally.
+
 ```csharp
 ParticleAuthServiceInteraction.IsLogin();
+```
+
+### IsLoginAsync
+
+Check is user login from server, recommended.
+
+```csharp
+var nativeResultData = await ParticleAuthService.Instance.IsLoginAsync();
+Debug.Log(nativeResultData.data);
+
+if (nativeResultData.isSuccess)
+{
+    ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Success:{nativeResultData.data}");
+    Debug.Log(nativeResultData.data);
+}
+else
+{
+    ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Failed:{nativeResultData.data}");
+    var errorData = JsonConvert.DeserializeObject<NativeErrorData>(nativeResultData.data);
+    Debug.Log(errorData);
+}
 ```
 
 ### GetAddress
