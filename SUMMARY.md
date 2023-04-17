@@ -104,6 +104,7 @@
   * [Web](developers/demo-applications/web.md)
   * [Web NFT Demo](developers/demo-applications/web-nft-demo.md)
   * [Unity](developers/demo-applications/unity.md)
+  * [Cocos](developers/demo-applications/cocos.md)
 * [❔ FAQ](developers/faq.md)
 
 ## Resources

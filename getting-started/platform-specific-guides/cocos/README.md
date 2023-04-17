@@ -32,7 +32,7 @@
 
 ### Demo Applications
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">📚 Cocos Demo Applications</td><td><a href="../../../developers/demo-applications/unity.md">unity.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">📚 Cocos Demo Applications</td><td><a href="https://app.gitbook.com/o/LJiA00snqM9T2Z5wUumB/s/F6uqWeUD7kwCZqSpBtVz/~/changes/764/developers/demo-applications/cocos">https://app.gitbook.com/o/LJiA00snqM9T2Z5wUumB/s/F6uqWeUD7kwCZqSpBtVz/~/changes/764/developers/demo-applications/cocos</a></td></tr></tbody></table>
 
 ## For All Platforms
 
@@ -48,8 +48,4 @@
 
 {% content-ref url="../../../developers/what-else.md" %}
 [what-else.md](../../../developers/what-else.md)
-{% endcontent-ref %}
-
-{% content-ref url="../../../developers/faq.md" %}
-[faq.md](../../../developers/faq.md)
 {% endcontent-ref %}
