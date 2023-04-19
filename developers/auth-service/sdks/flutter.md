@@ -14,9 +14,9 @@ click [here](https://github.com/Particle-Network/particle-flutter/tree/master/pa
 
 ### 2.Configure Android project
 
-open ${your flutter project} /android/app/build.gradle
+2.1 open ${your flutter project} /android/app/build.gradle
 
-2.1 add project config and update the minSdkVersion to 23
+2.1.1 add project config and update the minSdkVersion to 23
 
 ```groovy
 //Modify these configurations
@@ -49,7 +49,7 @@ defaultConfig {
 }
 ```
 
-2.2 update Java Version to 11 and add dataBinding config
+2.1.2 update Java Version to 11 and add dataBinding config
 
 ```groovy
 //Modify these configurations
@@ -76,6 +76,32 @@ dataBinding {
   enabled = true
 }
 ```
+
+2.2 edit ${your flutter project} /android/build.gradle
+
+<pre><code>buildscript {
+    ...
+    repositories {
+        google()
+        mavenCentral()
+        maven { setUrl("https://jitpack.io") }  //add this line 
+    }
+
+<strong>    dependencies {
+</strong>        ...
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { setUrl("https://jitpack.io") }  //add this line 
+    }
+}
+...
+
+</code></pre>
 
 Now,Android configuration is complete!
 
