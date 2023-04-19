@@ -18,7 +18,7 @@ click [here](https://github.com/Particle-Network/particle-flutter/tree/master/pa
 
 2.1.1 add project config and update the minSdkVersion to 23
 
-```groovy
+```gradle
 //Modify these configurations
 defaultConfig {
     // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
@@ -51,7 +51,7 @@ defaultConfig {
 
 2.1.2 update Java Version to 11 and add dataBinding config
 
-```groovy
+```gradle
 //Modify these configurations
 compileOptions {
   sourceCompatibility JavaVersion.VERSION_1_8
@@ -79,7 +79,7 @@ dataBinding {
 
 2.2 edit ${your flutter project} /android/build.gradle
 
-<pre><code>buildscript {
+<pre class="language-gradle"><code class="lang-gradle">buildscript {
     ...
     repositories {
         google()
