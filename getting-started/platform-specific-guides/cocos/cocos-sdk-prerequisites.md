@@ -24,8 +24,8 @@ Before you can add our Auth Service to your Cocos game, you need to create a Par
 
 ### Import Cocos package
 
-1. Copy assets/Mobile/Core into your project, put it in the assets directory.
-2. Copy native/engine folder into your project, put it in the native directory.
+1. Copy [assets/Mobile/Core](https://github.com/Particle-Network/particle-cocos/tree/mobile/assets/Mobile/Core) into your project, put it in the assets directory.
+2. Copy [native/engine](https://github.com/Particle-Network/particle-cocos/tree/mobile/native/engine) folder into your project, put it in the native directory.
 
 ### Android, Native Service Config <a href="#add-sdks" id="add-sdks"></a>
 
