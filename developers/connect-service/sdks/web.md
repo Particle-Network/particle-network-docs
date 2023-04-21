@@ -123,7 +123,7 @@ export const App = () => {
 Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-problems).
 {% endhint %}
 
-### Check Is User Connected
+### Check User Is Connected
 
 If user connect wallet success, automatic connect next time.
 
