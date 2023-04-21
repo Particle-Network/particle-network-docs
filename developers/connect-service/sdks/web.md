@@ -123,7 +123,78 @@ export const App = () => {
 Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-problems).
 {% endhint %}
 
-### [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)
+### Check Is User Connected
+
+If user connect wallet success, automatic connect next time.
+
+```typescript
+import { useAccount } from '@particle-network/connect-react-ui';
+
+//use this in react component.
+const account = useAccount();
+if (account) {
+    // connect wallet success
+}
+```
+
+### Custom Wallet Style
+
+When "displayWalletEntry" true, you can custom wallet style by set "customStyle" config, refer to [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)
+
+### Open Particle Web Wallet
+
+If you connect with Particle Network, you can open wallet in new window.
+
+```typescript
+import { useConnectKit } from '@particle-network/connect-react-ui';
+
+//use this in react component.
+const connectKit = useConnectKit();
+// To set target and features for custom window style, same as window.open().
+connectKit.particle.openWallet(target?: string, features?: string);
+
+//open wallet in custom iframe.
+const url = connectKit.particle.buildWalletUrl({
+    //optional: left top menu style, close or fullscreen
+    //"fullscreen": wallet will be fullscreen when user click.
+    //"close": developer need handle click event
+    topMenuType: "close"   
+});
+
+const iframe = document.createElement("iframe");
+iframe.src = url;
+//if topMenuType is "close"
+window.addEventListener("message", (event) => {
+    if (event.data === "PARTICLE_WALLET_CLOSE_IFRAME") {
+        //close click event
+    }
+})
+```
+
+### Open Crypto Token Buy
+
+If you connect with Particle Network, you can open the Buy Tokens page.
+
+```typescript
+import { useConnectKit } from '@particle-network/connect-react-ui';
+
+//use this in react component.
+const connectKit = useConnectKit();
+// To set target and features for custom window style, same as window.open().
+connectKit.particle.openBuy(options?: OpenBuyOptions, target?: string, features?: string)
+```
+
+### Get User Info
+
+If you connect with Particle Network, you can get user info by below interface.&#x20;
+
+```typescript
+import { useConnectKit } from '@particle-network/connect-react-ui';
+
+//use this in react component.
+const connectKit = useConnectKit();
+const userInfo = connectKit.particle.userInfo();
+```
 
 ## Connect React Hooks
 
