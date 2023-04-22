@@ -29,6 +29,7 @@
   * [Flutter](getting-started/platform-specific-guides/flutter.md)
   * [React Native](getting-started/platform-specific-guides/react-native.md)
   * [Server API](getting-started/platform-specific-guides/server-api.md)
+* [💫 Account Abstraction](getting-started/account-abstraction.md)
 
 ## Developers
 
