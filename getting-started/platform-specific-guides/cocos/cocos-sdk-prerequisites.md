@@ -116,7 +116,7 @@ PN_APP_ID = 96ad2ff1-4a57-4069-90da-9306bf1492e1
 
 Make sure Base58.swift, Model.swift and ParticleAuthPlugin.swift TargetMemberShip is selected your app, If Xcode asks whether to create a Swift bridging file, click "Yes".
 
-![](../../../.gitbook/assets/image.png)
+![](<../../../.gitbook/assets/image (11).png>)
 
 ![](<../../../.gitbook/assets/image (10).png>)
 
