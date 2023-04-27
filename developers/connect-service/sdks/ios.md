@@ -46,7 +46,7 @@ pod init
 2\. To your Podfile, add the Auth Service pods that you want to use in your app:
 
 ```ruby
-pod 'ConmonConnect'
+pod 'ConnectCommon'
 pod 'ParticleConnect'
 pod 'ConnectWalletConnectAdapter'
 pod 'ConnectEVMAdapter'
