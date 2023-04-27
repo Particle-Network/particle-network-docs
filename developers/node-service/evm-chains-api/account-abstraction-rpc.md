@@ -13,7 +13,7 @@
 4. Gasless Transactions
    1. Create Paymaster [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/) & get dappApiKey
    2. Prepare Normal `tx/txs`
-   3. Request `particle_biconomy_createGaslessransaction` with `tx/txs` and `dappApiKey` the RPC will return the user operation and user operation hash to sign.
+   3. Request `particle_biconomy_createGaslessransaction` with `tx/txs` and `dappApiKey`, the RPC will return the user operation and user operation hash to sign.
    4. Sign the user operation hash using personal\_sign with any EOA signer you use (Particle MPC, MetaMask, Private Key, etc.)\
       `const signature = await eoaSigner.signMessage(arrayify(userOpHash));`
    5. Request `particle_biconomy_sendGaslessTransaction` and you will get a transaction hash
