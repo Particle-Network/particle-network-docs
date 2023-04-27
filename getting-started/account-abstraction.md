@@ -4,6 +4,8 @@ description: MPC + AA is here!
 
 # 💫 Account Abstraction
 
+<figure><img src="../.gitbook/assets/69e684bf-ac31-4cca-b637-a6bf6880a148.jpeg" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
+
 ## Demo Videos
 
 1. Social Login & Batch Swap & USDC Pay Gas: [https://www.loom.com/share/fef39d36b0e44354a603010c8f987f7c](https://www.loom.com/share/fef39d36b0e44354a603010c8f987f7c)
