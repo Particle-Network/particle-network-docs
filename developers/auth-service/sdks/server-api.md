@@ -182,29 +182,33 @@ empty string
 const axios = require("axios");
 
 (async () => {
-  const response = await axios.post(
-    "https://api.particle.network/server/rpc",
-    {
-      jsonrpc: "2.0",
-      id: 0,
-      method: "lockUserWallet",
-      params: ["Particle Auth User Uuid", "Particle Auth User Token", {
-        "chain": "evm_chain",
-        "chainId": 42,
-        "publicAddress": "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF",
-        "contractAddress": "0x27833fBD4FA313A11653D1D2372cB89f5f2D2f62",
-        "time": 3600
-    }],
-    },
-    {
-      auth: {
-        username: "Your Project Id",
-        password: "Your Project Server Key",
-      },
-    }
-  );
+    const response = await axios.post(
+        "https://api.particle.network/server/rpc",
+        {
+            jsonrpc: "2.0",
+            id: 0,
+            method: "lockUserWallet",
+            params: [
+                "Particle Auth User Uuid",
+                "Particle Auth User Token",
+                {
+                    chain: "evm_chain",
+                    chainId: 42,
+                    publicAddress: "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF",
+                    contractAddress: "0x27833fBD4FA313A11653D1D2372cB89f5f2D2f62",
+                    time: 3600,
+                },
+            ],
+        },
+        {
+            auth: {
+                username: "Your Project Id",
+                password: "Your Project Server Key",
+            },
+        }
+    );
 
-  console.log(response.data);
+    console.log(response.data);
 })();
 ```
 {% endtab %}
@@ -214,7 +218,7 @@ const axios = require("axios");
 curl 'https://api.particle.network/server/rpc' \
 --header 'Authorization: Basic YmEwNTA5ZTctZThiYi00MzY2LTg5YjctYjM5ZjAyYmNkMDg0OmNnZjE4YXNMbG9zSkJzZlZXbWxvNHNuZ2lFRVZzc1gzNHFlTUxmZzQ=' \
 -X POST -H "Content-Type: application/json" -d '
-    {"jsonrpc":"2.0","id":0,"method":"getUserInfo","params":["Particle Auth User Uuid", "Particle Auth User Token", {"chain": "evm_chain", "chainId": 42, "publicAddress": "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF", "contractAddress": "0x27833fBD4FA313A11653D1D2372cB89f5f2D2f62", "time": 3600}]}
+    {"jsonrpc":"2.0","id":0,"method":"lockUserWallet","params":["Particle Auth User Uuid", "Particle Auth User Token", {"chain": "evm_chain", "chainId": 42, "publicAddress": "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF", "contractAddress": "0x27833fBD4FA313A11653D1D2372cB89f5f2D2f62", "time": 3600}]}
 '
 ```
 {% endtab %}
