@@ -178,7 +178,9 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
     &#x3C;string>We use the camera to scan barcodes&#x3C;/string>
 </code></pre>
 
-3.9 Edit Podfile, there is a Podfile under ios folder.
+3.9 Edit Podfile, you should follow [Podfile required](../../auth-service/sdks/ios.md#edit-podfile) to edit Podfile.
+
+and add more for connect sdk.
 
 ```ruby
 // From iOS native SDK 0.9.12, you should add more in podfile

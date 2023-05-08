@@ -49,8 +49,10 @@ open your-project.xcworkspace
 If you would like to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
-{% hint style="info" %}
 ### Edit Podfile
+
+{% hint style="info" %}
+### It is required for every iOS project.
 
 ```ruby
 // paste there code into pod file

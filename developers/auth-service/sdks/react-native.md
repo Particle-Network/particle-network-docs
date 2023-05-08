@@ -114,6 +114,8 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 ![Config scheme url](<../../../.gitbook/assets/image (1) (2) (1).png>)
 
+3.8 Edit Podfile, you should follow [Podfile required](ios.md#edit-podfile) to edit Podfile.
+
 ### Initialize the SDK
 
 ### Usage
