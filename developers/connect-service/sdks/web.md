@@ -29,15 +29,15 @@ yarn add @particle-network/solana-wallet -D
 
 ### Step 2: Init Connect SDK.
 
-```typescript
-import { ModalProvider, Ethereum, EthereumGoerli, evmWallets } from '@particle-network/connect-react-ui';
-import { WalletEntryPosition } from '@particle-network/auth';
+<pre class="language-typescript"><code class="lang-typescript"><strong>import { ModalProvider, Ethereum, EthereumGoerli, evmWallets } from '@particle-network/connect-react-ui';
+</strong>import { WalletEntryPosition } from '@particle-network/auth';
+import { Ethereum, EthereumGoerli } from '@particle-network/common';
 
 // use react kit
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-    <React.StrictMode>
-        <ModalProvider
+    &#x3C;React.StrictMode>
+        &#x3C;ModalProvider
             options={{
                 projectId: 'replace with your projectId',
                 clientKey: 'replace with your clientKey',
@@ -68,11 +68,11 @@ root.render(
                 'facebook'
             ]}
         >
-            <App />
-        </ModalProvider>
-    </React.StrictMode>
+            &#x3C;App />
+        &#x3C;/ModalProvider>
+    &#x3C;/React.StrictMode>
 );
-```
+</code></pre>
 
 ### Step3: Add the connect button
 
