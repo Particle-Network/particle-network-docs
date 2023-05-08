@@ -68,8 +68,10 @@ open your-project.xcworkspace
 If you would like to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
+### Edit Podile
+
 {% hint style="info" %}
-### Edit Podfile
+#### It is required for every iOS project that integrates the Auth Service SDK.
 
 ```ruby
 // From 0.1.45, you should add more in podfile

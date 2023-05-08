@@ -60,13 +60,16 @@ Wallet GUI depends on Connect Service, you must import [Connect Service](../../c
 If you want to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
-{% hint style="info" %}
 ### Edit Podfile
+
+{% hint style="info" %}
+#### It is required for every iOS project that integrates the Wallet Service SDK.
 
 ```ruby
 // From 0.9.12, you should add more in podfile
 If you use ParticleWalletGUI, you need add this one.
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
+pod 'SwiftMessages', :git => 'https://github.com/SunZhiC/SwiftMessages', :branch => 'master'
 
 // If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.
 pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'

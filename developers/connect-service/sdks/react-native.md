@@ -139,20 +139,7 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 &#x3C;/array>
 </code></pre>
 
-3.9 Edit Podfile, you should follow [Podfile required](../../auth-service/sdks/ios.md#edit-podfile) to edit Podfile.
-
-and add more for connect sdk.
-
-```ruby
-// From iOS native SDK 0.9.12, you should add more in podfile
-If you use ParticleWalletGUI, you need add this one.
-pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
-
-// If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.
-pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
-```
-
-
+3.9 Edit Podfile, you should follow [Podfile required](ios.md#edit-podile) to edit Podfile.
 
 ### Initialize the SDK
 

@@ -52,7 +52,7 @@ If you would like to receive release updates, subscribe to our [GitHub repositor
 ### Edit Podfile
 
 {% hint style="info" %}
-### It is required for every iOS project.
+#### It is required for every iOS project that integrates the Auth Service SDK.
 
 ```ruby
 // paste there code into pod file
