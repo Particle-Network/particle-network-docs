@@ -79,7 +79,7 @@ window.web3.currentProvider.isParticleNetwork // => true
 
 //if you use ethers.js
 import { ethers } from "ethers";
-const ethersProvider = new ethers.providers.Web3Provider(providerProvider, "any");
+const ethersProvider = new ethers.providers.Web3Provider(particleProvider, "any");
 const ethersSigner = ethersProvider.getSigner();
 </code></pre>
 
