@@ -18,8 +18,8 @@ coverY: 0
 [security.md](overview/security.md)
 {% endcontent-ref %}
 
-{% content-ref url="overview/available-networks.md" %}
-[available-networks.md](overview/available-networks.md)
+{% content-ref url="overview/available-networks/" %}
+[available-networks](overview/available-networks/)
 {% endcontent-ref %}
 
 {% content-ref url="getting-started/get-started.md" %}

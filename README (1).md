@@ -70,4 +70,4 @@ We support [Android, iOS, Web, Unity, Unreal, Flutter, and React Native](https:/
 
 ## Available Networks
 
-Currently, we support almost **all EVM-compatible chains** and **the Solana chain**. [For details check this 👉](overview/available-networks.md)
+Currently, we support almost **all EVM-compatible chains** and **the Solana chain**. [For details check this 👉](overview/available-networks/)

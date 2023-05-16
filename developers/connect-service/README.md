@@ -32,7 +32,7 @@ Secure Data Design
 
 ### 3. Multi-Chain
 
-Solana and almost all EVM chains are supported. 👉[ Available Network](../../overview/available-networks.md)
+Solana and almost all EVM chains are supported. 👉[ Available Network](../../overview/available-networks/)
 
 
 
