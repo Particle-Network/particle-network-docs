@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Gnosis is a decentralized platform built on the Ethereum blockchain, focusing on providing a credibly neutral, resilient, and unstoppable network. The platform aims to prioritize accessibility and user agency while maintaining the core values of privacy, decentralization, and self-governance. Gnosis plans to transition from its Proof-of-Authority legacy to a Proof-of-Stake system secured by a diverse community of validators from around the world. The platform's commitment to neutrality ensures that all transactions on the Gnosis Chain are treated equally, regardless of their content.
+[**Gnosis**](https://www.gnosis.io/) is a decentralized platform built on the Ethereum blockchain, focusing on providing a credibly neutral, resilient, and unstoppable network. The platform aims to prioritize accessibility and user agency while maintaining the core values of privacy, decentralization, and self-governance. Gnosis plans to transition from its Proof-of-Authority legacy to a Proof-of-Stake system secured by a diverse community of validators from around the world. The platform's commitment to neutrality ensures that all transactions on the Gnosis Chain are treated equally, regardless of their content.
 
 ### Key Features and Benefits
 

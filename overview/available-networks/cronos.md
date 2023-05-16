@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Cronos is a highly-scalable, EVM-compatible blockchain platform built by the Crypto.com team. It aims to empower developers to create and deploy dApps in a decentralized ecosystem that offers powerful tools, high performance, and access to the Crypto.com user base.
+[**Cronos**](https://cronos.org/) is a highly-scalable, EVM-compatible blockchain platform built by the Crypto.com team. It aims to empower developers to create and deploy dApps in a decentralized ecosystem that offers powerful tools, high performance, and access to the Crypto.com user base.
 
 ### Key Features and Benefits
 

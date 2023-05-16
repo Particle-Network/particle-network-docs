@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-zkSync Era is a Layer 2 scaling solution for Ethereum built on Zero-Knowledge Rollups, offering a more scalable, secure, and cost-effective environment for decentralized applications. By utilizing cutting-edge zkSNARK technology, zkSync Era provides an Ethereum-compatible solution that reduces gas fees and enhances transaction throughput.
+[**zkSync Era**](https://zksync.io/) is a Layer 2 scaling solution for Ethereum built on Zero-Knowledge Rollups, offering a more scalable, secure, and cost-effective environment for decentralized applications. By utilizing cutting-edge zkSNARK technology, zkSync Era provides an Ethereum-compatible solution that reduces gas fees and enhances transaction throughput.
 
 ### Key Features and Benefits
 

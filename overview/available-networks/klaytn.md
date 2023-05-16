@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Klaytn is a high-performance, enterprise-grade blockchain platform developed by Ground X, the blockchain subsidiary of South Korean internet giant Kakao. Klaytn aims to provide a user-friendly and developer-friendly blockchain platform that empowers businesses to build and deploy blockchain-based services seamlessly and efficiently.
+[**Klaytn**](https://klaytn.foundation/) is a high-performance, enterprise-grade blockchain platform developed by Ground X, the blockchain subsidiary of South Korean internet giant Kakao. Klaytn aims to provide a user-friendly and developer-friendly blockchain platform that empowers businesses to build and deploy blockchain-based services seamlessly and efficiently.
 
 ### Key Features and Benefits
 

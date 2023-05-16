@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Optimism is a Layer 2 scaling solution for Ethereum that employs Optimistic Rollups to significantly improve transaction throughput and reduce gas fees. It provides a seamless experience for developers and users alike, offering a highly-scalable environment for building and deploying Ethereum-based decentralized applications (dApps). Optimism aims to address the scalability challenges of Ethereum while maintaining compatibility with existing Ethereum development tools and resources.
+[**Optimism**](https://www.optimism.io/) is a Layer 2 scaling solution for Ethereum that employs Optimistic Rollups to significantly improve transaction throughput and reduce gas fees. It provides a seamless experience for developers and users alike, offering a highly-scalable environment for building and deploying Ethereum-based decentralized applications (dApps). Optimism aims to address the scalability challenges of Ethereum while maintaining compatibility with existing Ethereum development tools and resources.
 
 ### Key Features and Benefits
 

@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Fantom is a high-performance, scalable, and secure smart-contract platform designed to overcome the limitations of previous generation blockchain platforms. It is designed to support decentralized applications (dApps) and facilitate instant transactions, making it ideal for DeFi and other applications.
+[**Fantom**](https://fantom.foundation/) is a high-performance, scalable, and secure smart-contract platform designed to overcome the limitations of previous generation blockchain platforms. It is designed to support decentralized applications (dApps) and facilitate instant transactions, making it ideal for DeFi and other applications.
 
 ### Key Features and Benefits
 

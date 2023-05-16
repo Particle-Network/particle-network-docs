@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Avalanche is an open-source platform for launching decentralized applications (dApps) and enterprise-grade blockchain deployments in one interoperable, highly-scalable ecosystem. It aims to deliver a seamless experience for users and developers by enabling the creation of custom, private, and public blockchains, as well as digital asset trading.
+[**Avalanche**](https://www.avax.network/) is an open-source platform for launching decentralized applications (dApps) and enterprise-grade blockchain deployments in one interoperable, highly-scalable ecosystem. It aims to deliver a seamless experience for users and developers by enabling the creation of custom, private, and public blockchains, as well as digital asset trading.
 
 ### Key Features and Benefits
 

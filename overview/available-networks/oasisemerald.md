@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Oasis Emerald is a privacy-focused, high-performance blockchain platform developed by the Oasis Foundation. It enables developers to build and deploy privacy-preserving dApps in a secure, decentralized ecosystem that prioritizes data confidentiality and user privacy.
+[**Oasis Emerald**](https://docs.oasis.io/dapp/emerald/) is a privacy-focused, high-performance blockchain platform developed by the Oasis Foundation. It enables developers to build and deploy privacy-preserving dApps in a secure, decentralized ecosystem that prioritizes data confidentiality and user privacy.
 
 ### Key Features and Benefits
 

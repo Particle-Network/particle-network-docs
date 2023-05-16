@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-KuCoin Community Chain (KCC) is a high-performance and decentralized public chain built by the KuCoin Exchange team and its community. It aims to offer a fast, secure, and cost-effective environment for developers to build and deploy decentralized applications (dApps). KCC is fully compatible with Ethereum and ERC-20 smart contracts, making it easier for developers already familiar with the Ethereum ecosystem to transition to KCC.
+[**KuCoin Community Chain (KCC)**](https://www.kcc.io/) is a high-performance and decentralized public chain built by the KuCoin Exchange team and its community. It aims to offer a fast, secure, and cost-effective environment for developers to build and deploy decentralized applications (dApps). KCC is fully compatible with Ethereum and ERC-20 smart contracts, making it easier for developers already familiar with the Ethereum ecosystem to transition to KCC.
 
 ### Key Features and Benefits
 

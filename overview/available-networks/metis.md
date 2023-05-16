@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Metis is a Layer 2 scaling solution for Ethereum that combines the benefits of Optimistic Rollups with a unique approach to decentralized autonomous organizations (DAOs). Metis aims to empower developers and communities by providing an easy-to-use and scalable infrastructure for building decentralized applications, while enabling efficient collaboration and governance through its native DAO framework.
+[**Metis**](https://metis.io/) is a Layer 2 scaling solution for Ethereum that combines the benefits of Optimistic Rollups with a unique approach to decentralized autonomous organizations (DAOs). Metis aims to empower developers and communities by providing an easy-to-use and scalable infrastructure for building decentralized applications, while enabling efficient collaboration and governance through its native DAO framework.
 
 ### Key Features and Benefits
 

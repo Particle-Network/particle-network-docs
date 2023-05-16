@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Aurora is a highly-scalable and Ethereum-compatible smart contract platform built on the NEAR Protocol. It provides a seamless experience for developers looking to build and deploy Ethereum-based dApps on a scalable and low-cost infrastructure. Aurora aims to combine the best of both worlds, offering the familiar development tools and ecosystem of Ethereum while taking advantage of NEAR's innovative sharding and consensus mechanisms.
+[**Aurora**](https://aurora.dev/) is a highly-scalable and Ethereum-compatible smart contract platform built on the NEAR Protocol. It provides a seamless experience for developers looking to build and deploy Ethereum-based dApps on a scalable and low-cost infrastructure. Aurora aims to combine the best of both worlds, offering the familiar development tools and ecosystem of Ethereum while taking advantage of NEAR's innovative sharding and consensus mechanisms.
 
 ### Key Features and Benefits
 

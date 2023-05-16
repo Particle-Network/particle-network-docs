@@ -6,7 +6,7 @@ description: Supercharge Your OKChain dApp Development with Particle SDK
 
 ## Introduction
 
-A Super Scalable, Compatible L1 Blockchain OKT Chain (OKTC) is an EVM-compatible L1 built on Cosmos with a focus on true interoperability (IBC) and maximized performance. At high scalability, developers can build and scale with low gas fees. The OKT Chain ecosystem and infrastructure, including the all-in-one multi-chain Web3 interface, enables a seamless experience for both developers and users.
+A Super Scalable, Compatible L1 Blockchain [**OKT Chain**](https://www.okx.com/oktc) (OKTC) is an EVM-compatible L1 built on Cosmos with a focus on true interoperability (IBC) and maximized performance. At high scalability, developers can build and scale with low gas fees. The OKT Chain ecosystem and infrastructure, including the all-in-one multi-chain Web3 interface, enables a seamless experience for both developers and users.
 
 ### Key Features and Benefits
 

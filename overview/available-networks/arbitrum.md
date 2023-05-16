@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Arbitrum is a Layer 2 scaling solution for Ethereum that allows developers to build and deploy highly scalable and secure smart contracts. It improves the performance and reduces the cost of deploying dApps on the Ethereum network using its unique Optimistic Rollup technology.
+[**Arbitrum**](https://arbitrum.io/) is a Layer 2 scaling solution for Ethereum that allows developers to build and deploy highly scalable and secure smart contracts. It improves the performance and reduces the cost of deploying dApps on the Ethereum network using its unique Optimistic Rollup technology.
 
 ### Key Features and Benefits
 

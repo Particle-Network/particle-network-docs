@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Polygon, formerly known as Matic Network, is a Layer 2 scaling solution for Ethereum that offers a highly-scalable and cost-efficient environment for building and deploying decentralized applications (dApps). It aims to provide a seamless experience for users and developers by leveraging a multi-chain approach with Ethereum-compatible sidechains.
+[**Polygon**](https://polygon.technology/), formerly known as Matic Network, is a Layer 2 scaling solution for Ethereum that offers a highly-scalable and cost-efficient environment for building and deploying decentralized applications (dApps). It aims to provide a seamless experience for users and developers by leveraging a multi-chain approach with Ethereum-compatible sidechains.
 
 ### Key Features and Benefits
 

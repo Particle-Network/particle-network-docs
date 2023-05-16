@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Harmony is a high-throughput, low-latency, and low-fee consensus platform designed to power decentralized economies of the future. It leverages sharding technology to enable seamless scalability and secure transaction processing. Harmony aims to create a highly performant and energy-efficient platform for building and deploying decentralized applications (dApps) and facilitates the creation of cross-chain and cross-platform solutions.
+[**Harmony**](https://www.harmony.one/) is a high-throughput, low-latency, and low-fee consensus platform designed to power decentralized economies of the future. It leverages sharding technology to enable seamless scalability and secure transaction processing. Harmony aims to create a highly performant and energy-efficient platform for building and deploying decentralized applications (dApps) and facilitates the creation of cross-chain and cross-platform solutions.
 
 ### Key Features and Benefits
 

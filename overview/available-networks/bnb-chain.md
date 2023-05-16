@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-BNB Chain, formerly known as Binance Smart Chain (BSC), is a fast and efficient decentralized blockchain platform that offers EVM-compatible smart contract functionality. It is designed to provide a user-friendly and cost-effective environment for developers to build and deploy decentralized applications (dApps) and supports a rapidly growing ecosystem of DeFi, NFT, and gaming projects.
+[**BNB Chain**](https://www.bnbchain.org/), formerly known as Binance Smart Chain (BSC), is a fast and efficient decentralized blockchain platform that offers EVM-compatible smart contract functionality. It is designed to provide a user-friendly and cost-effective environment for developers to build and deploy decentralized applications (dApps) and supports a rapidly growing ecosystem of DeFi, NFT, and gaming projects.
 
 ### Key Features and Benefits
 

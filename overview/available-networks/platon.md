@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-PlatON is a next-generation computing architecture that aims to facilitate secure, seamless, and open sharing of data worldwide. It combines blockchain and privacy-preserving computation technologies to create a decentralized, secure, and efficient infrastructure for data exchange and collaboration. PlatON enables developers to build privacy-focused decentralized applications (dApps) and offers powerful tools for data exchange and computation.
+[**PlatON**](https://www.platon.network/) is a next-generation computing architecture that aims to facilitate secure, seamless, and open sharing of data worldwide. It combines blockchain and privacy-preserving computation technologies to create a decentralized, secure, and efficient infrastructure for data exchange and collaboration. PlatON enables developers to build privacy-focused decentralized applications (dApps) and offers powerful tools for data exchange and computation.
 
 ### Key Features and Benefits
 

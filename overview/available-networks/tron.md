@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Tron is a high-performance blockchain platform designed for the development and deployment of decentralized applications (dApps) and digital content sharing. It aims to create a decentralized internet ecosystem, offering developers a scalable and efficient infrastructure for building and distributing digital content, including games, videos, and other media.
+[**TRON**](https://tron.network/) is an open source public blockchain platform that supports smart contracts. TRON is compatible with Ethereum, which means that you can migrate smart contracts on Ethereum to TRON directly or with minor modifications. TRON relies on a unique consensus mechanism to realize the high TPS of the TRON network that is far beyond Ethereum, bringing developers a good experience of a faster transaction.
 
 ### Key Features and Benefits
 

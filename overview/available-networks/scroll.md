@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Scroll is a Layer 2 scaling solution based on zkEVM and zkRollup technology, designed to offer cheaper and faster transactions compared to the main Ethereum blockchain (Layer 1). Scroll stands out from other ZK Rollup solutions like Polygon zkEVM, StarkNet, and zkSync Era, by being closer to native Ethereum implementation and more developer-friendly for EVM developers. By moving most activity away from Layer 1 while still inheriting its security and finality, Scroll dramatically reduces gas costs and offers faster transaction speeds.
+[**Scroll**](https://scroll.io/) is a Layer 2 scaling solution based on zkEVM and zkRollup technology, designed to offer cheaper and faster transactions compared to the main Ethereum blockchain (Layer 1). Scroll stands out from other ZK Rollup solutions like Polygon zkEVM, StarkNet, and zkSync Era, by being closer to native Ethereum implementation and more developer-friendly for EVM developers. By moving most activity away from Layer 1 while still inheriting its security and finality, Scroll dramatically reduces gas costs and offers faster transaction speeds.
 
 ### Key Features and Benefits
 

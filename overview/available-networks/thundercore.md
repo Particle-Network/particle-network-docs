@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-ThunderCore is a high-performance, EVM-compatible blockchain platform designed for building and deploying dApps with a focus on speed, scalability, and efficiency. It employs a unique consensus mechanism called PaLa, which enables high throughput and fast transaction confirmation times while maintaining decentralization and security.
+[**ThunderCore**](https://www.thundercore.com/) is a high-performance, EVM-compatible blockchain platform designed for building and deploying dApps with a focus on speed, scalability, and efficiency. It employs a unique consensus mechanism called PaLa, which enables high throughput and fast transaction confirmation times while maintaining decentralization and security.
 
 ### Key Features and Benefits
 

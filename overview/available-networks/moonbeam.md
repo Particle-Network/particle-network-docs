@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Moonbeam is a smart contract platform on the Polkadot network that provides Ethereum-compatible tools and features, making it easier for Ethereum developers to build and deploy dApps on the Polkadot ecosystem. Moonbeam aims to bridge the gap between Ethereum and Polkadot, allowing developers to utilize familiar Ethereum development tools while benefiting from Polkadot's scalable and interoperable infrastructure.
+[**Moonbeam**](https://moonbeam.network/) is a smart contract platform on the Polkadot network that provides Ethereum-compatible tools and features, making it easier for Ethereum developers to build and deploy dApps on the Polkadot ecosystem. Moonbeam aims to bridge the gap between Ethereum and Polkadot, allowing developers to utilize familiar Ethereum development tools while benefiting from Polkadot's scalable and interoperable infrastructure.
 
 ### Key Features and Benefits
 

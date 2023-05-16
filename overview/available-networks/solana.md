@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Solana is a high-performance blockchain platform designed to support scalable and secure decentralized applications. It achieves high throughput and low transaction costs by leveraging its unique Proof of History consensus algorithm and parallel processing architecture. With its focus on performance and scalability, Solana has attracted a growing ecosystem of developers and users.
+[**Solana**](https://solana.com/) is a high-performance blockchain platform designed to support scalable and secure decentralized applications. It achieves high throughput and low transaction costs by leveraging its unique Proof of History consensus algorithm and parallel processing architecture. With its focus on performance and scalability, Solana has attracted a growing ecosystem of developers and users.
 
 ### Key Features and Benefits
 

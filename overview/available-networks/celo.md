@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Celo is a decentralized, open-source platform focused on enabling financial inclusion and global accessibility through a mobile-first approach. Built on an innovative Proof-of-Stake (PoS) consensus mechanism, Celo aims to create a more inclusive financial system that empowers individuals and communities by bringing together the benefits of cryptocurrencies, decentralized applications, and smart contracts.
+[**Celo**](https://celo.org/) is a decentralized, open-source platform focused on enabling financial inclusion and global accessibility through a mobile-first approach. Built on an innovative Proof-of-Stake (PoS) consensus mechanism, Celo aims to create a more inclusive financial system that empowers individuals and communities by bringing together the benefits of cryptocurrencies, decentralized applications, and smart contracts.
 
 ### Key Features and Benefits
 

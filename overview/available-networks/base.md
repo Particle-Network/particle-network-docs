@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Base is an Ethereum Layer 2 (L2) chain developed in collaboration with Optimism and incubated within Coinbase, offering a secure, low-cost, and developer-friendly platform for building on-chain applications. It is built on OP Stack and leverages Ethereum's security, allowing developers and users to enjoy seamless Coinbase product integrations, easy fiat onramps, and powerful acquisition tools.
+[**Base**](https://base.org/) is an Ethereum Layer 2 (L2) chain developed in collaboration with Optimism and incubated within Coinbase, offering a secure, low-cost, and developer-friendly platform for building on-chain applications. It is built on OP Stack and leverages Ethereum's security, allowing developers and users to enjoy seamless Coinbase product integrations, easy fiat onramps, and powerful acquisition tools.
 
 ### Key Features and Benefits
 

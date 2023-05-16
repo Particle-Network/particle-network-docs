@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-MAP Protocol(MAPO) is the omnichain layer for Web3. 100% Nakamoto Style cross-chain communication built on Light-client & ZK technology with zero privileged roles. By connecting both EVM and non-EVM public chains, MAP Protocol empowers dApp developers to thrive in Web3 with a full suite of omnichain SDKs.
+[**MAP Protocol**](https://www.mapprotocol.io/) (MAPO) is the omnichain layer for Web3. 100% Nakamoto Style cross-chain communication built on Light-client & ZK technology with zero privileged roles. By connecting both EVM and non-EVM public chains, MAP Protocol empowers dApp developers to thrive in Web3 with a full suite of omnichain SDKs.
 
 ### Key Features and Benefits
 

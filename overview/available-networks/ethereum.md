@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Ethereum is a decentralized, open-source blockchain platform with smart contract functionality. It enables developers to build and deploy decentralized applications (dApps) and supports a vast ecosystem of projects in the fields of DeFi, NFTs, and beyond. Ethereum's flexibility and robust community have made it a popular choice for developers entering the Web3 space.
+[**Ethereum**](https://ethereum.org) is a decentralized, open-source blockchain platform with smart contract functionality. It enables developers to build and deploy decentralized applications (dApps) and supports a vast ecosystem of projects in the fields of DeFi, NFTs, and beyond. Ethereum's flexibility and robust community have made it a popular choice for developers entering the Web3 space.
 
 ### Key Features and Benefits
 

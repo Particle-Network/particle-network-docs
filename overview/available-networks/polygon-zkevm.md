@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Polygon zkEVM is a Layer 2 scaling solution based on zkSync technology that offers Ethereum-compatible smart contracts with reduced gas fees and enhanced transaction speeds. It aims to provide a seamless experience for both developers and users by leveraging the security and finality of Ethereum while significantly improving scalability.
+[**Polygon zkEVM**](https://polygon.technology/polygon-zkevm) is a Layer 2 scaling solution based on zkSync technology that offers Ethereum-compatible smart contracts with reduced gas fees and enhanced transaction speeds. It aims to provide a seamless experience for both developers and users by leveraging the security and finality of Ethereum while significantly improving scalability.
 
 ### Key Features and Benefits
 

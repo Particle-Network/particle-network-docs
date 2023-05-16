@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-Conflux eSpace is a groundbreaking innovation in the Conflux blockchain ecosystem that bridges the gap between Conflux and Ethereum platforms. By introducing a fully Ethereum Virtual Machine (EVM)-compatible space, Conflux eSpace enables seamless integration of existing Ethereum ecosystem tools, allowing developers to easily port their EVM-compatible dApps to the Conflux network. The innovative CrossSpaceCall internal contract facilitates atomic, layer-1 secure transfers of assets and data between the two spaces, making Conflux eSpace an attractive solution for Web3 developers looking to leverage the benefits of both Ethereum and Conflux ecosystems.
+[**Conflux eSpace**](https://developer.confluxnetwork.org/v2-hardfork/evm\_space\_guide/) is a groundbreaking innovation in the Conflux blockchain ecosystem that bridges the gap between Conflux and Ethereum platforms. By introducing a fully Ethereum Virtual Machine (EVM)-compatible space, Conflux eSpace enables seamless integration of existing Ethereum ecosystem tools, allowing developers to easily port their EVM-compatible dApps to the Conflux network. The innovative CrossSpaceCall internal contract facilitates atomic, layer-1 secure transfers of assets and data between the two spaces, making Conflux eSpace an attractive solution for Web3 developers looking to leverage the benefits of both Ethereum and Conflux ecosystems.
 
 ### Key Features and Benefits
 
