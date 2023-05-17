@@ -36,7 +36,7 @@ dependencies {
     //Optional: support WalletConnect Protocol, include MetaMask, Rainbow, Trust, imToken etc.
     implementation 'network.particle:connect-wallet-connect-adapter:{latest-version}'
     
-    //find the latest version of the sdk here:
+    //find the latest version of the sdk:
     //https://search.maven.org/search?q=g:network.particle
 }
 ```

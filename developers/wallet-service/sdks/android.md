@@ -37,6 +37,9 @@ dependencies {
     implementation("network.particle:api-service:${latest_version}")
     // Particle Wallet GUI, you can remove it if custom GUI.
     implementation("network.particle:wallet-service:${latest_version}")
+    
+    //find the latest version of the sdk:
+    //https://search.maven.org/search?q=g:network.particle
     //...
 }
 ```
