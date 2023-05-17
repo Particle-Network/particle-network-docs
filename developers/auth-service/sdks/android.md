@@ -30,7 +30,10 @@ repositories {
 }
 dependencies {
     // Particle Auth Service
-    implementation("network.particle:auth-service:${latest_version}")
+    implementation("network.particle:auth-service:${latest_version}") 
+    
+    //find the latest version of the sdk:
+    //https://search.maven.org/search?q=g:network.particle
     //...
 }
 ```
