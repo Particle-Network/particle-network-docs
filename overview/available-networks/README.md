@@ -39,6 +39,10 @@ The `mainnet` and `testnet` are both available for all the following chains.
 | MAP Protocol        | [✅ Docs](../../developers/connect-service/) | ✅ [Docs](../../developers/auth-service/) | ✅ [Docs](../../developers/wallet-service/) | [✅ Docs](../../developers/node-service/evm-chains-api/) |
 | Polygon zkEVM       | [✅ Docs](../../developers/connect-service/) | ✅ [Docs](../../developers/auth-service/) | ✅ [Docs](../../developers/wallet-service/) | [✅ Docs](../../developers/node-service/evm-chains-api/) |
 | Base                | [✅ Docs](../../developers/connect-service/) | ✅ [Docs](../../developers/auth-service/) | ✅ [Docs](../../developers/wallet-service/) | [✅ Docs](../../developers/node-service/evm-chains-api/) |
+| Linea               | [✅ Docs](../../developers/connect-service/) | ✅ [Docs](../../developers/auth-service/) | ✅ [Docs](../../developers/wallet-service/) | [✅ Docs](../../developers/node-service/evm-chains-api/) |
+| Mantle              | [✅ Docs](../../developers/connect-service/) | ✅ [Docs](../../developers/auth-service/) | ✅ [Docs](../../developers/wallet-service/) | [✅ Docs](../../developers/node-service/evm-chains-api/) |
+| Combo               | [✅ Docs](../../developers/connect-service/) | ✅ [Docs](../../developers/auth-service/) | ✅ [Docs](../../developers/wallet-service/) | [✅ Docs](../../developers/node-service/evm-chains-api/) |
+| zkMeta              | [✅ Docs](../../developers/connect-service/) | ✅ [Docs](../../developers/auth-service/) | ✅ [Docs](../../developers/wallet-service/) | [✅ Docs](../../developers/node-service/evm-chains-api/) |
 
 ## NFT Service
 

@@ -4,6 +4,32 @@ description: Changelog
 
 # Changelog
 
+## 20230517
+
+1. New Chains
+   1. Linea
+   2. Mantle
+   3. Combo
+   4. zkMeta
+
+## 20230509
+
+1. Auth Service
+   1. Add CAPTCHA for sending verification code
+
+## 20230508
+
+1. [Account Abstraction Support](../../getting-started/account-abstraction/)
+2. Auth & Wallet Service
+   1. Security Center adds a new feature: managing logged-in dapps
+   2. Support for users to bind additional login accounts
+   3. Support for users to close payment password
+   4. Optimize the UX for EIP4361 - Login with Ethereum
+
+## 20230410
+
+1. SDKs support Cocos Creator
+
 ## 20230407
 
 1. Auth & Wallet Service

@@ -58,7 +58,10 @@
   * [Flutter](getting-started/platform-specific-guides/flutter.md)
   * [React Native](getting-started/platform-specific-guides/react-native.md)
   * [Server API](getting-started/platform-specific-guides/server-api.md)
-* [💫 Account Abstraction](getting-started/account-abstraction.md)
+* [💫 Account Abstraction](getting-started/account-abstraction/README.md)
+  * [Available Networks](getting-started/account-abstraction/available-networks.md)
+  * [Web SDK](getting-started/account-abstraction/web-sdk.md)
+  * [RPC](getting-started/account-abstraction/rpc.md)
 
 ## Developers
 

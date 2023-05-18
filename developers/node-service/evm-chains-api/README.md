@@ -72,6 +72,10 @@ The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **
 | 1101                | polygonzkevm            | Polygon zkEVM Mainnet       |
 | 1442                | polygonzkevm            | Polygon zkEVM Testnet       |
 | 84531               | base                    | Base Goerli Testnet         |
+| 59140               | linea                   | Linea Goerli Testnet        |
+| 5001                | mantle                  | Mantle Testnet              |
+| 91715               | combo                   | Combo Testnet               |
+| 23122               | zkmeta                  | zkMeta Testnet              |
 
 ### Standard RPC
 
