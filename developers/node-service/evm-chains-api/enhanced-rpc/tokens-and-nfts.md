@@ -32,6 +32,10 @@
 | MAP Protocol                 |       ✅      |    ✅   |               ✅               |
 | Polygon zkEVM                |       ✅      |    ✅   |               ✅               |
 | Base                         |       ✅      |    ✅   |               ✅               |
+| Linea                        |       ✅      |    ✅   |               ✅               |
+| Mantle                       |       ✅      |    ✅   |               ✅               |
+| Combo                        |       ❌      |    ✅   |               ❌               |
+| zkMeta                       |       ❌      |    ✅   |               ❌               |
 
 ### 🔥 particle\_getTokensAndNFTs
 
