@@ -19,7 +19,7 @@ description: Changelog
 
 ## 20230508
 
-1. [Account Abstraction Support](../../getting-started/account-abstraction/)
+1. [Account Abstraction Support](../../getting-started/account-abstraction.md)
 2. Auth & Wallet Service
    1. Security Center adds a new feature: managing logged-in dapps
    2. Support for users to bind additional login accounts
@@ -50,7 +50,7 @@ description: Changelog
    10. Add support for configuring Auth and Wallet UI Mode separately
 2. Connect Service
    1. Add Wallet, Buy, and Copy wallet connect code to Connect UI Kit\
-      ![](<../../.gitbook/assets/image (2).png>)<img src="../../.gitbook/assets/image (1) (5).png" alt="" data-size="original">
+      ![](<../../.gitbook/assets/image (2) (4).png>)<img src="../../.gitbook/assets/image (1) (5).png" alt="" data-size="original">
 3. NFT Service
    1. Add support for Ethereum Sepolia and Conflux eSpace
 

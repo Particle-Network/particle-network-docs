@@ -26,7 +26,7 @@
 | Celo                         |       ✅      |    ✅   |               ❌               |
 | Klaytn                       |       ✅      |    ✅   |               ❌               |
 | Scroll                       |       ✅      |    ✅   |               ✅               |
-| ZkSync Era                   |       ❌      |    ❌   |               ❌               |
+| zkSync Era                   |       ❌      |    ❌   |               ❌               |
 | Metis                        |       ✅      |    ✅   |               ✅               |
 | Conflux eSpace               |       ✅      |    ✅   |               ✅               |
 | MAP Protocol                 |       ✅      |    ✅   |               ✅               |

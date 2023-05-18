@@ -127,7 +127,7 @@
     * [Transaction Struct](developers/node-service/solana-api/transaction-struct.md)
   * [IPFS API](developers/node-service/ipfs-service.md)
   * [Error Reference](developers/node-service/error-reference.md)
-* [💫 Account Abstraction](getting-started/account-abstraction/README.md)
+* [💫 Account Abstraction](getting-started/account-abstraction.md)
   * [Available Networks](getting-started/account-abstraction/available-networks.md)
   * [Web SDK](getting-started/account-abstraction/web-sdk.md)
   * [RPC](getting-started/account-abstraction/rpc.md)

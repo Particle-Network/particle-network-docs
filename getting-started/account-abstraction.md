@@ -4,7 +4,7 @@ description: MPC + AA is here!
 
 # 💫 Account Abstraction
 
-<figure><img src="../../.gitbook/assets/69e684bf-ac31-4cca-b637-a6bf6880a148.jpeg" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/69e684bf-ac31-4cca-b637-a6bf6880a148.jpeg" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
 
 ## Demo Videos
 
@@ -15,7 +15,7 @@ description: MPC + AA is here!
 
 ## RPCs
 
-[Particle x Biconomy RPCs ](../../developers/node-service/evm-chains-api/account-abstraction-rpc.md)
+[Particle x Biconomy RPCs ](../developers/node-service/evm-chains-api/account-abstraction-rpc.md)
 
 ## SDKs
 
