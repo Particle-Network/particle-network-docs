@@ -19,4 +19,8 @@ description: MPC + AA is here!
 
 ## SDKs
 
-We will release SDKs for Web, Android, iOS, Flutter, React Native, Unity, Unreal, and more platforms soon!
+{% content-ref url="account-abstraction/web-sdk.md" %}
+[web-sdk.md](account-abstraction/web-sdk.md)
+{% endcontent-ref %}
+
+We will release SDKs for Android, iOS, Flutter, React Native, Unity, Unreal, and more platforms soon!
