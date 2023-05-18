@@ -58,6 +58,12 @@ We support IPFS now, and more decentralized storage services are coming.
 
 [👉 Learn more about IPFS](developers/node-service/ipfs-service.md)
 
+### Account Abstraction
+
+{% content-ref url="getting-started/account-abstraction/" %}
+[account-abstraction](getting-started/account-abstraction/)
+{% endcontent-ref %}
+
 ### More Incoming Services
 
 **Data Service**: Web3 BI system, deriving insights from real-time on- and off-chain data
@@ -66,7 +72,7 @@ We support IPFS now, and more decentralized storage services are coming.
 
 ## SDKs
 
-We support [Android, iOS, Web, Unity, Unreal, Flutter, and React Native](https://github.com/particle-network/) now. And other platforms' SDK are in development and will launch soon.
+We support [Android, iOS, Web, Unity, Unreal, Flutter, React Native, and Cocos](https://github.com/Particle-Network) now. And other platforms' SDK are in development and will launch soon.
 
 ## Available Networks
 

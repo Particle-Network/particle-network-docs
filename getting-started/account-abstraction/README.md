@@ -15,7 +15,7 @@ description: MPC + AA is here!
 
 ## RPCs
 
-[Particle x Biconomy RPCs ](../node-service/evm-chains-api/account-abstraction-rpc.md)
+[Particle x Biconomy RPCs ](../../developers/node-service/evm-chains-api/account-abstraction-rpc.md)
 
 ## SDKs
 
