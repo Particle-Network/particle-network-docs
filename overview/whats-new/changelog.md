@@ -19,7 +19,7 @@ description: Changelog
 
 ## 20230508
 
-1. [Account Abstraction Support](../../getting-started/account-abstraction/)
+1. [Account Abstraction Support](../../developers/account-abstraction/)
 2. Auth & Wallet Service
    1. Security Center adds a new feature: managing logged-in dapps
    2. Support for users to bind additional login accounts

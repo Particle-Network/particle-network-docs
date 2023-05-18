@@ -1,7 +1,7 @@
 # Account Abstraction RPC
 
-{% content-ref url="../../../getting-started/account-abstraction/available-networks.md" %}
-[available-networks.md](../../../getting-started/account-abstraction/available-networks.md)
+{% content-ref url="../../account-abstraction/available-networks.md" %}
+[available-networks.md](../../account-abstraction/available-networks.md)
 {% endcontent-ref %}
 
 ## How to use
