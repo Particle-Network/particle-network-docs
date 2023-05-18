@@ -116,13 +116,13 @@ import Web3 from "web3";
 </strong><strong>// replace any EIP-1193 provider to wrapProvider
 </strong><strong>const web3 = new Web3(wrapProvider);
 </strong>//send user paid transaction
-<strong>await web3.sendTransaction(tx);
+<strong>await web3.eth.sendTransaction(tx);
 </strong><strong>
 </strong><strong>
 </strong><strong>// send gassless transaction
 </strong>const wrapProvider = new BiconomyWrapProvider(smartAccount, SendTransactionMode.Gasless);
 const web3 = new Web3(wrapProvider);
-await web3.sendTransaction(tx);
+await web3.eth.sendTransaction(tx);
 <strong>
 </strong><strong>
 </strong><strong>// use select pay gas token or gasless
@@ -138,6 +138,6 @@ wrapProvider.once(SendTransactionEvent.Request, (feeQuotes) => {
     // or reject send transaction
     wrapProvider.rejectSendTransaction({ message: 'user rejected'});
 });
-await web3.sendTransaction(tx);
+await web3.eth.sendTransaction(tx);
 <strong>
 </strong></code></pre>
