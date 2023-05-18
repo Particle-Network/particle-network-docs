@@ -6,6 +6,23 @@ description: MPC + AA is here!
 
 <figure><img src="../.gitbook/assets/69e684bf-ac31-4cca-b637-a6bf6880a148.jpeg" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
 
+{% content-ref url="account-abstraction/available-networks.md" %}
+[available-networks.md](account-abstraction/available-networks.md)
+{% endcontent-ref %}
+
+## Features
+
+1. Social Login by Particle Auth - MPC-TSS
+2. Smart Wallet Lazy Deployment
+3. Gasless Transactions: sponsor transactions as your wish
+4. Pay Gas using any ERC-20 Tokens
+5. Batch Transactions
+6. More features coming soon
+   1. Session Keys
+   2. ERC 6492
+   3. Social Recovery
+   4. ...
+
 ## Demo Videos
 
 1. Social Login & Batch Swap & USDC Pay Gas: [https://www.loom.com/share/fef39d36b0e44354a603010c8f987f7c](https://www.loom.com/share/fef39d36b0e44354a603010c8f987f7c)
@@ -23,4 +40,4 @@ description: MPC + AA is here!
 [web-sdk.md](account-abstraction/web-sdk.md)
 {% endcontent-ref %}
 
-We will release SDKs for Android, iOS, Flutter, React Native, Unity, Unreal, and more platforms soon!
+& we will release SDKs for Android, iOS, Flutter, React Native, Unity, Unreal, and more platforms soon!
