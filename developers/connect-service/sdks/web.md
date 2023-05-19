@@ -29,9 +29,10 @@ yarn add @particle-network/solana-wallet -D
 
 ### Step 2: Init Connect SDK.
 
-<pre class="language-typescript"><code class="lang-typescript"><strong>import { ModalProvider, Ethereum, EthereumGoerli, evmWallets } from '@particle-network/connect-react-ui';
+<pre class="language-typescript"><code class="lang-typescript"><strong>import { ModalProvider, Ethereum, EthereumGoerli } from '@particle-network/connect-react-ui';
 </strong>import { WalletEntryPosition } from '@particle-network/auth';
 import { Ethereum, EthereumGoerli } from '@particle-network/common';
+import { evmWallets } from '@particle-network/connect';
 
 // use react kit
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
