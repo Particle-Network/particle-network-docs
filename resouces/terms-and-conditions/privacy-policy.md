@@ -122,6 +122,29 @@ We seek to protect your Personal Data from unauthorized access, use and disclosu
 
 As noted in the Terms of Use, we do not knowingly collect or solicit Personal Data about children under 18 years of age; if you are a child under the age of 18, please do not attempt to register for or otherwise use the Services or send us any Personal Data. If we learn we have collected Personal Data from a child under 18 years of age, we will delete that information as quickly as possible. If you believe that a child under 18 years of age may have provided Personal Data to us.
 
+## Data Deletion Requests
+
+### Requesting Data Deletion
+
+If you would like to request the deletion of your personal data from our records, please follow the steps outlined below:
+
+1. Email us at: [help@particle.network](http://help@particle.network) with subject starting with: "Data Deletion Requests";
+2. Provide your Third-Party account and your Particle Account.
+
+### Verification of Identity
+
+To ensure the security and accuracy of the data deletion process, we may require additional information or verification of your identity before proceeding with your request. This is to protect your data from unauthorized access or deletion.
+
+* We will verify the email address and Third-Party account and your Particle Account;
+
+### Data Deletion Timeframe
+
+We will make reasonable efforts to process and fulfill your data deletion request within 30days from the date of receipt. However, please note that certain legal obligations or technical constraints may prevent immediate or complete deletion of your data.
+
+### Communication of Data Deletion
+
+Once your data has been successfully deleted from our systems, we will notify you through [help@particle.network](http://help@particle.network). Please note that residual copies of your data may remain in our backup systems for a limited period, as permitted by law or necessary for legitimate business purposes.
+
 ## California Resident Rights
 
 If you are a California resident, you have the rights set forth in this section. Please see the “Exercising Your Rights” section below for instructions regarding how to exercise these rights. Please note that we may process the Personal Data of our customers’ end users or employees in connection with our provision of certain services to our customers. If we are processing your Personal Data as a service provider, you should contact the entity that collected your Personal Data in the first instance to address your rights with respect to such data. If there are any conflicts between this section and any other provision of this Privacy Policy and you are a California resident, the portion that is more protective of Personal Data shall control to the extent of such conflict. If you have any questions about this section or whether any of the following rights apply to you.
