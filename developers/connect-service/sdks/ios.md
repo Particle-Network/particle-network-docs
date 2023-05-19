@@ -238,6 +238,14 @@ let adapter = ParticleConnect.getAdapterByAddress(publicAddress: address)
 let accounts = adapter.getAccounts()
 ```
 
+### Get smart accounts
+
+works on you enable [Account Abstraction](../../account-abstraction/ios.md)
+
+```swift
+adapter.getSmartAccounts()
+```
+
 ### Connect wallet.
 
 For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet

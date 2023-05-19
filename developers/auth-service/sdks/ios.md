@@ -355,6 +355,14 @@ ParticleAuthService.getAddress()
 {% endtab %}
 {% endtabs %}
 
+### Get smart account
+
+works on you enable [Account Abstraction](../../account-abstraction/ios.md)
+
+```swift
+ParticleAuthService.getSmartAccount()
+```
+
 ### Custom modal present style
 
 {% tabs %}
@@ -413,7 +421,7 @@ ParticleNetwork.setLanguage(Language.en)
 
 Use the Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
 
-1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature. This supports both Solana and EVM.
+1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature. This supports both Solana and EVM.&#x20;
 2. `signTransaction`: sign transaction, return signed message. This only supports Solana.
 3. `signMessage`: sign message, return signed message. This supports both Solana and EVM.
 4. `signTypedData`: sign typed data; this supports v1, v3, and v4 typed data. Return signed message; this only supports EVM.

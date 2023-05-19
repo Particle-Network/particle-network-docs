@@ -130,6 +130,8 @@
 * [💫 Account Abstraction](getting-started/account-abstraction.md)
   * [Available Networks](getting-started/account-abstraction/available-networks.md)
   * [Web SDK](getting-started/account-abstraction/web-sdk.md)
+  * [Android](developers/account-abstraction/android.md)
+  * [iOS](developers/account-abstraction/ios.md)
   * [RPC](getting-started/account-abstraction/rpc.md)
 * [⏭ What Else](developers/what-else.md)
 * [📚 Demo Applications](developers/demo-applications/README.md)
