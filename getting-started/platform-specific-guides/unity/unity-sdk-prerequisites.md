@@ -234,17 +234,17 @@ target 'Unity-iPhone' do
   source 'https://github.com/CocoaPods/Specs.git'
   use_frameworks!
   
-pod 'ParticleWalletGUI', '0.9.13’
-pod 'ParticleAuthService', '0.9.13’
-pod 'ParticleWalletAPI', '0.9.13’
-pod 'ParticleNetworkBase', '0.9.13’
-pod 'ParticelWalletConnect', '0.9.13'
-pod 'ConnectWalletConnectAdapter', '0.1.45’
-pod 'ConnectPhantomAdapter','0.1.45’
-pod 'ConnectEVMAdapter', '0.1.45’
-pod 'ConnectSolanaAdapter', '0.1.45’
-pod 'ParticleConnect', '0.1.45’
-pod 'ConnectCommon', '0.1.45’
+pod 'ParticleWalletGUI', '0.13.0’
+pod 'ParticleAuthService', '0.12.0’
+pod 'ParticleWalletAPI', '0.12.0’
+pod 'ParticleNetworkBase', '0.12.0’
+pod 'ParticleWalletConnect', '0.12.0'
+pod 'ConnectWalletConnectAdapter', '0.1.52’
+pod 'ConnectPhantomAdapter','0.1.52’
+pod 'ConnectEVMAdapter', '0.1.52’
+pod 'ConnectSolanaAdapter', '0.1.52’
+pod 'ParticleConnect', '0.1.52’
+pod 'ConnectCommon', '0.1.52’
 
 end
 
