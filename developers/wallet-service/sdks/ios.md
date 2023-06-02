@@ -275,41 +275,7 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
 {% endtab %}
 {% endtabs %}
 
-#### Add custom tokens
 
-{% tabs %}
-{% tab title="Swift" %}
-```swift
-// address is your user public address
-let address = ParticleAuthService.getAddress()
-// tokenAddresses is token contract address
-let tokenAddresses: [String] = ["Fm9rHUTF5v3hwMLbStjZXqNBBoZyGriQaFM6sTFz3K8A"]
-// if tokens are existed in blockchain, will return them.
-// if no tokens existed in blockchain, will return empty array.
-ParticleWalletAPI.getEvmService().addCustomTokens(address: address, tokenAddresses: tokenAddresses).subscribe { [weak self]  result in
-    switch result {
-    case .failure(let error):
-        print(error)
-    case .success(let tokenModels):
-        print(tokenModels)
-    }
-}.disposed(by: bag)
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```swift
-ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.getAddress(), tokenAddresses: ["0xFab46E002BbF0b4509813474841E0716E6730136", "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa"]).subscribe { [weak self]  result in
-    switch result {
-    case .failure(let error):
-        print(error)
-    case .success(let tokenModels):
-        print(tokenModels)
-    }
-}.disposed(by: bag)
-```
-{% endtab %}
-{% endtabs %}
 
 ### EVM Service
 
@@ -1015,24 +981,34 @@ ParticleWalletGUI.setLanguage(Language.en)
 ParticleWalletGUI.setSupportAddToken(false)
 
 // Set display token addresses 
-// If you called this method, Wallet SDK will only show tokens in the token addresses.
+// If you called this method, 
+// Wallet SDK will only show these tokens in the token addresses, 
+// works only on the wallet page token list.
 // You can pass nil to reset.
 ParticleWalletGUI.setDisplayTokenAddresses([tokenAddress])
 
 // Set display NFT contract addresses
 // If you called this method, Wallet SDK will only show NFTs in the NFT contract addresses.
 // You can pass nil to reset.
-ParticleWalletGUI.setDisplayNFTContractAddresses([nftContractAddress])
+ParticleWalletGUI.<a data-footnote-ref href="#user-content-fn-1">setDisplayNFTContractAddresses</a>([nftContractAddress])
 
-/// Set priority token addresses, priority token will show in top part of the list.
-/// If you called this method, Wallet SDK will show these tokens in top part of the list
-/// You can pass nil to reset.
+// Set priority token addresses, priority token will show in top part of the list.
+// If you called this method, 
+// Wallet SDK will show these tokens in top part of the list, 
+// works on the wallet page token list, token send select page.
+// You can pass nil to reset.
 ParticleWalletGUI.setPriorityTokenAddresses([tokenAddress])
 
-/// Set priority NFT contract addresses, priority NFT will show in top part of list.
-/// If you called this method, Wallet SDK will only show NFTs in top part of list.
-/// You can pass nil to reset.
+// Set priority NFT contract addresses, priority NFT will show in top part of list.
+// If you called this method, Wallet SDK will only show NFTs in top part of list.
+// You can pass nil to reset.
 ParticleWalletGUI.setPriorityNFTContractAddresses([nftContractAddress])
+
+// Set custom token addresses
+// If you called this method, Wallet SDK will show these tokens in token list, unless the user hide them
+// If you called setDisplayTokenAddresses, this method won't work in wallet page token list.
+// The method works on the wallet page token list and token send select page.
+ParticleWalletGUI.setCustomTokenAddresses([tokenAddress])
 
 // Set fait coin, currently support USD, CNY, JPY, HKD, INR, KRW.
 // If you called this method, we will hide curreny change button in setting page.
@@ -1259,3 +1235,5 @@ if let url = URL(string: "app.uniswap.org") {
     PNRouter.navigatorDappBrowser(url: url)
 }
 ```
+
+[^1]: 
