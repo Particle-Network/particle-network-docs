@@ -900,42 +900,6 @@ func writeContract() {
 {% endtab %}
 {% endtabs %}
 
-#### Add custom tokens
-
-{% tabs %}
-{% tab title="Swift" %}
-```swift
-// address is your user public address
-let address = ParticleAuthService.getAddress()
-// tokenAddresses is token contract address
-let tokenAddresses: [String] = ["0xFab46E002BbF0b4509813474841E0716E6730136", "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa"]
-// if tokens are existed in blockchain, will return them.
-// if no tokens existed in blockchain, will return empty array.
-ParticleWalletAPI.getEvmService().addCustomTokens(address: address, tokenAddresses: tokenAddresses).subscribe { [weak self]  result in
-    switch result {
-    case .failure(let error):
-        print(error)
-    case .success(let tokenModels):
-        print(tokenModels)
-    }
-}.disposed(by: bag)
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```swift
-ParticleWalletAPI.getEvmService().addCustomTokens(address: ParticleAuthService.getAddress(), tokenAddresses: ["0xFab46E002BbF0b4509813474841E0716E6730136", "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa"]).subscribe { [weak self]  result in
-    switch result {
-    case .failure(let error):
-        print(error)
-    case .success(let tokenModels):
-        print(tokenModels)
-    }
-}.disposed(by: bag)
-```
-{% endtab %}
-{% endtabs %}
-
 ## Wallet UI Reference
 
 ### Custom Wallet UI &#x20;
@@ -959,11 +923,11 @@ ParticleWalletGUI.supportWalletConnect(false)
 ParticleWalletGUI.supportDappBrowser(false)
 
 // show or hide test network, default value is false.
-<strong>ParticleWalletGUI.showTestNetwork(false)
-</strong><strong>
-</strong><strong>// support chain, Particle Connect initialize chain will add as a support chain automatically.
-</strong><strong>// default support all chains in Particle Network base
-</strong>ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
+ParticleWalletGUI.showTestNetwork(false)
+
+// support chain, Particle Connect initialize chain will add as a support chain automatically.
+// default support all chains in Particle Network base
+ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
 
 // show or hide manage wallet page, default value is true.
 ParticleWalletGUI.showManageWallet(true)
