@@ -185,7 +185,7 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 target 'Runner' do
   use_frameworks!
   
-  ...
+  ...other
 end
 ```
 
