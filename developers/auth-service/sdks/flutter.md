@@ -179,11 +179,11 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 3.8 Edit Podfile, you should follow [Podfile required](ios.md#edit-podfile) to edit Podfile.
 
-3.9 More important to note, our SDK is static xcframework, when introduced, you must specify the use of static libraries, `use_frameworks` or `use_frameworks! :linkage => :static`
+3.9 More important to note, our SDK is static xcframework, when introduced, you must specify the use of static libraries, `use_frameworks! :linkage => :static`
 
 ```
 target 'Runner' do
-  use_frameworks!
+  use_frameworks! :linkage => :static
   
   ...other
 end
