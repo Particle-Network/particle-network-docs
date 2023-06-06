@@ -249,6 +249,13 @@ print("getAddress: $address");
  debugPrint("signMessage: $result");
 ```
 
+### Sign message unique
+
+```dart
+ String result = await ParticleAuth.signMessageUnique("Hello Particle");
+ debugPrint("signMessage: $result");
+```
+
 ### Sign transaction
 
 ```dart
@@ -304,6 +311,8 @@ if (currChainInfo is SolanaChain) {
 ```
 
 ### Sign typed data
+
+support v1, v3, v4, v4Unique.
 
 You can get the demo source code from [here](https://github.com/Particle-Network/particle-flutter/blob/master/particle-auth/example/lib/auth\_demo/auth\_logic.dart)
 
