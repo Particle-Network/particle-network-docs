@@ -304,7 +304,6 @@ window.web3.currentProvider
   .request({
     method,
     params,
-    from,
   })
   .then((result) => {
     console.log("signTypedData result", result);
@@ -369,7 +368,6 @@ window.web3.currentProvider
   .request({
     method,
     params,
-    from,
   })
   .then((result) => {
     console.log("signTypedData_v3 result", result);
@@ -448,7 +446,6 @@ window.web3.currentProvider
   .request({
     method,
     params,
-    from,
   })
   .then((result) => {
     console.log("signTypedData_v4 result", result);
@@ -478,6 +475,40 @@ const results = await particle.solana.signAllTransactions([
     'base58 transaction2 string'
 ]);
 ```
+
+### EVM Uniq Sign
+
+{% tabs %}
+{% tab title="personal_sign_uniq" %}
+<pre class="language-typescript"><code class="lang-typescript">import { ParticleProvider } from "@particle-network/provider";
+
+const message = '0x.......'
+<strong>const result = await particle.evm.personalSignUniq(message);
+</strong>
+//or use particle provider
+const provider = new ParticleProvider(particle.auth);
+const address = await particle.evm.getAddress();
+const result = await provider.request({method: 'personal_sign_uniq', params: [message, address]});
+
+</code></pre>
+{% endtab %}
+
+{% tab title="eth_signTypedData_v4_uniq" %}
+```typescript
+import { ParticleProvider } from "@particle-network/provider";
+
+//typedData message
+const message = {}
+const result = await particle.evm.signTypedDataUniq(message);
+
+//or use particle provider
+const provider = new ParticleProvider(particle.auth);
+const address = await particle.evm.getAddress();
+const result = await provider.request({method: 'eth_signTypedData_v4_uniq', params: [address, message]});
+
+```
+{% endtab %}
+{% endtabs %}
 
 ### Tips
 
@@ -697,17 +728,7 @@ particle.openBuy(options?: OpenBuyOptions, target?: string, features?: string)
 
 &#x20;You can customize the open buy page by setting `options` parameters.
 
-|      name     |                                     description                                     |  type  | required |
-| :-----------: | :---------------------------------------------------------------------------------: | :----: | :------: |
-|    network    |   \[Solana, Ethereum, Binance Smart Chain,  Polygon, Tron, Optimism, Arbitrum One]  | string |   False  |
-|    fiatCoin   |                                    Fiat currency                                    | string |   False  |
-|   cryptoCoin  |                                   crypto currency                                   | string |   False  |
-|    fiatAmt    |  The amount of fiat currency that the user wants to spend.It's just for Buy Crypto  | number |   False  |
-|    cryptAmt   | The amount of crypto currency that the user wants to sell.It's just for Sell Crypto | number |   False  |
-|  fixFiatCoin  |                       Prevent user from changing fiat currency                      |  bool  |   False  |
-| fixCryptoCoin |                    Prevent user from changing fiat cryptocurrency                   |  bool  |   False  |
-|   fixFiatAmt  |                  Prevent user from changing amount of fiat currency                 |  bool  |   False  |
-| walletAddress |                   Wallet address for the predefined cryptocurrency                  | string |   False  |
+<table><thead><tr><th width="180" align="center">name</th><th width="382" align="center">description</th><th width="91" align="center">type</th><th width="98" align="center">required</th></tr></thead><tbody><tr><td align="center">network</td><td align="center">[Solana, Ethereum, Binance Smart Chain,  Polygon, Tron, Optimism, Arbitrum One]</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">fiatCoin</td><td align="center">Fiat currency</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">cryptoCoin</td><td align="center">crypto currency</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">fiatAmt</td><td align="center">The amount of fiat currency that the user wants to spend.It's just for Buy Crypto</td><td align="center">number</td><td align="center">False</td></tr><tr><td align="center">cryptAmt</td><td align="center">The amount of crypto currency that the user wants to sell.It's just for Sell Crypto</td><td align="center">number</td><td align="center">False</td></tr><tr><td align="center">fixFiatCoin</td><td align="center">Prevent user from changing fiat currency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">fixCryptoCoin</td><td align="center">Prevent user from changing fiat cryptocurrency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">fixFiatAmt</td><td align="center">Prevent user from changing amount of fiat currency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">walletAddress</td><td align="center">Wallet address for the predefined cryptocurrency</td><td align="center">string</td><td align="center">False</td></tr></tbody></table>
 
 {% hint style="info" %}
 If Particle not connected. network and walletAddress are requried.
