@@ -1,6 +1,6 @@
 # Flutter
 
-### 1.Add the Biconomy Service SDK to Your Flutter App <a href="#add-sdks" id="add-sdks"></a>
+### 1. Add the Biconomy Service SDK to Your Flutter App <a href="#add-sdks" id="add-sdks"></a>
 
 Run this command:
 
@@ -12,9 +12,9 @@ flutter pub add particle_biconomy
 
 click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-biconomy) to get the demo source code&#x20;
 
-### 2.Add Particle Auth or ParticleConnect to your project
+### 2. Add Particle Auth or ParticleConnect to your project
 
-biconomy service can't use individually.
+Biconomy service can't use individually.
 
 
 
@@ -77,7 +77,7 @@ ParticleBiconomy.enableBiconomyMode();
 ParticleBiconomy.disableBiconomyMode();
 ```
 
-### Rpc get fee quotes,&#x20;
+### Rpc get fee quotes
 
 Always used with send Transaciton, pick one feeQuote then send transaction in custom feeMode.
 
