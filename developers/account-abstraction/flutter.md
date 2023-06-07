@@ -91,7 +91,7 @@ var result =
 print(result);
 ```
 
-### SignAndSendTransaction with AuthService
+### SignAndSendTransaction with Auth Service
 
 ```dart
 final publicAddress = await ParticleAuth.getAddress();
@@ -114,16 +114,63 @@ final signature = await ParticleAuth.signAndSendTransaction(transaction,
         feeMode: BiconomyFeeMode.custom(feeQuote));
 ```
 
-### Batch send transaction with AuthService
+### SignAndSendTransaction with Connect Service
 
 ```dart
-static void batchSendTransactions() async {
-  final publicAddress = await ParticleAuth.getAddress();
-  final transaction = await TransactionMock.mockEvmSendNative(publicAddress);
-  // batch your transacitons into a list
-  List<String> transactions = <String>[transaction, transaction];
-  // support auto, gasless and custom feeMode.
-  final signature = await ParticleAuth.batchSendTransactions(transactions, feeMode: BiconomyFeeMode.auto());
-  showToast("signature $signature");
-}
+// confirm your eoa public address and current wallet type
+final publicAddress = "";
+final walletType = WalletType.metaMask;
+
+// send transaction in auto mode, auto means use native to pay gas fee.
+final signature = await ParticleConnect.signAndSendTransaction(
+        walletType, publicAddress, transaction,
+        feeMode: BiconomyFeeMode.auto());
+    
+// send transaction in gasless mode, gasless means user dont need to pay gas fee. 
+final signature = await ParticleConnect.signAndSendTransaction(
+        walletType, publicAddress, transaction,
+        feeMode: BiconomyFeeMode.auto());
+
+// send transaction in custom mode, custom means user pick one token or native to pay gas fee. 
+List<String> transactions = <String>[transaction];
+var result = await ParticleBiconomy.rpcGetFeeQuotes(publicAddress, transactions);
+// pick one quote 
+var feeQuote = result[0];
+final signature = await ParticleConnect.signAndSendTransaction(
+        walletType, publicAddress, transaction,
+        feeMode: BiconomyFeeMode.auto());
+
+showToast("signature $signature");
+```
+
+### Batch send transaction with Auth Service
+
+```dart
+final publicAddress = await ParticleAuth.getAddress();
+final transaction = await TransactionMock.mockEvmSendNative(publicAddress);
+
+// batch your transacitons into a list
+List<String> transactions = <String>[transaction, transaction];
+
+// support auto, gasless and custom feeMode.
+final signature = await ParticleAuth.batchSendTransactions(transactions, feeMode: BiconomyFeeMode.auto());
+showToast("signature $signature");
+```
+
+### Batch send transaction with Connect Service
+
+```dart
+// confirm your eoa public address and current wallet type
+final publicAddress = "";
+final walletType = WalletType.metaMask;
+
+final transaction = await TransactionMock.mockEvmSendNative(publicAddress!);
+// batch your transacitons into a list
+List<String> transactions = <String>[transaction, transaction];
+
+// support auto, gasless and custom feeMode.
+final signature = await ParticleConnect.batchSendTransactions(
+        walletType, publicAddress!, transactions,
+        feeMode: BiconomyFeeMode.auto());
+showToast("signature $signature");
 ```
