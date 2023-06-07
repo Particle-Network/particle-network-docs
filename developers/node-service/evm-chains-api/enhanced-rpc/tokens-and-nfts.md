@@ -2,40 +2,7 @@
 
 ### Support by Networks
 
-| Networks (Mainnet & Testnet) | Transactions | Tokens |              NFTs             |
-| ---------------------------- | :----------: | :----: | :---------------------------: |
-| Ethereum                     |       ✅      |    ✅   |               ✅               |
-| BSC (BNB Smart Chain)        |       ✅      |    ✅   |               ✅               |
-| Polygon                      |       ✅      |    ✅   |               ✅               |
-| Avalanche (C-Chain)          |       ✅      |    ✅   |               ✅               |
-| Fantom                       |       ✅      |    ✅   |               ✅               |
-| Arbitrum                     |       ✅      |    ✅   |               ✅               |
-| Harmony                      |       ✅      |    ✅   |               ✅               |
-| Moonbeam/Moonriver           |       ✅      |    ✅   |               ✅               |
-| Heco                         |       ✅      |    ✅   |               ❌               |
-| Aurora                       |       ✅      |    ✅   |               ✅               |
-| Optimism                     |       ✅      |    ✅   |               ✅               |
-| KCC                          |       ✅      |    ✅   | <p>✅ Mainnet<br>❌ Testnet</p> |
-| PlatON                       |       ✅      |    ✅   |               ❌               |
-| Tron                         |       ✅      |    ✅   |               ❌               |
-| OKC                          |       ✅      |    ✅   |               ❌               |
-| ThunderCore                  |       ✅      |    ✅   |               ❌               |
-| Cronos                       |       ✅      |    ✅   |               ✅               |
-| Oasis Emerald                |       ✅      |    ✅   | <p>✅ Mainnet<br>❌ Testnet</p> |
-| Gnosis (xDAI)                |       ✅      |    ✅   |               ❌               |
-| Celo                         |       ✅      |    ✅   |               ❌               |
-| Klaytn                       |       ✅      |    ✅   |               ❌               |
-| Scroll                       |       ✅      |    ✅   |               ✅               |
-| zkSync Era                   |       ❌      |    ❌   |               ❌               |
-| Metis                        |       ✅      |    ✅   |               ✅               |
-| Conflux eSpace               |       ✅      |    ✅   |               ✅               |
-| MAP Protocol                 |       ✅      |    ✅   |               ✅               |
-| Polygon zkEVM                |       ✅      |    ✅   |               ✅               |
-| Base                         |       ✅      |    ✅   |               ✅               |
-| Linea                        |       ✅      |    ✅   |               ✅               |
-| Mantle                       |       ✅      |    ✅   |               ✅               |
-| Combo                        |       ❌      |    ✅   |               ❌               |
-| zkMeta                       |       ❌      |    ✅   |               ❌               |
+<table><thead><tr><th width="283">Networks (Mainnet &#x26; Testnet)</th><th width="177" align="center">Transactions</th><th align="center">Tokens</th><th align="center">NFTs</th></tr></thead><tbody><tr><td>Ethereum</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>BSC (BNB Smart Chain)</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Polygon</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Avalanche (C-Chain)</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Fantom</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Arbitrum</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Harmony</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Moonbeam/Moonriver</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Heco</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Aurora</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Optimism</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅ </td></tr><tr><td>KCC</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅ Mainnet<br>❌ Testnet</td></tr><tr><td>PlatON</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Tron</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>OKC</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>ThunderCore</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Cronos</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Oasis Emerald</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅ Mainnet<br>❌ Testnet</td></tr><tr><td>Gnosis (xDAI)</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Celo</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Klaytn</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Scroll</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>zkSync Era</td><td align="center">❌</td><td align="center">❌</td><td align="center">❌</td></tr><tr><td>Metis</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Conflux eSpace</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>MAP Protocol</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Polygon zkEVM</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Base</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Linea</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Mantle</td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td>Combo</td><td align="center">❌</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>zkMeta</td><td align="center">❌</td><td align="center">✅</td><td align="center">❌</td></tr></tbody></table>
 
 ### 🔥 particle\_getTokensAndNFTs
 

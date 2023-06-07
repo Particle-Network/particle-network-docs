@@ -12,70 +12,7 @@ The EVM Chains API allows applications to connect to a EVM chain node that is pa
 
 The EVM Chains API follows a JSON-RPC 2.0 standard. We extended a field named **chainId** to specify which network we use.
 
-| chainId Value (int) | chainName Value(string) | EVM Chains                  |
-| ------------------- | ----------------------- | --------------------------- |
-| 1                   | ethereum                | Ethereum Mainnet            |
-| 5                   | ethereum                | Ethereum Goerli             |
-| 11155111            | ethereum                | Ethereum Sepolia            |
-| 56                  | bsc                     | Binance Smart Chain Mainnet |
-| 97                  | bsc                     | Binance Smart Chain Testnet |
-| 137                 | polygon                 | Polygon Mainnet             |
-| 80001               | polygon                 | Polygon Testnet(Mumbai)     |
-| 43114               | avalanche               | Avalanche Mainnet(C-Chain)  |
-| 43113               | avalanche               | Avalanche Testnet(Fuji)     |
-| 250                 | fantom                  | Fantom Mainnet(Opera)       |
-| 4002                | fantom                  | Fantom Testnet              |
-| 42161               | arbitrum                | Arbitrum One                |
-| 42170               | arbitrum                | Arbitrum Nova               |
-| 421613              | arbitrum                | Arbitrum Goerli             |
-| 1284                | moonbeam                | Moonbeam                    |
-| 1285                | moonriver               | Moonriver                   |
-| 1287                | moonbeam/moonriver      | Moonbase Alpha              |
-| 1666600000          | harmony                 | Harmony Mainnet             |
-| 1666700000          | harmony                 | Harmony Testnet             |
-| 128                 | heco                    | Huobi ECO Chain Mainnet     |
-| 256                 | heco                    | Huobi ECO Chain Testnet     |
-| 1313161554          | aurora                  | Aurora Mainnet              |
-| 1313161555          | aurora                  | Aurora Testnet              |
-| 10                  | optimism                | Optimism Mainnet            |
-| 420                 | optimism                | Optimism Testnet Goerli     |
-| 321                 | kcc                     | KCC Mainnet                 |
-| 322                 | kcc                     | KCC Testnet                 |
-| 210425              | platon                  | PlatON Mainnet              |
-| 2206132             | platon                  | PlatON Testnet              |
-| 728126428           | tron                    | Tron Mainnet                |
-| 2494104990          | tron                    | Tron Shasta                 |
-| 3448148188          | tron                    | Tron Nile                   |
-| 66                  | okc                     | OKC Mainnet                 |
-| 65                  | okc                     | OKC Testnet                 |
-| 108                 | thundercore             | ThunderCore Mainnet         |
-| 18                  | thundercore             | ThunderCore Testnet         |
-| 25                  | cronos                  | Cronos Mainnet              |
-| 338                 | cronos                  | Cronos Testnet              |
-| 42262               | oasisemerald            | OasisEmerald Mainnet        |
-| 42261               | oasisemerald            | OasisEmerald Testnet        |
-| 100                 | gnosis                  | Gnosis Mainnet              |
-| 10200               | gnosis                  | Gnosis Testnet              |
-| 42220               | celo                    | Celo Mainnet                |
-| 44787               | celo                    | Celo Testnet                |
-| 8217                | klaytn                  | Klaytn Mainnet              |
-| 1001                | klaytn                  | Klaytn Testnet              |
-| 324                 | zksync                  | zkSync Era Mainnet          |
-| 280                 | zksync                  | zkSync Era Testnet          |
-| 1088                | metis                   | Metis Mainnet               |
-| 599                 | metis                   | Metis Testnet               |
-| 534353              | scroll                  | Scroll Alpha Testnet        |
-| 1030                | confluxespace           | Conflux eSpace Mainnet      |
-| 71                  | confluxespace           | Conflux eSpace Testnet      |
-| 22776               | mapprotocol             | MAP Protocol Mainnet        |
-| 212                 | mapprotocol             | MAP Protocol Testnet        |
-| 1101                | polygonzkevm            | Polygon zkEVM Mainnet       |
-| 1442                | polygonzkevm            | Polygon zkEVM Testnet       |
-| 84531               | base                    | Base Goerli Testnet         |
-| 59140               | linea                   | Linea Goerli Testnet        |
-| 5001                | mantle                  | Mantle Testnet              |
-| 91715               | combo                   | Combo Testnet               |
-| 23122               | zkmeta                  | zkMeta Testnet              |
+<table><thead><tr><th width="197">chainId Value (int)</th><th>chainName Value(string)</th><th>EVM Chains</th></tr></thead><tbody><tr><td>1</td><td>ethereum</td><td>Ethereum Mainnet</td></tr><tr><td>5</td><td>ethereum</td><td>Ethereum Goerli </td></tr><tr><td>11155111</td><td>ethereum</td><td>Ethereum Sepolia </td></tr><tr><td>56</td><td>bsc</td><td>Binance Smart Chain Mainnet</td></tr><tr><td>97</td><td>bsc</td><td>Binance Smart Chain Testnet</td></tr><tr><td>137</td><td>polygon</td><td>Polygon Mainnet</td></tr><tr><td>80001</td><td>polygon</td><td>Polygon Testnet(Mumbai)</td></tr><tr><td>43114</td><td>avalanche</td><td>Avalanche Mainnet(C-Chain)</td></tr><tr><td>43113</td><td>avalanche</td><td>Avalanche Testnet(Fuji)</td></tr><tr><td>250</td><td>fantom</td><td>Fantom Mainnet(Opera)</td></tr><tr><td>4002</td><td>fantom</td><td>Fantom Testnet</td></tr><tr><td>42161</td><td>arbitrum</td><td>Arbitrum One</td></tr><tr><td>42170</td><td>arbitrum</td><td>Arbitrum Nova</td></tr><tr><td>421613</td><td>arbitrum</td><td>Arbitrum Goerli</td></tr><tr><td>1284</td><td>moonbeam</td><td>Moonbeam</td></tr><tr><td>1285</td><td>moonriver</td><td>Moonriver</td></tr><tr><td>1287</td><td>moonbeam/moonriver</td><td>Moonbase Alpha</td></tr><tr><td>1666600000</td><td>harmony</td><td>Harmony Mainnet</td></tr><tr><td>1666700000</td><td>harmony</td><td>Harmony Testnet</td></tr><tr><td>128</td><td>heco</td><td>Huobi ECO Chain Mainnet</td></tr><tr><td>256</td><td>heco</td><td>Huobi ECO Chain Testnet</td></tr><tr><td>1313161554</td><td>aurora</td><td>Aurora Mainnet</td></tr><tr><td>1313161555</td><td>aurora</td><td>Aurora Testnet</td></tr><tr><td>10</td><td>optimism</td><td>Optimism Mainnet</td></tr><tr><td>420</td><td>optimism</td><td>Optimism Testnet Goerli</td></tr><tr><td>321</td><td>kcc</td><td>KCC Mainnet</td></tr><tr><td>322</td><td>kcc</td><td>KCC Testnet</td></tr><tr><td>210425</td><td>platon</td><td>PlatON Mainnet</td></tr><tr><td>2206132</td><td>platon</td><td>PlatON Testnet</td></tr><tr><td>728126428</td><td>tron</td><td>Tron Mainnet</td></tr><tr><td>2494104990</td><td>tron</td><td>Tron Shasta</td></tr><tr><td>3448148188</td><td>tron</td><td>Tron Nile</td></tr><tr><td>66</td><td>okc</td><td>OKC Mainnet</td></tr><tr><td>65</td><td>okc</td><td>OKC Testnet</td></tr><tr><td>108</td><td>thundercore</td><td>ThunderCore Mainnet</td></tr><tr><td>18</td><td>thundercore</td><td>ThunderCore Testnet</td></tr><tr><td>25</td><td>cronos</td><td>Cronos Mainnet</td></tr><tr><td>338</td><td>cronos</td><td>Cronos Testnet</td></tr><tr><td>42262</td><td>oasisemerald</td><td>OasisEmerald Mainnet</td></tr><tr><td>42261</td><td>oasisemerald</td><td>OasisEmerald Testnet</td></tr><tr><td>100</td><td>gnosis</td><td>Gnosis Mainnet</td></tr><tr><td>10200</td><td>gnosis</td><td>Gnosis Testnet</td></tr><tr><td>42220</td><td>celo</td><td>Celo Mainnet</td></tr><tr><td>44787</td><td>celo</td><td>Celo Testnet</td></tr><tr><td>8217</td><td>klaytn</td><td>Klaytn Mainnet</td></tr><tr><td>1001</td><td>klaytn</td><td>Klaytn Testnet</td></tr><tr><td>324</td><td>zksync</td><td>zkSync Era Mainnet</td></tr><tr><td>280</td><td>zksync</td><td>zkSync Era Testnet</td></tr><tr><td>1088</td><td>metis</td><td>Metis Mainnet</td></tr><tr><td>599</td><td>metis</td><td>Metis Testnet</td></tr><tr><td>534353</td><td>scroll</td><td>Scroll Alpha Testnet</td></tr><tr><td>1030</td><td>confluxespace</td><td>Conflux eSpace Mainnet</td></tr><tr><td>71</td><td>confluxespace</td><td>Conflux eSpace Testnet</td></tr><tr><td>22776</td><td>mapprotocol</td><td>MAP Protocol Mainnet</td></tr><tr><td>212</td><td>mapprotocol</td><td>MAP Protocol Testnet</td></tr><tr><td>1101</td><td>polygonzkevm</td><td>Polygon zkEVM Mainnet</td></tr><tr><td>1442</td><td>polygonzkevm</td><td>Polygon zkEVM Testnet</td></tr><tr><td>84531</td><td>base</td><td>Base Goerli Testnet</td></tr><tr><td>59140</td><td>linea</td><td>Linea Goerli Testnet</td></tr><tr><td>5001</td><td>mantle</td><td>Mantle Testnet</td></tr><tr><td>91715</td><td>combo</td><td>Combo Testnet</td></tr><tr><td>23122</td><td>zkmeta</td><td>zkMeta Testnet</td></tr></tbody></table>
 
 ### Standard RPC
 

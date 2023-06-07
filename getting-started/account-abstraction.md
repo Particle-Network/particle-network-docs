@@ -36,8 +36,8 @@ description: MPC + AA is here!
 
 ## SDKs
 
-{% content-ref url="account-abstraction/web-sdk.md" %}
-[web-sdk.md](account-abstraction/web-sdk.md)
+{% content-ref url="../developers/account-abstraction/web.md" %}
+[web.md](../developers/account-abstraction/web.md)
 {% endcontent-ref %}
 
 {% content-ref url="../developers/account-abstraction/android.md" %}

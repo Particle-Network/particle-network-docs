@@ -1,4 +1,4 @@
-# Web SDK
+# Web
 
 ## Installation[​](https://docs.walletconnect.com/1.0/#getting-started) <a href="#getting-started" id="getting-started"></a>
 
@@ -12,7 +12,7 @@ npm install @particle-network/biconomy
 
 ## Initialize the SmartAccount
 
-You need to create a Particle project to connect to your app, Visit [Particle Dashboard](../dashboard/) to learn more about Particle projects and apps.
+You need to create a Particle project to connect to your app, Visit [Particle Dashboard](../../getting-started/dashboard/) to learn more about Particle projects and apps.
 
 And create a Biconomy Paymasters to connect AA, Visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
 

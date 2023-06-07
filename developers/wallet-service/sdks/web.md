@@ -30,20 +30,7 @@ When your DApp integration [Particle Auth](../../auth-service/sdks/web.md#open-p
 
 You can preview wallet style in [Particle Wallet](https://wallet.particle.network/?customStyleSetting=true), and edit styles through the bottom right artboard. Copy style JSON set to [Auth Service](../../auth-service/) or [Connect Service](../../connect-service/).
 
-| name                         | description                                      |
-| ---------------------------- | ------------------------------------------------ |
-| supportChains                | The chains wallet support switch                 |
-| displayTokenAddresses        | The tokens wallet display in list                |
-| displayNFTContractAddresses  | The NFT contracts display in list                |
-| priorityTokenAddresses       | Token list priority                              |
-| priorityNFTContractAddresses | NFT list priority                                |
-| fiatCoin                     | The Currency Unit                                |
-| evmSupportWalletConnect      | The Wallet support WalletConnect protocol or not |
-| supportUIModeSwitch          | The Wallet support UI Mode switch or not         |
-| supportLanguageSwitch        | The Wallet support Language switch or not        |
-| light                        | light mode style                                 |
-| dark                         | dark mode style                                  |
-|                              |                                                  |
+<table><thead><tr><th width="310.3333333333333">name</th><th>description</th></tr></thead><tbody><tr><td>supportChains</td><td>The chains wallet support switch</td></tr><tr><td>displayTokenAddresses</td><td>The tokens wallet display in list</td></tr><tr><td>displayNFTContractAddresses</td><td>The NFT contracts display in list</td></tr><tr><td>priorityTokenAddresses</td><td>Token list priority</td></tr><tr><td>priorityNFTContractAddresses</td><td>NFT list priority</td></tr><tr><td>fiatCoin</td><td>The Currency Unit</td></tr><tr><td>evmSupportWalletConnect</td><td>The Wallet support WalletConnect protocol or not</td></tr><tr><td>supportUIModeSwitch</td><td>The Wallet support UI Mode switch or not</td></tr><tr><td>supportLanguageSwitch</td><td>The Wallet support Language switch or not</td></tr><tr><td>light</td><td>light mode style</td></tr><tr><td>dark</td><td>dark mode style</td></tr><tr><td></td><td></td></tr></tbody></table>
 
 
 
