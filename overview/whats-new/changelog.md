@@ -4,6 +4,13 @@ description: Changelog
 
 # Changelog
 
+## 20230606
+
+1. Auth Service
+   1. Add `personal_sign_uniq` & `eth_signTypedData_v4_uniq`
+2. Connect Service
+   1. Add Coinbase Wallet, Trust Wallet & OKX Wallet
+
 ## 20230517
 
 1. New Chains
