@@ -803,4 +803,10 @@ Response example:
 }
 ```
 
-### [Tokens & NFTs](tokens-and-nfts.md)
+{% content-ref url="tokens-and-nfts.md" %}
+[tokens-and-nfts.md](tokens-and-nfts.md)
+{% endcontent-ref %}
+
+{% content-ref url="swap.md" %}
+[swap.md](swap.md)
+{% endcontent-ref %}

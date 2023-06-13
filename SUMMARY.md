@@ -120,6 +120,7 @@
     * [Standard RPC](developers/node-service/evm-chains-api/standard-rpc.md)
     * [Enhanced RPC](developers/node-service/evm-chains-api/enhanced-rpc/README.md)
       * [Tokens & NFTs](developers/node-service/evm-chains-api/enhanced-rpc/tokens-and-nfts.md)
+      * [Swap](developers/node-service/evm-chains-api/enhanced-rpc/swap.md)
     * [Account Abstraction RPC](developers/node-service/evm-chains-api/account-abstraction-rpc.md)
   * [Solana API](developers/node-service/solana-api/README.md)
     * [Standard RPC](developers/node-service/solana-api/rpc.md)
