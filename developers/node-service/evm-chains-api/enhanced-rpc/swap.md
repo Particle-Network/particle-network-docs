@@ -70,7 +70,7 @@ Response
     }
   },
   "chainId": 1
-}JSON
+}
 ```
 
 ## particle\_swap\_getQuote
