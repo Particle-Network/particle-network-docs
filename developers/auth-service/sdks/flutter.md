@@ -429,3 +429,117 @@ static void openWebWallet() {
   ParticleAuth.openWebWallet();
 }
 ```
+
+## EVM Service
+
+### Write Contract
+
+Get a write contract transaction
+
+```dart
+String publicAddress = "your public address";
+String contractAddress = "your contract address";
+String methodName = "mint"; // this is your contract method name, like balanceOf, mint.
+List<Object> params = <Object>["1"]; // this is the method params.
+
+// abi json string, you can get it from your contract developer.
+// such as
+// [{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]
+const abiJsonString = null;
+
+final result = EvmService.writeContract(publicAddress, contractAddress, methodName, params, abiJsonString, true);
+
+```
+
+### Read contract
+
+Read conrtact data from blockchain
+
+```dart
+String publicAddress = "your public address";
+String contractAddress = "your contract address";
+String methodName ="mint"; // this is your contract method name, like balanceOf, mint.
+List<Object> parameters = <Object>["1"]; // this is the method params.
+
+// abi json string, you can get it from your contract developer.
+// such as
+// [{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]
+const abiJsonString = null;
+
+final result = await EvmService.readContract(publicAddress, contractAddress, methodName, parameters, abiJsonString);Cr
+```
+
+### Estimate gas
+
+Return estimated gas
+
+```dart
+final result = await EvmService.evmEstimateGas(from, to, value, data);
+```
+
+### Get suggested gas fees
+
+Return gas fee json object.
+
+```dart
+final result = await EvmService.suggestedGasFees();
+```
+
+### Get tokens and NFTs
+
+Return all tokens, NFTs and native amount at this address.
+
+```dart
+final result = await EvmService.getTokensAndNFTs(publicAddress);
+```
+
+### Get tokens
+
+Return all tokens and native amount at this address.
+
+```dart
+final result = await EvmService.getTokens(publicAddress);
+```
+
+### Get NFTs
+
+Return all NFTs at this address.
+
+```dart
+final result = await EvmService.getNFTs(publicAddress);
+```
+
+### Get token by token addresses
+
+Return the balance of the token specified below this address
+
+```dart
+final result = await EvmService.getTokenByTokenAddresses(publicAddress, tokenAddresses);
+```
+
+### Get transactions by address
+
+Return all transaction at this address
+
+```dart
+final result = await EvmService.getTransactionsByAddress(publicAddress);
+```
+
+### Get price
+
+Return token price
+
+```dart
+final result = await EvmService.getPrice(tokenAddresses, currencies);
+```
+
+### Get smart account
+
+Require add particle\_biconomy and enable Biconomy.
+
+Return smart account json object
+
+```dart
+final result = await EvmService.getSmartAccount(eoaAddresses, version);
+```
+
