@@ -4,6 +4,23 @@ description: Changelog
 
 # Changelog
 
+## 20230616
+
+Version: `0.14.0`
+
+1. New Chains
+   1. opBNB
+2. Auth Service
+   1. Support for address labels
+   2. Add transaction risk detection
+3. Wallet Service
+   1. Add Fusion mode for Swap powered by 1inch
+   2. Enhanced display of transaction records information
+   3. Add wallet to wallet chat powered by sending network
+   4. Account Abstraction Update
+      1. Batch send tokens
+      2. Batch send nfts
+
 ## 20230606
 
 1. Auth Service
