@@ -12,6 +12,9 @@ description: Integrate Swap seamlessly into your dApp
 4. Get swap by calling `particle_swap_getSwap`
 5. Sign, send and wait for the swap tx confirmed
 
+📢 For Native token like ETH, use this address\
+`0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`
+
 ## Supported Chains
 
 1. Ethereum Mainnet
