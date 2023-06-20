@@ -549,7 +549,23 @@ ParticleNetwork.setDisplayWallet(true)
 
 ```kotlin
 // if user is login, it will open web wallet.
-ParticleNetwork.openWebWallet()
+//https://docs.particle.network/developers/wallet-service/sdks/web
+ val customStyleJson = 
+ """
+      {
+        "supportAddToken": false,
+        "supportChains": [{
+            "id": 1,
+            "name": "Ethereum"
+          },
+          {
+            "id": 5,
+            "name": "Ethereum"
+          }
+        ]
+      }
+"""
+ParticleNetwork.openWebWallet(customStyleJson)
 ```
 
 ### Open account and security
