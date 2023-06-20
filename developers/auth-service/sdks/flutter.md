@@ -426,8 +426,24 @@ static void setDisplayWallet() {
 
 ```dart
 static void openWebWallet() {
-  ParticleAuth.openWebWallet();
-}
+    //https://docs.particle.network/developers/wallet-service/sdks/web
+    String webConfig =
+        '''
+         {
+            "supportAddToken": false,
+            "supportChains": [{
+                "id": 1,
+                "name": "Ethereum"
+              },
+              {
+                "id": 5,
+                "name": "Ethereum"
+              }
+            ]
+          }
+        '''; 
+    ParticleAuth.openWebWallet(webConfig);
+ }
 ```
 
 ### Set security account config
