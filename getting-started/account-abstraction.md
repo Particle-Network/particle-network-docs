@@ -4,7 +4,7 @@ description: MPC + AA is here!
 
 # 💫 Account Abstraction
 
-<figure><img src="../.gitbook/assets/69e684bf-ac31-4cca-b637-a6bf6880a148.jpeg" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Biconomy.png" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
 
 {% content-ref url="account-abstraction/available-networks.md" %}
 [available-networks.md](account-abstraction/available-networks.md)

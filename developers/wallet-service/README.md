@@ -10,7 +10,7 @@ description: Your one-stop wallet solution
 
 With Particle Wallet, you can integrate a wallet tailored to your app's needs, with features including transaction functions, NFT displays, and more.
 
-<figure><img src="../../.gitbook/assets/wallet.png" alt=""><figcaption><p>Wallet</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Wallet.png" alt=""><figcaption><p>Wallet</p></figcaption></figure>
 
 ## Why Particle **Wallet**?
 

@@ -22,7 +22,7 @@ By allowing users to purchase cryptocurrency directly with fiat currency, exchan
 \
 👉 You can also enter the On-Ramp page by clicking the Buy button in the wallet.
 
-![](<../../.gitbook/assets/image (2) (1).png>)
+<figure><img src="../../.gitbook/assets/On-ramp.png" alt=""><figcaption></figcaption></figure>
 
 ## SDK Integration
 

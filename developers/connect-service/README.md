@@ -8,7 +8,7 @@ description: SSO for Web3
 
 Modular wallet adapters and components for EVM & Solana chains. Manage wallet and custom RPC requests.
 
-![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
+![Particle Connect](../../.gitbook/assets/Connect.png)
 
 ### 1. Simple Onboarding
 

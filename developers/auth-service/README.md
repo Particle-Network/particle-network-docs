@@ -29,7 +29,7 @@ After the user successfully logs in, Particle Auth will automatically create a c
 * **Custom UI:** customize Particle Auth's UI so that it blends directly into your application, you can brand in the Dashboard.
 * **Signature Service**: a full signature service, including Send Transaction, Sign Message and so on. Your users can view the detailed data of each signature.
 
-<figure><img src="../../.gitbook/assets/Approve.png" alt=""><figcaption><p>Transaction &#x26; Approve</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Signature.png" alt=""><figcaption><p>Transaction &#x26; Approve</p></figcaption></figure>
 
 ## How Do I Integrate Particle Auth? <a href="#how-can-i-use-web3auth" id="how-can-i-use-web3auth"></a>
 

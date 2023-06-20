@@ -10,7 +10,7 @@ If you are new, Particle Network will automatically create a new project for you
 
 If you want to create a new project, click on the **"Create"** button on the project creation page. Alternatively, you can select **"Add New Project"** when you view your **"All Projects"** list.
 
-![](<../../.gitbook/assets/画板 1.jpg>)
+![](<../../.gitbook/assets/Create Project.png>)
 
 There is no need to specify your project's blockchain when you create a new project. This will all be specified once you use the SDK.
 

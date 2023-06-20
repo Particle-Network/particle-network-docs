@@ -22,3 +22,5 @@ You can also build your own tools with our APIs. We're happy to feature what you
 * Multichain support: Solana, Ethereum, BSC, Polygon, and Avalanche are currently supported
 * Top-level security: Particle Network conducts security control over the entire process of users' withdrawal of NFTs, the transaction process, and NFT deposit to ensure the security of user assets, allowing developers to focus on dApp development
 * Analytics: collect data and user feedback regarding your NFT sales with just a few lines of code (currently in development)
+
+<figure><img src="../../.gitbook/assets/Market.png" alt=""><figcaption></figcaption></figure>
