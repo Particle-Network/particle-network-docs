@@ -447,7 +447,22 @@ particleAuth.setDisplayWallet(isDisplay);
 ### Open web wallet
 
 ```javascript
-particleAuth.openWebWallet();
+//https://docs.particle.network/developers/wallet-service/sdks/web
+let webConfig = {
+    supportAddToken: false,
+    supportChains: [
+        {
+            id: 1,
+            name: 'Ethereum',
+        },
+        {
+            id: 5,
+            name: 'Ethereum',
+        },
+    ],
+};
+const webConfigJSON = JSON.stringify(webConfig);
+particleAuth.openWebWallet(webConfigJSON);
 ```
 
 ### Open account and security page
