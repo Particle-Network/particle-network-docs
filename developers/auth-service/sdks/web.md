@@ -66,7 +66,13 @@ const particle = new ParticleNetwork({
     uiMode: "dark",  //optional: light or dark, if not set, the default is the same as web auth.
     supportChains: [{ id: 1, name: "Ethereum"}, { id: 5, name: "Ethereum"}], // optional: web wallet support chains.
 <strong>    customStyle: {}, //optional: custom wallet style
-</strong>  }
+</strong>  },
+  securityAccount: { //optional: particle security account config
+    //prompt set payment password. 0: None, 1: Once(default), 2: Always
+    promptSettingWhenSign: 1,
+    //prompt set master password. 0: None(default), 1: Once, 2: Always
+    promptMasterPasswordSettingWhenLogin: 1
+  },
 });
 
 const particleProvider = new ParticleProvider(particle.auth);
