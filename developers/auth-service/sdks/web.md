@@ -650,6 +650,13 @@ particle.setLanguage('en');
 particle.setFiatCoin('USD');
 ```
 
+### Set ERC-4337
+
+```typescript
+// enable ERC-4337, openWallet will open Account Abstraction Wallet
+particle.setERC4337(true);
+```
+
 ### Switch Chain Info
 
 ```typescript
