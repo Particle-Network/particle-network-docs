@@ -10,7 +10,7 @@ description: >-
 
 Particle Auth is a simple self-custodial auth infra for Web3 apps and wallets. We support mobile number and email login, providing users with a simple operating experience. Their login account is then associated with a blockchain wallet, which is secured with a "Threshold Signatures vault".
 
-{% embed url="https://youtu.be/TuWJqP_RdHA" %}
+{% embed url="https://youtu.be/VYKmCpcfDsY" %}
 
 ## Why Particle Auth?&#x20;
 

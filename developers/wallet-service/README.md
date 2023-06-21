@@ -20,7 +20,7 @@ Using Particle Wallet, you have the flexibility to choose between building an ap
 * **A complete UI interface**: Particle Wallet provides a variety of highly adaptable UI interfaces for different app styles and scenarios.
 * **Supports the use of independent functions**: to ensure the continuity of user experience, we support the utilization of a single function in a specific scenario. For example: to transfer funds, the user can call on a "transfer" page rather than having to enter the wallet.
 
-{% embed url="https://youtu.be/_X2enkLbpEs" %}
+{% embed url="https://youtu.be/AprJ_WuMVIw" %}
 Send & Receive
 {% endembed %}
 
