@@ -4,6 +4,20 @@ description: Changelog
 
 # Changelog
 
+## 20230621
+
+Version: `0.14.1`
+
+1. New Chains
+   1. Taiko
+   2. OKBC
+2. Auth Service
+3. Wallet Service
+   1. Add WalletConenctV2 for Particle Auth Wallet
+   2. Wallet UI supports passing parameters to set AA 4337 mode.
+   3. Account Abstraction Update
+      1. Optimize the Paymaster logic
+
 ## 20230616
 
 Version: `0.14.0`
