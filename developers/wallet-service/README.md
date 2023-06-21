@@ -24,11 +24,11 @@ Using Particle Wallet, you have the flexibility to choose between building an ap
 Send & Receive
 {% endembed %}
 
-{% embed url="https://youtu.be/k3g3HQQtXUw" %}
+{% embed url="https://youtu.be/UjVvR78nl5g" %}
 A beautiful home for your uses' NFTs
 {% endembed %}
 
-{% embed url="https://youtu.be/gn9YBM_Dufs" %}
+{% embed url="https://youtu.be/Cgyo40k-DFU" %}
 Swap with the best price
 {% endembed %}
 
