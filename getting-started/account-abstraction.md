@@ -30,6 +30,8 @@ description: MPC + AA is here!
 3. Turn MetaMask to AA Wallet - Batch Swap & USDT Pay Gas: [https://www.loom.com/share/16c46ef473264b4683798783d9c16b3c](https://www.loom.com/share/16c46ef473264b4683798783d9c16b3c)
 4. Buy NFT from OpenSea: [https://www.loom.com/share/3ff3db497c244e5e99db2b1448a86d16](https://www.loom.com/share/3ff3db497c244e5e99db2b1448a86d16)
 
+{% embed url="https://youtu.be/s4DbKUDg1jU" %}
+
 ## RPCs
 
 [Particle x Biconomy RPCs ](../developers/node-service/evm-chains-api/account-abstraction-rpc.md)
