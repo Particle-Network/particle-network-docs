@@ -363,13 +363,17 @@ int chainId = jsonDecode(result)["chain_id"];
 String chainIdName = jsonDecode(result)["chain_id_name"];
 ```
 
-### Set Security account config
+### Set security account config
 
 ```dart
-static void setSecurityAccountConfig() {
-    final config = SecurityAccountConfig(true);
-    ParticleAuth.setSecurityAccountConfig(config);
-}
+// set security account config, 
+// the first parameter is promptSettingWhenSign, default value is 1.
+// the second parameter is promptMasterPasswordSettingWhenLogin, default value is 0.
+// 0 no prompt
+// 1 first time show prompt
+// 2 every time show prompt
+final config = SecurityAccountConfig(1, 2);
+ParticleAuth.setSecurityAccountConfig(config);
 ```
 
 ### Open account and security page
@@ -444,19 +448,6 @@ static void openWebWallet() {
         '''; 
     ParticleAuth.openWebWallet(webConfig);
  }
-```
-
-### Set security account config
-
-```dart
-// set security account config, 
-// promptSettingWhenSign default value is 1.
-// promptMasterPasswordSettingWhenLogin default value is 0.
-// 0 no prompt
-// 1 first time show prompt
-// 2 every time show prompt
-final config = SecurityAccountConfig(1, 2);
-ParticleAuth.setSecurityAccountConfig(config);
 ```
 
 ## EVM Service
