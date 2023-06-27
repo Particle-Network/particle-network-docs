@@ -12,7 +12,7 @@ flutter pub add particle_biconomy
 
 click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-biconomy) to get the demo source code&#x20;
 
-### 2. Add Particle Auth or ParticleConnect to your project
+### 2. Add Particle Auth or Particle Connect to your project
 
 Biconomy service can't use individually.
 
@@ -79,7 +79,7 @@ ParticleBiconomy.disableBiconomyMode();
 
 ### Rpc get fee quotes
 
-Always used with send Transaciton, pick one feeQuote then send transaction in custom feeMode.
+Always used with send Transaction, pick one feeQuote then send transaction in custom feeMode.
 
 ```dart
 final publicAddress = await ParticleAuth.getAddress();
