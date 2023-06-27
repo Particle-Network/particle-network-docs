@@ -8,7 +8,7 @@ Run this command:
 npm install react-native-particle-biconomy
 ```
 
-click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-biconomy) to get the demo source code&#x20;
+click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-biconomy) to get the demo source code&#x20;
 
 ### 2. Add Particle Auth or Particle Connect to your project
 
