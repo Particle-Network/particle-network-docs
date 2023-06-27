@@ -489,6 +489,28 @@ const abiJsonString = null;
 final result = await EvmService.readContract(publicAddress, contractAddress, methodName, parameters, abiJsonString);Cr
 ```
 
+### Create transaction
+
+```dart
+// if you want to send native, data should be 0x
+// we mock send some token, get data from EvmService.erc20Transfer
+
+String from = "your public address";
+String receiver = "receiver address"
+String contractAddress = "contract address"
+BigInt amount = "some amount";
+String to = contractAddress;
+final erc20Resp =
+    await EvmService.erc20Transfer(contractAddress, receiver, amount);
+// get field data
+final data = jsonDecode(erc20Resp)["result"];
+
+// then create transaction
+final transaction = await EvmService.createTransaction(
+    from, data, BigInt.from(0), to, false,
+    gasFeeLevel: GasFeeLevel.high);
+```
+
 ### Estimate gas
 
 Return estimated gas
