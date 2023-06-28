@@ -134,9 +134,9 @@ import ParticleConnect
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
- // initialize method
- // you can modify the adapters, remove the one you dont need.
- var adapters: [
+// initialize method
+// you can modify the adapters, remove the one you dont need.
+var adapters: [
        ParticleConnectAdapter(),
        WalletConnectAdapter(),
        MetaMaskConnectAdapter(),
@@ -150,7 +150,7 @@ import ParticleConnect
        GnosisConnectAdapter()
        ]
         
- let moreAdapterClasses: [WalletConnectAdapter.Type] =
+let moreAdapterClasses: [WalletConnectAdapter.Type] =
      [ZerionConnectAdapter.self,
       MathConnectAdapter.self,
       OmniConnectAdapter.self,
@@ -159,17 +159,22 @@ import ParticleConnect
       AlphaConnectAdapter.self,
       BitpieConnectAdapter.self]
 
- adapters.append(contentsOf: moreAdapterClasses.map {
+adapters.append(contentsOf: moreAdapterClasses.map {
      $0.init()
- })
+})
  
- ParticleConnect.initialize(env: .debug, 
+ParticleConnect.initialize(env: .debug, 
  chainInfo: .ethereum(.mainnet), 
  dAppData: DAppMetaData(name: "Particle Connect", 
  icon: URL(string: "https://connect.particle.network/icons/512.png")!, 
  url: URL(string: "https://connect.particle.network")!)) {
       adapters
 }
+
+// WalletConnect 2.0 required
+ParticleConnect.setWalletConnectV2ProjectId("your wallet connect v2.0 project id")
+// set wallet connect require chain infos, used when connect with other wallets.
+ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli)])
 ```
 {% endtab %}
 {% endtabs %}
