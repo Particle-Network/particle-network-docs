@@ -181,9 +181,9 @@ ParticleConnect.initialize(env: .debug,
 Starting from version 0.2.0, WalletConnectV2 is supported.
 
 ```swift
-// WalletConnect 2.0 required
+// WalletConnect 2.0 required, set wallet connect v2 project id
 ParticleConnect.setWalletConnectV2ProjectId("your wallet connect v2.0 project id")
-// set wallet connect require chain infos, used when connect with other wallets.
+// Set the required chains for WalletConnect v2. If not set, the current chain will be used.
 ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli)])
 ```
 {% endhint %}
