@@ -59,7 +59,10 @@ root.render(
                     //prompt set master password. 0: None(default), 1: Once, 2: Always
                     promptMasterPasswordSettingWhenLogin: 1
                 },
-                wallets: evmWallets({ qrcode: false }),
+                wallets: evmWallets({ 
+                    projectId: 'walletconnect projectId', //replace with walletconnect projectId
+                    showQrModal: false
+                 }),
             }}
             theme={'auto'}
             language={'en'}   //optional：localize, default en
@@ -258,7 +261,7 @@ const connectKit = new ParticleConnect({
                 wallets: evmWallets({ qrcode: false }),
             });
 
-//connect registered wallet
+//connect registered wallet. metamask, walletconnect_v2 etc.
 connectKit.connect('wallet id');
 
 //connect to particle

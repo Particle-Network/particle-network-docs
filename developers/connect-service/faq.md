@@ -31,6 +31,10 @@ String result = await ParticleConnect.signMessage(WalletType.metamask, getPublic
 
 3\. Add chain, MetaMask support add chain, other wallets don't support this methods, you can get success string in success call back.
 
+{% hint style="warning" %}
+### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
+{% endhint %}
+
 {% hint style="info" %}
 MetaMask doesn't support add ethereum testnet, such as goerli, instead support switch to goerli.
 

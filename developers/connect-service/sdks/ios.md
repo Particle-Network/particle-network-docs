@@ -537,7 +537,7 @@ ParticleWalletAPI.getEvmService().abiEncodeFunctionCall(contractAddress: contrac
 From tests, wallet connect MetaMask works well, other wallets not work.
 
 {% hint style="warning" %}
-### Wallet Connect V2 don't support add chain or switch chain, the feature is not available anymore
+### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
 {% endhint %}
 
 ```swift
@@ -562,7 +562,7 @@ adapter.addEthereumChain(publicAddress: publicAddress, chainId: chainId, chainNa
 ### Switch Ethereum Chain
 
 {% hint style="warning" %}
-### Wallet Connect V2 don't support add chain or switch chain, the feature is not available anymore
+### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
 {% endhint %}
 
 ```swift

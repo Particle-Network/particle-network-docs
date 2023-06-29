@@ -120,6 +120,10 @@ const userInfo = particle.auth.login({
     loginFormMode?: boolean, // login form mode will hide others ui except login form. only support supportAuthTypes equals email or phone.
     hideLoading?: boolean, //hide particle loading when use jwt authorization.
     socialLoginPrompt?: string, //social login prompt.  none | consent | select_account
+    authorization: { // optional, login with authorize
+        message: '0x...', //hex sign message.
+        uniq: false, //optional, default false.
+    }
   })
 ```
 
@@ -679,7 +683,7 @@ import { ParticleNetwork } from "@particle-netwok/auth";
 
 // open security account settings
 const particle = new ParticleNetwork({...});
-particle.auth.accountSecurity().catch((error) => {
+particle.auth.openAccountAndSecurity().catch((error) => {
     if (error.code === 4011) {
         //ignore window close
     } else if (error.code === 10005) {
@@ -688,6 +692,19 @@ particle.auth.accountSecurity().catch((error) => {
         //user not login
     }
 });
+
+// get security account
+const securityAccount = await particle.auth.getSecurityAccount();
+
+// check user master password
+particle.auth.hasMasterPassword();
+
+// check user payment password
+particle.auth.hasPaymentPassword();
+
+// check user security account
+particle.auth.hasSecurityAccount();
+
 ```
 
 
