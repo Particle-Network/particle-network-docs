@@ -618,14 +618,16 @@ ParticleProvider.request(method: method, params: params).subscribe { data in
 
 `ParticleNetwork.Error` contains error details. The error will be logged in `debug` `DevEnvironment`.
 
-## Particle Wallet Connect V1
+## Particle Wallet Connect V2
 
 Integrate your app as a wallet connect wallet. If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
 
 Add Particle Wallet Connect with CocoaPods
 
+Starting from version 0.14.0, WalletConnectV2 is supported.
+
 ```ruby
-pod 'ParticleWalletConnect'
+pod 'ParticleWalletConnect', 0.14.0
 ```
 
 ## API Reference
@@ -638,84 +640,112 @@ ParticleWalletConnect.initialize(
             WalletMetaData(name: "Particle Wallet",
             icon: URL(string: "https://connect.particle.network/icons/512.png")!,
             url: URL(string: "https://particle.network")!,
-            description: nil))
+            description: "Particle Wallet Client"))
 ```
+
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+```swift
+ParticleWalletConnect.setWalletConnectV2ProjectId("your wallet connect v2 project id")
+```
+{% endhint %}
 
 ### Connect
 
 ```swift
+let pwc = ParticleWalletConnect()
+// set delegate in your controller or view model.
+pwc.delegate = self
 // Connect to a wallet connect code
-let wcCode = "wc:DDCBBAA8-B1F1-4B98-8F74-84939E0B1533@1?bridge=https%3A%2F%2Fbridge%2Ewalletconnect%2Eorg%2F&key=3da9dbb33b560beeb1750203a8d0e3487b4fe3fdd7b7953d79fbccadae8aab48"
-ParticleWalletConnect.shared.connect(code: wcCode)
-```
-
-### Set delegate in your controller or view model.
-
-```swift
-ParticleWalletConnect.shared.delegate = self
+let wcCode = "wc:b47a7e47c4261edf2e6e8bf3860ff7795ec532fcfb53345e7337a129b6f74019@2?relay-protocol=irn&symKey=6a5310e7c98a3d358f8d1c11f205ef849f5b1f9430472363a2631edfbfb197c0"
+do {
+    try self.pwc.connect(code: wcCode)
+} catch {
+    print(error)
+}
 ```
 
 Handle connect result by implement ParticleWalletConnectDelegate protocol.
 
 ```swift
 public protocol ParticleWalletConnectDelegate: AnyObject {
+    /// Should connect dappMetaData, usually called after connect,
+    /// you could save dappMetaData.topic for query session and manage session.
+    /// - Parameters:
+    ///   - dappMetaData: DappMetaData
+    ///   - completion: Should return public address and chain id.
+    func shouldConnectDapp(_ dappMetaData: DappMetaData, completion: @escaping (String, Int) -> Void)
+
     /// Handle request from dapp
     /// - Parameters:
     ///   - topic: Topic
     ///   - method: Method name
     ///   - params: Params
     ///   - completion: Result, encode to data
-    func request(topic: String, method: String, params: [Encodable], completion: @escaping (Result<Data?>) -> Void)
+    func request(topic: String, method: String, params: [Encodable], completion: @escaping (WCResult<Data?>) -> Void)
 
-    /// Did connect session
-    /// - Parameter session: Session
-    func didConnectSession(_ session: Session)
+    /// Did connect dapp
+    /// - Parameter topic: Topic
+    func didConnectDapp(_ topic: String)
 
-    /// Did disconnect session
-    /// - Parameter session: Session
-    func didDisconnect(_ session: Session)
-
-    /// Should start session, usually called after connect,
-    /// you could save session.topic for quert session and manage session.
-    /// - Parameters:
-    ///   - session: Session
-    ///   - completion: Should return public address and chain id.
-    func shouldStartSession(_ session: Session, completion: @escaping (String, Int) -> Void)
-}
-```
-
-### Get session&#x20;
-
-```swift
-// Get wallet connect session by topic
-let session = ParticleWalletConnect.shared.getSession(by: topic)
-```
-
-### Remove session
-
-```swift
-// Remove wallet connect session by topic
-ParticleWalletConnect.shared.removeSession(by: topic)
-```
-
-### Get all sessions
-
-```swift
-// Get all wallet connect sessions 
-let sessions = ParticleWalletConnect.shared.getAllSessions()
-```
-
-### Update session
-
-```swift
-// updata wallet connect public address and chain id.
-ParticleWalletConnect.shared.update(session, publicAddress: publicAddress, chainId: chainId)
+    /// Did disconnect dapp
+    /// - Parameter topic: Topic
+    func didDisconnectDapp(_ topic: String)
+} 
 ```
 
 ### Disconnect
 
 ```swift
-// Disconnect wallet connect session
-ParticleWalletConnect.shared.disconnect(session: session)
+// Disconnect wallet connect v2 session
+do {
+    try self.pwc.disconnect(topic: topic)
+} catch {
+    print(error)
+}
 ```
 
+### Get connected dapp&#x20;
+
+```swift
+/// Get dapp by topic
+/// - Parameter topic: Topic
+/// - Returns: Dapp meta data
+func getDapp(by topic: String) -> DappMetaData?
+```
+
+### Get all connected dapps
+
+```swift
+ /// Get all wallet connect dapps. 
+ /// - Parameter publicAddress: Public address, V2 need public address to filter dapp connections.
+ /// - Returns: Dapp meta data array
+ func getAllDapps(publicAddress: String) -> [DappMetaData]
+```
+
+### Update session
+
+```swift
+// updata wallet connect v2 public address and chain id.
+do {
+    try self.pwc.updateWalletConnect(dapp.topic, publicAddress: publicAddress, chainId: chainId)
+} catch {
+    print(error)
+}
+```
+
+### Remove session
+
+```swift
+/// Remove wallet connect session by topic
+/// - Parameter topic: Topic
+func removeSession(by topic: String)
+```
+
+### Remove all sessions
+
+```swift
+/// Remove all wallet connect sessions
+func removeAllSessions()
+```
