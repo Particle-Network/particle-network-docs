@@ -450,6 +450,42 @@ static void openWebWallet() {
  }
 ```
 
+### Has master password, payment password, security account&#x20;
+
+```dart
+// get hasMasterPassword, hasPaymentPassword and hasSecurityAccount from local user info.
+
+final hasMasterPassword = await ParticleAuth.hasMasterPassword();
+final hasPaymentPassword = await ParticleAuth.hasPaymentPassword();
+final hasSecurityAccount = await ParticleAuth.hasSecurityAccount();
+  
+// get from remote server
+static void getSecurityAccount() async {
+  final result = await ParticleAuth.getSecurityAccount();
+  if (result == null) return;
+  
+  if (jsonDecode(result)["status"] == true ||
+      jsonDecode(result)["status"] == 1) {
+    final securityAccount = jsonDecode(result)["data"];
+    bool hasMasterPassword = securityAccount["has_set_master_password"];
+    bool hasPaymentPassword = securityAccount["has_set_payment_password"];
+    final email = securityAccount["email"];
+    final phone = securityAccount["phone"];
+
+    bool hasSecurityAccount = (email != null && !email.isEmpty) ||
+        (phone != null && !phone.isEmpty);
+    print(
+        "hasMasterPassword: $hasMasterPassword, hasPaymentPassword: $hasPaymentPassword, hasSecurityAccount: $hasSecurityAccount");
+    showToast(
+        "hasMasterPassword: $hasMasterPassword, hasPaymentPassword: $hasPaymentPassword, hasSecurityAccount: $hasSecurityAccount");
+  } else {
+    final error = RpcError.fromJson(jsonDecode(result)["data"]);
+    print(error);
+    showToast("getSecurityAccount: $error");
+  }
+}
+```
+
 ## EVM Service
 
 ### Write Contract
