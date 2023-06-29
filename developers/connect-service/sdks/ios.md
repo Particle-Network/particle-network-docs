@@ -171,13 +171,20 @@ ParticleConnect.initialize(env: .debug,
       adapters
 }
 
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+```swift
 // WalletConnect 2.0 required
 ParticleConnect.setWalletConnectV2ProjectId("your wallet connect v2.0 project id")
 // set wallet connect require chain infos, used when connect with other wallets.
 ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli)])
 ```
-{% endtab %}
-{% endtabs %}
+{% endhint %}
 
 6\. Add the scheme URL handle in your app's `application(_:open:options:)` method
 
