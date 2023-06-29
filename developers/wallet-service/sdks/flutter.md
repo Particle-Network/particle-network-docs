@@ -169,7 +169,6 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
     &#x3C;string>bitkeep&#x3C;/string>
     &#x3C;string>trust&#x3C;/string>
     &#x3C;string>rainbow&#x3C;/string>
-    &#x3C;string>gnosissafe&#x3C;/string>
     &#x3C;string>zerion&#x3C;/string>
     &#x3C;string>mathwallet&#x3C;/string>
     &#x3C;string>1inch&#x3C;/string>
@@ -188,9 +187,23 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 
 **Before using the SDK, you have to call init(Required)**&#x20;
 
-```dart
-ParticleWallet.init();
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+Starting from version 0.14.0, WalletConnectV2 is supported.
+
+```swift
+ParticleWallet.setWalletConnectV2ProjectId(
+        "your wallet connect v2 project id")
+
+ParticleWallet.init(WalletMetaData(
+        "Particle Connect",
+        "https://connect.particle.network/icons/512.png",
+        "https://connect.particle.network",
+        "Particle Connect Flutter Demo"));
+
 ```
+{% endhint %}
 
 ### Navigator wallet
 

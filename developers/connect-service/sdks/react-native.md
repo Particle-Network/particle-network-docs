@@ -130,7 +130,6 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
     &#x3C;string>bitkeep&#x3C;/string>
     &#x3C;string>trust&#x3C;/string>
     &#x3C;string>rainbow&#x3C;/string>
-    &#x3C;string>gnosissafe&#x3C;/string>
     &#x3C;string>zerion&#x3C;/string>
     &#x3C;string>mathwallet&#x3C;/string>
     &#x3C;string>1inch&#x3C;/string>

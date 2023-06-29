@@ -185,7 +185,6 @@ dependencies {
     <string>imtokenv2</string>
     <string>rainbow</string>
     <string>trust</string>
-    <string>gnosissafe</string>
     <string>zerion</string>
     <string>mathwallet</string>
     <string>1inch</string>

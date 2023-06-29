@@ -146,8 +146,7 @@ var adapters: [
        ImtokenConnectAdapter(),
        BitkeepConnectAdapter(),
        RainbowConnectAdapter(),
-       TrustConnectAdapter(),
-       GnosisConnectAdapter()
+       TrustConnectAdapter()
        ]
         
 let moreAdapterClasses: [WalletConnectAdapter.Type] =
@@ -219,7 +218,6 @@ each of them is optional, you can add which you want.
 	<string>imtokenv2</string>
 	<string>rainbow</string>
 	<string>trust</string>
-	<string>gnosissafe</string>
 	
 	<string>zerion</string>
         <string>mathwallet</string>
