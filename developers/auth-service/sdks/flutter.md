@@ -202,7 +202,18 @@ ParticleAuth.init(SolanaChain.devnet(), env);
 ```dart
 List<SupportAuthType> supportAuthType = <SupportAuthType>[];
 supportAuthType.add(SupportAuthType.all);
-String result =await ParticleAuth.login(LoginType.phone, "", supportAuthType);
+//message:evm->hex sign message . solana is base58
+//uniq:unique sign,only support evm
+final authorization = LoginAuthorization(message, uniq =false); 
+//authorization is optional
+ParticleAuth.login(
+    LoginType.phone,
+    "", 
+    supportAuthType,
+    socialLoginPrompt,
+    authorization
+);
+
 ```
 
 ### Is Login
