@@ -178,6 +178,8 @@ ParticleConnect.initialize(env: .debug,
 {% hint style="info" %}
 ## Migrating to WalletConnect v2
 
+Starting from version 0.2.0, WalletConnectV2 is supported.
+
 ```swift
 // WalletConnect 2.0 required
 ParticleConnect.setWalletConnectV2ProjectId("your wallet connect v2.0 project id")
