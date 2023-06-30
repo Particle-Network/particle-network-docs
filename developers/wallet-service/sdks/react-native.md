@@ -20,7 +20,7 @@ is same with [Connect Service ](../../connect-service/sdks/react-native.md)
 
 ### Initialize the SDK
 
-**Before using the SDK, you have to call init(Required)**&#x20;
+### Should init particle connect first
 
 ```javascript
 const chainInfo = ChainInfo.EthereumGoerli;
@@ -28,8 +28,24 @@ const env = Env.Dev;
 const metadata = { name: "Particle Connect", icon: "https://connect.particle.network/icons/512.png", url: "https://connect.particle.network" }
 const rpcUrl = { evm_url: null, solana_url: null };
 particleConnect.init(chainInfo, env, metadata, rpcUrl);
-particleWallet.initWallet()
 ```
+
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+Starting from version 0.14.0, WalletConnectV2 is supported.
+
+```swift
+let metaData = {
+    name: 'Particle React Native Demo',
+    icon: 'https://connect.particle.network/icons/512.png',
+    url: 'https://connect.particle.network',
+    description: 'Particle React Native Demo Description',
+    walletConnectProjectId: '75ac08814504606fc06126541ace9df6'
+};
+particleWallet.initWallet(metaData);
+```
+{% endhint %}
 
 ### Navigator wallet
 

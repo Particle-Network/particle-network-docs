@@ -201,7 +201,6 @@ ParticleWallet.init(WalletMetaData(
         "https://connect.particle.network/icons/512.png",
         "https://connect.particle.network",
         "Particle Connect Flutter Demo"));
-
 ```
 {% endhint %}
 
