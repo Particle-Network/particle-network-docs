@@ -213,7 +213,6 @@ ParticleAuth.login(
     socialLoginPrompt,
     authorization
 );
-
 ```
 
 ### Is Login

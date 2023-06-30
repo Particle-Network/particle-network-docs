@@ -535,6 +535,32 @@ const abiJsonString = "";
 const result = await EvmService.readContract(contractAddress, methodName, params, abiJsonString);
 ```
 
+### Has master password, payment password, security account&#x20;
+
+```javascript
+// get value from local user info
+const hasMasterPassword = await particleAuth.hasMasterPassword();
+const hasPaymentPassword = await particleAuth.hasPaymentPassword();
+const hasSecurityAccount = await particleAuth.hasSecurityAccount();
+
+// get value from remote server
+getSecurityAccount = async () => {
+    const result = await particleAuth.getSecurityAccount();
+    if (result.status) {
+        const secuirtyAccount = result.data;
+        const hasMasterPassword = secuirtyAccount.has_set_master_password;
+        const hasPaymentPassword = secuirtyAccount.has_set_payment_password;
+        const email = secuirtyAccount.email;
+        const phone = secuirtyAccount.phont;
+        const hasSecurityAccount = !email || !phone;
+        console.log('hasMasterPassword', hasMasterPassword, 'hasPaymentPassword', hasPaymentPassword, 'hasSecurityAccount', hasSecurityAccount);
+    } else {
+        const error = result.data;
+        console.log(error);
+    }
+}
+```
+
 ### Estimate gas
 
 Return estimated gas

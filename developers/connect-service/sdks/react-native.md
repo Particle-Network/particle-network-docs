@@ -171,6 +171,21 @@ const rpcUrl = { evm_url: null, solana_url: null };
 particleConnect.init(chainInfo, env, metadata, rpcUrl);
 ```
 
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+Starting from version 0.14.0, WalletConnectV2 is supported.
+
+```dart
+particleConnect.setWalletConnectV2ProjectId('your wallet connect v2 project id');
+const chainInfos = [ChainInfo.EthereumMainnet, ChainInfo.PolygonMainnet, ChainInfo.EthereumGoerli, ChainInfo.EthereumSepolia];
+particleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
+
+```
+{% endhint %}
+
+### Connect
+
 ### Web3 provider
 
 you can use our SDK as a web3 provider
