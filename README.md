@@ -2,7 +2,7 @@
 description: >-
   The fastest path from ideas to deployment in a single workflow for high
   performance dApps
-cover: .gitbook/assets/飞书20230222-164203 (1).png
+cover: .gitbook/assets/website-banner.jpeg
 coverY: 0
 ---
 
