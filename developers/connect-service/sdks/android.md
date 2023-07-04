@@ -20,6 +20,12 @@ Modular Kotlin wallet adapters and components for EVM & Solana chains. Manage wa
 
 ```groovy
 dependencies {
+    //required 
+     modules {
+        module("org.bouncycastle:bcprov-jdk15to18") {
+            replacedBy("org.bouncycastle:bcprov-jdk15on")
+        }
+    }
     //required dependencies
     implementation 'network.particle:auth-service:{latest-version}'
     implementation 'network.particle:connect:{latest-version}'
