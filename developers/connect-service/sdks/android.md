@@ -104,15 +104,20 @@ Add below config to AndroidManifest.xml
 ### Init Particle Connect in `Application#Create()`
 
 ```kotlin
+val dAppMetadata = DAppMetadata(
+                walletConnectProjectId = "f431aaea6e4dea6a669c0496f9c009c1",
+                name ="Particle Connect",
+                icon= "https://connect.particle.network/icons/512.png",
+                url = "https://particle.network",
+                description = "Particle Connect is a decentralized wallet connection solution that allows users to connect to DApps with their wallets.",
+                redirect = "redirect://",
+                verifyUrl = "verifyUrl",
+            )
 ParticleConnect.init(
         this,
         Env.DEV,    //debug mode
         EthereumChain(EthereumChainId.Kovan),    //chain info
-        DAppMetadata(
-            "Particle Connect",
-            "https://static.particle.network/wallet-icons/Particle.png",
-            "https://particle.network"
-        )    //DApp or Wallet info
+        dAppMetadata   //DApp or Wallet info
     ) {
         listOf(
             ParticleConnectAdapter(),
