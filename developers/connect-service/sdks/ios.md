@@ -74,9 +74,6 @@ If you would like to receive release updates, subscribe to our [GitHub repositor
 #### It is required for every iOS project that integrates the Auth Service SDK.
 
 ```ruby
-// From 0.1.45, you should add more in podfile
-pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
-
 // paste there code into pod file
 post_install do |installer|
 installer.pods_project.targets.each do |target|

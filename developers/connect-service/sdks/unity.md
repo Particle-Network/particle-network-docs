@@ -23,12 +23,29 @@ All unity SDKs are open source, [click here to view](https://github.com/Particle
 ### Init
 
 ```csharp
-var metadata = DAppMetadata.Create("Particle Connect",
+// Get your wallet connect project id from https://walletconnect.com/
+// it is required by wallet connect v2.
+var metadata = new DAppMetaData(TestConfig.walletConnectProjectId,"Particle Connect",
                 "https://connect.particle.network/icons/512.png",
-                "https://connect.particle.network");
+                "https://connect.particle.network",
+                "");
 ParticleNetwork.Init(_chainInfo);
 ParticleConnectInteraction.Init(_chainInfo, metadata);
+List<ChainInfo> chainInfos = new List<ChainInfo>{new EthereumChain(EthereumChainId.Mainnet), new EthereumChain(EthereumChainId.Goerli), new EthereumChain(EthereumChainId.Sepolia)};
+ParticleConnectInteraction.SetWalletConnectV2SupportChainInfos(chainInfos.ToArray());
 ```
+
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+Starting from version 0.14.0, WalletConnectV2 is supported.
+
+```csharp
+// set wallet connect support chain infos after init.
+List<ChainInfo> chainInfos = new List<ChainInfo>{new EthereumChain(EthereumChainId.Mainnet), new EthereumChain(EthereumChainId.Goerli), new EthereumChain(EthereumChainId.Sepolia)};
+ParticleConnectInteraction.SetWalletConnectV2SupportChainInfos(chainInfos.ToArray());
+```
+{% endhint %}
 
 ### Set chain info Sync
 
