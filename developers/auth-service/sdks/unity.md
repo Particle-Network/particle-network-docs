@@ -23,8 +23,12 @@ Drag the ParticleAuthService.prefab to your first scene(Required)&#x20;
 ```csharp
 public async void Login()
 {
+    // authorization is optinal, support login and sign a message
+    // message in evm should be hex string, in solana should be base58 string.
+    // message in evm support unique signature.
+    var authorization = new LoginAuthorization("your message", false)
     // login email
-    var nativeResultData = await ParticleAuthService.Instance.Login(LoginType.PHONE, null, SupportAuthType.ALL);
+    var nativeResultData = await ParticleAuthService.Instance.Login(LoginType.PHONE, null, SupportAuthType.ALL, SocialLoginPrompt.Select_account, authorization);
     Debug.Log(nativeResultData.data);
 
     if (nativeResultData.isSuccess)
