@@ -315,8 +315,6 @@ public async void GetSecurityAccount()
 
     if (nativeResultData.isSuccess)
     {
-        ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Success:{nativeResultData.data}");
-        Debug.Log(nativeResultData.data);
         var securityAccount = JsonConvert.DeserializeObject<SecurityAccount>(nativeResultData.data);
         var hasSecurityAccount = !string.IsNullOrEmpty(securityAccount.Email) ||
                                  !string.IsNullOrEmpty(securityAccount.Phone);
@@ -325,7 +323,6 @@ public async void GetSecurityAccount()
     }
     else
     {
-        ShowToast($"{MethodBase.GetCurrentMethod()?.Name} Failed:{nativeResultData.data}");
         var errorData = JsonConvert.DeserializeObject<NativeErrorData>(nativeResultData.data);
         Debug.Log(errorData);
     }
