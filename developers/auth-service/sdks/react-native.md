@@ -49,7 +49,7 @@ android {
   * Xcode 14.1 or later.
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
-    * iOS 13
+    * iOS 14
 
 3.1 After export iOS project, open `your_project_name.xcworkspace` under ios folder, here its name is `ParticleAuthExample.xcworkspace.`
 

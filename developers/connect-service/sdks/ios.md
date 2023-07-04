@@ -23,7 +23,7 @@ Modular Swift wallet adapters and components for EVM & Solana chains. Manage wal
   * CocoaPods 1.11.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
-    * iOS 13
+    * iOS 14
 
 #### Create a Particle Project and App
 
