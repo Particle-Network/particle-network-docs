@@ -61,6 +61,19 @@ ParticleWalletGUI.ShowLanguageSetting(true);
 ParticleWalletGUI.ShowAppearanceSetting(true);
 ```
 
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+Starting from version 0.14.0, WalletConnectV2 is supported.
+
+```csharp
+var metaData = new WalletMetaData("Particle Connect",
+                "https://connect.particle.network/icons/512.png",
+                "https://connect.particle.network", description: "", "your wallet connect project id");
+ParticleWalletGUI.ParticleWalletConnectInitialize(metaData);
+```
+{% endhint %}
+
 ### Navigator Wallet
 
 ```csharp
