@@ -6,12 +6,12 @@ description: Using your own Custom Authentication
 
 ## Introduction
 
-You can use your existing userbase or authentication method with Particle Auth. This way, your users can still log in with their existing accounts. If you need to use this function, please [contact us](https://calendly.com/particle-network).
+You can use your existing user base or authentication method with Particle Auth. This way, your users can still log in with their current accounts.
 
 ## JWT Config
 
 1. Example: [https://dev-qr6-59ee.us.auth0.com/.well-known/jwks.json](https://dev-qr6-59ee.us.auth0.com/.well-known/jwks.json)
-2. We only support RS256 by now.
+2. We only support RS256 now.
 3. Libraries:
    1. Java: [https://github.com/auth0/java-jwt](https://github.com/auth0/java-jwt)
    2. Nodejs: [https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
@@ -25,4 +25,4 @@ You can use your existing userbase or authentication method with Particle Auth. 
 
 Set your custom JWT configuration on the dashboard
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
