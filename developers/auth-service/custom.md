@@ -19,4 +19,4 @@ You can use your existing userbase or authentication method with Particle Auth. 
    4. Go: [https://github.com/auth0/go-jwt-middleware](https://github.com/auth0/go-jwt-middleware)
 4. JWKS Creator
    1. [https://russelldavies.github.io/jwk-creator/](https://russelldavies.github.io/jwk-creator/)\
-      ![](<../../.gitbook/assets/image (1).png>)
+      ![](<../../.gitbook/assets/image (1) (2).png>)

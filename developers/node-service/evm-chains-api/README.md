@@ -6,6 +6,10 @@
 **https://rpc.particle.network/evm-chain**
 {% endhint %}
 
+{% hint style="info" %}
+We support batch request, and the maximum length of the batch array is **100**
+{% endhint %}
+
 ### Structure
 
 The EVM Chains API allows applications to connect to an EVM chain node that is part of the EVM blockchain. Developers can interact with on-chain data and send different types of transactions to the network by utilizing the endpoints provided by the API.

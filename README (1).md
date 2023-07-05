@@ -60,8 +60,8 @@ We support IPFS now, and more decentralized storage services are coming.
 
 ### Account Abstraction
 
-{% content-ref url="getting-started/account-abstraction.md" %}
-[account-abstraction.md](getting-started/account-abstraction.md)
+{% content-ref url="developers/account-abstraction/" %}
+[account-abstraction](developers/account-abstraction/)
 {% endcontent-ref %}
 
 ### More Incoming Services

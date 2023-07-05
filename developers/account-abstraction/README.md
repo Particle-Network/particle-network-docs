@@ -4,10 +4,10 @@ description: MPC + AA is here!
 
 # 💫 Account Abstraction
 
-<figure><img src="../.gitbook/assets/Biconomy.png" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Biconomy.png" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
 
-{% content-ref url="account-abstraction/available-networks.md" %}
-[available-networks.md](account-abstraction/available-networks.md)
+{% content-ref url="available-networks.md" %}
+[available-networks.md](available-networks.md)
 {% endcontent-ref %}
 
 ## Features
@@ -34,24 +34,24 @@ description: MPC + AA is here!
 
 ## RPCs
 
-[Particle x Biconomy RPCs ](../developers/node-service/evm-chains-api/account-abstraction-rpc.md)
+[Particle x Biconomy RPCs ](../node-service/evm-chains-api/account-abstraction-rpc.md)
 
 ## SDKs
 
-{% content-ref url="../developers/account-abstraction/web.md" %}
-[web.md](../developers/account-abstraction/web.md)
+{% content-ref url="web.md" %}
+[web.md](web.md)
 {% endcontent-ref %}
 
-{% content-ref url="../developers/account-abstraction/android.md" %}
-[android.md](../developers/account-abstraction/android.md)
+{% content-ref url="android.md" %}
+[android.md](android.md)
 {% endcontent-ref %}
 
-{% content-ref url="../developers/account-abstraction/ios.md" %}
-[ios.md](../developers/account-abstraction/ios.md)
+{% content-ref url="ios.md" %}
+[ios.md](ios.md)
 {% endcontent-ref %}
 
-{% content-ref url="../developers/account-abstraction/flutter.md" %}
-[flutter.md](../developers/account-abstraction/flutter.md)
+{% content-ref url="flutter.md" %}
+[flutter.md](flutter.md)
 {% endcontent-ref %}
 
 Besides, we will release SDKs for React Native, Unity, Unreal, and more platforms soon!

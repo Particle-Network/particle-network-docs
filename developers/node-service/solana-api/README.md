@@ -6,6 +6,10 @@
 **https://rpc.particle.network/solana**
 {% endhint %}
 
+{% hint style="info" %}
+We support batch request, and the maximum length of the batch array is **100**
+{% endhint %}
+
 ### Structure
 
 The Solana API allows applications to connect to a Solana node that is part of the Solana blockchain. Developers can interact with on-chain data and send different types of transactions to the network by utilizing the endpoints provided by the API.
