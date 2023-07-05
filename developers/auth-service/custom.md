@@ -20,3 +20,9 @@ You can use your existing userbase or authentication method with Particle Auth. 
 4. JWKS Creator
    1. [https://russelldavies.github.io/jwk-creator/](https://russelldavies.github.io/jwk-creator/)\
       ![](<../../.gitbook/assets/image (1) (2).png>)
+
+## Dashboard
+
+Set your custom JWT configuration on the dashboard
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
