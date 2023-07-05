@@ -4,6 +4,28 @@ description: Changelog
 
 # Changelog
 
+## 20230705
+
+1. Wallet
+   1. Add Transak provider for our on-ramp aggregator
+   2. Add zkSync Era support for on-ramp
+2. Dashboard
+   1. Add Team feature
+   2. Add support for Custom Auth configuration
+
+## 20230703
+
+1. Connect
+   1. Web SDK add new wallets: bitkeep, math wallet, safepal, token pocket & onto
+
+## 20230629
+
+1. Auth
+   1. Optimize load speed
+   2. Add `authorization` for login method: login and get a signature
+2. Connect
+   1. Add WalletConnectV2 support
+
 ## 20230621
 
 Version: `0.14.1`
