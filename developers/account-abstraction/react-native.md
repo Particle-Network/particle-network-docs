@@ -114,6 +114,26 @@ if (result.status) {
 }
 ```
 
+### SignAndSendTransaction with Connect Service
+
+```dart
+// confirm your eoa public address and current wallet type
+publicAddress = '';
+walletType = WalletType.MetaMask;
+
+// send transaction in auto mode, auto means use native to pay gas fee.
+const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, 
+    
+// send transaction in gasless mode, gasless means user dont need to pay gas fee. 
+const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, BiconomyFeeMode.gasless())
+
+// send transaction in custom mode, custom means user pick one token or native to pay gas fee. 
+const feeQutotes = await particleBiconomy.rpcGetFeeQuotes(eoaAddress, [transaction]);
+const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, BiconomyFeeMode.custom(feeQutotes[0]))
+
+showToast("signature $signature");
+```
+
 ### Batch send transaction with Auth Service
 
 ```dart
