@@ -118,8 +118,8 @@ if (result.status) {
 
 ```dart
 // confirm your eoa public address and current wallet type
-publicAddress = '';
-walletType = WalletType.MetaMask;
+const publicAddress = '';
+const walletType = WalletType.MetaMask;
 
 // send transaction in auto mode, auto means use native to pay gas fee.
 const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, 
@@ -131,7 +131,14 @@ const result = await particleConnect.signAndSendTransaction(this.walletType, thi
 const feeQutotes = await particleBiconomy.rpcGetFeeQuotes(eoaAddress, [transaction]);
 const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, BiconomyFeeMode.custom(feeQutotes[0]))
 
-showToast("signature $signature");
+
+if (result.status) {
+    const signature = result.data;
+    console.log('signature', signature);
+} else {
+    const error = result.data;
+    console.log('result error', error);
+}
 ```
 
 ### Batch send transaction with Auth Service
@@ -153,5 +160,24 @@ if (result.status) {
 } else {
     const error = result.data;
     console.log('signAndSendTransaction result', error);
+}
+```
+
+### Batch send transaction with Connect Service
+
+```javascript
+// confirm your eoa public address and current wallet type
+const publicAddress = '';
+const walletType = WalletType.MetaMask;
+// get your transaction array
+const transactions = [transaction, transaction];
+
+const result = await particleConnect.batchSendTransactions(this.walletType, this.publicAddress, transactions, BiconomyFeeMode.auto());
+if (result.status) {
+    const signature = result.data;
+    console.log('signature', signature);
+} else {
+    const error = result.data;
+    console.log('result error', error);
 }
 ```
