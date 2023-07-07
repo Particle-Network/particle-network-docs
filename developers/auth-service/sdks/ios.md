@@ -177,7 +177,7 @@ devEnv needs to be modified to be `DevEnvironment.production` for release.
 // it will switch to bsc directly, beacuse both bsc and ethereum are evm,
 // but if switch to solana, beacuse user didn't log in solana before, it will 
 // present a web browser for additional information automatically.
-let chainInfo = ParticleNetwork.ChainInfo.ethereum(.kovan)
+let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
 ParticleAuthService.setChainInfo(chainInfo).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -189,7 +189,7 @@ ParticleAuthService.setChainInfo(chainInfo).subscribe { [weak self] result in
 }.disposed(by: bag)
 
 // Sync switch chain info. it will wont check if user has logged in.
-let chainInfo = ParticleNetwork.ChainInfo.ethereum(.kovan)
+let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
 ParticleNetwork.setChainInfo(chainInfo)
 ```
 {% endtab %}

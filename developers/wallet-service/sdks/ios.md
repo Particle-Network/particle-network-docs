@@ -877,7 +877,7 @@ func readContract() {
 {% tab title="Swift" %}
 ```swift
 // example for evm write contract
-// mint 1 NFT in kovan testnet, the from is sender address or user address in general.
+// mint 1 NFT in ethereum mainnet, the from is sender address or user address in general.
 // result is a transaciton string which presented in hex format.
 func writeContract() {
     let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "mint", params: ["1"])
