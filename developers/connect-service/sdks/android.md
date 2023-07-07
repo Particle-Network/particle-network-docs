@@ -116,7 +116,7 @@ val dAppMetadata = DAppMetadata(
 ParticleConnect.init(
         this,
         Env.DEV,    //debug mode
-        EthereumChain(EthereumChainId.Kovan),    //chain info
+        EthereumChain(EthereumChainId.Mainnet),    //chain info
         dAppMetadata   //DApp or Wallet info
     ) {
         listOf(
