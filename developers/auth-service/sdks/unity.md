@@ -28,7 +28,7 @@ public async void Login()
     // message in evm support unique signature.
     var authorization = new LoginAuthorization("your message", false)
     // login email
-    var nativeResultData = await ParticleAuthService.Instance.Login(LoginType.PHONE, null, SupportAuthType.ALL, SocialLoginPrompt.Select_account, authorization);
+    var nativeResultData = await ParticleAuthService.Instance.Login(LoginType.PHONE, null, SupportAuthType.ALL, SocialLoginPrompt.SelectAccount, authorization);
     Debug.Log(nativeResultData.data);
 
     if (nativeResultData.isSuccess)
