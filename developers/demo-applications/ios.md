@@ -10,7 +10,7 @@ Install the following:
 * installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) .
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
-    * iOS 13
+    * iOS 14
 
 ## Wallet Demo
 

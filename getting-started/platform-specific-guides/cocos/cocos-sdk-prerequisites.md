@@ -54,7 +54,7 @@ PN_APP_ID = 96ad2ff1-4a57-4069-90da-9306bf1492e1
 
     ```ruby
     ENV['SWIFT_VERSION'] = '5'
-    platform :ios, '13.0'
+    platform :ios, '14.0'
     source 'https://github.com/CocoaPods/Specs.git'
 
     target 'boost_container' do
