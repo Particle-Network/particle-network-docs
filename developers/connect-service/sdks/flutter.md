@@ -186,7 +186,7 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 **Before using the SDK you have to call init(Required)**&#x20;
 
 ```dart
-// Get your project id and client from dashboard, 
+// Get your project id and client key from dashboard, 
 // https://dashboard.particle.network
 const projectId = ""; // your project id
 const clientK = ""; // your client key 
