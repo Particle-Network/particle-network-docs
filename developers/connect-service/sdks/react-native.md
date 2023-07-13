@@ -182,8 +182,9 @@ const metadata = {
     // we have default rpc url in native SDK
 const rpcUrl = { evm_url: null, solana_url: null };
 particleConnect.init(chainInfo, env, metadata, rpcUrl);
-// set wallet connect support chaininfos, if you call this method, 
-// default value is current chain info.
+
+// set wallet connect support chaininfos, if you dont call this method
+// default value is current chaininfo.
 const chainInfos = [ChainInfo.EthereumMainnet, ChainInfo.PolygonMainnet, ChainInfo.EthereumGoerli, ChainInfo.EthereumSepolia];
 particleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 

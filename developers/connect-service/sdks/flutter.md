@@ -183,13 +183,14 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 
 ### Initialize the SDK
 
-**Before using the sdk you have to call init(Required)**&#x20;
+**Before using the SDK you have to call init(Required)**&#x20;
 
 ```dart
-// Init particle connect SDK,
-// dappInfo is your app info, will pass to wallet when wallet connect.
-final dappInfo = DappMetaData("Particle Connect", "https://connect.particle.network/icons/512.png", "https://connect.particle.network");
-ParticleConnect.init(currChainInfo, dappInfo, Env.dev);
+// Get your project id and client from dashboard, 
+// https://dashboard.particle.network
+const projectId = ""; // your project id
+const clientK = ""; // your client key 
+ParticleInfo.set(projectId, clientK);
 ```
 
 {% hint style="info" %}
@@ -198,7 +199,18 @@ ParticleConnect.init(currChainInfo, dappInfo, Env.dev);
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
 ```dart
-ParticleConnect.setWalletConnectV2ProjectId("your wallet connect v2 project id");
+// Init particle connect SDK,
+// dappInfo is your app info, will pass to wallet when wallet connect.
+final dappInfo = DappMetaData(
+        "your wallet connect project id",
+        "Particle Connect",
+        "https://connect.particle.network/icons/512.png",
+        "https://connect.particle.network",
+        "Particle Connect Flutter Demo");
+ParticleConnect.init(currChainInfo, dappInfo, Env.dev);
+
+// set wallet connect support chaininfos, if you dont call this method
+// default value is current chaininfo.
 List<ChainInfo> chainInfos = <ChainInfo>[EthereumChain.mainnet(), PolygonChain.mainnet()];
 ParticleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 ```
