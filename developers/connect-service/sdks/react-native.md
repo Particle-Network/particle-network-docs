@@ -157,18 +157,6 @@ import * as particleConnect from 'react-native-particle-connect';
 // https://dashboard.particle.network/
 ParticleInfo.projectId = ''; // your project id
 ParticleInfo.clientKey = ''; // your client key 
-
-// Init particle connect SDK,
-// metadata is your app info, will pass to wallet when wallet connect.
-// you can use the values that we provided in example.
-const chainInfo = ChainInfo.EthereumGoerli;
-const env = Env.Dev;
-const metadata = { name: "Particle Connect", icon: "https://connect.particle.network/icons/512.png", url: "https://connect.particle.network" }
-
-// the rpcUrl works for WalletType EvmPrivateKey and SolanaPrivakey
-    // we have default rpc url in native SDK
-const rpcUrl = { evm_url: null, solana_url: null };
-particleConnect.init(chainInfo, env, metadata, rpcUrl);
 ```
 
 {% hint style="info" %}
@@ -177,7 +165,25 @@ particleConnect.init(chainInfo, env, metadata, rpcUrl);
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
 ```dart
-particleConnect.setWalletConnectV2ProjectId('your wallet connect v2 project id');
+// Init particle connect SDK,
+// metadata is your app info, will pass to wallet when wallet connect.
+// you can use the values that we provided in example.
+const chainInfo = ChainInfo.EthereumGoerli;
+const env = Env.Dev;
+const metadata = {
+            walletConnectProjectId: 'your wallet connect project id',
+            name: 'Particle Connect',
+            icon: 'https://connect.particle.network/icons/512.png',
+            url: 'https://connect.particle.network',
+            description: 'Particle Wallet',
+        };
+
+// the rpcUrl works for WalletType EvmPrivateKey and SolanaPrivakey
+    // we have default rpc url in native SDK
+const rpcUrl = { evm_url: null, solana_url: null };
+particleConnect.init(chainInfo, env, metadata, rpcUrl);
+// set wallet connect support chaininfos, if you call this method, 
+// default value is current chain info.
 const chainInfos = [ChainInfo.EthereumMainnet, ChainInfo.PolygonMainnet, ChainInfo.EthereumGoerli, ChainInfo.EthereumSepolia];
 particleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 
