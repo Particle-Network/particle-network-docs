@@ -4,7 +4,8 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-* Make sure that your project meets the following requirements:
+Make sure that your project meets the following requirements:
+
 * minSdkVersion 23  or higher；compileSdkVersion、targetSdkVersion 33 or higher
 * Uses JavaVersion 11
 * Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
