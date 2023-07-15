@@ -27,6 +27,19 @@ description: Integrate Swap seamlessly into your dApp
 8. Aurora Mainnet
 9. Gnosis Mainnet
 10. Klaytn Mainet
+11. zkSync Era Mainnet
+12. Mantle Mainnet
+13. OKTC Mainnet
+14. Moonriver Mainnet
+15. Moonbeam Mainnet
+16. Celo Mainnet
+17. Cronos Mainnet
+
+## Underlying DEXs
+
+1. 1inch: [https://1inch.io/](https://1inch.io/)
+2. izi-swap: [https://izumi.finance/](https://izumi.finance/)
+3. lifi: [https://li.fi/](https://li.fi/)
 
 ## particle\_swap\_checkApprove
 
