@@ -4,6 +4,21 @@ description: Changelog
 
 # Changelog
 
+## 20230712
+
+1. New Chains
+   1. Linea Mainnet
+   2. Mantle Mainnet
+2. Auth
+   1. Add force setting configuration for Master password and Payment password
+   2. Remove form mode
+3. Wallet
+   1. On-Ramp supports zkSync Era and Celo
+   2. Swap adds Li.fi and adds support for chains: OKTC, Moonbeam, Moonriver, Celo, Cronos, zkSync Era, Mantle
+4. Node
+   1. Add Bridge RPC
+   2. Add DID RPC
+
 ## 20230705
 
 1. Wallet
