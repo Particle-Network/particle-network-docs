@@ -907,36 +907,33 @@ Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initia
 
 {% tabs %}
 {% tab title="Swift" %}
-<pre class="language-swift"><code class="lang-swift">// You can disable buy crypto feature in UI, default is true.
-ParticleWalletGUI.enablePay(false)
+<pre class="language-swift"><code class="lang-swift">// You can disable buy crypto feature in UI, default is false.
+ParticleWalletGUI.setPayDisabled(false)
 
-// You can disable swap feature in UI, default value is true.
-ParticleWalletGUI.enableSwap(false)
+// You can disable swap feature in UI, default value is false.
+ParticleWalletGUI.setSwapDisabled(false)
 
 // You can disable wallet connect feature, default value is true.
-ParticleWalletGUI.supportWalletConnect(false)
+ParticleWalletGUI.setSupportWalletConnect(false)
 
 // You can disable dapp browser in wallet page, default value is true.
-ParticleWalletGUI.supportDappBrowser(false)
+ParticleWalletGUI.setSupportDappBrowser(false)
 
 // show or hide test network, default value is false.
-ParticleWalletGUI.showTestNetwork(false)
+ParticleWalletGUI.setShowTestNetwork(false)
 
 // support chain, Particle Connect initialize chain will add as a support chain automatically.
 // default support all chains in Particle Network base
-ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
+ParticleWalletGUI.setSupportChain([.bsc, .arbitrum, .harmony])
 
 // show or hide manage wallet page, default value is true.
-ParticleWalletGUI.showManageWallet(true)
+ParticleWalletGUI.setShowManageWallet(true)
 
 // show language setting in setting page, default value is false.
-ParticleWalletGUI.showLanguageSetting(true)
+ParticleWalletGUI.setShowLanguageSetting(true)
 
 // show appearance setting in setting page, default value is false.
-ParticleWalletGUI.showAppearanceSetting(true)
-
-// set language, default value value is en.
-ParticleWalletGUI.setLanguage(Language.en)
+ParticleWalletGUI.setShowAppearanceSetting(true)
 
 // set support add token, default value is true, true will show add token button, false will hide add token button.
 ParticleWalletGUI.setSupportAddToken(false)
@@ -971,19 +968,7 @@ ParticleWalletGUI.setPriorityNFTContractAddresses([nftContractAddress])
 // The method works on the wallet page token list and token send select page.
 ParticleWalletGUI.setCustomTokenAddresses([tokenAddress])
 
-// Set fait coin, currently support USD, CNY, JPY, HKD, INR, KRW.
-// If you called this method, we will hide curreny change button in setting page.
-// You can pass nil to reset, after reset default fiatcoin is USD and curreny change button will show in setting page.
-ParticleWalletGUI.setFiatCoin("HKD")
-
-// There is two way to set custom UI
-// 1.You can set custom ui json path to enable custom UI
-// In demo, make sure customUIConfig.json is mark Target Membership Demo.
-if let path = Bundle.main.path(forResource: "customUIConfig", ofType: "json") {
-    try! ParticleWalletGUI.loadCustomUI(path: path)
-}
-        
-// 2.Another way to set custom ui is pass json string
+// Set custom ui is pass json string
 let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
 try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
 </code></pre>
@@ -1043,11 +1028,11 @@ PNRouter.navigatorWallet()
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-//open send token
+// open send token
 let tokenSendConfig = TokenSendConfig(tokenAddress: nil, toAddress: nil, amount: nil)
 PNRouter.navigatorTokenSend(tokenSendConfig: tokenSendConfig)
 
-//open send default token by chain name
+// open send default token by chain name
 PNRouter.navigator(routhPath: .tokenSend)
 ```
 {% endtab %}
@@ -1114,6 +1099,28 @@ TokenTransactionRecordsConfig *config = [[TokenTransactionRecordsConfig alloc] i
 {% endtab %}
 {% endtabs %}
 
+### Open send NFT
+
+```swift
+// open send NFT 
+let nftContractAddress = ""
+let receiverAddress = ""
+let tokenId = ""
+let amount = BInt(1)
+let config = NFTSendConfig(address: nftContractAddress, toAddress: receiverAddress, tokenId: tokenId, amount: amount)
+PNRouter.navigatorNFTSend(nftSendConfig: config)
+```
+
+### Open NFT detail
+
+```swift
+// open NFT detail
+let nftContractAddress = ""
+let tokenId = ""
+let config = NFTDetailsConfig(address: nftContractAddress, tokenId: tokenId)
+PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
+```
+
 ### Open NFT Details
 
 {% tabs %}
@@ -1177,15 +1184,16 @@ PNRouter.navigatorBuy(buyCryptoConfig: buyCryptoConfig)
 
 {% tabs %}
 {% tab title="Swift" %}
-<pre class="language-swift"><code class="lang-swift"><strong>// open default swap page
-</strong><strong>PNRouter.navigatorSwap()
-</strong><strong>
-</strong>// open swap page with from token, to token, and amount, all parameters is optional.
+```swift
+// open default swap page
+PNRouter.navigatorSwap()
+
+// open swap page with from token, to token, and amount, all parameters is optional.
 let config = SwapConfig(fromTokenAddress: nil,
                 toTokenAddress: nil,
                 fromTokenAmount: nil)
 PNRouter.navigatorSwap(swapConfig: config)
-</code></pre>
+```
 {% endtab %}
 {% endtabs %}
 
