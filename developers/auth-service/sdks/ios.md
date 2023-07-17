@@ -178,7 +178,7 @@ devEnv needs to be modified to be `DevEnvironment.production` for release.
 // but if switch to solana, beacuse user didn't log in solana before, it will 
 // present a web browser for additional information automatically.
 let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
-ParticleAuthService.setChainInfo(chainInfo).subscribe { [weak self] result in
+ParticleAuthService.switchChain(chainInfo).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
     case .failure(let error):
@@ -335,8 +335,6 @@ ParticleAuthService.fastLogout().subscribe { [weak self] result in
 {% endtab %}
 {% endtabs %}
 
-
-
 ### Get user info and address after login
 
 {% tabs %}
@@ -380,28 +378,25 @@ ParticleAuthService.setMediumScreen(true)
 {% endtab %}
 {% endtabs %}
 
-### Custom interface style
+### Set appearance
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// set interface style, default value if follow system.
-// *If you are using ParticleWalletGUI, you should call 
-// ParticleWalletGUI.setInterfaceStyle instead.
-
-// set dark mode
-ParticleNetwork.setInterfaceStyle(.dark)
+// set appearance, default value if follow system.
+// such as set dark mode
+ParticleNetwork.setAppearence(.dark)
 ```
 {% endtab %}
 {% endtabs %}
 
-### Set display wallet
+### Set web auth config
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// set display wallet when call sign and send transaction.
-ParticleAuthService.setDisplayWallet(true)
+// set display wallet when call sign and send transaction, and web page appearance.
+ParticleAuthService.setWebAuthConfig(options: WebAuthConfig(isDisplayWallet: true, appearance: .unspecified))
 ```
 {% endtab %}
 {% endtabs %}
@@ -409,12 +404,15 @@ ParticleAuthService.setDisplayWallet(true)
 ### Set language
 
 ```swift
-// Default value is unspecified, that follows user system language.
-// *If you are using ParticleWalletGUI, you should call  
-// ParticleWalletGUI.setLanguage instead
-
-// set English language
+// set English language, default value is English
 ParticleNetwork.setLanguage(Language.en)
+```
+
+### Set FiatCoin
+
+```swift
+// set fiat coin symbol, default value is USD.
+ParticleNetwork.FiatCoin(FiatCoin.USD)
 ```
 
 ### Signatures
@@ -542,7 +540,21 @@ You can create a `transaction` with `TxData` and `FeeMarketEIP1559TxData` There'
 {% tab title="Swift" %}
 ```swift
 // if user is login, it will open web wallet.
-ParticleAuthService.openWebWallet() 
+let styleJsonString = """
+    {
+      "supportAddToken": false,
+      "supportChains": [{
+          "id": 1,
+          "name": "Ethereum"
+        },
+        {
+          "id": 5,
+          "name": "Ethereum"
+        }
+      ]
+    }
+"""
+ParticleAuthService.openWebWallet(styleJsonString: styleJsonString) 
 ```
 {% endtab %}
 {% endtabs %}
@@ -562,6 +574,7 @@ ParticleAuthService.openAccountAndSecurity()
 // 0 no prompt
 // 1 first time show prompt
 // 2 every time show prompt
+// 3 force show prompt
 ParticleAuthService.setSecurityAccountConfig(config: 
 .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
 ```
@@ -580,16 +593,17 @@ print("0x2648cfe97e33345300db8154670347b08643570b".toChecksumAddress())
 
 ### TRON network support
 
-<pre class="language-swift"><code class="lang-swift">import ParticleNetworkBase
+```swift
+import ParticleNetworkBase
 
 // convert tron base58 address to hex address
-<strong>let tronAddressHex = TronFormatAddress.toHex("TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto")
-</strong><strong>print(tronAddressHex) // 0x2648cfe97e33345300db8154670347b08643570b
-</strong>
+let tronAddressHex = TronFormatAddress.toHex("TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto")
+print(tronAddressHex) // 0x2648cfe97e33345300db8154670347b08643570b
+
 // convert hex address to tron base58 address
 let tronAddressBase58 = TronFormatAddress.fromHex("0x2648cfe97e33345300db8154670347b08643570b")
 print(tronAddressBase58) // TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto
-</code></pre>
+```
 
 ### Particle Provider
 
@@ -699,10 +713,12 @@ public protocol ParticleWalletConnectDelegate: AnyObject {
 
 ```swift
 // Disconnect wallet connect v2 session
-do {
-    try self.pwc.disconnect(topic: topic)
-} catch {
-    print(error)
+Task {
+    do {
+        try await self.pwc.disconnect(topic: topic)
+    } catch {
+        print(error)
+    }
 }
 ```
 
@@ -733,19 +749,4 @@ do {
 } catch {
     print(error)
 }
-```
-
-### Remove session
-
-```swift
-/// Remove wallet connect session by topic
-/// - Parameter topic: Topic
-func removeSession(by topic: String)
-```
-
-### Remove all sessions
-
-```swift
-/// Remove all wallet connect sessions
-func removeAllSessions()
 ```
