@@ -378,7 +378,7 @@ ParticleAuthService.setMediumScreen(true)
 {% endtab %}
 {% endtabs %}
 
-### Set appearance
+### Set and get appearance
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -386,6 +386,8 @@ ParticleAuthService.setMediumScreen(true)
 // set appearance, default value if follow system.
 // such as set dark mode
 ParticleNetwork.setAppearence(.dark)
+
+let appearance = ParticleNetwork.getAppearence()
 ```
 {% endtab %}
 {% endtabs %}
@@ -401,18 +403,22 @@ ParticleAuthService.setWebAuthConfig(options: WebAuthConfig(isDisplayWallet: tru
 {% endtab %}
 {% endtabs %}
 
-### Set language
+### Set and get language
 
 ```swift
 // set English language, default value is English
 ParticleNetwork.setLanguage(Language.en)
+
+let language = ParticleNetwork.getLanguage()
 ```
 
-### Set FiatCoin
+### Set and get FiatCoin
 
 ```swift
 // set fiat coin symbol, default value is USD.
 ParticleNetwork.FiatCoin(FiatCoin.USD)
+
+let fiatCoin = ParticleNetwork.getFiatCoin()
 ```
 
 ### Signatures
@@ -565,7 +571,7 @@ ParticleAuthService.openWebWallet(styleJsonString: styleJsonString)
 ParticleAuthService.openAccountAndSecurity()
 ```
 
-### Set security account config
+### Set and get security account config
 
 ```swift
 // set security account config, 
@@ -575,8 +581,10 @@ ParticleAuthService.openAccountAndSecurity()
 // 1 first time show prompt
 // 2 every time show prompt
 // 3 force show prompt
-ParticleAuthService.setSecurityAccountConfig(config: 
+ParticleNetwork.setSecurityAccountConfig(config: 
 .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
+
+let securityAccountConfig = PartilceNetwork.getSecurityAccountConfig()
 ```
 
 ### CheckSum support
