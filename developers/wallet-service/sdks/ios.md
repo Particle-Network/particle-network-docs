@@ -899,6 +899,16 @@ func writeContract() {
 
 ## Wallet UI Reference
 
+{% hint style="info" %}
+## Migrating to WalletConnect v2
+
+ParticleWalletGUI is dependent on ParticleWalletConnect, start from version 0.15.0, you should call this method to set wallet connect v2 project id.
+
+```swift
+ParticleWalletConnect.setWalletConnectV2ProjectId("your wallet connect v2 project id")
+```
+{% endhint %}
+
 ### Custom Wallet UI &#x20;
 
 Control show or hide test network, swap feature, buy crypto feature, support wallet connect, manage wallet page, support chain, set language, set user interface style and more.
