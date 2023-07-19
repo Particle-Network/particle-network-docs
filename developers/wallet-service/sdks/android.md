@@ -31,6 +31,12 @@ repositories {
 }
 
 dependencies {
+    //required 
+    modules {
+        module("org.bouncycastle:bcprov-jdk15to18") {
+            replacedBy("org.bouncycastle:bcprov-jdk15on")
+        }
+    }
     // Particle Auth Service
     implementation("network.particle:auth-service:${latest_version}")
     // Particle Wallet Core Api
