@@ -52,6 +52,7 @@ pod 'ConnectWalletConnectAdapter'
 pod 'ConnectEVMAdapter'
 pod 'ConnectSolanaAdapter'
 pod 'ConnectPhantomAdapter'
+pod 'ParticleAuthAdapter'
 ```
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
@@ -122,6 +123,7 @@ import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
 import ParticleNetworkBase
 import ParticleConnect
+import ParticleAuthAdapter
 ```
 {% endtab %}
 {% endtabs %}
@@ -134,7 +136,7 @@ import ParticleConnect
 // initialize method
 // you can modify the adapters, remove the one you dont need.
 var adapters: [
-       ParticleConnectAdapter(),
+       ParticleAuthAdapter(),
        WalletConnectAdapter(),
        MetaMaskConnectAdapter(),
        PhantomConnectAdapter(),
