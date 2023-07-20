@@ -26,3 +26,9 @@ You can use your existing user base or authentication method with Particle Auth.
 Set your custom JWT configuration on the dashboard
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+## Auth Core
+
+We also provide native libs for Custom Auth, in this way, you can have full control over UI/UX if you don't want to relay on the system browser.
+
+Pls check >> [Auth Core](core.md)
