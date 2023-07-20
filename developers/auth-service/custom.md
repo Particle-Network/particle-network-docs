@@ -31,4 +31,6 @@ Set your custom JWT configuration on the dashboard
 
 We also provide native libs for Custom Auth, in this way, you can have full control over UI/UX if you don't want to relay on the system browser.
 
+It's optional but provides underlying control.
+
 Pls check >> [Auth Core](core.md)
