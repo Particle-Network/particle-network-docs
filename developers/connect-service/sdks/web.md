@@ -296,5 +296,15 @@ getInjectedProvider();
 
 ```
 
+## Upgrade Guide
+
+If you use Connect SDK v0.x.x and wish to update to the 1.x.x, the process is straightforward. Below are the updated functions for reference.
 
 
+
+```typescript
+// old: import chain info
+import { Ethereum, BSC, Polygon } from '@particle-network/common';
+// new: import chain info
+import { Ethereum, BNBChain, Polygon } from '@particle-network/chains';
+```
