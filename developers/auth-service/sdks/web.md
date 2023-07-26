@@ -886,4 +886,43 @@ export const Wallet: FC = () => {
 };
 ```
 
-For detailed usage, please refer to the wallet-adapter [documentation](https://solana-labs.github.io/wallet-adapter/)
+For detailed usage, please refer to the wallet-adapter [documentation](https://solana-labs.github.io/wallet-adapter/).
+
+## Upgrade Guide
+
+If you use Particle Auth SDK v0.x.x and wish to update to the 1.x.x, the process is straightforward. Below are the updated functions for reference.
+
+```typescript
+// old: get user info
+particle.auth.userInfo()
+// new: get user info
+particle.auth.getUserInfo()
+
+// old: open account and security
+particle.auth.accountSecurity()
+// new: open account and security
+particle.auth.openAccountAndSecurity()
+
+// old: get current chain id
+particle.auth.chainId()
+// new: get current chain id
+particle.auth.getChainId()
+
+// old: get current chain info
+particle.auth.chain()
+// new: get current chain info
+particle.auth.getChain()
+
+// old: get wallet by type
+particle.auth.wallet(type)
+// new: get wallet by type
+particle.auth.getWallet(type)
+
+// old: import chain info
+import { Ethereum, BSC, Polygon } from '@particle-network/common';
+// new: import chain info
+import { Ethereum, BNBChain, Polygon } from '@particle-network/chains';
+
+
+```
+
