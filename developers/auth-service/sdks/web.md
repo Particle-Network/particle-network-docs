@@ -52,14 +52,15 @@ Before you can add Auth Service to your app, you need to create a Particle proje
 <pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
 import { ParticleProvider } from "@particle-network/provider";
 import { SolanaWallet } from "@particle-network/solana-wallet";
+import { Ethereum } from "@particle-network/chains";
 import Web3 from "web3";
 
 const particle = new ParticleNetwork({
   projectId: "xx",
   clientKey: "xx",
   appId: "xx",
-  chainName: "Ethereum", //optional: current chain name, default Ethereum.
-  chainId: 1, //optional: current chain id, default 1.
+  chainName: Ethereum.name, //optional: current chain name, default Ethereum.
+  chainId: Ethereum.id, //optional: current chain id, default 1.
   wallet: {   //optional: by default, the wallet entry is displayed in the bottom right corner of the webpage.
     displayWalletEntry: true,  //show wallet entry when connect particle.
     defaultWalletEntryPosition: WalletEntryPosition.BR, //wallet entry position
@@ -117,7 +118,6 @@ const userInfo = particle.auth.login({
     // when set JWT value and preferredAuthType is jwt, Particle Auth will auto login.
     account?: string,
     supportAuthTypes?: string, //need support social login types, split with ','. default value 'all'.
-    loginFormMode?: boolean, // login form mode will hide others ui except login form. only support supportAuthTypes equals email or phone.
     hideLoading?: boolean, //hide particle loading when use jwt authorization.
     socialLoginPrompt?: string, //social login prompt.  none | consent | select_account
     authorization: { // optional, login with authorize
@@ -603,7 +603,7 @@ import { ParticleNetwork } from "@particle-network/auth";
 const particle = new ParticleNetwork({...});
 
 //get user info(token/wallet/uuid), return null when user not login.
-const info = particle.auth.userInfo();
+const info = particle.auth.getUserInfo();
 ```
 
 ### Status Events
@@ -665,12 +665,13 @@ particle.setERC4337(true);
 
 ```typescript
 import { ParticleNetwork } from "@particle-network/auth";
+import { Polygon } from "@particle-network/chains";
 
 const particle = new ParticleNetwork({...});
 // you can set chain info when new ParticleNetwork, or call setChainInfo
 particle.switchChain({
-    name: "Polygon",
-    id: 137,
+    name: Polygon.name,
+    id: Polygon.id,
 })
 ```
 
@@ -770,18 +771,19 @@ When "displayWalletEntry" true, you can custom wallet style by set "customStyle"
 
 ```typescript
 import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
+import { Ethereum, Polygon } from "@particle-network/chains";
 
 const particle = new ParticleNetwork({
   projectId: "xx",
   clientKey: "xx",
   appId: "xx",
-  chainName: "Ethereum", //optional: current chain name, default Ethereum.
-  chainId: 1, //optional: current chain id, default 1.
+  chainName: Ethereum.name, //optional: current chain name, default Ethereum.
+  chainId: Ethereum.id, //optional: current chain id, default 1.
   wallet: {   //optional: by default, the wallet entry is displayed in the bottom right corner of the webpage.
     displayWalletEntry: true,  //show wallet entry when connect particle.
     defaultWalletEntryPosition: WalletEntryPosition.BR, //wallet entry position
     uiMode: "light",
-    supportChains: [{ id: 1, name: "Ethereum"}, { id: 5, name: "Ethereum"}], // optional: web wallet support chains.
+    supportChains: [Ethereum, Polygon], // optional: web wallet support chains.
     customStyle: {}, //optional: custom wallet style
   }
 });
@@ -831,10 +833,10 @@ const popularWallets = {
     particleWallet({ chains, authType: "apple" }),
     particleWallet({ chains }),
     injectedWallet({ chains }),
-    rainbowWallet({ chains }),
+    rainbowWallet({ chains, projectId: "walletconnect project id" }),
     coinbaseWallet({ appName: "RainbowKit demo", chains }),
-    metaMaskWallet({ chains }),
-    walletConnectWallet({ chains }),
+    metaMaskWallet({ chains, projectId: "walletconnect project id" }),
+    walletConnectWallet({ chains, projectId: "walletconnect project id" }),
   ],
 };
 ```
@@ -842,80 +844,6 @@ const popularWallets = {
 [👉 Sample](https://web-demo.particle.network/)
 
 👉 [Source Code](https://github.com/Particle-Network/particle-web-demo)
-
-## EVM WalletConnect V1 Integration
-
-### Introduction <a href="#introduction" id="introduction"></a>
-
-[WalletConnect](https://docs.walletconnect.com/1.0/) is an open protocol to communicate securely between Wallets and Dapps (Web3 Apps). If you integration Particle Auth, you can connect with other Dapps with WalletConnect protocol.
-
-### Getting Started[​](https://docs.walletconnect.com/1.0/#getting-started) <a href="#getting-started" id="getting-started"></a>
-
-Download SDK to your project via Yarn.
-
-```powershell
-yarn add @particle-network/walletconnect @particle-network/auth
-```
-
-Init SDK.
-
-```typescript
-import { particleWalletConnect, IWalletConnectSession, SwitchChainEvent } from '@particle-network/walletconnect';
-
-particleWalletConnect.init(evmProvider);
-particleWalletConnect.hub.on(SwitchChainEvent.request, (options) => {
-    //TODO: listen switch chain
-    
-    //approve switch chain
-    particleWalletConnect.approveSwitchChain(options.session.peerId);
-    
-    //or reject switch chain
-    particleWalletConnect.rejectSwitchChain(options.session.peerId);
-})
-```
-
-Connect to Dapps.
-
-```typescript
-// connect dapp with uri, you can get uri from qrcode or clipboard.
-const connectDapps = async (uri: string) => {
-    particleWalletConnect.hub.once(SessionRequestEvent.request, (peerInfo) => {
-      //TODO: receive dapps session request. show confirm modal for user.
-      
-      //approve dapps session request.
-      particleWalletConnect.approveSessionRequest(walletconnectData.peerInfo.peerId);
-      //or reject dapps session request.
-      particleWalletConnect.rejectSessionRequest(walletconnectData.peerInfo.peerId);
-    });
-    particleWalletConnect.hub.once(SessionRequestEvent.connected, (session: IWalletConnectSession) => {
-      //TODO: dapps connect success.
-    });
-    particleWalletConnect.hub.once(SessionRequestEvent.error, ({ session, error }: { session: IWalletConnectSession; error: Error }) => {
-      //TODO: dapps connect error.
-    });
-    await particleWalletConnect.newSession(uri);
-};
-```
-
-Other APIs
-
-```typescript
-// get all connected sessions
-particleWalletConnect.getSessions();
-
-//kill session
-await particleWalletConnect.killSession(peerId);
-
-// check uri is connected
-particleWalletConnect.isSessionConnected(uri);
-
-// check string is walletconnect uri
-particleWalletConnect.isValidUri(txt);
-```
-
-### Demo
-
-[Particle Wallet](https://wallet.particle.network/) has already supported this protocol, you can use it scan qrcode connect to Dapps.
 
 ## Solana Wallet-Adapter Integration
 

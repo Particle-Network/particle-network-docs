@@ -28,7 +28,7 @@ yarn add @particle-network/connect
 
 <pre class="language-typescript"><code class="lang-typescript"><strong>import { ModalProvider } from '@particle-network/connect-react-ui';
 </strong>import { WalletEntryPosition } from '@particle-network/auth';
-import { Ethereum, EthereumGoerli } from '@particle-network/common';
+import { Ethereum, EthereumGoerli } from '@particle-network/chains';
 import { evmWallets } from '@particle-network/connect';
 
 // use react kit
@@ -200,7 +200,7 @@ import { useConnectKit } from '@particle-network/connect-react-ui';
 
 //use this in react component.
 const connectKit = useConnectKit();
-const userInfo = connectKit.particle.userInfo();
+const userInfo = connectKit.particle.getUserInfo();
 ```
 
 ## Connect React Hooks
@@ -247,16 +247,15 @@ You can only use `@particle-network/connect` to custom UI.
 
 ```typescript
 import { evmWallets, ParticleConnect } from '@particle-network/connect';
+import { Ethereum } from '@particle-network/chains';
+
 // init
 const connectKit = new ParticleConnect({
                 projectId: 'replace with your projectId',
                 clientKey: 'replace with your clientKey',
                 appId: 'replace with your appId',
                 chains: [
-                    {
-                        id: 1,
-                        name: 'Ethereum',
-                    }
+                    Ethereum
                 ],
                 wallets: evmWallets({ qrcode: false }),
             });
