@@ -8,7 +8,7 @@ description: Changelog
 
 🎉 New milestone achieved! Version 1.0.0 has been released! We have further improved the SDK's composability, introducing the Core SDK, granting developers greater control over UI and UX.
 
-Additionally, we have standardized APIs and data structures, reducing the integration complexity across different clients.
+Additionally, we have standardized APIs and data structures, reducing the integration complexity across different platforms.
 
 Furthermore, we are fully prepared for L2 Summer and have extended support to all L2 chains.
 
