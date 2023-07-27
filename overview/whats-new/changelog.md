@@ -4,6 +4,27 @@ description: Changelog
 
 # Changelog
 
+## 20230727
+
+🎉 New milestone achieved! Version 1.0.0 has been released! We have further improved the SDK's composability, introducing the Core SDK, granting developers greater control over UI and UX.
+
+Additionally, we have standardized APIs and data structures, reducing the integration complexity across different clients.
+
+Furthermore, we are fully prepared for L2 Summer and have extended support to all L2 chains.
+
+Below are our specific changes:
+
+1. New Chains
+   1. Zora
+   2. PGN
+   3. SKALE Nebula
+   4. Manta Testnet
+   5. Base Mainnet
+   6. ReadON Testnet
+2. [Core SDK 👀](../../developers/auth-service/core.md)
+3. Wallet
+   1. Add a control option to hide suspicious tokens and enhance security
+
 ## 20230712
 
 1. New Chains
@@ -11,7 +32,7 @@ description: Changelog
    2. Mantle Mainnet
 2. Auth
    1. Add force setting configuration for Master password and Payment password
-   2. Remove form mode
+   2. Remove Form mode
 3. Wallet
    1. On-Ramp supports zkSync Era and Celo
    2. Swap adds Li.fi and adds support for chains: OKTC, Moonbeam, Moonriver, Celo, Cronos, zkSync Era, Mantle
