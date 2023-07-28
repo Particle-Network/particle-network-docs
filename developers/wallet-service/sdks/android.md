@@ -37,8 +37,10 @@ dependencies {
             replacedBy("org.bouncycastle:bcprov-jdk15on")
         }
     }
-    // Particle Auth Service
-    implementation("network.particle:auth-service:${latest_version}")
+    // pick one of two, 
+    implementation 'network.particle:connect-auth-adapter:{latest-version}'
+    //implementation 'network.particle:connect-auth-core-adapter:{latest-version}'
+    
     // Particle Wallet Core Api
     implementation("network.particle:api-service:${latest_version}")
     // Particle Wallet GUI, you can remove it if custom GUI.
@@ -92,7 +94,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         //init Particle SDK for solana chain 
-        ParticleNetwork.init(this, Env.DEV, SolanaChain(SolanaChainId.Mainnet))
+        ParticleNetwork.init(this, Env.DEV, ChainInfo.Ethereum)
         
         //init wallet service
         /**
@@ -101,9 +103,9 @@ class App : Application() {
          *  if you want to support devnet, you can call showTestNetworks() to show the devnet networks
          */
         val supportChains = mutableListOf(
-            SolanaChain(SolanaChainId.Mainnet),
-            EthereumChain(EthereumChainId.Mainnet),
-            BscChain(BscChainId.Mainnet)
+            ChainInfo.Ethereum,
+            ChainInfo.BNBChain,
+            ChainInfo.Solana
         )
         ParticleWallet.init(this,supportChains).apply {
             showTestNetworks() // show test networks,default is hide

@@ -29,7 +29,9 @@ dependencies {
     //required dependencies
     implementation 'network.particle:auth-service:{latest-version}'
     implementation 'network.particle:connect:{latest-version}'
+    // pick one of two
     implementation 'network.particle:connect-auth-adapter:{latest-version}'
+    //implementation 'network.particle:connect-auth-core-adapter:{latest-version}'
     
     //Optional: support evm chain Generate & Import wallet
     implementation 'network.particle:connect-evm-adapter:{latest-version}'
