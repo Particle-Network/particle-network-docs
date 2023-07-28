@@ -10,7 +10,7 @@
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
-* Please note that the current version of our software does not support simulation testing. To perform testing, you will require an actual iPhone device.
+* **Please note that the current version of our software does not support simulation testing. To perform testing, you will require an actual iPhone device.**
 
 ### Create a Particle Project and App
 
