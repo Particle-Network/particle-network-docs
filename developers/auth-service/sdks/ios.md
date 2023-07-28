@@ -89,9 +89,8 @@ The final step is to add an initialization code to your application. You may hav
 
 ```
 
-3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
-
-4\. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
+3. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
+4. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -109,7 +108,7 @@ import ParticleAuthService
 {% endtab %}
 {% endtabs %}
 
-5\. Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
+5. Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -139,7 +138,7 @@ ChainName *chainName = [ChainName customEvmNetworkWithFullName:@"Ethereum" netwo
 {% endtab %}
 {% endtabs %}
 
-6\. Add the scheme URL handle in your app's `application(_:open:options:)` method
+6. Add the scheme URL handle in your app's `application(_:open:options:)` method
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -155,7 +154,7 @@ return [ParticleAuthService handleUrl:url];
 {% endtab %}
 {% endtabs %}
 
-7\. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
