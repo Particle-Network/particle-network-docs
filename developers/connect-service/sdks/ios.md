@@ -124,6 +124,8 @@ import ConnectWalletConnectAdapter
 import ParticleNetworkBase
 import ParticleConnect
 import ParticleAuthAdapter
+// if you are using ParticleAuthCore
+// import AuthCoreAdapter
 ```
 {% endtab %}
 {% endtabs %}
@@ -145,7 +147,9 @@ var adapters: [
        ImtokenConnectAdapter(),
        BitkeepConnectAdapter(),
        RainbowConnectAdapter(),
-       TrustConnectAdapter()
+       TrustConnectAdapter(),
+       // if you are using ParticleAuthCore
+       // AuthCoreAdaper()
        ]
         
 let moreAdapterClasses: [WalletConnectAdapter.Type] =
