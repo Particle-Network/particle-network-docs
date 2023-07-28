@@ -75,10 +75,10 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-The Wallet Service can only be used after a successful log-in with Auth Service.
+The Wallet Service can only be used after a successful log-in with Connect Service.
 
 {% hint style="info" %}
-Wallet Service depends on Auth Service, you must import [Auth Service](../../auth-service/sdks/android.md).
+Wallet Service depends on Connect Service, you must import [Connect Service.](../../connect-service/sdks/android.md)
 {% endhint %}
 
 {% hint style="info" %}

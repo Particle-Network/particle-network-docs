@@ -50,7 +50,7 @@ open our-project.xcworkspace
 
 4\. Add Privacy - Camera Usage Description in your info.plist file, we need to take photos for the QR code.
 
-The Wallet Service can only be used after a successful log-in with Auth Service.
+The Wallet Service can only be used after a successful log-in with Connect Service.
 
 {% hint style="info" %}
 Wallet GUI depends on Connect Service, you must import [Connect Service](../../connect-service/).
