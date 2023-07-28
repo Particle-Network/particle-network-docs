@@ -217,7 +217,7 @@ AuthCore.hasMasterPassword()
 AuthCore.setMasterPassword(callback)
 
 //change master password
-AuthCore.setMasterPassword(callback)
+AuthCore.changeMasterPassword(callback)
 ```
 
 ### Payment Password
