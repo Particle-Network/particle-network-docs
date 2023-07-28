@@ -89,9 +89,8 @@ The final step is to add an initialization code to your application. You may hav
 
 ```
 
-3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
-
-4\. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
+3. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
+4. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -101,7 +100,7 @@ import ParticleNetworkBase
 {% endtab %}
 {% endtabs %}
 
-5\. Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
+5. &#x20;Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -110,6 +109,13 @@ ParticleNetwork.initialize(config: .init(chainInfo: .ethereum(.mainnet), devEnv:
 ```
 {% endtab %}
 {% endtabs %}
+
+6. Our SDK requires the 'Privacy - Face ID Usage Description' permission in order to function correctly. This is necessary because our SDK utilizes Face ID for secure user authentication. To request this permission, you must include the `NSFaceIDUsageDescription` key in your app's `Info.plist` file, accompanied by a string value explaining the reason for the request. The text you provide is presented to the user when your app first attempts to use Face ID. Here's an example:
+
+```markup
+<key>NSFaceIDUsageDescription</key>
+<string>Your descriptive reason here...</string>
+```
 
 ## API Reference
 
