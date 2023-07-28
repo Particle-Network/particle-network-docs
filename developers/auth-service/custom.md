@@ -33,4 +33,4 @@ We also provide native libs for Custom Auth, in this way, you can have full cont
 
 It's optional but provides underlying control.
 
-Pls check >> [Auth Core](core.md)
+Pls check >> [Auth Core](core/)

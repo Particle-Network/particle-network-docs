@@ -102,7 +102,7 @@ Declare them in you app AndroidManifest.xml (usually app/src/main/AndroidManifes
 ```
 
 {% hint style="info" %}
-Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in your Dashboard.
+Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in Particle Dashboard.
 {% endhint %}
 
 ## API Reference
@@ -157,17 +157,7 @@ public class App extends Application {
 
 Particle Network support Solana and EVM chains, you can init with below chain info:
 
-* `EthereumChain`
-* `BscChain`
-* `PolygonChain`
-* `AvalancheChain`
-* `MoonbeamChain`
-* `MoonriverChain`
-* `HecoChain`
-* `FantomChain`
-* `ArbitrumChain`
-* `HarmonyChain`
-* `AuroraChain`
+[👉 chainId and chainName configs](../../node-service/evm-chains-api/)
 
 ### Switch  ChainInfo
 

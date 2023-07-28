@@ -21,7 +21,7 @@ Below are our specific changes:
    4. Manta Testnet
    5. Base Mainnet
    6. ReadON Testnet
-2. [Core SDK 👀](../../developers/auth-service/core.md)
+2. [Core SDK 👀](../../developers/auth-service/core/)
 3. Wallet
    1. Add a control option to hide suspicious tokens and enhance security
 
