@@ -220,70 +220,79 @@ ParticleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 
 ```dart
 final result = await ParticleConnect.connect(WalletType.particle);
-print("connect: $result");
 ```
 
 ### Disconnect
 
 ```dart
 String result = await ParticleConnect.disconnect(WalletType.particle, getPublicAddress());
-print("logout: $result");
 ```
 
 ### IsConnected
 
 ```dart
 bool result = await ParticleConnect.isConnected(WalletType.particle, getPublicAddress());
-print("isConnected: $result");
 ```
 
 ### Login (Sign-In With Ethereum or Solana)
 
 ```dart
 String result = await ParticleConnect.login(WalletType.particle, getPublicAddress(), "login.xyz", "https://login.xyz/demo#login");
-print("loginResult: $result");
 ```
 
 ### Verify
 
 ```dart
 String result = await ParticleConnect.verify(WalletType.particle, getPublicAddress(), message, signature);
-print("verifyResult: $result");
 ```
 
 ### Sign message
 
+In EVM chain requires a hexadecimal string, in Solana chain requires a human readable string.
+
 ```dart
-String result = await ParticleConnect.signMessage(WalletType.particle, getPublicAddress(), "Hello Particle");
-print("result: $result");
+final messageHex = "0x${StringUtils.toHexString("Hello Particle")}";
+String result = await ParticleConnect.signMessage(WalletType.particle, getPublicAddress(), messageHex);
 ```
 
 ### Sign transaction
 
+Only support Solana chain,  in Solana chain requires a base58 string.
+
+Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
+
 ```dart
 String result = await ParticleConnect.signTransaction(WalletType.particle, getPublicAddress(), transaction);
-print("result: $result");
 ```
 
 ### Sign all transactions
 
+Only support Solana chain,  in Solana chain requires a base58 string.
+
+Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
+
 ```dart
 String result = await ParticleConnect.signAllTransactions(WalletType.particle, getPublicAddress(), transactions);
-print("result: $result");
 ```
 
 ### Sign and send transaction
 
+In EVM chain requires a hexadecimal string, in Solana chain requires a base58 string.
+
+Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
+
 ```dart
 String result = await ParticleConnect.signAndSendTransaction(WalletType.particle, getPublicAddress(), transaction);
-print("result: $result");
 ```
 
 ### Sign typed data
 
+In EVM chain requires a hexadecimal string, not support Solana.
+
 ```dart
-String result = await ParticleConnect.signTypedData(WalletType.particle, getPublicAddress(), typedData);
-print("result: $result");
+String typedDataHex = "0x${StringUtils.toHexString(typedData)}";
+String result = await ParticleConnect.signTypedData(
+        walletType, getPublicAddress(), typedDataHex);
 ```
 
 ### Import private key
@@ -332,7 +341,6 @@ from test, this method works well in metamask, it doesn't work well in other wal
 ```dart
 int chainId = 80001;
 String result = await ParticleConnect.addEthereumChain(walletType, getPublicAddress(), chainId);
-print(result);
 ```
 
 ### Switch ethereum chain
@@ -342,7 +350,6 @@ from test, this method works well in metamask, it doesn't work well in other wal
 ```dart
 int chainId = 5;
 String result = await ParticleConnect.switchEthereumChain(walletType, getPublicAddress(), chainId);
-print(result);
 ```
 
 ### Reconnect wallet connect wallet

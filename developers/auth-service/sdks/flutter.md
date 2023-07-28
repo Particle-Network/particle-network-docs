@@ -194,7 +194,7 @@ end
 **Before using the SDK, you have to call init(Required)**&#x20;
 
 ```dart
-ParticleAuth.init(SolanaChain.devnet(), env);
+ParticleAuth.init(Ethereum.mainnet(), env);
 ```
 
 ### Login
@@ -204,7 +204,8 @@ List<SupportAuthType> supportAuthType = <SupportAuthType>[];
 supportAuthType.add(SupportAuthType.all);
 //message:evm->hex sign message . solana is base58
 //uniq:unique sign,only support evm
-final authorization = LoginAuthorization(message, uniq =false); 
+final authorization = LoginAuthorization(messageHex, true);
+
 //authorization is optional
 ParticleAuth.login(
     LoginType.phone,
@@ -235,89 +236,70 @@ String result = await ParticleAuth.isLoginAsync();
 
 ```dart
 String result = await ParticleAuth.logout();
-debugPrint("logout: $result");
 ```
 
 ### Fast logout
 
 ```dart
 String result = await ParticleAuth.fastLogoudar();
-debugPrint("logout: $result");
 ```
 
 ### Get address
 
 ```dart
 final address = await ParticleAuth.getAddress();
-print("getAddress: $address");
 ```
 
 ### Sign message
 
+In EVM chain requires a hexadecimal string, in Solana chain requires a human readable string.
+
 ```dart
- String result = await ParticleAuth.signMessage("Hello Particle");
- debugPrint("signMessage: $result");
+final messageHex = "0x${StringUtils.toHexString("Hello Particle")}";
+String result = await ParticleAuth.signMessage(messageHex);
 ```
 
 ### Sign message unique
 
+In EVM chain requires a hexadecimal string, not support Solana.
+
 ```dart
- String result = await ParticleAuth.signMessageUnique("Hello Particle");
- debugPrint("signMessage: $result");
+final messageHex = "0x${StringUtils.toHexString("Hello Particle")}";
+String result = await ParticleAuth.signMessageUnique(messageHex);
 ```
 
 ### Sign transaction
 
+Only support Solana chain, in Solana chain requires a base58 string.
+
+Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
+
 ```dart
-ChainInfo currChainInfo = SolanaChain.devnet();
-String? pubAddress = await ParticleAuth.getAddress();
-if (currChainInfo is SolanaChain) {
-  if (pubAddress == null) return;
-  final trans = await TransactionMock.mockSolanaTransaction(pubAddress);
-  String result = await ParticleAuth.signTransaction(trans);
-  debugPrint("signTransaction: $result");
-  showToast("signTransaction: $result");
-} else {
-  showToast('only solana chain support!');
-}
+final transaction = "Your transaction";
+String result = await ParticleAuth.signTransaction(trans);
 ```
 
 ### Sign all transactions
 
+Only support Solana chain, in Solana chain requires a base58 string.
+
+Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
+
 ```dart
-ChainInfo currChainInfo = SolanaChain.devnet();
-String? pubAddress = await ParticleAuth.getAddress();
-if (currChainInfo is SolanaChain) {
-  if (pubAddress == null) return;
-  final trans1 = await TransactionMock.mockSolanaTransaction(pubAddress);
-  final trans2 = await TransactionMock.mockSolanaTransaction(pubAddress);
-  List<String> trans = <String>[];
-  trans.add(trans1);
-  trans.add(trans2);
-  String result = await ParticleAuth.signAllTransactions(trans);
-  debugPrint("signAllTransactions: $result");
-  showToast("signAllTransactions: $result");
-} else {
-  showToast('only solana chain support!');
-}
+
+final transactions = ["Your transaction 1", "Your transaction 2"];
+String result = await ParticleAuth.signAllTransactions(transactions);
 ```
 
 ### Sign and send transaction
 
+In EVM chain requires a hexadecimal string, in Solana chain requires a base58 string.
+
+Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
+
 ```dart
-ChainInfo currChainInfo = SolanaChain.devnet();
-String? pubAddress = await ParticleAuth.getAddress();
-if (currChainInfo is SolanaChain) {
-  final trans = await TransactionMock.mockSolanaTransaction(pubAddress);
-  String result = await ParticleAuth.signAndSendTransaction(trans);
-  debugPrint("signAndSendTransaction: $result");
-  showToast("signAndSendTransaction: $result");
-} else {
-  final trans = await TransactionMock.mockEvmTransaction(pubAddress);
-  String result = await ParticleAuth.signAndSendTransaction(trans);
-  debugPrint("signAndSendTransaction: $result");
-  showToast("signAndSendTransaction: $result");
-}
+final transaction = "Your transaction";
+String result = await ParticleAuth.signAndSendTransaction(trans);
 ```
 
 ### Sign typed data
@@ -326,26 +308,13 @@ support v1, v3, v4, v4Unique.
 
 You can get the demo source code from [here](https://github.com/Particle-Network/particle-flutter/blob/master/particle-auth/example/lib/auth\_demo/auth\_logic.dart)
 
+In EVM chain requires a hexadecimal string, not support Solana.
+
 ```dart
-ChainInfo currChainInfo = SolanaChain.devnet();
-if (currChainInfo is SolanaChain) {
-      showToast("only evm chain support!");
-      return;
-}
-String typedData = '''[
-  {
-    "type":"string",
-    "name":"Message",
-    "value":"Hi, Alice!"
-  },
-  {
-    "type":"uint32",
-    "name":"A nunmber",
-    "value":"1337"
-  }
-]''';
+// your typed data is a json string
+String typedDataHex = "0x${StringUtils.toHexString(typedData)}";
 String result =
-    await ParticleAuth.signTypedData(typedData, SignTypedDataVersion.v1);
+        await ParticleAuth.signTypedData(typedDataHex, SignTypedDataVersion.v4);
 debugPrint("signTypedData: $result");
 ```
 
@@ -391,18 +360,14 @@ ParticleAuth.setSecurityAccountConfig(config);
 If user is expired, should return error, If user is expired, should return error, otherwise return nothing.
 
 ```dart
-static void openAccountAndSecurity() async {
-    String result = await ParticleAuth.openAccountAndSecurity();
-    print(result);
-}
+String result = await ParticleAuth.openAccountAndSecurity();
+print(result);
 ```
 
 ### Set iOS modal present style
 
 ```dart
-static void setModalPresentStyle() {
-    ParticleAuth.setModalPresentStyle(IOSModalPresentStyle.fullScreen);
-}
+ParticleAuth.setModalPresentStyle(IOSModalPresentStyle.fullScreen);
 ```
 
 ### Set iOS medium screen
@@ -414,50 +379,55 @@ Only support iOS 15 or higher.
 If you want to set medium screen, don't call setModalPresentStyle with IOSModalPresentStyle.fullScreen
 
 ```dart
-static void setMediumScreen() {
-    ParticleAuth.setMediumScreen(true);
-}
+ParticleAuth.setMediumScreen(true);
 ```
 
 ### Set language
 
 ```dart
-static void setLanguage() {
-    const language = Language.ja;
-    ParticleAuth.setLanguage(language);
-}
+const language = Language.ja;
+ParticleAuth.setLanguage(language);
 ```
 
-### Set display wallet
+### Set appearance
 
 ```dart
-static void setDisplayWallet() {
-  ParticleAuth.setDisplayWallet(true);
-}
+ParticleAuth.setAppearance(Appearance.light);
+```
+
+### Set fiat coin
+
+```dart
+ParticleAuth.setFiatCoin(FiatCoin.KRW);
+```
+
+### Set web auth config
+
+```dart
+const displayWallet = false;
+ParticleAuth.setWebAuthConfig(displayWallet, Appearance.light);
 ```
 
 ### Open web wallet
 
 ```dart
-static void openWebWallet() {
-    //https://docs.particle.network/developers/wallet-service/sdks/web
-    String webConfig =
-        '''
-         {
-            "supportAddToken": false,
-            "supportChains": [{
-                "id": 1,
-                "name": "Ethereum"
-              },
-              {
-                "id": 5,
-                "name": "Ethereum"
-              }
-            ]
+//https://docs.particle.network/developers/wallet-service/sdks/web
+String webConfig =
+    '''
+     {
+        "supportAddToken": false,
+        "supportChains": [{
+            "id": 1,
+            "name": "Ethereum"
+          },
+          {
+            "id": 5,
+            "name": "Ethereum"
           }
-        '''; 
-    ParticleAuth.openWebWallet(webConfig);
- }
+        ]
+      }
+    '''; 
+ParticleAuth.openWebWallet(webConfig);
 ```
 
 ### Has master password, payment password, security account&#x20;

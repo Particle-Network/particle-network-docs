@@ -122,7 +122,7 @@ Now,Android configuration is complete!
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-import ParticleAuthService
+import ParticleConnect
 ```
 {% endtab %}
 
@@ -138,7 +138,13 @@ import ParticleAuthService
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-return ParticleAuthService.handleUrl(url)
+override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+    if ParticleConnect.handleUrl(url) {
+        return true
+    } else {
+        return super.application(app, open: url, options: options)
+    }
+}
 ```
 {% endtab %}
 
@@ -248,32 +254,30 @@ String tokenId = "1412";
 ParticleWallet.navigatorNFTDetails(mint, tokenId);
 ```
 
-### Enable pay
+### Set pay disabled
 
 ```dart
-bool enable = true;
-ParticleWallet.enablePay(enable);
+bool disabled = true;
+ParticleWallet.setPayDisabled(disabled);
 ```
 
-### Get enable pay
+### Get pay disabled
 
 ```dart
-bool isEnable = await ParticleWallet.getEnablePay();
-showToast("isEnable:$isEnable");
+bool disabled = await ParticleWallet.getPayDisabled();
 ```
 
-### Enable swap
+### Set swap disabled
 
 ```dart
-bool enable = true;
-ParticleWallet.enableSwap(enable);
+bool disabled = true;
+ParticleWallet.setSwapDisabled(disabled);
 ```
 
-### Get enable swap
+### Get swap disabled
 
 ```dart
-bool isEnable = await ParticleWallet.getEnableSwap();
-showToast("isEnable:$isEnable");
+bool disabled = await ParticleWallet.getSwapDisabled();
 ```
 
 ### Navigator buy crypto
@@ -310,7 +314,7 @@ ParticleWallet.navigatorDappBrowser(url: url);
  chainInfos.add(EthereumChain.mainnet());
  chainInfos.add(PolygonChain.mainnet());
  chainInfos.add(BSCChain.mainnet());
- ParticleWallet.supportChain(chainInfos);
+ ParticleWallet.setSupportChain(chainInfos);
 ```
 
 ### Switch wallet
@@ -322,102 +326,55 @@ String result = await ParticleWallet.switchWallet(walletType, publicAddress);
 print("result:$result");
 ```
 
-### Show test network
-
-```dart
-bool enable = false;
-ParticleWallet.showTestNetwork(enable);
-```
-
-### Show manage wallet
-
-```dart
-bool enable = true;
-ParticleWallet.showManageWallet(enable);
-```
-
-### Set language
-
-```dart
-Language language = Language.system;
-ParticleWallet.setLanguage(language);
-```
-
 ### Custom UI
 
 ```dart
-static void showLanguageSetting() {
-  const isShow = false;
-  ParticleWallet.showLanguageSetting(isShow);
-}
-
-static void showAppearanceSetting() {
-  const isShow = false;
-  ParticleWallet.showAppearanceSetting(isShow);
-}
-
-
-/// Set support dapp broswer in wallet page, default is true
-static void supportDappBrowser() {
-  ParticleWallet.supportDappBrowser(false);
-}
-
-/// Set support wallet connect as a wallet, default is true
-static void supportWalletConnect() {
-  ParticleWallet.supportWalletConnect(false);
-}
-
-static void navigatorDappBrowser() {
-  const url = "https://opensea.io";
-  ParticleWallet.navigatorDappBrowser(url: url);
-}
+// Set show test network
+ParticleWallet.setShowTestNetwork(true);
+// Set show manage wallet
+ParticleWallet.setShowManageWallet(true);
+// Set show language setting
+ParticleWallet.setShowLanguageSetting(true);
+// Set show appearance setting
+ParticleWallet.showAppearanceSetting(true);
+// Set support dapp browser
+ParticleWallet.setSupportDappBrowser(false);
+// Set support wallet connect in wallet page.
+ParticleWallet.supportWalletConnect(true);
+// Set support add token
+ParticleWallet.setSupportAddToken(isShow);
 
 
-static void setSupportAddToken() {
-  const isShow = false;
-  ParticleWallet.setSupportAddToken(isShow);
-}
+// Set display token addresses
+List<String> tokenAddresses = <String>[
+  "0x303b35f48684bea50D0e7D1AcDdeaf78A7188798"
+];
+ParticleWallet.setDisplayTokenAddresses(tokenAddresses);
 
-static void setDisplayTokenAddresses() {
-  List<String> tokenAddresses = <String>[
-    "0x303b35f48684bea50D0e7D1AcDdeaf78A7188798"
-  ];
+// Set priority token addresses
+List<String> tokenAddresses = <String>[
+  "0x303b35f48684bea50D0e7D1AcDdeaf78A7188798"
+];
 
-  ParticleWallet.setDisplayTokenAddresses(tokenAddresses);
-}
+ParticleWallet.setPriorityTokenAddresses(tokenAddresses);
 
-static void setDisplayNFTContractAddresses() {
-  List<String> nftContractAddresses = <String>[
-    "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
-  ];
-  ParticleWallet.setDisplayNFTContractAddresses(nftContractAddresses);
-}
+// Set display nft addresses
+List<String> nftContractAddresses = <String>[
+  "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
+];
+ParticleWallet.setDisplayNFTContractAddresses(nftContractAddresses);
 
-static void setPriorityTokenAddresses() {
-  List<String> tokenAddresses = <String>[
-    "0x303b35f48684bea50D0e7D1AcDdeaf78A7188798"
-  ];
+// Set priority nft addresses
+List<String> nftContractAddresses = <String>[
+  "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
+];
+ParticleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
 
-  ParticleWallet.setPriorityTokenAddresses(tokenAddresses);
-}
+// set custom ui color 
+// your custom json string.
+// example https://github.com/Particle-Network/particle-ios/blob/main/Demo/Demo/customUIConfig.json
+const json = "";
+ParticleWallet.loadCustomUIJsonString(json);
 
-static void setPriorityNFTContractAddresses() {
-  List<String> nftContractAddresses = <String>[
-    "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
-  ];
-  ParticleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
-}
-
-static void setFiatCoin() {
-  const fiatCoin = FiatCoin.HKD;
-  ParticleWallet.setFiatCoin(fiatCoin);
-}
-
-static void loadCustomUIJsonString() {
-  // your custom json string.
-  // example https://github.com/Particle-Network/particle-ios/blob/main/Demo/Demo/customUIConfig.json
-  const json = "";
-  ParticleWallet.loadCustomUIJsonString(json);
-}
 
 ```
