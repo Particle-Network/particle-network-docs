@@ -33,7 +33,8 @@
           "id": "f196156e-15ea-4136-820f-afefa68663a7",
           "method": "particle_biconomy_getSmartAccount",
           "params": [
-            "2.0",
+            // Biconomy version
+            "1.0.0",
             [
               // eoa address array
               "0x631571040DD9fe3BF37BDcA6b2731dbe2Ae8bA9E",
@@ -95,6 +96,7 @@
           "id": "f196156e-15ea-4136-820f-afefa68663a7",
           "method": "particle_biconomy_getFeeQuotes",
           "params": [
+            // Biconomy version
             "1.0.0",
             // eoa address
             "0x631571040DD9fe3BF37BDcA6b2731dbe2Ae8bA9E",
@@ -188,6 +190,7 @@
           "id": "f196156e-15ea-4136-820f-afefa68663a7",
           "method": "particle_biconomy_createUserPaidTransaction",
           "params": [
+            // Biconomy version
             "1.0.0",
             // eoa address
             "0x631571040DD9fe3BF37BDcA6b2731dbe2Ae8bA9E",
@@ -288,6 +291,7 @@
           "id": "f196156e-15ea-4136-820f-afefa68663a7",
           "method": "particle_biconomy_sendUserPaidTransaction",
           "params": [
+            // Biconomy version
             "1.0.0",
             // eoa address
             "0x631571040DD9fe3BF37BDcA6b2731dbe2Ae8bA9E",
@@ -384,6 +388,7 @@
           "id": "f196156e-15ea-4136-820f-afefa68663a7",
           "method": "particle_biconomy_sendGaslessTransaction",
           "params": [
+            // Biconomy version
             "1.0.0",
             // eoa address
             "0x631571040DD9fe3BF37BDcA6b2731dbe2Ae8bA9E",
