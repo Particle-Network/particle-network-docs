@@ -144,7 +144,7 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 
 ### Usage
 
-```javascript
+```typescript
 import * as particleConnect from 'react-native-particle-connect';
 ```
 
@@ -170,22 +170,18 @@ Starting from version 0.14.0, WalletConnectV2 is supported.
 // you can use the values that we provided in example.
 const chainInfo = ChainInfo.EthereumGoerli;
 const env = Env.Dev;
-const metadata = {
-            walletConnectProjectId: 'your wallet connect project id',
-            name: 'Particle Connect',
-            icon: 'https://connect.particle.network/icons/512.png',
-            url: 'https://connect.particle.network',
-            description: 'Particle Wallet',
-        };
 
-// the rpcUrl works for WalletType EvmPrivateKey and SolanaPrivakey
-    // we have default rpc url in native SDK
-const rpcUrl = { evm_url: null, solana_url: null };
-particleConnect.init(chainInfo, env, metadata, rpcUrl);
+const metadata = new DappMetaData('75ac08814504606fc06126541ace9df6',
+            'Particle Connect',
+            'https://connect.particle.network/icons/512.png',
+            'https://connect.particle.network',
+            'Particle Wallet', "", "");
+
+particleConnect.init(chainInfo, env, metadata);
 
 // set wallet connect support chaininfos, if you dont call this method
 // default value is current chaininfo.
-const chainInfos = [ChainInfo.EthereumMainnet, ChainInfo.PolygonMainnet, ChainInfo.EthereumGoerli, ChainInfo.EthereumSepolia];
+const chainInfos = [Ethereum, Polygon, EthereumGoerli, EthereumSepolia];
 particleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 
 ```
@@ -197,13 +193,13 @@ particleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 
 you can use our SDK as a web3 provider
 
-```javascript
+```typescript
 // Start with new web3, at this time, you don't connect with this walletType, and dont know any publicAddress
-var newWeb3 = undefined;
+var newWeb3: any;
 
 // After connected a wallet, restoreWeb3 when getAccounts.
 // We need to check if the walletType and publicAddress is connected. 
-var web3 = undefined;
+var web3: any;
 
 newWeb3_getAccounts = async () => {
     try {
@@ -329,31 +325,52 @@ web3_wallet_addEthereumChain = async () => {
 
 ```javascript
 // connect example
-const result = await particleConnect.connect(walletType);
-if (result.status) {
-    console.log("connect success")
-    const account = result.data;
-    pnaccount = new PNAccount(account.icons, account.name, account.publicAddress, account.url);
-    console.log("pnaccount = ", pnaccount);
-} else {
-    console.log("connect failure")
-    const error = result.data;
-    console.log(error);
-}
+const result = await particleConnect.connect(PNAccount.walletType);
+    if (result.status) {
+        console.log('connect success');
+        const account = result.data;
+        this.pnaccount = new PNAccount(
+            account.icons,
+            account.name,
+            account.publicAddress,
+            account.url
+        );
+        console.log('pnaccount = ', this.pnaccount);
+    } else {
+        console.log('connect failure');
+        const error = result.data;
+        console.log(error);
+    }
+};
+
 // connect with particle, support pass more parameters
 // set login type, account, support types and login form mode
-const connectConfig = new ParticleConnectConfig(LoginType.Phone, "", [SupportAuthType.Facebook, SupportAuthType.Google, SupportAuthType.Apple])
-const result = await particleConnect.connect(WalletType.Particle, connectConfig);
-if (result.status) {
-    console.log("connect success")
-    const account = result.data;
-    pnaccount = new PNAccount(account.icons, account.name, account.publicAddress, account.url);
-    console.log("pnaccount = ", pnaccount);
-} else {
-    console.log("connect failure")
-    const error = result.data;
-    console.log(error);
-}
+const connectConfig = new ParticleConnectConfig(LoginType.Phone, '', [
+        SupportAuthType.Email,
+        SupportAuthType.Google,
+        SupportAuthType.Apple,
+    ]);
+
+    const result = await particleConnect.connect(
+        WalletType.Particle,
+        connectConfig
+    );
+    if (result.status) {
+        console.log('connect success');
+        const account = result.data;
+        this.pnaccount = new PNAccount(
+            account.icons,
+            account.name,
+            account.publicAddress,
+            account.url
+        );
+        console.log('pnaccount = ', this.pnaccount);
+    } else {
+        console.log('connect failure');
+        const error = result.data;
+        console.log(error);
+    }
+};
 ```
 
 ### Disconnect
@@ -543,7 +560,7 @@ console.log(accounts);
 ### Set chain info async&#x20;
 
 ```javascript
-const chainInfo = ChainInfo.EthereumGoerli;
+const chainInfo = Ethereum;
 const result = await particleConnect.setChainInfoAsync(chainInfo);
 console.log(result);
 ```
@@ -551,7 +568,7 @@ console.log(result);
 ### Set chain info
 
 ```javascript
-const chainInfo = ChainInfo.EthereumGoerli;
+const chainInfo = Ethereum;
 const result = await particleConnect.setChainInfo(chainInfo);
 console.log(result);
 ```

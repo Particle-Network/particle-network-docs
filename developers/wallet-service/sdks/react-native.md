@@ -20,14 +20,17 @@ is same with [Connect Service ](../../connect-service/sdks/react-native.md)
 
 ### Initialize the SDK
 
-### Should init particle connect first
+### Should call particle connect init first
 
-```javascript
-const chainInfo = ChainInfo.EthereumGoerli;
+```typescript
+const chainInfo = Ethereum;
 const env = Env.Dev;
-const metadata = { name: "Particle Connect", icon: "https://connect.particle.network/icons/512.png", url: "https://connect.particle.network" }
-const rpcUrl = { evm_url: null, solana_url: null };
-particleConnect.init(chainInfo, env, metadata, rpcUrl);
+const dappMetaData = new DappMetaData('75ac08814504606fc06126541ace9df6',
+    'Particle Connect',
+    'https://connect.particle.network/icons/512.png',
+    'https://connect.particle.network',
+    'Particle Wallet', "", "");
+particleConnect.init(chainInfo, env, dappMetaData);
 ```
 
 {% hint style="info" %}
@@ -35,15 +38,16 @@ particleConnect.init(chainInfo, env, metadata, rpcUrl);
 
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
-```swift
-let metaData = {
-    name: 'Particle React Native Demo',
+```typescript
+const walletMetaData = {
+    walletConnectProjectId: '75ac08814504606fc06126541ace9df6',
+    name: 'Particle Connect',
     icon: 'https://connect.particle.network/icons/512.png',
     url: 'https://connect.particle.network',
-    description: 'Particle React Native Demo Description',
-    walletConnectProjectId: '75ac08814504606fc06126541ace9df6'
+    description: 'Particle Wallet',
 };
-particleWallet.initWallet(metaData);
+
+particleWallet.initWallet(walletMetaData);
 ```
 {% endhint %}
 
@@ -94,31 +98,31 @@ const tokenId = TestAccountEVM.nftTokenId;
 particleWallet.navigatorNFTDetails(mint, tokenId);
 ```
 
-### Enable pay
+### Set pay disabled
 
 ```dart
-const isEnable = true;
-particleWallet.enablePay(isEnable);
+const disabled = true;
+particleWallet.setPayDisabled(disabled);
 ```
 
-### Get enable pay
+### Get pay disabled
 
 ```dart
-const result = await particleWallet.getEnablePay();
+const result = await particleWallet.getPayDisabled();
 console.log(result);
 ```
 
-### Enable swap
+### Set swap disabled
 
 ```javascript
-const isEnable = true;
-particleWallet.enableSwap(isEnable);
+const disabled = true;
+particleWallet.setSwapDisabled(disabled);
 ```
 
-### Get enable swap
+### Get swap swap
 
 ```javascript
-const result = await particleWallet.getEnableSwap();
+const result = await particleWallet.getSwapDisabled();
 console.log(result);
 ```
 
@@ -152,8 +156,8 @@ console.log(result)
 ### Set Support chain
 
 ```javascript
-const chainInfos = [ChainInfo.EthereumMainnet, ChainInfo.BscMainnet, ChainInfo.PolygonMainnet];
-particleWallet.supportChain(chainInfos);
+const chainInfos = [Ethereum, Polygon];
+particleWallet.setSupportChain(chainInfos);
 ```
 
 ### Switch wallet
@@ -165,33 +169,23 @@ String result = await ParticleWallet.switchWallet(walletType, publicAddress);
 print("result:$result");
 ```
 
-### Show test network
+### Set show test network
 
 ```javascript
 const isShow = true;
-particleWallet.showTestNetwork(isShow);
+particleWallet.setShowTestNetwork(isShow);
 ```
 
-### Show manage wallet
+### Set show manage wallet
 
 ```javascript
 const isShow = true;
-particleWallet.showManageWallet(isShow);
+particleWallet.setShowManageWallet(isShow);
 ```
 
 ### Custom UI
 
 ```javascript
-setLanguage = async () => {
-    const language = Language.JA;
-    particleWallet.setLanguage(language);
-}
-
-setFiatCoin = async () => {
-    const faitCoin = FaitCoin.HKD;
-    particleWallet.setFiatCoin(faitCoin);
-}
-
 setDisplayTokenAddresses = async () => {
     const tokenAddresses = ["", ""];
     particleWallet.setDisplayTokenAddresses(tokenAddresses);
@@ -212,12 +206,12 @@ setPriorityNFTContractAddresses = async () => {
     particleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
 }
 
-showLanguageSetting = async () => {
-    particleWallet.showLanguageSetting(false);
+setShowLanguageSetting = async () => {
+    particleWallet.setShowLanguageSetting(false);
 }
 
-showAppearanceSetting = async () => {
-    particleWallet.showAppearanceSetting(false);
+setShowAppearanceSetting = async () => {
+    particleWallet.setShowAppearanceSetting(false);
 }
 
 setSupportAddToken = async () => {

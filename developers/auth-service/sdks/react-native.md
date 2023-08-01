@@ -122,7 +122,7 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 You can get the demo source code from [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth)
 
-```javascript
+```typescript
 import * as particleAuth from "react-native-particle-auth";
 ```
 
@@ -130,13 +130,13 @@ import * as particleAuth from "react-native-particle-auth";
 
 **Before using the SDK you have to call init(Required)**&#x20;
 
-```javascript
+```typescript
 // Get your project id and client from dashboard,  
 // https://dashboard.particle.network/
 ParticleInfo.projectId = ''; // your project id
 ParticleInfo.clientKey = ''; // your client key 
 
-const chainInfo = ChainInfo.EthereumGoerli;
+const chainInfo = Ethereum;
 const env = Env.Production;
 particleAuth.init(chainInfo, env);
 ```
@@ -145,7 +145,7 @@ particleAuth.init(chainInfo, env);
 
 you can use our SDK as a web3 provider
 
-```javascript
+```typescript
 const web3 = createWeb3('your project id', 'your client key');
 
 web3_getAccounts = async () => { 
@@ -246,10 +246,10 @@ web3_wallet_switchEthereumChain = async () => {
 
 ### Login
 
-```javascript
+```typescript
 const type = LoginType.Phone;
 const supportAuthType = [SupportAuthType.All];
-const result = await particleAuth.login(type, "", supportAuthType, undefined);
+const result = await particleAuth.login(type, '', supportAuthType);
 if (result.status) {
     const userInfo = result.data;
     console.log(userInfo);
@@ -257,11 +257,18 @@ if (result.status) {
     const error = result.data;
     console.log(error);
 }
+
+// support login and sign message
+const message = "Hello Particle";
+const messageHex = "0x" + Buffer.from(message).toString('hex');
+
+const authrization = new LoginAuthorization(messageHex, false);
+const result = await particleAuth.login(type, '', supportAuthType, undefined, authrization);
 ```
 
 ### Logout
 
-```javascript
+```typescript
 const result = await particleAuth.logout();
 if (result.status) {
     console.log(result.data);
@@ -275,7 +282,7 @@ if (result.status) {
 
 logout silently
 
-```javascript
+```typescript
 const result = await particleAuth.fastLogout();
 if (result.status) {
     console.log(result.data);
@@ -312,6 +319,20 @@ console.log(userInfo);
 ```dart
 const message = "Hello world!"
 const result = await particleAuth.signMessage(message);
+if (result.status) {
+    const signedMessage = result.data;
+    console.log(signedMessage);
+} else {
+    const error = result.data;
+    console.log(error);
+}
+```
+
+### Sign message unique
+
+```typescript
+const message = 'Hello world!';
+const result = await particleAuth.signMessageUnique(message);
 if (result.status) {
     const signedMessage = result.data;
     console.log(signedMessage);
@@ -412,10 +433,10 @@ if (result.status) {
 
 ### Set chain info async
 
-Login is required, if you want to switch to another chain, call this method after login.
+Login is required, if you want to switch to another chain, call this method after login
 
 ```dart
-const chainInfo = ChainInfo.SolanaDevnet;
+const chainInfo = SolanaDevnet;
 const result = await particleAuth.setChainInfoAsync(chainInfo);
 console.log(result);
 ```
@@ -425,7 +446,7 @@ console.log(result);
 if you want to switch to another chain, call this method before login.
 
 ```dart
-const chainInfo = ChainInfo.EthereumGoerli;
+const chainInfo = EthereumGoerli;
 const result = await particleAuth.setChainInfo(chainInfo);
 console.log(result);
 ```
@@ -437,11 +458,11 @@ const result = await particleAuth.getChainInfo();
 console.log(result);
 ```
 
-### Set display wallet
+### Set web auth config
 
 ```javascript
 const isDisplay = true;
-particleAuth.setDisplayWallet(isDisplay);
+particleAuth.setWebAuthConfig(isDisplay, Appearance.Dark);
 ```
 
 ### Open web wallet
@@ -468,37 +489,90 @@ particleAuth.openWebWallet(webConfigJSON);
 ### Open account and security page
 
 ```javascript
-const result = await particleAuth.openAccountAndSecurity();
-if (result.status) {
-    const data = result.data;
-    console.log(data);
-} else {
-    const error = result.data;
-    console.log(error);
+particleAuth.openAccountAndSecurity();
+
+// You need listen for possible errors
+private openAccountAndSecurityEvent: any;
+
+componentDidMount = () => {
+    console.log('AuthDemo componentDidMount');
+
+    if (Platform.OS === 'ios') {
+        const emitter = new NativeEventEmitter(particleAuth.ParticleAuthEvent);
+        this.openAccountAndSecurityEvent = emitter.addListener('securityFailedCallBack', this.securityFailedCallBack);
+    } else {
+        this.openAccountAndSecurityEvent = DeviceEventEmitter.addListener(
+            'securityFailedCallBack',
+            this.openAccountAndSecurityEvent
+        );
+    }
+};
+
+componentWillUnmount() {
+    this.openAccountAndSecurityEvent.remove();
+};
+
+
+securityFailedCallBack = (result: any) => {
+    console.log(result);
 }
 ```
 
 ### Set iOS modal present style and medium screen
 
 ```javascript
-setModalPresentStyle = async () => {
-    const style = iOSModalPresentStyle.FormSheet;
-    particleAuth.setModalPresentStyle(style)
-}
+// support iOS, doesn't support Android
+const style = iOSModalPresentStyle.FormSheet;
+particleAuth.setModalPresentStyle(style)
 
-// request iOS 15 or later
-setMediumScreen = async () => {
-    const isMedium = true;
-    particleAuth.setMediumScreen(isMedium);
-}
+// request iOS 15 or later, doesn't support Android
+particleAuth.setMediumScreen(isMedium);
 ```
 
 ### Set language
 
 ```javascript
-setLanguage = async () => {
-    const language = Language.JA;
-    particleAuth.setLanguage(language);
+// support EN, ZH_HANS, ZH_HANT, JA, KO
+particleAuth.setLanguage(language);
+```
+
+### Set appearance
+
+```typescript
+// support Light, Dark, System
+particleAuth.setAppearance(Appearance.Dark);
+```
+
+### Set fiatCoin
+
+```typescript
+// support USD, CNY, JPY, HKD, INR, KRW
+particleAuth.setFiatCoin(FiatCoin.KRW);
+```
+
+### Has master password, payment password, security account&#x20;
+
+```javascript
+// get value from local user info
+const hasMasterPassword = await particleAuth.hasMasterPassword();
+const hasPaymentPassword = await particleAuth.hasPaymentPassword();
+const hasSecurityAccount = await particleAuth.hasSecurityAccount();
+
+// get value from remote server
+getSecurityAccount = async () => {
+    const result = await particleAuth.getSecurityAccount();
+    if (result.status) {
+        const secuirtyAccount = result.data;
+        const hasMasterPassword = secuirtyAccount.has_set_master_password;
+        const hasPaymentPassword = secuirtyAccount.has_set_payment_password;
+        const email = secuirtyAccount.email;
+        const phone = secuirtyAccount.phont;
+        const hasSecurityAccount = !email || !phone;
+        console.log('hasMasterPassword', hasMasterPassword, 'hasPaymentPassword', hasPaymentPassword, 'hasSecurityAccount', hasSecurityAccount);
+    } else {
+        const error = result.data;
+        console.log(error);
+    }
 }
 ```
 
@@ -535,33 +609,7 @@ const abiJsonString = "";
 const result = await EvmService.readContract(contractAddress, methodName, params, abiJsonString);
 ```
 
-### Has master password, payment password, security account&#x20;
-
-```javascript
-// get value from local user info
-const hasMasterPassword = await particleAuth.hasMasterPassword();
-const hasPaymentPassword = await particleAuth.hasPaymentPassword();
-const hasSecurityAccount = await particleAuth.hasSecurityAccount();
-
-// get value from remote server
-getSecurityAccount = async () => {
-    const result = await particleAuth.getSecurityAccount();
-    if (result.status) {
-        const secuirtyAccount = result.data;
-        const hasMasterPassword = secuirtyAccount.has_set_master_password;
-        const hasPaymentPassword = secuirtyAccount.has_set_payment_password;
-        const email = secuirtyAccount.email;
-        const phone = secuirtyAccount.phont;
-        const hasSecurityAccount = !email || !phone;
-        console.log('hasMasterPassword', hasMasterPassword, 'hasPaymentPassword', hasPaymentPassword, 'hasSecurityAccount', hasSecurityAccount);
-    } else {
-        const error = result.data;
-        console.log(error);
-    }
-}
-```
-
-### Estimate gas
+### Estimated gas
 
 Return estimated gas
 
@@ -627,7 +675,7 @@ const result = await EvmService.getPrice(tokenAddresses, currencies);
 
 ### Get smart account
 
-Require add particle\_biconomy and enable Biconomy.
+Require add `particle_biconomy` and enable Biconomy.
 
 Return smart account json object
 
