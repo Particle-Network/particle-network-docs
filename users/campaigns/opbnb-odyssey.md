@@ -14,7 +14,7 @@ In this guide, we’ll walk you through how to
 
 * Create a Particle Account Abstraction (AA) Wallet and
 * Claim tUSDC gaslessly
-* Swap the tUSDC to tUSDT gaslessly with **your Activity Address** as the recipient
+* Swap the tUSDC to tUSDT gaslessly with **your Odyssey Wallet Address** as the recipient
 
 After which, you’ll have a glimpse of how smooth the onboarding and user experience for DeFi will be on opBNB!
 
@@ -52,15 +52,15 @@ Press “Confirm”, and wait for a few second, the transaction will succeed. Yo
 
 <figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-## Swap the tUSDC to tUSDT Gaslessly with Your Activity Address as the Recipient
+## Swap the tUSDC to tUSDT Gaslessly with Your **Odyssey Wallet** Address as the Recipient
 
 In this step, you’ll be swapping your tUSDC to tUSDT gaslessly, that is to say, you don’t need to have any goerliETH to trigger off the transaction.
 
-Now, please put “Your Activity Address” in the text field.
+Now, please put “**Your Odyssey Wallet Address**” in the text field.
 
 <mark style="color:red;">PAY ATTENTION! It must be the address you used for participating this campaign,</mark> <mark style="color:red;"></mark><mark style="color:red;">**otherwise you may not be able to verify your completion!**</mark>
 
-If you are not sure about how to get your Activity Address, follow the steps below:
+If you are not sure about how to get your **Odyssey Wallet** Address, follow the steps below:
 
 Now let’s make the Gasless Swap!
 
