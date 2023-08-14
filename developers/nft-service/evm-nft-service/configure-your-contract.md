@@ -61,5 +61,5 @@ This URL should return some data in the following format:
       ```
     * custom\_sort set to \["rarity"]
     * The market will support NFT ordering by rarity
-    * ![](<../../../.gitbook/assets/image (3).png>)
+    * ![](<../../../.gitbook/assets/image (3) (3).png>)
 

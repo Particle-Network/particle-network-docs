@@ -153,6 +153,12 @@
   * [Cocos](developers/demo-applications/cocos.md)
 * [❔ FAQ](developers/faq.md)
 
+## USERS
+
+* [💗 Campaigns](users/campaigns/README.md)
+  * [opBNB Odyssey](users/campaigns/opbnb-odyssey.md)
+  * [Linea Voyage](users/campaigns/linea-voyage.md)
+
 ## Resources
 
 * [🎨 Logos & Assets](resources/logos-and-assets.md)

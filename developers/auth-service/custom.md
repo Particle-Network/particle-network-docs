@@ -19,13 +19,13 @@ You can use your existing user base or authentication method with Particle Auth.
    4. Go: [https://github.com/auth0/go-jwt-middleware](https://github.com/auth0/go-jwt-middleware)
 4. JWKS Creator
    1. [https://russelldavies.github.io/jwk-creator/](https://russelldavies.github.io/jwk-creator/)\
-      ![](<../../.gitbook/assets/image (1) (2).png>)
+      ![](<../../.gitbook/assets/image (1) (2) (3).png>)
 
 ## Dashboard
 
 Set your custom JWT configuration on the dashboard
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Auth Core
 

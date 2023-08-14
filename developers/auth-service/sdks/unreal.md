@@ -32,7 +32,7 @@ initialize ParticleSDK create a `Init` function in the Widget Blueprint, and the
 * `In Language`: support en-US, zh-CN, zh-TW, ja-JP, ko-KR
 * `In Chain Name / In Chain Id`: support EVM chains and Solana, take a look [ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Init</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>Init</p></figcaption></figure>
 
 ### Login
 
@@ -89,4 +89,4 @@ only support solana, create a `SignAllTransactions` function in the Widget Bluep
 1. `Transactions`: the transactions to be signed by Particle Auth Service. request base58 string array.
 2. `OnSignAllTransactionsEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2) (3).png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (3) (1).png" alt=""><figcaption><p>Sign all transaction</p></figcaption></figure>

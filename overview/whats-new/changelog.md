@@ -146,7 +146,7 @@ Version: `0.14.0`
    10. Add support for configuring Auth and Wallet UI Mode separately
 2. Connect Service
    1. Add Wallet, Buy, and Copy wallet connect code to Connect UI Kit\
-      ![](<../../.gitbook/assets/image (2).png>)<img src="../../.gitbook/assets/image (1) (5).png" alt="" data-size="original">
+      ![](<../../.gitbook/assets/image (2) (1).png>)<img src="../../.gitbook/assets/image (1) (5).png" alt="" data-size="original">
 3. NFT Service
    1. Add support for Ethereum Sepolia and Conflux eSpace
 
