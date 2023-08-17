@@ -4,6 +4,21 @@ description: Changelog
 
 # Changelog
 
+## 20230817
+
+1. Account Abstraction
+   1. Add support for Base Mainnet & Goerli, Optimism Mainnet & Goerli, Avalanche Mainnet & Goerli
+   2. Refactor underlying RPC
+   3. Add more ERC20 Tokens as Gas Fee Options
+2. Wallet
+   1. Automatically Hide Images of SCAM NFTs
+   2. Add support to set your custom wallet icon & name showed in the wallet ui
+   3. SDK embeds the native wallet within the Activity/Controller
+3. Others
+   1. Fix AA on Arbtrum error: out of gas
+   2. Fix Node RPC error: filter id not found
+   3. Fix Get Proxy Token contract info error
+
 ## 20230727
 
 🎉 New milestone achieved! Version 1.0.0 has been released! We have further improved the SDK's composability, introducing the Core SDK, granting developers greater control over UI and UX.

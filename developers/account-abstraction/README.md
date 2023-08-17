@@ -23,6 +23,12 @@ description: MPC + AA is here!
    3. Social Recovery
    4. ...
 
+## Try now
+
+1. Go to [https://wallet.particle.network/](https://wallet.particle.network/)
+2. Login: use social accounts or any supported wallets
+3. Go to **Setting** -> **Experimental** -> Turn on **Set 4337 mode**
+
 ## Demo Videos
 
 1. Social Login & Batch Swap & USDC Pay Gas: [https://www.loom.com/share/fef39d36b0e44354a603010c8f987f7c](https://www.loom.com/share/fef39d36b0e44354a603010c8f987f7c)
@@ -34,7 +40,9 @@ description: MPC + AA is here!
 
 ## RPCs
 
-[Particle x Biconomy RPCs ](../node-service/evm-chains-api/account-abstraction-rpc.md)
+Latest: [Account Abstraction RPCs](../node-service/evm-chains-api/account-abstraction-rpc.md)
+
+V1: [Particle x Biconomy RPCs ](../node-service/evm-chains-api/account-abstraction-rpc-v1.md)
 
 ## SDKs
 
