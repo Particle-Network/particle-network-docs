@@ -981,6 +981,14 @@ ParticleWalletGUI.setCustomTokenAddresses([tokenAddress])
 // Set custom ui is pass json string
 let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
 try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
+
+// Set your wallet name and icon, only support WalletType particle and authcore
+ConnectManager.setCustomWalletName(walletType: .particle, name: .init(name: "your wallet name", icon: "your wallet icon url"))
+
+// Set your custom localizable string
+let customLocalizable = [Language.en: ["network fee": "Service Fee",
+        "particle auth wallet": "Your Wallet Name"]]
+ParticleWalletGUI.setCustomLocalizable(customLocalizable)
 </code></pre>
 {% endtab %}
 {% endtabs %}
@@ -1032,6 +1040,16 @@ PNRouter.navigatorWallet()
 ```
 {% endtab %}
 {% endtabs %}
+
+### Embed wallet page as a child in your tabViewController
+
+```swift
+// the walletVc is a navigator controller, don't embed it to other navigation controller.
+let walletVc = PNRouter.extractWallet(hiddenBackButton: true)
+
+// set it to your tabViewController
+tabViewController.viewControllers = [otherVc1, walletVc, otherVc2]
+```
 
 ### Open Send Token
 
