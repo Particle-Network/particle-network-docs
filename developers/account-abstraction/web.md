@@ -71,7 +71,7 @@ const feeQuotesResult = await smartAccount.getFeeQuotes(tx);
 const gaslessUserOp = feeQuotesResult.verifyingPaymasterGasless?.userOp;
 <strong>const gaslessUserOpHash = feeQuotesResult.verifyingPaymasterGasless?.userOpHash;
 </strong><strong>
-</strong><strong>// pay with ERC-20 tokens: transaction userOp
+</strong><strong>// pay with Native tokens: transaction userOp
 </strong>const paidNativeUserOp = feeQuotesResult.verifyingPaymasterNative?.userOp;
 const paidNativeUserOpHash = feeQuotesResult.verifyingPaymasterNative?.userOpHash;
 
