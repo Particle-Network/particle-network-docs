@@ -28,7 +28,7 @@ let dappApiKeys: [Int: String] = [
     ParticleNetwork.ChainInfo.polygon(.mainnet).chainId: "YOUR_DAPP_API_KEY",
     ParticleNetwork.ChainInfo.polygon(.mumbai).chainId: "YOUR_DAPP_API_KEY"
 ]
-BiconomyService.initialize(version: .v1_0_0, dappApiKeys: dappApiKeys)
+BiconomyService.initialize(dappApiKeys: dappApiKeys)
 
 // after initialize, set a biconomy service object to ParticleNetwork.
 let biconomyService = BiconomyService()
@@ -57,6 +57,58 @@ biconomyService.disableBiconomyMode()
 let isEnable = biconomyService.isBiconomyModeEnable()
 ```
 
+### Get fee quotes before send
+
+before send you can check if you have enough native or tokens to pay, or if gasless is available.
+
+```swift
+let biconomy = ParticleNetwork.getBiconomyService()!
+        
+let eoaAddress = ""
+let transactions = ["", ""]
+let wholeFeeQuote = try await biconomy.rpcGetFeeQuotes(eoaAddress: eoaAddress, transactions: transactions).value
+    
+if wholeFeeQuote.gasless != nil {
+    // you can gasless
+} else {
+    // you cant gasless
+}
+    
+let natvieFeeQuote = Biconomy.FeeQuote(json: wholeFeeQuote.native.feeQuote, tokenPaymasterAddress: "")
+if natvieFeeQuote.isEnoughForPay {
+    // you can pay native for gas fee
+} else {
+    // you dont have enough native to pay
+}
+
+let tokenPaymasterAddress = wholeFeeQuote.token.tokenPaymasterAddress
+let tokenFeeQuotes = wholeFeeQuote.token.feeQuotes.map {
+    Biconomy.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
+}.filter {
+    // filter out balance >= fee
+    $0.isEnoughForPay
+}
+
+if tokenFeeQuotes.count > 0 {
+    // you can select token to pay
+} else {
+    // you can't select token to pay
+}
+```
+
+### Send transaction, support multi transactions&#x20;
+
+you need create a BiconomyService instance, then call quickSendTransactions mehod&#x20;
+
+```swift
+let biconomyService = BiconomyService()
+///   - transactions: The transaction requires a hexadecimal string starting with "0x".
+///   - feeMode: Fee mode, if you want to custom feeMode, you need to get a feeQuote from rpcGetFeeQuotes method
+///   - messageSigner: Message signer
+///   - wholeFeeQuote: Optional, the result of from rpcGetFeeQuotes
+biconomyService.quickSendTransactions(transactions, feeMode: .gasless, messageSigner: messageSigner, wholeFeeQuote: wholeFeeQuote)
+```
+
 ### Send one transaction with [ParticleAuthService](../auth-service/sdks/ios.md)
 
 There are three way to send AA transaction
@@ -64,18 +116,18 @@ There are three way to send AA transaction
 ```swift
 // 1. gasless
 // you can call the same method to send a transaction in AA mode.
-// send gasless transaction
+// send gasless transaction, just call rpc to send, never check if it is available.
 ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .gasless)
 
-// 2. auto(default）
+// 2. native
 // send user paid transaction, select native to pay gas fee.
-ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .auto)
+ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .native)
 
-// 3.custom
+// 3. token
 // send user paid transaction, select token to pay gas fee.
-// get a feeQuote from rpcGetFeeQuotes method
+// select a feeQuote from rpcGetFeeQuotes method
 var feeQuote: Biconomy.FeeQuote
-ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .custom(feeQuote))
+ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .token(feeQuote))
 ```
 
 ### Send one transaction with [ParticleConnectService](../connect-service/sdks/ios.md)
@@ -85,30 +137,20 @@ There are three way to send AA transaction
 ```swift
 // 1. gasless
 // you can call the same method to send a transaction in AA mode.
-// send gasless transaction
+// send gasless transaction, just call rpc to send, never check if it is available.
 adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode: .gasless)
 
-// 2. auto(default）
+// 2. native
 // send user paid transaction, select native to pay gas fee.
-adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode: .auto)
+// just call rpc to send, never check if it is available.
+adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode: .native)
 
-// 3.custom
+// 3. token
 // send user paid transaction, select token to pay gas fee.
 // get a feeQuote from rpcGetFeeQuotes method
+// just call rpc to send, never check if it is available.
 var feeQuote: Biconomy.FeeQuote
-adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode: .custom(feeQuote))
-```
-
-### Send batch transactions&#x20;
-
-you need create a BiconomyService instance, then call quickSendTransactions mehod&#x20;
-
-```swift
-let biconomyService = BiconomyService()
-///   - transactions: The transaction requires a hexadecimal string starting with "0x".
-///   - feeMode: Fee mode, if you want to custom feeMode, you need to get a feeQuote from rpcGetFeeQuotes method
-///   - messageSigner: Message signer
-biconomyService.quickSendTransactions(transactions, feeMode: .gasless, messageSigner: MessageSigner)
+adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode: .token(feeQuote))
 ```
 
 ### Deploy Wallet Contract Manual
@@ -137,39 +179,24 @@ public protocol BiconomyServiceProtocol {
     /// - Parameters:
     ///   - eoaAddress: Eoa address
     ///   - transactions: Transactions array
-    /// - Returns: Fee quotes array
-    func rpcGetFeeQuotes(eoaAddress: String, transactions: [String]) -> Single<[Biconomy.FeeQuote]>
+    /// - Returns: WholeFeeQuote
+    func rpcGetFeeQuotes(eoaAddress: String, transactions: [String]) -> Single<Biconomy.WholeFeeQuote>
     
-    /// Rpc method, create user paid transaction
+    /// Rpc method, create user op
     /// - Parameters:
     ///   - eoaAddress: Eoa address
     ///   - transactions: Transactions array
     ///   - feeQuote: Fee quote, you can get this feeQuote from rpcGetFeeQuotes method.
-    /// - Returns: UserPaidTransaction object.
-    func rpcCreateUserPaidTransaction(eoaAddress: String, transactions: [String], feeQuote: Biconomy.FeeQuote) -> Single<Biconomy.UserPaidTransacion>
-    
+    ///   - tokenPaymasterAddress: Token paymaster address
+    /// - Returns: UserOp object.
+    func rpcCreateUserOp(eoaAddress: String, transactions: [String], feeQuote: Biconomy.FeeQuote, tokenPaymasterAddress: String) -> Single<Biconomy.UserOp>
+
     /// Rpc method, send user paid transaction
     /// - Parameters:
     ///   - eoaAddress: Eoa address
-    ///   - walletTransaction: Wallet transaction
-    ///   - signature: Signature
+    ///   - userOp: JSON, get from rpcGetFeeQuotes or rpcCreateUserOp
     /// - Returns: Signature
-    func rpcSendUserPaidTransaction(eoaAddress: String, walletTransaction: JSON, signature: String) -> Single<String>
-    
-    /// Rpc method, create gasless transaction
-    /// - Parameters:
-    ///   - eoaAddress: Eoa address
-    ///   - transactions: Transactions array
-    /// - Returns: GasLessTransaction object.
-    func rpcCreateGaslessTransaction(eoaAddress: String, transactions: [String]) -> Single<Biconomy.GasLessTransaction>
-    
-    /// Rpc method, send gasless transaction
-    /// - Parameters:
-    ///   - eoaAddress: Eoa address
-    ///   - userOp: User operation
-    ///   - signature: Signature
-    /// - Returns: Signature
-    func rpcSendGaslessTransaction(eoaAddress: String, userOp: JSON, signature: String) -> Single<String>
+    func rpcSendUserOp(eoaAddress: String, userOp: JSON) -> Single<String>
     
     /// Get smart account, if it can get smart account from local database, should return it directly, otherwise get it from rpc.
     /// - Parameter eosAddress: Eoa address
@@ -192,11 +219,6 @@ public protocol BiconomyServiceProtocol {
 }
 
 public protocol MessageSigner {
-    /// Sign type data
-    /// - Parameter message: Typed data v4, json string.
-    /// - Returns: Signature
-    func signTypedData(_ message: String) -> Single<String>
-    
     /// Sign message
     /// - Parameter message: Message string, such as "0x68656c6c6f20776f726c64"
     /// - Returns: Signature
