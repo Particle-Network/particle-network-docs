@@ -5,9 +5,9 @@
 Install and import the biconomy package from the Particle Network SDK
 
 ```sh
-yarn add @particle-network/biconomy
+yarn add @particle-network/aa
 //or
-npm install @particle-network/biconomy
+npm install @particle-network/aa
 ```
 
 ## Initialize the SmartAccount
@@ -45,50 +45,62 @@ const address = await smartAccount.getOwner();
 const accountInfo = await smartAccount.getAccount();
 </code></pre>
 
-## Sending Gasless Transactions
+## Get Fee Quotes
 
-Gasless sponsorships can be managed by passing relevant parameters in the Smart Account custom config.
+Before send transactions, you can get fee quotes and display on UI Modal, users can choose which token to use to pay gas fees.
 
-```typescript
-// replace with real transaction
-const tx = {
-    to,
-    value,
-    data,
-};
-const txHash = await smartAccount.sendGaslessTransaction(tx);
+<pre class="language-typescript"><code class="lang-typescript">const tx = {
+    to: '0x...',
+    value: '0x...'
+}
+// or bacth transactions
+const txs = [
+    {
+        to: '0x...',
+        value: '0x...'
+    },
+    {
+        to: '0x...',
+        value: '0x...'
+    }
+]
+//get fee quotes with tx or txs
+const feeQuotesResult = await smartAccount.getFeeQuotes(tx);
 
-//batch gasless transactions
-const txs = [tx1, tx2, tx3];
-const txHash = await smartAccount.sendGaslessTransaction(txs);
-```
+// gasless transaction userOp, maybe null
+const gaslessUserOp = feeQuotesResult.verifyingPaymasterGasless?.userOp;
+<strong>const gaslessUserOpHash = feeQuotesResult.verifyingPaymasterGasless?.userOpHash;
+</strong><strong>
+</strong><strong>// pay with ERC-20 tokens: transaction userOp
+</strong>const paidNativeUserOp = feeQuotesResult.verifyingPaymasterNative?.userOp;
+const paidNativeUserOpHash = feeQuotesResult.verifyingPaymasterNative?.userOpHash;
 
-## Sending User Paid Transactions
-
-User can pay gas with ERC20 token.
-
-<pre class="language-typescript"><code class="lang-typescript">// replace with real transaction
-const tx = {
-    to,
-    value,
-    data,
-};
-<strong>// get fee quotes first.
-</strong>const feeQuotes = await smartAccount.getFeeQuotes(tx);
-// Let the user choose to pay gas token
-const feeQuote = feeQuotes[0];
-const txHash = await smartAccount.sendUserPaidTransaction(tx, feeQuote);
-
-
-// batch user paid transactions
-const txs = [tx1, tx2];
-// get fee quotes first.
-const feeQuotes = await smartAccount.getFeeQuotes(txs);
-// Let the user choose to pay gas token
-const feeQuote = feeQuotes[0];
-const txHash = await smartAccount.sendUserPaidTransaction(txs, feeQuote);
+// pay with ERC-20 tokens: fee quotes
+<strong>const tokenPaymasterAddress = feeQuotesResult.tokenPaymaster.tokenPaymasterAddress;
+</strong>const tokenFeeQuotes = feeQuotesResult.tokenPaymaster.feeQuotes;
 
 </code></pre>
+
+## Build User Operation
+
+Builds a `UserOp` object from the provided array of `Transaction`s. It also accepts optional `feeQuote` and `tokenPaymasterAddress`. Returns a Promise that resolves to the `UserOpBundle`.
+
+```typescript
+// build user operation, feeQuote and tokenPaymasterAddress is optional.
+const userOpBundle = await smartAccount.buildUserOperation({ txs, feeQuote, tokenPaymasterAddress })
+const userOp = userOpBundle.userOp;
+const userOpHash = userOpBundle.userOpHash;
+
+```
+
+### Send User Operation
+
+Sends the pre-signed `UserOperation` to the Particle network for execution. Returns a Promise that resolves to a `TransactionHash`.
+
+```typescript
+// Some code
+const txHash = await smartAccount.sendUserOperation({ userOp, userOpHash });
+```
 
 ## Wallet Deployment flow
 
@@ -108,11 +120,11 @@ if (!isDeploy) {
 
 If your app has implemented sending transactions, or use web3.js, you can wrap the EIP-1193 provider to quickly implement AA wallet.
 
-<pre class="language-typescript"><code class="lang-typescript">import { BiconomyWrapProvider, SendTransactionMode, SendTransactionEvent } from '@particle-network/biconomy';
+<pre class="language-typescript"><code class="lang-typescript">import { AAWrapProvider, SendTransactionMode, SendTransactionEvent } from '@particle-network/biconomy';
 import Web3 from "web3";
 
 <strong>// sendTxMode: UserPaidNative(default), Gasless, UserSelect
-</strong><strong>const wrapProvider = new BiconomyWrapProvider(smartAccount, SendTransactionMode.UserPaidNative);
+</strong><strong>const wrapProvider = new AAWrapProvider(smartAccount, SendTransactionMode.UserPaidNative);
 </strong><strong>// replace any EIP-1193 provider to wrapProvider
 </strong><strong>const web3 = new Web3(wrapProvider);
 </strong>//send user paid transaction
@@ -120,21 +132,29 @@ import Web3 from "web3";
 </strong><strong>
 </strong><strong>
 </strong><strong>// send gassless transaction
-</strong>const wrapProvider = new BiconomyWrapProvider(smartAccount, SendTransactionMode.Gasless);
+</strong>const wrapProvider = new AAWrapProvider(smartAccount, SendTransactionMode.Gasless);
 const web3 = new Web3(wrapProvider);
 await web3.eth.sendTransaction(tx);
 <strong>
 </strong><strong>
 </strong><strong>// use select pay gas token or gasless
-</strong>const wrapProvider = new BiconomyWrapProvider(smartAccount, SendTransactionMode.UserSelect);
+</strong>const wrapProvider = new AAWrapProvider(smartAccount, SendTransactionMode.UserSelect);
 const web3 = new Web3(wrapProvider);
-wrapProvider.once(SendTransactionEvent.Request, (feeQuotes) => {
-    // let the user select the pay gas token
-    wrapProvider.resolveSendTransaction(feeQuotes[0]);
+wrapProvider.once(SendTransactionEvent.Request, (feeQuotesResult) => {
+    // let the user select the pay gas ERC-20 token
+    wrapProvider.resolveSendTransaction({
+        feeQuote: feeQuotesResult.tokenPaymaster.feeQuote[0],
+        tokenPaymasterAddress: feeQuotesResult.tokenPaymaster.tokenPaymasterAddress
+    });
+    
+    // or pay with native token
+    wrapProvider.resolveSendTransaction(feeQuotesResult.verifyingPaymasterNative);
     
     // or send gasless
-     wrapProvider.resolveSendTransaction();
-    
+    if (feeQuotesResult.verifyingPaymasterGasless) {
+        wrapProvider.resolveSendTransaction(feeQuotesResult.verifyingPaymasterGasless);
+    }
+      
     // or reject send transaction
     wrapProvider.rejectSendTransaction({ message: 'user rejected'});
 });
