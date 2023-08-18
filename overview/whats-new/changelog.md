@@ -4,6 +4,15 @@ description: Changelog
 
 # Changelog
 
+## 20230818
+
+1. Auth SDK
+   1. Calling the Login method supports automatic signing for messages that comply with the SWIE standard.
+2. Connect SDK
+   1. Web SDK Add Rabby Wallet&#x20;
+3. New Chains
+   1. GasZero
+
 ## 20230817
 
 1. Account Abstraction
