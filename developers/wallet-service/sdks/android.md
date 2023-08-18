@@ -506,9 +506,40 @@ ParticleWallet.init(
         context,
         supportChains,
     ).apply {
-        showTestNetworks() // show test networks,default is hide
-        hideManageWallet() // hide manage wallet,default is show
+      setShowTestNetworkSetting(true) //default is false
+      setShowManageWalletSetting(true) // default is true
+      hideMainBackIcon() // hide the back icon in the main page
+      setShowAppearanceSetting(true) //default is true
+      setShowLanguageSetting(true) //default is true
+      setSupportDappBrowser(true) //default is true
+      setWalletIcon("https://xxx.xxx/xxx.png") //set the wallet icon
     }
+    
+//set Wallet Name,only support ParticleConnectAdapter after connect success
+val yourWalletName ="X Wallet"
+val wallet = WalletInfo.createWallet(
+    ParticleNetwork.getAddress(),
+    ParticleNetwork.chainInfo.name,
+    ParticleNetwork.chainInfo.id,
+    1,
+    yourWalletName,
+    MobileWCWalletName.Particle.name
+)
+ParticleWallet.setWallet(wallet)
+
+// Set your custom localizable string
+// Overlay strings.xml 
+YourProject/app/src/main/res/
+    values/strings.xml
+    values-ja-rJP/strings.xml
+    values-ko-rKR/strings.xml
+    values-zh-rCN/strings.xml
+    values-zh-rHK/strings.xml
+    values-zh-rTW/strings.xml
+Reassign a value
+<string name="pn_network_fee">new NetworkFee</string>
+<string name="pn_particle_auth_wallet">New Wallet</string>
+
 ```
 
 ### Open Wallet
