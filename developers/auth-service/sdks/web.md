@@ -559,15 +559,19 @@ const accounts = await provider.request({
 
 ### Login
 
-```typescript
-import { ParticleNetwork } from "@particle-network/auth";
+The Auth SDK will save the login status locally. Before calling the `login` method, it is necessary to determine whether user has been logged successful before.
+
+<pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork } from "@particle-network/auth";
 
 const particle = new ParticleNetwork({...});
 
-particle.auth.login().then(info => {
-    //...
-})
-```
+let userInfo;
+if (!particle.auth.isLogin()) {
+<strong>    userInfo = await particle.auth.login(params);
+</strong>} else {
+    userInfo = particle.auth.getUserInfo();
+}
+</code></pre>
 
 ### Logout
 
