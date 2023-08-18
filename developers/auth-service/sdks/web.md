@@ -100,13 +100,14 @@ Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-pro
 
 ### Connect Wallet
 
-In order for web3 to work and grab the end-users' Ethereum wallet addresses, the users have to login first (similar to unlocking account in MetaMask). You can simply trigger the login for users with the web3 function call below.
+In order for web3 to work and grab the end-users' Ethereum wallet addresses, the users have to login first (similar to unlocking account in MetaMask). You can simply trigger the login for users with the web3 function call below. The Auth SDK will save the login status locally. Before calling the `login` method, it is necessary to determine whether user has been logged successful.
 
-```typescript
-import Web3 from "web3";
+<pre class="language-typescript"><code class="lang-typescript">import Web3 from "web3";
 
-// Request user login if needed, returns current user info
-const userInfo = await particle.auth.login();
+if (!particle.auth.isLogin()) {
+    // Request user login if needed, returns current user info
+<strong>    const userInfo = await particle.auth.login();
+</strong>}
 
 // optional: custom login params.
 // support auth types: email,phone,facebook,google,apple,discord,github,twitch,microsoft,linkedin
@@ -125,7 +126,7 @@ const userInfo = particle.auth.login({
         uniq: false, //optional, default false.
     }
   })
-```
+</code></pre>
 
 Login with Phone and input verification code directly.
 
