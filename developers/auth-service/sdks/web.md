@@ -559,7 +559,7 @@ const accounts = await provider.request({
 
 ### Login
 
-The Auth SDK will save the login status locally. Before calling the `login` method, it is necessary to determine whether user has been logged successful before.
+The Auth SDK will save the login status locally. Before calling the `login` method, it is necessary to determine whether user has been logged successful.
 
 <pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork } from "@particle-network/auth";
 
