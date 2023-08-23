@@ -19,7 +19,7 @@ And create a Biconomy Paymasters to connect AA, Visit [Biconomy Dashboard](https
 The provider is [EIP-1193: Ethereum Provider JavaScript API ](https://eips.ethereum.org/EIPS/eip-1193), you can use Particle Provider, MetaMask Provider or any EVM wallet provider.
 
 ```typescript
-import { SmartAccount } from '@particle-network/biconomy';
+import { SmartAccount } from '@particle-network/aa';
 
 //provider: eip1193
 const smartAccount = new SmartAccount(provider, {
@@ -120,7 +120,7 @@ if (!isDeploy) {
 
 If your app has implemented sending transactions, or use web3.js, you can wrap the EIP-1193 provider to quickly implement AA wallet.
 
-<pre class="language-typescript"><code class="lang-typescript">import { AAWrapProvider, SendTransactionMode, SendTransactionEvent } from '@particle-network/biconomy';
+<pre class="language-typescript"><code class="lang-typescript">import { AAWrapProvider, SendTransactionMode, SendTransactionEvent } from '@particle-network/aa';
 import Web3 from "web3";
 
 <strong>// sendTxMode: UserPaidNative(default), Gasless, UserSelect
