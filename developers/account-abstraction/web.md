@@ -87,7 +87,7 @@ Builds a `UserOp` object from the provided array of `Transaction`s. It also acce
 
 ```typescript
 // build user operation, feeQuote and tokenPaymasterAddress is optional.
-const userOpBundle = await smartAccount.buildUserOperation({ txs, feeQuote, tokenPaymasterAddress })
+const userOpBundle = await smartAccount.buildUserOperation({ tx, feeQuote, tokenPaymasterAddress })
 const userOp = userOpBundle.userOp;
 const userOpHash = userOpBundle.userOpHash;
 
