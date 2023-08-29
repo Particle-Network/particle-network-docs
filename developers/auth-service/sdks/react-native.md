@@ -116,6 +116,30 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 
 3.8 Edit Podfile, you should follow [Podfile required](ios.md#edit-podfile) to edit Podfile.
 
+
+
+{% hint style="info" %}
+Expo support
+
+if you are developing with Expo. you need add more in ios/Podfile
+
+```ruby
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+    # specify our SDK name and sub moudule name,
+    # this is an example for react-native-particle-auth package
+      if target.name == 'ParticleNetworkBase' or 
+         target.name == 'ParticleAuthService' or 
+         target.name == 'CryptoSwift' or 
+         target.name == 'SwiftyUserDefaults'
+         target.build_configurations.each do |config|
+              config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
+  end
+end
+```
+{% endhint %}
+
 ### Usage
 
 You can get the demo source code from [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth)
