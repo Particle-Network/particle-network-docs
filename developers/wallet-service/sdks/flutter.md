@@ -375,6 +375,32 @@ ParticleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
 // example https://github.com/Particle-Network/particle-ios/blob/main/Demo/Demo/customUIConfig.json
 const json = "";
 ParticleWallet.loadCustomUIJsonString(json);
+```
 
+### Set custom Wallet name and icon
 
+```dart
+ParticleWallet.setCustomWalletName("Your Wallet Name", "your wallet icon url");
+
+// in Android platform, call setWallet and set your wallet name.
+ParticleWallet.setWallet(walletType, pubAddress!, "Your wallet name");
+```
+
+### Set custom localizable
+
+```dart
+// you can replace localizable strings that appeared in 
+// yourIOSBuild/Pods/ParticleWalletGUI/XCFrameworks/ParticleWalletGUI/ParticleWalletGUI.bundle/en.lproj/Locallizable.strings.
+if (Platform.isIOS) {
+  Map<String, String> enLocalizables = <String, String>{
+    "network fee": "Service Fee",
+    "particle auth wallet": "Your wallet name"
+  };
+
+  Map<Language, Map<String, String>> localizables = <Language, Map<String, String>> {
+    Language.en:  enLocalizables
+  };
+
+  ParticleWallet.setCustomLocalizable(localizables);
+}
 ```
