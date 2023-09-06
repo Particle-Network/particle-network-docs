@@ -151,6 +151,18 @@ const result = await particleAuthCore.switchChain(chainInfo);
 console.log(result);
 ```
 
+### Change master password
+
+```typescript
+const result = await particleAuthCore.changeMasterPassword();
+if (result.status) {
+    console.log(result.data);
+} else {
+    const error = result.data;
+    console.log(error);
+}
+```
+
 ### Has set payment password
 
 ```typescript
