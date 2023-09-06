@@ -211,6 +211,13 @@ if (result.status) {
 
 ### EVM Sign
 
+### Get address
+
+```typescript
+const address = await evm.getAddress();
+console.log('evm address ', address);
+```
+
 ### Personal sign and personal sign unique
 
 ```dart
@@ -264,6 +271,13 @@ if (result.status) {
 ```
 
 ### Solana Sign
+
+### Get address
+
+```typescript
+const address = await solana.getAddress();
+console.log('solana address ', address);
+```
 
 ### Sign message
 

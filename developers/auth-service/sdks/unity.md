@@ -11,7 +11,7 @@ Before using, please review [the prerequisites](../../../getting-started/platfor
 1. **Before using the sdk you have to call init(Required)**&#x20;
 
 ```
-ParticleNetwork.Init(new BscChain(BscChainId.Mainnet));
+ParticleNetwork.Init(ChainInfo.Ethereum);
 ```
 
 **2. Drag prefab to your scene**

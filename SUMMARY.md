@@ -78,6 +78,7 @@
     * [iOS](developers/auth-service/core/ios.md)
     * [React Native](developers/auth-service/core/react-native.md)
     * [Web](developers/auth-service/core/web.md)
+    * [Unity](developers/auth-service/core/unity.md)
   * [SDKs](developers/auth-service/sdks/README.md)
     * [Server API](developers/auth-service/sdks/server-api.md)
     * [Android](developers/auth-service/sdks/android.md)
