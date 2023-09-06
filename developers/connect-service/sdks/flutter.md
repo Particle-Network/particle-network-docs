@@ -16,7 +16,7 @@ click [here](https://github.com/Particle-Network/particle-flutter/tree/master/pa
 
 ### 2.Configure Android project
 
-open ${your flutter project} /android/app/build.gradle
+open ${your flutter project} /example/app/build.gradle. reference click [here](https://github.com/Particle-Network/particle-flutter/blob/master/particle-connect/example/android/app/build.gradle)
 
 2.1 add project config and update the minSdkVersion to 23
 
@@ -48,6 +48,20 @@ defaultConfig {
    manifestPlaceholders["PN_PROJECT_ID"] = "772f7499-1d2e-40f4-8e2c-7b6dd47db9de" //your project id
    manifestPlaceholders["PN_PROJECT_CLIENT_KEY"] = "ctWeIc2UBA6sYTKJknT9cu9LBikF00fbk1vmQjsV" //your project client key
    manifestPlaceholders["PN_APP_ID"] = "01a23ce8-d2e9-4b37-9eab-bf477279e53e" //your app id
+}
+
+//Modify these configurations
+dependencies {
+   ...
+}
+//After modification：
+dependencies {
+    modules {
+        module("org.bouncycastle:bcprov-jdk15to18") {
+            replacedBy("org.bouncycastle:bcprov-jdk15on")
+        }
+    }
+    ...
 }
 ```
 
