@@ -4,6 +4,17 @@ description: Changelog
 
 # Changelog
 
+## 20230907
+
+1. New Chains
+   1. opBNB Mainnet
+   2. Scroll Sepolia Testnet
+2. Wallet SDK
+   1. Web
+      1. Add Bridge (powered by [Li.FI](https://li.fi/))
+      2. Add DID support
+      3. Add Swap support for Base and Polygon zkEVM
+
 ## 20230818
 
 1. Auth SDK
