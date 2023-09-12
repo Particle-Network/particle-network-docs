@@ -1,25 +1,26 @@
 # React Native
 
-### 1. Add the Biconomy Service SDK to Your React Native App <a href="#add-sdks" id="add-sdks"></a>
+### 1. Add the Account Abstraction Service SDK to Your React Native App <a href="#add-sdks" id="add-sdks"></a>
 
 Run this command:
 
 ```dart
-npm install react-native-particle-biconomy
+npm install @particle-network/rn-aa
 ```
 
 click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-biconomy) to get the demo source code&#x20;
 
 ### 2. Add Particle Auth or Particle Connect to your project
 
-Biconomy service can't use individually.
+Account Abstraction service can't use individually.
 
 ### Initialize the SDK
 
 **Before using the SDK, you have to call init(Required)**&#x20;
 
-```dart
-import * as particleBiconomy from 'react-native-particle-biconomy';
+```typescript
+import * as particleAA from '@particle-network/rn-aa';
+import { AAVersion } from '@particle-network/rn-auth';
 
 const dappAppKeys = {
       1: 'your ethereum mainnet key',
@@ -27,7 +28,7 @@ const dappAppKeys = {
       137: 'your polygon mainnet key',
       80001: 'your polygon testnet key'
 }
-particleBiconomy.init(BiconomyVersion.v1_0_0, dappAppKeys);
+particleBiconomy.init(Version.v1_0_0, dappAppKeys);
 ```
 
 ### Is support chainInfo
@@ -35,7 +36,7 @@ particleBiconomy.init(BiconomyVersion.v1_0_0, dappAppKeys);
 check if support the chainInfo
 
 ```dart
-const result = await particleBiconomy.isSupportChainInfo(ChainInfo.BSCMainnet);
+const result = await particleAA.isSupportChainInfo(ChainInfo.BSCMainnet);
 ```
 
 ### Is deploy AA wallet
@@ -53,22 +54,22 @@ if (result.status) {
 }
 ```
 
-### Is biconomy mode enable
+### Is AA mode enable
 
 ```dart
-const result = await particleBiconomy.isBiconomyModeEnable();
+const result = await particleBiconomy.isAAModeEnable();
 ```
 
-### Enable biconomy mode
+### Enable AA mode
 
 ```dart
-particleBiconomy.enableBiconomyMode();
+particleBiconomy.enableAAMode();
 ```
 
-### Disable biconomy mode
+### Disable AA mode
 
 ```dart
-particleBiconomy.disableBiconomyMode();
+particleBiconomy.disableAAMode();
 ```
 
 ### Rpc get fee quotes
