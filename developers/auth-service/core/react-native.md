@@ -5,9 +5,9 @@
 Run this command:
 
 ```dart
-npm install react-native-particle-auth-core
+npm install @particle-network/rn-auth-core
 // install react-native-particle-auth to initialize SDK and set custom config.
-npm install react-native-particle-auth
+npm install @particle-network/rn-auth
 ```
 
 click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth-core) to get the demo source code&#x20;
@@ -91,8 +91,8 @@ android {
 You can get the demo source code from [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth-core)
 
 ```typescript
-import * as particleAuthCore from "react-native-particle-auth-core";
-import * as particleAuth from "react-native-particle-auth";
+import * as particleAuthCore from "@particle-network/rn-auth-core";
+import * as particleAuth from "@particle-network/rn-auth";
 ```
 
 ### Initialize the SDK
