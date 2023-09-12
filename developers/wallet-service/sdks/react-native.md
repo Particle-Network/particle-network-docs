@@ -5,7 +5,7 @@
 Run this command:
 
 ```dart
-npm install react-native-particle-wallet
+npm install @particle-network/rn-wallet
 ```
 
 click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-wallet) to get the demo source code&#x20;
