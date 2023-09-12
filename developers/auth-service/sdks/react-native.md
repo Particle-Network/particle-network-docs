@@ -5,7 +5,7 @@
 Run this command:
 
 ```dart
-npm install react-native-particle-auth
+npm install @particle-network/rn-auth
 ```
 
 click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth) to get the demo source code&#x20;
@@ -145,7 +145,7 @@ end
 You can get the demo source code from [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth)
 
 ```typescript
-import * as particleAuth from "react-native-particle-auth";
+import * as particleAuth from "@particle-network/rn-auth";
 ```
 
 ### Initialize the SDK
@@ -269,6 +269,8 @@ web3_wallet_switchEthereumChain = async () => {
 ### Login
 
 ```typescript
+import type { LoginType, SupportAuthType } from '@particle-network/rn-auth' 
+
 const type = LoginType.Phone;
 const supportAuthType = [SupportAuthType.All];
 const result = await particleAuth.login(type, '', supportAuthType);
