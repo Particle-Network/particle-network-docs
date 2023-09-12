@@ -7,7 +7,7 @@
 Run this command:
 
 ```dart
-npm install react-native-particle-connect
+npm install @particle-network/rn-connect
 ```
 
 click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-connect) to get the demo source code&#x20;
@@ -145,7 +145,7 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 ### Usage
 
 ```typescript
-import * as particleConnect from 'react-native-particle-connect';
+import * as particleConnect from '@particle-network/rn-connect';
 ```
 
 ### Initialize the SDK
@@ -194,17 +194,19 @@ particleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 you can use our SDK as a web3 provider
 
 ```typescript
+import Web3 from 'web3';
+
 // Start with new web3, at this time, you don't connect with this walletType, and dont know any publicAddress
-var newWeb3: any;
+var newWeb3: Web3;
 
 // After connected a wallet, restoreWeb3 when getAccounts.
 // We need to check if the walletType and publicAddress is connected. 
-var web3: any;
+var web3: Web3;
 
 newWeb3_getAccounts = async () => {
     try {
         const accounts = await newWeb3.eth.getAccounts();
-        pnaccount = new PNAccount("","",accounts[0],"");
+        pnaccount = new PNAccount("","",accounts[0] as string,"");
         console.log('web3.eth.getAccounts', accounts);
     } catch (error) {
         console.log('web3.eth.getAccounts', error);
@@ -297,7 +299,7 @@ web3_wallet_switchEthereumChain = async () => {
         const chainId = "0x" + EvmService.currentChainInfo.chain_id.toString(16);
         const result = await web3.currentProvider.request({
             method: 'wallet_switchEthereumChain',
-            params: [{ chainId: chainId }]
+            params: [{ chainId }]
         })
         console.log('web3 wallet_switchEthereumChain', result);
     } catch (error) {
@@ -311,7 +313,7 @@ web3_wallet_addEthereumChain = async () => {
         const chainId = "0x" + EvmService.currentChainInfo.chain_id.toString(16);
         const result = await web3.currentProvider.request({
             method: 'wallet_addEthereumChain',
-            params: [{ chainId: chainId }]
+            params: [{ chainId }]
         })
         console.log('web3 wallet_addEthereumChain', result);
     } catch (error) {
@@ -434,7 +436,7 @@ if (result.status) {
 
 ### Sign message
 
-```dart
+```typescript
 const message = "Hello world!"
 const publicAddress = pnaccount.publicAddress;
 const result = await particleConnect.signMessage(walletType, publicAddress, message);
@@ -449,7 +451,7 @@ if (result.status) {
 
 ### Sign transaction
 
-```dart
+```typescript
 const transaction = ""
 const publicAddress = pnaccount.publicAddress;
 const result = await particleConnect.signTransaction(walletType, publicAddress, transaction);
@@ -498,7 +500,7 @@ if (result.status) {
 ```javascript
 const typedData = "{        \"types\": {            \"EIP712Domain\": [                {                    \"name\": \"name\",                    \"type\": \"string\"                },                {                    \"name\": \"version\",                    \"type\": \"string\"                },                {                    \"name\": \"chainId\",                    \"type\": \"uint256\"                },                {                    \"name\": \"verifyingContract\",                    \"type\": \"address\"                }            ],            \"Person\": [                {                    \"name\": \"name\",                    \"type\": \"string\"                },                {                    \"name\": \"wallet\",                    \"type\": \"address\"                }            ],            \"Mail\": [                {                    \"name\": \"from\",                    \"type\": \"Person\"                },                {                    \"name\": \"to\",                    \"type\": \"Person\"                },                {                    \"name\": \"contents\",                    \"type\": \"string\"                }            ]        },        \"primaryType\": \"Mail\",        \"domain\": {            \"name\": \"Ether Mail\",            \"version\": \"1\",            \"chainId\": 5,            \"verifyingContract\": \"0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC\"        },        \"message\": {            \"from\": {                \"name\": \"Cow\",                \"wallet\": \"0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826\"            },            \"to\": {                \"name\": \"Bob\",                \"wallet\": \"0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB\"            },            \"contents\": \"Hello, Bob!\"        }}        ";
 const publicAddress = pnaccount.publicAddress;
-const result javjav= await particleConnect.signTypedData(walletType, publicAddress, typedData);
+const result = await particleConnect.signTypedData(walletType, publicAddress, typedData);
 if (result.status) {
     const signature = result.data;
     console.log(signature);
