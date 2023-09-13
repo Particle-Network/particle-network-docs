@@ -28,7 +28,7 @@ const dappAppKeys = {
       137: 'your polygon mainnet key',
       80001: 'your polygon testnet key'
 }
-particleBiconomy.init(AAVersion.v1_0_0, dappAppKeys);
+particleAA.init(AAVersion.v1_0_0, dappAppKeys);
 ```
 
 ### Is support chainInfo
@@ -96,15 +96,15 @@ const amount = TestAccountEVM.amount;
 const transaction = await Helper.getEthereumTransacion(eoaAddress, receiver, amount);
 
 // send transaction in auto mode, auto means use native to pay gas fee.
-const result = await particleAuth.signAndSendTransaction(transaction, BiconomyFeeMode.auto())
+const result = await particleAuth.signAndSendTransaction(transaction, AAFeeMode.auto())
     
 // send transaction in gasless mode, gasless means user dont need to pay gas fee. 
-const result = await particleAuth.signAndSendTransaction(transaction, BiconomyFeeMode.gasless())
+const result = await particleAuth.signAndSendTransaction(transaction, AAFeeMode.gasless())
         
 // send transaction in custom mode, custom means user pick one token or native to pay gas fee. 
 const feeQutotes = await particleAA.rpcGetFeeQuotes(eoaAddress, [transaction]);
 // pick one quote 
-const result = await particleAuth.signAndSendTransaction(transaction, BiconomyFeeMode.custom(feeQutotes[0]))
+const result = await particleAuth.signAndSendTransaction(transaction, AAFeeMode.custom(feeQutotes[0]))
 
 if (result.status) {
     const signature = result.data;
@@ -126,11 +126,11 @@ const walletType = WalletType.MetaMask;
 const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, 
     
 // send transaction in gasless mode, gasless means user dont need to pay gas fee. 
-const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, BiconomyFeeMode.gasless())
+const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, AAFeeMode.gasless())
 
 // send transaction in custom mode, custom means user pick one token or native to pay gas fee. 
 const feeQutotes = await particleAA.rpcGetFeeQuotes(eoaAddress, [transaction]);
-const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, BiconomyFeeMode.custom(feeQutotes[0]))
+const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, AAFeeMode.custom(feeQutotes[0]))
 
 
 if (result.status) {
@@ -154,7 +154,7 @@ const transaction = await Helper.getEthereumTransacion(eoaAddress, receiver, amo
 const transactions = [transaction, transaction];
 
 // support auto, gasless and custom feeMode.
-const result = await particleAuth.batchSendTransactions(transactions, BiconomyFeeMode.auto);
+const result = await particleAuth.batchSendTransactions(transactions, AAFeeMode.auto);
 if (result.status) {
     const signature = result.data;
     console.log('signAndSendTransaction result', signature);
@@ -173,7 +173,7 @@ const walletType = WalletType.MetaMask;
 // get your transaction array
 const transactions = [transaction, transaction];
 
-const result = await particleConnect.batchSendTransactions(this.walletType, this.publicAddress, transactions, BiconomyFeeMode.auto());
+const result = await particleConnect.batchSendTransactions(this.walletType, this.publicAddress, transactions, AAFeeMode.auto());
 if (result.status) {
     const signature = result.data;
     console.log('signature', signature);
