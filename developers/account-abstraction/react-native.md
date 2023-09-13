@@ -28,7 +28,7 @@ const dappAppKeys = {
       137: 'your polygon mainnet key',
       80001: 'your polygon testnet key'
 }
-particleBiconomy.init(Version.v1_0_0, dappAppKeys);
+particleBiconomy.init(AAVersion.v1_0_0, dappAppKeys);
 ```
 
 ### Is support chainInfo
@@ -43,7 +43,7 @@ const result = await particleAA.isSupportChainInfo(ChainInfo.BSCMainnet);
 
 ```dart
 const eoaAddress = "";
-const result = await particleBiconomy.isDeploy(eoaAddress);
+const result = await particleAA.isDeploy(eoaAddress);
 
 if (result.status) {
     const isDeploy = result.data;
@@ -57,19 +57,19 @@ if (result.status) {
 ### Is AA mode enable
 
 ```dart
-const result = await particleBiconomy.isAAModeEnable();
+const result = await particleAA.isAAModeEnable();
 ```
 
 ### Enable AA mode
 
 ```dart
-particleBiconomy.enableAAMode();
+particleAA.enableAAMode();
 ```
 
 ### Disable AA mode
 
 ```dart
-particleBiconomy.disableAAMode();
+particleAA.disableAAMode();
 ```
 
 ### Rpc get fee quotes
@@ -84,7 +84,7 @@ const amount = TestAccountEVM.amount;
 const transaction = await Helper.getEthereumTransacion(eoaAddress, receiver, amount);
 
 console.log('transaction', transaction);
-const result = await particleBiconomy.rpcGetFeeQuotes(eoaAddress, [transaction]);
+const result = await particleAA.rpcGetFeeQuotes(eoaAddress, [transaction]);
 ```
 
 ### SignAndSendTransaction with Auth Service
@@ -102,7 +102,7 @@ const result = await particleAuth.signAndSendTransaction(transaction, BiconomyFe
 const result = await particleAuth.signAndSendTransaction(transaction, BiconomyFeeMode.gasless())
         
 // send transaction in custom mode, custom means user pick one token or native to pay gas fee. 
-const feeQutotes = await particleBiconomy.rpcGetFeeQuotes(eoaAddress, [transaction]);
+const feeQutotes = await particleAA.rpcGetFeeQuotes(eoaAddress, [transaction]);
 // pick one quote 
 const result = await particleAuth.signAndSendTransaction(transaction, BiconomyFeeMode.custom(feeQutotes[0]))
 
@@ -129,7 +129,7 @@ const result = await particleConnect.signAndSendTransaction(this.walletType, thi
 const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, BiconomyFeeMode.gasless())
 
 // send transaction in custom mode, custom means user pick one token or native to pay gas fee. 
-const feeQutotes = await particleBiconomy.rpcGetFeeQuotes(eoaAddress, [transaction]);
+const feeQutotes = await particleAA.rpcGetFeeQuotes(eoaAddress, [transaction]);
 const result = await particleConnect.signAndSendTransaction(this.walletType, this.publicAddress, transaction, BiconomyFeeMode.custom(feeQutotes[0]))
 
 
