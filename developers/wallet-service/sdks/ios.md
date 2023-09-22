@@ -978,8 +978,8 @@ ParticleWalletGUI.setPriorityNFTContractAddresses([nftContractAddress])
 // The method works on the wallet page token list and token send select page.
 ParticleWalletGUI.setCustomTokenAddresses([tokenAddress])
 
-// Set custom ui is pass json string
-let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
+<strong>// Set custom ui is pass json string
+</strong>let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
 try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
 
 // Set your wallet name and icon, only support WalletType particle and authcore

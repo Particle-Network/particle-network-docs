@@ -301,6 +301,14 @@ ParticleNetwork.setLanguage(.ja)
 let language = ParticleNetwork.getLanguage()
 ```
 
+### Set custom UI json string
+
+```swift
+// Set custom ui is pass json string
+let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
+Auth.loadCustomUIJsonString(jsonString)
+```
+
 ### Error
 
 Try cast error into type `ParticleNetwork.Response`, you can check the information by printing its attributes.&#x20;
