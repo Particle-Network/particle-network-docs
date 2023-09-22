@@ -4,10 +4,10 @@
 
 * Finish integration with either [Auth Service](../auth-service/sdks/ios.md) or [Connect Service](../connect-service/sdks/ios.md)
 
-Add ParticleBiconomy to your Podfile.
+Add ParticleAA to your Podfile.
 
 ```
-pod 'ParticleBiconomy'
+pod 'ParticleAA'
 ```
 
 Install the pods
@@ -28,33 +28,33 @@ let dappApiKeys: [Int: String] = [
     ParticleNetwork.ChainInfo.polygon(.mainnet).chainId: "YOUR_DAPP_API_KEY",
     ParticleNetwork.ChainInfo.polygon(.mumbai).chainId: "YOUR_DAPP_API_KEY"
 ]
-BiconomyService.initialize(dappApiKeys: dappApiKeys)
+AAService.initialize(dappApiKeys: dappApiKeys)
 
-// after initialize, set a biconomy service object to ParticleNetwork.
-let biconomyService = BiconomyService()
-ParticleNetwork.setBiconomyService(biconomyService)
+// after initialize, set a aa service object to ParticleNetwork.
+let aaService = AAService()
+ParticleNetwork.setAAService(aaService)
 ```
 
-### Enable biconomy service
+### Enable aa service
 
-After enable biconomy service, The address displayed on the wallet page will display the SmartAccount address. and the signAndSendTransaction method will change the way transactions are sent.
+After enable aa service, The address displayed on the wallet page will display the SmartAccount address. and the signAndSendTransaction method will change the way transactions are sent.
 
 ```swift
-biconomyService.enableBiconomyMode()
+aaService.enableAAMode()
 ```
 
-### Disable biconomy service
+### Disable aa service
 
-After disable biconomy service, smart account will not work.
+After disable aa service, smart account will not work.
 
 ```swift
-biconomyService.disableBiconomyMode()
+aaService.disableAAMode()
 ```
 
-### Get biconomy service enable state
+### Get aa service enable state
 
 ```swift
-let isEnable = biconomyService.isBiconomyModeEnable()
+let isEnable = aayService.isAAModeEnable()
 ```
 
 ### Get fee quotes before send
@@ -62,11 +62,11 @@ let isEnable = biconomyService.isBiconomyModeEnable()
 before send you can check if you have enough native or tokens to pay, or if gasless is available.
 
 ```swift
-let biconomy = ParticleNetwork.getBiconomyService()!
+let aa = ParticleNetwork.getAAService()!
         
 let eoaAddress = ""
 let transactions = ["", ""]
-let wholeFeeQuote = try await biconomy.rpcGetFeeQuotes(eoaAddress: eoaAddress, transactions: transactions).value
+let wholeFeeQuote = try await aa.rpcGetFeeQuotes(eoaAddress: eoaAddress, transactions: transactions).value
     
 if wholeFeeQuote.gasless != nil {
     // you can gasless
@@ -74,7 +74,7 @@ if wholeFeeQuote.gasless != nil {
     // you cant gasless
 }
     
-let natvieFeeQuote = Biconomy.FeeQuote(json: wholeFeeQuote.native.feeQuote, tokenPaymasterAddress: "")
+let natvieFeeQuote = AA.FeeQuote(json: wholeFeeQuote.native.feeQuote, tokenPaymasterAddress: "")
 if natvieFeeQuote.isEnoughForPay {
     // you can pay native for gas fee
 } else {
@@ -83,7 +83,7 @@ if natvieFeeQuote.isEnoughForPay {
 
 let tokenPaymasterAddress = wholeFeeQuote.token.tokenPaymasterAddress
 let tokenFeeQuotes = wholeFeeQuote.token.feeQuotes.map {
-    Biconomy.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
+    AA.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
 }.filter {
     // filter out balance >= fee
     $0.isEnoughForPay
@@ -98,15 +98,15 @@ if tokenFeeQuotes.count > 0 {
 
 ### Send transaction, support multi transactions&#x20;
 
-you need create a BiconomyService instance, then call quickSendTransactions mehod&#x20;
+you need create a AAService instance, then call quickSendTransactions mehod&#x20;
 
 ```swift
-let biconomyService = BiconomyService()
+let aaService = Service()
 ///   - transactions: The transaction requires a hexadecimal string starting with "0x".
 ///   - feeMode: Fee mode, if you want to custom feeMode, you need to get a feeQuote from rpcGetFeeQuotes method
 ///   - messageSigner: Message signer
 ///   - wholeFeeQuote: Optional, the result of from rpcGetFeeQuotes
-biconomyService.quickSendTransactions(transactions, feeMode: .gasless, messageSigner: messageSigner, wholeFeeQuote: wholeFeeQuote)
+aaService.quickSendTransactions(transactions, feeMode: .gasless, messageSigner: messageSigner, wholeFeeQuote: wholeFeeQuote)
 ```
 
 ### Send one transaction with [ParticleAuthService](../auth-service/sdks/ios.md)
@@ -126,7 +126,7 @@ ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .native)
 // 3. token
 // send user paid transaction, select token to pay gas fee.
 // select a feeQuote from rpcGetFeeQuotes method
-var feeQuote: Biconomy.FeeQuote
+var feeQuote: AA.FeeQuote
 ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .token(feeQuote))
 ```
 
@@ -149,38 +149,38 @@ adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode
 // send user paid transaction, select token to pay gas fee.
 // get a feeQuote from rpcGetFeeQuotes method
 // just call rpc to send, never check if it is available.
-var feeQuote: Biconomy.FeeQuote
+var feeQuote: AA.FeeQuote
 adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode: .token(feeQuote))
 ```
 
 ### Deploy Wallet Contract Manual
 
 ```typescript
-let biconomyService = BiconomyService()
+let aaService = AAService()
 // check the constract is deployed
-let isDeploy = try await biconomyService.isDeploy(eoaAddress: eoaAddress).value
+let isDeploy = try await aaService.isDeploy(eoaAddress: eoaAddress).value
 
 // if isDeploy is false, call deployWalletContract to deploy
-biconomyService.deployWalletContract(messageSigner: signer, feeMode: .gasless)
+aaService.deployWalletContract(messageSigner: signer, feeMode: .gasless)
 ```
 
 ### More methods
 
-There are other methods, and all Account Abstraction methods are defined in  BiconomyServiceProtocol.
+There are other methods, and all Account Abstraction methods are defined in  AAServiceProtocol.
 
 ```swift
-public protocol BiconomyServiceProtocol {
+public protocol AAServiceProtocol {
     /// Rpc method, get smart account
     /// - Parameter addresses: Eoa address array
     /// - Returns: Smart account info array
-    func rpcGetSmartAccount(eoaAddresses: [String]) -> Single<[Biconomy.SmartAccountInfo]>
+    func rpcGetSmartAccount(eoaAddresses: [String]) -> Single<[AA.SmartAccountInfo]>
     
     /// Rpc method, get fee quotes
     /// - Parameters:
     ///   - eoaAddress: Eoa address
     ///   - transactions: Transactions array
     /// - Returns: WholeFeeQuote
-    func rpcGetFeeQuotes(eoaAddress: String, transactions: [String]) -> Single<Biconomy.WholeFeeQuote>
+    func rpcGetFeeQuotes(eoaAddress: String, transactions: [String]) -> Single<AA.WholeFeeQuote>
     
     /// Rpc method, create user op
     /// - Parameters:
@@ -189,7 +189,7 @@ public protocol BiconomyServiceProtocol {
     ///   - feeQuote: Fee quote, you can get this feeQuote from rpcGetFeeQuotes method.
     ///   - tokenPaymasterAddress: Token paymaster address
     /// - Returns: UserOp object.
-    func rpcCreateUserOp(eoaAddress: String, transactions: [String], feeQuote: Biconomy.FeeQuote, tokenPaymasterAddress: String) -> Single<Biconomy.UserOp>
+    func rpcCreateUserOp(eoaAddress: String, transactions: [String], feeQuote: AA.FeeQuote, tokenPaymasterAddress: String) -> Single<AA.UserOp>
 
     /// Rpc method, send user paid transaction
     /// - Parameters:
@@ -201,12 +201,12 @@ public protocol BiconomyServiceProtocol {
     /// Get smart account, if it can get smart account from local database, should return it directly, otherwise get it from rpc.
     /// - Parameter eosAddress: Eoa address
     /// - Returns: Smart account info
-    func getSmartAccount(by eosAddress: String) -> Single<Biconomy.SmartAccountInfo>
+    func getSmartAccount(by eosAddress: String) -> Single<AA.SmartAccountInfo>
     
     /// Get smart accounts, if it can get smart accounts from local database, should return them directly, otherwise get them from rpc.
     /// - Parameter publicAddreses: Eoa addresses
     /// - Returns: Smart account infos
-    func getSmartAccounts(by publicAddreses: [String]) -> Single<[Biconomy.SmartAccountInfo]>
+    func getSmartAccounts(by publicAddreses: [String]) -> Single<[AA.SmartAccountInfo]>
     
     /// Check if support chain info
     /// - Parameter chainInfo: Chain info
