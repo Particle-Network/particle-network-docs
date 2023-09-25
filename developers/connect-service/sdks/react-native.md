@@ -134,7 +134,7 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
     &#x3C;string>mathwallet&#x3C;/string>
     &#x3C;string>1inch&#x3C;/string>
     &#x3C;string>awallet&#x3C;/string>
-    &#x3C;string>bitpie&#x3C;/string>
+    &#x3C;string>okex&#x3C;/string>
 &#x3C;/array>
 </code></pre>
 

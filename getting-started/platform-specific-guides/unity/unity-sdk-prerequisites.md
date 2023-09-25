@@ -189,7 +189,7 @@ dependencies {
     <string>mathwallet</string>
     <string>1inch</string>
     <string>awallet</string>
-    <string>bitpie</string>
+    <string>okex</string>
 </array>
 ```
 

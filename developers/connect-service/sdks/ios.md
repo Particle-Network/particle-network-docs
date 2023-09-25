@@ -159,7 +159,7 @@ let moreAdapterClasses: [WalletConnectAdapter.Type] =
       Inch1ConnectAdapter.self,
       ZengoConnectAdapter.self,
       AlphaConnectAdapter.self,
-      BitpieConnectAdapter.self]
+      OKXConnectAdapter.self]
 
 adapters.append(contentsOf: moreAdapterClasses.map {
      $0.init()
@@ -226,7 +226,7 @@ each of them is optional, you can add which you want.
         <string>mathwallet</string>
         <string>1inch</string>
         <string>awallet</string>
-        <string>bitpie</string>
+        <string>okex</string>
 </array>
 ```
 
