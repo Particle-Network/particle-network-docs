@@ -4,6 +4,13 @@ description: Changelog
 
 # Changelog
 
+## 20230925
+
+1. We've released a brand new UI that supports simpler and more flexible configurations
+2. Fixes an issue where Chrome may not persist a user's wallet login state
+3. Wallet SDK
+   1. Add the ability to hide scam NFTs
+
 ## 20230907
 
 1. New Chains
