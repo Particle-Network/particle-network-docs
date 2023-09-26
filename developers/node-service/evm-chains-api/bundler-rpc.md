@@ -104,8 +104,7 @@ Response
     "verificationGas": "0x0123b5",
     "verificationGasLimit": "0x0123b5",
     "callGasLimit": "0x01c097"
-  }
-
+}
 ```
 
 ## eth\_sendUserOperation
@@ -313,7 +312,6 @@ Response
     "isPending": true
   }
 }
-
 ```
 
 ## Demos
