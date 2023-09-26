@@ -143,6 +143,7 @@
   * [iOS](developers/account-abstraction/ios.md)
   * [Flutter](developers/account-abstraction/flutter.md)
   * [React Native](developers/account-abstraction/react-native.md)
+  * [Unity](developers/account-abstraction/unity.md)
   * [RPC](developers/account-abstraction/rpc.md)
 * [⏭ What Else](developers/what-else.md)
 * [📚 Demo Applications](developers/demo-applications/README.md)
