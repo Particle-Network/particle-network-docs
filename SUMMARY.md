@@ -48,7 +48,7 @@
   * [Manage Assets](getting-started/dashboard/manage-assets.md)
 * [🧩 Platform-specific Guides](getting-started/platform-specific-guides/README.md)
   * [Web](getting-started/platform-specific-guides/web.md)
-  * [Andriod](getting-started/platform-specific-guides/andriod.md)
+  * [Android](getting-started/platform-specific-guides/android.md)
   * [iOS](getting-started/platform-specific-guides/ios.md)
   * [Unity](getting-started/platform-specific-guides/unity/README.md)
     * [Unity SDK Prerequisites](getting-started/platform-specific-guides/unity/unity-sdk-prerequisites.md)

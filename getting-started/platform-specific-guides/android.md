@@ -1,8 +1,8 @@
 ---
-description: All you need to know for integrating Particle on Andriod
+description: All you need to know for integrating Particle on Android
 ---
 
-# Andriod
+# Android
 
 ## General
 
@@ -22,7 +22,7 @@ description: All you need to know for integrating Particle on Andriod
 [dashboard](../dashboard/)
 {% endcontent-ref %}
 
-## For Andriod
+## For Android
 
 ### SDKs
 
