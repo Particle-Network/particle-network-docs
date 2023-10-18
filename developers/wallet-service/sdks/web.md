@@ -22,7 +22,7 @@ iframe?.allow = 'camera';
 
 ### Open Wallet By Particle Auth
 
-When your DApp integration [Particle Auth](../../auth-service/sdks/web.md#open-particle-web-wallet), you can call `openWalllet()` open wallet.
+When your DApp integration [Particle Auth](../../auth-service/sdks/web.md#open-particle-web-wallet), you can call `openWallet()` open wallet.
 
 ## Custom Particle Wallet Style
 
