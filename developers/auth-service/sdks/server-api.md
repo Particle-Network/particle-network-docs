@@ -313,6 +313,75 @@ Response example:
 }
 ```
 
+### :fire: isProjectUser
+
+> Check if the user's address has interacted with your project
+
+**Parameters:**
+
+* `<string>` - chain, wallets chain name, the type value is as below
+  * `solana`
+  * `evm_chain`
+* `<string>` - user address
+
+{% hint style="info" %}
+Only verified contract can be locked for user wallet, please add and verify your contract/program address first [👉 Dashboard](https://dashboard.particle.network/), and testnet will not check the contract is verified.
+{% endhint %}
+
+**Results:**
+
+`<bool>`&#x20;
+
+#### Request example:
+
+{% tabs %}
+{% tab title="Javascript" %}
+```typescript
+const axios = require("axios");
+
+(async () => {
+  const response = await axios.post(
+    "https://api.particle.network/server/rpc",
+    {
+      jsonrpc: "2.0",
+      id: 0,
+      method: "isProjectUser",
+      params: ["evm_chain", "0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF"],
+    },
+    {
+      auth: {
+        username: "Your Project Id",
+        password: "Your Project Server Key",
+      },
+    }
+  );
+
+  console.log(response.data);
+})();
+```
+{% endtab %}
+
+{% tab title="Curl" %}
+```powershell
+curl 'https://api.particle.network/server/rpc' \
+--header 'Authorization: Basic YmEwNTA5ZTctZThiYi00MzY2LTg5YjctYjM5ZjAyYmNkMDg0OmNnZjE4YXNMbG9zSkJzZlZXbWxvNHNuZ2lFRVZzc1gzNHFlTUxmZzQ=' \
+-X POST -H "Content-Type: application/json" -d '
+    {"jsonrpc":"2.0","id":0,"method":"isProjectUser","params":["evm_chain","0x6D5fCEd0C74F22a1B145ef48B25527Ce9BF829bF"]}
+'
+```
+{% endtab %}
+{% endtabs %}
+
+Response example:
+
+```typescript
+{
+    "jsonrpc": "2.0", 
+    "id": 0, 
+    "result": true
+}
+```
+
 ## Errors
 
 [👉](https://particle.network/#/login) [Check RPC errors](../../node-service/error-reference.md)
