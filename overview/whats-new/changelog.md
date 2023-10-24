@@ -18,6 +18,8 @@ description: Changelog
    1. Add built-in support for Biconomy Account, Cyber Account, and Simple Account
    2. Bundler supports more chains🔥 [Check👀](../../developers/node-service/evm-chains-api/bundler-rpc.md)
    3. Releasing our Modular Smart Wallet-as-a-Service
+3. Server API
+   1. Add API to check if the wallet address belongs to the project -> [doc](../../developers/auth-service/sdks/server-api.md#isprojectuser)
 
 ## 20230925
 
