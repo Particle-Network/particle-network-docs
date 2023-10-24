@@ -4,6 +4,21 @@ description: Changelog
 
 # Changelog
 
+## 20231023
+
+1. New Chains
+   1. Scroll Mainnet
+   2. Manta Mainnet
+   3. Taiko Jolnir Testnet
+   4. ZetaChain Testnet
+   5. OpSide Alpha Testnet
+   6. EOS EVM Mainnet & Testnet
+   7. Kava Mainnet & Testnet
+2. Account Abstraction
+   1. Add built-in support for Biconomy Account, Cyber Account, and Simple Account
+   2. Bundler supports more chains🔥 [Check👀](../../developers/node-service/evm-chains-api/bundler-rpc.md)
+   3. Releasing our Modular Smart Wallet-as-a-Service
+
 ## 20230925
 
 1. We've released a brand new UI that supports simpler and more flexible configurations
