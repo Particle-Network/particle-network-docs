@@ -14,14 +14,14 @@ description: MPC + AA is here!
 
 1. Social Login by Particle Auth - MPC-TSS
 2. Smart Wallet Lazy Deployment
-3. Gasless Transactions: sponsor transactions as your wish
+3. Gasless Transactions: sponsor transactions as you wish
 4. Pay Gas using any ERC-20 Tokens
 5. Batch Transactions
-6. More features coming soon
-   1. Session Keys
-   2. ERC 6492
-   3. Social Recovery
-   4. ...
+6. Session Keys
+7. ERC 6492
+8.  Social Recovery
+
+    ...
 
 ## Try now
 
