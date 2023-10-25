@@ -1,8 +1,10 @@
 ---
-description: MPC + AA is here!
+description: Modular Smart Wallet-as-a-Service
 ---
 
 # 💫 Account Abstraction
+
+<figure><img src="../../.gitbook/assets/img_v2_7c036add-89e6-4709-a579-0a50af3c9bfg.png" alt=""><figcaption><p>Particle Netowork's Modular Smart Wallet-as-a-Service Architecture</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/Biconomy.png" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
 
@@ -26,7 +28,7 @@ description: MPC + AA is here!
 ## Try now
 
 1. Go to [https://wallet.particle.network/](https://wallet.particle.network/)
-2. Login: use social accounts or any supported wallets
+2. Login: Use social accounts or any supported wallets
 3. Go to **Setting** -> **Experimental** -> Turn on **Set 4337 mode**
 
 ## Demo Videos
