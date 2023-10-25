@@ -26,10 +26,24 @@ const smartAccount = new SmartAccount(provider, {
     projectId: 'particle project id',
     clientKey: 'particle client key',
     appId: 'particle app id',
-    networkConfig: [
-        { dappAPIKey: 'biconomy api key', chainId: 1 },
-        { dappAPIKey: 'biconomy api key', chainId: 5 }
-    ],
+    aaOptions: {
+        biconomy: [{
+            chainId: xx,
+            version: '1.0.0',
+        }],
+        cyberConnect: [{
+            chainId: xx,
+            version: '1.0.0',
+        }],
+        simple: [{
+            chainId: xx,
+            version: '1.0.0',
+        }],
+        paymasterApiKeys: [{
+            chainId: 1,
+            apiKey: 'biconomy paymaster api key',
+        }]
+    },
 });
 ```
 
