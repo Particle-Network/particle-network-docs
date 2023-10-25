@@ -27,7 +27,7 @@ description: Modular Smart Wallet-as-a-Service
 
 1. Go to [https://wallet.particle.network/](https://wallet.particle.network/)
 2. Login: Use social accounts or any supported wallets
-3. Go to **Setting** -> **Experimental** -> Turn on **Set 4337 mode**
+3. Go to **Setting** -> **Smart Account** -> Choose one **Smart Account**
 
 ## Demo Videos
 
