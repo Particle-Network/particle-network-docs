@@ -6,8 +6,6 @@ description: Modular Smart Wallet-as-a-Service
 
 <figure><img src="../../.gitbook/assets/img_v2_7c036add-89e6-4709-a579-0a50af3c9bfg.png" alt=""><figcaption><p>Particle Netowork's Modular Smart Wallet-as-a-Service Architecture</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Biconomy.png" alt=""><figcaption><p><strong>Particle Network</strong> and <strong>Biconomy</strong></p></figcaption></figure>
-
 {% content-ref url="available-networks.md" %}
 [available-networks.md](available-networks.md)
 {% endcontent-ref %}
