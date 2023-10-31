@@ -14,4 +14,8 @@
 12. BNB Chain Mainnet & Testnet
 13. opBNB Mainnet & Testnet
 14. Combo Testnet
-15. ... more chains are coming
+15. PGN Mainnet & Testnet
+16. Gnosis Mainnet & Testnet
+17. Astar zkEVM Testnet
+18. OKBC Testnet
+19. ... more chains are coming

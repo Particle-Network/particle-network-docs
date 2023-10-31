@@ -4,6 +4,14 @@ description: Changelog
 
 # Changelog
 
+## 20231031
+
+1. Smart Wallet-as-a-Service adds new chains
+   1. PGN Mainnet & Testnet
+   2. Gnosis Mainnet & Testnet
+   3. Astar zkEVM Testnet
+   4. OKBC Testnet
+
 ## 20231023
 
 1. New Chains
