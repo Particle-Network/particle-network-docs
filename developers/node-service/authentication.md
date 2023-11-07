@@ -33,6 +33,22 @@ The Web3 APIs require **HTTP Basic Authentication**:
 | Username       | Your Project Id                      |
 | Password       | Your Project Client Key / Server Key |
 
+## chainId
+
+1. You can add it to the URL as param: **chainId=xxx**
+2. OR You can add it to the JSON RPC request&#x20;
+
+```json
+{
+  "chainId": 1, // set chainId here
+  "jsonrpc": "2.0",
+  "id": "5a91fd28-88a5-4a13-bfa3-bad1cbc048e9",
+  "method": "eth_getBalance",
+  "params": ["0xE860aE9379B1902DC08F67F50de7b9CC066AF0FF", "latest"]
+}
+
+```
+
 ## Code Example
 
 {% tabs %}
