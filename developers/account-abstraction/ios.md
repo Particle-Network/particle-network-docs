@@ -159,7 +159,7 @@ var feeQuote: AA.FeeQuote
 adapter.signAndSendTransaction(publicAddress: publicAddress, tranaction, feeMode: .token(feeQuote))
 ```
 
-### Deploy Wallet Contract Manual
+### Manually deploy a Smart Account
 
 ```typescript
 let aaService = AAService()
