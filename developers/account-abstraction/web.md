@@ -10,11 +10,17 @@ yarn add @particle-network/aa
 npm install @particle-network/aa
 ```
 
+## Before Start
+
+1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
+2. If you want to use Particle Paymaster on Mainnet, please get in touch with Particle Team to enable it;
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/),  create Paymaster & get dappApiKey.
+
 ## Initialize the SmartAccount
 
 You need to create a Particle project to connect to your app, Visit [Particle Dashboard](../../getting-started/dashboard/) to learn more about Particle projects and apps.
 
-And create a Biconomy Paymasters to connect AA, Visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
+(Optional) And create a Biconomy Paymasters to connect AA, Visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
 
 The provider is [EIP-1193: Ethereum Provider JavaScript API ](https://eips.ethereum.org/EIPS/eip-1193), you can use Particle Provider, MetaMask Provider or any EVM wallet provider.
 

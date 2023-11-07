@@ -80,7 +80,7 @@ only support solana, create a `SignTransaction` function in the Widget Blueprint
 1. `Transaction`: the transaction to be signed by Particle Auth Service. request base58 string
 2. `OnSignTransactionEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Sign transaction</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Sign transaction</p></figcaption></figure>
 
 ### Sign all transactions
 

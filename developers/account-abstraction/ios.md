@@ -16,9 +16,15 @@ Install the pods
 pod install --repo-update
 ```
 
+## Before Start
+
+1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
+2. If you want to use Particle Paymaster on Mainnet, please get in touch with Particle Team to enable it;
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/),  create Paymaster & get dappApiKey.
+
 ## Initialize
 
-The dappApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
+(Optional) The dappApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
 
 ```swift
 let dappApiKeys: [Int: String] = [
