@@ -18,4 +18,10 @@
 16. Gnosis Mainnet & Testnet
 17. Astar zkEVM Testnet
 18. OKBC Testnet
-19. ... more chains are coming
+19. Viction Mainnet & Testnet
+20. Moonbeam, Moonriver & Moonbase
+21. Polygon zkEVM Mainnet & Testnet
+22. Fantom Mainnet & Testnet
+23. Lumoz zkEVM Testnet
+24. ReadON Testnet
+25. ... more chains are coming

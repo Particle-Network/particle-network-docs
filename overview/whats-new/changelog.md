@@ -4,6 +4,19 @@ description: Changelog
 
 # Changelog
 
+## 20231107
+
+1. New Chains
+   1. Viction Mainnet & Testnet
+   2. Lumoz zkEVM Testnet
+2. Smart Wallet-as-a-Service adds new chains
+   1. Viction Mainnet & Testnet
+   2. Moonbeam, Moonriver & Moonbase
+   3. Lumoz zkEVM Testnet
+   4. ReadON Testnet
+   5. Polygon zkEVM Mainnet & Testnet
+   6. Fantom Mainnet & Testnet
+
 ## 20231031
 
 1. Smart Wallet-as-a-Service adds new chains
