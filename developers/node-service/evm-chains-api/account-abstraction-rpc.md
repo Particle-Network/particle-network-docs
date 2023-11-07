@@ -20,6 +20,19 @@ Create Paymaster [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/
 5. If the user is eligible and chooses token gas payment, first call `particle_aa_createUserOp` to create a `userOp` and the corresponding `userOpHash`; then sign `userOpHash`, add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
 6. The `result` returned by `particle_sendUserOp` is the `txHash`.
 
+## Common Params
+
+The first param for params field of JSON RPC is **account config**, the structure is as follow:
+
+```json
+  {
+    "name": "BICONOMY", // SIMPLE | CYBERCONNECT | BICONOMY
+    "version": "1.0.0", // only 1.0.0 now
+    "ownerAddress": "0x8d5f6E013b74D3aBa5cEB483fD5209C8Dab794E9", // The Owner's address for the Smart Account
+    "biconomyApiKey": "dappApiKey" // optional: Biconomy Paymaster ApiKey if you use Biconomy Paymaster
+  }
+```
+
 ## particle\_aa\_getSmartAccount
 
 Request
@@ -31,11 +44,17 @@ Request
   "chainId": 80001,
   "method": "particle_aa_getSmartAccount",
   "params": [
-    // owner address array
-    [
-      "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5",
-      "0x329a7f8b91Ce7479035cb1B5D62AB41845830Ce8"
-    ]
+    // account config array
+    {
+      "name": "BICONOMY",
+      "version": "1.0.0",
+      "ownerAddress": "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5"
+    },
+    {
+      "name": "BICONOMY",
+      "version": "1.0.0",
+      "ownerAddress": "0x329a7f8b91Ce7479035cb1B5D62AB41845830Ce8"
+    }
   ]
 }
 ```
@@ -58,6 +77,7 @@ Response
       "owner": "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5",
       "entryPointAddress": "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789",
       "index": 0,
+      "name": "BICONOMY",
       "version": "1.0.0"
     },
     {
@@ -71,6 +91,7 @@ Response
       "index": 0,
       "implementationAddress": "0x00006B7e42e01957dA540Dc6a8F7C30c4D816af5",
       "fallBackHandlerAddress": "0xa04EeF9bBFd8F64d5218d4f3a3d03e8282810F51",
+      "name": "BICONOMY",
       "version": "1.0.0",
       "createdAt": 1691460553368,
       "updatedAt": 1691460553368
@@ -91,8 +112,13 @@ Request
   "chainId": 80001,
   "method": "particle_aa_getFeeQuotes",
   "params": [
-    "LdF-gC43H.6f0ec763-fde5-4d5e-89f6-1b9ef12ba4a4", // dappApiKey
-    "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5", // owner address
+    // account config
+    {
+      "name": "BICONOMY",
+      "version": "1.0.0",
+      "ownerAddress": "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5",
+      "biconomyApiKey": "LdF-gC43H.6f0ec763-fde5-4d5e-89f6-1b9ef12ba4a4" // optional
+    },
     // txs
     [
       {
@@ -243,8 +269,13 @@ Request
   "chainId": 80001,
   "method": "particle_aa_createUserOp",
   "params": [
-    "LdF-gC43H.6f0ec763-fde5-4d5e-89f6-1b9ef12ba4a4", // dappApiKey
-    "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5", // ownerAddress
+    // account config
+    {
+      "name": "BICONOMY",
+      "version": "1.0.0",
+      "ownerAddress": "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5",
+      "biconomyApiKey": "LdF-gC43H.6f0ec763-fde5-4d5e-89f6-1b9ef12ba4a4" // optional
+    },
     // txs
     [
       {
@@ -311,8 +342,13 @@ Request
   "chainId": 80001,
   "method": "particle_aa_sendUserOp",
   "params": [
-    "LdF-gC43H.6f0ec763-fde5-4d5e-89f6-1b9ef12ba4a4", // dappApiKey
-    "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5", // owner address
+    // account config
+    {
+      "name": "BICONOMY",
+      "version": "1.0.0",
+      "ownerAddress": "0xA60123a1056e9D38B64c4993615F27cCe9A9E8D5",
+      "biconomyApiKey": "LdF-gC43H.6f0ec763-fde5-4d5e-89f6-1b9ef12ba4a4" // optional
+    },
     // user op
     {
       "sender": "0x8fb859e944561678be40cdd2db16551396c0b074",
