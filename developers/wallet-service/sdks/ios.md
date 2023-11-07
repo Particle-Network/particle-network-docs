@@ -69,7 +69,6 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 // From 0.9.12, you should add more in podfile
 If you use ParticleWalletGUI, you need add this one.
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
-pod 'SwiftMessages', :git => 'https://github.com/SunZhiC/SwiftMessages', :branch => 'master'
 
 // paste there code into pod file
 post_install do |installer|
