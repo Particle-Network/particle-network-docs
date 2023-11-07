@@ -1,3 +1,7 @@
+---
+description: High-Level RPCs to simplify the integration of AA
+---
+
 # Account Abstraction RPC
 
 {% content-ref url="../../account-abstraction/available-networks.md" %}
@@ -6,7 +10,9 @@
 
 ## Before Start
 
-Create Paymaster [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/) & get dappApiKey
+1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
+2. If you want to use Particle Paymaster on Mainnet, please get in touch with Particle Team to enable it;
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/),  create Paymaster & get dappApiKey.
 
 ## How to use
 
@@ -15,14 +21,14 @@ Create Paymaster [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/
    1. If `verifyingPaymasterGasless` is null, it means gasless is not available; if not null, it contains `userOp` and `userOpHash`.
    2. Inside `verifyingPaymasterNative`, there are `userOp`, `userOpHash`, and `feeQuote` (used for display and balance verification).
    3. `tokenPaymaster` contains `feeQuotes` and `tokenPaymasterAddress`.
-3. If the user is eligible and chooses gasless, sign `userOpHash`, then add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
+3. If the user is eligible and chooses the gasless, sign `userOpHash`, then add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
 4. If the user is eligible and chooses native gas payment, sign `userOpHash`, then add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
-5. If the user is eligible and chooses token gas payment, first call `particle_aa_createUserOp` to create a `userOp` and the corresponding `userOpHash`; then sign `userOpHash`, add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
+5. If the user is eligible and chooses token gas payment, the first call `particle_aa_createUserOp` to create a `userOp` and the corresponding `userOpHash`; then sign `userOpHash`, add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
 6. The `result` returned by `particle_sendUserOp` is the `txHash`.
 
 ## Common Params
 
-The first param for params field of JSON RPC is **account config**, the structure is as follow:
+The first param for the params field of JSON RPC is **account config**, the structure is as follows:
 
 ```json
   {
