@@ -1,12 +1,14 @@
 # iOS
 
-## Add Auth Service to Your iOS Project
+## Adding the Auth Service SDK to Your App
+
+Auth Service simplifies the integration of authentication system within your applications and supports installation with CocoaPods.
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Install the following:
-  * Xcode 14.1 or later
-  * CocoaPods 1.11.0 or higher
+  * Xcode version 14.1 or later.
+  * CocoaPods version 1.11.0 or higher.
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -19,29 +21,31 @@ Before you can add our Auth Service to your iOS app, you need to create a Partic
 
 ### Add the Auth Service SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
 
-Auth Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
+Follow these steps to install the Auth Service using [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-Auth Service's CocoaPods distribution requires Xcode 14.1 and CocoaPods 1.11.0 or higher. Here's how to install the Auth Service using CocoaPods:
+Here's how to install the Auth Service using CocoaPods:
 
-1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
+1. **Create a Podfile**: If you do not already have a Podfile, you will need to create one. Navigate to the route of your project directory and run the following command in your terminal:
 
 ```ruby
 pod init
 ```
 
-2\. To your Podfile, add the Auth Service pods that you want to use in your app:
+2. **Add the Auth Service Pods**: To use the Auth Service in your app, you will need to add the respective pods to your Podfile: In your Podfile, add the following lines:
 
 ```ruby
 pod 'ParticleAuthService'
 ```
 
-3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
+3. **Install the Pods**: With the Auth Service pods added, you can now install the pods. Run the following command in your terminal:
 
 ```ruby
 pod install --repo-update
 ```
 
-```ruby
+4. **Open Your Project in Xcode**: After installing the pods, you need to open your .xcworkspace file to view the project in Xcode. Run the following command in your terminal:
+
+```
 open your-project.xcworkspace
 ```
 
@@ -66,12 +70,19 @@ installer.pods_project.targets.each do |target|
 ```
 {% endhint %}
 
-### Initialize Auth Service in your app <a href="#initialize-firebase" id="initialize-firebase"></a>
+### Initialize Auth Service in Your App
 
-The final step is to add an initialization code to your application. You may have already done this as part of adding the Auth Service to your app. If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
+After adding the Auth Service to your app, the next step is to initialize it by following the steps described below. Please note, that if you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), initialization might have been done for you.
 
-1. Create a **ParticleNetwork-Info.plist** into the root of your Xcode project
-2. Copy the following text into this file:
+### Steps
+
+**1. Create a `ParticleNetwork-Info.plist` File**
+
+In the root of your Xcode project directory, create a file called `ParticleNetwork-Info.plist`.
+
+**2. Add Content to Plist File**
+
+Copy and paste the following text into the `ParticleNetwork-Info.plist` file:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -89,8 +100,11 @@ The final step is to add an initialization code to your application. You may hav
 
 ```
 
-3. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
-4. Import the `ParticleNetwork` module in your `UIApplicationDelegate`
+Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the appropriate values generated from your Dashboard.
+
+**3. Import ParticleNetwork Modules**
+
+In your UIApplicationDelegate, import the ParticleNetworkBase and ParticleAuthService modules as such:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -108,7 +122,11 @@ import ParticleAuthService
 {% endtab %}
 {% endtabs %}
 
-5. Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
+**4. Initialize the ParticleNetwork Service**
+
+Typically, this is done in your app's `application:didFinishLaunchingWithOptions:` method.
+
+Here is an example of how you can select a network from ChainInfo:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -118,9 +136,6 @@ let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
 let devEnv = ParticleNetwork.DevEnvironment.debug
 let config = ParticleNetworkConfiguration(chainInfo: chainInfo, devEnv: devEnv)
 ParticleNetwork.initialize(config: config)
-
-// also custom your evm network.
-let chainInfo = ParticleNetwork.ChainInfo.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
 ```
 {% endtab %}
 
@@ -131,51 +146,61 @@ ChainInfo *chainInfo = [ChainInfo ethereum:EthereumNetworkMainnet];
 DevEnvironment devEnv = DevEnvironmentDebug;
 ParticleNetworkConfiguration *config = [[ParticleNetworkConfiguration alloc] initWithChainInfo:chainInfo devEnv:devEnv];
 [ParticleNetwork initializeWithConfig:config];
-
-// also custom your evm network.
-ChainName *chainName = [ChainName customEvmNetworkWithFullName:@"Ethereum" network:@"rinkeby" chainId:4 explorePath:@"https://rinkeby.etherscan.io/" symbol:@"ETH" isSupportEIP1159:YES];
 ```
 {% endtab %}
 {% endtabs %}
 
-6. Add the scheme URL handle in your app's `application(_:open:options:)` method
+#### 5. Add the Scheme URL Handle
+
+In your app's `application(_:open:options:)` method, you need to return a call to the `handleUrl` method of the `ParticleAuthService`class:
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-return ParticleAuthService.handleUrl(url)
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    return ParticleAuthService.handleUrl(url)
+}
 ```
 {% endtab %}
 
 {% tab title="Objective-C" %}
 ```objectivec
-return [ParticleAuthService handleUrl:url];
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [ParticleAuthService handleUrl:url];
+}
 ```
 {% endtab %}
 {% endtabs %}
 
-7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+#### 6. Configuring Your App's Scheme URL:
 
-Your scheme URL should be "pn" + your project app uuid.
+To do this, please follow the steps below:
 
-For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", your scheme URL is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
+* Select your app from TARGETS in Xcode.
+* Go to the "Info" section and click on the '+' button to add a new entry to the "URL types" field.
+* Under "URL Schemes", paste your specific scheme information.
+
+Your scheme URL should be `"pn"` followed by your project app id.
+
+For instance, if your project app id is `"63bfa427-cf5f-4742-9ff1-e8f5a1b9828f"`, your scheme URL should be `"pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f"`.
 
 ![Config scheme url](<../../../.gitbook/assets/image (1) (2) (1).png>)
+
+Congratulations! You have successfully initialized Auth Service in your app. Now you can make direct calls to the Auth Service SDK to manage user authentication. Remember to refer to the related documentation and API references to understand the scope and capability of the SDK.
 
 {% hint style="info" %}
 devEnv needs to be modified to be `DevEnvironment.production` for release.
 {% endhint %}
 
-#### Dynamically switch the chain info:
+### Dynamically Switching the Chain Info
 
-{% tabs %}
-{% tab title="Swift" %}
+The Auth Service SDK allows you to switch your blockchain network dynamically. The network can be altered either asynchronously or synchronously based on the function you decide to use. Follow the steps below:
+
+#### Asynchronously
+
+This function checks whether the user has previously logged into the desired chain name and automatically presents additional steps if needed. If the user has logged into the Ethereum chain and wants to switch to the BSC chain, the function switches directly since they're both EVM networks. If the user wants to change to a network they have not logged in before, i.e., Solana, the SDK will show a browser request for further login steps:
+
 ```swift
-// Async switch chain info, it will check if user has logged in this chain name.
-// For example, if a user logged in with ethereum, then switch to bsc,
-// it will switch to bsc directly, beacuse both bsc and ethereum are evm,
-// but if switch to solana, beacuse user didn't log in solana before, it will 
-// present a web browser for additional information automatically.
 let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
 ParticleAuthService.switchChain(chainInfo).subscribe { [weak self] result in
     guard let self = self else { return }
@@ -186,37 +211,54 @@ ParticleAuthService.switchChain(chainInfo).subscribe { [weak self] result in
         print(userInfo)
     }
 }.disposed(by: bag)
+```
 
-// Sync switch chain info. it will wont check if user has logged in.
+#### Synchronously
+
+This function changes the network without checking for previous logins. It should be primarily used only if you are sure that the user has logged into the requested network previously:
+
+```swift
 let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
 ParticleNetwork.setChainInfo(chainInfo)
 ```
-{% endtab %}
 
-{% tab title="Objective-C" %}
-
-{% endtab %}
-{% endtabs %}
+By calling these methods based on the status of user activity in different chains can provide a smooth transition while switching chains.&#x20;
 
 ## API Reference
 
+Here is the documentation for several key API methods provided by the Auth Service SDK:
+
 ### Login
 
-To auth login with Particle, call `ParticleNetwork.login(...)`and `subscribe`. You can log in with your email or phone number by changing the `LoginType` parameter. Your wallet is created when you log in successfully for the first time.
+You can authenticate users in your app by using the `ParticleAuthService.login` function. This function supports different login types such as email, phone, Google, Apple, and Facebook. When the login is successful, a user wallet is created.
 
-{% tabs %}
-{% tab title="Swift" %}
+#### Prototype
+
 ```swift
-/// Login
-///
-/// - Parameters:
-///   - type: Login type, support email, phone, google, apple and facebook
-///   - account: When login type is email, phone or jwt, you could pass email address, phone number or jwt.
-///   - supportAuthType: Controls whether third-party login buttons are displayed. default will show all third-party login buttons.
-///   - socialLoginPrompt: Social login prompt.
-///   - authorization: Optional, LoginAuthorization object.
-///
-/// - Returns: User infomation
+ParticleAuthService.login(
+    type: LoginType, 
+    account: String? = nil, 
+    supportAuthType: [SupportAuthType] = [SupportAuthType.all], 
+    socialLoginPrompt: SocialLoginPrompt? = nil, 
+    authorization: LoginAuthorization? = nil
+)
+```
+
+#### Parameters
+
+* `type`: Specifies the login type (e.g., email, phone, jwt, google, apple, facebook).
+* `account`: Optional parameter for email, phone, or jwt login methods. You should pass in the user's email address, phone number, or jwt token here.
+* `supportAuthType`: Controls whether third-party login buttons are displayed. By default, all third-party login buttons are shown.
+* `socialLoginPrompt`: Social login prompt.
+* `authorization`: Optional parameter for LoginAuthorization object.
+
+#### Returns
+
+The function returns a user information object (`userinfo`) if the login is successful.
+
+#### Example usage
+
+```swift
 ParticleAuthService.login(type: .email).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -239,45 +281,36 @@ ParticleAuthService.login(type: .jwt, account: account).subscribe { [weak self] 
     }
 }.disposed(by: bag)
 ```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```objectivec
-[ParticleAuthService loginWithType:LoginTypeEmail successHandler:^(UserInfo * userInfo) {
-        NSLog(@"%@", userInfo);
-        [self showLogin:NO];
-    } failureHandler:^(NSError * error) {
-        NSLog(@"%@", error);
-    }];
-```
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
-### Is user login
+### Is User Login
 
-Check is user login locally
+You can check whether a user is logged in or not using the `ParticleAuthService.isLogin` function.
 
-{% tabs %}
-{% tab title="Swift" %}
+#### Prototype
+
 ```swift
 ParticleAuthService.isLogin()
 ```
-{% endtab %}
 
-{% tab title="Objective-C" %}
-```objectivec
-[ParticleAuthService isLogin]
+#### Returns
+
+The function returns a boolean indicating whether a user is logged in (`true`) or not (`false`).
+
+### Is User Login Async
+
+#### Prototype
+
+```swift
+ParticleAuthService.isLoginAsync()
 ```
-{% endtab %}
-{% endtabs %}
 
-### Is login async
+This function asynchronously checks from the server if a user is logged in. This ensures your local login status is up-to-date with the server status.
 
-Check is user login from server side
+#### Example usage
 
 ```swift
 ParticleAuthService.isLoginAsync().subscribe { [weak self] result in
@@ -293,13 +326,23 @@ ParticleAuthService.isLoginAsync().subscribe { [weak self] result in
 
 ### Logout and FastLogout
 
-The SDK will delete user's account information in cache.
+#### Logout
 
-{% tabs %}
-{% tab title="Swift" %}
+The `logout` function enables users to log out from their account. The function deletes user account information from cache.
+
+**Prototype**
+
 ```swift
-// This method presents a safari view controller, please keep the presented view controller alive,
-// let safari view controller close automaticlly, then you will get the result.
+ParticleAuthService.logout()
+```
+
+**Returns**
+
+The function returns a success message if the logout process is completed successfully.
+
+**Example usage**
+
+```swift
 ParticleAuthService.logout().subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -309,8 +352,25 @@ ParticleAuthService.logout().subscribe { [weak self] result in
         // logout success
     }
 }.disposed(by: bag)
+```
 
-// This method do logout in a slient way.
+#### FastLogout
+
+The `fastLogout` function is similar to the `logout` method but performs the logout operation silently without presenting the user with a safari view controller.
+
+**Prototype**
+
+```swift
+ParticleAuthService.fastLogout()
+```
+
+**Returns**
+
+The function returns a success message if the fast logout process is completed successfully.
+
+**Example usage**
+
+```swift
 ParticleAuthService.fastLogout().subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -321,316 +381,341 @@ ParticleAuthService.fastLogout().subscribe { [weak self] result in
     }
 }.disposed(by: bag)
 ```
-{% endtab %}
 
-{% tab title="Objective-C" %}
-```objectivec
-[ParticleAuthService logoutWithSuccessHandler:^(NSString * result) {
-    NSLog(@"%@", result);
-    [self showLogin:YES];
-} failureHandler:^(NSError * error) {
-    NSLog(@"%@", error);
-}];
-```
-{% endtab %}
-{% endtabs %}
+### Get User Info and Address After Login
 
-### Get user info and address after login
+These functions enable you to retrieve user information and address after a successful login.
 
-{% tabs %}
-{% tab title="Swift" %}
+**Example**
+
 ```swift
 ParticleAuthService.getUserInfo()
 ParticleAuthService.getAddress()
 ```
-{% endtab %}
 
-{% tab title="Objective-C" %}
-```objectivec
-[ParticleAuthService getUserInfo];
-[ParticleAuthService getAddress];
-```
-{% endtab %}
-{% endtabs %}
+**Returns**
 
-### Get smart account
+`getUserInfo` returns a user information object. `getAddress` returns a string containing the user's address.
 
-works on you enable [Account Abstraction](../../account-abstraction/ios.md)
+### Get Smart Account
+
+Enables retrieval of the user's smart account. This function only works if you enable [Account Abstraction](../../account-abstraction/ios.md).
+
+**Example**
 
 ```swift
 ParticleAuthService.getSmartAccount()
 ```
 
-### Custom modal present style
+**Returns**
 
-{% tabs %}
-{% tab title="Swift" %}
+The function returns a smart account object.
+
+### Custom Modal Present Style
+
+This function allows you to set the modal presentation style for the web browser.
+
+**Example**
+
 ```swift
-// support fullScreen and formSheet
-// default web broswer modal present style is formSheet
 ParticleAuthService.setModalPresentStyle(.fullScreen)
-
-// Set safari page show in medium screen, this method works from iOS 15
-// default value is false.
-// if you want to use medium screen, you must setModalPresentStyle fullScreen
 ParticleAuthService.setMediumScreen(true)
 ```
-{% endtab %}
-{% endtabs %}
 
-### Set and get appearance
+**Details**
 
-{% tabs %}
-{% tab title="Swift" %}
+The default presentation style for the web browser is `.formSheet`. You can change it to `.fullScreen` by using the `setModalPresentStyle` function.
+
+Starting from iOS 15, you can set the web browser to display in medium screen by using the `setMediumScreen` function. Before using it, make sure you have set the modal presentation style to `fullScreen`.
+
+### Set and Get Appearance
+
+You can configure the User Interface appearance of your app with the `setAppearance` and `getAppearance` functions. The default value is set to follow the system's appearance.
+
+**Example**
+
 ```swift
-// set appearance, default value if follow system.
-// such as set dark mode
 ParticleNetwork.setAppearence(.dark)
-
 let appearance = ParticleNetwork.getAppearence()
 ```
-{% endtab %}
-{% endtabs %}
 
-### Set web auth config
+### Set Web Auth Config
 
-{% tabs %}
-{% tab title="Swift" %}
+You can configure the behavior and appearance of the authentication webpage with the `setWebAuthConfig` function. For instance, you can make the wallet visible when signing and sending transactions.
+
+**Example**
+
 ```swift
-// set display wallet when call sign and send transaction, and web page appearance.
-ParticleAuthService.setWebAuthConfig(options: WebAuthConfig(isDisplayWallet: true, appearance: .unspecified))
+ParticleAuthService.setWebAuthConfig(options: 
+    WebAuthConfig(isDisplayWallet: true, appearance: .unspecified))
 ```
-{% endtab %}
-{% endtabs %}
 
-### Set and get language
+### Set and Get Language
+
+You can configure the language of your app with the `setLanguage` and `getLanguage` functions. The default language is English.
+
+**Example**
 
 ```swift
-// set English language, default value is English
-ParticleNetwork.setLanguage(Language.en)
-
+ParticleNetwork.setLanguage(.en)
 let language = ParticleNetwork.getLanguage()
 ```
 
-### Set and get FiatCoin
+### Set and Get FiatCoin
+
+You can set the fiat coin symbol with the `setFiatCoin` function. The default fiat coin is USD. You can retrieve the current fiat coin with the `getFiatCoin` function.
+
+**Example**
 
 ```swift
-// set fiat coin symbol, default value is USD.
-ParticleNetwork.FiatCoin(FiatCoin.USD)
-
+ParticleNetwork.setFiatCoin(.USD)
 let fiatCoin = ParticleNetwork.getFiatCoin()
 ```
 
 ### Signatures
 
-Use the Particle SDK to sign a transaction or message. The SDK provides three methods for signing:
+The Particle SDK provides several methods for signing transactions or messages.
 
-1. `signAndSendTransaction`: sign and send the transaction with Particle Node, then return the signature. This method supports both Solana and EVM.&#x20;
-2. `signTransaction`: sign transaction, return signed message. This method only supports Solana.
-3. `signMessage`: sign message, return signed message. This method supports both Solana and EVM.
-4. `signMessageUnique`: sign message, return signed message, same message same signature. This method only support EVM.
-5. `signTypedData`: sign typed data; this supports v1, v3, and v4 typed data. Return signed message; this method only supports EVM.
+#### 1. Sign and Send Transaction
 
-{% tabs %}
-{% tab title="Swift" %}
+This method signs and sends a transaction to the Particle Node and then returns the transaction's signature.
+
+**Prototype**
+
 ```swift
-//transaction: request base58 string in solana, or hex string in evm
-ParticleAuthService.signAndSendTransaction(transaction).subscribe {  [weak self] result in
-    guard let self = self else { return }
-    switch result {
-    case .failure(let error):
-        // handle error
-    case .success(let signature):
-        // handle signature 
-    }
-}.disposed(by: bag)
-        
-//transaction: request base58 string in solana, not support evm
-ParticleAuthService.signtransaction(transaction).subscribe {  [weak self] result in
-    guard let self = self else { return }
-    switch result {
-    case .failure(let error):
-        // handle error
-    case .success(let signedMessage):
-        // handle signed message
-    }
-}.disposed(by: bag)
+ParticleAuthService.signAndSendTransaction(transaction)
+```
 
-//transaction: request base58 string array in solana, not support evm
-let transactions: [String] = []
-ParticleAuthService.signAllTransactions(transactions).subscribe { [weak self] result in
+**Parameter**
+
+`transaction` (String): The transaction to sign and to send. The request is a base58 string in Solana or a hex string in EVM.
+
+**Example**
+
+```swift
+ParticleAuthService.signAndSendTransaction(transaction).subscribe { [weak self] result in
     switch result {
     case .failure(let error):
         print(error)
     case .success(let signature):
         print(signature)
     }
-}.disposed(by: self.bag)
-
-//sign string, any string in solana, hex string or any string in evm
-ParticleAuthService.signMessage(message).subscribe {  [weak self] result in
-    guard let self = self else { return }
-    switch result {
-    case .failure(let error):
-        // handle error
-    case .success(let signedMessage):
-        // handle signed message
-    }
 }.disposed(by: bag)
+```
 
-// sign string, hex string or any string in evm, same mssage same signature
-ParticleAuthService.signMessageUnique(message).subscribe {  [weak self] result in
-    guard let self = self else { return }
+#### 2. Sign Transaction
+
+This method signs a transaction then returns the signatrue.
+
+**Prototype**
+
+```swift
+ParticleAuthService.signTransaction(transaction)
+```
+
+**Parameter**
+
+`transaction` (String): The transaction to sign. This request is a base58 string in Solana and currently does not support EVM.
+
+**Example**
+
+```swift
+ParticleAuthService.signTransaction(transaction).subscribe { [weak self] result in
     switch result {
     case .failure(let error):
-        // handle error
-    case .success(let signedMessage):
-        // handle signed message
-    }
-}.disposed(by: bag)
-
- 
-// sign typed data, request hex string in evm, not support solana.
-// support v1, v3, v4, v4Unique typed data
-// v4Unique, same message same signature.
-ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self] result in
-    switch result {
-    case .failure(let error):
-        // handle error
-    case .success(let signed):
-        // handle signed message
+        print(error)
+    case .success(let signature):
+        print(signature)
     }
 }.disposed(by: bag)
 ```
-{% endtab %}
 
-{% tab title="Objective-C" %}
-```objectivec
-//transaction: request base58 string in solana, or hex string in evm
-[ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
-    NSLog(@"%@", signature);
-} failureHandler:^(NSError * error) {
-    NSLog(@"%@", error);
-}];
+#### 3. Sign Message
 
- //transaction: request base58 string in solana, not support evm     
-[ParticleAuthService signTransaction:transaction successHandler:^(NSString * signedTransaction) {
-    NSLog(@"%@", signedTransaction);
-} failureHandler:^(NSError * error) {
-    NSLog(@"%@", error);
-}];
+This method signs a message and then returns signature.
 
-//sign string, any string in solana, request hex string in evm
-[ParticleAuthService signMessage:message successHandler:^(NSString * signedMessage) {
-    NSLog(@"%@", signedMessage);
-} failureHandler:^(NSError * error) {
-    NSLog(@"%@", error);
-}];
+**Prototype**
 
-// sign typed data, request hex string in evm, not support solana.
-// support v1, v3, v4 typed data
-[ParticleAuthService signTypedData:message successHandler:^(NSString * signedMessage) {
-    NSLog(@"%@", signedMessage);
-} failureHandler:^(NSError * error) {
-    NSLog(@"%@", error);
-}];
+```swift
+ParticleAuthService.signMessage(message)
 ```
-{% endtab %}
-{% endtabs %}
+
+**Parameter**
+
+`message` (String): The message to sign. For Solana, it can be any string while for EVM, it should be a hex string.
+
+**Example**
+
+```swift
+ParticleAuthService.signMessage(message).subscribe { [weak self] result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let signature):
+        print(signature)
+    }
+}.disposed(by: bag)
+```
+
+#### 4. Sign Message Unique
+
+This method signs a message and then returns the signature, with the feature that the same message will always generate the same signature.
+
+**Prototype**
+
+```swift
+ParticleAuthService.signMessageUnique(message)
+```
+
+**Parameter**
+
+`message` (String): The message to sign. For EVM, this can be a hex string or any other string.
+
+**Example**
+
+```swift
+ParticleAuthService.signMessageUnique(message).subscribe { [weak self] result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let signature):
+        print(signature)
+    }
+}.disposed(by: bag)
+```
+
+#### 5. Sign Typed Data
+
+This method signs typed data and then returns the signature. It supports v1, v3 and v4 typed data.
+
+**Prototype**
+
+```swift
+ParticleAuthService.signTypedData(message, version: .v4)
+```
+
+**Parameters**
+
+`message` (String): The typed data to sign. It should be a hex string and this method does not support Solana at present.
+
+`version` (EVMSignTypedDataVersion): The version of typed data. It could be v1, v3, v4 or v4Unique.
+
+**Example**
+
+```swift
+ParticleAuthService.signTypedData(message, version: .v4).subscribe { [weak self] result in
+    switch result {
+    case .failure(let error):
+        print(error)
+    case .success(let signature):
+        print(signature)
+    }
+}.disposed(by: bag)
+```
 
 You can create a `transaction` with `TxData` and `FeeMarketEIP1559TxData` There's an easy way to do this with [Wallet Service](../../wallet-service/).
 
-### Open web wallet
+### Open Web Wallet
 
-{% tabs %}
-{% tab title="Swift" %}
+You can open the web wallet with the `openWebWallet` function:
+
+#### Parameters
+
+`styleJsonString`: A JSON format string specifying the display details for the web wallet.
+
 ```swift
-// if user is login, it will open web wallet.
 let styleJsonString = """
-    {
-      "supportAddToken": false,
-      "supportChains": [{
-          "id": 1,
-          "name": "Ethereum"
-        },
-        {
-          "id": 5,
-          "name": "Ethereum"
-        }
-      ]
-    }
+{
+  "supportAddToken": false,
+  "supportChains": [{"id": 1,"name": "Ethereum"},{"id": 5,"name": "Ethereum"}]
+}
 """
-ParticleAuthService.openWebWallet(styleJsonString: styleJsonString) 
+ParticleAuthService.openWebWallet(styleJsonString: styleJsonString)
 ```
-{% endtab %}
-{% endtabs %}
 
-### Open account and security
+### Open Account and Security
+
+Open the user's account & security page with `openAccountAndSecurity` function:
+
+**Example**
 
 ```swift
 ParticleAuthService.openAccountAndSecurity()
 ```
 
-### Set and get security account config
+### Set and Get Security Account Config
+
+These methods allow you to configure and store security settings.
+
+**Parameters**
+
+`promptSettingWhenSign` (String): Control prompt payment password when sign, 0 no prompt, 1 first time show prompt, 2 every time show prompt, 3 force show prompt
+
+`promptMasterPasswordSettingWhenLogin` (String): Control prompt master password when login, 0 no prompt, 1 first time show prompt, 2 every time show prompt, 3 force show prompt
+
+**Example**
 
 ```swift
-// set security account config, 
-// promptSettingWhenSign default value is 1.
-// promptMasterPasswordSettingWhenLogin default value is 0.
-// 0 no prompt
-// 1 first time show prompt
-// 2 every time show prompt
-// 3 force show prompt
+// Set the Security Account Config
 ParticleNetwork.setSecurityAccountConfig(config: 
-.init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
+    SecurityAccountConfig.init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
 
-let securityAccountConfig = PartilceNetwork.getSecurityAccountConfig()
+// Get the Security Account Config
+let securityAccountConfig = ParticleNetwork.getSecurityAccountConfig()
 ```
 
 ### CheckSum support
 
-```swift
-import ParticleNetworkBase
-/// Ethereum address checksum, follow EIP55.
-/// Don't use it with solana address.
-/// - Returns: Checksum Address
-func toChecksumAddress() -> String 
+To get an Ethereum address checksum transitioning from a normal address, use the `toChecksumAddress` function.
 
-print("0x2648cfe97e33345300db8154670347b08643570b".toChecksumAddress())
+#### Example
+
+```swift
+"0x2648cfe97e33345300db8154670347b08643570b".toChecksumAddress()
 ```
 
 ### TRON network support
 
-```swift
-import ParticleNetworkBase
+The SDK allows you to convert TRON base58 addresses to hex addresses, and vice versa.
 
-// convert tron base58 address to hex address
+#### Example
+
+```swift
 let tronAddressHex = TronFormatAddress.toHex("TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto")
 print(tronAddressHex) // 0x2648cfe97e33345300db8154670347b08643570b
 
-// convert hex address to tron base58 address
 let tronAddressBase58 = TronFormatAddress.fromHex("0x2648cfe97e33345300db8154670347b08643570b")
 print(tronAddressBase58) // TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto
 ```
 
 ### Particle Provider
 
-```swift
-// handle request from walle connect, could be used with ParticleWalletConnect
-// support following methods:
-// eth_sendTransaction, return signature or error
-// eth_signTypedData, return signature or error
-// personal_sign, return signature or error
-// wallet_switchEthereumChain, return null or error
-// eth_chainId, return chainId string like "0x5" or error
-// eth_signTypedData_v1, return signature or error
-// eth_signTypedData_v3, return signature or error
-// eth_signTypedData_v4, return signature or error
-public static func request(method: String, params: [Encodable]) -> Single<Data?>
+The SDK provides a Particle Provider that handles wallet connect requests. The Particle Provider supports the following methods:
 
-// for example
+* `eth_sendTransaction`: Return the signature or an error.
+* `eth_signTypedData`: Return the signature or an error.
+* `personal_sign`: Return the signature or an error.
+* `wallet_switchEthereumChain`: Return null or an error.
+* `eth_chainId`: Return chainId string like "0x5" or an error.
+* `eth_signTypedData_v1`: Return the signature or an error.
+* `eth_signTypedData_v3`: Return the signature or an error.
+* `eth_signTypedData_v4`: Return the signature or an error.
+
+#### Prototype
+
+```swift
+ParticleProvider.request(method: String, params: [Encodable]) -> Single<Data?>
+```
+
+#### Parameters
+
+`method` (String): The method to be requested. `params` (\[Encodable]): Array of parameters to pass to the method.
+
+#### Example
+
+```swift
 ParticleProvider.request(method: method, params: params).subscribe { data in
-   // handle data
+   // handle returned data
 } onFailure: { error in
     // handle error
 }.disposed(by: bag)
@@ -638,89 +723,64 @@ ParticleProvider.request(method: method, params: params).subscribe { data in
 
 ### Error
 
-`ParticleNetwork.Error` contains error details. The error will be logged in `debug` `DevEnvironment`.
+Any error that occurs will be of type `ParticleNetwork.Error` and will contain details about the error that occurred. The errors will be logged in debug DevEnvironment.
 
-## Particle Wallet Connect V2
+## Particle Wallet Connect
 
-Integrate your app as a wallet connect wallet. If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
+The Particle Wallet Connect SDK allows you to integrate your app as a Wallet Connect wallet. Below is the documentation for integrating and using the Particle Wallet Connect SDK.
 
-Add Particle Wallet Connect with CocoaPods
+If you are using a [quickstart sample project](https://github.com/Particle-Network/particle-ios), this has been done for you.
 
-Starting from version 0.14.0, WalletConnectV2 is supported.
+#### Adding Particle Wallet Connect with CocoaPods
+
+To add the Particle Wallet Connect SDK to your project, you can use the following Podfile entry:
 
 ```ruby
-pod 'ParticleWalletConnect', 0.14.0
+pod 'ParticleWalletConnect', '1.2.2'
 ```
 
-## API Reference
+Make sure to run `pod install` after updating your Podfile to add the Particle Wallet Connect V2 SDK to your project.
 
-### Initialize
+### API Reference
+
+#### Initialize
+
+To initialize the Particle Wallet Connect SDK, you can use the `initialize` method and provide the wallet metadata.
+
+**Example**
 
 ```swift
-// Initialize Particle Wallet Connect SDK, a wallet meta data
-ParticleWalletConnect.initialize(
-            WalletMetaData(name: "Particle Wallet",
-            icon: URL(string: "https://connect.particle.network/icons/512.png")!,
-            url: URL(string: "https://particle.network")!,
-            description: "Particle Wallet Client"))
+ParticleWalletConnect.initialize(WalletMetaData)
 ```
 
-{% hint style="info" %}
-## Migrating to WalletConnect v2
+#### Migrating to WalletConnect v2
+
+You can set the WalletConnect V2 project ID using the following method:
+
+**Example**
 
 ```swift
 ParticleWalletConnect.setWalletConnectV2ProjectId("your wallet connect v2 project id")
 ```
-{% endhint %}
 
-### Connect
+#### Connect and Handling Connections
 
-```swift
-let pwc = ParticleWalletConnect()
-// set delegate in your controller or view model.
-pwc.delegate = self
-// Connect to a wallet connect code
-let wcCode = "wc:b47a7e47c4261edf2e6e8bf3860ff7795ec532fcfb53345e7337a129b6f74019@2?relay-protocol=irn&symKey=6a5310e7c98a3d358f8d1c11f205ef849f5b1f9430472363a2631edfbfb197c0"
-do {
-    try self.pwc.connect(code: wcCode)
-} catch {
-    print(error)
-}
-```
+You can use the Particle Wallet Connect SDK to connect to a wallet and handle the connection results by implementing the `ParticleWalletConnectDelegate` protocol.
 
-Handle connect result by implement ParticleWalletConnectDelegate protocol.
+**Delegate Methods**
 
-```swift
-public protocol ParticleWalletConnectDelegate: AnyObject {
-    /// Should connect dappMetaData, usually called after connect,
-    /// you could save dappMetaData.topic for query session and manage session.
-    /// - Parameters:
-    ///   - dappMetaData: DappMetaData
-    ///   - completion: Should return public address and chain id.
-    func shouldConnectDapp(_ dappMetaData: DappMetaData, completion: @escaping (String, Int) -> Void)
+* `shouldConnectDapp`: Request to connect to the Dapp with metadata.
+* `request`: Handle requests from the Dapp.
+* `didConnectDapp`: Called after successfully connecting to a Dapp.
+* `didDisconnectDapp`: Called after disconnecting from a Dapp.
 
-    /// Handle request from dapp
-    /// - Parameters:
-    ///   - topic: Topic
-    ///   - method: Method name
-    ///   - params: Params
-    ///   - completion: Result, encode to data
-    func request(topic: String, method: String, params: [Encodable], completion: @escaping (WCResult<Data?>) -> Void)
+#### Disconnect
 
-    /// Did connect dapp
-    /// - Parameter topic: Topic
-    func didConnectDapp(_ topic: String)
+You can disconnect from a Wallet Connect V2 session using the following method:
 
-    /// Did disconnect dapp
-    /// - Parameter topic: Topic
-    func didDisconnectDapp(_ topic: String)
-} 
-```
-
-### Disconnect
+**Example**
 
 ```swift
-// Disconnect wallet connect v2 session
 Task {
     do {
         try await self.pwc.disconnect(topic: topic)
@@ -730,31 +790,29 @@ Task {
 }
 ```
 
-### Get connected dapp&#x20;
+#### Get Connected Dapp
+
+You can get the Dapp metadata by topic and get all connected Dapps using the following methods:
+
+**Prototypes**
 
 ```swift
-/// Get dapp by topic
-/// - Parameter topic: Topic
-/// - Returns: Dapp meta data
 func getDapp(by topic: String) -> DappMetaData?
+func getAllDapps(publicAddress: String) -> [DappMetaData]
 ```
 
-### Get all connected dapps
+#### Update Session
+
+The Wallet Connect V2 public address and chain ID can be updated using the following method:
+
+**Example**
 
 ```swift
- /// Get all wallet connect dapps. 
- /// - Parameter publicAddress: Public address, V2 need public address to filter dapp connections.
- /// - Returns: Dapp meta data array
- func getAllDapps(publicAddress: String) -> [DappMetaData]
-```
-
-### Update session
-
-```swift
-// updata wallet connect v2 public address and chain id.
 do {
     try self.pwc.updateWalletConnect(dapp.topic, publicAddress: publicAddress, chainId: chainId)
 } catch {
     print(error)
 }
 ```
+
+These methods allow you to integrate your app as a Wallet Connect wallet and handle session management effectively.
