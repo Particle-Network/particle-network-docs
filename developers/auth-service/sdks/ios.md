@@ -399,7 +399,7 @@ ParticleAuthService.getAddress()
 
 ### Get Smart Account
 
-Enables retrieval of the user's smart account. This function only works if you enable [Account Abstraction](../../account-abstraction/ios.md).
+Enables retrieval of the user's smart account. This function only works if you enable [Account Abstraction](../../account-abstraction/sdks/ios.md).
 
 **Example**
 

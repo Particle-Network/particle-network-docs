@@ -23,6 +23,20 @@ description: Modular Smart Wallet-as-a-Service
 
     ...
 
+## Modular Components
+
+{% content-ref url="smart-account.md" %}
+[smart-account.md](smart-account.md)
+{% endcontent-ref %}
+
+{% content-ref url="bundler.md" %}
+[bundler.md](bundler.md)
+{% endcontent-ref %}
+
+{% content-ref url="paymaster.md" %}
+[paymaster.md](paymaster.md)
+{% endcontent-ref %}
+
 ## Try now
 
 1. Go to [https://wallet.particle.network/](https://wallet.particle.network/)
@@ -52,28 +66,28 @@ V1: [Particle x Biconomy RPCs ](../node-service/evm-chains-api/account-abstracti
 
 ## SDKs
 
-{% content-ref url="web.md" %}
-[web.md](web.md)
+{% content-ref url="sdks/web.md" %}
+[web.md](sdks/web.md)
 {% endcontent-ref %}
 
-{% content-ref url="android.md" %}
-[android.md](android.md)
+{% content-ref url="sdks/android.md" %}
+[android.md](sdks/android.md)
 {% endcontent-ref %}
 
-{% content-ref url="ios.md" %}
-[ios.md](ios.md)
+{% content-ref url="sdks/ios.md" %}
+[ios.md](sdks/ios.md)
 {% endcontent-ref %}
 
-{% content-ref url="flutter.md" %}
-[flutter.md](flutter.md)
+{% content-ref url="sdks/flutter.md" %}
+[flutter.md](sdks/flutter.md)
 {% endcontent-ref %}
 
-{% content-ref url="react-native.md" %}
-[react-native.md](react-native.md)
+{% content-ref url="sdks/react-native.md" %}
+[react-native.md](sdks/react-native.md)
 {% endcontent-ref %}
 
-{% content-ref url="unity.md" %}
-[unity.md](unity.md)
+{% content-ref url="sdks/unity.md" %}
+[unity.md](sdks/unity.md)
 {% endcontent-ref %}
 
 Besides, we will release SDKs for Unreal, and more platforms soon!
