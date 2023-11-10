@@ -4,8 +4,8 @@ description: High-Level RPCs to simplify the integration of AA
 
 # Account Abstraction RPC
 
-{% content-ref url="../../account-abstraction/available-networks.md" %}
-[available-networks.md](../../account-abstraction/available-networks.md)
+{% content-ref url="../available-networks.md" %}
+[available-networks.md](../available-networks.md)
 {% endcontent-ref %}
 
 ## Before Start
@@ -14,7 +14,7 @@ description: High-Level RPCs to simplify the integration of AA
 2. If you want to use Particle Paymaster on Mainnet, please get in touch with Particle Team to enable it;
 3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/),  create Paymaster & get dappApiKey.
 
-\-> [RPC Authentication & chainId config](../authentication.md)
+\-> [RPC Authentication & chainId config](../../node-service/authentication.md)
 
 ## How to use
 

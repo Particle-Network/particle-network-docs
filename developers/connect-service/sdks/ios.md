@@ -255,7 +255,7 @@ let accounts = adapter.getAccounts()
 
 ### Get smart accounts
 
-works on you enable [Account Abstraction](../../account-abstraction/sdks/ios.md)
+works on you enable [Account Abstraction](../../account-abstraction/ios.md)
 
 ```swift
 adapter.getSmartAccounts()

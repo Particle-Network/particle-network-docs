@@ -56,38 +56,38 @@ description: Modular Smart Wallet-as-a-Service
 
 ### Bundler RPC
 
-[Bundler RPCs](../node-service/evm-chains-api/bundler-rpc.md)
+[Bundler RPCs](rpc/bundler-rpc.md)
 
 ### High-level RPC
 
-Latest: [Account Abstraction RPCs](../node-service/evm-chains-api/account-abstraction-rpc.md)
+Latest: [Account Abstraction RPCs](rpc/account-abstraction-rpc.md)
 
-V1: [Particle x Biconomy RPCs ](../node-service/evm-chains-api/account-abstraction-rpc-v1.md)
+V1: [Particle x Biconomy RPCs ](rpc/account-abstraction-rpc-v1.md)
 
 ## SDKs
 
-{% content-ref url="sdks/web.md" %}
-[web.md](sdks/web.md)
+{% content-ref url="web.md" %}
+[web.md](web.md)
 {% endcontent-ref %}
 
-{% content-ref url="sdks/android.md" %}
-[android.md](sdks/android.md)
+{% content-ref url="android.md" %}
+[android.md](android.md)
 {% endcontent-ref %}
 
-{% content-ref url="sdks/ios.md" %}
-[ios.md](sdks/ios.md)
+{% content-ref url="ios.md" %}
+[ios.md](ios.md)
 {% endcontent-ref %}
 
-{% content-ref url="sdks/flutter.md" %}
-[flutter.md](sdks/flutter.md)
+{% content-ref url="flutter.md" %}
+[flutter.md](flutter.md)
 {% endcontent-ref %}
 
-{% content-ref url="sdks/react-native.md" %}
-[react-native.md](sdks/react-native.md)
+{% content-ref url="react-native.md" %}
+[react-native.md](react-native.md)
 {% endcontent-ref %}
 
-{% content-ref url="sdks/unity.md" %}
-[unity.md](sdks/unity.md)
+{% content-ref url="unity.md" %}
+[unity.md](unity.md)
 {% endcontent-ref %}
 
 Besides, we will release SDKs for Unreal, and more platforms soon!

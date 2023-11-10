@@ -2,7 +2,7 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-1.Finish integration with either [Auth Service](../../auth-service/sdks/android.md) or [Connect Service](../../auth-service/sdks/android.md)
+1.Finish integration with either [Auth Service](../auth-service/sdks/android.md) or [Connect Service](../auth-service/sdks/android.md)
 
 2.Add ParticleBiconomy to your build.gradle.
 
@@ -55,7 +55,7 @@ ParticleNetwork.getBiconomyService().disableBiconomyMode()
 val isEnable = ParticleNetwork.getBiconomyService().isBiconomyModeEnable()
 ```
 
-### Send one transaction with [ParticleAuthService](../../auth-service/sdks/android.md)
+### Send one transaction with [ParticleAuthService](../auth-service/sdks/android.md)
 
 ```kotlin
 // 1. gasless
@@ -74,7 +74,7 @@ val feeQuote: Erc4337FeeQuote  //get Erc4337FeeQuote by ParticleNetwork.getBicon
 ParticleNetwork.signAndSendTransaction(tranaction, callback , FeeModeCustom(feeQuote))
 ```
 
-### Send one transaction with [ParticleConnectService](../../connect-service/sdks/android.md)
+### Send one transaction with [ParticleConnectService](../connect-service/sdks/android.md)
 
 There are three way to send AA transaction
 

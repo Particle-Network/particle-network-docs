@@ -2,7 +2,7 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-* Finish integration with either [Auth Service](../../auth-service/sdks/ios.md) or [Connect Service](../../connect-service/sdks/ios.md)
+* Finish integration with either [Auth Service](../auth-service/sdks/ios.md) or [Connect Service](../connect-service/sdks/ios.md)
 
 Add ParticleAA to your Podfile.
 
@@ -115,7 +115,7 @@ let aaService = Service()
 aaService.quickSendTransactions(transactions, feeMode: .gasless, messageSigner: messageSigner, wholeFeeQuote: wholeFeeQuote)
 ```
 
-### Send one transaction with [ParticleAuthService](../../auth-service/sdks/ios.md)
+### Send one transaction with [ParticleAuthService](../auth-service/sdks/ios.md)
 
 There are three way to send AA transaction
 
@@ -136,7 +136,7 @@ var feeQuote: AA.FeeQuote
 ParticleAuthService.signAndSendTransaction(tranaction, feeMode: .token(feeQuote))
 ```
 
-### Send one transaction with [ParticleConnectService](../../connect-service/sdks/ios.md)
+### Send one transaction with [ParticleConnectService](../connect-service/sdks/ios.md)
 
 There are three way to send AA transaction
 
