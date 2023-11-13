@@ -2,7 +2,7 @@
 description: Changelog
 ---
 
-# Changelog
+# 🎁 Changelog
 
 ## 20231107
 
@@ -37,10 +37,10 @@ description: Changelog
    7. Kava Mainnet & Testnet
 2. Account Abstraction
    1. Add built-in support for Biconomy Account, Cyber Account, and Simple Account
-   2. Bundler supports more chains🔥 [Check👀](../../developers/account-abstraction/rpc/bundler-rpc.md)
+   2. Bundler supports more chains🔥 [Check👀](../developers/account-abstraction/rpc/bundler-rpc.md)
    3. Releasing our Modular Smart Wallet-as-a-Service
 3. Server API
-   1. Add API to check if the wallet address belongs to the project -> [doc](../../developers/auth-service/sdks/server-api.md#isprojectuser)
+   1. Add API to check if the wallet address belongs to the project -> [doc](../developers/auth-service/sdks/server-api.md#isprojectuser)
 
 ## 20230925
 
@@ -101,7 +101,7 @@ Below are our specific changes:
    4. Manta Testnet
    5. Base Mainnet
    6. ReadON Testnet
-2. [Core SDK 👀](../../developers/auth-service/core/)
+2. [Core SDK 👀](../developers/auth-service/core/)
 3. Wallet
    1. Add a control option to hide suspicious tokens and enhance security
 
@@ -195,7 +195,7 @@ Version: `0.14.0`
 
 ## 20230508
 
-1. [Account Abstraction Support](../../developers/account-abstraction/)
+1. [Account Abstraction Support](../developers/account-abstraction/)
 2. Auth & Wallet Service
    1. Security Center adds a new feature: managing logged-in dapps
    2. Support for users to bind additional login accounts
@@ -226,14 +226,14 @@ Version: `0.14.0`
    10. Add support for configuring Auth and Wallet UI Mode separately
 2. Connect Service
    1. Add Wallet, Buy, and Copy wallet connect code to Connect UI Kit\
-      ![](<../../.gitbook/assets/image (2) (1).png>)<img src="../../.gitbook/assets/image (1) (5).png" alt="" data-size="original">
+      ![](<../.gitbook/assets/image (2) (1).png>)<img src="../.gitbook/assets/image (1) (5).png" alt="" data-size="original">
 3. NFT Service
    1. Add support for Ethereum Sepolia and Conflux eSpace
 
 ## 20230310
 
 1. Add Master Password
-2. [Add new on-ramp service](../../developers/wallet-service/on-ramp.md)
+2. [Add new on-ramp service](../developers/wallet-service/on-ramp.md)
 3. Add twitter login
 4. Add scroll support
 5. Improve Custom UI

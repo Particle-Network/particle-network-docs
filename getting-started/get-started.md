@@ -8,14 +8,19 @@ description: Integrate Particle products to your dApp within minutes
 
 1. :key: **Sign up** -> [https://dashboard.particle.network/#/login](https://dashboard.particle.network/#/login)
 2. :bulb: **Create a project & configure your Android/iOS/Web app**
-3. :tada: **Integrate our native SDKs**
-   1. [**Connect Service SDKs**](../developers/connect-service/sdks/)
-   2. [**Auth Service SDKs**](../developers/connect-service/sdks/)
-   3. [**Wallet Service SDKs**](../developers/wallet-service/sdks/)
-   4. [**On-\&Off-Ramp Service**](../developers/wallet-service/on-ramp.md)
-   5. [**Node Service RPCs**](broken-reference)
-   6. [**NFT Service RPCs**](broken-reference)
-   7. [**IPFS API**](../developers/node-service/ipfs-service.md)
+3. **Learn our Smart Wallet-as-a-Service**
+   1. [smart-wallet-as-a-service.md](smart-wallet-as-a-service.md "mention")
+4. :tada: **Integrate our native SDKs**
+   1. **Smart Wallet-as-a-Service**
+      1. [**Auth Service SDKs**](../developers/connect-service/sdks/)
+      2. [**Connect Service SDKs**](../developers/connect-service/sdks/)
+      3. [**Wallet Service SDKs**](../developers/wallet-service/sdks/)
+      4. [**Account Abstraction**](../developers/account-abstraction/)
+   2. **Other Services**
+      1. [**On-\&Off-Ramp Service**](../developers/wallet-service/on-ramp.md)
+      2. [**Node Service RPCs**](broken-reference)
+      3. [**NFT Service RPCs**](broken-reference)
+      4. [**IPFS API**](../developers/node-service/ipfs-service.md)
 
 ## **Create a Project**
 
@@ -35,10 +40,14 @@ You must configure your Android/iOS/Web app to access Particle Network's auth an
 
 ## Integrate SDKs
 
-1. User our [connect services](../developers/connect-service/) to onboard both web2 and web3 users
-2. Use our [auth services](../developers/node-service/authentication.md) to authenticate your dApp users in seconds
-3. Use our [wallet services](../developers/wallet-service/) to install a fully functional, powerful wallet into your dApp with a one-line-code
-4. Use our [node services](../developers/node-service/) to interact with on-chain data and send different transactions to the network by utilizing API-provided endpoints
+1. Integrate our Smart Wallet-as-a-Service
+   1. Use our [auth services](../developers/node-service/authentication.md) to onboard web2 users using Email, Phone, Social Accounts in seconds which will create a seamless and seedless user experience;
+   2. User our [connect services](../developers/connect-service/) to onboard both web2 and web3 users;
+   3. Use our [wallet services](../developers/wallet-service/) to install a fully functional, powerful wallet into your dApp with a one-line-code;
+   4. User our [aa stack](../developers/account-abstraction/) to enable the capability of Smart Account
+2. Other Services
+   1. Use our [node services](../developers/node-service/) to interact with on-chain data and send different transactions to the network by utilizing API-provided endpoints;
+   2. Use our [nft services](../developers/nft-service/) to implement the in-app nft marketplace.
 
 ## **Enjoy BUIDL!**
 

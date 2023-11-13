@@ -36,8 +36,7 @@
   * [Optimism](overview/available-networks/optimism.md)
   * [PlatON](overview/available-networks/platon.md)
   * [ThunderCore](overview/available-networks/thundercore.md)
-* [🎁 What's New](overview/whats-new/README.md)
-  * [Changelog](overview/whats-new/changelog.md)
+* [🎁 Changelog](overview/changelog.md)
 
 ## Getting Started
 
