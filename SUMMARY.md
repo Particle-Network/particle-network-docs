@@ -105,6 +105,7 @@
   * [RPC](developers/account-abstraction/rpc/README.md)
     * [Bundler RPC](developers/account-abstraction/rpc/bundler-rpc.md)
     * [Account Abstraction RPC](developers/account-abstraction/rpc/account-abstraction-rpc.md)
+    * [Paymaster RPC](developers/account-abstraction/rpc/paymaster-rpc.md)
     * [Account Abstraction RPC(V1 deprecated)](developers/account-abstraction/rpc/account-abstraction-rpc-v1.md)
 * [🔌 Connect Service](developers/connect-service/README.md)
   * [SDKs](developers/connect-service/sdks/README.md)

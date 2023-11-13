@@ -4,7 +4,12 @@ description: Recharge USDT on one chain and use it for multiple chains
 
 # Paymaster
 
-The particles have implemented a Paymaster service that supports multiple chains. You can recharge USDT on one chain and use the Paymaster service on other chains. The particles will automatically calculate the exchange rate and deduct it in the background
+The particles have implemented a Paymaster service that supports multiple chains. You can recharge USDT on one chain and use the Paymaster service on other chains. The particles will automatically calculate the exchange rate and deduct it in the background.
+
+## How to use
+
+1. Use [Particle Network's AA SDKs](sdks/), Particle's Paymaster will be automatically included, and no extra configuration is needed;
+2. Use [Particle Paymaster's RPC](rpc/paymaster-rpc.md) directly to plug the multi-chain paymaster in your aa project.
 
 ## Expiration time
 
