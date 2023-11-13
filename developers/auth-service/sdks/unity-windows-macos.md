@@ -35,7 +35,7 @@ It request 5 parameters:
 * `config`: Json string, required project id, client key and appId, could have more parameters, for more details, click [here](web.md#set-auth-theme)
 * `there`: Json string, could be empty, it works for custom web wallet ui, for more details, click [here](web.md#set-auth-theme)
 * `language`: support en-US, zh-CN, zh-TW, ja-JP, ko-KR
-* `chainName and chainId`: support EVM chains and Solana, take a look [ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
+* `chainName and chainId`: support EVM chains and Solana, take a look [ChainId And ChainName Configs](../../other-services/node-service/evm-chains-api/#structure)
 
 ```csharp
 // here is a simple example, and we support more parameters

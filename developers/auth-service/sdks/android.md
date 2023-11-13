@@ -157,7 +157,7 @@ public class App extends Application {
 
 Particle Network support Solana and EVM chains, you can init with below chain info:
 
-[👉 chainId and chainName configs](../../node-service/evm-chains-api/)
+[👉 chainId and chainName configs](../../other-services/node-service/evm-chains-api/)
 
 ### Switch  ChainInfo
 

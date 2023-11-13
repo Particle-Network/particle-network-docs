@@ -12,7 +12,7 @@ The Server RPC URL is:
 
 ## Authentication
 
-[👉 Check Authentication](../../node-service/authentication.md#authentication)
+[👉 Check Authentication](../../other-services/node-service/authentication.md#authentication)
 
 ## Methods
 
@@ -246,7 +246,7 @@ Response example:
   * `chain: <string>`, wallets chain name, the type value is as below
     * `solana`
     * `evm_chain`
-  * `chainId: <uint64>`, chain id, see [#structure](../../node-service/solana-api/#structure "mention") for solana, [#structure](../../node-service/evm-chains-api/#structure "mention") for evm-chains
+  * `chainId: <uint64>`, chain id, see [#structure](../../other-services/node-service/solana-api/#structure "mention") for solana, [#structure](../../other-services/node-service/evm-chains-api/#structure "mention") for evm-chains
   * `publicAddress: <string>`, user wallet public address
   * `contractAddress: <string>`, your contract/program address
 
@@ -384,4 +384,4 @@ Response example:
 
 ## Errors
 
-[👉](https://particle.network/#/login) [Check RPC errors](../../node-service/error-reference.md)
+[👉](https://particle.network/#/login) [Check RPC errors](../../other-services/node-service/error-reference.md)

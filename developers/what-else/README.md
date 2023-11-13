@@ -14,9 +14,9 @@ In Auth and verification emails, there are relevant elements of the company bran
 
 You can also modify the icon in some special festivals to add some atmosphere.
 
-👉[ ](auth-service/branding.md)[Auth Services-Branding](auth-service/branding.md)
+👉[ ](../auth-service/branding.md)[Auth Services-Branding](../auth-service/branding.md)
 
-<figure><img src="../.gitbook/assets/Branding.png" alt=""><figcaption><p>Branding</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Branding.png" alt=""><figcaption><p>Branding</p></figcaption></figure>
 
 ### Selection of login mode
 
@@ -47,11 +47,11 @@ Particle provides developers with several common control types that can be used 
 
 Click to call up login directly. Support switching other blockchains.
 
-<figure><img src="../.gitbook/assets/组 12.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/组 12.png" alt=""><figcaption></figcaption></figure>
 
 #### Wallet hover icon
 
 You can put it anywhere in the web page, click it and it will expand into a wallet. Users can use the full wallet function without jumping to the other page.
 
-<figure><img src="../.gitbook/assets/组 13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/组 13.png" alt=""><figcaption></figcaption></figure>
 

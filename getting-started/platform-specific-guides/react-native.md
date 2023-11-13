@@ -40,20 +40,20 @@ description: All you need to know for integrating Particle on React Native
 
 ## For All Platforms
 
-{% content-ref url="../../developers/nft-service/" %}
-[nft-service](../../developers/nft-service/)
+{% content-ref url="../../developers/other-services/nft-service/" %}
+[nft-service](../../developers/other-services/nft-service/)
 {% endcontent-ref %}
 
-{% content-ref url="../../developers/node-service/" %}
-[node-service](../../developers/node-service/)
+{% content-ref url="../../developers/other-services/node-service/" %}
+[node-service](../../developers/other-services/node-service/)
 {% endcontent-ref %}
 
 ## Others
 
-{% content-ref url="../../developers/what-else.md" %}
-[what-else.md](../../developers/what-else.md)
+{% content-ref url="../../developers/what-else/" %}
+[what-else](../../developers/what-else/)
 {% endcontent-ref %}
 
-{% content-ref url="../../developers/faq.md" %}
-[faq.md](../../developers/faq.md)
+{% content-ref url="../../developers/what-else/faq.md" %}
+[faq.md](../../developers/what-else/faq.md)
 {% endcontent-ref %}

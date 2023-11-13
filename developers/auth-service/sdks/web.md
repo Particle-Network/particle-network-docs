@@ -47,7 +47,7 @@ Before you can add Auth Service to your app, you need to create a Particle proje
 
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
-[👉 chainId and chainName configs](../../node-service/evm-chains-api/)
+[👉 chainId and chainName configs](../../other-services/node-service/evm-chains-api/)
 
 <pre class="language-typescript"><code class="lang-typescript">import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
 import { ParticleProvider } from "@particle-network/provider";
@@ -93,7 +93,7 @@ const ethersSigner = ethersProvider.getSigner();
 Your first Particle Network dApp! 🎉 You can implement web3 functionalities just like how you would normally with MetaMask.
 
 {% hint style="info" %}
-Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-problems).
+Have a problem? you can refer to this [FAQ](../../what-else/faq.md#web-sdk-integration-problems).
 {% endhint %}
 
 ## Web3 Integration

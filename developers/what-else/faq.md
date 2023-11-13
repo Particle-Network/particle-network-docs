@@ -2,11 +2,11 @@
 
 ## What networks do you support?
 
-[👉 Check out our supported networks here](../overview/available-networks/)
+[👉 Check out our supported networks here](../../overview/available-networks/)
 
 ## How do I integrate my own user ID system?
 
-After the user successfully logs in, **Particle Auth** SDK will return the user **uuid** and **token**. You can then retrieve and verify the user info by calling [a server API](auth-service/sdks/server-api.md).
+After the user successfully logs in, **Particle Auth** SDK will return the user **uuid** and **token**. You can then retrieve and verify the user info by calling [a server API](../auth-service/sdks/server-api.md).
 
 ## What types of NFTs are supported?
 
@@ -48,7 +48,7 @@ npm install crypto-browserify stream-browserify buffer string_decoder
 
 if your project use firebase tools,Refer to the following process
 
-{% file src="../.gitbook/assets/Partcile Unity sdk with firebase tools .pdf" %}
+{% file src="../../.gitbook/assets/Partcile Unity sdk with firebase tools .pdf" %}
 
 ## iOS SDK integration problems
 

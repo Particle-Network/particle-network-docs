@@ -127,7 +127,7 @@ export const App = () => {
 ```
 
 {% hint style="info" %}
-Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-problems).
+Have a problem? you can refer to this [FAQ](../../what-else/faq.md#web-sdk-integration-problems).
 {% endhint %}
 
 ### Check User Is Connected

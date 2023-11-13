@@ -22,7 +22,7 @@ After which, you’ll have a glimpse of how smooth the onboarding and user exper
 
 Go to [https://linea.particle.network](https://linea.particle.network)
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 At the beginning, please follow our twitter to begin the journey, appreciate the support!
 

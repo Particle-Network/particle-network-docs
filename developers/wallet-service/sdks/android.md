@@ -182,7 +182,7 @@ ParticleNetwork.solana.getTokenList()
 {% endtab %}
 {% endtabs %}
 
-#### Access 👉 [any RPC ](../../node-service/solana-api/)
+#### Access 👉 [any RPC ](../../other-services/node-service/solana-api/)
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -272,7 +272,7 @@ ParticleNetwork.evm.getTokenList()
 {% endtab %}
 {% endtabs %}
 
-#### Access 👉 [any RPC ](../../node-service/evm-chains-api/)
+#### Access 👉 [any RPC ](../../other-services/node-service/evm-chains-api/)
 
 {% tabs %}
 {% tab title="Kotlin" %}
