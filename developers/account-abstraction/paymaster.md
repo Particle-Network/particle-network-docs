@@ -107,7 +107,7 @@ BODY
 
 Example
 
-```
+```typescript
 POST https://your-domain/hook-after-paymaster-sign
 
 Header
