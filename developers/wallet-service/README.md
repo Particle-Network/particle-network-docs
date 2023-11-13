@@ -1,5 +1,5 @@
 ---
-description: Your one-stop wallet solution
+description: Your one-stop embedded wallet solution
 ---
 
 # 💰 Wallet Service

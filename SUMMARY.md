@@ -44,7 +44,6 @@
 * [🗺 Dashboard](getting-started/dashboard/README.md)
   * [Manage Projects](getting-started/dashboard/manage-projects.md)
   * [Manage Apps](getting-started/dashboard/manage-apps.md)
-  * [Manage Assets](getting-started/dashboard/manage-assets.md)
 * [🧩 Platform-specific Guides](getting-started/platform-specific-guides/README.md)
   * [Web](getting-started/platform-specific-guides/web.md)
   * [Android](getting-started/platform-specific-guides/android.md)
@@ -167,15 +166,12 @@
 ## Resources
 
 * [🎨 Logos & Assets](resources/logos-and-assets.md)
-* [📰 Blogs](https://medium.com/particle-network)
+* [📰 Blogs](https://blog.particle.network/)
 * [📊 System Status](https://status.particle.network)
 * [📜 Terms & Conditions](resouces/terms-and-conditions/README.md)
   * [Privacy Policy](resouces/terms-and-conditions/privacy-policy.md)
   * [Terms of Use](resouces/terms-and-conditions/terms-of-use.md)
   * [API & SDK License Agreement](resouces/terms-and-conditions/api-and-sdk-license-agreement.md)
-* [💗 Campaigns](users/campaigns/README.md)
-  * [opBNB Odyssey](users/campaigns/opbnb-odyssey.md)
-  * [Linea Voyage](users/campaigns/linea-voyage.md)
 
 ## Community And Support
 
@@ -183,3 +179,6 @@
 * [🎮 Discord](https://discord.gg/2y44qr6CR2)
 * [🐙 Github](https://github.com/Particle-Network)
 * [🐦 Twitter](https://twitter.com/ParticleNtwrk)
+* [💗 Campaigns](community-and-support/campaigns/README.md)
+  * [opBNB Odyssey](community-and-support/campaigns/opbnb-odyssey.md)
+  * [Linea Voyage](community-and-support/campaigns/linea-voyage.md)
