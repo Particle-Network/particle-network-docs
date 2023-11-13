@@ -4,7 +4,7 @@
 [bundler-rpc.md](rpc/bundler-rpc.md)
 {% endcontent-ref %}
 
-High-level RPCS
+High-level RPCs
 
 {% content-ref url="rpc/account-abstraction-rpc.md" %}
 [account-abstraction-rpc.md](rpc/account-abstraction-rpc.md)
