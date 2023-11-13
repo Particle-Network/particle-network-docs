@@ -4,7 +4,11 @@ description: Recharge USDT on one chain and use it for multiple chains
 
 # Paymaster
 
-##
+The particles have implemented a Paymaster service that supports multiple chains. You can recharge USDT on one chain and use the Paymaster service on other chains. The particles will automatically calculate the exchange rate and deduct it in the background
+
+## Expiration time
+
+You have the option to define an expiration time for the Paymaster Signature. Once the user operation reaches its expiration, the Paymaster Signature will automatically lapse.
 
 ## Webhook
 
