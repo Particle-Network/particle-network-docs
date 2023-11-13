@@ -11,6 +11,10 @@ The particles have implemented a Paymaster service that supports multiple chains
 1. Use [Particle Network's AA SDKs](sdks/), Particle's Paymaster will be automatically included, and no extra configuration is needed;
 2. Use [Particle Paymaster's RPC](rpc/paymaster-rpc.md) directly to plug the multi-chain paymaster in your aa project.
 
+{% hint style="info" %}
+For any testnet, it's sponsored by Particle Network automatically, no need to deposit
+{% endhint %}
+
 ## Expiration time
 
 You have the option to define an expiration time for the Paymaster Signature. Once the user operation reaches its expiration, the Paymaster Signature will automatically lapse.
@@ -26,7 +30,7 @@ There are two types of webhooks
 
 ### Hook Verification
 
-Every time a Hook request is made, we would generate a signature for the body, and developers can verify the signature to determine whether the request was sent by the Particle
+Every time a Hook request is made, we generate a signature for the body, and developers can verify the signature to determine whether the request was sent by the Particle
 
 We have generated a unique public and private key (RSA-2048) for each project, and you can download the public key from the dashboard page for verification
 
@@ -54,7 +58,7 @@ const verified: boolean = nodeRSA.verify(data, Buffer.from(signature, 'base64'))
   * entryPoint - The entry point address
   * parsed - Transaction struct. Paymaster will attempt to parse the calldata of UserOP. If it cannot be parsed, this field may not exist
 * Response
-  * If status code of the response returned is **200**, then the Paymaster would accept the UserOP and sign it
+  * If the status code of the response returned is **200**, then the Paymaster would accept the UserOP and sign it
 
 Example:&#x20;
 
