@@ -10,7 +10,7 @@ Based on [the auction house protocol](https://docs.metaplex.com/auction-house/de
 
 ### Overview
 
-![Architecture](../../../../../.gitbook/assets/API\_Flow.png)
+![Architecture](../../../../.gitbook/assets/API\_Flow.png)
 
 {% hint style="info" %}
 If you want to build your market, you need to implement some centralized functions yourself, such as the list of NFTs being sold, the history activities of NFTs, etc.

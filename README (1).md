@@ -44,19 +44,19 @@ We've included detailed designs in our wallet service to create the ultimate use
 
 Not only do we have JSON-RPC support, but also enhanced API. This allows you to receive transaction information and NFTs through addresses, obtain token prices, smartly encode/decode transactions, and more. Compared to other node services, you develop your dApp faster while also ensuring that it performs better.
 
-[👉 Learn more about Particle Node](developers/other-services/node-service/)
+[👉 Learn more about Particle Node](developers/node-service/)
 
 ### **NFT Service**
 
 **Particle NFT** provides a one-stop NFT Create, Manage, Distribute, and Marketplace solution.
 
-[👉 Learn more about Particle NFT](developers/other-services/nft-service/)
+[👉 Learn more about Particle NFT](developers/nft-service/)
 
 ### Decentralized Storage
 
 We support IPFS now, and more decentralized storage services are coming.
 
-[👉 Learn more about IPFS](developers/other-services/node-service/ipfs-service.md)
+[👉 Learn more about IPFS](developers/node-service/ipfs-service.md)
 
 ### Account Abstraction
 

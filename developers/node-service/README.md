@@ -26,4 +26,4 @@ Particle's Node Service is your high-performance access to all major blockchains
 
 ### Available Networks
 
-Currently, we support almost **all EVM compatible chains** and **the Solana chain**. [For details check this 👉](../../../overview/available-networks/)
+Currently, we support almost **all EVM compatible chains** and **the Solana chain**. [For details check this 👉](../../overview/available-networks/)

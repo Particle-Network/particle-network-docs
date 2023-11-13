@@ -30,7 +30,7 @@ initialize ParticleSDK create a `Init` function in the Widget Blueprint, and the
 * `In Config`: Json string, required project id, client key and appId, could have more parameters, for more details, click [here](web.md#set-auth-theme)
 * `In Theme`: Json string, could be empty, it works for custom web wallet ui, for more details, click [here](web.md#set-auth-theme)
 * `In Language`: support en-US, zh-CN, zh-TW, ja-JP, ko-KR
-* `In Chain Name / In Chain Id`: support EVM chains and Solana, take a look [ChainId And ChainName Configs](../../other-services/node-service/evm-chains-api/#structure)
+* `In Chain Name / In Chain Id`: support EVM chains and Solana, take a look [ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
 
 <figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>Init</p></figcaption></figure>
 
