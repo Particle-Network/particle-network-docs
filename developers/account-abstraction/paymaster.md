@@ -23,11 +23,22 @@ The ERC20 Token Paymaster is used by the user directly, so it's hooked into our 
 ## How to use
 
 1. Use [Particle Network's AA SDKs](sdks/), Particle's Paymaster will be automatically included, and no extra configuration is needed;
+
+{% content-ref url="sdks/" %}
+[sdks](sdks/)
+{% endcontent-ref %}
+
 2. Use [Particle Paymaster's RPC](rpc/paymaster-rpc.md) directly to plug the multi-chain paymaster in your AA project.
+
+{% content-ref url="rpc/paymaster-rpc.md" %}
+[paymaster-rpc.md](rpc/paymaster-rpc.md)
+{% endcontent-ref %}
 
 {% hint style="info" %}
 For any testnet, it's sponsored by Particle Network automatically, no need to deposit
 {% endhint %}
+
+3\. Because of our modular design, you can always use any other paymaster you want, we have also natively integrated [Biconomy Paymater](https://dashboard.biconomy.io/).
 
 ## Expiration time
 
