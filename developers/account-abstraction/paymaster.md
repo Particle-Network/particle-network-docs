@@ -1,16 +1,18 @@
 ---
-description: Recharge USDT on one chain and use it for multiple chains
+description: >-
+  Omnichain Paymaster - Recharge USDT on one chain and use it for multiple
+  chains
 ---
 
 # Paymaster
 
-The particles have implemented a Paymaster service that supports multiple chains. You can recharge USDT on one chain and use the Paymaster service on other chains. The particles will automatically calculate the exchange rate and deduct it in the background.
+Particle Network has implemented a Paymaster service that supports multiple chains. You can recharge USDT on one chain(Ethereum and BNB Chain supported now) and use the Paymaster service on any chain. Particle Paymaster will automatically calculate the exchange rate and deduct it in the background.
 
 ## What is Particle Paymaster
 
-Particle Paymaster is the multi-chain Verifying Paymaster, which means
+Particle Paymaster is a multi-chain Verifying Paymaster, which means
 
-1. Deposit and then you can sponsor UserOp on every chain;
+1. Deposit once and sponsor UserOp on every chain;
 2. Bring any sponsorship logic using Webhooks;
 3. Monitor every UserOp you sponsored.
 
@@ -21,7 +23,7 @@ The ERC20 Token Paymaster is used by the user directly, so it's hooked into our 
 ## How to use
 
 1. Use [Particle Network's AA SDKs](sdks/), Particle's Paymaster will be automatically included, and no extra configuration is needed;
-2. Use [Particle Paymaster's RPC](rpc/paymaster-rpc.md) directly to plug the multi-chain paymaster in your aa project.
+2. Use [Particle Paymaster's RPC](rpc/paymaster-rpc.md) directly to plug the multi-chain paymaster in your AA project.
 
 {% hint style="info" %}
 For any testnet, it's sponsored by Particle Network automatically, no need to deposit
