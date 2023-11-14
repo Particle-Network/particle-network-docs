@@ -140,3 +140,5 @@ Example Response
 ```
 
 ### JSON-RPC Errors
+
+<table><thead><tr><th>Error Code</th><th>Error Message</th><th data-hidden>Error Message</th><th data-hidden></th></tr></thead><tbody><tr><td>-32000</td><td>System error</td><td></td><td></td></tr><tr><td>-32001</td><td>Unsupported chainId</td><td></td><td></td></tr><tr><td>-32002</td><td>Arrays are not currently supported</td><td></td><td></td></tr><tr><td>-32003</td><td>The sign request is rejected</td><td></td><td></td></tr><tr><td>-32004</td><td>Can not fetch the usd price</td><td></td><td></td></tr><tr><td>-32005</td><td>Insufficient deposit for the project</td><td></td><td></td></tr><tr><td>-32006</td><td>Method not found</td><td></td><td></td></tr><tr><td>-32600</td><td>Invalid Request</td><td></td><td></td></tr><tr><td>-32602</td><td>Invalid params</td><td></td><td></td></tr><tr><td>-32603</td><td>Not supported entry point</td><td></td><td></td></tr><tr><td>-32606</td><td>Simulate user operation failed</td><td></td><td></td></tr></tbody></table>
