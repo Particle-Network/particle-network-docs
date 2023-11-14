@@ -71,7 +71,7 @@ We have generated a unique public and private key (RSA-2048) for each project, a
 
 <figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption><p>Paymaster Page</p></figcaption></figure>
 
-Verification Example:&#x20;
+Verification Example:
 
 ```typescript
 import NodeRSA from 'node-rsa';
@@ -95,7 +95,7 @@ const verified: boolean = nodeRSA.verify(data, Buffer.from(signature, 'base64'))
 * Response
   * If the status code of the response returned is **200**, then the Paymaster would accept the UserOP and sign it
 
-Example:&#x20;
+Example:
 
 ```typescript
 POST https://your-domain/hook-before-paymaster-sign
@@ -187,6 +187,22 @@ BODY
 }
 
 ```
+
+## How to use Webhook for your sponsorship policy
+
+1. For the **before\_paymaster\_sign** webbook, we have returned all the data necessary&#x20;
+   1. **projectUuid**
+   2. **chainId**
+   3. **userOp**
+   4. and parsed data
+      1. **accountType: BICONOMY, CYBERCONNECT, SIMPLE**
+      2. **txs**
+2. Any policy
+   1. You can use **chainId** to decide which chains you want to sponsor;
+   2. You can use **userOp** to decide which user address(sender) you want to sponsor;
+   3. You can use **userOp** to calculate the gas fee and decide whether to sponsor or not;
+   4. You can use the **accountType** and **txs** to use them as a smart contract whitelist or blacklist.
+   5. ...
 
 ## Config & Check Paymaster
 
