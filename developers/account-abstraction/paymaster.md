@@ -40,8 +40,6 @@ For any testnet, it's sponsored by Particle Network automatically, no need to de
 
 3\. Because of our modular design, you can always use any other paymaster you want, we have also natively integrated [Biconomy Paymater](https://dashboard.biconomy.io/).
 
-
-
 {% hint style="info" %}
 Biconomy Paymaster only supports BICONOMY smart account.
 {% endhint %}
@@ -58,6 +56,12 @@ There are two types of webhooks
 
 * before paymaster sign
 * after paymaster sign
+
+### When sponsor
+
+If the response for **before paymaster sign** webhook's status code is **200**, we will consider it passed;
+
+We recommend you use **400** for rejected sponsorship.
 
 ### Hook Verification
 
