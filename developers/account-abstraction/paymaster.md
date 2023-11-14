@@ -112,7 +112,7 @@ BODY
     },
     "entryPoint": "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789",
     "parsed": {
-        "accountType": "Simple",
+        "accountType": "SIMPLE",
         "txs": [
             {
                 "to": "0xaC6A87c681A5Ed4cb58bC4fa7bF81a83b928C83C",
@@ -163,7 +163,7 @@ BODY
     "entryPoint": "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789",
     "userOpHash": "0x45d4f5bb4114907a09426000e152eea5511576924d58700f7f2561f32a552476",
     "parsed": {
-        "accountType": "Simple",
+        "accountType": "SIMPLE",
         "txs": [
             {
                 "to": "0xaC6A87c681A5Ed4cb58bC4fa7bF81a83b928C83C",
