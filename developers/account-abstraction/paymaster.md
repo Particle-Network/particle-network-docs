@@ -40,6 +40,12 @@ For any testnet, it's sponsored by Particle Network automatically, no need to de
 
 3\. Because of our modular design, you can always use any other paymaster you want, we have also natively integrated [Biconomy Paymater](https://dashboard.biconomy.io/).
 
+
+
+{% hint style="info" %}
+Biconomy Paymaster only supports BICONOMY smart account.
+{% endhint %}
+
 ## Expiration time
 
 You have the option to define an expiration time for the Paymaster Signature. Once the user operation reaches its expiration, the Paymaster Signature will automatically lapse.
