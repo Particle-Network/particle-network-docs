@@ -54,8 +54,8 @@ You have the option to define an expiration time for the Paymaster Signature. On
 
 There are two types of webhooks
 
-* before paymaster sign
-* after paymaster sign
+* before paymaster sign (before\_paymaster\_sign)
+* after paymaster sign (after\_paymaster\_sign)
 
 ### When sponsor
 
@@ -63,9 +63,9 @@ If the response for **before paymaster sign** webhook's status code is **200**, 
 
 We recommend you use **400** for rejected sponsorship.
 
-### Hook Verification
+### Webhook Source Verification
 
-Every time a Hook request is made, we generate a signature for the body, and developers can verify the signature to determine whether the request was sent by the Particle
+Every time a Webhook request is made, we generate a signature for the body, and developers can verify the signature to determine whether the request was sent by Particle Network
 
 We have generated a unique public and private key (RSA-2048) for each project, and you can download the public key from the dashboard page for verification
 
