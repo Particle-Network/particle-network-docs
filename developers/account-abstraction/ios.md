@@ -34,9 +34,16 @@ let dappApiKeys: [Int: String] = [
     ParticleNetwork.ChainInfo.polygon(.mainnet).chainId: "YOUR_DAPP_API_KEY",
     ParticleNetwork.ChainInfo.polygon(.mumbai).chainId: "YOUR_DAPP_API_KEY"
 ]
-AAService.initialize(dappApiKeys: dappApiKeys)
 
-// after initialize, set a aa service object to ParticleNetwork.
+// We support biconomy | cyberConnect | simple
+AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: biconomyApiKeys)
+
+// Optinonal, if you also add Wallet Service, 
+// you can call the method to hidden smart account setting in setting page,
+// incase user change your smart account name.
+ParticleWalletGUI.setShowSmartAccountSetting(false)
+
+// After initialize, set a aa service object to ParticleNetwork.
 let aaService = AAService()
 ParticleNetwork.setAAService(aaService)
 ```

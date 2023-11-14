@@ -941,6 +941,9 @@ ParticleWalletGUI.setShowManageWallet(true)
 // show language setting in setting page, default value is false.
 ParticleWalletGUI.setShowLanguageSetting(true)
 
+// show smart account setting in setting page, default value is true;
+ParticleWalletGUI.setShowSmartAccountSetting(true)
+
 // show appearance setting in setting page, default value is false.
 ParticleWalletGUI.setShowAppearanceSetting(true)
 
