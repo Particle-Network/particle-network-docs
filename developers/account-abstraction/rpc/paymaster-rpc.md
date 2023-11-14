@@ -138,3 +138,5 @@ Example Response
     }
 }
 ```
+
+### JSON-RPC Errors
