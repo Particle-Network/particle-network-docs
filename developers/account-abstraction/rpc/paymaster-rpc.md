@@ -22,6 +22,8 @@ https://paymaster.particle.network?chainId=${chainId}&projectUuid=${projectUuid}
 
 ### pm\_sponsorUserOperation
 
+Obtain Paymaster's signature to sponsor GasFee
+
 * Body
   * method - pm\_sponsorUserOperation
   * params
@@ -82,6 +84,57 @@ Example Response
     "id": 0,
     "result": {
         "paymasterAndData": "0xc89b723809598d0ebf821e89087dc8e1a6ee04990000000000000000000000000000000000000000000000000000000065520e4300000000000000000000000000000000000000000000000000000000000000002b065ddfec26c0771030d57fb7693548a5a564d5f14a5d91f28bc8512c64d23048727b4a6f91d8e8286bb989b87828f9be87b0d665ea63d6b3f66b068de7bf851c"
+    }
+}
+```
+
+### pm\_paymasterBalance
+
+Get your project's balance (USD)
+
+{% hint style="info" %}
+The decimals of the USD balance is **6**
+{% endhint %}
+
+* Body
+  * method - pm\_paymasterBalance
+
+Example Request
+
+```typescript
+import Axios from "axios";
+
+const projectUuid = "Your project uuid";
+const projectKey = "Your project client key or server key";
+
+const paymasterUrl = "https://paymaster.particle.network";
+(async () => {
+    const response = await Axios.post(
+        paymasterUrl,
+        {
+            method: "pm_paymasterBalance",
+            params: [],
+        },
+        {
+            params: {
+                projectUuid,
+                projectKey,
+            },
+        }
+    );
+
+    console.log(response.data);
+})();
+```
+
+Example Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+        "balance": "0x5ae4ea" // $5.956842
     }
 }
 ```
