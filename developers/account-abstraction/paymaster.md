@@ -190,7 +190,7 @@ BODY
 
 ## How to use Webhook for your sponsorship policy
 
-1. For the **before\_paymaster\_sign** webbook, we have returned all the data necessary&#x20;
+1. For the **before\_paymaster\_sign** webhook, we have returned all the data necessary&#x20;
    1. **projectUuid**
    2. **chainId**
    3. **userOp**
