@@ -13,8 +13,9 @@ npm install @particle-network/aa
 ## Before Start
 
 1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
-2. If you want to use Particle Paymaster on Mainnet, please get in touch with Particle Team to enable it;
-3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/),  create Paymaster & get dappApiKey.
+2. If you want to use [Particle Verifying Paymaster](paymaster.md) on Mainnet, you can deposit and use it directly without extra configration in SDK, [check docs](paymaster.md);
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/), create Paymaster & get dappApiKey;
+4. Token Paymaster is automatically enabled (we are using Biconomy Token Paymaster).
 
 ## Initialize the SmartAccount
 
@@ -90,8 +91,8 @@ const feeQuotesResult = await smartAccount.getFeeQuotes(tx);
 // gasless transaction userOp, maybe null
 const gaslessUserOp = feeQuotesResult.verifyingPaymasterGasless?.userOp;
 <strong>const gaslessUserOpHash = feeQuotesResult.verifyingPaymasterGasless?.userOpHash;
-</strong><strong>
-</strong><strong>// pay with Native tokens: transaction userOp
+</strong>
+<strong>// pay with Native tokens: transaction userOp
 </strong>const paidNativeUserOp = feeQuotesResult.verifyingPaymasterNative?.userOp;
 const paidNativeUserOpHash = feeQuotesResult.verifyingPaymasterNative?.userOpHash;
 
@@ -149,15 +150,15 @@ import Web3 from "web3";
 </strong><strong>const web3 = new Web3(wrapProvider);
 </strong>//send user paid transaction
 <strong>await web3.eth.sendTransaction(tx);
-</strong><strong>
-</strong><strong>
-</strong><strong>// send gassless transaction
+</strong>
+
+<strong>// send gassless transaction
 </strong>const wrapProvider = new AAWrapProvider(smartAccount, SendTransactionMode.Gasless);
 const web3 = new Web3(wrapProvider);
 await web3.eth.sendTransaction(tx);
-<strong>
-</strong><strong>
-</strong><strong>// use select pay gas token or gasless
+
+
+<strong>// use select pay gas token or gasless
 </strong>const wrapProvider = new AAWrapProvider(smartAccount, SendTransactionMode.UserSelect);
 const web3 = new Web3(wrapProvider);
 wrapProvider.once(SendTransactionEvent.Request, (feeQuotesResult) => {
@@ -179,5 +180,5 @@ wrapProvider.once(SendTransactionEvent.Request, (feeQuotesResult) => {
     wrapProvider.rejectSendTransaction({ message: 'user rejected'});
 });
 await web3.eth.sendTransaction(tx);
-<strong>
-</strong></code></pre>
+
+</code></pre>

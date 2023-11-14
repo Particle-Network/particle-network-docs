@@ -1,6 +1,6 @@
 # Android
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 1.Finish integration with either [Auth Service](../auth-service/sdks/android.md) or [Connect Service](../auth-service/sdks/android.md)
 
@@ -32,6 +32,8 @@ The dappApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboar
 ParticleNetwork.initBiconomyMode(apiKey,BiconomyVersion.V100)
 ParticleNetwork.setBiconomyService(BiconomyService)
 ```
+
+###
 
 ### Enable biconomy service
 
@@ -95,9 +97,9 @@ val feeQuote: Erc4337FeeQuote  //get Erc4337FeeQuote by ParticleNetwork.getBicon
 connectAdapter.signAndSendTransaction(publicAddress = publicAddress, transaction =  tranaction, FeeModeCustom(feeQuote), callback)
 ```
 
-### Send batch transactions&#x20;
+### Send batch transactions
 
-you need create a BiconomyService instance, then call quickSendTransactions mehod&#x20;
+you need create a BiconomyService instance, then call quickSendTransactions mehod
 
 ```kotlin
 ParticleNetwork.getBiconomyService().quickSendTransaction(transactions, feeMode, messageSigner, callback)
@@ -105,7 +107,7 @@ ParticleNetwork.getBiconomyService().quickSendTransaction(transactions, feeMode,
 
 ### More methods
 
-There are other methods, and all Account Abstraction methods are defined in  BiconomyServiceProtocol.
+There are other methods, and all Account Abstraction methods are defined in BiconomyServiceProtocol.
 
 ```
 interface IBiconomyService {
@@ -204,4 +206,3 @@ interface IBiconomyService {
 
 }
 ```
-
