@@ -95,6 +95,7 @@ x-particle-signature: WH/6YifcF2dad3qbS4HkjQ7EboDXNTcIfCH4cCW0lfOWJsQR1GPoHZpqtq
 
 BODY
 {
+    "type": "before_paymaster_sign",
     "chainId": 80001,
     "userOp": {
         "sender": "0x2e9661BDA6201F97430dcc1541A1579b83980DD1",
@@ -144,6 +145,7 @@ x-particle-signature: WH/6YifcF2dad3qbS4HkjQ7EboDXNTcIfCH4cCW0lfOWJsQR1GPoHZpqtq
 
 BODY
 {
+    "type": "after_paymaster_sign",
     "chainId": 80001,
     "userOp": {
         "sender": "0x2e9661BDA6201F97430dcc1541A1579b83980DD1",
