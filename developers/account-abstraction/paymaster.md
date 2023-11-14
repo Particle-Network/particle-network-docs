@@ -107,6 +107,7 @@ BODY
 {
     "type": "before_paymaster_sign",
     "chainId": 80001,
+    "projectUuid": "ef6c29f5-ad2b-545c-ad0c-54441068b71d",
     "userOp": {
         "sender": "0x2e9661BDA6201F97430dcc1541A1579b83980DD1",
         "nonce": "0x05",
@@ -157,6 +158,7 @@ BODY
 {
     "type": "after_paymaster_sign",
     "chainId": 80001,
+    "projectUuid": "ef6c29f5-ad2b-545c-ad0c-54441068b71d",
     "userOp": {
         "sender": "0x2e9661BDA6201F97430dcc1541A1579b83980DD1",
         "nonce": "0x05",
