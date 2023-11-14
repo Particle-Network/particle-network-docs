@@ -20,7 +20,7 @@ pod install --repo-update
 
 1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
 2. If you want to use Particle Paymaster on Mainnet, please get in touch with Particle Team to enable it;
-3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/),  create Paymaster & get dappApiKey.
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/), create Paymaster & get dappApiKey.
 
 ## Initialize
 
@@ -109,9 +109,9 @@ if tokenFeeQuotes.count > 0 {
 }
 ```
 
-### Send transaction, support multi transactions&#x20;
+### Send transaction, support multi transactions
 
-you need create a AAService instance, then call quickSendTransactions mehod&#x20;
+you need create a AAService instance, then call quickSendTransactions mehod
 
 ```swift
 let aaService = Service()
@@ -179,21 +179,24 @@ aaService.deployWalletContract(messageSigner: signer, feeMode: .gasless)
 
 ### More methods
 
-There are other methods, and all Account Abstraction methods are defined in  AAServiceProtocol.
+There are other methods, and all Account Abstraction methods are defined in AAServiceProtocol.
 
 ```swift
 public protocol AAServiceProtocol {
     /// Rpc method, get smart account
-    /// - Parameter addresses: Eoa address array
+    /// - Parameters:
+    ///   - eoaAddresses: Eoa address array
+    ///   - chainInfo: Optional, default value is current chain info.
     /// - Returns: Smart account info array
-    func rpcGetSmartAccount(eoaAddresses: [String]) -> Single<[AA.SmartAccountInfo]>
+    func rpcGetSmartAccount(eoaAddresses: [String], chainInfo: ParticleNetwork.ChainInfo?) -> Single<[AA.SmartAccountInfo]>
     
     /// Rpc method, get fee quotes
     /// - Parameters:
     ///   - eoaAddress: Eoa address
     ///   - transactions: Transactions array
+    ///   - chainInfo: Optional, default value is current chain info.
     /// - Returns: WholeFeeQuote
-    func rpcGetFeeQuotes(eoaAddress: String, transactions: [String]) -> Single<AA.WholeFeeQuote>
+    func rpcGetFeeQuotes(eoaAddress: String, transactions: [String], chainInfo: ParticleNetwork.ChainInfo?) -> Single<AA.WholeFeeQuote>
     
     /// Rpc method, create user op
     /// - Parameters:
@@ -201,45 +204,87 @@ public protocol AAServiceProtocol {
     ///   - transactions: Transactions array
     ///   - feeQuote: Fee quote, you can get this feeQuote from rpcGetFeeQuotes method.
     ///   - tokenPaymasterAddress: Token paymaster address
+    ///   - chainInfo: Optional, default value is current chain info.
     /// - Returns: UserOp object.
-    func rpcCreateUserOp(eoaAddress: String, transactions: [String], feeQuote: AA.FeeQuote, tokenPaymasterAddress: String) -> Single<AA.UserOp>
+    func rpcCreateUserOp(eoaAddress: String, transactions: [String], feeQuote: AA.FeeQuote, tokenPaymasterAddress: String, chainInfo: ParticleNetwork.ChainInfo?) -> Single<AA.UserOp>
 
     /// Rpc method, send user paid transaction
     /// - Parameters:
     ///   - eoaAddress: Eoa address
     ///   - userOp: JSON, get from rpcGetFeeQuotes or rpcCreateUserOp
+    ///   - chainInfo: Optional, default value is current chain info.
     /// - Returns: Signature
-    func rpcSendUserOp(eoaAddress: String, userOp: JSON) -> Single<String>
+    func rpcSendUserOp(eoaAddress: String, userOp: JSON, chainInfo: ParticleNetwork.ChainInfo?) -> Single<String>
+    
+    /// Check is eoa address is deployed in current chain info.
+    /// - Parameters:
+    ///   - eoaAddress: Eoa address.
+    ///   - chainInfo: Optional, default value is current chain info.
+    /// - Returns: Result
+    func isDeploy(eoaAddress: String, chainInfo: ParticleNetwork.ChainInfo?) -> Single<Bool>
+    
+    /// Send a deploy wallet contract transaction
+    /// - Parameters:
+    ///   - messageSigner: Message signer
+    ///   - feeMode: Fee mode
+    ///   - chainInfo: Optional, default value is current chain info.
+    /// - Returns: Signature
+    func deployWalletContract(messageSigner: MessageSigner, feeMode: AA.FeeMode, chainInfo: ParticleNetwork.ChainInfo?) -> Single<String>
+    
+    /// Get is aa mode enable
+    /// - Returns: Result
+    func isAAModeEnable() -> Bool
+    
+    /// Enable aa mode
+    func enableAAMode()
+    
+    /// Disable aa mode
+    func disableAAMode()
     
     /// Get smart account, if it can get smart account from local database, should return it directly, otherwise get it from rpc.
-    /// - Parameter eosAddress: Eoa address
+    /// - Parameters:
+    ///   - eosAddress: Eoa address
+    ///   - chainInfo: Optional, default value is current chain info.
     /// - Returns: Smart account info
-    func getSmartAccount(by eosAddress: String) -> Single<AA.SmartAccountInfo>
+    func getSmartAccount(by eosAddress: String, chainInfo: ParticleNetwork.ChainInfo?) -> Single<AA.SmartAccountInfo>
     
     /// Get smart accounts, if it can get smart accounts from local database, should return them directly, otherwise get them from rpc.
-    /// - Parameter publicAddreses: Eoa addresses
+    /// - Parameters:
+    ///   - publicAddresses: Eoa addresses
+    ///   - chainInfo: Optional, default value is current chain info.
     /// - Returns: Smart account infos
-    func getSmartAccounts(by publicAddreses: [String]) -> Single<[AA.SmartAccountInfo]>
+    func getSmartAccounts(by publicAddresses: [String], chainInfo: ParticleNetwork.ChainInfo?) -> Single<[AA.SmartAccountInfo]>
     
-    /// Check if support chain info
+    /// Quick send transaction method
+    /// - Parameters:
+    ///   - transactions: The transaction requires a hexadecimal string starting with "0x".
+    ///   - feeMode: Fee mode
+    ///   - messageSigner: Message signer
+    ///   - wholeFeeQuote: Optional, get from rpcGetFeeQuotes
+    ///   - chainInfo: Optional, default value is current chain info.
+    /// - Returns: Signature
+    func quickSendTransactions(_ transactions: [String], feeMode: AA.FeeMode, messageSigner: MessageSigner, wholeFeeQuote: AA.WholeFeeQuote?, chainInfo: ParticleNetwork.ChainInfo?) -> Single<String>
+    
+    /// Check if support chain info, base on current account name and version
     /// - Parameter chainInfo: Chain info
     /// - Returns: Result
     func isSupportChainInfo(_ chainInfo: ParticleNetwork.ChainInfo) -> Bool
     
-    /// Get all support chain infos
-    /// - Returns: ChainInfos
+    /// Get support chain infos, base on current account namr and version
+    /// - Returns: Chain infos
     func getSupportChainInfos() -> [ParticleNetwork.ChainInfo]
 }
 
 public protocol MessageSigner {
     /// Sign message
     /// - Parameter message: Message string, such as "0x68656c6c6f20776f726c64"
+    /// - Parameter chainInfo: Chain info, generally pass your current chain info.
     /// - Returns: Signature
-    func signMessage(_ message: String) -> Single<String>
+    func signMessage(_ message: String, chainInfo: ParticleNetwork.ChainInfo?) -> Single<String>
     
     /// Signer eos address
     /// - Returns: Eoa address
     func getEoaAddress() -> String
 }
-```
 
+```
