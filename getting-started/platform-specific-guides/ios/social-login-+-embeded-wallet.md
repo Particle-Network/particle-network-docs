@@ -186,3 +186,6 @@ ParticleAuthService.fastLogout().subscribe { result in
 }.disposed(by: bag)
 ```
 
+## Dive Deeper
+
+In this guide, we learned how to use the Particle Auth iOS SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Particle Auth](../../../developers/auth-service/core/ios.md) page.
