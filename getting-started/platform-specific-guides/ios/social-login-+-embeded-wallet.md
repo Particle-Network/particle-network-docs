@@ -12,7 +12,7 @@ If you face any problem anytime, you can always refer to the Particle[ ](https:/
 
 ## Installation
 
-Install ParticleAuthService, ParticleConnectService and ParticleWalletService SDK using Cocoapods.
+Install ParticleAuthService SDK using Cocoapods.
 
 ```ruby
 platform :ios, '14.0'

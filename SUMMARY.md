@@ -47,7 +47,7 @@
 * [🧩 Platform-specific Guides](getting-started/platform-specific-guides/README.md)
   * [Web](getting-started/platform-specific-guides/web.md)
   * [Android](getting-started/platform-specific-guides/android.md)
-  * [iOS](getting-started/platform-specific-guides/ios/README.md)
+  * [iOS](getting-started/platform-specific-guides/ios.md)
     * [Social Login + Embeded Wallet](getting-started/platform-specific-guides/ios/social-login-+-embeded-wallet.md)
   * [Unity](getting-started/platform-specific-guides/unity/README.md)
     * [Unity SDK Prerequisites](getting-started/platform-specific-guides/unity/unity-sdk-prerequisites.md)
