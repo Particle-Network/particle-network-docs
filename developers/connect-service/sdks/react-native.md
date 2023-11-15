@@ -10,7 +10,7 @@ Run this command:
 npm install @particle-network/rn-connect
 ```
 
-click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-connect) to get the demo source code&#x20;
+click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-connect) to get the demo source code
 
 ### 2.Configure Android project
 
@@ -110,7 +110,7 @@ android {
 {% endtab %}
 {% endtabs %}
 
-3.7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+3.7. Configure your app scheme URL, select your app from `TARGETS`, under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
@@ -150,7 +150,7 @@ import * as particleConnect from '@particle-network/rn-connect';
 
 ### Initialize the SDK
 
-**Before using the sdk you have to call init(Required)**&#x20;
+**Before using the sdk you have to call init(Required)**
 
 ```javascript
 // Get your project id and client key from dashboard,  
@@ -160,7 +160,7 @@ ParticleInfo.clientKey = ''; // your client key
 ```
 
 {% hint style="info" %}
-## Migrating to WalletConnect v2
+### Migrating to WalletConnect v2
 
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
@@ -559,7 +559,7 @@ const accounts = await particleConnect.getAccounts(walletType);
 console.log(accounts);
 ```
 
-### Set chain info async&#x20;
+### Set chain info async
 
 ```javascript
 const chainInfo = Ethereum;
@@ -603,7 +603,7 @@ addEthereumChain = async () => {
 }
 ```
 
-### Switch ethereum chain&#x20;
+### Switch ethereum chain
 
 ```javascript
 switchEthereumChain = async () => {
@@ -646,4 +646,3 @@ reconnectIfNeeded = async () => {
     }
 };
 ```
-

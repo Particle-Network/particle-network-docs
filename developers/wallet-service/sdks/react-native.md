@@ -8,15 +8,15 @@ Run this command:
 npm install @particle-network/rn-wallet
 ```
 
-click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-wallet) to get the demo source code&#x20;
+click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-wallet) to get the demo source code
 
 ### 2.Configure Android project
 
-is same with [Connect Service ](../../connect-service/sdks/react-native.md)
+is same with [Connect Service](../../connect-service/sdks/react-native.md)
 
 ### 3.Configure iOS project
 
-is same with [Connect Service ](../../connect-service/sdks/react-native.md)
+is same with [Connect Service](../../connect-service/sdks/react-native.md)
 
 ### Initialize the SDK
 
@@ -34,7 +34,7 @@ particleConnect.init(chainInfo, env, dappMetaData);
 ```
 
 {% hint style="info" %}
-## Migrating to WalletConnect v2
+### Migrating to WalletConnect v2
 
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
@@ -65,7 +65,7 @@ const tokenAddress = TestAccountSolana.tokenContractAddress;
 particleWallet.navigatorTokenReceive(tokenAddress);
 ```
 
-### Navigator token send&#x20;
+### Navigator token send
 
 ```javascript
 const tokenAddress = TestAccountSolana.tokenContractAddress;

@@ -10,7 +10,7 @@ With Flutter:
 flutter pub add particle_wallet
 ```
 
-click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-wallet) to get the demo source code&#x20;
+click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-wallet) to get the demo source code
 
 ### 2.Configure Android project
 
@@ -170,7 +170,7 @@ return [ParticleAuthService handleUrl:url];
 {% endtab %}
 {% endtabs %}
 
-3.7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+3.7. Configure your app scheme URL, select your app from `TARGETS`, under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
@@ -206,10 +206,10 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 
 ### Initialize the SDK
 
-**Before using the SDK, you have to call init(Required)**&#x20;
+**Before using the SDK, you have to call init(Required)**
 
 {% hint style="info" %}
-## Migrating to WalletConnect v2
+### Migrating to WalletConnect v2
 
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
@@ -237,7 +237,7 @@ ParticleWallet.navigatorWallet();
 ParticleWallet.navigatorTokenReceive();
 ```
 
-### Navigator token send&#x20;
+### Navigator token send
 
 ```dart
 String tokenAddress = "8ci2fZwQSmArbeHkuA7M8h5rsRwwh4FMTXrZxb3KsDpb";

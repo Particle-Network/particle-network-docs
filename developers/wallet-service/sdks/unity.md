@@ -62,7 +62,7 @@ ParticleWalletGUI.ShowAppearanceSetting(true);
 ```
 
 {% hint style="info" %}
-## Migrating to WalletConnect v2
+### Migrating to WalletConnect v2
 
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
@@ -271,7 +271,7 @@ ParticleNetwork.SetInterfaceStyle(UserInterfaceStyle.DARK);
 ParticleWalletGUI.SetLanguage(Language.EN);
 ```
 
-### Get swap enabled state&#x20;
+### Get swap enabled state
 
 ```csharp
 public void GetSwapEnableState()
@@ -290,4 +290,3 @@ public void GetBuyCryptoEnableState()
     Debug.Log($"Buy crypto enable state = {result}");
 }
 ```
-

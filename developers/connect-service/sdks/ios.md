@@ -72,7 +72,7 @@ If you would like to receive release updates, subscribe to our [GitHub repositor
 ### Edit Podile
 
 {% hint style="info" %}
-#### It is required for every iOS project that integrates the Auth Service SDK.
+**It is required for every iOS project that integrates the Auth Service SDK.**
 
 ```ruby
 // paste there code into pod file
@@ -178,7 +178,7 @@ ParticleConnect.initialize(env: .debug,
 {% endtabs %}
 
 {% hint style="info" %}
-## Migrating to WalletConnect v2
+### Migrating to WalletConnect v2
 
 Starting from version 0.2.0, WalletConnectV2 is supported.
 
@@ -295,7 +295,7 @@ connectAdapter.disconnect(address).subscribe { [weak self] result in
 
 call this method to check if the public address is connected.
 
-After user connects with a third party wallet, user can remove the wallet connect's session in the third party wallet, when receive disconnect request, local session cache should be removed.&#x20;
+After user connects with a third party wallet, user can remove the wallet connect's session in the third party wallet, when receive disconnect request, local session cache should be removed.
 
 It is better to call `reconnectIfNeeded` when start app.
 
@@ -497,7 +497,7 @@ adapter.verify(message: message, against: against).subscribe { [weak self] resul
 }.disposed(by: bag)
 </code></pre>
 
-### Request&#x20;
+### Request
 
 request eth or solana rpc methods, from tests, wallet connect MetaMask and Rainbow works, other wallets not works.
 
@@ -535,12 +535,12 @@ ParticleWalletAPI.getEvmService().abiEncodeFunctionCall(contractAddress: contrac
 }.disposed(by: bag)
 ```
 
-### Add Ethereum Chain&#x20;
+### Add Ethereum Chain
 
 From tests, wallet connect MetaMask works well, other wallets not work.
 
 {% hint style="warning" %}
-### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
+#### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
 {% endhint %}
 
 ```swift
@@ -565,7 +565,7 @@ adapter.addEthereumChain(publicAddress: publicAddress, chainId: chainId, chainNa
 ### Switch Ethereum Chain
 
 {% hint style="warning" %}
-### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
+#### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
 {% endhint %}
 
 ```swift

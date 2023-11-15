@@ -6,7 +6,7 @@ description: Integrate powerful Web3.0 Unity SDK in minutes
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-* Install Unity 2020.3.26f1 or later. Earlier versions may also be compatible but will not be actively supported.&#x20;
+* Install Unity 2020.3.26f1 or later. Earlier versions may also be compatible but will not be actively supported.
 * _(iOS only)_ Install the following:
   * Xcode 14.1 or higher
   * CocoaPods 1.11.0 or higher
@@ -36,8 +36,8 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 
 * **Remove other service code if you don't need them.**
 
-1. In ParticleNetworkIOSBridge.cs, there are 5 part ParticleNetworkBase, ParticleAuthService, ParticleWalletAPI, ParticleWalletGUI, ParticleConnect, works for interact with iOS native. ParticleNetworkBase is required,&#x20;
-2. ParticleAuthService if required for Auth Service,&#x20;
+1. In ParticleNetworkIOSBridge.cs, there are 5 part ParticleNetworkBase, ParticleAuthService, ParticleWalletAPI, ParticleWalletGUI, ParticleConnect, works for interact with iOS native. ParticleNetworkBase is required,
+2. ParticleAuthService if required for Auth Service,
 3. ParticleConnect is required for Connect Service.
 4. You can remove other codes if you don't need them.
 
@@ -59,7 +59,7 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     pod 'ParticleConnect'
     pod 'CommonConnect'
     ```
-3.  &#x20;Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
+3.  Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
     ```ruby
     pod install --repo-update
@@ -72,7 +72,7 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 *   Edit Podfile
 
     {% hint style="info" %}
-    ### Edit Podfile
+    #### Edit Podfile
 
     ```ruby
     // From 0.9.12, you should add more in podfile
@@ -92,8 +92,6 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
      end
     ```
     {% endhint %}
-
-
 * **Configure Project information.**
 
 1. Create a **ParticleNetwork-Info.plist** into the root of your Xcode project
@@ -117,9 +115,9 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 
 3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
 
-### **Android**&#x20;
+### **Android**
 
-#### Configuration file path is  Assets/Plugins/Android/gradleTemplate.properties
+#### Configuration file path is Assets/Plugins/Android/gradleTemplate.properties
 
 ```
 particle.network.project_client_key=Your Project Client Key
@@ -133,11 +131,9 @@ particle.network.app_id=859fada8-48ad-441b-b8e6-cde15ae1b48f
 
 ```
 
-
-
 ### Android, iOS Native Service Config <a href="#add-sdks" id="add-sdks"></a>
 
-**Android** — Configuration file path is  Assets/Plugins/Android/launcherTemplate.gradle
+**Android** — Configuration file path is Assets/Plugins/Android/launcherTemplate.gradle
 
 ```
 dependencies {
@@ -154,7 +150,7 @@ dependencies {
 }
 ```
 
-**iOS**&#x20;
+**iOS**
 
 1. Download `UnityManger.swift`, `Unity-iPhone-Bridging-Header.h` and `AppDelegate.swift` from under github `/Assets/Plugins/iOS/.Swift` , Copy files into the root of your Xcode project. Xcode will ask you if auto create Bridging file, click yes.
 
@@ -207,7 +203,7 @@ you could get some test tokens from out test account, in file`TestAccount.cs` , 
 
 or get test tokens from the following URL
 
-&#x20;[https://faucets.chain.link/](https://faucets.chain.link/) or [https://goerlifaucet.com/](https://goerlifaucet.com/)
+[https://faucets.chain.link/](https://faucets.chain.link/) or [https://goerlifaucet.com/](https://goerlifaucet.com/)
 
 Before sign and send transaction, make sure you have enough token to finish the transaction.
 
@@ -221,11 +217,11 @@ Secondly, check the Podfile, do you add the pods to under right target.
 
 more pod version information is here.
 
-&#x20;[https://github.com/Particle-Network/particle-ios](https://github.com/Particle-Network/particle-ios)
+[https://github.com/Particle-Network/particle-ios](https://github.com/Particle-Network/particle-ios)
 
-&#x20;[https://github.com/Particle-Network/particle-connect-ios](https://github.com/Particle-Network/particle-connect-ios)
+[https://github.com/Particle-Network/particle-connect-ios](https://github.com/Particle-Network/particle-connect-ios)
 
-Here is an example in Podfile.  All particle pods should under target 'Unity-iPhone' not target 'UnityFramework’.
+Here is an example in Podfile. All particle pods should under target 'Unity-iPhone' not target 'UnityFramework’.
 
 ```
 platform :ios, '13.0'
@@ -266,9 +262,8 @@ Make sure you have changed NativaProxy.h from project to public, select this fil
 
 3\. When execute pod install in Terminal, encounter error “Unable to determine Swift version for the following pods”
 
-Remove particle pods in podfile, then execute pod install, open Unity-iPhone.xcworkspace, select Unity-iPhone under TARGETS, in Building Settings, Swift Complier-Language, set swift version to swift 5, if there is no Swift Complier section, you should create an empty swift file,  you can see swift version after do that.
+Remove particle pods in podfile, then execute pod install, open Unity-iPhone.xcworkspace, select Unity-iPhone under TARGETS, in Building Settings, Swift Complier-Language, set swift version to swift 5, if there is no Swift Complier section, you should create an empty swift file, you can see swift version after do that.
 
-\
-
+\\
 
 ### Android

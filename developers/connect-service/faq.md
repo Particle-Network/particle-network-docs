@@ -32,7 +32,7 @@ String result = await ParticleConnect.signMessage(WalletType.metamask, getPublic
 3\. Add chain, MetaMask support add chain, other wallets don't support this methods, you can get success string in success call back.
 
 {% hint style="warning" %}
-### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
+#### Wallet Connect V2 doesn't support add chain or switch chain, the feature is not available anymore
 {% endhint %}
 
 {% hint style="info" %}
@@ -68,6 +68,3 @@ String result = await ParticleConnect.switchEthereumChain(walletType, getPublicA
 It is determined by yourself.
 
 In our iOS GUI SDK, we call add(switch) chain before signAndSendTransaction, make sure matamask is the same chain id with the transaction, if transaction's chain id not same with metamask, metamask will reject it, after add(switch) chain success, delay 0.3 second, call signAndSendTransaction.
-
-
-

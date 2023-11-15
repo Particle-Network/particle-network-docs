@@ -63,7 +63,7 @@ If you want to receive release updates, subscribe to our [GitHub repository](htt
 ### Edit Podfile
 
 {% hint style="info" %}
-#### It is required for every iOS project that integrates the Wallet Service SDK.
+**It is required for every iOS project that integrates the Wallet Service SDK.**
 
 ```ruby
 // From 0.9.12, you should add more in podfile
@@ -230,7 +230,7 @@ NSString *payer = nil;
 {% endtab %}
 {% endtabs %}
 
-#### Get the token info list&#x20;
+#### Get the token info list
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -255,7 +255,7 @@ ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] resu
 {% endtab %}
 {% endtabs %}
 
-#### Access 👉 [any RPC ](../../node-service/solana-api/)
+#### Access 👉 [any RPC](../../node-service/solana-api/)
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -270,8 +270,6 @@ ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscri
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### EVM Service
 
@@ -399,7 +397,7 @@ NSString *address = @"";
 {% endtab %}
 {% endtabs %}
 
-#### Get the token info list&#x20;
+#### Get the token info list
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -839,7 +837,7 @@ func deployContract() {
 {% endtab %}
 {% endtabs %}
 
-You can create contractParams object by these `ContractParams`static methods&#x20;
+You can create contractParams object by these `ContractParams`static methods
 
 * `ContractParams.erc20Transfer()`
 * `ContractParams.erc20Approve()`
@@ -899,7 +897,7 @@ func writeContract() {
 ## Wallet UI Reference
 
 {% hint style="info" %}
-## Migrating to WalletConnect v2
+### Migrating to WalletConnect v2
 
 ParticleWalletGUI is dependent on ParticleWalletConnect, start from version 0.15.0, you should call this method to set wallet connect v2 project id.
 
@@ -908,11 +906,11 @@ ParticleWalletConnect.setWalletConnectV2ProjectId("your wallet connect v2 projec
 ```
 {% endhint %}
 
-### Custom Wallet UI &#x20;
+### Custom Wallet UI
 
 Control show or hide test network, swap feature, buy crypto feature, support wallet connect, manage wallet page, support chain, set language, set user interface style and more.
 
-Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
+Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -960,7 +958,7 @@ ParticleWalletGUI.setDisplayTokenAddresses([tokenAddress])
 // Set display NFT contract addresses
 // If you called this method, Wallet SDK will only show NFTs in the NFT contract addresses.
 // You can pass nil to reset.
-ParticleWalletGUI.<a data-footnote-ref href="#user-content-fn-1">setDisplayNFTContractAddresses</a>([nftContractAddress])
+ParticleWalletGUI.setDisplayNFTContractAddresses([nftContractAddress])
 
 // Set priority token addresses, priority token will show in top part of the list.
 // If you called this method, 
@@ -1210,7 +1208,7 @@ PNRouter.navigatorBuy(buyCryptoConfig: buyCryptoConfig)
 {% endtab %}
 {% endtabs %}
 
-### Open Swap&#x20;
+### Open Swap
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -1234,5 +1232,3 @@ if let url = URL(string: "app.uniswap.org") {
     PNRouter.navigatorDappBrowser(url: url)
 }
 ```
-
-[^1]: 

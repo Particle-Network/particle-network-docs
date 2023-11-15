@@ -12,7 +12,7 @@ With Flutter:
 flutter pub add particle_connect
 ```
 
-click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-connect) to get the demo source code&#x20;
+click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-connect) to get the demo source code
 
 ### 2.Configure Android project
 
@@ -159,7 +159,7 @@ override func application(_ app: UIApplication, open url: URL, options: [UIAppli
 {% endtab %}
 {% endtabs %}
 
-3.7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+3.7. Configure your app scheme URL, select your app from `TARGETS`, under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
@@ -193,11 +193,9 @@ Copy & Paste the XML snippet into the body of your file (`<dict>`...`</dict>`).
 
 3.9 Edit Podfile, you should follow [Podfile required](ios.md#edit-podile) to edit Podfile.
 
-
-
 ### Initialize the SDK
 
-**Before using the SDK you have to call init(Required)**&#x20;
+**Before using the SDK you have to call init(Required)**
 
 ```dart
 // Get your project id and client key from dashboard, 
@@ -208,7 +206,7 @@ ParticleInfo.set(projectId, clientK);
 ```
 
 {% hint style="info" %}
-## Migrating to WalletConnect v2
+### Migrating to WalletConnect v2
 
 Starting from version 0.14.0, WalletConnectV2 is supported.
 
@@ -271,7 +269,7 @@ String result = await ParticleConnect.signMessage(WalletType.particle, getPublic
 
 ### Sign transaction
 
-Only support Solana chain,  in Solana chain requires a base58 string.
+Only support Solana chain, in Solana chain requires a base58 string.
 
 Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
 
@@ -281,7 +279,7 @@ String result = await ParticleConnect.signTransaction(WalletType.particle, getPu
 
 ### Sign all transactions
 
-Only support Solana chain,  in Solana chain requires a base58 string.
+Only support Solana chain, in Solana chain requires a base58 string.
 
 Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
 
