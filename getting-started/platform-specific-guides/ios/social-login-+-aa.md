@@ -286,6 +286,44 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
 
     }.disposed(by: self.bag)
 }
+```
+
+If you want to send multi transactions in one sign, you should try this way.
+
+Combine transactions into a array, then call `aaService.quickSendTransactions` , the parameter \`feeMode\` is the same as before.
+
+```swift
+@IBAction func batchSendTransactions() {
+    guard let account = self.account else {
+        print("you didn't connect any account")
+        return
+    }
+    guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
+        print("you didn't get a smart account address")
+        return
+    }
+
+    let receiverAddress = "0x0000000000000000000000000000000000000000"
+    // the smallest unit
+    let amount = BInt(10000000000000).toHexString()
+
+    // make two transactions
+    let createTransactionObservable1 = ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high)
+    let createTransactionObservable2 = ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high)
+
+    Single.zip(createTransactionObservable1, createTransactionObservable2).flatMap { [weak self] transaction1, transaction2 -> Single<String> in
+        guard let self = self else { return .error(ParticleNetwork.ResponseError(code: nil, message: "self is nil")) }
+        return ParticleNetwork.getAAService()!.quickSendTransactions([transaction1, transaction2], feeMode: .native, messageSigner: self, wholeFeeQuote: nil, chainInfo: ParticleNetwork.getChainInfo())
+    }.subscribe {
+        result in
+        switch result {
+        case .success(let signature):
+            print(signature)
+        case .failure(let error):
+            print(error)
+        }
+    }.disposed(by: self.bag)
+}
 
 extension ViewController: MessageSigner {
     func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
@@ -314,13 +352,9 @@ extension ViewController: MessageSigner {
 }
 ```
 
-{% hint style="info" %}
-Then you can try `signTypeData in the same way.`
-{% endhint %}
-
 ## Log the user out
 
-Use the `disconnect` function of ParticleAuthService to trigger the logout flow.&#x20;
+Use the `disconnect` function of ParticleConnectService to trigger the logout flow.&#x20;
 
 ```swift
  @IBAction func disconnect() {
