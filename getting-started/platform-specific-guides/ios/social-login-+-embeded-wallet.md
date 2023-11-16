@@ -46,11 +46,11 @@ end
 
 ## Register your application
 
-In order to use ParticleAuthService, you'll need to create a project in the [Particle Dashboard](../../dashboard/) and get your project id, client key and project app id.
+In order to use ParticleConnectService, you'll need to create a project in the [Particle Dashboard](../../dashboard/) and get your project id, client key and project app id.
 
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
-## Create and initialize the ParticleAuthService
+## Create and initialize the ParticleConnectService
 
 Create a **ParticleNetwork-Info.plist** into the root of your Xcode project, Copy the following text into this file, then replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard.
 
@@ -77,7 +77,7 @@ For instance, if your project app id is `"63bfa427-cf5f-4742-9ff1-e8f5a1b9828f"`
 
 ![Config scheme url](<../../../.gitbook/assets/image (1) (2) (1).png>)
 
-Now, let's initialize ParticleConnectService in your project, chainInfo signifies the chain (ethereum, polygon ...) you want to initialize ParticleAuthService with.
+Now, let's initialize ParticleConnectService in your project, chainInfo signifies the chain (ethereum, polygon ...) you want to initialize ParticleConnectService with.
 
 ```swift
 import ConnectCommon
