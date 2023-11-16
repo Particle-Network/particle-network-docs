@@ -271,6 +271,32 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
 
     }.disposed(by: self.bag)
 }
+
+extension ViewController: MessageSigner {
+    func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
+        guard let account = self.account else {
+            print("you didn't connect any account")
+            return .error(ParticleNetwork.ResponseError(code: nil, message: "you didn't connect any account"))
+        }
+
+        guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
+            print("you didn't get a smart account address")
+            return .error(ParticleNetwork.ResponseError(code: nil, message: "you didn't get a smart account address"))
+        }
+
+        let adapter = ParticleConnect.getAllAdapters().filter {
+            $0.walletType == account.walletType
+        }.first!
+
+        let publicAddress = account.publicAddress
+
+        return adapter.signMessage(publicAddress: publicAddress, message: message)
+    }
+
+    func getEoaAddress() -> String {
+        self.account?.publicAddress ?? ""
+    }
+}
 ```
 
 {% hint style="info" %}
