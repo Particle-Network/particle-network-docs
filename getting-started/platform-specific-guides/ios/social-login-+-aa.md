@@ -225,35 +225,7 @@ Particle Connect iOS SDK also support connect with other wallets, here is an exa
 
 ## Triggering the sign
 
-After connect, if you want to authenticate by signature call `signMessage`.
-
-```swift
-@IBAction func signMessage() {
-    guard let account = self.account else {
-        print("you didn't connect any account")
-        return
-    }
-
-    let adapter = ParticleConnect.getAllAdapters().filter {
-        $0.walletType == account.walletType
-    }.first!
-
-    let publicAddress = account.publicAddress
-
-    adapter.signMessage(publicAddress: publicAddress, message: "Hello Particle!").subscribe {
-        [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let signature):
-                print(signature)
-            case .failure(let error):
-                print(error)
-            }
-    }.disposed(by: self.bag)
-}
-```
-
-If you want to send a EVM transaction, call `signAndSendTransaction`.
+After connect, if you want to send a EVM transaction, call `signAndSendTransaction`.
 
 You can create a transaction by `ParticleWalletAPI.getEvmService().createTransaction` method.
 
@@ -261,6 +233,10 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
 @IBAction func sendTransaciton() {
     guard let account = self.account else {
         print("you didn't connect any account")
+        return
+    }
+    guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
+        print("you didn't get a smart account address")
         return
     }
 
@@ -274,8 +250,9 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
 
     // the smallest unit
     let amount = BInt(10000000000000).toHexString()
-    ParticleWalletAPI.getEvmService().createTransaction(from: publicAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high).flatMap { transaction in
-        adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
+
+    ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high).flatMap { transaction in
+        adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction, feeMode: .native, chainInfo: ParticleNetwork.getChainInfo())
     }.subscribe { result in
         switch result {
         case .success(let signature):
@@ -287,6 +264,71 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
     }.disposed(by: self.bag)
 }
 ```
+
+Note the parameter `feeMode` in `signAndSendTransaction` method, it has three options, native, gasless and token, just as its name implies, it means how to pay gas fee.
+
+Now I will show you how to pay token as gas fee.
+
+Use `aaService.rpcGetFeeQuotes` get the wholeFeeQuote for your transactions, then find a available token to pay.
+
+```swift
+@IBAction func sendTransacitonPayToken() {
+    guard let account = self.account else {
+        print("you didn't connect any account")
+        return
+    }
+    guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
+        print("you didn't get a smart account address")
+        return
+    }
+
+    let adapter = ParticleConnect.getAllAdapters().filter {
+        $0.walletType == account.walletType
+    }.first!
+
+    let publicAddress = account.publicAddress
+
+    let receiverAddress = "0x0000000000000000000000000000000000000000"
+
+    // the smallest unit
+    let amount = BInt(10000000000000).toHexString()
+
+    ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high).flatMap { transaction -> PrimitiveSequence<SingleTrait, (AA.WholeFeeQuote, String)> in
+        let feeQuoteObservable = ParticleNetwork.getAAService()!.rpcGetFeeQuotes(eoaAddress: publicAddress, transactions: [transaction], chainInfo: ParticleNetwork.getChainInfo())
+
+        return Single.zip(feeQuoteObservable, .just(transaction)) as PrimitiveSequence<SingleTrait, (AA.WholeFeeQuote, String)>
+    }.flatMap { wholeFeeQuote, transaction -> Single<String> in
+        guard let tokenPaymaster = wholeFeeQuote.token else {
+            return .error(ParticleNetwork.ResponseError(code: nil, message: "pay token is unavailable"))
+        }
+        let tokenPaymasterAddress = tokenPaymaster.tokenPaymasterAddress
+        let tokenFeeQuoters = tokenPaymaster.feeQuotes
+        let feeQuotes = tokenFeeQuoters.map {
+            AA.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
+        }
+        // select a token, which isEnoughForPay is true
+        let feeQuote = feeQuotes.first {
+            $0.isEnoughForPay
+        }
+
+        if feeQuote == nil {
+            return .error(ParticleNetwork.ResponseError(code: nil, message: "pay token is unavailable"))
+        }
+
+        return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction, feeMode: .token(feeQuote!), chainInfo: ParticleNetwork.getChainInfo())
+    }.subscribe { result in
+        switch result {
+        case .success(let signature):
+            print(signature)
+        case .failure(let error):
+            print(error)
+        }
+
+    }.disposed(by: self.bag)
+}
+```
+
+## Batch Send transactions
 
 If you want to send multi transactions in one sign, you should try this way.
 
