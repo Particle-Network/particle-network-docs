@@ -84,14 +84,16 @@ Now, let's initialize ParticleConnectService in your project, chainInfo signifie
 import ConnectCommon
 import ConnectPhantomAdapter
 import ConnectWalletConnectAdapter
-import ParticleConnect
+import ParticleAA
 import ParticleAuthAdapter
+import ParticleConnect
+import ParticleNetworkBase
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -123,6 +125,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
+        // set your biconomy api keys
+        let biconomyApiKeys =
+            [80001: "hYZIwIsf2.e18c790b-cafb-4c4e-a438-0289fc25dba1"]
+
+        //
+        AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: biconomyApiKeys)
+        let aaService = AAService()
+        ParticleNetwork.setAAService(aaService)
+        aaService.enableAAMode()
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
 //        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli), .polygon(.mainnet), .polygon(.mumbai)])
@@ -144,6 +155,8 @@ Retrieve the adapter with the type 'particle' from all the adapters you have reg
 
 You need to save the returned Account object for convenient use next time.
 
+Due to initialize AA service before, you can get a smart account address from account object.
+
 ```swift
 @IBAction func connectParticle() {
     let adapter = ParticleConnect.getAllAdapters().filter {
@@ -157,6 +170,7 @@ You need to save the returned Account object for convenient use next time.
         case .success(let account):
             self.account = account
             print(account)
+            print(account?.smartAccount?.smartAccountAddress)
         case .failure(let error):
             print(error)
         }
@@ -201,6 +215,7 @@ Particle Connect iOS SDK also support connect with other wallets, here is an exa
         case .success(let account):
             self.account = account
             print(account)
+            print(account?.smartAccount?.smartAccountAddress)
         case .failure(let error):
             print(error)
         }
@@ -336,4 +351,4 @@ Use the `disconnect` function of ParticleAuthService to trigger the logout flow.
 
 ## Dive Deeper
 
-In this guide, we learned how to use the Particle Auth iOS SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Particle Connect](../../../developers/connect-service/sdks/ios.md) page.
+In this guide, we learned how to use the Particle Auth iOS SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Account Abstraction](../../../developers/account-abstraction/ios.md) page.

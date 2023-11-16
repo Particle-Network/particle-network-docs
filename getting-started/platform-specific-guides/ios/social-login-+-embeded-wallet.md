@@ -24,7 +24,6 @@ target 'ParticleExample' do
   pod 'ParticleNetworkBase', '1.3.5'
   pod 'ParticleAuthService', '1.3.5'
   pod 'ParticleWalletAPI', '1.3.5'
-  pod 'ParticleAA', '1.3.5'
 
   pod 'ConnectCommon', '0.2.14'
   pod 'ConnectEVMAdapter', '0.2.14'
@@ -84,16 +83,14 @@ Now, let's initialize ParticleConnectService in your project, chainInfo signifie
 import ConnectCommon
 import ConnectPhantomAdapter
 import ConnectWalletConnectAdapter
-import ParticleAA
-import ParticleAuthAdapter
 import ParticleConnect
-import ParticleNetworkBase
+import ParticleAuthAdapter
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -125,15 +122,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
-        // set your biconomy api keys
-        let biconomyApiKeys =
-            [80001: "hYZIwIsf2.e18c790b-cafb-4c4e-a438-0289fc25dba1"]
-
-        // Initialize AA Service
-        AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: biconomyApiKeys)
-        let aaService = AAService()
-        ParticleNetwork.setAAService(aaService)
-        aaService.enableAAMode()
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
 //        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli), .polygon(.mainnet), .polygon(.mumbai)])
@@ -143,6 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return ParticleConnect.handleUrl(url)
     }
 }
+
 ```
 
 **All here, initialization is complete.**
@@ -154,8 +143,6 @@ Trigger login flow with email, phone number, google, facebook, twitter, JWT, etc
 Retrieve the adapter with the type 'particle' from all the adapters you have registered so far, call connect with a parameter ParticleAuthConfig.
 
 You need to save the returned Account object for convenient use next time.
-
-Due to initialize AA service before, you can get a smart account address from account object.
 
 ```swift
 @IBAction func connectParticle() {
@@ -170,7 +157,6 @@ Due to initialize AA service before, you can get a smart account address from ac
         case .success(let account):
             self.account = account
             print(account)
-            print(account?.smartAccount?.smartAccountAddress)
         case .failure(let error):
             print(error)
         }
@@ -224,7 +210,35 @@ Particle Connect iOS SDK also support connect with other wallets, here is an exa
 
 ## Triggering the sign
 
-If you want to send one EVM transaction, call `signAndSendTransaction`.
+After connect, if you want to authenticate by signature call `signMessage`.
+
+```swift
+@IBAction func signMessage() {
+    guard let account = self.account else {
+        print("you didn't connect any account")
+        return
+    }
+
+    let adapter = ParticleConnect.getAllAdapters().filter {
+        $0.walletType == account.walletType
+    }.first!
+
+    let publicAddress = account.publicAddress
+
+    adapter.signMessage(publicAddress: publicAddress, message: "Hello Particle!").subscribe {
+        [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let signature):
+                print(signature)
+            case .failure(let error):
+                print(error)
+            }
+    }.disposed(by: self.bag)
+}
+```
+
+If you want to send a EVM transaction, call `signAndSendTransaction`.
 
 You can create a transaction by `ParticleWalletAPI.getEvmService().createTransaction` method.
 
@@ -234,10 +248,6 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
         print("you didn't connect any account")
         return
     }
-    guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
-        print("you didn't get a smart account address")
-        return
-    }
 
     let adapter = ParticleConnect.getAllAdapters().filter {
         $0.walletType == account.walletType
@@ -249,9 +259,8 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
 
     // the smallest unit
     let amount = BInt(10000000000000).toHexString()
-
-    ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high).flatMap { transaction in
-        adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction, feeMode: .native, chainInfo: ParticleNetwork.getChainInfo())
+    ParticleWalletAPI.getEvmService().createTransaction(from: publicAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high).flatMap { transaction in
+        adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
     }.subscribe { result in
         switch result {
         case .success(let signature):
@@ -262,110 +271,41 @@ You can create a transaction by `ParticleWalletAPI.getEvmService().createTransac
 
     }.disposed(by: self.bag)
 }
-```
 
-Note there is a parameter called `feeMode`, if has three options, native, gasless, and token, just as its name implies, it decides how to pay the gas fee.
+extension ViewController: MessageSigner {
+    func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
+        guard let account = self.account else {
+            print("you didn't connect any account")
+            return .error(ParticleNetwork.ResponseError(code: nil, message: "you didn't connect any account"))
+        }
 
-Now show how to use tokens to pay for gas fee, create transaction as usual, then call `aaService.rpcGetFeeQuotes`, get the wholeFeeQuote and get a enough token which balance is over fee.
+        guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
+            print("you didn't get a smart account address")
+            return .error(ParticleNetwork.ResponseError(code: nil, message: "you didn't get a smart account address"))
+        }
 
-```swift
-@IBAction func sendTransacitonPayToken() {
-    guard let account = self.account else {
-        print("you didn't connect any account")
-        return
+        let adapter = ParticleConnect.getAllAdapters().filter {
+            $0.walletType == account.walletType
+        }.first!
+
+        let publicAddress = account.publicAddress
+
+        return adapter.signMessage(publicAddress: publicAddress, message: message)
     }
-    guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
-        print("you didn't get a smart account address")
-        return
+
+    func getEoaAddress() -> String {
+        self.account?.publicAddress ?? ""
     }
-
-    let adapter = ParticleConnect.getAllAdapters().filter {
-        $0.walletType == account.walletType
-    }.first!
-
-    let publicAddress = account.publicAddress
-
-    let receiverAddress = "0x0000000000000000000000000000000000000000"
-
-    // the smallest unit
-    let amount = BInt(10000000000000).toHexString()
-
-    ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high).flatMap { transaction -> PrimitiveSequence<SingleTrait, (AA.WholeFeeQuote, String)> in
-        let feeQuoteObservable = ParticleNetwork.getAAService()!.rpcGetFeeQuotes(eoaAddress: publicAddress, transactions: [transaction], chainInfo: ParticleNetwork.getChainInfo())
-
-        return Single.zip(feeQuoteObservable, .just(transaction)) as PrimitiveSequence<SingleTrait, (AA.WholeFeeQuote, String)>
-    }.flatMap { wholeFeeQuote, transaction -> Single<String> in
-        guard let tokenPaymaster = wholeFeeQuote.token else {
-            return .error(ParticleNetwork.ResponseError(code: nil, message: "pay token is unavailable"))
-        }
-        let tokenPaymasterAddress = tokenPaymaster.tokenPaymasterAddress
-        let tokenFeeQuoters = tokenPaymaster.feeQuotes
-        let feeQuotes = tokenFeeQuoters.map {
-            AA.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
-        }
-        // select a token, which isEnoughForPay is true
-        let feeQuote = feeQuotes.first {
-            $0.isEnoughForPay
-        }
-
-        if feeQuote == nil {
-            return .error(ParticleNetwork.ResponseError(code: nil, message: "pay token is unavailable"))
-        }
-
-        return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction, feeMode: .token(feeQuote!), chainInfo: ParticleNetwork.getChainInfo())
-    }.subscribe { result in
-        switch result {
-        case .success(let signature):
-            print(signature)
-        case .failure(let error):
-            print(error)
-        }
-
-    }.disposed(by: self.bag)
 }
 ```
 
-If you want to send more than one transactions in one sign, AA could do it !
-
-Combine your transactions into a array, then call `aaService.quickSendTransactions,` the parameter feeMode is same with It's the same as before.
-
-```swift
-@IBAction func batchSendTransactions() {
-    guard let account = self.account else {
-        print("you didn't connect any account")
-        return
-    }
-    guard let smartAccountAddress = account.smartAccount?.smartAccountAddress else {
-        print("you didn't get a smart account address")
-        return
-    }
-
-    let receiverAddress = "0x0000000000000000000000000000000000000000"
-    // the smallest unit
-    let amount = BInt(10000000000000).toHexString()
-
-    // make two transactions
-    let createTransactionObservable1 = ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high)
-    let createTransactionObservable2 = ParticleWalletAPI.getEvmService().createTransaction(from: smartAccountAddress, to: receiverAddress, value: amount, data: "0x", gasFeeLevel: .high)
-
-    Single.zip(createTransactionObservable1, createTransactionObservable2).flatMap { [weak self] transaction1, transaction2 -> Single<String> in
-        guard let self = self else { return .error(ParticleNetwork.ResponseError(code: nil, message: "self is nil")) }
-        return ParticleNetwork.getAAService()!.quickSendTransactions([transaction1, transaction2], feeMode: .native, messageSigner: self, wholeFeeQuote: nil, chainInfo: ParticleNetwork.getChainInfo())
-    }.subscribe {
-        result in
-        switch result {
-        case .success(let signature):
-            print(signature)
-        case .failure(let error):
-            print(error)
-        }
-    }.disposed(by: self.bag)
-}
-```
+{% hint style="info" %}
+Then you can try `signTypeData in the same way.`
+{% endhint %}
 
 ## Log the user out
 
-Use the `disconnect` function of ParticleConnectService to trigger the logout flow.&#x20;
+Use the `disconnect` function of ParticleAuthService to trigger the logout flow.&#x20;
 
 ```swift
  @IBAction func disconnect() {
@@ -396,4 +336,4 @@ Use the `disconnect` function of ParticleConnectService to trigger the logout fl
 
 ## Dive Deeper
 
-In this guide, we learned how to use the Particle Auth iOS SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Particle Connect](../../../developers/account-abstraction/ios.md) page.
+In this guide, we learned how to use the Particle Connect iOS SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Particle Connect](../../../developers/connect-service/sdks/ios.md) page.
