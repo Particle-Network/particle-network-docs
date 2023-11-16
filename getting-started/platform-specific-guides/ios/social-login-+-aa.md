@@ -427,4 +427,4 @@ Use the `disconnect` function of ParticleConnectService to trigger the logout fl
 
 ## Dive Deeper
 
-In this guide, we learned how to use the Particle Auth iOS SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Account Abstraction](../../../developers/account-abstraction/ios.md) page.
+In this guide, we learned how to use the Particle Connect iOS SDK for social login, sending User Operation. If you want to learn more about different use cases, check out the [Account Abstraction](../../../developers/account-abstraction/ios.md) page.

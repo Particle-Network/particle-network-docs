@@ -158,4 +158,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 **All here, initialization is complete.**
 
-You should connect a wallet first then do
+## **Wallet UI**
+
+After your connect a wallet, if you want to send token, call `PNRouter.navigatorTokenSend`,
+
+it receives a parameter TokenSendConfig, pass nil means send native token.
+
+You can create a new TokenSendConfig object, specify token address, receiver address and amount.
+
+```swift
+@IBAction func openTokenSend() {
+    PNRouter.navigatorTokenSend(tokenSendConfig: nil)
+}
+```
+
+If you want to explore transactions status, you need to open token transactions page,
+
+it also support specify token address, pass nil means native token.
+
+It is much more useful when encountered pending transactions.
+
+```swift
+PNRouter.navigatorTokenTransactionRecords(tokenTransactionRecordsConfig: nil)
+```
+
+Also you can try NFT send page and NFT detail page, you must specify the NFT address.
+
+```swift
+@IBAction func openNFTDetail() {
+    let nftAddress = "0xb3a07Fa38804810a14bB8877AF69Ab547502D321"
+    let tokenId = "1690288350001"
+    let config: NFTDetailsConfig = .init(address: nftAddress, tokenId: tokenId)
+    PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
+}
+
+@IBAction func openNFTSend() {
+    let nftAddress = "0xb3a07Fa38804810a14bB8877AF69Ab547502D321"
+    let toAddress = "0x0000000000000000000000000000000000000000"
+    let tokenId = "1690288350001"
+    let config: NFTSendConfig = .init(address: nftAddress, toAddress: toAddress, tokenId: tokenId, amount: 1)
+    PNRouter.navigatorNFTSend(nftSendConfig: config)
+}
+```
+
+You'd better add an entrance for wallet page, the most useful one, all wallet features in one page.
+
+```swift
+@IBAction func openWallet() {
+    PNRouter.navigatorWallet(display: .token)
+}
+```
+
+## Dive Deeper
+
+In this guide, we learned how to use the Particle Auth iOS SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Particle Wallet](../../../developers/wallet-service/sdks/ios.md) page.
