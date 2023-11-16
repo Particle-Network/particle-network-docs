@@ -63,7 +63,7 @@ Add below config to AndroidManifest.xml
                 android:theme="@style/ThemeAuthWeb"
                 >
             <intent-filter>
-                <data android:scheme="pn${pn_app_id}" />
+                <data android:scheme="pn${PN_APP_ID}" />
         
                 <action android:name="android.intent.action.VIEW" />
         
@@ -90,15 +90,15 @@ Add below config to AndroidManifest.xml
         
         <meta-data
                 android:name="particle.network.project_id"
-                android:value="${pn_project_id}"
+                android:value="${PN_PROJECT_ID}"
                 />
         <meta-data
                 android:name="particle.network.project_client_key"
-                android:value="${pn_project_client_key}"
+                android:value="${PN_PROJECT_CLIENT_KEY}"
                 />
         <meta-data
                 android:name="particle.network.app_id"
-                android:value="${pn_app_id}"
+                android:value="${PN_APP_ID}"
                 />
         <!--   Particle Network config end     -->
 </application>
@@ -158,7 +158,7 @@ var adapters = ParticleConnect.getAdapterByAddress(address)
 val accounts = ParticleConnect.getAccounts(chainTypes)
 ```
 
-### Connect wallet.&#x20;
+### Connect wallet.
 
 (For `EVMConnectAdapter` or `SolanaConnectAdapter` will generate new wallet)
 
@@ -190,7 +190,7 @@ val account = connectAdapter.importWalletFromPrivateKey(privateKey)
 val account = connectAdapter.importWalletFromMnemonic(mnemonic)
 ```
 
-### Export wallet.&#x20;
+### Export wallet.
 
 (Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
 
