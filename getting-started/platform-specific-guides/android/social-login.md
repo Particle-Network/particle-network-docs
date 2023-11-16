@@ -101,7 +101,9 @@ To integrate ParticleConnect into your project, follow these steps:
 Initialize ParticleConnect in your application:
 
 ```kotlin
-ParticleConnect.init(this, Env.PRODUCTION, Ethereum)
+ParticleConnect.init(this, Env.PRODUCTION, Ethereum){
+    listOf(ParticleConnectAdapter()) 
+}
 ```
 
 **Login**
