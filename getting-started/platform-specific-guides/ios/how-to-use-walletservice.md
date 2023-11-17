@@ -1,6 +1,6 @@
 # How to use WalletService
 
-This guild will help you get started with Particle Wallet iOS SDK by setting up your environment, based on the previous guides, should now understand how to create a Wallet,  our Particle Wallet iOS SDK offers common wallet pages, quick sending, viewing NFTs, viewing transaction history, and other features.
+This guide will help you get started with Particle Wallet iOS SDK by setting up your environment, based on the previous guides, should now understand how to create a Wallet,  our Particle Wallet iOS SDK offers common wallet pages, quick sending, viewing NFTs, viewing transaction history, and other features.
 
 If you face any problem anytime, you can always refer to the Particle[ ](https://github.com/Web3Auth/Web3Auth/discussions)Community for us to help you out as soon as possible!
 

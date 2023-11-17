@@ -65,6 +65,7 @@
   * [Unreal](getting-started/platform-specific-guides/unreal.md)
   * [Flutter](getting-started/platform-specific-guides/flutter/README.md)
     * [Social Login + Embeded Wallet](getting-started/platform-specific-guides/flutter/social-login-+-embeded-wallet.md)
+    * [Social Login + AA](getting-started/platform-specific-guides/flutter/social-login-+-aa.md)
   * [React Native](getting-started/platform-specific-guides/react-native.md)
   * [Server API](getting-started/platform-specific-guides/server-api.md)
 * [🪄 Smart Wallet-as-a-Service](getting-started/smart-wallet-as-a-service.md)

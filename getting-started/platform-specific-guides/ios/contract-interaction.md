@@ -1,6 +1,6 @@
 # Contract Interaction
 
-This guild will help you get started with Particle Wallet API iOS SDK by setting up your environment, read contract and write contract, create EVM transaction. By the end of this guide, you'll have a basic understanding of how to use the SDK and where to look for more advanced user cases.
+This guide will help you get started with Particle Wallet API iOS SDK by setting up your environment, read contract and write contract, create EVM transaction. By the end of this guide, you'll have a basic understanding of how to use the SDK and where to look for more advanced user cases.
 
 If you face any problem anytime, you can always refer to the Particle[ ](https://github.com/Web3Auth/Web3Auth/discussions)Community for us to help you out as soon as possible!
 
