@@ -71,6 +71,37 @@ ParticleAA.disableAAMode();
 
 ## Send transaction
 
+Before send transaction, you should get your smart account address first.
+
+```swift
+static void getSmartAccountAddress() async {
+  if (account == null) {
+    print("not connect");
+    return;
+  }
+  try {
+    final eoaAddress = account!.publicAddress;
+    final smartAccountConfig = SmartAccountConfig(
+        AccountName.BICONOMY, VersionNumber.V1_0_0(), eoaAddress);
+    List<dynamic> response = await EvmService.getSmartAccount(
+        <SmartAccountConfig>[smartAccountConfig]);
+    var smartAccountJson = response.firstOrNull;
+    if (smartAccountJson != null) {
+      final smartAccount = smartAccountJson as Map<String, dynamic>;
+
+      final smartAccountAddress =
+          smartAccount["smartAccountAddress"] as String;
+      AAConnectLogic.smartAccountAddress = smartAccountAddress;
+      print("getSmartAccount: $smartAccountAddress");
+    } else {
+      print('List is empty');
+    }
+  } catch (error) {
+    print("getSmartAccountAddress: $error");
+  }
+}
+```
+
 You should use particle-auth/particle-connect to send transaction, both of them have a function called `signAndSendTransaction` , a parameter called `feeMode` is used with AA service.
 
 `feeMode` support native, gasless and token, just as its name implies, it tells how to pay gas fee.
@@ -81,36 +112,40 @@ Show how to send transaction with particle-connect, use native token to pay gas 
 
 ```dart
 static void signAndSendTransactionWithNative() async {
-    if (account == null) {
-      print("not connect");
+  if (account == null) {
+    print("not connect");
+    return;
+  }
+  if (smartAccountAddress == null) {
+    print("not get smartAccountAddress");
+    return;
+  }
+  try {
+    final transaction =
+        await TransactionMock.mockEvmSendNative(smartAccountAddress!);
+
+    // check if enough native for gas fee
+    var result = await ParticleAA.rpcGetFeeQuotes(
+        account!.publicAddress, [transaction]);
+    var verifyingPaymasterNative = result["verifyingPaymasterNative"];
+    var feeQuote = verifyingPaymasterNative["feeQuote"];
+    var fee = BigInt.parse(feeQuote["fee"], radix: 10);
+    var balance = BigInt.parse(feeQuote["balance"], radix: 10);
+
+    if (balance < fee) {
+      print("native balance if not enough for gas fee");
       return;
     }
-    try {
-      final transaction =
-          await TransactionMock.mockEvmSendNative(account!.publicAddress);
 
-      // check if enough native for gas fee
-      var result = await ParticleAA.rpcGetFeeQuotes(
-          account!.publicAddress, [transaction]);
-      var verifyingPaymasterNative = result["verifyingPaymasterNative"];
-      var feeQuote = verifyingPaymasterNative["feeQuote"];
-      var fee = BigInt.parse(feeQuote["fee"], radix: 10);
-      var balance = BigInt.parse(feeQuote["balance"], radix: 10);
+    // pass result from rpcGetFeeQuotes to send pay with native
 
-      if (balance < fee) {
-        print("native balance if not enough for gas fee");
-        return;
-      }
-
-      // pass result from rpcGetFeeQuotes to send pay with native
-
-      final signature = await ParticleConnect.signAndSendTransaction(
-          WalletType.metaMask, account!.publicAddress, transaction,
-          feeMode: AAFeeMode.native(result));
-      print("signature $signature");
-    } catch (error) {
-      print("signAndSendTransactionWithNative: $error");
-    }
+    final signature = await ParticleConnect.signAndSendTransaction(
+        WalletType.metaMask, account!.publicAddress, transaction,
+        feeMode: AAFeeMode.native(result));
+    print("signature $signature");
+  } catch (error) {
+    print("signAndSendTransactionWithNative: $error");
+  }
 }
 ```
 
@@ -118,32 +153,38 @@ Show  how to send transaction with particle-connect, gasless.
 
 ```dart
 static void signAndSendTransactionWithGasless() async {
-    if (account == null) {
-      print("not connect");
+  if (account == null) {
+    print("not connect");
+    return;
+  }
+  if (smartAccountAddress == null) {
+    print("not get smartAccountAddress");
+    return;
+  }
+  try {
+    final transaction =
+        await TransactionMock.mockEvmSendNative(smartAccountAddress!);
+
+    // check if gasless available
+    var result = await ParticleAA.rpcGetFeeQuotes(
+        account!.publicAddress, [transaction]);
+    var verifyingPaymasterGasless = result["verifyingPaymasterGasless"];
+    if (verifyingPaymasterGasless == null) {
+      print("gasless is not available");
       return;
     }
-    try {
-      final transaction =
-          await TransactionMock.mockEvmSendNative(account!.publicAddress);
 
-      // check if gasless available
-      var result = await ParticleAA.rpcGetFeeQuotes(
-          account!.publicAddress, [transaction]);
-      var verifyingPaymasterGasless = result["verifyingPaymasterGasless"];
-      if (verifyingPaymasterGasless == null) {
-        print("gasless is not available");
-        return;
-      }
+    // pass result from rpcGetFeeQuotes to send gasless
 
-      // pass result from rpcGetFeeQuotes to send gasless
-
-      final signature = await ParticleConnect.signAndSendTransaction(
-          WalletType.metaMask, account!.publicAddress, transaction,
-          feeMode: AAFeeMode.gasless(result));
-      print("signature $signature");
-    } catch (error) {
-      print("signAndSendTransactionWithGasless: $error");
-    }
+    final signature = await ParticleConnect.signAndSendTransaction(
+        WalletType.metaMask, account!.publicAddress, transaction,
+        feeMode: AAFeeMode.gasless(result));
+    print("signature $signature");
+    showToast("signature $signature");
+  } catch (error) {
+    print("signAndSendTransactionWithGasless: $error");
+    showToast("signAndSendTransactionWithGasless: $error");
+  }
 }
 ```
 
@@ -155,9 +196,13 @@ static void signAndSendTransactionWithToken() async {
     print("not connect");
     return;
   }
+  if (smartAccountAddress == null) {
+    print("not get smartAccountAddress");
+    return;
+  }
   try {
     final transaction =
-        await TransactionMock.mockEvmSendNative(account!.publicAddress);
+        await TransactionMock.mockEvmSendNative(smartAccountAddress!);
 
     List<String> transactions = <String>[transaction];
 
@@ -173,7 +218,7 @@ static void signAndSendTransactionWithToken() async {
     }).toList();
 
     if (overFeeQuotes.isEmpty) {
-      print("no valid token fro gas fee");
+      print("no valid token for gas fee");
       return;
     }
 
@@ -188,8 +233,10 @@ static void signAndSendTransactionWithToken() async {
         WalletType.metaMask, account!.publicAddress, transaction,
         feeMode: AAFeeMode.token(feeQuote, tokenPaymasterAddress));
     print("signature $signature");
+    showToast("signature $signature");
   } catch (error) {
     print("signAndSendTransactionWithToken: $error");
+    showToast("signAndSendTransactionWithToken: $error");
   }
 }
 ```
@@ -208,15 +255,21 @@ static void rpcGetFeeQuotes() async {
     print("not connect");
     return;
   }
+  if (smartAccountAddress == null) {
+    print("not get smartAccountAddress");
+    return;
+  }
   try {
     final transaction =
-        await TransactionMock.mockEvmSendNative(account!.publicAddress);
+        await TransactionMock.mockEvmSendNative(smartAccountAddress!);
     List<String> transactions = <String>[transaction];
     var result = await ParticleAA.rpcGetFeeQuotes(
         account!.publicAddress, transactions);
     print("rpcGetFeeQuotes: $result");
+    showToast("rpcGetFeeQuotes: $result");
   } catch (error) {
     print("rpcGetFeeQuotes: $error");
+    showToast("rpcGetFeeQuotes: $error");
   }
 }
 ```
@@ -231,10 +284,13 @@ static void batchSendTransactions() async {
     print("not connect");
     return;
   }
-
+  if (smartAccountAddress == null) {
+    print("not get smartAccountAddress");
+    return;
+  }
   try {
     final transaction =
-        await TransactionMock.mockEvmSendNative(account!.publicAddress);
+        await TransactionMock.mockEvmSendNative(smartAccountAddress!);
 
     List<String> transactions = <String>[transaction, transaction];
 
