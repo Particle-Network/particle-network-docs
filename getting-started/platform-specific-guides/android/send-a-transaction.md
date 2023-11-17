@@ -1,6 +1,5 @@
 # Send a Transaction
 
-\
 To send a transaction using the provided code, follow these steps:
 
 **Choose the Adapter:** Choose the appropriate adapter based on your scenario. The `adapterName` variable should be set to the desired adapter's name, such as "MetaMask," "Trust," "BitKeep," or any other supported wallet.
@@ -26,7 +25,7 @@ val address = "Replace this with the wallet address obtained after login"
 
 **Sign and Send Transaction:** Use the obtained adapter to sign and send the transaction.
 
-```
+```kotlin
 adapter!!.signAndSendTransaction(address, trans, object : TransactionCallback {
     override fun onError(error: ConnectError) {
         // Handle transaction sending error

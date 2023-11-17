@@ -64,7 +64,7 @@ kotlinCopy codeval params = ContractParams.customAbiEncodeFunctionCall(
     params = listOf("1"),
     abiJsonString = ""
 )
-val serializeTransaction = ParticleNetwork.evm.writeContract(ParticleNetwork.getAddress(), params).serialize()
+val serializeTransaction = ParticleNetwork.evm.writeContract(address, params).serialize()
 ```
 
 

@@ -99,7 +99,7 @@ Find the latest version of the SDK [here](https://search.maven.org/search?q=g:ne
 
 Initialize ParticleConnect in your application with Wallet Connect support:
 
-<pre><code>
+<pre class="language-kotlin"><code class="lang-kotlin">
 val dAppMetadata = DAppMetadata(
    <a data-footnote-ref href="#user-content-fn-1">walletConnectProjectId</a> = "",
    name = "Particle Connect",
