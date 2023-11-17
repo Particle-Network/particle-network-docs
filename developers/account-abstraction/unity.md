@@ -69,9 +69,31 @@ ParticleAAInteraction.EnableAAMode();
 ParticleAAInteraction.DisableAAMode();
 ```
 
+## Get smart account address
+
+```csharp
+public async void GetSmartAccount()
+{
+    try
+    {
+        var eoaAddress = "your EOA address";
+        var smartAccountResult = await EvmService.GetSmartAccount(new[]
+        {
+            new SmartAccountObject(AAAccountName.BICONOMY.ToString(), AAVersionNumber.V1_0_0().version,
+                eoaAddress)
+        });
+        var smartAccountAddress = (string)JObject.Parse(smartAccountResult)["result"][0]["smartAccountAddress"];
+    }
+    catch (Exception e)
+    {
+        Debug.LogError($"An error occurred: {e.Message}");
+    }
+}
+```
+
 ## Send transaction
 
-You should use particle-auth/particle-connect to send transaction, both of them have a function called `signAndSendTransaction` , a parameter called `feeMode` is used with AA service.
+You should use ParticleAuth | ParticleConnect | ParticleAuthCore to send transaction, all of them have a function called `signAndSendTransaction` or `evmSendTransaction` , a parameter called `feeMode` is used with AA service.
 
 `feeMode` support native, gasless and token, just as its name implies, it tells how to pay gas fee.
 
@@ -242,7 +264,9 @@ catch (Exception e)
 ```
 
 {% hint style="info" %}
-If you are using particle-auth to send transaction, the difference is which to call `signAndSendTransaction` method.
+If you are using ParticleAuth to send transaction, the difference is which to call `signAndSendTransaction` method.
+
+If you are uing ParticleAuthCore to send transaction, the difference is call evmSendTransaction method.
 {% endhint %}
 
 ### Rpc get fee quotes
