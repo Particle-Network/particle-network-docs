@@ -311,8 +311,14 @@ ParticleWallet.navigatorSwap();
 ### Navigator login list
 
 ```dart
-daString result = await ParticleWallet.navigatorLoginList();
-print("result:$result");
+try {
+  Account account = await ParticleWallet.navigatorLoginList();
+  print("navigatorLoginList:$account");
+  showToast("navigatorLoginList: $account");
+} catch (error) {
+  print("navigatorLoginList:$error");
+  showToast("navigatorLoginList: $error");
+}
 ```
 
 ### Navigator dapp browser
@@ -325,11 +331,11 @@ ParticleWallet.navigatorDappBrowser(url: url);
 ### Set Support chain
 
 ```dart
- List<ChainInfo> chainInfos = <ChainInfo>[];
- chainInfos.add(EthereumChain.mainnet());
- chainInfos.add(PolygonChain.mainnet());
- chainInfos.add(BSCChain.mainnet());
- ParticleWallet.setSupportChain(chainInfos);
+List<ChainInfo> chainInfos = <ChainInfo>[];
+chainInfos.add(ChainInfo.Ethereum);
+chainInfos.add(ChainInfo.Polygon);
+chainInfos.add(ChainInfo.BNBChain);
+ParticleWallet.setSupportChain(chainInfos);
 ```
 
 ### Switch wallet
@@ -357,7 +363,9 @@ ParticleWallet.setSupportDappBrowser(false);
 // Set support wallet connect in wallet page.
 ParticleWallet.supportWalletConnect(true);
 // Set support add token
-ParticleWallet.setSupportAddToken(isShow);
+ParticleWallet.setSupportAddToken(false);
+// Set show smart account setting
+ParticleWallet.setShowSmartAccountSetting(false);
 
 
 // Set display token addresses
@@ -390,6 +398,8 @@ ParticleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
 // example https://github.com/Particle-Network/particle-ios/blob/main/Demo/Demo/customUIConfig.json
 const json = "";
 ParticleWallet.loadCustomUIJsonString(json);
+
+
 ```
 
 ### Set custom Wallet name and icon
