@@ -10,9 +10,7 @@ npm install @particle-network/rn-auth-core
 npm install @particle-network/rn-auth
 ```
 
-click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth-core) to get the demo source code&#x20;
-
-
+click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth-core) to get the demo source code
 
 ### 2.Configure Android project
 
@@ -84,7 +82,7 @@ android {
 
 3.4 Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard
 
-3.7 Edit Podfile, you should follow [Podfile required](../sdks/ios.md#edit-podfile) to edit Podfile.
+3.5 Edit Podfile, you should follow [Podfile required](../sdks/ios.md#edit-podfile) to edit Podfile.
 
 ### Usage
 
@@ -97,7 +95,7 @@ import * as particleAuth from "@particle-network/rn-auth";
 
 ### Initialize the SDK
 
-**Before using the SDK you have to call init(Required)**&#x20;
+**Before using the SDK you have to call init(Required)**
 
 ```typescript
 // Get your project id and client from dashboard,  
@@ -306,7 +304,7 @@ if (result.status) {
 }
 ```
 
-### Sign  transaction
+### Sign transaction
 
 ```dart
 const sender = await solana.getAddress();
@@ -323,7 +321,7 @@ if (result.status) {
 }
 ```
 
-### Sign  all transactions
+### Sign all transactions
 
 ```dart
 const sender = await solana.getAddress();
