@@ -17,7 +17,8 @@ var biconomyApiKeys = new Dictionary<int, string>
     { 80001, "your polygon mumbai key" }
 };
 
-ParticleAAInteraction.Init(biconomyApiKeys);
+// AccountName support BICONOMY | SIMPLE | CYBERCONNECT
+ParticleAAInteraction.Init(AAAccountName.BICONOMY, AAVersionNumber.V1_0_0(), biconomyApiKeys);
 ```
 
 **2. Drag prefab to your scene**
