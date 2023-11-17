@@ -8,71 +8,73 @@ This documentation provides a detailed guide on integrating and utilizing the Pa
 
 To integrate ParticleConnect into your project for Wallet Connect, follow these steps:
 
-1.  **Gradle Dependencies:**
+**Gradle Dependencies:**
 
-    ```gradle
-    dependencies {
-        // Required
-        modules {
-            module("org.bouncycastle:bcprov-jdk15to18") {
-                replacedBy("org.bouncycastle:bcprov-jdk15on")
-            }
-        }
-        implementation("network.particle:connect:{latest-version}")
-        implementation("network.particle:connect-wallet-connect-adapter:{latest-version}")
-    }
-    ```
+```gradle
+dependencies {
+    // Required
+    modules {
+        module("org.bouncycastle:bcprov-jdk15to18") {
+            replacedBy("org.bouncycastle:bcprov-jdk15on")
+        }
+    }
+    implementation("network.particle:connect:{latest-version}")
+    implementation("network.particle:connect-wallet-connect-adapter:{latest-version}")
+}
+```
 
-    Find the latest version of the SDK [here](https://search.maven.org/search?q=g:network.particle).
-2.  **Manifest Configuration:**
+Find the latest version of the SDK [here](https://search.maven.org/search?q=g:network.particle).
 
-    ```xml
-    <application>
-        <!-- Particle Network Configuration Start -->
-        <!-- Web Activity -->
-        <activity
-            android:name="com.particle.network.controller.WebActivity"
-            android:exported="true"
-            android:launchMode="singleTask"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/ThemeAuthWeb">
-            <intent-filter>
-                <data android:scheme="pn${PN_APP_ID}" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-            </intent-filter>
-        </activity>
-        
-        <!-- Redirect Activity -->
-        <activity
-            android:name="com.connect.common.controller.RedirectActivity"
-            android:exported="true"
-            android:launchMode="singleTask"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="connect${PN_APP_ID}" />
-            </intent-filter>
-        </activity>
-    ​
-        <!-- Metadata Configuration -->
-        <meta-data
-            android:name="particle.network.project_id"
-            android:value="${PN_PROJECT_ID}" />
-        <meta-data
-            android:name="particle.network.project_client_key"
-            android:value="${PN_PROJECT_CLIENT_KEY}" />
-        <meta-data
-            android:name="particle.network.app_id"
-            android:value="${PN_APP_ID}" />
-        <!-- Particle Network Configuration End -->
-    </application>
-    ```
-3.  **Gradle Properties:** In your `app/build.gradle.kts` file, add the following placeholders:
+**Manifest Configuration:**
+
+```xml
+<application>
+    <!-- Particle Network Configuration Start -->
+    <!-- Web Activity -->
+    <activity
+        android:name="com.particle.network.controller.WebActivity"
+        android:exported="true"
+        android:launchMode="singleTask"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:theme="@style/ThemeAuthWeb">
+        <intent-filter>
+            <data android:scheme="pn${PN_APP_ID}" />
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+        </intent-filter>
+    </activity>
+    
+    <!-- Redirect Activity -->
+    <activity
+        android:name="com.connect.common.controller.RedirectActivity"
+        android:exported="true"
+        android:launchMode="singleTask"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="connect${PN_APP_ID}" />
+        </intent-filter>
+    </activity>
+​
+    <!-- Metadata Configuration -->
+    <meta-data
+        android:name="particle.network.project_id"
+        android:value="${PN_PROJECT_ID}" />
+    <meta-data
+        android:name="particle.network.project_client_key"
+        android:value="${PN_PROJECT_CLIENT_KEY}" />
+    <meta-data
+        android:name="particle.network.app_id"
+        android:value="${PN_APP_ID}" />
+    <!-- Particle Network Configuration End -->
+</application>
+```
+
+1.  **Gradle Properties:** In your `app/build.gradle.kts` file, add the following placeholders:
 
     ```gradle
     android {
