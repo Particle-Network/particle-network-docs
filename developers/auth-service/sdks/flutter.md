@@ -10,7 +10,7 @@ With Flutter:
 flutter pub add particle_auth
 ```
 
-click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-auth) to get the demo source code&#x20;
+click [here](https://github.com/Particle-Network/particle-flutter/tree/master/particle-auth) to get the demo source code
 
 ### 2.Configure Android project
 
@@ -169,7 +169,7 @@ override func application(_ app: UIApplication, open url: URL, options: [UIAppli
 {% endtab %}
 {% endtabs %}
 
-3.7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+3.7. Configure your app scheme URL, select your app from `TARGETS`, under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
@@ -191,7 +191,7 @@ end
 
 ### Initialize the SDK
 
-**Before using the SDK, you have to call init(Required)**&#x20;
+**Before using the SDK, you have to call init(Required)**
 
 ```dart
 ParticleAuth.init(Ethereum.mainnet(), env);
@@ -202,12 +202,12 @@ ParticleAuth.init(Ethereum.mainnet(), env);
 ```dart
 List<SupportAuthType> supportAuthType = <SupportAuthType>[];
 supportAuthType.add(SupportAuthType.all);
-//message:evm->hex sign message . solana is base58
-//uniq:unique sign,only support evm
+//message:evm->hex sign message, solana is base58 string.
+//uniq:unique sign,only support evm.
 final authorization = LoginAuthorization(messageHex, true);
 
 //authorization is optional
-ParticleAuth.login(
+final userInfo = await ParticleAuth.login(
     LoginType.phone,
     "", 
     supportAuthType,
@@ -216,20 +216,27 @@ ParticleAuth.login(
 );
 ```
 
+### Is Login Async
+
+Is user login, check from server, recommended.
+
+if you can get the userInfo, which means user is login, otherwise current user is invalid.
+
+```dart
+try {
+    final userInfo = await ParticleAuth.isLoginAsync();
+    print("isLoginAsync: $userInfo");
+  } catch (error) {
+    print("isLoginAsync: $error");
+  }
+```
+
 ### Is Login
 
 Is user login, check local data.
 
 ```dart
 bool result = await ParticleAuth.isLogin();
-```
-
-### Is Login Async
-
-Is user login, check from server, recommended.
-
-```dart
-String result = await ParticleAuth.isLoginAsync();
 ```
 
 ### Logout
@@ -241,7 +248,7 @@ String result = await ParticleAuth.logout();
 ### Fast logout
 
 ```dart
-String result = await ParticleAuth.fastLogoudar();
+String result = await ParticleAuth.fastLogout()
 ```
 
 ### Get address
@@ -250,13 +257,19 @@ String result = await ParticleAuth.fastLogoudar();
 final address = await ParticleAuth.getAddress();
 ```
 
+### Get userInfo
+
+```dart
+final userInfo = await ParticleAuth.getUserInfo();
+```
+
 ### Sign message
 
 In EVM chain requires a hexadecimal string, in Solana chain requires a human readable string.
 
 ```dart
 final messageHex = "0x${StringUtils.toHexString("Hello Particle")}";
-String result = await ParticleAuth.signMessage(messageHex);
+String signature = await ParticleAuth.signMessage(messageHex);
 ```
 
 ### Sign message unique
@@ -265,7 +278,7 @@ In EVM chain requires a hexadecimal string, not support Solana.
 
 ```dart
 final messageHex = "0x${StringUtils.toHexString("Hello Particle")}";
-String result = await ParticleAuth.signMessageUnique(messageHex);
+String signature = await ParticleAuth.signMessageUnique(messageHex);
 ```
 
 ### Sign transaction
@@ -276,7 +289,7 @@ Please explore our GitHub. In the `example/transaction_mock.dart` file, you can 
 
 ```dart
 final transaction = "Your transaction";
-String result = await ParticleAuth.signTransaction(trans);
+String pubAddress = await ParticleAuth.getAddress();
 ```
 
 ### Sign all transactions
@@ -286,9 +299,9 @@ Only support Solana chain, in Solana chain requires a base58 string.
 Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
 
 ```dart
-
-final transactions = ["Your transaction 1", "Your transaction 2"];
-String result = await ParticleAuth.signAllTransactions(transactions);
+List<String> transactions = <String>[];
+List<String> signatures =
+            await ParticleAuth.signAllTransactions(transactions);
 ```
 
 ### Sign and send transaction
@@ -299,7 +312,7 @@ Please explore our GitHub. In the `example/transaction_mock.dart` file, you can 
 
 ```dart
 final transaction = "Your transaction";
-String result = await ParticleAuth.signAndSendTransaction(trans);
+String signature = await ParticleAuth.signAndSendTransaction(transction);
 ```
 
 ### Sign typed data
@@ -313,33 +326,28 @@ In EVM chain requires a hexadecimal string, not support Solana.
 ```dart
 // your typed data is a json string
 String typedDataHex = "0x${StringUtils.toHexString(typedData)}";
-String result =
-        await ParticleAuth.signTypedData(typedDataHex, SignTypedDataVersion.v4);
-debugPrint("signTypedData: $result");
-```
-
-### Set chain info async
-
-```dart
-bool isSuccess = await ParticleAuth.setChainInfoAsync(EthereumChain.goerli());
-print("setChainInfoAsync: $isSuccess");
+final signature = await ParticleAuth.signTypedData(
+          typedDataHex, SignTypedDataVersion.v4);
 ```
 
 ### Set chain info sync
 
 ```dart
-bool isSuccess = await ParticleAuth.setChainInfo(SolanaChain.devnet());
+bool isSuccess = await ParticleAuth.setChainInfo(ChainInfo.PolygonMumbai);
+print("setChainInfoAsync: $isSuccess");
+```
+
+### Set chain info async
+
+```dart
+bool isSuccess = await ParticleAuth.setChainInfoAsync(ChainInfo.SolanaDevnet);
 print("setChainInfoSync: $isSuccess");
 ```
 
 ### Get chain info
 
 ```dart
-String result = await ParticleAuth.getChainInfo();
-print(result);
-String chainName = jsonDecode(result)["chain_name"];
-int chainId = jsonDecode(result)["chain_id"];
-String chainIdName = jsonDecode(result)["chain_id_name"];
+final chainInfo = await ParticleAuth.getChainInfo();
 ```
 
 ### Set security account config
@@ -360,8 +368,13 @@ ParticleAuth.setSecurityAccountConfig(config);
 If user is expired, should return error, If user is expired, should return error, otherwise return nothing.
 
 ```dart
-String result = await ParticleAuth.openAccountAndSecurity();
-print(result);
+try {
+  String result = await ParticleAuth.openAccountAndSecurity();
+  print("openAccountAndSecurity: $result");
+} catch (error) {
+  print("openAccountAndSecurity: $error");
+  showToast("openAccountAndSecurity: $error");
+}
 ```
 
 ### Set iOS modal present style
@@ -372,7 +385,7 @@ ParticleAuth.setModalPresentStyle(IOSModalPresentStyle.fullScreen);
 
 ### Set iOS medium screen
 
-Set iOS medium screen, true is medium screen, false is large screen,  default value if false.&#x20;
+Set iOS medium screen, true is medium screen, false is large screen, default value if false.
 
 Only support iOS 15 or higher.
 
@@ -430,7 +443,7 @@ String webConfig =
 ParticleAuth.openWebWallet(webConfig);
 ```
 
-### Has master password, payment password, security account&#x20;
+### Has master password, payment password, security account
 
 ```dart
 // get hasMasterPassword, hasPaymentPassword and hasSecurityAccount from local user info.
@@ -438,32 +451,7 @@ ParticleAuth.openWebWallet(webConfig);
 final hasMasterPassword = await ParticleAuth.hasMasterPassword();
 final hasPaymentPassword = await ParticleAuth.hasPaymentPassword();
 final hasSecurityAccount = await ParticleAuth.hasSecurityAccount();
-  
-// get from remote server
-static void getSecurityAccount() async {
-  final result = await ParticleAuth.getSecurityAccount();
-  if (result == null) return;
-  
-  if (jsonDecode(result)["status"] == true ||
-      jsonDecode(result)["status"] == 1) {
-    final securityAccount = jsonDecode(result)["data"];
-    bool hasMasterPassword = securityAccount["has_set_master_password"];
-    bool hasPaymentPassword = securityAccount["has_set_payment_password"];
-    final email = securityAccount["email"];
-    final phone = securityAccount["phone"];
-
-    bool hasSecurityAccount = (email != null && !email.isEmpty) ||
-        (phone != null && !phone.isEmpty);
-    print(
-        "hasMasterPassword: $hasMasterPassword, hasPaymentPassword: $hasPaymentPassword, hasSecurityAccount: $hasSecurityAccount");
-    showToast(
-        "hasMasterPassword: $hasMasterPassword, hasPaymentPassword: $hasPaymentPassword, hasSecurityAccount: $hasSecurityAccount");
-  } else {
-    final error = RpcError.fromJson(jsonDecode(result)["data"]);
-    print(error);
-    showToast("getSecurityAccount: $error");
-  }
-}
+final securityAccount = await ParticleAuth.getSecurityAccount();
 ```
 
 ## EVM Service
@@ -475,16 +463,18 @@ Get a write contract transaction
 ```dart
 String publicAddress = "your public address";
 String contractAddress = "your contract address";
-String methodName = "mint"; // this is your contract method name, like balanceOf, mint.
-List<Object> params = <Object>["1"]; // this is the method params.
+// this is your contract method name, like balanceOf, mint.
+String methodName = "mint"; 
+// this is the method params, 
+// all parameters should be convert to hex string.
+List<Object> params = <Object>["0x3"]; 
 
 // abi json string, you can get it from your contract developer.
 // such as
 // [{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]
-const abiJsonString = null;
+const abiJsonString = "";
 
-final result = EvmService.writeContract(publicAddress, contractAddress, methodName, params, abiJsonString, true);
-
+final transaction = EvmService.writeContract(publicAddress, contractAddress, methodName, params, abiJsonString, true);
 ```
 
 ### Read contract
@@ -494,13 +484,16 @@ Read conrtact data from blockchain
 ```dart
 String publicAddress = "your public address";
 String contractAddress = "your contract address";
-String methodName ="mint"; // this is your contract method name, like balanceOf, mint.
-List<Object> parameters = <Object>["1"]; // this is the method params.
+// this is your contract method name, like balanceOf.
+String methodName ="balanceOf"; 
+// this is the method params, 
+// all parameters should be convert to hex string.
+List<Object> parameters = <Object>[publicAddress];
 
 // abi json string, you can get it from your contract developer.
 // such as
 // [{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]
-const abiJsonString = null;
+const abiJsonString = "";
 
 final result = await EvmService.readContract(publicAddress, contractAddress, methodName, parameters, abiJsonString);Cr
 ```
@@ -514,12 +507,9 @@ final result = await EvmService.readContract(publicAddress, contractAddress, met
 String from = "your public address";
 String receiver = "receiver address"
 String contractAddress = "contract address"
-BigInt amount = "some amount";
+BigInt amount = BigInt.from(1000000);
 String to = contractAddress;
-final erc20Resp =
-    await EvmService.erc20Transfer(contractAddress, receiver, amount);
-// get field data
-final data = jsonDecode(erc20Resp)["result"];
+final data = await EvmService.erc20Transfer(contractAddress, receiver, amount);
 
 // then create transaction
 final transaction = await EvmService.createTransaction(
@@ -532,7 +522,7 @@ final transaction = await EvmService.createTransaction(
 Return estimated gas
 
 ```dart
-final result = await EvmService.evmEstimateGas(from, to, value, data);
+final gasLimit = await EvmService.ethEstimateGas(from, to, value, data);
 ```
 
 ### Get suggested gas fees
@@ -540,7 +530,7 @@ final result = await EvmService.evmEstimateGas(from, to, value, data);
 Return gas fee json object.
 
 ```dart
-final result = await EvmService.suggestedGasFees();
+final gasFees = await EvmService.suggestedGasFees();
 ```
 
 ### Get tokens and NFTs
@@ -548,7 +538,7 @@ final result = await EvmService.suggestedGasFees();
 Return all tokens, NFTs and native amount at this address.
 
 ```dart
-final result = await EvmService.getTokensAndNFTs(publicAddress);
+final result = await EvmService.getTokensAndNFTs(address);
 ```
 
 ### Get tokens
@@ -585,19 +575,43 @@ final result = await EvmService.getTransactionsByAddress(publicAddress);
 
 ### Get price
 
-Return token price
+Return token price, if you want the native token price, use `native` as its address.
 
 ```dart
+List<String> currencies = <String>['usd'];
+List<String> tokenAddresses = <String>['native'];
+tokenAddresses.add('0x001B3B4d0F3714Ca98ba10F6042DaEbF0B1B7b6F');
+tokenAddresses.add('0x326C977E6efc84E512bB9C30f76E30c160eD06FB');
 final result = await EvmService.getPrice(tokenAddresses, currencies);
 ```
 
 ### Get smart account
 
-Require add particle\_biconomy and enable Biconomy.
-
-Return smart account json object
+Make a `SmartAccountConfig` object, then call `EvmService.getSmartAccount` the result value should be a smart account.
 
 ```dart
-final result = await EvmService.getSmartAccount(eoaAddresses, version);
-```
+try {
+    final eoaAddress = await ParticleAuth.getAddress();
+    SmartAccountConfig config = SmartAccountConfig(
+        AccountName.BICONOMY, VersionNumber.V1_0_0(), eoaAddress);
+    List<dynamic> response =
+        await EvmService.getSmartAccount(<SmartAccountConfig>[config]);
 
+    var smartAccountJson = response.firstOrNull;
+    if (smartAccountJson != null) {
+      print(smartAccountJson);
+      final smartAccount = smartAccountJson as Map<String, dynamic>;
+
+      final smartAccountAddress =
+          smartAccount["smartAccountAddress"] as String;
+
+      print("getSmartAccount: $smartAccountAddress");
+      showToast("getSmartAccount: $smartAccountAddress");
+    } else {
+      print('List is empty');
+    }
+  } catch (error) {
+    print("getSmartAccount: $error");
+    showToast("getSmartAccount: $error");
+  }
+```
