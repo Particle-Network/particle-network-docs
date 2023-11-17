@@ -23,7 +23,6 @@ Particle AA service can't use individually.
 (Optional) The biconomyApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
 
 ```dart
-Biconomy Api keys 
 Map<int, String> biconomyApiKeys = {
   1: "your ethereum mainnet key",
   5: "your ethereum goerli key",
