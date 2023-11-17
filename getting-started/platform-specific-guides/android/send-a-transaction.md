@@ -12,7 +12,7 @@ To send a transaction using the provided code, follow these steps:
         it.name == adapterName
     }
     ```
-2.  **Prepare Transaction Data:** Refer to the [Transaction Construction Guide](construct-a-transaction.md) for instructions on constructing the transaction data. It can be in the form of a hex string for EVM (Ethereum Virtual Machine) transactions or a Base58 string for Solana transactions.
+2.  **Prepare Transaction Data:** Refer to the [Transaction Construction](transaction-construction.md) Guide . It can be in the form of a hex string for EVM (Ethereum Virtual Machine) transactions or a Base58 string for Solana transactions.
 
     ```kotlin
     val trans ="Replace this with the constructed transaction data (hex for EVM or Base58 for Solana)"
