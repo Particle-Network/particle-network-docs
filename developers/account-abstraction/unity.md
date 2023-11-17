@@ -358,5 +358,5 @@ catch (Exception e)
 ```
 
 {% hint style="info" %}
-If you are using particle-auth to send transaction, the difference is which to call `batchSendTransactions` method.
+If you are using ParticleAuth/ParticleAuthCore to send transaction, the difference is which to call `batchSendTransactions` method.
 {% endhint %}
