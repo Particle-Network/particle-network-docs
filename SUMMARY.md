@@ -51,7 +51,7 @@
     * [Wallet Connect](getting-started/platform-specific-guides/android/wallet-connect.md)
     * [Transaction Construction](getting-started/platform-specific-guides/android/transaction-construction.md)
     * [Send a Transaction](getting-started/platform-specific-guides/android/send-a-transaction.md)
-    * [With WalletUI](getting-started/platform-specific-guides/android/with-walletui.md)
+    * [How to use WalletService](getting-started/platform-specific-guides/android/how-to-use-walletservice.md)
     * [Smart Account](getting-started/platform-specific-guides/android/smart-account.md)
   * [iOS](getting-started/platform-specific-guides/ios.md)
     * [Social Login + Embeded Wallet](getting-started/platform-specific-guides/ios/social-login-+-embeded-wallet.md)
