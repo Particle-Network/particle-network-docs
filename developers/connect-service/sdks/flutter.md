@@ -223,39 +223,45 @@ ParticleConnect.init(currChainInfo, dappInfo, Env.dev);
 
 // set wallet connect support chaininfos, if you dont call this method
 // default value is current chaininfo.
-List<ChainInfo> chainInfos = <ChainInfo>[EthereumChain.mainnet(), PolygonChain.mainnet()];
-ParticleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
+List<ChainInfo> chainInfos = <ChainInfo>[
+      ChainInfo.Ethereum,
+      ChainInfo.Polygon
+    ];
+    ParticleConnect.setWalletConnectV2SupportChainInfos(chainInfos);
 ```
 {% endhint %}
 
 ### Connect
 
 ```dart
-final result = await ParticleConnect.connect(WalletType.particle);
+final account = await ParticleConnect.connect(walletType);
 ```
 
 ### Disconnect
 
 ```dart
-String result = await ParticleConnect.disconnect(WalletType.particle, getPublicAddress());
+String result = await ParticleConnect.disconnect(walletType, getPublicAddress());
 ```
 
 ### IsConnected
 
 ```dart
-bool result = await ParticleConnect.isConnected(WalletType.particle, getPublicAddress());
+bool isConnected = await ParticleConnect.isConnected(walletType, getPublicAddress());
 ```
 
-### Login (Sign-In With Ethereum or Solana)
+### Sign-In With Ethereum or Solana
 
 ```dart
-String result = await ParticleConnect.login(WalletType.particle, getPublicAddress(), "login.xyz", "https://login.xyz/demo#login");
+const domain = "particle.network";
+const uri = "https://docs.particle.network/";
+ConnectLogic.siwe = await ParticleConnect.signInWithEthereum(walletType, getPublicAddress(), domain, uri);
 ```
 
 ### Verify
 
 ```dart
-String result = await ParticleConnect.verify(WalletType.particle, getPublicAddress(), message, signature);
+bool result = await ParticleConnect.verify(walletType, getPublicAddress(),
+          ConnectLogic.siwe.message, ConnectLogic.siwe.signature);
 ```
 
 ### Sign message
@@ -264,7 +270,7 @@ In EVM chain requires a hexadecimal string, in Solana chain requires a human rea
 
 ```dart
 final messageHex = "0x${StringUtils.toHexString("Hello Particle")}";
-String result = await ParticleConnect.signMessage(WalletType.particle, getPublicAddress(), messageHex);
+String signature = await ParticleConnect.signMessage(walletType, getPublicAddress(), messageHex);
 ```
 
 ### Sign transaction
@@ -274,7 +280,7 @@ Only support Solana chain, in Solana chain requires a base58 string.
 Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
 
 ```dart
-String result = await ParticleConnect.signTransaction(WalletType.particle, getPublicAddress(), transaction);
+String signature = await ParticleConnect.signTransaction(walletType, getPublicAddress(), transaction);
 ```
 
 ### Sign all transactions
@@ -284,7 +290,7 @@ Only support Solana chain, in Solana chain requires a base58 string.
 Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
 
 ```dart
-String result = await ParticleConnect.signAllTransactions(WalletType.particle, getPublicAddress(), transactions);
+String signature = await ParticleConnect.signAllTransactions(walletType, getPublicAddress(), transactions);
 ```
 
 ### Sign and send transaction
@@ -294,7 +300,7 @@ In EVM chain requires a hexadecimal string, in Solana chain requires a base58 st
 Please explore our GitHub. In the `example/transaction_mock.dart` file, you can learn how to mock a test transaction.
 
 ```dart
-String result = await ParticleConnect.signAndSendTransaction(WalletType.particle, getPublicAddress(), transaction);
+String signature = await ParticleConnect.signAndSendTransaction(walletType, getPublicAddress(), transaction);
 ```
 
 ### Sign typed data
@@ -303,72 +309,36 @@ In EVM chain requires a hexadecimal string, not support Solana.
 
 ```dart
 String typedDataHex = "0x${StringUtils.toHexString(typedData)}";
-String result = await ParticleConnect.signTypedData(
-        walletType, getPublicAddress(), typedDataHex);
+String signature = await ParticleConnect.signTypedData(walletType, getPublicAddress(), typedDataHex);
 ```
 
 ### Import private key
 
+Support both EVM and Solana private keys.
+
 ```dart
-String result = await ParticleConnect.importPrivateKey(WalletType.evmPrivateKey, privateKey);
-Map<String, dynamic> jsonResult = jsonDecode(result);
-if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
-  publicAddress = jsonResult["data"]["publicAddress"];
-  print("publicAddress:$publicAddress");
-} else {
-  print("${jsonResult["data"]}")
-}
+final account = await ParticleConnect.importPrivateKey(walletType, privateKey);
 ```
 
 ### Import mnemonic
 
+Support both EVM and Solana mnemonics.
+
 ```dart
-String result = await ParticleConnect.importMnemonic(WalletType.evmPrivateKey, mnemonic);
-Map<String, dynamic> jsonResult = jsonDecode(result);
-if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
-  publicAddress = jsonResult["data"]["publicAddress"];
-  print("publicAddress:$pubAddress");
-} else {
-  print("${jsonResult["data"]}");
-}
+final account = await ParticleConnect.importMnemonic(walletType, mnemonic);
 ```
 
 ### Export private key
 
-```dart
-String result = await ParticleConnect.exportPrivateKey(WalletType.evmPrivateKey, getPublicAddress());
-Map<String, dynamic> jsonResult = jsonDecode(result);
-if (jsonResult["status"]  == 1 || jsonResult["status"]  == true) {
-  publicAddress = jsonResult["data"]["publicAddress"];
-  print("pubAddress:$publicAddress");
-} else {
-  print("${jsonResult["data"]}");
-}
-```
-
-### Add ethereum chain
-
-from test, this method works well in metamask, it doesn't work well in other wallets.
+Private keys can only be exported from accounts that have been imported through private keys or mnemonics.
 
 ```dart
-int chainId = 80001;
-String result = await ParticleConnect.addEthereumChain(walletType, getPublicAddress(), chainId);
-```
-
-### Switch ethereum chain
-
-from test, this method works well in metamask, it doesn't work well in other wallets.
-
-```dart
-int chainId = 5;
-String result = await ParticleConnect.switchEthereumChain(walletType, getPublicAddress(), chainId);
+String privateKey = await ParticleConnect.exportPrivateKey(walletType, getPublicAddress());
 ```
 
 ### Reconnect wallet connect wallet
 
-only support iOS, usually use when open app, if current wallet is from wallet connect, call this method to reconnect, you can call this method anywhere anytime.
-
-It is better to start a connection before sign.
+Only support iOS, works for extend wallet connect connection.
 
 ```dart
 ParticleConnect.reconnectIfNeeded(walletType, getPublicAddress());
