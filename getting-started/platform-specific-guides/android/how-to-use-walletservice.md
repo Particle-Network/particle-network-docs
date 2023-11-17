@@ -29,7 +29,7 @@ Add `android:fullBackupContent="@xml/pn_backup_rules"` in the `application` elem
 </application>
 ```
 
-**Initialization:**
+#### **Initialization:**
 
 ```kotlin
 /**
@@ -51,7 +51,7 @@ ParticleWallet.init(application, supportChains).apply {
 }
 ```
 
-**Setting Wallet Information:**
+#### **Setting Wallet Information:**
 
 After successfully logging in with Social Login or Wallet Connect, use the following code to set wallet information:
 
@@ -70,25 +70,25 @@ adapter.connect(null, object : ConnectCallback {
 })
 ```
 
-**Open Wallet:**
+#### **Open Wallet:**
 
 ```kotlin
 PNRouter.build(RouterPath.Wallet).navigation()
 ```
 
-**Open Send Interface:**
+#### **Open Send Interface:**
 
 ```kotlin
 PNRouter.build(RouterPath.TokenSend).navigation()
 ```
 
-**Open Receive Interface:**
+#### **Open Receive Interface:**
 
 ```kotlin
 PNRouter.build(RouterPath.TokenReceive).navigation()
 ```
 
-**Open Swap:**
+#### **Open Swap:**
 
 ```kotlin
 PNRouter.navigatorSwap()

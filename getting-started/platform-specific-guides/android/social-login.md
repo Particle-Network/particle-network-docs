@@ -1,7 +1,5 @@
 # Social Login
 
-**Introduction**
-
 This documentation provides a comprehensive guide on integrating and utilizing the ParticleConnect SDK in your Android application, with a primary focus on Social Login functionality. ParticleConnect facilitates seamless connectivity and authentication using social media accounts in your mobile applications.
 
 By leveraging Social Login, your users can easily authenticate themselves using their preferred social media accounts, simplifying the onboarding process. Upon successful authentication, ParticleConnect enables you to obtain a web3 wallet address associated with the user's account.

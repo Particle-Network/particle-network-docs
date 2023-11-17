@@ -1,7 +1,5 @@
 # Wallet Connect
 
-**Introduction**
-
 This documentation provides a detailed guide on integrating and utilizing the ParticleConnect SDK in your Android application, focusing on Wallet Connect functionality. ParticleConnect simplifies the connection of decentralized wallets to your DApp through the Wallet Connect protocol.
 
 **Configuration**
