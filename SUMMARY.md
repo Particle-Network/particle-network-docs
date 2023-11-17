@@ -52,7 +52,7 @@
     * [Transaction Construction](getting-started/platform-specific-guides/android/transaction-construction.md)
     * [Send a Transaction](getting-started/platform-specific-guides/android/send-a-transaction.md)
     * [How to use WalletService](getting-started/platform-specific-guides/android/how-to-use-walletservice.md)
-    * [Social Login + AA](getting-started/platform-specific-guides/android/social-login-+-aa.md)
+    * [Use AA](getting-started/platform-specific-guides/android/use-aa.md)
   * [iOS](getting-started/platform-specific-guides/ios.md)
     * [Social Login + Embeded Wallet](getting-started/platform-specific-guides/ios/social-login-+-embeded-wallet.md)
     * [Social Login + AA](getting-started/platform-specific-guides/ios/social-login-+-aa.md)

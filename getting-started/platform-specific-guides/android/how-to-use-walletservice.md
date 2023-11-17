@@ -22,12 +22,22 @@ dependencies {
 
 Add `android:fullBackupContent="@xml/pn_backup_rules"` in the `application` element.
 
-```xml
-<application
-    android:fullBackupContent="@xml/pn_backup_rules">
-    ...
-</application>
-```
+<pre class="language-xml"><code class="lang-xml">&#x3C;manifest 
+    xmlns:tools="http://schemas.android.com/tools"  //add this line 
+    >
+    
+    //...
+
+    &#x3C;application
+        android:fullBackupContent="@xml/pn_backup_rules"  
+        tools:replace="android:fullBackupContent"        
+        >
+        
+    //...
+    
+<strong>    &#x3C;/application>
+</strong>&#x3C;/manifest>
+</code></pre>
 
 #### **Initialization:**
 
