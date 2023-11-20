@@ -191,19 +191,19 @@ Use Auth Core SDK to sign a transaction or message.
 {% tab title="EVM" %}
 ```swift
 // personal sign
-let txHash = try await auth.evm.personalSign(messageHex)
+let result = try await auth.evm.personalSign(messageHex)
     
 // personal sign unique
-let txHash = try await auth.evm.personalSignUnique(messageHex)
+let result = try await auth.evm.personalSignUnique(messageHex)
 
 // sign typed data
-let txHash = try await auth.evm.signTypedData(typedDataV4)
+let result = try await auth.evm.signTypedData(typedDataV4)
 
 // sign typed data unique
-let txHash = try await auth.evm.signTypedDataUnique(typedDataV4)
+let result = try await auth.evm.signTypedDataUnique(typedDataV4)
 
 // send evm transaction
-let txHash = try await auth.evm.sendTransaction(transaction)
+let result = try await auth.evm.sendTransaction(transaction)
 
 // request public rpc
 let method = "eth_getBalance"
