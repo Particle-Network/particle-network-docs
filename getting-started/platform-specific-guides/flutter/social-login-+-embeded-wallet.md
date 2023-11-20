@@ -239,15 +239,7 @@ import UIKit
 }
 ```
 
-### Android
-
-
-
-
-
-
-
-### Initialization in flutter
+## Initialization in flutter
 
 Now, let's initialize ParticleConnect in your project, chainInfo signifies the chain (ethereum, polygon ...) you want to initialize ParticleConnect with.
 

@@ -60,6 +60,7 @@
     * [How to use WalletService](getting-started/platform-specific-guides/ios/how-to-use-walletservice.md)
   * [Unity](getting-started/platform-specific-guides/unity/README.md)
     * [Unity SDK Prerequisites](getting-started/platform-specific-guides/unity/unity-sdk-prerequisites.md)
+    * [Social Login + Embeded Wallet](getting-started/platform-specific-guides/unity/social-login-+-embeded-wallet.md)
   * [Cocos](getting-started/platform-specific-guides/cocos/README.md)
     * [Cocos SDK Prerequisites](getting-started/platform-specific-guides/cocos/cocos-sdk-prerequisites.md)
   * [Unreal](getting-started/platform-specific-guides/unreal.md)
