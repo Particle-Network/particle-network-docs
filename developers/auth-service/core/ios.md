@@ -6,7 +6,7 @@
 
 * Install the following:
   * Xcode 14.1 or later
-  * CocoaPods 1.11.0 or higher
+  * CocoaPods 1.12.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -191,19 +191,19 @@ Use Auth Core SDK to sign a transaction or message.
 {% tab title="EVM" %}
 ```swift
 // personal sign
-let signature = try await auth.evm.personalSign(messageHex)
+let txHash = try await auth.evm.personalSign(messageHex)
     
 // personal sign unique
-let signature = try await auth.evm.personalSignUnique(messageHex)
+let txHash = try await auth.evm.personalSignUnique(messageHex)
 
 // sign typed data
-let signature = try await auth.evm.signTypedData(typedDataV4)
+let txHash = try await auth.evm.signTypedData(typedDataV4)
 
 // sign typed data unique
-let signature = try await auth.evm.signTypedDataUnique(typedDataV4)
+let txHash = try await auth.evm.signTypedDataUnique(typedDataV4)
 
 // send evm transaction
-let signature = try await auth.evm.sendTransaction(transaction)
+let txHash = try await auth.evm.sendTransaction(transaction)
 
 // request public rpc
 let method = "eth_getBalance"

@@ -8,7 +8,7 @@ Auth Service simplifies the integration of authentication system within your app
 
 * Install the following:
   * Xcode version 14.1 or later.
-  * CocoaPods version 1.11.0 or higher.
+  * CocoaPods version 1.12.0 or higher.
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -56,7 +56,7 @@ If you would like to receive release updates, subscribe to our [GitHub repositor
 ### Edit Podfile
 
 {% hint style="info" %}
-#### It is required for every iOS project that integrates the Auth Service SDK.
+**It is required for every iOS project that integrates the Auth Service SDK.**
 
 ```ruby
 // paste there code into pod file
@@ -222,7 +222,7 @@ let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
 ParticleNetwork.setChainInfo(chainInfo)
 ```
 
-By calling these methods based on the status of user activity in different chains can provide a smooth transition while switching chains.&#x20;
+By calling these methods based on the status of user activity in different chains can provide a smooth transition while switching chains.
 
 ## API Reference
 
@@ -478,7 +478,7 @@ The Particle SDK provides several methods for signing transactions or messages.
 
 #### 1. Sign and Send Transaction
 
-This method signs and sends a transaction to the Particle Node and then returns the transaction's signature.
+This method signs and sends a transaction to the Particle Node and then returns the txHash.
 
 **Prototype**
 
@@ -497,8 +497,8 @@ ParticleAuthService.signAndSendTransaction(transaction).subscribe { [weak self] 
     switch result {
     case .failure(let error):
         print(error)
-    case .success(let signature):
-        print(signature)
+    case .success(let txHash):
+        print(txHash)
     }
 }.disposed(by: bag)
 ```
@@ -524,8 +524,8 @@ ParticleAuthService.signTransaction(transaction).subscribe { [weak self] result 
     switch result {
     case .failure(let error):
         print(error)
-    case .success(let signature):
-        print(signature)
+    case .success(let txHash):
+        print(txHash)
     }
 }.disposed(by: bag)
 ```
