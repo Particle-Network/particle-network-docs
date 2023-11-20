@@ -51,7 +51,7 @@ ParticleNetwork.setAAService(aaService)
 
 ### Enable aa service
 
-After enable aa service, The address displayed on the wallet page will display the SmartAccount address. and the signAndSendTransaction method will change the way transactions are sent.
+After enable aa service, The address displayed on the wallet page will display the smart account address, then the `signAndSendTransaction` method will send transaction as a user operation.
 
 ```swift
 aaService.enableAAMode()
@@ -71,48 +71,111 @@ aaService.disableAAMode()
 let isEnable = aayService.isAAModeEnable()
 ```
 
-### Get fee quotes before send
-
-before send you can check if you have enough native or tokens to pay, or if gasless is available.
+### Get smart account address
 
 ```swift
-let aa = ParticleNetwork.getAAService()!
+func getSmartAccountAddress() async throws {
+    let aa = ParticleNetwork.getAAService()!
+    let eoaAddress = ""
+    let chainInfo = ParticleNetwork.getChainInfo()
+    let smartAccount = try await aa.getSmartAccount(by: eoaAddress, chainInfo: chainInfo).value
+    print(smartAccount.smartAccountAddress)
+}
+```
+
+### Send transaction
+
+Here is an example, shows how to send transaction with AA service.
+
+```swift
+extension APIReferenceViewController {
+    func sendTransactionInAA() async throws {
+        let aa = ParticleNetwork.getAAService()!
+                
+        let chainInfo = ParticleNetwork.getChainInfo()
+        let eoaAddress = ""
+        let transaction = ""
+        let wholeFeeQuote = try await aa.rpcGetFeeQuotes(eoaAddress: eoaAddress, transactions: [transaction], chainInfo: chainInfo).value
+            
+        if wholeFeeQuote.gasless != nil {
+            // There are two ways to send gasless
+            // 1, call adapter or ParticleAuthService, requires one transaction
+            let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .gasless, chainInfo: chainInfo).value
+            // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
+            let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .gasless, messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
+        } else {
+            // you cant gasless
+        }
+            
+        let nativeFeeQuote = AA.FeeQuote(json: wholeFeeQuote.native.feeQuote, tokenPaymasterAddress: nil)
+        if nativeFeeQuote.isEnoughForPay {
+            // There are two ways to send, pay token
+            // 1, call adapter or ParticleAuthService, requires one transaction
+            let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .native, chainInfo: chainInfo).value
+            // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
+            let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .native, messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
+        } else {
+            // you dont have enough native to pay
+        }
+
+        if let token = wholeFeeQuote.token {
+            let tokenPaymasterAddress = token.tokenPaymasterAddress
+            let tokenFeeQuotes = token.feeQuotes.map {
+                AA.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
+            }.filter {
+                // filter out balance >= fee
+                $0.isEnoughForPay
+            }
+            if tokenFeeQuotes.count > 0 {
+                // select a feeQuote, here we select the first one.
+                let feeQuote = tokenFeeQuotes[0]
+                // There are two ways to send, pay token
+                // 1, call adapter or ParticleAuthService, requires one transaction
+                let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .token(feeQuote), chainInfo: chainInfo).value
+                // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
+                let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .token(feeQuote), messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
+            } else {
+                // you can't select token to pay
+            }
+        }
+    }
+}
+
+extension APIReferenceViewController: MessageSigner {
+    func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
+        // if you are using ParticleAuthService
+        return ParticleAuthService.signMessage(message, chainInfo: chainInfo)
         
-let eoaAddress = ""
-let transactions = ["", ""]
-let wholeFeeQuote = try await aa.rpcGetFeeQuotes(eoaAddress: eoaAddress, transactions: transactions).value
+        // if you are using ParticleConnectService
+        // get current adapter by walletType and publicAddress
+        // here we assume currentWalletType is Metamask
+        
+        let currentWalletType = WalletType.metaMask
+        let publicAddress = "0x123..."
+        let adapters = ParticleConnect.getAllAdapters().filter {
+            $0.walletType == currentWalletType
+        }
+        if let adapter = adapters.first {
+            return adapter.signMessage(publicAddress: publicAddress, message: message)
+        } else {
+            return .error(NSError(domain: "", code: 0))
+        }
+    }
     
-if wholeFeeQuote.gasless != nil {
-    // you can gasless
-} else {
-    // you cant gasless
-}
-    
-let natvieFeeQuote = AA.FeeQuote(json: wholeFeeQuote.native.feeQuote, tokenPaymasterAddress: "")
-if natvieFeeQuote.isEnoughForPay {
-    // you can pay native for gas fee
-} else {
-    // you dont have enough native to pay
-}
-
-let tokenPaymasterAddress = wholeFeeQuote.token.tokenPaymasterAddress
-let tokenFeeQuotes = wholeFeeQuote.token.feeQuotes.map {
-    AA.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
-}.filter {
-    // filter out balance >= fee
-    $0.isEnoughForPay
-}
-
-if tokenFeeQuotes.count > 0 {
-    // you can select token to pay
-} else {
-    // you can't select token to pay
+    func getEoaAddress() -> String {
+        // if you are using ParticleAuthService
+        return ParticleAuthService.getAddress()
+        
+        // if you are using ParticleConnectService
+        let publicAddress = "0x123..."
+        return publicAddress
+    }
 }
 ```
 
 ### Send transaction, support multi transactions
 
-you need create a AAService instance, then call quickSendTransactions mehod
+You need create a AAService instance, then call `quickSendTransactions` method
 
 ```swift
 let aaService = Service()
@@ -178,9 +241,9 @@ let isDeploy = try await aaService.isDeploy(eoaAddress: eoaAddress).value
 aaService.deployWalletContract(messageSigner: signer, feeMode: .gasless)
 ```
 
-### More methods
+### All methods list
 
-There are other methods, and all Account Abstraction methods are defined in AAServiceProtocol.
+All Account Abstraction methods are defined in AAServiceProtocol.
 
 ```swift
 public protocol AAServiceProtocol {
@@ -287,5 +350,4 @@ public protocol MessageSigner {
     /// - Returns: Eoa address
     func getEoaAddress() -> String
 }
-
 ```
