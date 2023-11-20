@@ -207,7 +207,7 @@ let result = try await auth.evm.sendTransaction(transaction)
 
 // request public rpc
 let method = "eth_getBalance"
-let parameters = ["your public address", "latest"]
+let parameters = ["your evm public address", "latest"]
 let result = try await auth.evm.request(method: method, parameters: parameters)
 ```
 {% endtab %}
@@ -215,16 +215,16 @@ let result = try await auth.evm.request(method: method, parameters: parameters)
 {% tab title="Solana" %}
 ```swift
 // sign message
-let signature = try await auth.solana.signMessage(message)
+let result = try await auth.solana.signMessage(message)
 
 // sign transaction
-let signature = try await auth.solana.signTransaction(transaction)
+let result = try await auth.solana.signTransaction(transaction)
 
 // sign all transactions
-let signature = try await auth.solana.signAllTransactions(transactions)
+let result = try await auth.solana.signAllTransactions(transactions)
 
 // sign and send transaction
-let signature = try await auth.solana.signAndSendTransaction(transaction)
+let result = try await auth.solana.signAndSendTransaction(transaction)
 
 // request public rpc
 let method = "getBalance"
