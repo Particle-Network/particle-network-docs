@@ -2,7 +2,7 @@
 
 ## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-* Finish integration with either [Auth Service](../auth-service/sdks/ios.md) or [Connect Service](../connect-service/sdks/ios.md)
+* Finish integration with either [Auth Service](../auth-service/sdks/ios.md), [Connect Service](../connect-service/sdks/ios.md) or [Auth Core Service](../auth-service/core/ios.md)
 
 Add ParticleAA to your Podfile.
 
@@ -20,7 +20,7 @@ pod install --repo-update
 
 1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
 2. If you want to use [Particle Verifying Paymaster](paymaster.md) on Mainnet, you can deposit and use it directly without extra configration in SDK, [check docs](paymaster.md);
-3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/), create Paymaster & get dappApiKey;
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/), create Paymaster & get biconomyApiKey;
 4. Token Paymaster is automatically enabled (we are using Biconomy Token Paymaster).
 
 ## Initialize
