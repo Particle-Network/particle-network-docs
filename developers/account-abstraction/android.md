@@ -23,11 +23,9 @@ The dappApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboar
 
 ```kotlin
 val apiKey = mapOf(
-            EthereumChainId.Mainnet.id to "YOUR_DAPP_API_KEY",
-            EthereumChainId.Goerli.id to "YOUR_DAPP_API_KEY",
-            BscChainId.Testnet.id to "YOUR_DAPP_API_KEY",
-            PolygonChainId.Mainnet.id to "YOUR_DAPP_API_KEY",
-            PolygonChainId.Mumbai.id to "YOUR_DAPP_API_KEY",
+            Ethereum.id to "YOUR_DAPP_API_KEY",
+            EthereumGoerli.id to "YOUR_DAPP_API_KEY",
+            Polygon.id to "YOUR_DAPP_API_KEY"
         )
 // aaService can be BiconomyAAService, CyberConnectAAService, SimpleAAService. It can be null, default  BiconomyAAService.
 ParticleNetwork.initAAMode(apiKey, aaService = BiconomyAAService)
