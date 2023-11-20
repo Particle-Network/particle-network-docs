@@ -8,8 +8,8 @@
 
 ```gradle
 dependencies {
-    // Particle Biconomy Service
-    implementation("network.particle:biconomy-service:${latest_version}") 
+    // Particle AA Service
+    implementation("network.particle:aa-service:${latest_version}") 
     
     //find the latest version of the sdk:
     //https://search.maven.org/search?q=g:network.particle
@@ -22,15 +22,15 @@ dependencies {
 The dappApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
 
 ```kotlin
- val apiKey = mapOf(
+val apiKey = mapOf(
             EthereumChainId.Mainnet.id to "YOUR_DAPP_API_KEY",
             EthereumChainId.Goerli.id to "YOUR_DAPP_API_KEY",
             BscChainId.Testnet.id to "YOUR_DAPP_API_KEY",
             PolygonChainId.Mainnet.id to "YOUR_DAPP_API_KEY",
             PolygonChainId.Mumbai.id to "YOUR_DAPP_API_KEY",
         )
-ParticleNetwork.initBiconomyMode(apiKey,BiconomyVersion.V100)
-ParticleNetwork.setBiconomyService(BiconomyService)
+// aaService can be BiconomyAAService, CyberConnectAAService, SimpleAAService. It can be null, default  BiconomyAAService.
+ParticleNetwork.initAAMode(apiKey, aaService = BiconomyAAService)
 ```
 
 ###
@@ -40,7 +40,7 @@ ParticleNetwork.setBiconomyService(BiconomyService)
 After enable biconomy service, The address displayed on the wallet page will display the SmartAccount address. and the signAndSendTransaction method will change the way transactions are sent.
 
 ```kotlin
-ParticleNetwork.getBiconomyService().enableBiconomyMode()
+ParticleNetwork.getAAService().enableAAMode()
 ```
 
 ### Disable biconomy service
@@ -48,13 +48,13 @@ ParticleNetwork.getBiconomyService().enableBiconomyMode()
 After disable biconomy service, smart account will not work.
 
 ```kotlin
-ParticleNetwork.getBiconomyService().disableBiconomyMode()
+ParticleNetwork.getAAService().disableAAMode()
 ```
 
 ### Get biconomy service enable state
 
 ```kotlin
-val isEnable = ParticleNetwork.getBiconomyService().isBiconomyModeEnable()
+val isEnable = ParticleNetwork.getAAService().isAAModeEnable()
 ```
 
 ### Send one transaction with [ParticleAuthService](../auth-service/sdks/android.md)
@@ -102,7 +102,7 @@ connectAdapter.signAndSendTransaction(publicAddress = publicAddress, transaction
 you need create a BiconomyService instance, then call quickSendTransactions mehod
 
 ```kotlin
-ParticleNetwork.getBiconomyService().quickSendTransaction(transactions, feeMode, messageSigner, callback)
+ParticleNetwork.getAAService().quickSendTransaction(transactions, feeMode, messageSigner, callback)
 ```
 
 ### More methods
