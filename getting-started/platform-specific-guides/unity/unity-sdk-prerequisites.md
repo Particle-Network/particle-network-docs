@@ -36,7 +36,7 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
 
 * **Remove other service code if you don't need them.**
 
-1. In ParticleNetworkIOSBridge.cs, there are 5 part ParticleNetworkBase, ParticleAuthService, ParticleWalletAPI, ParticleWalletGUI, ParticleConnect, works for interact with iOS native. ParticleNetworkBase is required,
+1. In ParticleNetworkIOSBridge.cs, there are 6 part ParticleNetworkBase, ParticleAuthService, ParticleWalletGUI, ParticleConnect, ParticleAA, ParticleAuthCore, works for interact with iOS native. ParticleNetworkBase is required,
 2. ParticleAuthService if required for Auth Service,
 3. ParticleConnect is required for Connect Service.
 4. You can remove other codes if you don't need them.
@@ -78,9 +78,6 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     // From 0.9.12, you should add more in podfile
     If you use ParticleWalletGUI, you need add this one.
     pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
-
-    // If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.
-    pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
 
     // paste there code into pod file
     post_install do |installer|
@@ -162,7 +159,7 @@ dependencies {
 
 3\. Remove `main.mm` under MainApp folder.
 
-4\. Under `/Assets/Plugins/iOS` is NativeCallProxy files, they are requested by Unity to interact with iOS code. Remove code under Particle Wallet API and Particle Wallet GUI if you don't need wallet service.
+4\. Under `/Assets/Plugins/iOS` is NativeCallProxy files, they are requested by Unity to interact with iOS code. Remove code under Particle Wallet GUI if you don't need wallet service.
 
 5\. In `UnityManger.swift`, it has implemented methods defined in `NativeCallProxy.h`
 
@@ -224,23 +221,25 @@ more pod version information is here.
 Here is an example in Podfile. All particle pods should under target 'Unity-iPhone' not target 'UnityFramework’.
 
 ```
-platform :ios, '13.0'
+platform :ios, '14.0'
 target 'Unity-iPhone' do
   source 'https://github.com/CocoaPods/Specs.git'
   use_frameworks!
   
-pod 'ParticleWalletGUI', '0.13.0’
-pod 'ParticleAuthService', '0.12.0’
-pod 'ParticleWalletAPI', '0.12.0’
-pod 'ParticleNetworkBase', '0.12.0’
-pod 'ParticleWalletConnect', '0.12.0'
-pod 'ConnectWalletConnectAdapter', '0.1.52’
-pod 'ConnectPhantomAdapter','0.1.52’
-pod 'ConnectEVMAdapter', '0.1.52’
-pod 'ConnectSolanaAdapter', '0.1.52’
-pod 'ParticleConnect', '0.1.52’
-pod 'ConnectCommon', '0.1.52’
+pod 'ParticleWalletGUI', '1.3.6’
+pod 'ParticleAuthService', '1.3.6’
+pod 'ParticleWalletAPI', '1.3.6’
+pod 'ParticleNetworkBase', '1.3.6’
+pod 'ParticleWalletConnect', '1.3.6'
+pod 'ParticleAA', '1.3.6'
 
+pod 'ConnectWalletConnectAdapter', '0.2.14’
+pod 'ConnectPhantomAdapter','0.2.14’
+pod 'ConnectEVMAdapter', '0.2.14’
+pod 'ConnectSolanaAdapter', '0.2.14’
+pod 'ParticleConnect', '0.2.14’
+pod 'ConnectCommon', '0.2.14’
+pod 'ParticleAuthAdapter', '0.2.14'
 end
 
 target 'UnityFramework' do
