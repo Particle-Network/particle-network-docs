@@ -21,7 +21,7 @@ Before you can add the Wallet Service to your iOS app, you need to create a Part
 
 Wallet Service supports installation with [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-Wallet Service's CocoaPods distribution requires Xcode 14.1 and CocoaPods 1.11.0 or higher. Here's how to install the Wallet Service using CocoaPods:
+Here's how to install the Wallet Service using CocoaPods:
 
 1. Create a Podfile if you don't already have one. From the root of your project directory, run the following command:
 
