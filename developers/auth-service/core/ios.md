@@ -51,7 +51,7 @@ open your-project.xcworkspace
 ### Edit Podfile
 
 {% hint style="info" %}
-#### It is required for every iOS project that integrates the Auth Service SDK.
+**It is required for every iOS project that integrates the Auth Service SDK.**
 
 ```ruby
 // paste there code into pod file
@@ -67,7 +67,7 @@ installer.pods_project.targets.each do |target|
 
 ### Initialize Auth Service in your app <a href="#initialize-firebase" id="initialize-firebase"></a>
 
-The final step is to add an initialization code to your application. You may have already done this as part of adding the Auth Service to your app.&#x20;
+The final step is to add an initialization code to your application. You may have already done this as part of adding the Auth Service to your app.
 
 1. Create a **ParticleNetwork-Info.plist** into the root of your Xcode project
 2. Copy the following text into this file:
@@ -99,7 +99,7 @@ import ParticleNetworkBase
 {% endtab %}
 {% endtabs %}
 
-5. &#x20;Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
+5. Initialize the ParticleNetwork service, which is typically in your app's `application:didFinishLaunchingWithOptions:` method:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -156,7 +156,7 @@ let result = try await auth.disconnect()
 {% endtab %}
 {% endtabs %}
 
-### Is User Logged In
+### Check user login status
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -173,7 +173,7 @@ let evmAddress = auth.evm.getAddress()
 let solanaAddress = auth.solana.getAddress()
 ```
 
-### Switch  ChainInfo
+### Switch ChainInfo
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -236,7 +236,7 @@ let result = try await auth.solana.request(method: method, parameters: parameter
 
 ### Master Password
 
-Wallet can set master password to protect assets.&#x20;
+Wallet can set master password to protect assets.
 
 ```swift
 // check user has master password or not
@@ -292,7 +292,7 @@ ParticleNetwork.setAppearence(.dark)
 ParticleNetwork.setAppearence(.light)
 ```
 
-### Language setting&#x20;
+### Language setting
 
 ```swift
 // Support en, ja, ko, zh_hans and zh_hant.
@@ -311,4 +311,4 @@ Auth.loadCustomUIJsonString(jsonString)
 
 ### Error
 
-Try cast error into type `ParticleNetwork.Response`, you can check the information by printing its attributes.&#x20;
+Try cast error into type `ParticleNetwork.Response`, you can check the information by printing its attributes.
