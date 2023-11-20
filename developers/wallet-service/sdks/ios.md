@@ -6,7 +6,7 @@
 
 * Install the following:
   * Xcode 14.1 or later
-  * CocoaPods 1.11.0 or higher
+  * CocoaPods 1.12.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -875,9 +875,10 @@ func readContract() {
 ```swift
 // example for evm write contract
 // mint 1 NFT in ethereum mainnet, the from is sender address or user address in general.
+// the params format requires hex strings
 // result is a transaciton string which presented in hex format.
 func writeContract() {
-    let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "mint", params: ["1"])
+    let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "mint", params: ["0x1"])
     let from = "0x0cf3ffe33e45ad43fcd0aa7016c590b5f629d9aa"
     ParticleWalletAPI.getEvmService().writeContract(contractParams: params, from: from)
     .subscribe {
@@ -914,7 +915,8 @@ Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initia
 
 {% tabs %}
 {% tab title="Swift" %}
-<pre class="language-swift"><code class="lang-swift">// You can disable buy crypto feature in UI, default is false.
+```swift
+// You can disable buy crypto feature in UI, default is false.
 ParticleWalletGUI.setPayDisabled(false)
 
 // You can disable swap feature in UI, default value is false.
@@ -978,8 +980,8 @@ ParticleWalletGUI.setPriorityNFTContractAddresses([nftContractAddress])
 // The method works on the wallet page token list and token send select page.
 ParticleWalletGUI.setCustomTokenAddresses([tokenAddress])
 
-<strong>// Set custom ui is pass json string
-</strong>let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
+// Set custom ui is pass json string
+let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
 try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
 
 // Set your wallet name and icon, only support WalletType particle and authcore
@@ -989,7 +991,7 @@ ConnectManager.setCustomWalletName(walletType: .particle, name: .init(name: "you
 let customLocalizable = [Language.en: ["network fee": "Service Fee",
         "particle auth wallet": "Your Wallet Name"]]
 ParticleWalletGUI.setCustomLocalizable(customLocalizable)
-</code></pre>
+```
 {% endtab %}
 {% endtabs %}
 
