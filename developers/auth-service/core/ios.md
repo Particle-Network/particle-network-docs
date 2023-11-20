@@ -116,6 +116,18 @@ ParticleNetwork.initialize(config: .init(chainInfo: .ethereum(.mainnet), devEnv:
 <string>Your descriptive reason here...</string>
 ```
 
+{% hint style="info" %}
+### Together with Wallet Service
+
+If you want to use with [Wallet Service](../../wallet-service/sdks/ios.md), you should add more pods in Podfile.
+
+```ruby
+pod 'AuthCoreAdapter'
+```
+
+Initialize [Particle Connect Service](../../connect-service/sdks/ios.md), add AuthCoreAdaper to your adapters.
+{% endhint %}
+
 ## API Reference
 
 ### Get an AuthCore object
@@ -308,16 +320,6 @@ let language = ParticleNetwork.getLanguage()
 let jsonString = "your custom ui json string, keys should be the same with customUIConfig.json in demo"
 Auth.loadCustomUIJsonString(jsonString)
 ```
-
-### Together with Wallet Service
-
-If you want to use with [Wallet Service](../../wallet-service/sdks/ios.md), you should add more pods in Podfile.
-
-```ruby
-pod 'AuthCoreAdapter'
-```
-
-Initialize [Particle Connect Service](../../connect-service/sdks/ios.md), add AuthCoreAdaper to your adapters.
 
 ### Error
 
