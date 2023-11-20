@@ -25,10 +25,10 @@ pod install --repo-update
 
 ## Initialize
 
-(Optional) The dappApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
+(Optional) The biconomyApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
 
 ```swift
-let dappApiKeys: [Int: String] = [
+let biconomyApiKeys: [Int: String] = [
     ParticleNetwork.ChainInfo.ethereum(.mainnet).chainId: "YOUR_DAPP_API_KEY",
     ParticleNetwork.ChainInfo.ethereum(.goerli).chainId: "YOUR_DAPP_API_KEY",
     ParticleNetwork.ChainInfo.bsc(.testnet).chainId: "YOUR_DAPP_API_KEY",
