@@ -286,19 +286,7 @@ ParticleAuthService.login(type: .jwt, account: account).subscribe { [weak self] 
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
-### Is User Login
-
-You can check whether a user is logged in or not using the `ParticleAuthService.isLogin` function.
-
-#### Prototype
-
-```swift
-ParticleAuthService.isLogin()
-```
-
-#### Returns
-
-The function returns a boolean indicating whether a user is logged in (`true`) or not (`false`).
+### Check user login status
 
 ### Is User Login Async
 
@@ -323,6 +311,24 @@ ParticleAuthService.isLoginAsync().subscribe { [weak self] result in
     }
 }.disposed(by: bag)
 ```
+
+#### Returns
+
+The function returns the latest user info, if encounter error, the user is invalid, should sign in again.
+
+### Is User Login
+
+You can check whether a user is logged in or not using the `ParticleAuthService.isLogin` function, This is a local check.
+
+#### Prototype
+
+```swift
+ParticleAuthService.isLogin()
+```
+
+#### Returns
+
+The function returns a boolean indicating whether a user is logged in (`true`) or not (`false`).
 
 ### Logout and FastLogout
 
