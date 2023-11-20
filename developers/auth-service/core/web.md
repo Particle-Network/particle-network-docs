@@ -63,6 +63,40 @@ yarn add @particle-network/auth-core-modal
 
 ```
 
+### **Additional build tooling setup**
+
+The [Webpack v5](https://webpack.js.org/blog/2020-10-10-webpack-5-release/) bundler used by Create React App [no longer provides Node polyfills](https://webpack.js.org/blog/2020-10-10-webpack-5-release/#automatic-nodejs-polyfills-removed), so you'll need to include these modules yourself to satisfy AuthCore's peer dependencies. add below code to webpack config.
+
+```javascript
+
+{
+    resolve: {
+        fallback: {
+            http: require.resolve('stream-http'),
+            https: require.resolve('https-browserify'),
+            stream: require.resolve('stream-browserify'),
+            assert: require.resolve('assert'),
+            zlib: require.resolve('browserify-zlib'),
+            url: false,
+        },
+        plugins:[
+            new webpack.ProvidePlugin({
+                Buffer: ["buffer", "Buffer"],
+            })
+        ]
+    }
+}
+
+```
+
+And install dependence packages.
+
+```sh
+
+yarn add stream-http https-browserify stream-browserify assert browserify-zlib
+
+```
+
 ### **Configure**
 
 Init Auth Core with Particle project config, you can get the config from [Particle Dashboard](https://dashboard.particle.network/).
