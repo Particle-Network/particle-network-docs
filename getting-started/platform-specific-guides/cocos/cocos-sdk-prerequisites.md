@@ -6,10 +6,10 @@ description: Integrate powerful Web3.0 Cocos SDK in minutes
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-* Install Cocos Creator 3.7.2 or later. Earlier versions may also be compatible but will not be actively supported.&#x20;
+* Install Cocos Creator 3.7.2 or later. Earlier versions may also be compatible but will not be actively supported.
 * _(iOS only)_ Install the following:
   * Xcode 14.1 or higher
-  * CocoaPods 1.11.0 or higher
+  * CocoaPods 1.12.0 or higher
 * Make sure that your Unity project meets these requirements:
   * **For iOS** — targets iOS 14 or higher
   * **For Android** — Minimum API Level 23 or higher, Targets API level 31 or higher, Pack apk must be with exporting project to Android Studio, [change Java SDK version to 11](https://stackoverflow.com/questions/66449161/how-to-upgrade-an-android-project-to-java-11)
@@ -20,8 +20,6 @@ Before you can add our Auth Service to your Cocos game, you need to create a Par
 
 [👉 Sign up/log in and create your project now](https://dashboard.particle.network/#/login)
 
-
-
 ### Import Cocos package
 
 1. Copy [assets/Mobile/Core](https://github.com/Particle-Network/particle-cocos/tree/mobile/assets/Mobile/Core) into your project, put it in the assets directory.
@@ -29,7 +27,7 @@ Before you can add our Auth Service to your Cocos game, you need to create a Par
 
 ### Android, Native Service Config <a href="#add-sdks" id="add-sdks"></a>
 
-**Android** — Configuration file path is  $exportDir/proj/gradle.properties
+**Android** — Configuration file path is $exportDir/proj/gradle.properties
 
 ```properties
 android.enableJetifier=true
@@ -50,7 +48,7 @@ PN_APP_ID = 96ad2ff1-4a57-4069-90da-9306bf1492e1
     ```ruby
     pod init
     ```
-2.  Clear the contents of the Podfile, and paste the following code into it. If you have integrated other native SDKs through CocoaPods, you only need to update the original Podfile and add our SDK declaration under the main app.,&#x20;
+2.  Clear the contents of the Podfile, and paste the following code into it. If you have integrated other native SDKs through CocoaPods, you only need to update the original Podfile and add our SDK declaration under the main app.,
 
     ```ruby
     ENV['SWIFT_VERSION'] = '5'
@@ -82,7 +80,7 @@ PN_APP_ID = 96ad2ff1-4a57-4069-90da-9306bf1492e1
     end
 
     ```
-3.  &#x20;Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
+3.  Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
     ```ruby
     pod install --repo-update
@@ -110,9 +108,9 @@ PN_APP_ID = 96ad2ff1-4a57-4069-90da-9306bf1492e1
 
 ```
 
-3\.  Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard.
+3\. Replace `YOUR_PROJECT_UUID`, `YOUR_PROJECT_CLIENT_KEY`, and `YOUR_PROJECT_APP_UUID` with the new values created in your Dashboard.
 
-4\.  Drag the following files into your project and set the Target as the main app.
+4\. Drag the following files into your project and set the Target as the main app.
 
 Make sure Base58.swift, Model.swift and ParticleAuthPlugin.swift TargetMemberShip is selected your app, If Xcode asks whether to create a Swift bridging file, click "Yes".
 
@@ -128,7 +126,7 @@ Make sure Base58.swift, Model.swift and ParticleAuthPlugin.swift TargetMemberShi
 }
 ```
 
-and add import file in top of file&#x20;
+and add import file in top of file
 
 ```objectivec
 // for example, our demo project name is ParticleCocosDemo_mobile
@@ -141,7 +139,7 @@ and add import file in top of file&#x20;
 
 6.JsbBridgeTest.m and JsbBridgeTest.h files are very important as they are the core of bridging JS and native code. Please ensure that the code inside them is consistent with the demo or contains the code from the demo.
 
-7\. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+7\. Configure your app scheme URL, select your app from `TARGETS`, under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
@@ -150,8 +148,6 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 ![Config scheme url](<../../../.gitbook/assets/image (1) (2) (1).png>)
 
 8 Edit Podfile, you should follow [Podfile required](../../../developers/auth-service/sdks/ios.md#edit-podfile) to edit Podfile.
-
-
 
 ### FAQ
 

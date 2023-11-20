@@ -29,11 +29,11 @@ pod install --repo-update
 
 ```swift
 let biconomyApiKeys: [Int: String] = [
-    ParticleNetwork.ChainInfo.ethereum(.mainnet).chainId: "YOUR_DAPP_API_KEY",
-    ParticleNetwork.ChainInfo.ethereum(.goerli).chainId: "YOUR_DAPP_API_KEY",
-    ParticleNetwork.ChainInfo.bsc(.testnet).chainId: "YOUR_DAPP_API_KEY",
-    ParticleNetwork.ChainInfo.polygon(.mainnet).chainId: "YOUR_DAPP_API_KEY",
-    ParticleNetwork.ChainInfo.polygon(.mumbai).chainId: "YOUR_DAPP_API_KEY"
+    ParticleNetwork.ChainInfo.ethereum(.mainnet).chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.ethereum(.goerli).chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.bsc(.testnet).chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.polygon(.mainnet).chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.polygon(.mumbai).chainId: "YOUR_BICONOMY_API_KEY"
 ]
 
 // We support biconomy | cyberConnect | simple
