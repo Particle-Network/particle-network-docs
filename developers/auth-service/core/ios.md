@@ -309,6 +309,16 @@ let jsonString = "your custom ui json string, keys should be the same with custo
 Auth.loadCustomUIJsonString(jsonString)
 ```
 
+### Together with Wallet Service
+
+If you want to use with [Wallet Service](../../wallet-service/sdks/ios.md), you should add more pods in Podfile.
+
+```ruby
+pod 'AuthCoreAdapter'
+```
+
+Initialize [Particle Connect Service](../../connect-service/sdks/ios.md), add AuthCoreAdaper to your adapters.
+
 ### Error
 
 Try cast error into type `ParticleNetwork.Response`, you can check the information by printing its attributes.

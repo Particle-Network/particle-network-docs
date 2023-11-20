@@ -53,6 +53,8 @@ pod 'ConnectEVMAdapter'
 pod 'ConnectSolanaAdapter'
 pod 'ConnectPhantomAdapter'
 pod 'ParticleAuthAdapter'
+
+# if you are using Auth Core Service, dont forget add AuthCoreAdapter
 ```
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
