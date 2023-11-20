@@ -1,6 +1,6 @@
 # iOS
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * Finish integration with either [Auth Service](../auth-service/sdks/ios.md) or [Connect Service](../connect-service/sdks/ios.md)
 
