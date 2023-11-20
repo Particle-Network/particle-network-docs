@@ -20,7 +20,7 @@ Modular Swift wallet adapters and components for EVM & Solana chains. Manage wal
 
 * Install the following:
   * Xcode 14.1 or later
-  * CocoaPods 1.11.0 or higher
+  * CocoaPods 1.12.0 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -147,7 +147,7 @@ var adapters: [
        ImtokenConnectAdapter(),
        BitkeepConnectAdapter(),
        RainbowConnectAdapter(),
-       TrustConnectAdapter(),
+       TrustConnectAdapter()
        // if you are using ParticleAuthCore
        // AuthCoreAdaper()
        ]
@@ -172,7 +172,6 @@ ParticleConnect.initialize(env: .debug,
  url: URL(string: "https://connect.particle.network")!)) {
       adapters
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -328,7 +327,7 @@ let result = connectAdapter.isConnected(address)
 
 ### Import wallet.
 
-(Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method.
 
 ```swift
 // import wallet with private key
@@ -342,7 +341,7 @@ connectAdapter.importWalletFromPrivateKey(privateKey).subscribe { [weak self] re
     }
 }.disposed(by: bag)
 
-// import wallet with mnemonic(Split with space).
+// import wallet with mnemonic (Split with space).
 connectAdapter.importWalletFromMnemonic(mnemonic).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -356,7 +355,7 @@ connectAdapter.importWalletFromMnemonic(mnemonic).subscribe { [weak self] result
 
 ### Export wallet.
 
-(Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method)
+Only `EVMConnectAdapter` and `SolanaConnectAdapter` support this method.
 
 ```swift
 connectAdapter.exportWalletPrivateKey(publicAddress: address).subscribe { [weak self] result in
@@ -371,6 +370,10 @@ connectAdapter.exportWalletPrivateKey(publicAddress: address).subscribe { [weak 
 ```
 
 ### Sign and send transaction.
+
+For EVM, the transaction format requires hex string.
+
+For Solana, the transaction formate requires base58 string.
 
 ```swift
 // todo: check connected before sign
@@ -387,7 +390,9 @@ connectAdapter.signAndSendTransaction(publicAddress: address, transaction: trans
 
 ### Sign transaction.
 
-(Only Solana chain support this method)
+Only Solana chain support this method.
+
+The transaction format requires base58 string.
 
 ```swift
 connectAdapter.signTransaction(publicAddress: address, transaction: transaction).subscribe { [weak self] result in
@@ -403,7 +408,9 @@ connectAdapter.signTransaction(publicAddress: address, transaction: transaction)
 
 ### Sign all transactions.
 
-(Only Solana chain support this method)
+Only Solana chain support this method.
+
+The transactions format requires base58 string array.
 
 ```swift
 connectAdapter.signAllTransactions(publicAddress: address, transactions: transactions).subscribe { [weak self] result in
@@ -419,7 +426,9 @@ connectAdapter.signAllTransactions(publicAddress: address, transactions: transac
 
 ### Sign message.
 
-(EVM call `personal_sign`)
+EVM call `personal_sign`.
+
+The message format requires hex string or human readable string.
 
 ```swift
 connectAdapter.signMessage(publicAddress: address, message: message).subscribe { [weak self] result in
@@ -435,7 +444,9 @@ connectAdapter.signMessage(publicAddress: address, message: message).subscribe {
 
 ### Sign typed data.
 
-(Only EVM chains support this method)
+Only EVM chains support this method.&#x20;
+
+The data format requires hex string or typed data v4 json string.
 
 ```swift
 connectAdapter.signTypedData(publicAddress: address, data: data).subscribe { [weak self] result in
@@ -475,9 +486,10 @@ adapter.login(config: message, publicAddress: getSender()).subscribe { [weak sel
 
 ### Verify locally
 
-<pre class="language-swift"><code class="lang-swift">// We have full example in github demo.
-<strong>guard let message = siweMessage else {
-</strong>    return
+```swift
+// We have full example in github demo.
+guard let message = siweMessage else {
+    return
 }
 let against = resultLabel.text ?? ""
 adapter.verify(message: message, against: against).subscribe { [weak self] result in
@@ -495,7 +507,7 @@ adapter.verify(message: message, against: against).subscribe { [weak self] resul
         self.resultLabel.text = flag ? "True" : "False"
     }
 }.disposed(by: bag)
-</code></pre>
+```
 
 ### Request
 
