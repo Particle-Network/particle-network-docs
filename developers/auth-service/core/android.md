@@ -6,7 +6,7 @@
 
 Make sure that your project meets the following requirements:
 
-* minSdkVersion 23  or higher；compileSdkVersion、targetSdkVersion 33 or higher
+* minSdkVersion 23 or higher；compileSdkVersion、targetSdkVersion 33 or higher
 * Uses JavaVersion 11
 * Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
 
@@ -63,7 +63,7 @@ Declare them in you app AndroidManifest.xml (usually app/src/main/AndroidManifes
 ```
 
 {% hint style="info" %}
-Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in Particle Dashboard.&#x20;
+Replace <mark style="color:red;">**pn\_project\_id**</mark>, <mark style="color:red;">**pn\_project\_client\_key**</mark>, <mark style="color:red;">**pn\_app\_id**</mark> with the new values created in Particle Dashboard.
 {% endhint %}
 
 ## API Reference
@@ -120,7 +120,7 @@ AuthCore.disconnect(callback)
 {% endtab %}
 {% endtabs %}
 
-### Is User Logged In
+### Check user login status
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -140,7 +140,7 @@ val evmAddress = AuthCore.evm.getAddress()
 val solanaAddress = AuthCore.solana.getAddress()
 ```
 
-### Switch  ChainInfo
+### Switch ChainInfo
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -172,7 +172,7 @@ AuthCore.evm.personalSign(message, object : AuthCoreSignCallback<SignOutput> {
 AuthCore.evm.personalSignUnique(message, callback)
 
 // sign typed data
-AuthCore.evm.signTypedData(typedData, callback)
+AuthCore.evm.ko(typedData, callback)
 
 //sign typed data unique
 AuthCore.evm.signTypedDataUnique(typedData, callback)
@@ -207,9 +207,9 @@ AuthCore.solana.request(payload)
 
 ### Master Password
 
-Wallet can set master password to protect assets.&#x20;
+Wallet can set master password to protect assets.
 
-```
+```kotlin
 // check user has master password or not
 AuthCore.hasMasterPassword()
 
@@ -224,7 +224,7 @@ AuthCore.changeMasterPassword(callback)
 
 If set a payment password, user should input password before sign message and transaction.
 
-```
+```kotlin
 // check user has payment password or not
 AuthCore.hasPaymentPassword()
 ```
@@ -244,16 +244,17 @@ You can open Particle Ramp to buy crypto tokens.
 ```kotlin
 AuthCore.openBuy(
     activity, 
-    walletAddress,
-    amount, 
-    fiatCoin, 
-    cryptoCoin, 
-    fixFiatCoin,
-    fixCryptoCoin,
-    theme,
-    language,
-    chainName,
-    )
+    walletAddress: String? = null,//nullable,default is current wallet address
+    amount: Int? = null, //1000
+    fiatCoin: String = "usd", 
+    cryptoCoin: String = "eth",
+    fixFiatCoin: Boolean = false,
+    fixFiatAmt: Boolean = false,
+    fixCryptoCoin: Boolean = false,
+    theme: String = "light",  // light or dark
+    language: String = "en-us", //en-us、ko-kr、zh-cn、zh-tw、ja-jp
+    chainName: String? = null // ChainInfo.Ethereum.name、ChainInfo.Polygon.name ... , nullable,default ParticleNetwork.chainInfo.name
+)
 ```
 
 ### Set security account config
@@ -284,7 +285,7 @@ ParticleNetwork.setAppearence(ThemeEnum.DARK)
 ParticleNetwork.setAppearence(ThemeEnum.LIGHT)
 ```
 
-### Language setting&#x20;
+### Language setting
 
 ```kotlin
 //Set the language of the SDK
@@ -298,12 +299,3 @@ val languageEnum = ParticleNetwork.getLanguage()
 ### Error
 
 `ErrorInfo` contains error details. You can check the information by printing the `message` attribute.
-
-
-
-
-
-
-
-
-

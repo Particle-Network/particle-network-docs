@@ -658,7 +658,7 @@ PNRouter.build(RouterPath.NftDetails, params).navigation()
 // // open buy crypto with parameters
 // every parameter is optional
 ParticleNetwork.openBuy(
-    walletAddress: String? = null,
+    walletAddress: String? = null,//nullable,default is current wallet address
     amount: Int? = null, //1000
     fiatCoin: String = "usd", 
     cryptoCoin: String = "eth",
