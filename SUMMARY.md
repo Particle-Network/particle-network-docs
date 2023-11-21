@@ -65,6 +65,7 @@
   * [Unity](getting-started/platform-specific-guides/unity/README.md)
     * [Unity SDK Prerequisites](getting-started/platform-specific-guides/unity/unity-sdk-prerequisites.md)
     * [Social Login + Embeded Wallet](getting-started/platform-specific-guides/unity/social-login-+-embeded-wallet.md)
+    * [Social Login + AA](getting-started/platform-specific-guides/unity/social-login-+-aa.md)
   * [Unreal](getting-started/platform-specific-guides/unreal.md)
   * [Cocos](getting-started/platform-specific-guides/cocos/README.md)
     * [Cocos SDK Prerequisites](getting-started/platform-specific-guides/cocos/cocos-sdk-prerequisites.md)
