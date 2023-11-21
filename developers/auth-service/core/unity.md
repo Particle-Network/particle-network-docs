@@ -4,16 +4,16 @@ Before using, please review [the prerequisites](../../../getting-started/platfor
 
 ### Initialize the SDK
 
-1. **Before using the sdk you have to call init(Required)**&#x20;
+1. **Before using the sdk you have to call init(Required)**
 
 ```csharp
 ParticleNetwork.Init(_chainInfo);
 ParticleAuthCoreInteraction.Init();
 ```
 
-**2. Drag prefab to your scene**
+2. &#x20;**Drag prefab to your scene**
 
-Drag the ParticleAuthCore.prefab to your first scene(Required)&#x20;
+Drag the ParticleAuthCore.prefab to your first scene(Required)
 
 ### Connect JWT
 
@@ -399,7 +399,7 @@ public async void SolanaSignMessage()
 }
 ```
 
-### Sign  transaction
+### Sign transaction
 
 ```csharp
 public async void SolanaSignTransaction()
@@ -433,7 +433,7 @@ public async void SolanaSignTransaction()
 }
 ```
 
-### Sign  all transactions
+### Sign all transactions
 
 ```csharp
 public async void SolanaSignAllTransactions()
@@ -501,4 +501,3 @@ public async void SolanaSignAndSendTransaction()
     }
 }
 ```
-
