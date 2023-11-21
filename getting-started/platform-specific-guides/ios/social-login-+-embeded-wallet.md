@@ -26,12 +26,20 @@ target 'ParticleExample' do
   pod 'ParticleWalletAPI', '1.3.5'
 
   pod 'ConnectCommon', '0.2.14'
-  pod 'ConnectEVMAdapter', '0.2.14'
-  pod 'ConnectSolanaAdapter', '0.2.14'
-  pod 'ConnectWalletConnectAdapter', '0.2.14'
-  pod 'ConnectPhantomAdapter', '0.2.14'
   pod 'ParticleConnect', '0.2.14'
   pod 'ParticleAuthAdapter', '0.2.14'
+  
+  
+  # The following SDKs are optional.
+  # ConnectWalletConnectAdapter is WalletConnect SDK, support EVM.
+  pod 'ConnectWalletConnectAdapter', '0.2.14'
+  # ConnectEVMAdapter is EVM private SDK.
+  pod 'ConnectEVMAdapter', '0.2.14'
+  # ConnectSolanaAdapter is Solana Private SDK.
+  pod 'ConnectSolanaAdapter', '0.2.14'
+  # ConnectPhantomAdapter is Phantom Wallet SDK, support Solana.
+  pod 'ConnectPhantomAdapter', '0.2.14'
+  
 end
 
 post_install do |installer|
@@ -80,11 +88,15 @@ Now, let's initialize ParticleConnectService in your project, chainInfo signifie
 
 ```swift
 import ConnectCommon
+import ConnectEVMAdapter
+import ConnectSolanaAdapter
 import ConnectPhantomAdapter
 import ConnectWalletConnectAdapter
 import ParticleConnect
 import ParticleAuthAdapter
 import UIKit
+// if you want to use auth core service
+// import AuthCoreAdapter
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -100,8 +112,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func particleInit() {
         let adapters: [ConnectAdapter] = [
-            MetaMaskConnectAdapter(),
             ParticleAuthAdapter(),
+            MetaMaskConnectAdapter(),
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
@@ -114,7 +126,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Inch1ConnectAdapter(),
             ZengoConnectAdapter(),
             AlphaConnectAdapter(),
-            OKXConnectAdapter(),
+            OKXConnectAdapter(), 
+            SolanaConnectAdapter(),
+            EVMConnectAdapter()
+            // if you want to use auth core service
+            // add AuthCoreAdapter()
         ]
         ParticleConnect.initialize(env: .debug, chainInfo: .polygon(.mumbai)) {
             adapters
@@ -132,6 +148,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 ```
+
+{% hint style="info" %}
+If you don't want to support private key connect and wallet connect, you can remove their pods in Podfile, then remove their adapters when initializing, keep ParticleAuthAdapter or AuthCoreAdapter
+{% endhint %}
 
 **All here, initialization is complete.**
 
