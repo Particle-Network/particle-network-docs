@@ -244,8 +244,6 @@ let adapter = ParticleConnect.getAllAdapters()
                 .filter { $0.walletType == .particle }.first
 
 let adapters = ParticleConnect.getAdapters(chainType: .evm)
-
-let adapter = ParticleConnect.getAdapterByAddress(publicAddress: address)
 ```
 
 ### Get adapter accounts.
@@ -275,8 +273,15 @@ connectAdapter.connect().subscribe { [weak self] result in
         case .success(let account):
         print(account)
     }.disposed(by: bag)
-
 ```
+
+{% hint style="info" %}
+Account Abstraction could use together with Connect Service, explore [Account Abstraction](../../account-abstraction/ios.md) for more detail, learn how to get a smart account address, how to send transaction under AA mode.
+{% endhint %}
+
+{% hint style="info" %}
+Wallet Service could use together with Connect Service, explore [Wallet Service](../../wallet-service/sdks/ios.md) for more detail, learn how to open wallet page, how to open send page, how to open swap page etc.
+{% endhint %}
 
 ### Disconnect wallet.
 
@@ -289,7 +294,6 @@ connectAdapter.disconnect(address).subscribe { [weak self] result in
         case .success(let success):
         print(success)
     }.disposed(by: bag)
-
 ```
 
 ### Is connected
