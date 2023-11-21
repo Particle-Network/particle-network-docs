@@ -25,8 +25,8 @@ description: Modular Smart Wallet-as-a-Service
 
 ## Modular Components
 
-{% content-ref url="smart-account.md" %}
-[smart-account.md](smart-account.md)
+{% content-ref url="smart-account/" %}
+[smart-account](smart-account/)
 {% endcontent-ref %}
 
 {% content-ref url="bundler.md" %}
@@ -62,7 +62,7 @@ description: Modular Smart Wallet-as-a-Service
 
 Latest: [Account Abstraction RPCs](rpc/account-abstraction-rpc.md)
 
-V1: [Particle x Biconomy RPCs ](rpc/account-abstraction-rpc-v1.md)
+V1: [Particle x Biconomy RPCs](rpc/account-abstraction-rpc-v1.md)
 
 ## SDKs
 
