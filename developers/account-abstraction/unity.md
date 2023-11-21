@@ -4,6 +4,10 @@ Before using, please review [the prerequisites](../../getting-started/platform-s
 
 ### Initialize the SDK
 
+**Drag prefab to your scene**
+
+Drag the ParticleAA.prefab to your first scene(Required)
+
 **Before using the SDK, you have to call init(Required)**
 
 (Optional) The biconomyApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.

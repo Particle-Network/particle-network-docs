@@ -14,7 +14,7 @@ Before using, please review [the prerequisites](../../../../getting-started/plat
 ParticleNetwork.Init(ChainInfo.Ethereum);
 ```
 
-**2. Drag prefab to your scene**
+2. &#x20;**Drag prefab to your scene**
 
 Drag the ParticleAuthService.prefab to your first scene(Required)
 
