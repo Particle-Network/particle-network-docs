@@ -687,6 +687,12 @@ PNRouter.navigatorSwap(swapConfig)
 
 ```
 
+### Open Bridge
+
+```kotlin
+PNRouter.navigatorBridge()
+```
+
 ### Open dapp browser page
 
 ```kotlin
