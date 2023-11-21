@@ -12,11 +12,11 @@ Particle Auth is a simple self-custodial auth infra for Web3 apps and wallets. W
 
 {% embed url="https://youtu.be/VYKmCpcfDsY" %}
 
-## Why Particle Auth?&#x20;
+## Why Particle Auth?
 
-Particle Auth is committed to helping Web2 users enter the Web3 world easily with their most familiar login methods.&#x20;
+Particle Auth is committed to helping Web2 users enter the Web3 world easily with their most familiar login methods.
 
-Users can login to your dApp through **Google, Apple ID, Facebook, Twitter and other social methods**, and can also login with **Email / Mobile number** without password.&#x20;
+Users can login to your dApp through **Google, Apple ID, Facebook, Twitter and other social methods**, and can also login with **Email / Mobile number** without password.
 
 After the user successfully logs in, Particle Auth will automatically create a crypto wallet without a private key. The security is guaranteed by **MPC (Multi Party Computing) - based threshold signatures**, which is ahead of other technologies.
 
@@ -41,6 +41,6 @@ Particle Auth comes with simple SDKs that can be integrated in multiple ways to 
 * 👉 [Android](sdks/android.md)
 * 👉 [iOS](sdks/ios.md)
 * 👉 [Web](sdks/web.md)
-* [👉 Unity](sdks/unity.md)
+* [👉 Unity](sdks/unity/)
 * 👉 [Flutter](sdks/flutter.md)
 * 👉 [React Native](sdks/react-native.md)

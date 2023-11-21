@@ -4,11 +4,11 @@ description: Power up your Unity games with Particle Network SDKs.
 
 # Unity
 
-Before using, please review [the prerequisites](../../../getting-started/platform-specific-guides/unity/unity-sdk-prerequisites.md), All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
+Before using, please review [the prerequisites](../../../../getting-started/platform-specific-guides/unity/unity-sdk-prerequisites.md), All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
 
-### &#x20;Initialize the SDK
+### Initialize the SDK
 
-1. **Before using the sdk you have to call init(Required)**&#x20;
+1. **Before using the sdk you have to call init(Required)**
 
 ```
 ParticleNetwork.Init(ChainInfo.Ethereum);
@@ -16,7 +16,7 @@ ParticleNetwork.Init(ChainInfo.Ethereum);
 
 **2. Drag prefab to your scene**
 
-Drag the ParticleAuthService.prefab to your first scene(Required)&#x20;
+Drag the ParticleAuthService.prefab to your first scene(Required)
 
 ### Login
 

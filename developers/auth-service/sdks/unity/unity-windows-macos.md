@@ -8,7 +8,7 @@
 
 Unity 2020.3.26f1 or later
 
-Require unity package:&#x20;
+Require unity package:
 
 [3D WebView for Windows and macOS (Web Browser)](https://assetstore.unity.com/packages/tools/gui/3d-webview-for-windows-and-macos-web-browser-154144#description), version 4.3.3
 
@@ -26,16 +26,16 @@ Try our [demo](https://github.com/Particle-Network/particle-unity) for more use 
 
 create a GameObject and attach ParticleSystem Script, then attach a CanvasWebViewPrefab to ParticleSystem Script
 
-### Initialize&#x20;
+### Initialize
 
 call ParticleSystem.Instance.Init
 
 It request 5 parameters:
 
-* `config`: Json string, required project id, client key and appId, could have more parameters, for more details, click [here](web.md#set-auth-theme)
-* `there`: Json string, could be empty, it works for custom web wallet ui, for more details, click [here](web.md#set-auth-theme)
+* `config`: Json string, required project id, client key and appId, could have more parameters, for more details, click [here](../web.md#set-auth-theme)
+* `there`: Json string, could be empty, it works for custom web wallet ui, for more details, click [here](../web.md#set-auth-theme)
 * `language`: support en-US, zh-CN, zh-TW, ja-JP, ko-KR
-* `chainName and chainId`: support EVM chains and Solana, take a look [ChainId And ChainName Configs](../../node-service/evm-chains-api/#structure)
+* `chainName and chainId`: support EVM chains and Solana, take a look [ChainId And ChainName Configs](../../../node-service/evm-chains-api/#structure)
 
 ```csharp
 // here is a simple example, and we support more parameters
@@ -117,4 +117,3 @@ List<string> transactions = new List<string> { "" };
 var signMessageResult = await ParticleSystem.Instance.SignAllTransactions(transactions);
 Debug.Log($"SignAllTransactions result {signMessageResult}");
 ```
-
