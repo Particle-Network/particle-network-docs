@@ -6,7 +6,7 @@
 
 Make sure that your project meets the following requirements:
 
-* minSdkVersion 23  or higher；compileSdkVersion、targetSdkVersion 33 or higher
+* minSdkVersion 23 or higher；compileSdkVersion、targetSdkVersion 33 or higher
 * Uses JavaVersion 11
 * Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
 
@@ -114,41 +114,11 @@ Initialize the SDK by calling the `ParticleNetwork.init()`method, passing the me
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-import com.particle.network.ChainId
-import com.particle.network.ChainName
-import com.particle.network.Env
-import com.particle.network.ParticleNetwork
-
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
         //init Particle SDK for solana chain 
-        ParticleNetwork.init(this, Env.DEV, SolanaChain(SolanaChainId.Mainnet))
-        
-        //init wallet service if you use wallet-service
-        ParticleWallet.init(this)
-    }
-}
-```
-{% endtab %}
-
-{% tab title="Java" %}
-```java
-import com.particle.network.ChainId;
-import com.particle.network.ChainName;
-import com.particle.network.Env;
-import com.particle.network.ParticleNetwork;
-
-public class App extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        //init Particle SDK with solana chain info
-        ParticleNetwork.init(this, Env.DEV, new SolanaChain(SolanaChainId.Mainnet));
-        
-        //init wallet service if you use wallet-service
-        ParticleWallet.init(this);
+        ParticleNetwork.init(this, Env.DEV, ChainInfo.Solana)
     }
 }
 ```
@@ -159,7 +129,7 @@ Particle Network support Solana and EVM chains, you can init with below chain in
 
 [👉 chainId and chainName configs](../../node-service/evm-chains-api/)
 
-### Switch  ChainInfo
+### Switch ChainInfo
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -169,53 +139,23 @@ Particle Network support Solana and EVM chains, you can init with below chain in
 // it will switch to bsc directly, beacuse both bsc and ethereum are evm,
 // but if switch to solana, beacuse user didn't log in solana before, it will 
 // present a web browser for additional information automatically.
-val chainInfo = EthereumChain(EthereumChainId.Mainnet)
-ParticleNetwork.setChainInfo(
-    chainInfo,
-    object : ChainChangeCallBack {
+ParticleNetwork.switchChain(
+    ChainInfo.Ethereum,
+    object : ResultCallback {
         override fun success() {
-            ToastUtils.showLong("currChain:${ParticleNetwork.chainInfo.chainName}")
+            val currChain = ParticleNetwork.chainInfo.name
         }
 
         override fun failure() {
-            ToastUtils.showLong("success failure:${ParticleNetwork.chainInfo.chainName}")
+           
         }
     })
     
 // Sync switch chain name. it will wont check if user has logged in.
-val chainInfo = EthereumChain(EthereumChainId.Mainnet)
-ParticleNetwork.setChainInfo(chainInfo)
-```
-{% endtab %}
-
-{% tab title="Java" %}
-```java
-
-// Async switch chain name, it will check if user has logged in this chain name.
-// For example, if a user logged in with ethereum, then switch to  bsc,
-// it will switch to bsc directly, beacuse both bsc and ethereum are evm,
-// but if switch to solana, beacuse user didn't log in solana before, it will 
-// present a web browser for additional information automatically.
-ChainInfo chainInfo = new SolanaChain(SolanaChainId.Mainnet);
-ParticleNetworkAuth.setChainInfo(ParticleNetwork.INSTANCE, chainInfo,
-        new ChainChangeCallBack() {
-            @Override
-            public void success() {
-                
-            }
-
-            @Override
-            public void failure() {
-
-            }
-        });
-// Sync switch chain name. it will wont check if user has logged in.
-ParticleNetwork.setChainInfo(chainInfo);
+ParticleNetwork.setChainInfo(ChainInfo.Polygon)
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### Login
 
@@ -232,80 +172,43 @@ To auth login with Particle, call `ParticleNetwork.login(...)`with `activity` an
 //   - loginFormMode: Controls whether show light UI in web, default is false.
 //   - prompt: Social login prompt. default is null
 ParticleNetwork.login(
-        loginType = LoginType.PHONE,
-        account = "",
-        supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
-        loginFormMode = false,
-        prompt = null,
-        loginCallback = object : WebServiceCallback<LoginOutput> {
-            override fun success(output: LoginOutput) {
-            }
-            override fun failure(errMsg: WebServiceError) {
-            }
-        })
+    loginType = LoginType.PHONE,
+    account = "",
+    supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
+    prompt = null,
+    loginCallback = object : WebServiceCallback<UserInfo> {
+        override fun success(output: UserInfo) {
+        }
+        override fun failure(errMsg: ErrorInfo) {
+        }
+    })
 
 // - without account parameter you can use this method overwrite
 ParticleNetwork.login(
-        loginType = LoginType.PHONE,
-        supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
-        loginFormMode = false,
-        loginCallback = object : WebServiceCallback<LoginOutput> {
-            override fun success(output: LoginOutput) {
-            }
-            override fun failure(errMsg: WebServiceError) {
-            }
-        })
+    loginType = LoginType.PHONE,
+    supportAuthTypeValues = SupportAuthType.FACEBOOK.value or SupportAuthType.GOOGLE.value or SupportAuthType.APPLE.value,
+    loginCallback = object : WebServiceCallback<UserInfo> {
+        override fun success(output: UserInfo) {
+        }
+        override fun failure(errMsg: ErrorInfo) {
+        }
+    })
         
         
 // Login with JWT
 val account = "json web token"
-    ParticleNetwork.login(
-        loginType = LoginType.JWT,
-        account = account,
-        supportAuthTypeValues = SupportAuthType.ALL.value,
-        loginFormMode = false,
-        object : WebServiceCallback<LoginOutput> {
-            override fun success(output: LoginOutput) {
-            }
-            override fun failure(errMsg: WebServiceError) {
-            }
-        })
-```
-{% endtab %}
-
-{% tab title="Java" %}
-```java
-//   - Parameters:
-//   - loginType: Login type, support email, phone, google, apple and facebook
-//   - account: When login type is email or phone, you could pass email address or phone number,Optional.
-//   - supportAuthType: Controls whether third-party login buttons are displayed. default will show none third-party login buttons.
-//   - loginFormMode:Controls whether show light UI in web, default is false.
-//   - prompt: Social login prompt. default is null
-ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,"",
-        SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
-        false,
-        null,
-        new WebServiceCallback<LoginOutput>() {
-            @Override
-            public void failure(@NonNull WebServiceError errMsg) {
-            }
-            @Override
-            public void success(@NonNull LoginOutput output) {
-            }
-        });
-
-// - without account parameter you can use this method overwrite
-ParticleNetworkAuth.login(ParticleNetwork.INSTANCE,LoginType.PHONE,
-        SupportAuthType.FACEBOOK.getValue() | SupportAuthType.GOOGLE.getValue()| SupportAuthType.APPLE.getValue(),
-        false,
-        new WebServiceCallback<LoginOutput>() {
-            @Override
-            public void failure(@NonNull WebServiceError errMsg) {
-            }
-            @Override
-            public void success(@NonNull LoginOutput output) {
-            }
-        });
+ParticleNetwork.login(
+    loginType = LoginType.JWT,
+    account = account,
+    supportAuthTypeValues = SupportAuthType.ALL.value,
+    loginCallback = object : WebServiceCallback<UserInfo>{
+        override fun success(output: UserInfo) {
+         
+        }
+        override fun failure(errMsg: ErrorInfo) {
+        
+        }
+    })
 ```
 {% endtab %}
 {% endtabs %}
@@ -326,26 +229,10 @@ ParticleNetwork.logout(object : WebServiceCallback<WebOutput> {
         //logout success
     }
 
-    override fun failure(errMsg: WebServiceError) {
+    override fun failure(errMsg: ErrorInfo) {
         //handle error
     }
 })
-```
-{% endtab %}
-
-{% tab title="Java" %}
-```java
-ParticleNetworkAuth.logout(ParticleNetwork.INSTANCE,new WebServiceCallback<WebOutput>() {
-    @Override
-    public void success(@NonNull WebOutput output) {
-        //logout success
-    }
-
-    @Override
-    public void failure(@NonNull WebServiceError errMsg) {
-        //handle error
-    }
-});
 ```
 {% endtab %}
 {% endtabs %}
@@ -356,36 +243,21 @@ Logout without broswer,The SDK will delete users' account information in cache.
 
 {% tabs %}
 {% tab title="Kotlin" %}
-<pre class="language-kotlin"><code class="lang-kotlin"><strong>ParticleNetwork.fastLogout(object : FastLogoutCallBack {
-</strong>    override fun success() {
-        //logout success
-    }
+```kotlin
+ ParticleNetwork.fastLogout(object : ResultCallback {
+        override fun success() {
+            //logout success
+        }
 
-    override fun failure() {
-        //handle error
-    }
-})
-</code></pre>
-{% endtab %}
-
-{% tab title="Java" %}
-```java
-ParticleNetworkAuth.fastLogout(ParticleNetwork.INSTANCE, new FastLogoutCallBack() {
-    @Override
-    public void success() {
-        //logout success
-    }
-
-    @Override
-    public void failure() {
-        //logout failure
-    }
-});
+        override fun failure() {
+            //handle error
+        }
+    })
 ```
 {% endtab %}
 {% endtabs %}
 
-### Is User Logged In
+### Check user login status
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -420,7 +292,7 @@ ParticleNetwork.signAndSendTransaction(transaction, object : WebServiceCallback<
         //sign and send transaction success
     }
 
-    override fun failure(errMsg: WebServiceError) {
+    override fun failure(errMsg: ErrorInfo) {
         // handle error
     }
 })
@@ -432,7 +304,7 @@ ParticleNetwork.signTransaction(transaction, object : WebServiceCallback<SignOut
         //sign transaction success
     }
 
-    override fun failure(errMsg: WebServiceError) {
+    override fun failure(errMsg: ErrorInfo) {
         // handle error
     }
 })
@@ -446,7 +318,7 @@ ParticleNetwork.signAllTransactions(
         override fun success(output: SignOutput) {
             //sign success
         }
-        override fun failure(errMsg: WebServiceError) {
+        override fun failure(errMsg: ErrorInfo) {
             // handle error
         }
     })
@@ -458,7 +330,7 @@ ParticleNetwork.signMessage(message, object : WebServiceCallback<SignOutput>{
         //sign success
     }
 
-    override fun failure(errMsg: WebServiceError) {
+    override fun failure(errMsg: ErrorInfo) {
         // handle error
     }
 })
@@ -470,7 +342,7 @@ ParticleNetwork.signTypedData(message, version, object : WebServiceCallback<Sign
         //sign success
     }
 
-    override fun failure(errMsg: WebServiceError) {
+    override fun failure(errMsg: ErrorInfo) {
         // handle error
     }
 })
@@ -593,7 +465,7 @@ ParticleNetwork.setAppearence(ThemeEnum.DARK)
 ParticleNetwork.setAppearence(ThemeEnum.LIGHT)
 ```
 
-### Language setting&#x20;
+### Language setting
 
 ```kotlin
 //Set the language of the SDK
@@ -616,13 +488,13 @@ ParticleNetwork.setSecurityAccountConfig(SecurityAccountConfig(false))
 
 ### Error
 
-`WebServiceError` contains error details. You can check the information by printing the `message` attribute.
+`ErrorInfo` contains error details. You can check the information by printing the `message` attribute.
 
 ## Particle Wallet Connect V1
 
 Integrate your app as a wallet connect wallet.
 
-### Add the Particle Wallet Connect  SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
+### Add the Particle Wallet Connect SDK to Your App <a href="#add-sdks" id="add-sdks"></a>
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -667,8 +539,15 @@ dependencies {
 </strong>    ...
 }
 // Initialize Particle Wallet Connect SDK, a wallet meta data
-val wcPeerMeta = WCPeerMeta( "Particle Wallet", "https://particle.network",icons = listOf("https://connect.particle.network/icons/512.png"))
-ParticleWalletConnect.init(context,wcPeerMeta)
+val dAppMetadata = DAppMetadata(
+  "walletConnectProjectId",
+  "Particle Connect",
+  "https://connect.particle.network/icons/512.png",
+  "https://particle.network",
+  description = "Particle Connect is a decentralized wallet connection protocol that makes it easy for users to connect their wallets to your DApp.",
+)
+
+ParticleWalletConnect.init(this, dAppData = dAppMetadata)
 </code></pre>
 {% endtab %}
 {% endtabs %}
@@ -679,13 +558,13 @@ ParticleWalletConnect.init(context,wcPeerMeta)
 {% tab title="Kotlin" %}
 ```kotlin
 // Connect to a wallet connect code
-val wcCode = "wc:DDCBBAA8-B1F1-4B98-8F74-84939E0B1533@1?bridge=https%3A%2F%2Fbridge%2Ewalletconnect%2Eorg%2F&key=3da9dbb33b560beeb1750203a8d0e3487b4fe3fdd7b7953d79fbccadae8aab48"
-ParticleWalletConnect.connect()
+val uri = "wc:DDCBBAA8-B1F1-4B98-8F74-84939E0B1533@1?bridge=https%3A%2F%2Fbridge%2Ewalletconnect%2Eorg%2F&key=3da9dbb33b560beeb1750203a8d0e3487b4fe3fdd7b7953d79fbccadae8aab48"
+ParticleWalletConnect.connect(uri)
 ```
 {% endtab %}
 {% endtabs %}
 
-### Set Provider  And Listeners&#x20;
+### Set Provider And Listeners
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -694,20 +573,21 @@ ParticleWalletConnect.connect()
 //AuthProvider Implemented the following methods：
 //personal_sign、eth_signTypedData_v1、eth_signTypedData_v3、eth_signTypedData_v4、eth_sendTransaction、eth_chainId、eth_accounts、eth_requestAccounts
 //Here you can replace  your own Provider
-ParticleWalletConnect.iprovider = { topic, method, params ->
-    AuthProvider.request(method, params, object : WebServiceCallback<WebOutput> {
-        override fun success(output: WebOutput) {
-            when (output) {
-                is SignOutput -> {}
-                is EthChainId -> {}
-                is EthAccounts -> {}
-            }
+ ParticleWalletDelegate.wcEventModels.onEach { wcEvent ->
+    when (wcEvent) {
+        is Sign.Model.SessionProposal -> {
+           
         }
-        override fun failure(errMsg: WebServiceError) {
-            LogUtils.d("AuthProvider request failure", method, errMsg)
+
+        is Sign.Model.SessionRequest -> {
+           
         }
-    })
-}
+
+        else -> {
+
+        }
+    }
+}.launchIn(lifecycleScope)
 
 //approve or reject
 ParticleWalletConnect.onSessionRequest = { id, peerMeta ->
@@ -747,4 +627,3 @@ ParticleWalletConnect.clearWCSessionStore()
 ```
 {% endtab %}
 {% endtabs %}
-
