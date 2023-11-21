@@ -43,7 +43,7 @@ public async void Connect()
     {
         Debug.LogError($"An error occurred: {e.Message}");
     }
-}Ï
+}
 ```
 
 ### Disconnect
