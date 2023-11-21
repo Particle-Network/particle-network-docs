@@ -171,7 +171,7 @@ ParticleNetwork.signAndSendTransaction(activity,
 {% endtab %}
 {% endtabs %}
 
-#### Get Token info list&#x20;
+#### Get Token info list
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -182,7 +182,7 @@ ParticleNetwork.solana.getTokenList()
 {% endtab %}
 {% endtabs %}
 
-#### Access 👉 [any RPC ](../../node-service/solana-api/)
+#### Access 👉 [any RPC](../../node-service/solana-api/)
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -261,7 +261,7 @@ ParticleNetwork.evm.suggestedGasFees()
 {% endtab %}
 {% endtabs %}
 
-#### Get Token info list&#x20;
+#### Get Token info list
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -272,7 +272,7 @@ ParticleNetwork.evm.getTokenList()
 {% endtab %}
 {% endtabs %}
 
-#### Access 👉 [any RPC ](../../node-service/evm-chains-api/)
+#### Access 👉 [any RPC](../../node-service/evm-chains-api/)
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -358,8 +358,6 @@ ParticleNetwork.evm.abiEncodeFunctionCall(contractAddress: String,method: String
 //    For erc20/721/1155 methods we support, this parameter is not needed
 //    And if your contract is verified at the chain's scan website, this parameter is not needed
 ```
-
-
 {% endtab %}
 {% endtabs %}
 
@@ -484,11 +482,11 @@ ParticleWallet.enablePay(ParticleNetwork.INSTANCE,false);
 {% endtab %}
 {% endtabs %}
 
-### Custom Wallet UI &#x20;
+### Custom Wallet UI
 
 Control show or hide test network, manage wallet page, support chain.
 
-Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.&#x20;
+Because ParticleWalletGUI dependent on Particle Connect, Particle Connect initialize chain will add to support chain automatically.
 
 ```kotlin
 // show or hide test network, default is false.
@@ -661,15 +659,15 @@ PNRouter.build(RouterPath.NftDetails, params).navigation()
 // every parameter is optional
 ParticleNetwork.openBuy(
     walletAddress: String? = null,
-    amount: Int? = null,
-    fiatCoin: String = "usd",
+    amount: Int? = null, //1000
+    fiatCoin: String = "usd", 
     cryptoCoin: String = "eth",
     fixFiatCoin: Boolean = false,
     fixFiatAmt: Boolean = false,
     fixCryptoCoin: Boolean = false,
-    theme: String = "light",
-    language: String = "en-us",
-    chainName: String? = null
+    theme: String = "light",  // light or dark
+    language: String = "en-us", //en-us、ko-kr、zh-cn、zh-tw、ja-jp
+    chainName: String? = null // ChainInfo.Ethereum.name、ChainInfo.Polygon.name ... , nullable,default ParticleNetwork.chainInfo.name
 )
 ```
 
