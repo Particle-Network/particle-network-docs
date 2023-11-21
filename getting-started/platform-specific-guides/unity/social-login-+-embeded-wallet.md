@@ -228,6 +228,27 @@ public async void Disconnect()
 }
 ```
 
+## Open Wallet
+
+Open native wallet page
+
+```csharp
+public void OpenWallet()
+{
+    ParticleWalletGUI.NavigatorWallet();
+}
+```
+
 ## Dive Deeper
 
-In this guide, we learned how to use the Particle Unity SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the [Particle Unity](../../../developers/account-abstraction/unity.md) page.
+In this guide, we learned how to use the Particle Unity SDK for social login, sending transactions, and signing message. If you want to learn more about different use cases, check out the following pages.
+
+[Particle Unity Auth](../../../developers/auth-service/sdks/unity/)
+
+[Particle Unity Auth Core](../../../developers/auth-service/core/unity.md)
+
+[Particle Unity Connect](../../../developers/connect-service/sdks/unity.md)
+
+[Particle Unity Wallet](../../../developers/wallet-service/sdks/unity.md)
+
+[Particle Unity AA](../../../developers/account-abstraction/unity.md)
