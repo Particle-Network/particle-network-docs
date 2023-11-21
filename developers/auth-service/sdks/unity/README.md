@@ -18,6 +18,10 @@ ParticleNetwork.Init(ChainInfo.Ethereum);
 
 Drag the ParticleAuthService.prefab to your first scene(Required)
 
+Drag the ParticleUnityRpc.prefab to your first scene(Required), then replace your project id, app id and client key.
+
+<figure><img src="../../../../.gitbook/assets/image (30).png" alt=""><figcaption><p>ParticleUnityRpc</p></figcaption></figure>
+
 ### Login
 
 ```csharp

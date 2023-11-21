@@ -20,6 +20,16 @@ All unity SDKs are open source, [click here to view](https://github.com/Particle
 
 ## Quick Start
 
+**Drag prefab to your scene**
+
+Drag the ParticleConnect.prefab to your first scene(Required)
+
+Drag the ParticleUnityRpc.prefab to your first scene(Required), then replace your project id, app id and client key.
+
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption><p>ParticleUnityRpc</p></figcaption></figure>
+
+### Initialize the SDK
+
 ### Init
 
 ```csharp
