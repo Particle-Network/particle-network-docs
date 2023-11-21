@@ -78,6 +78,8 @@ var config = new ConnectConfig(LoginType.JWT, "Your JWT", SupportAuthType.ALL);
 
 We also support connect with other wallets, supported by wallet connect, and don't forget to set wallet connect project id when Initializing.
 
+Here's how to connect Metamask.
+
 ```csharp
 public async void ConnectMetamask()
 {
