@@ -146,7 +146,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return ParticleConnect.handleUrl(url)
     }
 }
-
 ```
 
 {% hint style="info" %}

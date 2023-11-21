@@ -127,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // set your biconomy api keys
         let biconomyApiKeys =
-            [80001: "hYZIwIsf2.e18c790b-cafb-4c4e-a438-0289fc25dba1"]
+            [80001: "your biconomy api key"]
 
         //
         AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: biconomyApiKeys)
