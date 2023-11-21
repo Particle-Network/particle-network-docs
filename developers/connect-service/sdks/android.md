@@ -12,7 +12,7 @@ description: SSO for Web3
 
 Modular Kotlin wallet adapters and components for EVM & Solana chains. Manage wallet and custom RPC request.
 
-![Particle Connect](https://static.particle.network/docs-images/particle-connect.jpeg)
+<figure><img src="../../../.gitbook/assets/Particle Connect (1).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:red;">**It is strongly discouraged to use private key or mnemonic import/generate function, if you use it, you need to secure the data yourself, Particle's SDK has no relationship with the imported/generated mnemonic or private key.**</mark>
 
