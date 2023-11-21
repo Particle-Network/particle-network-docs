@@ -907,6 +907,15 @@ ParticleWalletConnect.setWalletConnectV2ProjectId("your wallet connect v2 projec
 ```
 {% endhint %}
 
+### Account Abstraction Setting
+
+If you have add `ParticleAA`, but don't allow user to switch smart account between biconomy | cyberConnect | simple, you can set false to below method.
+
+```swift
+// show smart account setting in setting page, default value is true;
+ParticleWalletGUI.setShowSmartAccountSetting(true)
+```
+
 ### Custom Wallet UI
 
 Control show or hide test network, swap feature, buy crypto feature, support wallet connect, manage wallet page, support chain, set language, set user interface style and more.
@@ -940,9 +949,6 @@ ParticleWalletGUI.setShowManageWallet(true)
 
 // show language setting in setting page, default value is false.
 ParticleWalletGUI.setShowLanguageSetting(true)
-
-// show smart account setting in setting page, default value is true;
-ParticleWalletGUI.setShowSmartAccountSetting(true)
 
 // show appearance setting in setting page, default value is false.
 ParticleWalletGUI.setShowAppearanceSetting(true)
@@ -995,7 +1001,7 @@ ParticleWalletGUI.setCustomLocalizable(customLocalizable)
 {% endtab %}
 {% endtabs %}
 
-If your want to support wallet connect feature in GUI, should call method `handleWalletConnectUrl`
+If your want to support wallet connect feature in GUI, should call method `handleWalletConnectUrl.`
 
 ```swift
 // in AppDelegate.swift, under application(_:open:options:)

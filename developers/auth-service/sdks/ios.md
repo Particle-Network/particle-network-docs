@@ -286,6 +286,14 @@ ParticleAuthService.login(type: .jwt, account: account).subscribe { [weak self] 
 After log-in success, you can obtain user info by calling `ParticleNetwork.getUserInfo()`
 {% endhint %}
 
+{% hint style="info" %}
+Account Abstraction could use together with Auth Service, explore [Account Abstraction](../../account-abstraction/ios.md) for more detail, learn how to get a smart account address, how to send transaction under AA mode.
+{% endhint %}
+
+{% hint style="info" %}
+Wallet Service could use together with Auth Service, explore [Wallet Service](../../wallet-service/sdks/ios.md) for more detail, learn how to open wallet page, how to open send page, how to open swap page etc.
+{% endhint %}
+
 ### Check user login status
 
 ### Is User Login Async

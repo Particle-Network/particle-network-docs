@@ -104,7 +104,11 @@ import ParticleNetworkBase
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-ParticleNetwork.initialize(config: .init(chainInfo: .ethereum(.mainnet), devEnv: .debug))
+// select a network from ChainInfo.
+let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
+let devEnv = ParticleNetwork.DevEnvironment.debug
+let config = ParticleNetworkConfiguration(chainInfo: chainInfo, devEnv: devEnv)
+ParticleNetwork.initialize(config: config)
 ```
 {% endtab %}
 {% endtabs %}
@@ -149,6 +153,14 @@ let userInfo = try await auth.connect(jwt: jwt)
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+Account Abstraction could use together with Auth Core Service, explore [Account Abstraction](../../account-abstraction/ios.md) for more detail, learn how to get a smart account address, how to send transaction under AA mode.
+{% endhint %}
+
+{% hint style="info" %}
+Wallet Service could use together with Auth Core Service, explore [Wallet Service](../../wallet-service/sdks/ios.md) for more detail, learn how to open wallet page, how to open send page, how to open swap page etc.
+{% endhint %}
 
 ### Get user info
 
