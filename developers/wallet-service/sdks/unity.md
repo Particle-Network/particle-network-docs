@@ -4,6 +4,10 @@ Before using, please review [the prerequisites](../../../getting-started/platfor
 
 All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
 
+**Drag prefab to your scene**
+
+Drag the ParticleWalletGUI.prefab to your first scene(Required)
+
 ### Init
 
 It is required before call other method, you can define your app info as a metadata or user the default value, metadata is used for wallet connect.
