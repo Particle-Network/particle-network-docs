@@ -4,7 +4,7 @@
 
 1.Finish integration with either [Auth Service](../auth-service/sdks/android.md) or [Connect Service](../auth-service/sdks/android.md)
 
-2.Add ParticleBiconomy to your build.gradle.
+2.Add aa service to your build.gradle.
 
 ```gradle
 dependencies {
@@ -19,37 +19,36 @@ dependencies {
 
 ## Initialize
 
-The dappApiKeys comes from Biconomy, visit [Biconomy Dashboard](https://dashboard.biconomy.io/) to learn more.
-
 ```kotlin
 val apiKey = mapOf(
             Ethereum.id to "YOUR_DAPP_API_KEY",
             EthereumGoerli.id to "YOUR_DAPP_API_KEY",
             Polygon.id to "YOUR_DAPP_API_KEY"
         )
+// apiKey can be empty        
 // aaService can be BiconomyAAService, CyberConnectAAService, SimpleAAService. It can be null, default  BiconomyAAService.
 ParticleNetwork.initAAMode(apiKey, aaService = BiconomyAAService)
 ```
 
 ###
 
-### Enable biconomy service
+### Enable aa service
 
-After enable biconomy service, The address displayed on the wallet page will display the SmartAccount address. and the signAndSendTransaction method will change the way transactions are sent.
+After enable AA service, The address displayed on the wallet page will display the SmartAccount address. and the signAndSendTransaction method will change the way transactions are sent.
 
 ```kotlin
 ParticleNetwork.getAAService().enableAAMode()
 ```
 
-### Disable biconomy service
+### Disable AA service
 
-After disable biconomy service, smart account will not work.
+After disable AA service, smart account will not work.
 
 ```kotlin
 ParticleNetwork.getAAService().disableAAMode()
 ```
 
-### Get biconomy service enable state
+### Get AA service enable state
 
 ```kotlin
 val isEnable = ParticleNetwork.getAAService().isAAModeEnable()
@@ -70,7 +69,7 @@ ParticleNetwork.signAndSendTransaction(tranaction, callback , FeeModeAuto())
 // 3.custom
 // send user paid transaction, select token to pay gas fee.
 // get a feeQuote from rpcGetFeeQuotes method
-val feeQuote: Erc4337FeeQuote  //get Erc4337FeeQuote by ParticleNetwork.getBiconomyService().rpcGetFeeQuotes()
+val feeQuote: Erc4337FeeQuote  //get Erc4337FeeQuote by ParticleNetwork.getAAService().rpcGetFeeQuotes()
 ParticleNetwork.signAndSendTransaction(tranaction, callback , FeeModeCustom(feeQuote))
 ```
 
@@ -91,13 +90,13 @@ connectAdapter.signAndSendTransaction(publicAddress = publicAddress, transaction
 // 3.custom
 // send user paid transaction, select token to pay gas fee.
 // get a feeQuote from rpcGetFeeQuotes method
-val feeQuote: Erc4337FeeQuote  //get Erc4337FeeQuote by ParticleNetwork.getBiconomyService().rpcGetFeeQuotes()
+val feeQuote: Erc4337FeeQuote  //get Erc4337FeeQuote by ParticleNetwork.getAAService().rpcGetFeeQuotes()
 connectAdapter.signAndSendTransaction(publicAddress = publicAddress, transaction =  tranaction, FeeModeCustom(feeQuote), callback)
 ```
 
 ### Send batch transactions
 
-you need create a BiconomyService instance, then call quickSendTransactions mehod
+you need create a AAService instance, then call quickSendTransactions mehod
 
 ```kotlin
 ParticleNetwork.getAAService().quickSendTransaction(transactions, feeMode, messageSigner, callback)
@@ -105,10 +104,10 @@ ParticleNetwork.getAAService().quickSendTransaction(transactions, feeMode, messa
 
 ### More methods
 
-There are other methods, and all Account Abstraction methods are defined in BiconomyServiceProtocol.
+There are other methods, and all Account Abstraction methods are defined in AAServiceProtocol.
 
 ```
-interface IBiconomyService {
+interface IAAService {
     /**
      * Rpc method, get smart account
      * @param  addresses: Eoa address List
@@ -176,11 +175,11 @@ interface IBiconomyService {
 
     suspend fun deployWalletContract(messageSigner: MessageSigner, feeMode: FeeMode)
 
-    fun isBiconomyModeEnable(): Boolean
+    fun isAAModeEnable(): Boolean
     
-    fun enableBiconomyMode()
+    fun enableAAMode()
     
-    fun disableBiconomyMode()
+    fun disableAAMode()
 
     suspend fun getSmartAccount(eosAddress: String): SmartAccountInfo?
 
