@@ -6,7 +6,8 @@
 
 Make sure that your project meets the following requirements:
 
-* minSdkVersion 23 or higher；compileSdkVersion、targetSdkVersion 33 or higher
+* minSdkVersion must be 23 or higher
+* compileSdkVersion and targetSdkVersion must be 33 or higher
 * Uses JavaVersion 11
 * Uses [Jetpack (AndroidX)](https://developer.android.com/jetpack/androidx/migrate?authuser=0)
 
@@ -82,8 +83,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         ParticleNetwork.init(this, Env.PRODUCTION, ChainInfo.Ethereum)
-        // optional: set app language
-        ParticleNetwork.setLanguage(LanguageEnum.EN)
     }
 }
 ```
