@@ -372,6 +372,39 @@ Request
       "paymasterAndData": "0x00000f7365ca6c59a2c93719ad53d567ed49c14c000000000000000000000000000000000000000000000000000000000064d2762e0000000000000000000000000000000000000000000000000000000064d26f260000000000000000000000009c3c9283d3e44854697cd22d3faa240cfb03288900000000000000000000000000000f7748595e46527413574a9327942e744e910000000000000000000000000000000000000000000000000de567836c0e69c0000000000000000000000000000000000000000000000000000000000010c8e09292fc583c0427b08765e4eccc030122182d141b6dbc5bb539fc4de726935042106faec9ee5b7537cf15c5f7d317fc355a0ff41877815fcbf9c906e0b584c4b61b",
       "maxFeePerGas": "1500000034",
       "maxPriorityFeePerGas": "1500000000"
+    },
+    // Optional
+    {
+      "sessions": [
+          {
+              "validUntil": 0,
+              "validAfter": 0,
+              "sessionValidationModule": "0x4b7f018Fa27a97b6a17b6d4d8Cb3c0e2D9340133",
+              "sessionKeyDataInAbi": [ // or use sessionKeyData to replace
+                  ["address", "address", "address", "uint256"],
+                  [
+                      "0x1dacDa1087C4048774bEce7784EB8EC4CfBeDB2c",
+                      "0x909E30bdBCb728131E3F8d17150eaE740C904649",
+                      "0x11D266772b85C2C5D4f84A41ca3E08e9f04Fb5D3",
+                      1
+                  ]
+              ]
+          }
+      ],
+      "targetSession": {
+          "validUntil": 0,
+          "validAfter": 0,
+          "sessionValidationModule": "0x4b7f018Fa27a97b6a17b6d4d8Cb3c0e2D9340133",
+          "sessionKeyDataInAbi": [ // or use sessionKeyData to replace
+              ["address", "address", "address", "uint256"],
+              [
+                  "0x1dacDa1087C4048774bEce7784EB8EC4CfBeDB2c",
+                  "0x909E30bdBCb728131E3F8d17150eaE740C904649",
+                  "0x11D266772b85C2C5D4f84A41ca3E08e9f04Fb5D3",
+                  1
+              ]
+          ]
+      }
     }
   ]
 }
