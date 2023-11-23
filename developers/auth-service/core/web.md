@@ -19,7 +19,7 @@ layout:
 
 ## Introduction
 
-Auth Core can be integrated with any wallet, platform, chain and social login. You can even plug in your existing auth setup
+Auth Core can be integrated with any wallet, platform, chain and social login. You can even plug in your existing auth setup.
 
 ### **Wallet management**
 
@@ -114,6 +114,19 @@ const App = () => {
                 projectId: 'xxxx',
                 clientKey: 'xxxx',
                 appId: 'xxxx',
+                promptSettingConfig: { //optional
+                    //set payment password prompt: none, first, every, everyAndNotSkip.
+                    promptPaymentPasswordSettingWhenSign: PromptSettingType.first,
+                    //set master password prompt: none, first, every, everyAndNotSkip.
+                    promptMasterPasswordSettingWhenLogin: PromptSettingType.first,
+                },
+                erc4337: { // optional
+                    name: 'SIMPLE',  // support 'SIMPLE', 'CYBERCONNECT', 'BICONOMY'
+                    version: '1.0.0',
+                },
+                wallet: {
+                    visible: true,  //show wallet entrance when connect success.
+                }
             }}
         >
             &#x3C;YourApp />
@@ -122,6 +135,16 @@ const App = () => {
 };
 
 </code></pre>
+
+#### ERC-4337
+
+Auth Core Modal will display smart account address and badge when set `erc4337` param, you can use smart account send gasless transaction, refer to [Account Abstraction](../../account-abstraction/web.md).
+
+#### Embedd Wallet
+
+A fully functional wallet will be embedded in your web page when you set param `wallet`, and you can custom Wallet UI style to match your branding.&#x20;
+
+
 
 Now, you can use Auth Core in your app.
 
@@ -138,6 +161,9 @@ Custom you own connect button and call `connect` function to connect Auth Core.
 </strong>
 const { connect, disconnect, connectionStatus, requestConnectCaptcha } = useConnect();
 
+// open modal and connect 
+const userInfo = await connect();
+
 // connect with email.
 const userInfo = await connect({
     email: 'xxx@xx.com',
@@ -153,7 +179,7 @@ const userInfo = await connect({
 // connect with social type.
 const userInfo = await connect({
     socialType: 'google',
-<strong>    prompt: 'select_account', //optional
+<strong>    prompt: 'select_account', //optional, only google, discord and microsoft support it.
 </strong>});
 
 // connect with JWT.
@@ -163,7 +189,21 @@ const userInfo = await connect({
 
 </code></pre>
 
-For using a email/phone connect wallet, you can custom UI and get `code` by `requestConnectCaptcha`
+For using a email/phone connect wallet, you can custom UI and get `code` by `requestConnectCaptcha`.
+
+For using social connect wallet, you can specify the `prompt` param.  `prompt`  is A space-delimited list of string values that specifies whether the authorization server prompts the user for reauthentication and consent. The possible values are:
+
+*   `none`
+
+    The authorization server does not display any authentication or user consent screens; it will return an error if the user is not already authenticated and has not pre-configured consent for the requested scopes. You can use `none` to check for existing authentication and/or consent.
+*   `consent`
+
+    The authorization server prompts the user for consent before returning information to the client.
+*   `select_account`
+
+    The authorization server prompts the user to select a user account. This allows a user who has multiple accounts at the authorization server to select amongst the multiple accounts that they may have current sessions for.
+
+If no value is specified and the user has not previously authorized access, then the user is shown a consent screen.
 
 #### Connect with specified chain
 
@@ -182,6 +222,8 @@ const userInfo = await connect({
 
 #### Connect and authorize
 
+When connect Auth Core, [`Sign-In with Ethereum`](https://eips.ethereum.org/EIPS/eip-4361)(EVM) or `signMessage`(Solana) will auto run.
+
 ```typescript
 
 import { BNBChain } from '@particle-network/chains';
@@ -193,9 +235,11 @@ const userInfo = await connect({
     chain: BNBChain,
     authorization: {
         uniq: true,  // uniq sign
+        message: 'base58 string', // solana need it, evm will ignore it
     }
 });
-
+// get authorize signature
+const signature = userInfo.signature;
 ```
 
 ### Disconnect
@@ -240,7 +284,7 @@ const signature = await signMessage(message);
 // sign typed data
 const signature = await signTypedData(typedData);
 
-// switch chain to Ethereum Mainnet
+// switch chain to Ethereum Mainnet, chainId: number or prefixed hex string
 await switchChain('0x1')
 
 ```
@@ -263,9 +307,9 @@ if (!address) {
 
 ```
 
-### Solana Chains
+### Solana
 
-EdDsa Wallet will be created when connect with Solana chains.
+EdDsa Wallet will be created when connect with Solana.
 
 ```typescript
 
@@ -401,16 +445,6 @@ const App = () => {
                 themeType: 'dark',  //light or dark
                 fiatCoin: 'USD',
                 language: 'en',
-                erc4337: { // optional
-                    name: 'SIMPLE',  // support 'SIMPLE', 'CYBERCONNECT', 'BICONOMY'
-                    version: '1.0.0',
-                }
-                promptSettingConfig: {
-                    //set payment password prompt: none, first, every, everyAndNotSkip.
-                    promptPaymentPasswordSettingWhenSign: PromptSettingType.first,
-                    //set master password prompt: none, first, every, everyAndNotSkip.
-                    promptMasterPasswordSettingWhenLogin: PromptSettingType.first,
-                },
                 customStyle: {
                     logo: 'https://xxxx', // image url
                     projectName: 'xxx',
