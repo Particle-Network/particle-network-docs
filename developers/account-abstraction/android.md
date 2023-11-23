@@ -17,6 +17,13 @@ dependencies {
 }
 ```
 
+## Before Start
+
+1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
+2. If you want to use [Particle Verifying Paymaster](paymaster.md) on Mainnet, you can deposit and use it directly without extra configration in SDK, [check docs](paymaster.md);
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/), create Paymaster & get dappApiKey;
+4. Token Paymaster is automatically enabled (we are using Biconomy Token Paymaster).
+
 ## Initialize
 
 ```kotlin
@@ -29,8 +36,6 @@ val apiKey = mapOf(
 // aaService can be BiconomyAAService, CyberConnectAAService, SimpleAAService. It can be null, default  BiconomyAAService.
 ParticleNetwork.initAAMode(apiKey, aaService = BiconomyAAService)
 ```
-
-###
 
 ### Enable aa service
 

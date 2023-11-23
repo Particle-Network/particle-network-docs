@@ -11,8 +11,9 @@ description: High-Level RPCs to simplify the integration of AA
 ## Before Start
 
 1. All testnets have Particle Verifying Paymaster enabled, you can send any gasless transaction;
-2. If you want to use Particle Paymaster on Mainnet, please get in touch with Particle Team to enable it;
-3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/),  create Paymaster & get dappApiKey.
+2. If you want to use [Particle Verifying Paymaster](../paymaster.md) on Mainnet, you can deposit and use it directly without extra configration in SDK, [check docs](../paymaster.md);
+3. If you want to use Biconomy Paymaster, please go to [https://dashboard.biconomy.io/](https://dashboard.biconomy.io/), create Paymaster & get dappApiKey;
+4. Token Paymaster is automatically enabled (we are using Biconomy Token Paymaster).
 
 \-> [RPC Authentication & chainId config](../../node-service/authentication.md)
 
