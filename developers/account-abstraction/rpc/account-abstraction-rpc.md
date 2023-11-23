@@ -28,6 +28,7 @@ description: High-Level RPCs to simplify the integration of AA
 4. If the user is eligible and chooses native gas payment, sign `userOpHash`, then add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
 5. If the user is eligible and chooses token gas payment, the first call `particle_aa_createUserOp` to create a `userOp` and the corresponding `userOpHash`; then sign `userOpHash`, add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
 6. The `result` returned by `particle_sendUserOp` is the `txHash`.
+7. If you need to use the temporary SessionKey feature, you can call the API `pasdfparticle_aa_createSessions` to register a session key on chain. It should be noted that this feature is currently only supported by Biconomy 2.0.0
 
 ## Common Params
 
@@ -386,4 +387,177 @@ Response
   "chainId": 80001
 }
 
+```
+
+## particle\_aa\_createSessions
+
+Request
+
+```json
+{
+    "chainId": 80001,
+    "jsonrpc": "2.0",
+    "id": "f7423e6b-0f69-4b96-8d1e-dcd485f8c2eb",
+    "method": "particle_aa_createSessions",
+    "params": [
+        { "name": "BICONOMY", "version": "2.0.0", "ownerAddress": "0xc19dd1f3e212b39a30036EF3DE3F83dEf5a66E41" },
+        [
+            {
+                "validUntil": 0,
+                "validAfter": 0,
+                "sessionValidationModule": "0x4b7f018Fa27a97b6a17b6d4d8Cb3c0e2D9340133",
+                "sessionKeyDataInAbi": [ // or use sessionKeyData to replace
+                    ["address", "address", "address", "uint256"],
+                    [
+                        "0x1dacDa1087C4048774bEce7784EB8EC4CfBeDB2c",
+                        "0x909E30bdBCb728131E3F8d17150eaE740C904649",
+                        "0x11D266772b85C2C5D4f84A41ca3E08e9f04Fb5D3",
+                        1
+                    ]
+                ]
+            }
+        ]
+    ]
+}
+```
+
+Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "b22300f7-958f-4a7b-8750-e4b67f74fa4c",
+    "result": {
+        "verifyingPaymasterGasless": {
+            "userOp": {
+                "sender": "0xcbeba65449cBeF0DcfD4a63CDf4090fA1D4A9F63",
+                "nonce": "0x00",
+                "initCode": "0x000000a56aaca3e9a4c479ea6b6cd0dbcb6634f5df20ffbc0000000000000000000000000000001c5b32f37f5bea87bdd5374eb2ac54ea8e0000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000242ede3bc0000000000000000000000000c19dd1f3e212b39a30036ef3de3f83def5a66e4100000000000000000000000000000000000000000000000000000000",
+                "callData": "0x00004680000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000cbeba65449cbef0dcfd4a63cdf4090fa1d4a9f63000000000000000000000000000002fbffedd9b33f4e7156f2de8d48945e74890000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000024610b5925000000000000000000000000000002fbffedd9b33f4e7156f2de8d48945e74890000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000247cb647596c98955fe6db976fde4318beb22b3aa902fa5de66756158c4f4ef5c012e9055100000000000000000000000000000000000000000000000000000000",
+                "paymasterAndData": "0xc89b723809598d0ebf821e89087dc8e1a6ee049900000000000000000000000000000000000000000000000000000000655f45390000000000000000000000000000000000000000000000000000000000000000a774c26e6cb51a0dd3cf973c4536c15fee28e0ce373eba84d5b2a3f7920141b51ce235e4170c5793fabb72f3548548630a8a9137187ce6c7efa9b24230da5f6c1b",
+                "signature": "0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000001c5b32F37F5beA87BDD5374eB2aC54eA8e000000000000000000000000000000000000000000000000000000000000004181d4b4981670cb18f99f0b4a66446df1bf5b204d24cfcb659bf38ba27a4359b5711649ec2423c5e1247245eba2964679b6a1dbb85c992ae40b9b00c6935b02ff1b00000000000000000000000000000000000000000000000000000000000000",
+                "preVerificationGas": "0xd9ec",
+                "verificationGasLimit": "0x04db73",
+                "callGasLimit": "0x013c73",
+                "maxFeePerGas": "0x7558bdca",
+                "maxPriorityFeePerGas": "0x7558bdb4"
+            },
+            "userOpHash": "0x4f09fd29144fd196915f248dffd6d4a496d1cfb20f369a21622ef88ad8010a2b"
+        },
+        "verifyingPaymasterNative": {
+            "userOp": {
+                "sender": "0xcbeba65449cBeF0DcfD4a63CDf4090fA1D4A9F63",
+                "nonce": "0x00",
+                "initCode": "0x000000a56aaca3e9a4c479ea6b6cd0dbcb6634f5df20ffbc0000000000000000000000000000001c5b32f37f5bea87bdd5374eb2ac54ea8e0000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000242ede3bc0000000000000000000000000c19dd1f3e212b39a30036ef3de3f83def5a66e4100000000000000000000000000000000000000000000000000000000",
+                "callData": "0x00004680000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000cbeba65449cbef0dcfd4a63cdf4090fa1d4a9f63000000000000000000000000000002fbffedd9b33f4e7156f2de8d48945e74890000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000024610b5925000000000000000000000000000002fbffedd9b33f4e7156f2de8d48945e74890000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000247cb647596c98955fe6db976fde4318beb22b3aa902fa5de66756158c4f4ef5c012e9055100000000000000000000000000000000000000000000000000000000",
+                "paymasterAndData": "0x",
+                "signature": "0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000001c5b32F37F5beA87BDD5374eB2aC54eA8e000000000000000000000000000000000000000000000000000000000000004181d4b4981670cb18f99f0b4a66446df1bf5b204d24cfcb659bf38ba27a4359b5711649ec2423c5e1247245eba2964679b6a1dbb85c992ae40b9b00c6935b02ff1b00000000000000000000000000000000000000000000000000000000000000",
+                "preVerificationGas": "0xd9ec",
+                "verificationGasLimit": "0x04db73",
+                "callGasLimit": "0x013c73",
+                "maxFeePerGas": "0x7558bdca",
+                "maxPriorityFeePerGas": "0x7558bdb4"
+            },
+            "userOpHash": "0xf885ae16099dc6bb91d8907200409fd4c0f06a844ff47b87e1a0a7b340cc28e5",
+            "feeQuote": {
+                "tokenInfo": {
+                    "chainId": 80001,
+                    "address": "0x0000000000000000000000000000000000000000",
+                    "name": "MATIC",
+                    "symbol": "MATIC",
+                    "decimals": 18,
+                    "logoURI": "https://static.particle.network/token-list/polygon/native.png"
+                },
+                "fee": "896021449333172",
+                "balance": "0"
+            }
+        },
+        "tokenPaymaster": {
+            "tokenPaymasterAddress": "0x00000f7365cA6C59A2C93719ad53d567ed49c14C",
+            "feeQuotes": [
+                {
+                    "tokenInfo": {
+                        "chainId": 80001,
+                        "name": "WMATIC",
+                        "symbol": "WMATIC",
+                        "decimals": 18,
+                        "address": "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889",
+                        "logoURI": "https://polygonscan.com/token/images/wMatic_32.png"
+                    },
+                    "fee": "374428266633331",
+                    "balance": "1019119852023946296",
+                    "premiumPercentage": "10"
+                }
+            ]
+        },
+        "sessions": [ // The client should save the sessions locally
+            {
+                "validUntil": 0,
+                "validAfter": 0,
+                "sessionValidationModule": "0x4b7f018Fa27a97b6a17b6d4d8Cb3c0e2D9340133",
+                "sessionKeyData": "0x0000000000000000000000001dacda1087c4048774bece7784eb8ec4cfbedb2c000000000000000000000000909e30bdbcb728131e3f8d17150eae740c90464900000000000000000000000011d266772b85c2c5d4f84a41ca3e08e9f04fb5d30000000000000000000000000000000000000000000000000000000000000001"
+            }
+        ]
+    },
+    "chainId": 80001
+}
+```
+
+## particle\_aa\_validateSession
+
+Request
+
+```json
+{
+    "chainId": 80001,
+    "jsonrpc": "2.0",
+    "id": "0a7a18a1-53af-45b1-8a7f-4ece06c09e04",
+    "method": "particle_aa_validateSession",
+    "params": [
+        { "name": "BICONOMY", "version": "2.0.0", "ownerAddress": "0xc19dd1f3e212b39a30036EF3DE3F83dEf5a66E41" },
+        {
+            "sessions": [
+                {
+                    "validUntil": 0,
+                    "validAfter": 0,
+                    "sessionValidationModule": "0x4b7f018Fa27a97b6a17b6d4d8Cb3c0e2D9340133",
+                    "sessionKeyDataInAbi": [ // or use sessionKeyData to replace
+                        ["address", "address", "address", "uint256"],
+                        [
+                            "0x1dacDa1087C4048774bEce7784EB8EC4CfBeDB2c",
+                            "0x909E30bdBCb728131E3F8d17150eaE740C904649",
+                            "0x11D266772b85C2C5D4f84A41ca3E08e9f04Fb5D3",
+                            1
+                        ]
+                    ]
+                }
+            ],
+            "targetSession": {
+                "validUntil": 0,
+                "validAfter": 0,
+                "sessionValidationModule": "0x4b7f018Fa27a97b6a17b6d4d8Cb3c0e2D9340133",
+                "sessionKeyDataInAbi": [ // or use sessionKeyData to replace
+                    ["address", "address", "address", "uint256"],
+                    [
+                        "0x1dacDa1087C4048774bEce7784EB8EC4CfBeDB2c",
+                        "0x909E30bdBCb728131E3F8d17150eaE740C904649",
+                        "0x11D266772b85C2C5D4f84A41ca3E08e9f04Fb5D3",
+                        1
+                    ]
+                ]
+            }
+        }
+    ]
+}
+```
+
+Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "f45d609c-844d-40ae-9af2-4e89e0baf3c7",
+    "result": false,
+    "chainId": 80001
+}
 ```
