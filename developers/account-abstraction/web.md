@@ -2,7 +2,7 @@
 
 ## Installation[​](https://docs.walletconnect.com/1.0/#getting-started) <a href="#getting-started" id="getting-started"></a>
 
-Install and import the biconomy package from the Particle Network SDK
+Install  dependence package.
 
 ```sh
 yarn add @particle-network/aa
@@ -34,24 +34,40 @@ const smartAccount = new SmartAccount(provider, {
     clientKey: 'particle client key',
     appId: 'particle app id',
     aaOptions: {
-        biconomy: [{
-            chainId: xx,
-            version: '1.0.0',
-        }],
-        cyberConnect: [{
-            chainId: xx,
-            version: '1.0.0',
-        }],
-        simple: [{
-            chainId: xx,
-            version: '1.0.0',
-        }],
+        accountContracts: {  // 'BICONOMY', 'CYBERCONNECT', 'SIMPLE' is supported now.
+            BICONOMY: [
+                {
+                    version: '1.0.0',
+                    chainIds: [x, xx],
+                },
+                {
+                    version: '2.0.0',
+                    chainIds: [x, xx],
+                }
+            ],
+            CYBERCONNECT: [
+                {
+                    version: '1.0.0',
+                    chainIds: [x, xx],
+                }
+            ],
+            SIMPLE: [
+                {
+                    version: '1.0.0',
+                    chainIds: [x, xx],
+                }
+            ],
+        },
         paymasterApiKeys: [{
             chainId: 1,
-            apiKey: 'biconomy paymaster api key',
+            apiKey: 'paymaster api key',
         }]
     },
 });
+
+// set current smart account contract
+smartAccount.setSmartAccountContract({ name: 'BICONOMY', version: '2.0.0' });
+
 ```
 
 ## Get Smart Account Address
