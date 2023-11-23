@@ -186,13 +186,14 @@ const accounts = await web3.eth.getAccounts();
 {% endtab %}
 
 {% tab title="ethers" %}
-<pre class="language-typescript"><code class="lang-typescript">import { ethers } from "ethers";
+```typescript
+import { ethers } from "ethers";
 import { ParticleProvider } from "@particle-network/provider";
-<strong>
-</strong>const particleProvider = new ParticleProvider(particle.auth);
-const ethersProvider = new ethers.providers.Web3Provider(providerProvider, "any");
+
+const particleProvider = new ParticleProvider(particle.auth);
+const ethersProvider = new ethers.providers.Web3Provider(particleProvider, "any");
 const accounts = await ethersProvider.listAccounts();
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="particle" %}
@@ -527,7 +528,7 @@ If you use `window.ethereum` to call RPC, The following things need to be noted:
 
 #### Only use the Particle
 
-Use only the Particle wallet and block other plugin wallets. For example, you can directly replace the global variable window.ethereum injected by the Metamask plugin with particleProvider:&#x20;
+Use only the Particle wallet and block other plugin wallets. For example, you can directly replace the global variable window.ethereum injected by the Metamask plugin with particleProvider:
 
 ```typescript
 window.ethereum = particleProvider;
@@ -613,7 +614,7 @@ const info = particle.auth.getUserInfo();
 
 ### Status Events
 
-User can listen particle `connect`  , `disconnect` and `chainChanged` events.
+User can listen particle `connect` , `disconnect` and `chainChanged` events.
 
 ```typescript
 // listen connect event
@@ -713,8 +714,6 @@ particle.auth.hasSecurityAccount();
 
 ```
 
-
-
 ### Open Particle Web Wallet
 
 When connect particle auth success, you can open particle wallet by below interface.
@@ -762,9 +761,9 @@ particle.openBuy(options?: OpenBuyOptions, target?: string, features?: string)
 
 ```
 
-&#x20;You can customize the open buy page by setting `options` parameters.
+You can customize the open buy page by setting `options` parameters.
 
-<table><thead><tr><th width="180" align="center">name</th><th width="382" align="center">description</th><th width="91" align="center">type</th><th width="98" align="center">required</th></tr></thead><tbody><tr><td align="center">network</td><td align="center">[Solana, Ethereum, Binance Smart Chain,  Polygon, Tron, Optimism, Arbitrum One]</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">fiatCoin</td><td align="center">Fiat currency</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">cryptoCoin</td><td align="center">crypto currency</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">fiatAmt</td><td align="center">The amount of fiat currency that the user wants to spend.It's just for Buy Crypto</td><td align="center">number</td><td align="center">False</td></tr><tr><td align="center">fixFiatCoin</td><td align="center">Prevent user from changing fiat currency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">fixCryptoCoin</td><td align="center">Prevent user from changing fiat cryptocurrency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">fixFiatAmt</td><td align="center">Prevent user from changing amount of fiat currency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">walletAddress</td><td align="center">Wallet address for the predefined cryptocurrency</td><td align="center">string</td><td align="center">False</td></tr></tbody></table>
+<table><thead><tr><th width="180" align="center">name</th><th width="382" align="center">description</th><th width="91" align="center">type</th><th width="98" align="center">required</th></tr></thead><tbody><tr><td align="center">network</td><td align="center">[Solana, Ethereum, Binance Smart Chain, Polygon, Tron, Optimism, Arbitrum One]</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">fiatCoin</td><td align="center">Fiat currency</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">cryptoCoin</td><td align="center">crypto currency</td><td align="center">string</td><td align="center">False</td></tr><tr><td align="center">fiatAmt</td><td align="center">The amount of fiat currency that the user wants to spend.It's just for Buy Crypto</td><td align="center">number</td><td align="center">False</td></tr><tr><td align="center">fixFiatCoin</td><td align="center">Prevent user from changing fiat currency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">fixCryptoCoin</td><td align="center">Prevent user from changing fiat cryptocurrency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">fixFiatAmt</td><td align="center">Prevent user from changing amount of fiat currency</td><td align="center">bool</td><td align="center">False</td></tr><tr><td align="center">walletAddress</td><td align="center">Wallet address for the predefined cryptocurrency</td><td align="center">string</td><td align="center">False</td></tr></tbody></table>
 
 {% hint style="info" %}
 If Particle not connected. network and walletAddress are requried.
@@ -801,8 +800,6 @@ If you use [web3modal](https://github.com/WalletConnect/web3modal) connect walle
 [👉 Sample](https://web-demo.particle.network/)
 
 [👉 Source Code](https://github.com/Particle-Network/particle-web-demo)
-
-
 
 ## EVM RainbowKit Integration
 
@@ -930,4 +927,3 @@ import { Ethereum, BNBChain, Polygon } from '@particle-network/chains';
 
 
 ```
-

@@ -77,7 +77,7 @@ The [Webpack v5](https://webpack.js.org/blog/2020-10-10-webpack-5-release/) bund
             stream: require.resolve('stream-browserify'),
             assert: require.resolve('assert'),
             zlib: require.resolve('browserify-zlib'),
-            url: false,
+            url: require.resolve('url'),
         },
         plugins:[
             new webpack.ProvidePlugin({
@@ -93,7 +93,7 @@ And install dependence packages.
 
 ```sh
 
-yarn add stream-http https-browserify stream-browserify assert browserify-zlib
+yarn add stream-http https-browserify stream-browserify assert browserify-zlib url
 
 ```
 
