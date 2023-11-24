@@ -530,6 +530,18 @@ Response
                 "sessionValidationModule": "0x4b7f018Fa27a97b6a17b6d4d8Cb3c0e2D9340133",
                 "sessionKeyData": "0x0000000000000000000000001dacda1087c4048774bece7784eb8ec4cfbedb2c000000000000000000000000909e30bdbcb728131e3f8d17150eae740c90464900000000000000000000000011d266772b85c2c5d4f84a41ca3e08e9f04fb5d30000000000000000000000000000000000000000000000000000000000000001"
             }
+        ],
+        "transactions": [
+            {
+                "to": "0x0E2e83Bb46ecB097306d98Bf52bdBB992f93BEe9",
+                "value": "0x00",
+                "data": "0x610b5925000000000000000000000000000002fbffedd9b33f4e7156f2de8d48945e7489"
+            },
+            {
+                "to": "0x000002FbFfedd9B33F4E7156F2DE8D48945E7489",
+                "data": "0x7cb647596e8976217c7332d7ed4c3086631c27c8bda59e0c34ba2ebc729c548d4b00badd",
+                "value": "0x00"
+            }
         ]
     },
     "chainId": 80001

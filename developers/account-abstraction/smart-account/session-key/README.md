@@ -28,7 +28,7 @@ There are a few core use cases of session keys:
 
 1. Learn how to use session key to mint nft without signing
 
-{% content-ref url="sessionkey-biconomy-account.md" %}
-[sessionkey-biconomy-account.md](sessionkey-biconomy-account.md)
+{% content-ref url="biconomy-account.md" %}
+[biconomy-account.md](biconomy-account.md)
 {% endcontent-ref %}
 
