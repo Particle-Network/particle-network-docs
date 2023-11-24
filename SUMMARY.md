@@ -77,7 +77,7 @@
 * [🗝 Auth Service](developers/auth-service/README.md)
   * [Branding](developers/auth-service/branding.md)
   * [Custom](developers/auth-service/custom.md)
-  * [Core](developers/auth-service/core/README.md)
+  * [Core SDKs](developers/auth-service/core/README.md)
     * [Web](developers/auth-service/core/web.md)
     * [Android](developers/auth-service/core/android.md)
     * [iOS](developers/auth-service/core/ios.md)

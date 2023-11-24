@@ -4,6 +4,24 @@ description: Changelog
 
 # 🎁 Changelog
 
+## 20231117
+
+1. New Chains
+   1. X1 Testnet
+2. Auth
+   1. A brand-new AuthCore SDK for the web that enhances user login and signing processes using redirection and built-in page elements; experience it here: https://core-demo.particle.network/
+3. Connect
+   1. A new Connect SDK for the web, built on AuthCore; experience it here: https://core-demo.particle.network/connect.html
+4. Embedded Wallet
+   1. Improved embedded wallet experience with a design that is completely decoupled;
+   2. The web version of the Connect SDK also supports embedded wallets; this means that users can use all wallet functionalities for EVM and Solana within the embedded wallet, even if they use wallets like MetaMask, Phantom, etc.;
+   3. Improved AA embedded wallet.
+5. Smart Account
+   1. Biconomy Account: Supports 2.0.0 [smart-account](../developers/account-abstraction/smart-account/ "mention")
+   2. Added SessionKey functionality [session-key](../developers/account-abstraction/smart-account/session-key/ "mention")
+   3. Cyber Account: Added Scroll Mainnet & Testnet
+   4. Simple Account: Added ZetaChain Testnet & X1 Testnet
+
 ## 20231107
 
 1. New Chains
@@ -65,7 +83,7 @@ description: Changelog
 1. Auth SDK
    1. Calling the Login method supports automatic signing for messages that comply with the SWIE standard.
 2. Connect SDK
-   1. Web SDK Add Rabby Wallet&#x20;
+   1. Web SDK Add Rabby Wallet
 3. New Chains
    1. GasZero
 
