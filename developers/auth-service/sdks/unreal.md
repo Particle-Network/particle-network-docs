@@ -6,7 +6,7 @@
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-Unreal Engine 5&#x20;
+Unreal Engine 5
 
 ### Installation
 
@@ -22,7 +22,7 @@ Open UE5 Editor, navigator to `Menu → Edit → Plugins` , check the option to 
 
 Try our [demo](https://github.com/Particle-Network/particle-unreal) for more use cases.
 
-### Initialize&#x20;
+### Initialize
 
 initialize ParticleSDK create a `Init` function in the Widget Blueprint, and then complete its parameters.
 
@@ -42,13 +42,13 @@ create a `Login` function in the Widget Blueprint, and then complete its paramet
 * `Account`: optional, you can pass phone number (E.164) / email address / json web token, or empty.
 * `OnLoginEvent`: Json string, When user login succeed, user info will be returned as event data，including user uuid, token, wallet info and so on, you should persistent the user info data by yourself.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Login </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Login</p></figcaption></figure>
 
 ### Sign message
 
 create a `SignMessage` function in the Widget Blueprint, and then complete its parameters.
 
-1. `Message`: the message to be signed by Particle Auth Service. in evm, request utf8 string, like "hello world", in solana, request base58 string.&#x20;
+1. `Message`: the message to be signed by Particle Auth Service. in evm, request utf8 string, like "hello world", in solana, request base58 string.
 2. `OnSignMessageEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
 <figure><img src="../../../.gitbook/assets/image (3) (1) (3).png" alt=""><figcaption><p>Sign message</p></figcaption></figure>
@@ -57,7 +57,7 @@ create a `SignMessage` function in the Widget Blueprint, and then complete its p
 
 create a `SignAndSendTransaction` function in the Widget Blueprint, and then complete its parameters.
 
-1. `Transaction`: the transaction to be signed by Particle Auth Service. in evm, request utf8 json string, in solana, request base58 string.&#x20;
+1. `Transaction`: the transaction to be signed by Particle Auth Service. in evm, request utf8 json string, in solana, request base58 string.
 2. `MakeEvmTransaction`: is a helper method to create a evm transaction, also you can create by yourself, then serilized to json string.
 3. `OnSignAndSendTransactionEvent`: Json string, when user confirmed signing the transaction in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
@@ -80,7 +80,7 @@ only support solana, create a `SignTransaction` function in the Widget Blueprint
 1. `Transaction`: the transaction to be signed by Particle Auth Service. request base58 string
 2. `OnSignTransactionEvent`: Json string, when user confirmed signing the message in Particle Auth Service, a result will be return as event data, it should contain error or signature.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Sign transaction</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Sign transaction</p></figcaption></figure>
 
 ### Sign all transactions
 

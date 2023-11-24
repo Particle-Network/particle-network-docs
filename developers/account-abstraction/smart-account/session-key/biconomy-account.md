@@ -2,11 +2,19 @@
 description: Use Biconomy smart account's session key implementation
 ---
 
-# SessionKey - Biconomy Account
+# Biconomy Account
 
 {% hint style="info" %}
 Only BICONOMY smart account 2.0.0 supports this feature
 {% endhint %}
+
+## Try now
+
+1. [https://core-demo.particle.network/](https://core-demo.particle.network/)
+2. Enable BICONOMY 2.0.0 & switch to Polygon Mumbai
+3. Login and use the session key feature
+
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption><p>Use session to mint NFT</p></figcaption></figure>
 
 ## Execution Process
 

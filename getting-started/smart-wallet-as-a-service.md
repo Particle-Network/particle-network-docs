@@ -4,7 +4,7 @@ description: Elevating ERC-4337 with Modular Infrastructure
 
 # 🪄 Smart Wallet-as-a-Service
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Particle Network's Modular Abstraction Abstraction Architecture</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Particle Network's Modular Abstraction Abstraction Architecture</p></figcaption></figure>
 
 1. Use [Particle Auth](../developers/auth-service/) to onboard users using Email, Phone, and Social Accounts in their familiar way, enabling a seamless seedless experience by Particle's MPC-TSS technology;
 2. Use [Particle Connect](../developers/connect-service/) to onboard web3 wallet users more easily;

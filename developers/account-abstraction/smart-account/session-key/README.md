@@ -24,9 +24,17 @@ There are a few core use cases of session keys:
 2. Use our SDKs to construct and use the session key\
    [sdks](../../sdks/ "mention")
 
+## Try now
+
+1. [https://core-demo.particle.network/](https://core-demo.particle.network/)
+2. Enable BICONOMY 2.0.0 & switch to Polygon Mumbai
+3. Login and use the session key feature
+
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Use session to mint NFT</p></figcaption></figure>
+
 ## Demo
 
-1. Learn how to use session key to mint nft without signing
+1. Learn how to use the session key to mint NFT without signing
 
 {% content-ref url="biconomy-account.md" %}
 [biconomy-account.md](biconomy-account.md)
