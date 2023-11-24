@@ -107,7 +107,7 @@
 * [💫 Account Abstraction](developers/account-abstraction/README.md)
   * [Smart Account](developers/account-abstraction/smart-account/README.md)
     * [Session Key](developers/account-abstraction/smart-account/session-key/README.md)
-      * [Biconomy Account](developers/account-abstraction/smart-account/session-key/biconomy-account.md)
+      * [SessionKey - Biconomy Account](developers/account-abstraction/smart-account/session-key/sessionkey-biconomy-account.md)
   * [Bundler](developers/account-abstraction/bundler.md)
   * [Paymaster](developers/account-abstraction/paymaster.md)
   * [Available Networks](developers/account-abstraction/available-networks.md)

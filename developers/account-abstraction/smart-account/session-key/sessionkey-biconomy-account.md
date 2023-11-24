@@ -1,4 +1,14 @@
-# Biconomy Account
+---
+description: Use Biconomy smart account's session key implementation
+---
+
+# SessionKey - Biconomy Account
+
+{% hint style="info" %}
+Only BICONOMY smart account 2.0.0 supports this feature
+{% endhint %}
+
+## Execution Process
 
 The basic process is as follows:
 
@@ -11,7 +21,7 @@ The basic process is as follows:
 
 <figure><img src="../../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
-### Custom Validation Contract
+## Custom Validation Contract
 
 The interface is implemented as follows
 
@@ -45,7 +55,7 @@ abstract contract ISessionValidationModule {
 }
 ```
 
-### Example: mint one NFT for  a specific address every time
+## Example: mint one NFT for  a specific address every time
 
 1. Prepare an ERC 1155 NFT contract
    1. https://mumbai.polygonscan.com/address/0x909E30bdBCb728131E3F8d17150eaE740C904649
@@ -164,7 +174,7 @@ const resSendUserOp = await Axios.post(PARTICLE_RPC, {
 console.log(`${scanUrl}/tx/${resSendUserOp.data.result}`);
 ```
 
-### Management and Use of Session&#x20;
+## Management and Use of Session&#x20;
 
 1. Since only the hash value of the session collection is stored on the chain, the specific data of sessions needs to be saved off-chain, usually by the client itself. And because each update chain of sessions is in the form of overwriting the original hash, each time a session is registered, all sessions need to be passed in.&#x20;
-2. Generally speaking, for the client, every time a session is updated, only all the sessions that are within the validity period need to be passed
+2. Generally speaking, for the client, every time a session is updated, only all the sessions that are within the validity period need to be passed.
