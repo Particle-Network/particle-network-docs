@@ -4,7 +4,7 @@
 
 ## Overview
 
-* [💡 What is Particle?](<README (1).md>)
+* [💡 Our Products](<README (1).md>)
 * [🛡 Security](overview/security.md)
 * [⛓ Available Networks](overview/available-networks/README.md)
   * [Solana](overview/available-networks/solana.md)
