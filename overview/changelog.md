@@ -1,5 +1,5 @@
 ---
-description: Changelog
+description: All the latest Particle Network updates, straight from the team.
 ---
 
 # 🎁 Changelog
