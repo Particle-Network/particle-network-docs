@@ -28,7 +28,7 @@ description: High-Level RPCs to simplify the integration of AA
 4. If the user is eligible and chooses native gas payment, sign `userOpHash`, then add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
 5. If the user is eligible and chooses token gas payment, the first call `particle_aa_createUserOp` to create a `userOp` and the corresponding `userOpHash`; then sign `userOpHash`, add the signature field to `userOp`, and call `particle_aa_sendUserOp`.
 6. The `result` returned by `particle_sendUserOp` is the `txHash`.
-7. If you need to use the temporary SessionKey feature, you can call the API `pasdfparticle_aa_createSessions` to register a session key on chain. It should be noted that this feature is currently only supported by Biconomy 2.0.0
+7. If you need to use the Session Key feature, you can call the API `particle_aa_createSessions` to register a session key on chain. It should be noted that this feature is currently only supported by Biconomy 2.0.0 smart account implementation.
 
 ## Common Params
 
@@ -37,7 +37,7 @@ The first param for the params field of JSON RPC is **account config**, the stru
 ```json
   {
     "name": "BICONOMY", // SIMPLE | CYBERCONNECT | BICONOMY
-    "version": "1.0.0", // only 1.0.0 now
+    "version": "1.0.0", // SIMPLE 1.0.0; CYBERCONNECT 1.0.0; BICONOMY 1.0.0, 2.0.0.
     "ownerAddress": "0x8d5f6E013b74D3aBa5cEB483fD5209C8Dab794E9", // The Owner's address for the Smart Account
     "biconomyApiKey": "dappApiKey" // optional: Biconomy Paymaster ApiKey if you use Biconomy Paymaster
   }
