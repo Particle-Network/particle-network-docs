@@ -1,9 +1,24 @@
 ---
 description: >-
-  The fastest path from ideas to deployment in a single workflow for high
-  performance dApps
+  The Intent-Centric, Modular Access Layer of Web3: Built with Particle
+  Network's Modular Smart Wallet-as-a-Service, Confidential zkStack, Omnichain
+  Account Abstraction & Intent Fusion Protocol)
 cover: .gitbook/assets/aaa.png
 coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # ✨ Particle Network
