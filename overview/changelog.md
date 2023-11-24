@@ -9,9 +9,9 @@ description: All the latest Particle Network updates, straight from the team.
 1. New Chains
    1. X1 Testnet
 2. Auth
-   1. A brand-new AuthCore SDK for the web that enhances user login and signing processes using redirection and built-in page elements; experience it here: https://core-demo.particle.network/
+   1. A brand-new AuthCore SDK for the web that enhances user login and signing processes using redirection and built-in page elements; experience it here: [https://core-demo.particle.network/](https://core-demo.particle.network/)
 3. Connect
-   1. A new Connect SDK for the web, built on AuthCore; experience it here: https://core-demo.particle.network/connect.html
+   1. A new Connect SDK for the web, built on AuthCore; experience it here: [https://core-demo.particle.network/connect.html](https://core-demo.particle.network/connect.html)
 4. Embedded Wallet
    1. Improved embedded wallet experience with a design that is completely decoupled;
    2. The web version of the Connect SDK also supports embedded wallets; this means that users can use all wallet functionalities for EVM and Solana within the embedded wallet, even if they use wallets like MetaMask, Phantom, etc.;
