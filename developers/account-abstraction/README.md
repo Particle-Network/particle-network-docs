@@ -58,11 +58,15 @@ description: Modular Smart Wallet-as-a-Service
 
 [Bundler RPCs](rpc/bundler-rpc.md)
 
-### High-level RPC
+### Paymaster RPC
+
+[Paymaster RPCs](rpc/paymaster-rpc.md)
+
+### Enhanced RPC
 
 Latest: [Account Abstraction RPCs](rpc/account-abstraction-rpc.md)
 
-V1: [Particle x Biconomy RPCs](rpc/account-abstraction-rpc-v1.md)
+(deprecated) V1: [Particle x Biconomy RPCs](rpc/account-abstraction-rpc-v1.md)
 
 ## SDKs
 
