@@ -17,7 +17,7 @@
 15. PGN Mainnet & Testnet
 16. Gnosis Mainnet & Testnet
 17. Astar zkEVM Testnet
-18. OKBC Testnet
+18. X1 Testnet
 19. Viction Mainnet & Testnet
 20. Moonbeam, Moonriver & Moonbase
 21. Polygon zkEVM Mainnet & Testnet
