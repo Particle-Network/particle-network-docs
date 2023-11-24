@@ -10,8 +10,8 @@ So, we need to  scope a key so that it can only send a limited set of transactio
 
 There are a few core use cases of session keys:
 
-* **Skipping confirmations**: if you are building a highly interactive application, you might wish that your users do not have to manually confirm every single transaction. Instead, you can create a session key for your user's current "session." You would scope the key so it can only send the transactions that are required by your application, AND the key expires after the current session. Now, your user can interact with your app with the session key, without using their master key which would require confirming every transaction.
-* **Delegating transactions**: normally, transactions need to be actively initiated by the wallet owner. However, sometimes the best UX is enabled when transactions can be "automated." For example, if you are building a lending protocol, you might want to build a feature where your user can automatically close their position if it's in danger of liquidation. Here, you could create a session key that allows for closing a position ONLY IF the position is indeed close to liquidation. And the session key can be shared with a "watcher" (possibly your own server) that would send the transaction for the user when the condition occurs.
+* **Skipping request signing permission from the user**: After obtaining the user's authorization, you can use the public and private keys you created temporarily to sign the UserOp without having to request signing permission from the user. This is useful in some high-frequency operation scenarios (such as Games)
+* **Delegating transactions**: The object of authorization can also be other projects, such as licensing some trading platforms to buy NFT prices for you when the price falls below a certain threshold
 
 {% content-ref url="biconomy-account.md" %}
 [biconomy-account.md](biconomy-account.md)
