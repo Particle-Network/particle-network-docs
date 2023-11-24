@@ -3,7 +3,7 @@ description: >-
   The Intent-Centric, Modular Access Layer of Web3: Built with Particle
   Network's Modular Smart Wallet-as-a-Service, Confidential zkStack, Omnichain
   Account Abstraction & Intent Fusion Protocol)
-cover: .gitbook/assets/aaa.png
+cover: .gitbook/assets/20231124-173006.png
 coverY: 0
 layout:
   cover:
