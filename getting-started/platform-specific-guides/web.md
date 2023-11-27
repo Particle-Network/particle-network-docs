@@ -28,7 +28,7 @@ description: All you need to know for integrating Particle on Web
 
 #### Connect Service
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">🪧 Introduction</td><td><a href="../../developers/connect-service/">connect-service</a></td></tr><tr><td align="center">📕 SDKs</td><td><a href="../../developers/connect-service/sdks/web.md">web.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">🪧 Introduction</td><td><a href="../../developers/connect-service/">connect-service</a></td></tr><tr><td align="center">📕 SDKs</td><td><a href="../../developers/connect-service/sdks/web/">web</a></td></tr></tbody></table>
 
 #### Auth Service
 

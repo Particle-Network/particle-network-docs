@@ -127,7 +127,7 @@ export const App = () => {
 ```
 
 {% hint style="info" %}
-Have a problem? you can refer to this [FAQ](../../faq.md#web-sdk-integration-problems).
+Have a problem? you can refer to this [FAQ](../../../faq.md#web-sdk-integration-problems).
 {% endhint %}
 
 ### Check User Is Connected
@@ -146,7 +146,7 @@ if (account) {
 
 ### Custom Wallet Style
 
-When "displayWalletEntry" true, you can custom wallet style by set "customStyle" config, refer to [Custom Wallet Style](../../wallet-service/sdks/web.md#custom-particle-wallet-style)
+When "displayWalletEntry" true, you can custom wallet style by set "customStyle" config, refer to [Custom Wallet Style](../../../wallet-service/sdks/web.md#custom-particle-wallet-style)
 
 ### Open Particle Web Wallet
 
@@ -193,7 +193,7 @@ connectKit.particle.openBuy(options?: OpenBuyOptions, target?: string, features?
 
 ### Get User Info
 
-If you connect with Particle Network, you can get user info by below interface.&#x20;
+If you connect with Particle Network, you can get user info by below interface.
 
 ```typescript
 import { useConnectKit } from '@particle-network/connect-react-ui';
@@ -299,8 +299,6 @@ getInjectedProvider();
 ## Upgrade Guide
 
 If you use Connect SDK v0.x.x and wish to update to the 1.x.x, the process is straightforward. Below are the updated functions for reference.
-
-
 
 ```typescript
 // old: import chain info
