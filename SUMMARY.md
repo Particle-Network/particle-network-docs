@@ -72,7 +72,7 @@
 
 ## Developers
 
-* [🗝 Auth Service](developers/auth-service/README.md)
+* [🗝 Auth](developers/auth-service/README.md)
   * [Branding](developers/auth-service/branding.md)
   * [Custom](developers/auth-service/custom.md)
   * [Core SDKs](developers/auth-service/core/README.md)
@@ -93,7 +93,7 @@
       * [Unity-Windows-macOS](developers/auth-service/sdks/unity/unity-windows-macos.md)
     * [Unreal](developers/auth-service/sdks/unreal.md)
     * [Cocos](developers/auth-service/sdks/cocos.md)
-* [💰 Wallet Service](developers/wallet-service/README.md)
+* [💰 Embedded Wallet](developers/wallet-service/README.md)
   * [On-Ramp](developers/wallet-service/on-ramp.md)
   * [SDKs](developers/wallet-service/sdks/README.md)
     * [Web](developers/wallet-service/sdks/web.md)
@@ -121,7 +121,7 @@
     * [Paymaster RPC](developers/account-abstraction/rpc/paymaster-rpc.md)
     * [Enhanced AA RPC](developers/account-abstraction/rpc/account-abstraction-rpc.md)
     * [Account Abstraction RPC(V1 deprecated)](developers/account-abstraction/rpc/account-abstraction-rpc-v1.md)
-* [🔌 Connect Service](developers/connect-service/README.md)
+* [🔌 Connect](developers/connect-service/README.md)
   * [SDKs](developers/connect-service/sdks/README.md)
     * [Web](developers/connect-service/sdks/web/README.md)
       * [Connect With Auth Core](developers/connect-service/sdks/web/connect-with-auth-core.md)
