@@ -23,15 +23,15 @@ Auth Core can be integrated with any wallet, platform, chain and social login. Y
 
 ### **Wallet management**
 
-Auth Core will automatically create a crypto wallet without a private key. The security is guaranteed by **MPC (Multi Party Computing) - based threshold signatures**, which is ahead of other technologies.
+Auth Core will automatically create a crypto wallet without a private key. The security is guaranteed by **MPC (Multi-Party Computing) - based threshold signatures**, which is ahead of other technologies.
 
 ### **Customizable**
 
-You can tweak the Auth Core to match your branding. You can pick from a few pre-defined accent colors and border radius configurations. For more advanced use cases, you can provide in a fully custom theme, render your own button and omit certain features. Dark mode included.
+You can tweak the Auth Core to match your branding. You can pick from a few pre-defined accent colors and border-radius configurations. For more advanced use cases, you can provide in a fully custom theme, render your own button, and omit certain features. Dark mode included.
 
 ### **Industry standards**
 
-For better interoperability with most products, we support use with [web3.js](https://github.com/web3/web3.js), [ethers.js](https://github.com/ethers-io/ethers.js) and [viem](https://github.com/wagmi-dev/viem) — the most commonly used libraries in the space.
+For better interoperability with most products, we support use with [web3.js](https://github.com/web3/web3.js), [ethers.js](https://github.com/ethers-io/ethers.js), and [viem](https://github.com/wagmi-dev/viem) — the most commonly used libraries in the space.
 
 ## Installation
 
@@ -65,7 +65,7 @@ yarn add @particle-network/auth-core-modal
 
 ### **Additional build tooling setup**
 
-The [Webpack v5](https://webpack.js.org/blog/2020-10-10-webpack-5-release/) bundler used by Create React App [no longer provides Node polyfills](https://webpack.js.org/blog/2020-10-10-webpack-5-release/#automatic-nodejs-polyfills-removed), so you'll need to include these modules yourself to satisfy AuthCore's peer dependencies. add below code to webpack config.
+The [Webpack v5](https://webpack.js.org/blog/2020-10-10-webpack-5-release/) bundler used by Create React App [no longer provides Node polyfills](https://webpack.js.org/blog/2020-10-10-webpack-5-release/#automatic-nodejs-polyfills-removed), so you'll need to include these modules yourself to satisfy AuthCore's peer dependencies. add the below code to webpack config.
 
 ```javascript
 
@@ -140,7 +140,7 @@ const App = () => {
 
 Auth Core Modal will display smart account address and badge when set `erc4337` param, you can use smart account send gasless transaction, refer to [Account Abstraction](../../account-abstraction/web.md).
 
-#### Embedd Wallet
+#### Embedded Wallet
 
 A fully functional wallet will be embedded in your web page when you set param `wallet`, and you can custom Wallet UI style to match your branding.&#x20;
 
