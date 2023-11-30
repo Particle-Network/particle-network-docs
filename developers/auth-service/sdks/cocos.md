@@ -4,7 +4,7 @@ description: Power up your Cocos games with Particle Network SDKs.
 
 # Cocos
 
-Before using, please review [the prerequisites](../../../getting-started/platform-specific-guides/cocos/cocos-sdk-prerequisites.md#prerequisites), All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
+Before using, please review [the prerequisites](broken-reference), All unity SDKs are open source, [click here to view](https://github.com/Particle-Network/particle-unity)
 
 ### Usage
 
@@ -14,7 +14,7 @@ import * as particleAuth from '../../Core/particleAuth';
 
 ### Initialize the SDK
 
-**Before using the SDK you have to call init (Required)**&#x20;
+**Before using the SDK you have to call init (Required)**
 
 ```typescript
 // Get your project id and client from dashboard,  
