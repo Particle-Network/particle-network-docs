@@ -88,17 +88,20 @@ Before send transactions, you can get fee quotes and display on UI Modal, users 
 
 <pre class="language-typescript"><code class="lang-typescript">const tx = {
     to: '0x...',
-    value: '0x...'
+    value: '0x...',
+    data: '0x...',
 }
 // or bacth transactions
 const txs = [
     {
         to: '0x...',
-        value: '0x...'
+        value: '0x...',
+        data: '0x...',
     },
     {
         to: '0x...',
-        value: '0x...'
+        value: '0x...',
+        data: '0x...',
     }
 ]
 //get fee quotes with tx or txs
