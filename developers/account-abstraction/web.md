@@ -133,7 +133,7 @@ const userOpHash = userOpBundle.userOpHash;
 
 ```
 
-### Send User Operation
+## Send User Operation
 
 Sends the pre-signed `UserOperation` to the Particle network for execution. Returns a Promise that resolves to a `TransactionHash`.
 
@@ -146,7 +146,7 @@ const txHash = await smartAccount.sendUserOperation({ userOp, userOpHash });
 
 Any gasless or user paid transaction will check whether the wallet is deployed or not. If the wallet is not deployed, the SDK will batch the wallet deployment with the intended transaction/batch transactions. This behaviour is handled within the SDK itself & would require no changes in your code to enable this.
 
-### Deploy Wallet Contract Manual
+### Deploy Wallet Contract Manually
 
 ```typescript
 // check the constract is deployed
