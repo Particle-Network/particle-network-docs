@@ -24,4 +24,5 @@
 22. Fantom Mainnet & Testnet
 23. Lumoz zkEVM Testnet
 24. ReadON Testnet
-25. ... more chains are coming
+25. ZetaChain Testnet
+26. ... more chains are coming
