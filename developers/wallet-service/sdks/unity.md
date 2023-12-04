@@ -201,6 +201,15 @@ public void NavigatorSwap()
 }
 ```
 
+### Navigator Dapp Browser
+
+```csharp
+public void NavigatorDappBrowser()
+{
+    ParticleWalletGUI.NavigatorDappBrowser("https://opensea.io");
+}
+```
+
 ### Switch Wallet
 
 You'd better call this method to sync wallet with GUI, before open any GUI page.
