@@ -513,7 +513,7 @@ final data = await EvmService.erc20Transfer(contractAddress, receiver, amount);
 
 // then create transaction
 final transaction = await EvmService.createTransaction(
-    from, data, BigInt.from(0), to, false,
+    from, data, BigInt.from(0), to,
     gasFeeLevel: GasFeeLevel.high);
 ```
 
