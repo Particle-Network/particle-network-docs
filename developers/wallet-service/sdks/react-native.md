@@ -189,32 +189,37 @@ particleWallet.setShowManageWallet(isShow);
 setDisplayTokenAddresses = async () => {
     const tokenAddresses = ["", ""];
     particleWallet.setDisplayTokenAddresses(tokenAddresses);
-}
+};
 
 setDisplayNFTContractAddresses = async () => {
     const nftContractAddresses = ["", ""];
     particleWallet.setDisplayNFTContractAddresses(nftContractAddresses);
-}
+};
 
 setPriorityTokenAddresses = async () => {
     const tokenAddresses = ["", ""];
     particleWallet.setPriorityTokenAddresses(tokenAddresses);
-}
+};
 
 setPriorityNFTContractAddresses = async () => {
     const nftContractAddresses = ["", ""];
     particleWallet.setPriorityNFTContractAddresses(nftContractAddresses);
-}
+};
 
 setShowLanguageSetting = async () => {
     particleWallet.setShowLanguageSetting(false);
-}
+};
 
 setShowAppearanceSetting = async () => {
     particleWallet.setShowAppearanceSetting(false);
-}
+};
 
 setSupportAddToken = async () => {
     particleWallet.setSupportAddToken(false);
-}
+};
+
+setSupportWalletConnect = async () => {
+    particleWallet.setSupportWalletConnect(false);
+};
+
 ```
