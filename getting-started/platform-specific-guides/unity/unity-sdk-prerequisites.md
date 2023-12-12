@@ -57,7 +57,7 @@ Before you can add our Auth Service to your Unity game, you need to create a Par
     pod 'ParticleAuthService'
     // PaticleConnectService privide wallet connect and auth service.
     pod 'ParticleConnect'
-    pod 'CommonConnect'
+    pod 'ConnectCommon'
     ```
 3.  Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
 
