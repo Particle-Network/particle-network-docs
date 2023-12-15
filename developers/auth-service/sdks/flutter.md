@@ -359,6 +359,7 @@ final chainInfo = await ParticleAuth.getChainInfo();
 // 0 no prompt
 // 1 first time show prompt
 // 2 every time show prompt
+// 3 force show prompt
 final config = SecurityAccountConfig(1, 2);
 ParticleAuth.setSecurityAccountConfig(config);
 ```
