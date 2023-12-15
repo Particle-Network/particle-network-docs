@@ -8,7 +8,7 @@ Run this command:
 npm install @particle-network/rn-auth
 ```
 
-click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth) to get the demo source code&#x20;
+click [here](https://github.com/Particle-Network/particle-react-native/tree/master/particle-auth) to get the demo source code
 
 ### 2.Configure Android project
 
@@ -106,7 +106,7 @@ android {
 {% endtab %}
 {% endtabs %}
 
-3.7. Configure your app scheme URL, select your app from `TARGETS`,  under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
+3.7. Configure your app scheme URL, select your app from `TARGETS`, under `Info` section, click + to add the `URL types`, and paste your scheme in `URL Schemes`
 
 Your scheme URL should be "pn" + your project app uuid.
 
@@ -115,8 +115,6 @@ For example, if your project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", y
 ![Config scheme url](<../../../.gitbook/assets/image (1) (2) (1).png>)
 
 3.8 Edit Podfile, you should follow [Podfile required](ios.md#edit-podfile) to edit Podfile.
-
-
 
 {% hint style="info" %}
 Expo support
@@ -150,7 +148,7 @@ import * as particleAuth from "@particle-network/rn-auth";
 
 ### Initialize the SDK
 
-**Before using the SDK you have to call init(Required)**&#x20;
+**Before using the SDK you have to call init(Required)**
 
 ```typescript
 // Get your project id and client from dashboard,  
@@ -510,6 +508,25 @@ const webConfigJSON = JSON.stringify(webConfig);
 particleAuth.openWebWallet(webConfigJSON);
 ```
 
+### Set security account
+
+`SecurityAccountConfig` has two parameters, the first is `promptSettingWhenSign`, controls if show prompt when sign, the second is `promptMasterPasswordSettingWhenSign`. controls if show prompt when login.
+
+There are 4 selectable values:
+
+0 no prompt
+
+1 first time show prompt
+
+2 every time show prompt
+
+3 force show prompt
+
+```typescript
+const config = new SecurityAccountConfig(1, 2);
+particleAuth.setSecurityAccountConfig(config);    
+```
+
 ### Open account and security page
 
 ```javascript
@@ -574,7 +591,7 @@ particleAuth.setAppearance(Appearance.Dark);
 particleAuth.setFiatCoin(FiatCoin.KRW);
 ```
 
-### Has master password, payment password, security account&#x20;
+### Has master password, payment password, security account
 
 ```javascript
 // get value from local user info
