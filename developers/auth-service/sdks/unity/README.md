@@ -291,6 +291,19 @@ public void SetiOSMediumScreen()
 }
 ```
 
+### SetSecurityAccountConfig
+
+```csharp
+// set security account config, 
+// the first parameter is promptSettingWhenSign, default value is 1.
+// the second parameter is promptMasterPasswordSettingWhenLogin, default value is 0.
+// 0 no prompt
+// 1 first time show prompt
+// 2 every time show prompt
+// 3 force show prompt
+ParticleNetwork.SetSecurityAccountConfig(new SecurityAccountConfig(0, 0));
+```
+
 ### HasMasterPassword, HasPaymentPassword, HasSecurityAccount
 
 ```csharp
