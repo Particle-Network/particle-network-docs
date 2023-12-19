@@ -222,4 +222,8 @@ setSupportWalletConnect = async () => {
     particleWallet.setSupportWalletConnect(false);
 };
 
+// show or hide smart account setting in setting page
+setShowSmartAccountSetting = async () => {
+    particleWallet.setShowSmartAccountSetting(false);
+};
 ```
