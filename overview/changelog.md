@@ -4,6 +4,15 @@ description: All the latest Particle Network updates, straight from the team.
 
 # 🎁 Changelog
 
+## 20231227
+
+1. New Chains
+   1. Combo Mainnet
+2. Smart Account
+   1. CyberAccount: add Ethereum Mainnet & Sepolia, BNB Chain Mainnet & Testnet support;
+   2. Biconomy Account V2: add Combo Mainnet, Mantle Mainnet & Testnet, Manta Mainnet & Testnet support;
+3. Bug fix and improve performance
+
 ## 20231117
 
 1. New Chains
