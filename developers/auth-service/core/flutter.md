@@ -174,10 +174,36 @@ ParticleAuthCore.init();
 
 ### Connect
 
+If loginType is email or phone, you can pass email address or phone number to `account`.
+
+If loginType is JWT, you must pass JWT token to `account`.
+
+If loginType is email or phone, below parameter is optional, other wise, they are useless.
+
+The `supportAuthTypes` controls which types of social login buttons are displayed at the bottom of the login page.
+
+The `loginPageConfig` controls the title, description, and image displayed on the login page.
+
+```dart
+final userInfo = await ParticleAuthCore.connect(loginType,
+          account: account,
+          supportAuthTypes: supportAuthTypes,
+          loginPageConfig: LoginPageConfig(
+              imagePath:
+                  "your icon url", // icon url or base64 string
+              projectName: "Flutter Example",
+              description: "Welcome to login",
+              imageType: "url")); // url | base64
+```
+
+{% hint style="info" %}
+Connect with JWT
+
 ```dart
 const jwt = ""; // paste your jwt
-final userInfo = await ParticleAuthCore.connect(jwt);
+final userInfo = await ParticleAuthCore.connect(LoginType.jwt, account: jwt);
 ```
+{% endhint %}
 
 ### Is Connected
 
@@ -296,5 +322,27 @@ try {
 } catch (error) {
   print("openAccountAndSecurity: $error");
   showToast("openAccountAndSecurity: $error");
+}
+```
+
+### Blind sign enable
+
+This switch will work if the following conditions are met:
+
+1\. your account is connected with JWT
+
+2\. your account does not set payment password
+
+3\. SecurityAccountConfig.promptSettingWhenSign is 0, you can call ParticleNetwork.setSecurityAccountConfig to update its value.
+
+```dart
+static void setBlindEnable(bool enable) async {
+  ParticleAuthCore.setBlindEnable(enable);
+}
+
+static void getBlindEnable() async {
+  final result = ParticleAuthCore.getBlindEnable();
+  print("getBlindEnable: $result");
+  showToast("getBlindEnable: $result");
 }
 ```
