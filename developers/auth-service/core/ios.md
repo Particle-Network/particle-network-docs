@@ -6,7 +6,7 @@
 
 * Install the following:
   * Xcode 14.1 or later
-  * CocoaPods 1.12.0 or higher
+  * CocoaPods 1.12.1 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -103,13 +103,12 @@ import ParticleNetworkBase
 
 {% tabs %}
 {% tab title="Swift" %}
-```swift
-// select a network from ChainInfo.
-let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
+<pre class="language-swift"><code class="lang-swift">// select a network from ChainInfo.
+let chainInfo = ParticleNetwork.ChainInfo.ethereum
 let devEnv = ParticleNetwork.DevEnvironment.debug
-let config = ParticleNetworkConfiguration(chainInfo: chainInfo, devEnv: devEnv)
+let config = ParticleNetworkConfiguration(chainInfo: <a data-footnote-ref href="#user-content-fn-1">chainInfo</a>, devEnv: devEnv)
 ParticleNetwork.initialize(config: config)
-```
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -336,3 +335,5 @@ Auth.loadCustomUIJsonString(jsonString)
 ### Error
 
 Try cast error into type `ParticleNetwork.Response`, you can check the information by printing its attributes.
+
+[^1]: 

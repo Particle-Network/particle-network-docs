@@ -8,7 +8,7 @@ Auth Service simplifies the integration of authentication system within your app
 
 * Install the following:
   * Xcode version 14.1 or later.
-  * CocoaPods version 1.12.0 or higher.
+  * CocoaPods version 1.12.1 or higher.
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -132,7 +132,7 @@ Here is an example of how you can select a network from ChainInfo:
 {% tab title="Swift" %}
 ```swift
 // select a network from ChainInfo.
-let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
+let chainInfo = ParticleNetwork.ChainInfo.ethereum
 let devEnv = ParticleNetwork.DevEnvironment.debug
 let config = ParticleNetworkConfiguration(chainInfo: chainInfo, devEnv: devEnv)
 ParticleNetwork.initialize(config: config)
@@ -201,7 +201,7 @@ The Auth Service SDK allows you to switch your blockchain network dynamically. T
 This function checks whether the user has previously logged into the desired chain name and automatically presents additional steps if needed. If the user has logged into the Ethereum chain and wants to switch to the BSC chain, the function switches directly since they're both EVM networks. If the user wants to change to a network they have not logged in before, i.e., Solana, the SDK will show a browser request for further login steps:
 
 ```swift
-let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
+let chainInfo = ParticleNetwork.ChainInfo.ethereum
 ParticleAuthService.switchChain(chainInfo).subscribe { [weak self] result in
     guard let self = self else { return }
     switch result {
@@ -218,7 +218,7 @@ ParticleAuthService.switchChain(chainInfo).subscribe { [weak self] result in
 This function changes the network without checking for previous logins. It should be primarily used only if you are sure that the user has logged into the requested network previously:
 
 ```swift
-let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
+let chainInfo = ParticleNetwork.ChainInfo.ethereum
 ParticleNetwork.setChainInfo(chainInfo)
 ```
 

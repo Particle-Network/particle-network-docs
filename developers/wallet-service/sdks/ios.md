@@ -6,7 +6,7 @@
 
 * Install the following:
   * Xcode 14.1 or later
-  * CocoaPods 1.12.0 or higher
+  * CocoaPods 1.12.1 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14

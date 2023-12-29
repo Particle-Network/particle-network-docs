@@ -8,7 +8,7 @@ If you face any problem anytime, you can always refer to the Particle[ ](https:/
 
 * iOS 14 or higher
 * Xcode 14.1 or higher
-* CocoaPods 1.12.0 or higher
+* CocoaPods 1.12.1 or higher
 
 ## Installation
 
@@ -129,14 +129,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let biconomyApiKeys =
             [80001: "your biconomy api key"]
 
-        //
-        AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: biconomyApiKeys)
+        // We support biconomy v1 | biconomy v2 | cyberConnect | simple
+        AAService.initialize(name: AA.AccountName.biconomyV1, biconomyApiKeys: biconomyApiKeys)
         let aaService = AAService()
         ParticleNetwork.setAAService(aaService)
         aaService.enableAAMode()
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
-//        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli), .polygon(.mainnet), .polygon(.mumbai)])
+//        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumGoerli, .polygon, .polygonMumbai])
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {

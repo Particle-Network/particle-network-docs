@@ -29,15 +29,15 @@ pod install --repo-update
 
 ```swift
 let biconomyApiKeys: [Int: String] = [
-    ParticleNetwork.ChainInfo.ethereum(.mainnet).chainId: "YOUR_BICONOMY_API_KEY",
-    ParticleNetwork.ChainInfo.ethereum(.goerli).chainId: "YOUR_BICONOMY_API_KEY",
-    ParticleNetwork.ChainInfo.bsc(.testnet).chainId: "YOUR_BICONOMY_API_KEY",
-    ParticleNetwork.ChainInfo.polygon(.mainnet).chainId: "YOUR_BICONOMY_API_KEY",
-    ParticleNetwork.ChainInfo.polygon(.mumbai).chainId: "YOUR_BICONOMY_API_KEY"
+    ParticleNetwork.ChainInfo.ethereum.chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.ethereumGoerli.chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.bnbChainTestnet.chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.polygon.chainId: "YOUR_BICONOMY_API_KEY",
+    ParticleNetwork.ChainInfo.polygonMumbai.chainId: "YOUR_BICONOMY_API_KEY"
 ]
 
-// We support biconomy | cyberConnect | simple
-AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: biconomyApiKeys)
+// We support biconomy v1 | biconomy v2 | cyberConnect | simple
+AAService.initialize(name: AA.AccountName.biconomyV1, biconomyApiKeys: biconomyApiKeys)
 
 // Optinonal, if you also add Wallet Service, 
 // you can call the method to hidden smart account setting in setting page,

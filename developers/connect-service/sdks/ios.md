@@ -20,7 +20,7 @@ Modular Swift wallet adapters and components for EVM & Solana chains. Manage wal
 
 * Install the following:
   * Xcode 14.1 or later
-  * CocoaPods 1.12.0 or higher
+  * CocoaPods 1.12.1 or higher
 * Make sure that your project meets the following requirements:
   * Your project must target these platform versions or later:
     * iOS 14
@@ -54,7 +54,7 @@ pod 'ConnectSolanaAdapter'
 pod 'ConnectPhantomAdapter'
 pod 'ParticleAuthAdapter'
 
-# if you are using Auth Core Service, dont forget add AuthCoreAdapter
+# if you are using Auth Core Service, don't forget to add AuthCoreAdapter
 ```
 
 3\. Install the pods, then open your `.xcworkspace` file to see the project in Xcode:
@@ -71,7 +71,7 @@ open your-project.xcworkspace
 If you would like to receive release updates, subscribe to our [GitHub repository](https://github.com/Particle-Network).
 {% endhint %}
 
-### Edit Podile
+### Edit Podfile
 
 {% hint style="info" %}
 **It is required for every iOS project that integrates the Auth Service SDK.**
@@ -168,7 +168,7 @@ adapters.append(contentsOf: moreAdapterClasses.map {
 })
  
 ParticleConnect.initialize(env: .debug, 
- chainInfo: .ethereum(.mainnet), 
+ chainInfo: .ethereum, 
  dAppData: DAppMetaData(name: "Particle Connect", 
  icon: URL(string: "https://connect.particle.network/icons/512.png")!, 
  url: URL(string: "https://connect.particle.network")!)) {
@@ -187,7 +187,7 @@ Starting from version 0.2.0, WalletConnectV2 is supported.
 // WalletConnect 2.0 required, set wallet connect v2 project id
 ParticleConnect.setWalletConnectV2ProjectId("your wallet connect v2.0 project id")
 // Set the required chains for WalletConnect v2. If not set, the current chain will be used.
-ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli)])
+ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumGoerli])
 ```
 {% endhint %}
 
@@ -234,7 +234,7 @@ each of them is optional, you can add which you want.
 ### Switch chain.
 
 ```swift
-ParticleConnect.setChain(chainInfo: .ethereum(.mainnet))
+ParticleConnect.setChain(chainInfo: .ethereum
 ```
 
 ### Get all wallet adapters.
