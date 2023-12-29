@@ -333,7 +333,7 @@ This switch will work if the following conditions are met:
 
 2\. your account does not set payment password
 
-3\. SecurityAccountConfig.promptSettingWhenSign is 0, you can call ParticleNetwork.setSecurityAccountConfig to update its value.
+3\. SecurityAccountConfig.promptSettingWhenSign is 0, you can call ParticleAuth.setSecurityAccountConfig to update its value.
 
 ```dart
 static void setBlindEnable(bool enable) async {
