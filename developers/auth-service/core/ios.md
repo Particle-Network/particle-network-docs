@@ -141,17 +141,96 @@ import ParticleAuthCore
 let auth = Auth()
 ```
 
+### Get verification code
+
+If you want to custom login page, add phone number or email login, here is the method to get the verification code
+
+#### Prototype
+
+```swift
+func sendEmailCode(email: String) async throws -> Bool 
+func sendPhoneCode(phone: String) async throws -> Bool
+```
+
+#### Parameters
+
+* `email`: Email address
+* `phone`: Phone number, format E164.
+
+#### Returns
+
+The function returns a bool value.
+
+#### Example usage
+
+```swift
+Task {
+    do {
+        var result = try await self.auth.sendEmailCode(email: email)
+        var result = try await self.auth.sendPhoneCode(phone: phone)
+    } catch {
+        print("send code failure, \(error)")
+    }
+}
+```
+
 ### Login
 
-Login Particle with JWT.
+You can authenticate users in your app with an `Auth` object, by using the `self.auth.connect` function. This function supports different login types such as email, phone, Google, Apple, and Facebook. When the login is successful, a user wallet is created.
 
-{% tabs %}
-{% tab title="Swift" %}
+#### Prototype
+
+```swift
+func connect(
+    type: LoginType, 
+    account: String? = nil, 
+    code: String? = nil, 
+    socialLoginPrompt: SocialLoginPrompt? = nil) async throws -> UserInfo
+```
+
+#### Parameters
+
+* `type`: Specifies the login type (e.g., email, phone, jwt, google, apple, facebook).
+* `account`: Optional parameter for email, phone, or jwt login methods. You should pass in the user's email address, phone number, or jwt token here, the phone number must be in E164 format.
+* `code`: Optional parameter for email and phone, the verification code.
+* `supportAuthType`: Controls whether third-party login buttons are displayed. By default, all third-party login buttons are shown.
+* `socialLoginPrompt`: Social login prompt.
+
+#### Returns
+
+The function returns a user information object (`userinfo`) if the login is successful.
+
+#### Example usage
+
+```swift
+// login with google
+Task {
+    do {
+        let userInfo = try await self.auth.connect(type: LoginType.google, socialLoginPrompt: SocialLoginPrompt.selectAccount)
+        self.handleUserInfo(userInfo)
+    } catch {
+        print("login failure, \(error)")
+    }
+}
+
+// Login with email
+Task {
+    do {
+        let userInfo = try await self.auth.connect(type: LoginType.email, account: "your email", code: "your verification code")
+        self.handleUserInfo(userInfo)
+    } catch {
+        print("login failure, \(error)")
+    }
+}
+```
+
+{% hint style="info" %}
+We also keep the old method, one line code to login Particle with JWT.
+
 ```swift
 let userInfo = try await auth.connect(jwt: jwt)
 ```
-{% endtab %}
-{% endtabs %}
+{% endhint %}
 
 {% hint style="info" %}
 Account Abstraction could use together with Auth Core Service, explore [Account Abstraction](../../account-abstraction/ios.md) for more detail, learn how to get a smart account address, how to send transaction under AA mode.
@@ -160,6 +239,46 @@ Account Abstraction could use together with Auth Core Service, explore [Account 
 {% hint style="info" %}
 Wallet Service could use together with Auth Core Service, explore [Wallet Service](../../wallet-service/sdks/ios.md) for more detail, learn how to open wallet page, how to open send page, how to open swap page etc.
 {% endhint %}
+
+### Present login page
+
+Present a login page to help email and phone login, if you pass other login type, will bridge to `connect` method.
+
+#### Prototype
+
+```swift
+func presentLoginPage(
+    type: LoginType, 
+    account: String?, 
+    supportAuthType: [SupportAuthType] = [SupportAuthType.all], 
+    socialLoginPrompt: SocialLoginPrompt? = nil, 
+    config: LoginPageConfig?) async throws -> UserInfo
+```
+
+#### Parameters
+
+* `type`: Specifies the login type (e.g., email, phone, jwt, google, apple, facebook).
+* `account`: Optional parameter for email, phone, or jwt login methods. You should pass in the user's email address, phone number, or jwt token here, the phone number must be in E164 format.
+* `supportAuthType`: Controls whether third-party login buttons are displayed. By default, all third-party login buttons are shown.
+* `socialLoginPrompt`: Social login prompt.
+* `config`: LoginPageConfig, custom your icon, title and welcome message.
+
+#### Returns
+
+The function returns a user information object (`userinfo`) if the login is successful.
+
+#### Example usage
+
+```swift
+Task {
+    do {
+        let userInfo = try await self.auth.presentLoginPage(type: LoginType.email, account: nil, config: nil)       
+         self.handleUserInfo(userInfo)
+    } catch {
+        print("login failure, \(error)")
+    }
+}
+```
 
 ### Get user info
 
