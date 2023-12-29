@@ -332,6 +332,23 @@ let jsonString = "your custom ui json string, keys should be the same with custo
 Auth.loadCustomUIJsonString(jsonString)
 ```
 
+### Blind sign enable
+
+This switch will work if the following conditions are met:
+
+1\. your account is connected with JWT
+
+2\. your account does not set payment password
+
+3\. SecurityAccountConfig.promptSettingWhenSign is 0, you can call ParticleNetwork.setSecurityAccountConfig to update its value.
+
+```swift
+// set blind sign enable
+Auth.setBlindEnable(true)
+// get current blind sign enable state
+let result = Auth.getBlindEnable()
+```
+
 ### Error
 
 Try cast error into type `ParticleNetwork.Response`, you can check the information by printing its attributes.
