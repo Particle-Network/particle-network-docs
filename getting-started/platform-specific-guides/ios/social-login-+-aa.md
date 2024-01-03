@@ -123,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParticleConnect.initialize(env: .debug, chainInfo: .polygon(.mumbai)) {
             adapters
         }
-        ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
+        ParticleConnect.setWalletConnectV2ProjectId("your wallet connect project id")
 
         // set your biconomy api keys
         let biconomyApiKeys =
