@@ -130,7 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // set your biconomy api keys
         let biconomyApiKeys =
-            [80001: "hYZIwIsf2.e18c790b-cafb-4c4e-a438-0289fc25dba1"]
+            [80001: "your biconomy api key for chain id 80001"]
 
         // We support biconomy v1 | biconomy v2 | cyberConnect | simple
         AAService.initialize(name: AA.AccountName.biconomyV1, biconomyApiKeys: biconomyApiKeys)
