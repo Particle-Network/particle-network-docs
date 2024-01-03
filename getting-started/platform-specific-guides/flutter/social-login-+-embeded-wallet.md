@@ -10,7 +10,7 @@ If you face any problem anytime, you can always refer to the Particle[ ](https:/
 
 * iOS 14 or higher
 * Xcode 14.1 or higher
-* CocoaPods 1.12.0 or higher
+* CocoaPods 1.12.1 or higher
 
 ### Android
 
