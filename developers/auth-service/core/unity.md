@@ -15,16 +15,28 @@ ParticleAuthCoreInteraction.Init();
 
 Drag the ParticleAuthCore.prefab to your first scene(Required)
 
-### Connect JWT
+### Connect
+
+If loginType is email or phone, you can pass email address or phone number to `account`.
+
+If loginType is JWT, you must pass JWT token to `account`.
+
+If loginType is email or phone, below parameter is optional, other wise, they are useless.
+
+The `supportAuthTypes` controls which types of social login buttons are displayed at the bottom of the login page.
+
+The `loginPageConfig` controls the title, description, and image displayed on the login page.
 
 ```csharp
 public async void Connect()
 {
     try
     {
-        var jwt = "";
-        var nativeResultData = await ParticleAuthCore.Instance.Connect(jwt);
-
+        List<SupportLoginType> allSupportLoginTypes = new List<SupportLoginType>(Enum.GetValues(typeof(SupportLoginType)) as SupportLoginType[]);
+        var nativeResultData =
+        await ParticleAuthCore.Instance.Connect(LoginType.GOOGLE, null, allSupportLoginTypes, SocialLoginPrompt.SelectAccount,
+        new LoginPageConfig("Particle Unity Example", "Welcome to login", "https://connect.particle.network/icons/512.png"));
+                            
         Debug.Log(nativeResultData.data);
 
         if (nativeResultData.isSuccess)
@@ -45,6 +57,17 @@ public async void Connect()
     }
 }
 ```
+
+{% hint style="info" %}
+Connect with JWT
+
+```csharp
+var jwt = "your jwt";
+var nativeResultData = await ParticleAuthCore.Instance.Connect(jwt);
+```
+{% endhint %}
+
+###
 
 ### Disconnect
 

@@ -178,6 +178,8 @@ If loginType is email or phone, you can pass email address or phone number to `a
 
 If loginType is JWT, you must pass JWT token to `account`.
 
+SocialLoginPrompt: optional, only google, discord and microsoft support it.
+
 If loginType is email or phone, below parameter is optional, other wise, they are useless.
 
 The `supportAuthTypes` controls which types of social login buttons are displayed at the bottom of the login page.
