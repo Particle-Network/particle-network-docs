@@ -65,7 +65,7 @@ Connect with JWT
 
 ```csharp
 var jwt = "your jwt";
-var nativeResultData = await ParticleAuthCore.Instance.Connect(jwt);
+var nativeResultData = await ParticleAuthCore.Instance.ConnectJWT(jwt);
 ```
 {% endhint %}
 
