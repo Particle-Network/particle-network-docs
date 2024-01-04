@@ -2,7 +2,7 @@
 description: High-Level RPCs to simplify the integration of AA
 ---
 
-# Account Abstraction RPC
+# Enhanced AA RPC
 
 {% content-ref url="../available-networks.md" %}
 [available-networks.md](../available-networks.md)
@@ -136,7 +136,10 @@ Request
         "value": "0x1",
         "data": "0x"
       }
-    ]
+    ],
+    // optional boolen: true - will check and include gasless; false - will skip gasless check
+    // default is true
+    true
   ]
 }
 ```
