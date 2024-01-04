@@ -205,6 +205,14 @@ final userInfo = await ParticleAuthCore.connect(LoginType.jwt, account: jwt);
 ```
 {% endhint %}
 
+{% hint style="info" %}
+Connect with Google&#x20;
+
+```dart
+final userInfo = await ParticleAuthCore.connect(LoginType.google);
+```
+{% endhint %}
+
 ### Is Connected
 
 ```dart
