@@ -29,8 +29,8 @@ Map<int, String> biconomyApiKeys = {
   137: "your polygon mainnet key",
   80001: "your polygon testnet key"
 };
-// Support BICONOMY | CYBERCONNECT | SIMPLE
-ParticleAA.init(AccountName.BICONOMY, VersionNumber.V1_0_0(), biconomyApiKeys);
+// Support BICONOMY_V1 | BICONOMY_V2 | CYBERCONNECT | SIMPLE
+ParticleAA.init(AccountName.BICONOMY_V1(), biconomyApiKeys);
 ```
 
 ### Is deploy AA wallet
@@ -80,8 +80,7 @@ static void getSmartAccountAddress() async {
   }
   try {
     final eoaAddress = account!.publicAddress;
-    final smartAccountConfig = SmartAccountConfig(
-        AccountName.BICONOMY, VersionNumber.V1_0_0(), eoaAddress);
+    final smartAccountConfig = SmartAccountConfig.fromAccountName(AccountName.BICONOMY_V1(), eoaAddress);
     List<dynamic> response = await EvmService.getSmartAccount(
         <SmartAccountConfig>[smartAccountConfig]);
     var smartAccountJson = response.firstOrNull;
