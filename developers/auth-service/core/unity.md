@@ -21,6 +21,8 @@ If loginType is email or phone, you can pass email address or phone number to `a
 
 If loginType is JWT, you must pass JWT token to `account`.
 
+SocialLoginPrompt: optional, only google, discord and microsoft support it.
+
 If loginType is email or phone, below parameter is optional, other wise, they are useless.
 
 The `supportAuthTypes` controls which types of social login buttons are displayed at the bottom of the login page.
@@ -67,7 +69,19 @@ var nativeResultData = await ParticleAuthCore.Instance.Connect(jwt);
 ```
 {% endhint %}
 
-###
+### Custom UI for email and phone login
+
+Send verification code
+
+```csharp
+var nativeResultData = await ParticleAuthCore.Instance.SendEmailCode(email);
+```
+
+Connect with email or phone and verification code
+
+```csharp
+var nativeResultData = await ParticleAuthCore.Instance.ConnectWithCode(null,email, code);
+```
 
 ### Disconnect
 
