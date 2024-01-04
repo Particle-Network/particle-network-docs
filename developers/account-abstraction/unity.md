@@ -21,8 +21,8 @@ var biconomyApiKeys = new Dictionary<int, string>
     { 80001, "your polygon mumbai key" }
 };
 
-// AccountName support BICONOMY | SIMPLE | CYBERCONNECT
-ParticleAAInteraction.Init(AAAccountName.BICONOMY, AAVersionNumber.V1_0_0(), biconomyApiKeys);
+// AccountName support BICONOMY_V1 | BICONOMY_V2 | SIMPLE | CYBERCONNECT
+ParticleAAInteraction.Init(AAAccountName.BICONOMY_V1(), biconomyApiKeys);
 ```
 
 **2. Drag prefab to your scene**
@@ -83,8 +83,7 @@ public async void GetSmartAccount()
         var eoaAddress = "your EOA address";
         var smartAccountResult = await EvmService.GetSmartAccount(new[]
         {
-            new SmartAccountObject(AAAccountName.BICONOMY.ToString(), AAVersionNumber.V1_0_0().version,
-                eoaAddress)
+            new SmartAccountObject(AAAccountName.BICONOMY_V1(), eoaAddress)
         });
         var smartAccountAddress = (string)JObject.Parse(smartAccountResult)["result"][0]["smartAccountAddress"];
     }
@@ -109,7 +108,7 @@ Show how to send transaction with particle-connect, use native token to pay gas 
 try
 {
     var eoaAddress = "your EOA address";
-    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY.ToString(), AAVersionNumber.V1_0_0().version, eoaAddress) });
+    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY_V1(), eoaAddress) });
     var smartAccountAddress = (string)JObject.Parse(smartAccountResult)["result"][0]["smartAccountAddress"];
     var transaction = await TransactionHelper.GetEVMTransactionWithConnect(smartAccountAddress);
 
@@ -160,7 +159,7 @@ Show  how to send transaction with particle-connect, gasless.
 try
 {
     var eoaAddress = "0x498c9b8379E2e16953a7b1FF94ea11893d09A3Ed";
-    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY.ToString(), AAVersionNumber.V1_0_0().version, eoaAddress) });
+    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY_V1(), eoaAddress) });
     var smartAccountAddress = (string)JObject.Parse(smartAccountResult)["result"][0]["smartAccountAddress"];
     var transaction = await TransactionHelper.GetEVMTransactionWithConnect(smartAccountAddress);
 
@@ -208,7 +207,7 @@ Show  how to send transaction with particle-connect, use token to pay gas fee.
 try
 {
     var eoaAddress = "";
-    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY.ToString(), AAVersionNumber.V1_0_0().version, eoaAddress) });
+    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY_V1(), eoaAddress) });
     var smartAccountAddress = (string)JObject.Parse(smartAccountResult)["result"][0]["smartAccountAddress"];
     var transaction = await TransactionHelper.GetEVMTransactionWithConnect(smartAccountAddress);
 
@@ -282,7 +281,7 @@ try
 {
     var eoaAddress = ParticleAuthServiceInteraction.GetAddress();
     // get your smart account by account name and version.
-    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY.ToString(), AAVersionNumber.V1_0_0().version, eoaAddress) });
+    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY_V1(), eoaAddress) });
     var smartAccountAddress = (string)JObject.Parse(smartAccountResult)["result"][0]["smartAccountAddress"];
     var transaction = await TransactionHelper.GetEVMTransacion(smartAccountAddress);
     var nativeResultData =
@@ -316,7 +315,7 @@ Merge multiple transactions and send them together
 try
 {
     var eoaAddress = "0x498c9b8379E2e16953a7bEvmService1FF94ea11893d09A3Ed";
-    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY.ToString(), AAVersionNumber.V1_0_0().version, eoaAddress) });
+    var smartAccountResult = await EvmService.GetSmartAccount(new[] { new SmartAccountObject(AAAccountName.BICONOMY_V1(), eoaAddress) });
     var smartAccountAddress = (string)JObject.Parse(smartAccountResult)["result"][0]["smartAccountAddress"];
     var transaction = await TransactionHelper.GetEVMTransactionWithConnect(smartAccountAddress);
 
