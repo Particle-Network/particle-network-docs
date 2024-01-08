@@ -106,21 +106,53 @@ ParticleInfo.clientKey = ''; // your client key
 const chainInfo = Ethereum;
 const env = Env.Production;
 particleAuth.init(chainInfo, env);
+particleAuthCore.init();
 ```
 
-### Connect JWT
+### Connect
+
+If loginType is email or phone, you can pass email address or phone number to `account`.
+
+If loginType is JWT, you must pass JWT token to `account`.
+
+SocialLoginPrompt: optional, only google, discord and microsoft support it.
+
+If loginType is email or phone, below parameter is optional, other wise, they are useless.
+
+The `supportAuthTypes` controls which types of social login buttons are displayed at the bottom of the login page.
+
+The `loginPageConfig` controls the title, description, and image displayed on the login page.
 
 ```typescript
-const jwt = "your jwt";
-const result = await particleAuthCore.connect(jwt);
+const result = await particleAuthCore.connect(LoginType.Email, null, supportAuthType, SocialLoginPrompt.SelectAccount, {
+  projectName: "React Native Example",
+  description: "Welcome to login",
+  imagePath: "https://connect.particle.network/icons/512.png"
+});
 if (result.status) {
-    const userInfo = result.data;
-    console.log(userInfo);
+  const userInfo = result.data as UserInfo;
+  console.log('connect', userInfo);
 } else {
-    const error = result.data;
-    console.log(error);
+  const error = result.data as CommonError;
+  console.log('connect', error);
 }
 ```
+
+{% hint style="info" %}
+Connect with Google
+
+```typescript
+const result = await particleAuthCore.connect(LoginType.Google)
+```
+{% endhint %}
+
+{% hint style="info" %}
+Connect with JWT
+
+```typescript
+const result = await particleAuthCore.connectJWT(jwt);
+```
+{% endhint %}
 
 ### Disconnect
 
@@ -141,7 +173,7 @@ const result = await particleAuthCore.isConnected();
 console.log(result);
 ```
 
-### Swicth chain
+### Switch chain
 
 ```typescript
 const chainInfo: ChainInfo = PolygonMumbai;
@@ -181,29 +213,6 @@ console.log('hasMasterPassword', hasMasterPassword);
 const result = await particleAuthCore.getUserInfo();
 const userInfo = JSON.parse(result);
 console.log(userInfo);
-```
-
-### Open web wallet
-
-```typescript
-openWebWallet = async () => {
-    //https://docs.particle.network/developers/wallet-service/sdks/web
-    let webConfig = {
-        supportAddToken: false,
-        supportChains: [
-            {
-                id: 1,
-                name: 'Ethereum',
-            },
-            {
-                id: 5,
-                name: 'Ethereum',
-            },
-        ],
-    };
-    const webConfigJSON = JSON.stringify(webConfig);
-    particleAuthCore.openWebWallet(webConfigJSON);
-};
 ```
 
 ### Open account and security
@@ -355,5 +364,30 @@ if (result.status) {
 } else {
     const error = result.data;
     console.log(error);
+}
+```
+
+### Blind sign enable
+
+This switch will work if the following conditions are met:
+
+1\. your account is connected with JWT
+
+2\. your account does not set payment password
+
+3\. SecurityAccountConfig.promptSettingWhenSign is 0, you can call particleAuth.setSecurityAccountConfig to update its value.
+
+```typescript
+setBlindEnable = async () => {
+  particleAuthCore.setBlindEnable(true);
+}
+
+getBlindEnable = async () => {
+  const result = await particleAuthCore.getBlindEnable();
+  console.log('getBlindEnable', result);
+  Toast.show({
+    type: 'success',
+    text1: `getBlindEnable ${result}`,
+  });
 }
 ```
