@@ -21,8 +21,7 @@ Before you can add Auth Core to your Android app, you need to create a Particle 
 
 Declare them in your module (app-level) Gradle file (usually app/build.gradle).
 
-```groovy
-repositories {
+<pre class="language-groovy"><code class="lang-groovy">repositories {
     google()
     mavenCentral()
     maven { setUrl("https://jitpack.io") }
@@ -34,10 +33,10 @@ dependencies {
     implementation("network.particle:mpc-core:${latest_version}")
     
     //find the latest version of the sdk:
-    //https://search.maven.org/search?q=g:network.particle
-    //...
+<strong>    //https://search.maven.org/search?q=g:network.particle
+</strong>    //...
 }
-```
+</code></pre>
 
 ### Add Configuration File
 
@@ -298,3 +297,4 @@ val languageEnum = ParticleNetwork.getLanguage()
 ### Error
 
 `ErrorInfo` contains error details. You can check the information by printing the `message` attribute.
+
