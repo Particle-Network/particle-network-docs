@@ -66,7 +66,8 @@ function btcSignatureToEvmSignature(bitcoinSignature: string) {
     );
 
     return evmSignature;
-}// Some code
+}
 ```
 
 8. Construct an EVM user operation and send it to BTC EVM L2s.
+9. The BTC Smart Account will verify the BTC signature.
