@@ -2,7 +2,7 @@
 description: Integrate Particle products to your dApp within minutes
 ---
 
-# 🚀 Quickstart Guide
+# 🎯 Quickstart Guide
 
 ## Getting Started With Particle Network
 
@@ -18,8 +18,8 @@ description: Integrate Particle products to your dApp within minutes
       4. [**Account Abstraction**](../developers/account-abstraction/)
    2. **Other Services**
       1. [**On-\&Off-Ramp Service**](../developers/wallet-service/on-ramp.md)
-      2. [**Node Service RPCs**](broken-reference)
-      3. [**NFT Service RPCs**](broken-reference)
+      2. [**Node Service RPCs**](broken-reference/)
+      3. [**NFT Service RPCs**](broken-reference/)
       4. [**IPFS API**](../developers/node-service/ipfs-service.md)
 
 ## **Create a Project**

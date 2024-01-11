@@ -40,7 +40,7 @@
 
 ## Getting Started
 
-* [🚀 Quickstart Guide](getting-started/get-started.md)
+* [🎯 Quickstart Guide](getting-started/get-started.md)
 * [🗺 Dashboard](getting-started/dashboard/README.md)
   * [Manage Projects](getting-started/dashboard/manage-projects.md)
   * [Manage Apps](getting-started/dashboard/manage-apps.md)
@@ -72,7 +72,7 @@
 
 ## Developers
 
-* [₿ BTC Connect](developers/btc-connect.md)
+* [🚀 ₿ BTC Connect](developers/btc-connect.md)
 * [🗝 Auth](developers/auth-service/README.md)
   * [Branding](developers/auth-service/branding.md)
   * [Custom](developers/auth-service/custom.md)

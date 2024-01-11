@@ -1,2 +1,2 @@
-# ₿ BTC Connect
+# 🚀 ₿ BTC Connect
 
