@@ -72,6 +72,7 @@
 
 ## Developers
 
+* [₿ BTC Connect](developers/btc-connect.md)
 * [🗝 Auth](developers/auth-service/README.md)
   * [Branding](developers/auth-service/branding.md)
   * [Custom](developers/auth-service/custom.md)
