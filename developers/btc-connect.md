@@ -17,12 +17,15 @@ BTC Connect takes advantage of the ERC-4337 design and L2 EVM-compatible chains 
 1. A modal that aggregates mainstream BTC wallets (Unisat, Xverse, OKX Wallet, etc.), simplifying the connection and interaction with the BTC network.
 2. Utilize a BTC wallet to sign and control the BTC Smart Account on BTC EVM L2s; users can interact with BTC EVM L2s without the need to download EVM wallets (MetaMask, Trust, etc.).
 3. On BTC EVM L2s, developers can perform batch transactions, leverage Paymaster for gasless transactions, and access other functionalities.
+4. Fully-featured BTC Smart Wallet embedded within the dApp.
 
 _Our first alpha version already supports Merlin Chain, with support for more BTC EVM L2s coming soon._
 
 ## Integration
 
-
+{% hint style="info" %}
+Coming soon
+{% endhint %}
 
 ## Deeper Tech Intro
 
@@ -66,7 +69,7 @@ function btcSignatureToEvmSignature(bitcoinSignature: string) {
     );
 
     return evmSignature;
-}// Some code
+}
 ```
 
 8. Construct an EVM user operation and send it to BTC EVM L2s.
