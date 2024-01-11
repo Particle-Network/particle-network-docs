@@ -294,6 +294,21 @@ ParticleNetwork.setLanguage(LanguageEnum.EN)
 val languageEnum = ParticleNetwork.getLanguage()
 ```
 
+### Blind sign enable
+
+This switch will work if the following conditions are met:
+
+1. your account is connected with JWT
+2. your account does not set payment password
+3. SecurityAccountConfig.promptSettingWhenSign is 0, you can call ParticleNetwork.setSecurityAccountConfig to update its value.
+
+```kotlin
+// set blind sign enable
+AuthCore.setBlindEnable(true)
+// get current blind sign enable state
+val result = AuthCore.getBlindEnable()
+```
+
 ### Error
 
 `ErrorInfo` contains error details. You can check the information by printing the `message` attribute.
