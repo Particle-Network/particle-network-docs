@@ -25,4 +25,7 @@
 23. Lumoz zkEVM Testnet
 24. ReadON Testnet
 25. ZetaChain Testnet
-26. ... more chains are coming
+26. Ancient8 Testnet
+27. Merlin Chain Testnet
+28. LumiBit Testnet
+29. ... more chains are coming

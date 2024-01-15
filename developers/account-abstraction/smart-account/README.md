@@ -6,7 +6,8 @@ We have built-in support for
 
 1. Biconomy Account (1.0.0, 2.0.0)
 2. Cyber Account (1.0.0)
-3. Simple Account (1.0.0)
+3. Alchemy Light Account (1.0.2)
+4. Simple Account (1.0.0)
 
 More account implementations come soon.
 

@@ -4,6 +4,19 @@ description: All the latest Particle Network updates, straight from the team.
 
 # 🎁 Changelog
 
+## 20240115
+
+1. New Chains
+   1. Ancient8 Testnet (v2)
+   2. BTC L2s
+      1. Merlin Chain Testnet
+      2. LumiBit Testnet
+2. Smart Account
+   1. Native integration of Alchemy Light Account
+   2. Simple Account: add Ancient8 Testnet
+3. [BTC Connect](../developers/btc-connect.md) Alpha version is open for integration🔥; ☞ [btc-connect.md](../developers/btc-connect.md "mention")
+4. Bug fix and improve performance
+
 ## 20231227
 
 1. New Chains
