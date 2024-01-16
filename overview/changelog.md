@@ -14,7 +14,7 @@ description: All the latest Particle Network updates, straight from the team.
 2. Smart Account
    1. Native integration of Alchemy Light Account
    2. Simple Account: add Ancient8 Testnet
-3. [BTC Connect](../developers/btc-connect.md) Alpha version is open for integration🔥; ☞ [btc-connect.md](../developers/btc-connect.md "mention")
+3. [BTC Connect](../developers/btc-connect/) Alpha version is open for integration🔥; ☞ [btc-connect](../developers/btc-connect/ "mention")
 4. Bug fix and improve performance
 
 ## 20231227
