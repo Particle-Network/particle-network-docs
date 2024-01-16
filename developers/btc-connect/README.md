@@ -19,12 +19,20 @@ BTC Connect takes advantage of the ERC-4337 design and L2 EVM-compatible chains 
 3. On BTC EVM L2s, developers can perform batch transactions, leverage Paymaster for gasless transactions, and access other functionalities.
 4. Fully-featured BTC Smart Wallet embedded within the dApp.
 
-_Our first alpha version already supports Merlin Chain, with support for more BTC EVM L2s coming soon._
+## Supported Networks
+
+{% content-ref url="available-networks.md" %}
+[available-networks.md](available-networks.md)
+{% endcontent-ref %}
 
 ## Integration
 
-{% content-ref url="web.md" %}
-[web.md](web.md)
+Check demo: [https://btc-connect-demo.particle.network/](https://btc-connect-demo.particle.network/)
+
+Check repo: [https://github.com/Particle-Network/particle-btc-connect](https://github.com/Particle-Network/particle-btc-connect)
+
+{% content-ref url="sdks/web.md" %}
+[web.md](sdks/web.md)
 {% endcontent-ref %}
 
 ## Deeper Tech Intro

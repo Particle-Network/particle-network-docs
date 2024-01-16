@@ -166,7 +166,7 @@ const { userOp, userOpHash } = feeQuotes.verifyingPaymasterNative;
 const hash = await smartAccount.sendUserOperation({ userOp, userOpHash });
 ```
 
-For more `SmartAccount` usage, refer to [Account Abstraction](../account-abstraction/).
+For more `SmartAccount` usage, refer to [Account Abstraction](../../account-abstraction/).
 
 ## Preview
 
