@@ -23,9 +23,9 @@ _Our first alpha version already supports Merlin Chain, with support for more BT
 
 ## Integration
 
-{% hint style="info" %}
-Coming soon
-{% endhint %}
+{% content-ref url="web.md" %}
+[web.md](web.md)
+{% endcontent-ref %}
 
 ## Deeper Tech Intro
 
