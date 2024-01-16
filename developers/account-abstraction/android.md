@@ -33,7 +33,7 @@ val apiKey = mapOf(
             Polygon.id to "YOUR_DAPP_API_KEY"
         )
 // apiKey can be empty        
-// aaService can be BiconomyAAService, CyberConnectAAService, SimpleAAService. It can be null, default  BiconomyAAService.
+// aaService can be BiconomyV1AAService、BiconomyV2AAService、CyberConnectAAService、 SimpleAAService. It can be null, default  BiconomyV2AAService.
 ParticleNetwork.initAAMode(apiKey, aaService = BiconomyAAService)
 ```
 
