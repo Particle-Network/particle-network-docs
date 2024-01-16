@@ -36,7 +36,7 @@ let biconomyApiKeys: [Int: String] = [
     ParticleNetwork.ChainInfo.polygonMumbai.chainId: "YOUR_BICONOMY_API_KEY"
 ]
 
-// We support biconomy v1 | biconomy v2 | cyberConnect | simple
+// We support biconomy v1 | biconomy v2 | cyberConnect | simple | light
 AAService.initialize(name: AA.AccountName.biconomyV1, biconomyApiKeys: biconomyApiKeys)
 
 // Optinonal, if you also add Wallet Service, 
