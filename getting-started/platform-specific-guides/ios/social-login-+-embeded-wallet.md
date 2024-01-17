@@ -34,13 +34,13 @@ target 'ParticleExample' do
   
   # The following SDKs are optional.
   # ConnectWalletConnectAdapter is WalletConnect SDK, support EVM.
-  pod 'ConnectWalletConnectAdapter', '0.2.14'
+  pod 'ConnectWalletConnectAdapter', '0.2.16'
   # ConnectEVMAdapter is EVM private SDK.
-  pod 'ConnectEVMAdapter', '0.2.14'
+  pod 'ConnectEVMAdapter', '0.2.16'
   # ConnectSolanaAdapter is Solana Private SDK.
-  pod 'ConnectSolanaAdapter', '0.2.14'
+  pod 'ConnectSolanaAdapter', '0.2.16'
   # ConnectPhantomAdapter is Phantom Wallet SDK, support Solana.
-  pod 'ConnectPhantomAdapter', '0.2.14'
+  pod 'ConnectPhantomAdapter', '0.2.16'
   
 end
 
