@@ -4,6 +4,8 @@ This guide will help you get started with Particle Wallet API iOS SDK by setting
 
 If you face any problem anytime, you can always refer to the Particle[ ](https://github.com/Web3Auth/Web3Auth/discussions)Community for us to help you out as soon as possible!
 
+[Download materials](https://github.com/Particle-Network/particle-ios/tree/main/GuideSeries/ParticleConnectExample)
+
 ## Read Contract&#x20;
 
 If you want to read contract.

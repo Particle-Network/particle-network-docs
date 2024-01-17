@@ -4,6 +4,8 @@ This guide will help you get started with Particle Wallet iOS SDK by setting up 
 
 If you face any problem anytime, you can always refer to the Particle[ ](https://github.com/Web3Auth/Web3Auth/discussions)Community for us to help you out as soon as possible!
 
+[Download materials](https://github.com/Particle-Network/particle-ios/tree/main/GuideSeries/ParticleConnectExample%2BWalletUI)
+
 ## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 * iOS 14 or higher
@@ -21,20 +23,20 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'ParticleExample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'ParticleNetworkBase', '1.3.5'
-  pod 'ParticleAuthService', '1.3.5'
-  pod 'ParticleWalletAPI', '1.3.5'
-  pod 'ParticleAA', '1.3.5'
-  pod 'ParticleWalletGUI', '1.3.5'
-  pod 'ParticleWalletConnect', '1.3.5'
+  pod 'ParticleNetworkBase', '1.3.10'
+  pod 'ParticleAuthService', '1.3.10'
+  pod 'ParticleWalletAPI', '1.3.10'
+  pod 'ParticleAA', '1.3.10'
+  pod 'ParticleWalletGUI', '1.3.10'
+  pod 'ParticleWalletConnect', '1.3.10'
 
-  pod 'ConnectCommon', '0.2.14'
-  pod 'ConnectEVMAdapter', '0.2.14'
-  pod 'ConnectSolanaAdapter', '0.2.14'
-  pod 'ConnectWalletConnectAdapter', '0.2.14'
-  pod 'ConnectPhantomAdapter', '0.2.14'
-  pod 'ParticleConnect', '0.2.14'
-  pod 'ParticleAuthAdapter', '0.2.14'
+  pod 'ConnectCommon', '0.2.16'
+  pod 'ConnectEVMAdapter', '0.2.16'
+  pod 'ConnectSolanaAdapter', '0.2.16'
+  pod 'ConnectWalletConnectAdapter', '0.2.16'
+  pod 'ConnectPhantomAdapter', '0.2.16'
+  pod 'ParticleConnect', '0.2.16'
+  pod 'ParticleAuthAdapter', '0.2.16'
 end
 
 post_install do |installer|
