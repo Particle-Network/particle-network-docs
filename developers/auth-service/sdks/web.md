@@ -664,8 +664,13 @@ particle.setFiatCoin('USD');
 
 ```typescript
 // enable ERC-4337, openWallet will open Account Abstraction Wallet
-particle.setERC4337(true);
+particle.setERC4337({
+    name: 'BICONOMY',
+    version: '1.0.0',
+});
 ```
+
+The `name` and `version` are configured when initializing [SmartAccount](https://docs.particle.network/developers/account-abstraction/sdks/web#initialize-the-smartaccount).&#x20;
 
 ### Switch Chain Info
 
