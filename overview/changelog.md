@@ -4,6 +4,22 @@ description: All the latest Particle Network updates, straight from the team.
 
 # 🎁 Changelog
 
+## 20240119
+
+1. New Chains
+   1. Blast Sepolia
+   2. ZKFair
+   3. Berachain Testnet
+   4. Taiko Katla
+   5. Ethereum Holesky
+   6. Arbitrum Sepolia
+   7. Optimism Sepolia
+   8. Base Sepolia
+   9. zkSync Sepolia
+2. Smart Account
+   1. Simple Account: add Taiko Katla, ZKFair, Ethereum Holesky, Arbitrum Sepolia, Optimism Sepolim, Base Sepolia
+   2. Also Bundler/Paymaster support
+
 ## 20240115
 
 1. New Chains

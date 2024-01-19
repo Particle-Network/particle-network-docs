@@ -1,19 +1,19 @@
 # Available Networks
 
-1. Ethereum Mainnet, Goerli & Sepolia
+1. Ethereum Mainnet, Goerli, Sepolia & Holesky
 2. Polygon Mainnet & Mumbai Testnet
-3. Optimism Mainnet & Optimism Goerli Testnet
-4. Arbitrum One & Nova & Goerli Testnet
+3. Optimism Mainnet & Optimism Goerli & Sepolia Testnet
+4. Arbitrum One & Nova & Goerli & Sepolia Testnet
 5. Scroll Mainnet & Sepolia Testnet
 6. Linea Mainnet & Testnet
-7. Base Mainnet & Testnet
+7. Base Mainnet & Goerli & SepoliaTestnet
 8. Mantle Mainnet & Testnet
 9. Manta Mainnet & Testnet
-10. Taiko Jolnir Testnet
+10. Taiko Jolnir & Katla Testnet
 11. Avalanche Mainnet & Fuji Testnet
 12. BNB Chain Mainnet & Testnet
 13. opBNB Mainnet & Testnet
-14. Combo Testnet
+14. Combo Mainnet & Testnet
 15. PGN Mainnet & Testnet
 16. Gnosis Mainnet & Testnet
 17. Astar zkEVM Testnet
@@ -26,6 +26,7 @@
 24. ReadON Testnet
 25. ZetaChain Testnet
 26. Ancient8 Testnet
-27. Merlin Chain Testnet
-28. LumiBit Testnet
-29. ... more chains are coming
+27. ZKFair Mainnet & Testnet
+28. Merlin Chain Testnet
+29. LumiBit Testnet
+30. ... more chains are coming
