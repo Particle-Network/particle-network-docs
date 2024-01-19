@@ -17,7 +17,7 @@ description: All the latest Particle Network updates, straight from the team.
    8. Base Sepolia
    9. zkSync Sepolia
 2. Smart Account
-   1. Simple Account: add Taiko Katla, ZKFair, Ethereum Holesky, Arbitrum Sepolia, Optimism Sepolim, Base Sepolia
+   1. Simple Account: add Taiko Katla, ZKFair, Ethereum Holesky, Arbitrum Sepolia, Optimism Sepolia, Base Sepolia
    2. Also Bundler/Paymaster support
 
 ## 20240115
