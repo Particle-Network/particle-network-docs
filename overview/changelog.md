@@ -8,7 +8,7 @@ description: All the latest Particle Network updates, straight from the team.
 
 1. Account Abstraction
    1. Smart Account
-      1. Biconomy Account V2: add Ethereum Sepolia, Blast Sepolia, Scroll Sepolia, Abitrum Sepolia, Moonbeam & Moonbase Alpha Testnet support;
+      1. Biconomy Account V2: add Ethereum Sepolia, Blast Sepolia, Scroll Sepolia, Abitrum Sepolia, Moonbeam support;
       2. Simple Account: add Blast Sepolia support.
    2. Bunder/Paymaster
       1. Add support for Ethereum Sepolia, Blast Sepolia, Scroll Sepolia, Abitrum Sepolia, Moonbeam & Moonbase Alpha Testnet.
