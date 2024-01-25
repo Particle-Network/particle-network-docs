@@ -4,6 +4,14 @@ description: All the latest Particle Network updates, straight from the team.
 
 # 🎁 Changelog
 
+## 20240125
+
+1. New Chains
+   1. BEVM Testnet
+   2. B² Network Testnet
+2. BTC Connect
+   1. Add new chains: BEVM Testnet, B² Network Testnet and MAP Protocol
+
 ## 20240122
 
 1. Account Abstraction
