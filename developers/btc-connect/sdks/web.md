@@ -83,7 +83,7 @@ BTC Connect is implemented based on React,  You can use custom hooks to connect 
 ### Connect Wallet
 
 ```typescript
-import { useConnectModal } from '@particle-network/btc-connectkit';
+import { useConnectModal, useConnector } from '@particle-network/btc-connectkit';
 
 const { openConnectModal, disconnect } = useConnectModal();
 
@@ -96,6 +96,26 @@ const onOpenConnectModal = () => {
 const onDisconnect = () => {
     disconnect();
 }
+
+
+// or you can custom connect button UI.
+const ConnectComponent = () => {
+  const { connectors, connect } = useConnector();
+  return (
+    <div>
+      {connectors.map((item) => {
+        return (
+          item.isReady() && (
+            <div key={item.metadata.id} onClick={() => connect(item.metadata.id)}>
+              {item.metadata.name}
+            </div>
+          )
+        );
+      })}
+    </div>
+  );
+};
+
 ```
 
 ### Get Accounts
