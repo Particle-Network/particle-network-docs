@@ -1,12 +1,12 @@
 ---
-description: First Account Abstraction Protocol on Bitcoin
+description: The First Account Abstraction Protocol on Bitcoin
 ---
 
 # Web
 
 ## Installation
 
-Get up and running with BTC Connect.
+Get up-and-running with BTC Connect.
 
 ```bash
 
@@ -22,7 +22,7 @@ Note: BTC Connect is a [React](https://reactjs.org/) library.
 
 ## Configure
 
-Register your app on the [Dashboard](https://dashboard.particle.network/) and get the  `projectId`, `clientKey`, `appId.` Then replace `xxxx` below with your project configuration.
+Register your app on the [Dashboard](https://dashboard.particle.network/) and get the  `projectId`, `clientKey`, `appId.` Then replace `xxxx` below with your project's configuration.
 
 Create  a `ConnectProvider` react component, add `connectors` and project options.
 
@@ -78,7 +78,7 @@ const App = () => {
 
 ## Usage
 
-BTC Connect is implemented based on React,  You can use custom hooks to connect to the wallet and send transactions.
+BTC Connect is implemented based on React, you can use custom hooks to connect to the wallet and send transactions.
 
 ### Connect Wallet
 
@@ -133,7 +133,7 @@ const { evmAccount } = useETHProvider(); // evm smart accounts.
 
 ### BTC Provider
 
-After connect wallet,  you can use these hook functions interact with blockchain.
+After a wallet has been connected, you can use these hook functions to interact with the blockchain.
 
 <pre class="language-typescript"><code class="lang-typescript"><strong>import { useBTCProvider } from '@particle-network/btc-connectkit';
 </strong>
@@ -161,7 +161,7 @@ provider.sendInscription(...)
 
 ### EVM Provider
 
-EVM Smart Account auto generate when connect wallet, you can use BTC wallet signature to send EVM transaction.
+An EVM Smart Account is automatically generated when a wallet is connected, you can use the native BTC wallet signature to send EVM transaction.
 
 ```typescript
 import { useBTCProvider } from '@particle-network/btc-connectkit';

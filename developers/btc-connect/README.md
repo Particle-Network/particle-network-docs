@@ -1,5 +1,5 @@
 ---
-description: First Account Abstraction Protocol on Bitcoin
+description: The First Account Abstraction Protocol on Bitcoin
 ---
 
 # 🚀 ₿ BTC Connect
