@@ -4,6 +4,16 @@ description: All the latest Particle Network updates, straight from the team.
 
 # 🎁 Changelog
 
+## 20240129
+
+1. New Chains
+   1. BEVM Mainnet
+2. Account Abstraction
+   1. Smart Account
+      1. Simple Account: add Berachain Testnet support
+3. BTC Connect
+   1. Add new chains: BEVM Mainnet
+
 ## 20240125
 
 1. New Chains

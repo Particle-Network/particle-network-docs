@@ -30,4 +30,7 @@
 28. ZKFair Mainnet & Testnet
 29. Merlin Chain Testnet
 30. LumiBit Testnet
-31. ... more chains are coming
+31. BEVM Mainnet & Testnet
+32. MAP Protocol Mainnet & Testnet
+33. Berachain Testnet
+34. ... more chains are coming
