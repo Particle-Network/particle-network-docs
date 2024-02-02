@@ -76,6 +76,7 @@
   * [Available Networks](developers/btc-connect/available-networks.md)
   * [SDKs](developers/btc-connect/sdks/README.md)
     * [Web](developers/btc-connect/sdks/web.md)
+  * [RPCs](developers/btc-connect/rpcs.md)
 * [🗝 Auth](developers/auth-service/README.md)
   * [Branding](developers/auth-service/branding.md)
   * [Custom](developers/auth-service/custom.md)

@@ -35,6 +35,12 @@ Check repo: [https://github.com/Particle-Network/particle-btc-connect](https://g
 [web.md](sdks/web.md)
 {% endcontent-ref %}
 
+## RPCs
+
+{% content-ref url="rpcs.md" %}
+[rpcs.md](rpcs.md)
+{% endcontent-ref %}
+
 ## Deeper Tech Intro
 
 1. BTC and Ethereum both use ECDSA(secp256k1) for signing;

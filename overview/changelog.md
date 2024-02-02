@@ -4,6 +4,11 @@ description: All the latest Particle Network updates, straight from the team.
 
 # 🎁 Changelog
 
+## 20240203
+
+1. BTC Connect
+   1. Add RPC to get BTC account by using BTC public key
+
 ## 20240129
 
 1. New Chains
