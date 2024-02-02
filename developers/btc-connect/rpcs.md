@@ -10,7 +10,7 @@ description: High-Level RPCs to simplify the integration of BTC Connect
 
 \-> [Bundler RPCs](../account-abstraction/rpc/bundler-rpc.md)
 
-\-> Paymaster RPCs
+\-> [Paymaster RPCs](../account-abstraction/rpc/paymaster-rpc.md)
 
 ## particle\_aa\_getBTCAccount
 
