@@ -113,7 +113,7 @@ particleAuthCore.init();
 
 If loginType is email or phone, you can pass email address or phone number to `account`.
 
-If loginType is JWT, you must pass JWT token to `account`.
+If loginType is JWT, you must pass JWT token to `account`. if loginType is email or phone, it will present a login page, if you want to customize the email or phone login page, try below method `sendPhoneCode`, `sendEmailCode`, `connectWithCode`
 
 SocialLoginPrompt: optional, only google, discord and microsoft support it.
 
@@ -153,6 +153,25 @@ Connect with JWT
 const result = await particleAuthCore.connectJWT(jwt);
 ```
 {% endhint %}
+
+### Send email / phone verification code
+
+phone number requires formate E.164, such as `+11234567890`
+
+```typescript
+const result = await particleAuthCore.sendPhoneCode(phoneNumber);
+
+const result = await particleAuthCore.sendEmailCode(email);
+```
+
+### Connect with email / phone verification code
+
+```typescript
+ const result = await particleAuthCore.connectWithCode(
+ phone | null, 
+ email | null, 
+ code);
+```
 
 ### Disconnect
 

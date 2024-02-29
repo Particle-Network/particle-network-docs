@@ -5,8 +5,8 @@
 ## Overview
 
 * [💡 Our Products](<README (1).md>)
-* [🛡 Security](overview/security.md)
-* [⛓ Available Networks](overview/available-networks/README.md)
+* [🛡️ Security](overview/security.md)
+* [⛓️ Available Networks](overview/available-networks/README.md)
   * [Solana](overview/available-networks/solana.md)
   * [Ethereum](overview/available-networks/ethereum.md)
   * [Avalanche](overview/available-networks/avalanche.md)
@@ -41,7 +41,7 @@
 ## Getting Started
 
 * [🎯 Quickstart Guide](getting-started/get-started.md)
-* [🗺 Dashboard](getting-started/dashboard/README.md)
+* [🗺️ Dashboard](getting-started/dashboard/README.md)
   * [Manage Projects](getting-started/dashboard/manage-projects.md)
   * [Manage Apps](getting-started/dashboard/manage-apps.md)
 * [🧩 Platform-specific Guides](getting-started/platform-specific-guides/README.md)
@@ -77,7 +77,7 @@
   * [SDKs](developers/btc-connect/sdks/README.md)
     * [Web](developers/btc-connect/sdks/web.md)
   * [RPCs](developers/btc-connect/rpcs.md)
-* [🗝 Auth](developers/auth-service/README.md)
+* [🗝️ Auth](developers/auth-service/README.md)
   * [Branding](developers/auth-service/branding.md)
   * [Custom](developers/auth-service/custom.md)
   * [Core SDKs](developers/auth-service/core/README.md)
@@ -171,7 +171,7 @@
       * [Marketplace](developers/nft-service/solana-nft-service/marketplace/README.md)
         * [Auction House (recommend)](developers/nft-service/solana-nft-service/marketplace/auction-house.md)
         * [Metaplex](developers/nft-service/solana-nft-service/marketplace/metaplex.md)
-* [⏭ What Else](developers/what-else.md)
+* [⏭️ What Else](developers/what-else.md)
   * [❔ FAQ](developers/faq.md)
 * [📚 Demo Applications](developers/demo-applications/README.md)
   * [Android](developers/demo-applications/android.md)
