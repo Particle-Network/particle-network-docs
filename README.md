@@ -1,9 +1,8 @@
 ---
 description: >-
-  The Intent-Centric, Modular Access Layer of Web3: Built with Particle
-  Network's Modular Smart Wallet-as-a-Service, Confidential zkStack, Omnichain
-  Account Abstraction & Intent Fusion Protocol
-cover: .gitbook/assets/20231124-173006.png
+  The Modular L1 Powering Chain Abstraction - Solving user and liquidity
+  fragmentation through Universal Accounts.
+cover: .gitbook/assets/thumb.webp
 coverY: 0
 layout:
   cover:
@@ -23,7 +22,9 @@ layout:
 
 # ✨ Particle Network
 
-**Particle Network** is the Intent-Centric, Modular Access Layer of Web3: Built with Particle Network's Modular Smart Wallet-as-a-Service, Confidential zkStack, Omnichain Account Abstraction & Intent Fusion Protocol. Our vision is to accelerate the world's transition into the cryptoverse. Using our powerful SDKs, developers can focus on creating great app experiences rather than the heavy lifting.
+{% hint style="danger" %}
+Hey, we've migrated the documentation to [https://developers.particle.network](https://developers.particle.network). You can also find more information on our official website at [https://particle.network/](https://particle.network/).
+{% endhint %}
 
 ## Overview
 
