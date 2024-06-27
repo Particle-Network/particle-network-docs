@@ -19,9 +19,7 @@ description: >-
 
 ### **Chain Information**
 
-{% embed url="https://docs.bnbchain.org/docs/overview" %}
-Official Documentation
-{% endembed %}
+{% embed url="https://docs.bnbchain.org/bnb-smart-chain/overview/" %}
 
 | chainId (int) | chainName (string) | EVM Chains        |
 | ------------- | ------------------ | ----------------- |

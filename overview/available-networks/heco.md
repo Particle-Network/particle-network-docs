@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-[**HECO**](https://www.hecochain.com/), short for Huobi ECO Chain, is a decentralized, high-performance public chain developed by the Huobi Group. It is an Ethereum-compatible smart contract platform designed to provide developers with an efficient and low-cost environment for creating decentralized applications (dApps). HECO leverages the Delegated Proof-of-Stake (DPoS) consensus mechanism and offers a secure and scalable infrastructure for building innovative blockchain projects.
+[**HECO**](https://x.com/heco\_chain), short for Huobi ECO Chain, is a decentralized, high-performance public chain developed by the Huobi Group. It is an Ethereum-compatible smart contract platform designed to provide developers with an efficient and low-cost environment for creating decentralized applications (dApps). HECO leverages the Delegated Proof-of-Stake (DPoS) consensus mechanism and offers a secure and scalable infrastructure for building innovative blockchain projects.
 
 ### Key Features and Benefits
 

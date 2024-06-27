@@ -319,7 +319,7 @@ String signature = await ParticleAuth.signAndSendTransaction(transction);
 
 support v1, v3, v4, v4Unique.
 
-You can get the demo source code from [here](https://github.com/Particle-Network/particle-flutter/blob/master/particle-auth/example/lib/auth\_demo/auth\_logic.dart)
+You can get the demo source code from [here](https://github.com/Particle-Network/particle-flutter/blob/master/particle-auth-core/example/lib/auth\_core\_demo/auth\_core\_logic.dart).
 
 In EVM chain requires a hexadecimal string, not support Solana.
 

@@ -19,7 +19,7 @@ description: Integrate Particle products to your dApp within minutes
    2. **Other Services**
       1. [**On-\&Off-Ramp Service**](../developers/wallet-service/on-ramp.md)
       2. [**Node Service RPCs**](broken-reference/)
-      3. [**NFT Service RPCs**](broken-reference/)
+      3. [**NFT Service RPCs**](../developers/nft-service/)
       4. [**IPFS API**](../developers/node-service/ipfs-service.md)
 
 ## **Create a Project**
