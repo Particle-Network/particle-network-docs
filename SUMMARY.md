@@ -188,7 +188,6 @@
 
 * [🎨 Logos & Assets](resources/logos-and-assets.md)
 * [📰 Blogs](https://blog.particle.network/)
-* [📊 System Status](https://status.particle.network)
 * [📜 Terms & Conditions](resouces/terms-and-conditions/README.md)
   * [Privacy Policy](resouces/terms-and-conditions/privacy-policy.md)
   * [Terms of Use](resouces/terms-and-conditions/terms-of-use.md)
