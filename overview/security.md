@@ -59,7 +59,7 @@ The Threshold Signature Scheme (TSS) is a cryptographic primitive for distribute
 
 Particle Network has two parties jointly computing the public key, each holding a secret share of the private key. The advantage is that the private key is not a single point of failure anymore because each party holds just one part of it. When signing transactions, we run a distributed signature generation between two parties. Only Party-1 (the user side) can start the signing process. Again, we've moved from local computation (single point of failure) to an interactive one.
 
-**TSS vs. Multgisig**
+**TSS vs. Multisig**
 
 TSS is using cryptography off-chain, while multisig occurs on-chain. The main point of difference is that multisig is blockchain-specific and needs to be reimplemented for every blockchain, and in some cases, is not supported at all. Conversely, TSS relies on pure cryptography, so support is always possible.
 
